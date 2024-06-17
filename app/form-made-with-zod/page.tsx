@@ -1,6 +1,6 @@
 "use client"
 import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
-import { z } from "zod"
+import {z} from "zod"
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {Button} from "@/components/ui/button";
@@ -9,9 +9,13 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/compo
 
 
 export default function FormMadeWithZod() {
-    return <><ProfileForm/></>
+    return <div className="container py-24 lg:py-32">
+        {/* Announcement Banner */}
+        <div className="flex justify-center">
+            <ProfileForm/>
+        </div>
+    </div>
 }
-
 
 
 const formSchema = z.object({
@@ -47,55 +51,55 @@ export function ProfileForm() {
                 </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">
-        <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                <FormField
-                    control={form.control}
-                    name="username"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Username</FormLabel>
-                            <FormControl>
-                                <Input placeholder="toto_g" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Nom</FormLabel>
-                            <FormControl>
-                                <Input placeholder="Thomas" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="age"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Age</FormLabel>
-                            <FormDescription>
-                                Donnez un chiffre cohérent ;)
-                            </FormDescription>
-                            <FormControl>
-                                <Input placeholder="18" {...field} />
-                            </FormControl>
+                <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                        <FormField
+                            control={form.control}
+                            name="username"
+                            render={({field}) => (
+                                <FormItem>
+                                    <FormLabel>Username</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="toto_g" {...field} />
+                                    </FormControl>
+                                    <FormMessage/>
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="name"
+                            render={({field}) => (
+                                <FormItem>
+                                    <FormLabel>Nom</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="Thomas" {...field} />
+                                    </FormControl>
+                                    <FormMessage/>
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="age"
+                            render={({field}) => (
+                                <FormItem>
+                                    <FormLabel>Age</FormLabel>
+                                    <FormDescription>
+                                        Donnez un chiffre cohérent ;)
+                                    </FormDescription>
+                                    <FormControl>
+                                        <Input placeholder="18" {...field} />
+                                    </FormControl>
 
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <Button type="submit">Submit</Button>
+                                    <FormMessage/>
+                                </FormItem>
+                            )}
+                        />
+                        <Button type="submit">Submit</Button>
 
-            </form>
-        </Form>
+                    </form>
+                </Form>
             </CardContent>
         </Card>
 
