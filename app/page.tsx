@@ -2,6 +2,7 @@ import {ArrowRightIcon} from "@radix-ui/react-icons";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import {cn} from "@/lib/utils";
 import FeaturedProjects from "@/components/[locale]/featured-projects";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -16,24 +17,26 @@ export default function Home() {
                                 "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
                             )}
                         >
-                            <AnimatedShinyText
-                                className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-                                <span>✨ Last Project : Zod and Form </span>
-                                <ArrowRightIcon
-                                    className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"/>
-                            </AnimatedShinyText>
+                            <Link href={'/form-made-with-zod'}>
+                                <AnimatedShinyText
+                                    className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+                                    <span>✨ Last Project : Trying Zod to create Form </span>
+                                    <ArrowRightIcon
+                                        className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"/>
+                                </AnimatedShinyText>
+                            </Link>
                         </div>
                     </div>
                     {/* End Announcement Banner */}
                     {/* Title */}
                     <div className="mt-5 max-w-2xl text-center mx-auto">
-                        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-                            Unleash Your Creativity
-                        </h1>
+                        <h2 className="text-4xl text-gray-800 font-semibold tracking-tighter sm:text-5xl [@media(max-width:480px)]:text-[2rem]">
+                            Fast. Efficient. Easy.
+                        </h2>
                     </div>
                     {/* End Title */}
                     <div className="mt-5 max-w-3xl text-center mx-auto">
-                        <p className="text-xl text-muted-foreground">
+                        <p className=" text-muted-foreground">
                             Discover a world of endless possibilities with our side project platform. Bring your ideas
                             to life and share them with the world.
                         </p>
