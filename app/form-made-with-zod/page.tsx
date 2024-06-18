@@ -24,7 +24,7 @@ const formSchema = z.object({
     age: z.number().min(0),
 })
 
-export function ProfileForm() {
+function ProfileForm() {
     // 1. Define your form.
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
