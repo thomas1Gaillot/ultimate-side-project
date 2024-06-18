@@ -6,6 +6,7 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
+import {useToast} from "@/components/ui/use-toast";
 
 
 export default function FormMadeWithZod() {
@@ -25,6 +26,7 @@ const formSchema = z.object({
 })
 
 function ProfileForm() {
+    const {toast} = useToast()
     // 1. Define your form.
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -39,6 +41,10 @@ function ProfileForm() {
     function onSubmit(values: z.infer<typeof formSchema>) {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
+        toast({
+            title: "Form has been sent",
+            description: `${values}`,
+        })
         console.log(values)
     }
 

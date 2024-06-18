@@ -1,8 +1,6 @@
-import {ArrowRightIcon} from "@radix-ui/react-icons";
-import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
-import {cn} from "@/lib/utils";
 import FeaturedProjects from "@/components/[locale]/featured-projects";
-import Link from "next/link";
+import {BentoGridThirdDemo} from "@/components/[locale]/bento-grid-third-demo";
+import HeroSection from "@/components/[locale]/hero-section";
 
 export default function Home() {
     return (
@@ -11,53 +9,25 @@ export default function Home() {
             <div>
                 <div className="container py-24 lg:py-32">
                     {/* Announcement Banner */}
-                    <div className="flex justify-center">
-                        <div
-                            className={cn(
-                                "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
-                            )}
-                        >
-                            <Link href={'/form-made-with-zod'}>
-                                <AnimatedShinyText
-                                    className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-                                    <span>✨ Last Project : Trying Zod to create Form </span>
-                                    <ArrowRightIcon
-                                        className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"/>
-                                </AnimatedShinyText>
-                            </Link>
-                        </div>
-                    </div>
+
                     {/* End Announcement Banner */}
-                    {/* Title */}
-                    <div className="mt-5 max-w-2xl text-center mx-auto">
+                    <HeroSection/>
+                </div>
+                <div className="flex flex-col items-center justify-center space-y-4 text-center py-24">
+                    <div className="space-y-2">
+                        <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                            Acernity UI
+                        </div>
                         <h2 className="text-4xl text-gray-800 font-semibold tracking-tighter sm:text-5xl [@media(max-width:480px)]:text-[2rem]">
-                            Fast. Efficient. Easy.
-                        </h2>
-                    </div>
-                    {/* End Title */}
-                    <div className="mt-5 max-w-3xl text-center mx-auto">
-                        <p className=" text-muted-foreground">
-                            Discover a world of endless possibilities with our side project platform. Bring your ideas
-                            to life and share them with the world.
+                            Copy. Paste.</h2>
+                        <p className="max-w-[900px] text-gray-500  dark:text-gray-400">
+                            {"Amazing copy-and-paste libraries that will make your life easier."}
                         </p>
                     </div>
-                    <div className="mt-10 relative max-w-5xl mx-auto">
-                        <img
-                            src="hi.png"
-                            className="rounded-xl"
-                            alt="Image Description"
-                        />
-                        <div
-                            className="absolute bottom-12 -start-20 -z-[1] w-48 h-48 bg-gradient-to-b from-primary-foreground via-primary-foreground to-background p-px rounded-lg">
-                            <div className="w-48 h-48 rounded-lg bg-background/10"/>
-                        </div>
-                        <div
-                            className="absolute -top-12 -end-20 -z-[1] w-48 h-48 bg-gradient-to-t from-primary-foreground via-primary-foreground to-background p-px rounded-full">
-                            <div className="w-48 h-48 rounded-full bg-background/10"/>
-                        </div>
-                    </div>
                 </div>
+                <BentoGridThirdDemo/>
                 <FeaturedProjects/>
+
             </div>
             {/* End Hero */}
         </>

@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add form dash start">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="hero section">
+      <change afterPath="$PROJECT_DIR$/components/[locale]/bento-grid-third-demo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/[locale]/hero-section.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/acernityui/bento-grid.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/acernityui/hero-highlight.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +80,8 @@
       <option name="presentableId" value="Default" />
       <updated>1718642598495</updated>
       <workItem from="1718642599609" duration="519000" />
-      <workItem from="1718643243508" duration="6372000" />
+      <workItem from="1718643243508" duration="6438000" />
+      <workItem from="1718694476058" duration="4454000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -89,7 +99,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718659631785</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="page centered">
+      <option name="closed" value="true" />
+      <created>1718659693765</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718659693765</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix form page format">
+      <option name="closed" value="true" />
+      <created>1718694611771</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718694611771</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,6 +124,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="boilerplate" />
     <MESSAGE value="add form dash start" />
-    <option name="LAST_COMMIT_MESSAGE" value="add form dash start" />
+    <MESSAGE value="page centered" />
+    <MESSAGE value="fix form page format" />
+    <MESSAGE value="hero section" />
+    <option name="LAST_COMMIT_MESSAGE" value="hero section" />
   </component>
 </project>
