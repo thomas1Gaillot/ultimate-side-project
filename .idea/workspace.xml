@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="hero section">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="hero page completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/app/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/[locale]/bento-grid-third-demo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/[locale]/bento-grid-third-demo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/[locale]/featured-projects.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/acernityui/bento-grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/acernityui/bento-grid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/acernityui/hero-highlight.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/acernityui/hero-highlight.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +73,7 @@
       <updated>1718642598495</updated>
       <workItem from="1718642599609" duration="519000" />
       <workItem from="1718643243508" duration="6438000" />
-      <workItem from="1718694476058" duration="7523000" />
+      <workItem from="1718694476058" duration="9902000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -121,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718699019598</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="hero page completed">
+      <option name="closed" value="true" />
+      <created>1718702161129</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718702161129</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +135,7 @@
     <MESSAGE value="page centered" />
     <MESSAGE value="fix form page format" />
     <MESSAGE value="hero section" />
-    <option name="LAST_COMMIT_MESSAGE" value="hero section" />
+    <MESSAGE value="hero page completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="hero page completed" />
   </component>
 </project>
