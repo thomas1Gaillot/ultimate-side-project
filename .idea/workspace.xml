@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="PRM identifier OTP">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="PRM identifier OTP responsive">
+      <change afterPath="$PROJECT_DIR$/components/magicui/letter-pullup.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ui/aspect-ratio.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/[locale]/hero-section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/[locale]/hero-section.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +88,7 @@
       <workItem from="1718780245399" duration="4754000" />
       <workItem from="1718787015433" duration="4016000" />
       <workItem from="1718797557719" duration="2117000" />
-      <workItem from="1718803874564" duration="4677000" />
+      <workItem from="1718803874564" duration="5813000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -205,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718809340492</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="PRM identifier OTP responsive">
+      <option name="closed" value="true" />
+      <created>1718809759952</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718809759952</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +249,7 @@
     <MESSAGE value="lock updated" />
     <MESSAGE value="segment tooltip in popover" />
     <MESSAGE value="PRM identifier OTP" />
-    <option name="LAST_COMMIT_MESSAGE" value="PRM identifier OTP" />
+    <MESSAGE value="PRM identifier OTP responsive" />
+    <option name="LAST_COMMIT_MESSAGE" value="PRM identifier OTP responsive" />
   </component>
 </project>

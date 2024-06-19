@@ -20,6 +20,7 @@ import {useRouter} from "next/navigation";
 import {useEffect, useState} from "react";
 import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
 import {InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot} from "@/components/ui/input-otp";
+import LetterPullup from "@/components/magicui/letter-pullup";
 
 const productionTypes = ["Wind", "Solar", "Hydro", "Other"] as const;
 const segmentTypes = ["C1", "C2", "C3", "C4", "C5"] as const;
@@ -33,6 +34,7 @@ export default function FormMadeWithZod() {
         <div className="container py-24 lg:py-32">
             {/* Announcement Banner */}
             <div className="flex flex-col items-center gap-8 justify-center">
+                <LetterPullup className={"italic  "} words={"Zod makes it 10 lines instead of 100"} delay={0.04} />
                 <MadeWithZodBadges/>
                 {isClient && <ProfileForm/>}
             </div>

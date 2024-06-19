@@ -6,7 +6,7 @@ export default function HeroSection() {
             <div className="mt-5 max-w-2xl text-center mx-auto">
 
                 <h2 className="text-4xl text-gray-800 font-semibold tracking-tighter sm:text-5xl [@media(max-width:480px)]:text-[2rem]">
-                    Fast. <Highlight className={"text-black dark:text-white"}> Efficient.  Easy.</Highlight>
+                    Fast. <Highlight className={"text-black dark:text-white"}> Efficient. Easy.</Highlight>
                 </h2>
 
             </div>
@@ -19,7 +19,7 @@ export default function HeroSection() {
             <div className="mt-10 relative max-w-5xl mx-auto">
                 <img
                     src="/hi.png"
-                    className="rounded-xl "
+                    className="rounded-xl object-cover"
                     alt="Image Description"
                     height={480}
                     width={1024}
