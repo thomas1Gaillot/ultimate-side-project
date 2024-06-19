@@ -92,7 +92,7 @@ function ProfileForm() {
                     <Highlight className={"text-black dark:text-white"}>Your production site</Highlight>
                     <Button
                         onClick={() => router.push('/')}
-                        className={"w-max"}
+                        className={"w-max mb-4 md:mb-0"}
                         variant={"outline"}><ArrowLeftIcon className={'pr-2'}/> Back to Home </Button>
                 </CardTitle>
                 <CardDescription>
