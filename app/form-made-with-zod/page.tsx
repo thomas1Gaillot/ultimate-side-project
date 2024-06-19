@@ -7,25 +7,26 @@ import {
     FormItem,
     FormLabel,
     FormMessage
-} from "@/components/shadcn-ui/form";
+} from "@/components/ui/form";
 import {z} from "zod"
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {Button} from "@/components/shadcn-ui/button";
-import {Input} from "@/components/shadcn-ui/input";
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/shadcn-ui/card";
+import {Button} from "@/components/ui/button";
+import {Input} from "@/components/ui/input";
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {useToast} from "@/components/hooks/use-toast";
 import {IconBatteryEco, IconBuildingWindTurbine, IconRipple, IconSolarPanel} from "@tabler/icons-react";
 import {cn} from "@/lib/utils";
 import PaymentToggleButtons from "@/components/[locale]/form-made-with-zod/payment-toggle-buttons";
-import {Separator} from "@/components/shadcn-ui/separator";
+import {Separator} from "@/components/ui/separator";
 import OperationalToggleButtons from "@/components/[locale]/form-made-with-zod/operational-toggle-buttons";
 import Link from "next/link";
-import {badgeVariants} from "@/components/shadcn-ui/badge";
-import {ArrowLeftIcon} from "lucide-react";
+import {badgeVariants} from "@/components/ui/badge";
+import {ArrowLeftIcon, BellIcon, InfoIcon, ZapIcon} from "lucide-react";
 import {Highlight} from "@/components/acernityui/hero-highlight";
 import {useRouter} from "next/navigation";
 import {useEffect, useState} from "react";
+import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
 
 const productionTypes = ["Wind", "Solar", "Hydro", "Other"] as const;
 const segmentTypes = ["C1", "C2", "C3", "C4", "C5"] as const;
@@ -88,8 +89,9 @@ function ProfileForm() {
     return (
         <Card className="w-full max-w-2xl shadow-none">
             <CardHeader>
+
                 <CardTitle className="text-2xl flex flex-col-reverse gap-2 md:flex-row justify-between">
-                    <Highlight className={"text-black dark:text-white"}>Your production site</Highlight>
+                    <Highlight >Your production site</Highlight>
                     <Button
                         onClick={() => router.push('/')}
                         className={"w-max mb-4 md:mb-0"}
@@ -170,7 +172,58 @@ function ProfileForm() {
                             name="segmentType"
                             render={({field}) => (
                                 <FormItem>
-                                    <FormLabel>The segment</FormLabel>
+                                    <FormLabel className={"flex justify-between items-center gap-4 w-full"}>
+                                        The segment
+                                        <Popover>
+                                            <PopoverTrigger>
+                                                <Button type={"button"} variant="ghost" size="icon" className="text-muted-foreground">
+                                                    <InfoIcon className={'h-5 w-5'}/>
+                                                </Button>
+                                            </PopoverTrigger>
+                                            <PopoverContent align={'end'} >
+                                                <div className="flex flex-col gap-3">
+                                                    <p className="text-sm font-semibold text-gray-800">Segment type</p>
+                                                    <p className="text-sm font-light text-gray-600">The segment type is
+                                                        used to categorize your production site</p>
+                                                    <div className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg">
+                                                        <ZapIcon className="h-5 w-5"/>
+                                                        <div className="flex flex-col">
+                                                            <p className="text-sm font-semibold text-gray-800">C1</p>
+                                                            <p className="text-xs font-light text-gray-600">{'Power < 36 kVA'}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg">
+                                                        <ZapIcon className="h-5 w-5"/>
+                                                        <div className="flex flex-col">
+                                                            <p className="text-sm font-semibold text-gray-800">C2</p>
+                                                            <p className="text-xs font-light text-gray-600">{'Power between 36 kVA and 250 kVA'}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg">
+                                                        <ZapIcon className="h-5 w-5"/>
+                                                        <div className="flex flex-col">
+                                                            <p className="text-sm font-semibold text-gray-800">C3</p>
+                                                            <p className="text-xs font-light text-gray-600">{'Power > 250 kVA '}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg">
+                                                        <ZapIcon className="h-5 w-5"/>
+                                                        <div className="flex flex-col">
+                                                            <p className="text-sm font-semibold text-gray-800">C4</p>
+                                                            <p className="text-xs font-light text-gray-600">{'Power > 250 kVA '}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg">
+                                                        <ZapIcon className="h-5 w-5"/>
+                                                        <div className="flex flex-col">
+                                                            <p className="text-sm font-semibold text-gray-800">C5</p>
+                                                            <p className="text-xs font-light text-gray-600">{'Power > 250 kVA '}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </PopoverContent>
+                                        </Popover>
+                                    </FormLabel>
                                     <div className="grid grid-cols-5 gap-4">
                                         {segmentTypes.map((type) => (
                                             <SegmentCard
