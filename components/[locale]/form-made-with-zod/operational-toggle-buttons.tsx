@@ -1,6 +1,6 @@
 import React from 'react';
 import {cn} from '@/lib/utils';
-import {Button} from "@/components/ui/button"; // Assurez-vous d'avoir la fonction `cn` pour la gestion des classes conditionnelles
+import {Button} from "@/components/shadcn-ui/button"; // Assurez-vous d'avoir la fonction `cn` pour la gestion des classes conditionnelles
 
 const OperationalToggleButtons = ({isOperational, onChange}: { isOperational: boolean, onChange: (...event: any[]) => void }) => {
     return (

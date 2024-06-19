@@ -18,7 +18,7 @@ export default function HeroSection() {
             </div>
             <div className="mt-10 relative max-w-5xl mx-auto">
                 <img
-                    src="hi.png"
+                    src="/hi.png"
                     className="rounded-xl "
                     alt="Image Description"
                     height={480}

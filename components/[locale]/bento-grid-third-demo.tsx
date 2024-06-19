@@ -1,7 +1,7 @@
 "use client";
 import {cn} from "@/lib/utils";
 import React from "react";
-import {IconAugmentedReality, IconClipboardCopy, IconSignature,} from "@tabler/icons-react";
+import {IconClipboardCopy, IconSignature,} from "@tabler/icons-react";
 import {motion} from "framer-motion";
 import {BentoGrid, BentoGridItem} from "@/components/acernityui/bento-grid";
 import {useRouter} from "next/navigation";
@@ -31,7 +31,8 @@ export function BentoGridThirdDemo() {
             header: <SkeletonTwo/>,
             className: "md:col-span-1",
             icon: <IconSignature className="h-4 w-4 text-neutral-500"/>,
-            onClick: () => {}
+            onClick: () => {
+            }
         },
         {
             title: "Incoming Project",
@@ -43,7 +44,8 @@ export function BentoGridThirdDemo() {
             header: <SkeletonTwo/>,
             className: "md:col-span-1",
             icon: <IconSignature className="h-4 w-4 text-neutral-500"/>,
-            onClick: () => {}
+            onClick: () => {
+            }
         },
     ];
 

@@ -1,31 +1,46 @@
 "use client"
-import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
+import {
+    Form,
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage
+} from "@/components/shadcn-ui/form";
 import {z} from "zod"
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {Button} from "@/components/ui/button";
-import {Input} from "@/components/ui/input";
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
+import {Button} from "@/components/shadcn-ui/button";
+import {Input} from "@/components/shadcn-ui/input";
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/shadcn-ui/card";
 import {useToast} from "@/components/hooks/use-toast";
 import {IconBatteryEco, IconBuildingWindTurbine, IconRipple, IconSolarPanel} from "@tabler/icons-react";
 import {cn} from "@/lib/utils";
 import PaymentToggleButtons from "@/components/[locale]/form-made-with-zod/payment-toggle-buttons";
-import {Separator} from "@/components/ui/separator";
-import SearchAddress from "@/components/ui/search-address";
+import {Separator} from "@/components/shadcn-ui/separator";
 import OperationalToggleButtons from "@/components/[locale]/form-made-with-zod/operational-toggle-buttons";
 import Link from "next/link";
-import {badgeVariants} from "@/components/ui/badge";
+import {badgeVariants} from "@/components/shadcn-ui/badge";
 import {ArrowLeftIcon} from "lucide-react";
+import {Highlight} from "@/components/acernityui/hero-highlight";
+import {useRouter} from "next/navigation";
+import {useEffect, useState} from "react";
 
 const productionTypes = ["Wind", "Solar", "Hydro", "Other"] as const;
 const segmentTypes = ["C1", "C2", "C3", "C4", "C5"] as const;
 export default function FormMadeWithZod() {
+    const [isClient, setClient] = useState(false)
+
+    useEffect(() => {
+        setClient(true)
+    }, [])
     return (
         <div className="container py-24 lg:py-32">
             {/* Announcement Banner */}
             <div className="flex flex-col items-center gap-8 justify-center">
                 <MadeWithZodBadges/>
-                <ProfileForm/>
+                {isClient && <ProfileForm/>}
             </div>
         </div>
     );
@@ -40,19 +55,14 @@ const formSchema = z.object({
     isPriceFree: z.boolean(),
     segmentType: z.enum(segmentTypes, {message: 'Segment is required.'}),
     productionType: z.enum(productionTypes),
-    address : z.object(
-        {
-            label: z.string(),
-            lat: z.number(),
-            lon: z.number(),
-        },  {message: 'Address is required.'}
-    ),
     isOperational: z.boolean(),
 });
 
 function ProfileForm() {
     const {toast} = useToast();
 
+
+    const router = useRouter()
     // 1. Define your form.
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -78,11 +88,10 @@ function ProfileForm() {
     return (
         <Card className="w-full max-w-2xl shadow-none">
             <CardHeader>
-                <CardTitle className="text-2xl flex flex-col-reverse gap-2 md:flex-row justify-between">{"First, create your production site"}
+                <CardTitle className="text-2xl flex flex-col-reverse gap-2 md:flex-row justify-between">
+                    <Highlight className={"text-black dark:text-white"}>Your production site</Highlight>
                     <Button
-                        onClick={() => {
-                            window.location.href = "/"
-                        }}
+                        onClick={() => router.push('/')}
                         className={"w-max"}
                         variant={"outline"}><ArrowLeftIcon className={'pr-2'}/> Back to Home </Button>
                 </CardTitle>
@@ -233,31 +242,15 @@ function ProfileForm() {
                             control={form.control}
                             name="isOperational"
                             render={({field}) => (
-                                <OperationalToggleButtons isOperational={field.value} onChange={field.onChange}/>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="address"
-                            render={({field}) => (
                                 <FormItem>
-                                    <FormLabel>The address of the production site</FormLabel>
                                     <FormControl>
-                                        <div className={"w-full"}>
-                                            <SearchAddress onSelectLocation={(location) => {
-                                                const newLocation = {
-                                                    label: location?.label,
-                                                    lat: location?.x,
-                                                    lon: location?.y,
-                                                };
-                                                field.onChange(newLocation);
-                                            }}/>
-                                        </div>
+                                        <OperationalToggleButtons isOperational={field.value}
+                                                                  onChange={field.onChange}/>
                                     </FormControl>
-                                    <FormMessage/>
                                 </FormItem>
                             )}
                         />
+
 
                         <Button type="submit">Next step : Project informations</Button>
                     </form>
@@ -314,6 +307,7 @@ function getIcon(type: string) {
             return null;
     }
 }
+
 function MadeWithZodBadges() {
     return (
         <div className={"flex items-center gap-2"}>

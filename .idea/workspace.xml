@@ -4,21 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="adding new components">
-      <change afterPath="$PROJECT_DIR$/components/[locale]/form-made-with-zod/operational-toggle-buttons.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/hooks/use-debounce.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/hooks/use-search-address.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/badge.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/command.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/dialog.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/popover.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/search-address.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="submit a form easily with zod">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/toaster.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/toaster.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/use-toast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/hooks/use-toast.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/[locale]/bento-grid-third-demo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/[locale]/bento-grid-third-demo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/[locale]/form-made-with-zod/operational-toggle-buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/[locale]/form-made-with-zod/operational-toggle-buttons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/[locale]/form-made-with-zod/payment-toggle-buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/[locale]/form-made-with-zod/payment-toggle-buttons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/[locale]/hero-section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/[locale]/hero-section.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/hooks/use-search-address.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/hooks/use-toast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/hooks/use-toast.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shadcn-ui/badge.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shadcn-ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shadcn-ui/card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/command.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shadcn-ui/command.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shadcn-ui/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shadcn-ui/form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shadcn-ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/label.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shadcn-ui/label.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/popover.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shadcn-ui/popover.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/search-address.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/separator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shadcn-ui/separator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/toast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shadcn-ui/toast.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/toaster.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shadcn-ui/toaster.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +101,8 @@
       <workItem from="1718643243508" duration="6438000" />
       <workItem from="1718694476058" duration="21772000" />
       <workItem from="1718742855417" duration="2938000" />
-      <workItem from="1718780245399" duration="3657000" />
+      <workItem from="1718780245399" duration="4754000" />
+      <workItem from="1718787015433" duration="3437000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -158,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718704663663</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="submit a form easily with zod">
+      <option name="closed" value="true" />
+      <created>1718784326105</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718784326105</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +203,7 @@
     <MESSAGE value="hero page completed" />
     <MESSAGE value="form continued" />
     <MESSAGE value="adding new components" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding new components" />
+    <MESSAGE value="submit a form easily with zod" />
+    <option name="LAST_COMMIT_MESSAGE" value="submit a form easily with zod" />
   </component>
 </project>
