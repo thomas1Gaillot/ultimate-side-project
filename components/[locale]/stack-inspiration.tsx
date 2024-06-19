@@ -102,7 +102,7 @@ export default function StackInspiration() {
             <CardContent>
                 <div className="grid md:auto-rows-[1fr] grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 max-w-7xl mx-auto">
                     {githubItems.map((item, i) => (
-                        <div className="flex h-full">
+                        <div key={i} className="flex h-full">
                             <GitHubItem
                                 key={i}
                                 title={item.title}
