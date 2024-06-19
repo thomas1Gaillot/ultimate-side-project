@@ -1,5 +1,6 @@
 import {BentoGridThirdDemo} from "@/components/[locale]/bento-grid-third-demo";
 import HeroSection from "@/components/[locale]/hero-section";
+import StackInspiration from "@/components/[locale]/stack-inspiration";
 
 export default function Home() {
     return (
@@ -14,15 +15,6 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col items-center justify-center space-y-4 text-center py-24 gap-8">
                     <div className="space-y-2 space-x-2">
-                        <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                            acernity-ui
-                        </div>
-                        <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                            shadcn-ui
-                        </div>
-                        <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                            magic-ui
-                        </div>
                         <h2 className="text-4xl text-gray-800 font-semibold tracking-tighter sm:text-5xl [@media(max-width:480px)]:text-[2rem]">
                             Copy. Paste.</h2>
                         <p className="max-w-[900px] text-gray-500  dark:text-gray-400">
@@ -30,6 +22,9 @@ export default function Home() {
                         </p>
                     </div>
                     <BentoGridThirdDemo/>
+                </div>
+                <div className="mt-10 relative max-w-5xl mx-auto">
+                    <StackInspiration/>
                 </div>
 
 

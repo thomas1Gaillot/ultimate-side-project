@@ -1,7 +1,10 @@
 "use client";
 import {Highlight} from "@/components/acernityui/hero-highlight";
+import React from "react";
+
 
 export default function HeroSection() {
+
     return (<>
             <div className="mt-5 max-w-2xl text-center mx-auto">
 
@@ -17,13 +20,6 @@ export default function HeroSection() {
                 </p>
             </div>
             <div className="mt-10 relative max-w-5xl mx-auto">
-                <img
-                    src="/hi.png"
-                    className="rounded-xl object-cover"
-                    alt="Image Description"
-                    height={480}
-                    width={1024}
-                />
                 <div
                     className="absolute bottom-12 -start-20 -z-[1] w-48 h-48 bg-gradient-to-b from-primary-foreground via-primary-foreground to-background p-px rounded-lg">
                     <div className="w-48 h-48 rounded-lg bg-background/10"/>
@@ -36,6 +32,7 @@ export default function HeroSection() {
         </>
     )
 }
+
 
 
 
