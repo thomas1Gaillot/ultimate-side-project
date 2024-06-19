@@ -1,13 +1,5 @@
 "use client"
-import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage
-} from "@/components/ui/form";
+import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {z} from "zod"
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
@@ -22,11 +14,12 @@ import {Separator} from "@/components/ui/separator";
 import OperationalToggleButtons from "@/components/[locale]/form-made-with-zod/operational-toggle-buttons";
 import Link from "next/link";
 import {badgeVariants} from "@/components/ui/badge";
-import {ArrowLeftIcon, BellIcon, InfoIcon, ZapIcon} from "lucide-react";
+import {ArrowLeftIcon, InfoIcon, ZapIcon} from "lucide-react";
 import {Highlight} from "@/components/acernityui/hero-highlight";
 import {useRouter} from "next/navigation";
 import {useEffect, useState} from "react";
 import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
+import {InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot} from "@/components/ui/input-otp";
 
 const productionTypes = ["Wind", "Solar", "Hydro", "Other"] as const;
 const segmentTypes = ["C1", "C2", "C3", "C4", "C5"] as const;
@@ -57,6 +50,9 @@ const formSchema = z.object({
     segmentType: z.enum(segmentTypes, {message: 'Segment is required.'}),
     productionType: z.enum(productionTypes),
     isOperational: z.boolean(),
+    prm: z.string().refine((val) => val.length === 14, {
+        message: "prm must be exactly 14 digits"
+    }),
 });
 
 function ProfileForm() {
@@ -73,6 +69,7 @@ function ProfileForm() {
             isPriceFree: false,
             isOperational: true,
             productionType: productionTypes[1],
+            prm: '',
         },
     });
 
@@ -91,7 +88,7 @@ function ProfileForm() {
             <CardHeader>
 
                 <CardTitle className="text-2xl flex flex-col-reverse gap-2 md:flex-row justify-between">
-                    <Highlight >Your production site</Highlight>
+                    <Highlight>Your production site</Highlight>
                     <Button
                         onClick={() => router.push('/')}
                         className={"w-max mb-4 md:mb-0"}
@@ -176,11 +173,12 @@ function ProfileForm() {
                                         The segment
                                         <Popover>
                                             <PopoverTrigger>
-                                                <Button type={"button"} variant="ghost" size="icon" className="text-muted-foreground">
+                                                <Button type={"button"} variant="ghost" size="icon"
+                                                        className="text-muted-foreground">
                                                     <InfoIcon className={'h-5 w-5'}/>
                                                 </Button>
                                             </PopoverTrigger>
-                                            <PopoverContent align={'end'} >
+                                            <PopoverContent align={'end'}>
                                                 <div className="flex flex-col gap-3">
                                                     <p className="text-sm font-semibold text-gray-800">Segment type</p>
                                                     <p className="text-sm font-light text-gray-600">The segment type is
@@ -300,6 +298,48 @@ function ProfileForm() {
                                         <OperationalToggleButtons isOperational={field.value}
                                                                   onChange={field.onChange}/>
                                     </FormControl>
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="prm"
+                            render={({field}) => (
+                                <FormItem>
+                                    <FormLabel>PRM identifier</FormLabel>
+                                    <FormDescription>
+                                        Your 14 digit PRM
+                                    </FormDescription>
+                                    <FormControl>
+                                        <InputOTP onChange={field.onChange} maxLength={14} pattern="^[0-9]+$">
+                                            <InputOTPGroup>
+                                                <InputOTPSlot index={0}/>
+                                                <InputOTPSlot index={1}/>
+                                                <InputOTPSlot index={2}/>
+                                                <InputOTPSlot index={3}/>
+                                            </InputOTPGroup>
+                                            <InputOTPSeparator/>
+                                            <InputOTPGroup>
+                                                <InputOTPSlot index={4}/>
+                                                <InputOTPSlot index={5}/>
+                                                <InputOTPSlot index={6}/>
+                                                <InputOTPSlot index={7}/>
+                                            </InputOTPGroup>
+                                            <InputOTPSeparator/>
+                                            <InputOTPGroup>
+                                                <InputOTPSlot index={8}/>
+                                                <InputOTPSlot index={9}/>
+                                                <InputOTPSlot index={10}/>
+                                                <InputOTPSlot index={11}/>
+                                            </InputOTPGroup>
+                                            <InputOTPSeparator/>
+                                            <InputOTPGroup>
+                                                <InputOTPSlot index={12}/>
+                                                <InputOTPSlot index={13}/>
+                                            </InputOTPGroup>
+                                        </InputOTP>
+                                    </FormControl>
+                                    <FormMessage/>
                                 </FormItem>
                             )}
                         />
