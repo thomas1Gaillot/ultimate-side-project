@@ -24,6 +24,7 @@ import LetterPullup from "@/components/magicui/letter-pullup";
 
 const productionTypes = ["Wind", "Solar", "Hydro", "Other"] as const;
 const segmentTypes = ["C1", "C2", "C3", "C4", "C5"] as const;
+
 export default function FormMadeWithZod() {
     const [isClient, setClient] = useState(false)
 
@@ -34,7 +35,7 @@ export default function FormMadeWithZod() {
         <div className="container py-24 lg:py-32">
             {/* Announcement Banner */}
             <div className="flex flex-col items-center gap-8 justify-center">
-                <LetterPullup className={"italic  "} words={"Zod makes it 10 lines instead of 100"} delay={0.04} />
+                <LetterPullup className={"italic text-lg md:text-2xl"} words={"Zod makes it 10 lines instead of 100"} delay={0.04} />
                 <MadeWithZodBadges/>
                 {isClient && <ProfileForm/>}
             </div>
@@ -52,14 +53,11 @@ const formSchema = z.object({
     segmentType: z.enum(segmentTypes, {message: 'Segment is required.'}),
     productionType: z.enum(productionTypes),
     isOperational: z.boolean(),
-    prm: z.string().refine((val) => val.length === 14, {
-        message: "prm must be exactly 14 digits"
-    }),
+    prm: z.string().refine((val) => val.length === 14, {message: "prm must be exactly 14 digits"}),
 });
 
 function ProfileForm() {
     const {toast} = useToast();
-
 
     const router = useRouter()
     // 1. Define your form.
@@ -88,7 +86,6 @@ function ProfileForm() {
     return (
         <Card className="w-full max-w-2xl shadow-none">
             <CardHeader>
-
                 <CardTitle className="text-2xl flex flex-col-reverse gap-2 md:flex-row justify-between">
                     <Highlight>Your production site</Highlight>
                     <Button
@@ -108,11 +105,11 @@ function ProfileForm() {
                             name="username"
                             render={({field}) => (
                                 <FormItem>
+                                    <FormMessage/>
                                     <FormLabel>Your username</FormLabel>
                                     <FormControl>
                                         <Input placeholder="toto_g" {...field} />
                                     </FormControl>
-                                    <FormMessage/>
                                 </FormItem>
                             )}
                         />

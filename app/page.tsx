@@ -5,12 +5,8 @@ import StackInspiration from "@/components/[locale]/stack-inspiration";
 export default function Home() {
     return (
         <>
-            {/* Hero */}
             <div>
                 <div className="container py-24 lg:py-32">
-                    {/* Announcement Banner */}
-
-                    {/* End Announcement Banner */}
                     <HeroSection/>
                 </div>
                 <div className="flex flex-col items-center justify-center space-y-4 text-center py-24 gap-8">
@@ -26,10 +22,7 @@ export default function Home() {
                 <div className="mt-10 relative max-w-5xl mx-auto">
                     <StackInspiration/>
                 </div>
-
-
             </div>
-            {/* End Hero */}
         </>
     );
 }

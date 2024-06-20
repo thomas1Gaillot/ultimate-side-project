@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="stack inspiration">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/[locale]/stack-inspiration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/[locale]/stack-inspiration.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +86,8 @@
       <workItem from="1718787015433" duration="4016000" />
       <workItem from="1718797557719" duration="2117000" />
       <workItem from="1718803874564" duration="7364000" />
-      <workItem from="1718824322328" duration="7188000" />
+      <workItem from="1718824322328" duration="7217000" />
+      <workItem from="1718866791827" duration="5238000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -237,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718831809472</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="stack inspiration">
+      <option name="closed" value="true" />
+      <created>1718831847877</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1718831847877</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

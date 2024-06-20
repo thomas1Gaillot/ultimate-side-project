@@ -1,5 +1,4 @@
 "use client"
-import {useRouter} from "next/navigation";
 import React, {useEffect, useState} from "react";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {
@@ -14,6 +13,7 @@ import {
 } from "lucide-react";
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
+import Link from "next/link";
 
 export default function StackInspiration() {
     const githubItems = [
@@ -26,7 +26,10 @@ export default function StackInspiration() {
                 {href: "https://github.com/shadcn-ui/ui", icon: <GithubIcon className="h-4 w-4 text-neutral-500"/>},
                 {href: "https://ui.shadcn.com/", icon: <PuzzleIcon className="h-4 w-4 text-neutral-500"/>},
                 {href: "https://ui.shadcn.com/themes", icon: <PaletteIcon className="h-4 w-4 text-neutral-500"/>},
-                {href: "https://ui.shadcn.com/blocks", icon: <LayoutPanelTopIcon className="h-4 w-4 text-neutral-500"/>},
+                {
+                    href: "https://ui.shadcn.com/blocks",
+                    icon: <LayoutPanelTopIcon className="h-4 w-4 text-neutral-500"/>
+                },
 
             ],
             starNumber: 1,
@@ -40,7 +43,10 @@ export default function StackInspiration() {
             starNumber: 2,
             price: "paying",
             links: [
-                {href: "https://www.stratisui.com/components/application-example-details", icon: <FigmaIcon className="h-4 w-4 text-neutral-500"/>},
+                {
+                    href: "https://www.stratisui.com/components/application-example-details",
+                    icon: <FigmaIcon className="h-4 w-4 text-neutral-500"/>
+                },
             ],
 
         },
@@ -48,7 +54,7 @@ export default function StackInspiration() {
             title: "Lucide Icons",
             owner: "",
             repo: "",
-            description:"Huge collection of icons.",
+            description: "Huge collection of icons.",
             starNumber: 3,
             price: "free",
             links: [{href: "https://lucide.dev/icons", icon: <BookIcon className="h-4 w-4 text-neutral-500"/>},
@@ -62,7 +68,10 @@ export default function StackInspiration() {
             description: "Copy-and-paste UI library with animations.",
             starNumber: 3,
             price: "free",
-            links: [{href: "https://ui.aceternity.com/components", icon: <PuzzleIcon className="h-4 w-4 text-neutral-500"/>},
+            links: [{
+                href: "https://ui.aceternity.com/components",
+                icon: <PuzzleIcon className="h-4 w-4 text-neutral-500"/>
+            },
             ],
 
         },
@@ -73,7 +82,10 @@ export default function StackInspiration() {
             description: "Copy-and-paste UI library with animations.",
             starNumber: 3,
             price: "free",
-            links: [{href: "https://magicui.design/docs/components/marquee", icon: <PuzzleIcon className="h-4 w-4 text-neutral-500"/>},
+            links: [{
+                href: "https://magicui.design/docs/components/marquee",
+                icon: <PuzzleIcon className="h-4 w-4 text-neutral-500"/>
+            },
             ],
 
         },
@@ -100,7 +112,8 @@ export default function StackInspiration() {
                 </CardDescription>
             </CardHeader>
             <CardContent>
-                <div className="grid md:auto-rows-[1fr] grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 max-w-7xl mx-auto">
+                <div
+                    className="grid md:auto-rows-[1fr] grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 max-w-7xl mx-auto">
                     {githubItems.map((item, i) => (
                         <div key={i} className="flex h-full">
                             <GitHubItem
@@ -119,7 +132,6 @@ export default function StackInspiration() {
             </CardContent>
         </Card>
     );
-
 }
 
 const GitHubItem = ({
@@ -132,14 +144,13 @@ const GitHubItem = ({
                         links
                     }: {
     title: string | React.ReactNode;
-    description: string ;
+    description: string;
     owner: string;
     repo: string;
     starNumber: number;
     price: string;
     links: { href: string; icon: JSX.Element }[];
 }) => {
-    const router = useRouter()
     const [stars, setStars] = useState<number | null>(null);
     useEffect(() => {
         async function fetchStars() {
@@ -162,10 +173,12 @@ const GitHubItem = ({
         <CardHeader className="flex items-start gap-2 p-3">
             <div className="flex flex-wrap gap-2">
                 {links.map((link, i) => (
-                    <Button key={i} onClick={() => router.push(link.href)} className={"hover:bg-gray-200"}
-                            variant={'secondary'} size={'sm'}>
-                        {link.icon}
-                    </Button>
+                    <Link href={link.href} target={'_blank'}>
+                        <Button key={i} className={"hover:bg-gray-200"}
+                                variant={'secondary'} size={'sm'}>
+                            {link.icon}
+                        </Button>
+                    </Link>
                 ))}
             </div>
             <div className="grid gap-1">
