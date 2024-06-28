@@ -23,7 +23,6 @@ export default function PomodoroStats({pomodoro, shortBreak, longBreak}: {
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>
-        <Separator orientation={'vertical'}/>
         <TooltipProvider>
             <Tooltip>
                 <TooltipTrigger asChild>
@@ -39,7 +38,6 @@ export default function PomodoroStats({pomodoro, shortBreak, longBreak}: {
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>
-        <Separator orientation={'vertical'}/>
         <TooltipProvider>
             <Tooltip>
                 <TooltipTrigger asChild>
