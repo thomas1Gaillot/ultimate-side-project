@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="portfolio">
-      <change afterPath="$PROJECT_DIR$/pages/pomodoro/components/Timer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/pomodoro/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/beer.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/teapot.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tomato.svg" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="pomodoro ui">
+      <change afterPath="$PROJECT_DIR$/components/ui/tooltip.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/pomodoro/components/PomodoroStats.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/Timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/components/Timer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +95,7 @@
       <workItem from="1719402352620" duration="3501000" />
       <workItem from="1719561239656" duration="16000" />
       <workItem from="1719576551600" duration="14912000" />
-      <workItem from="1719601348507" duration="3318000" />
+      <workItem from="1719601348507" duration="6111000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -286,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719592331307</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="pomodoro ui">
+      <option name="closed" value="true" />
+      <created>1719606118783</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1719606118783</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +326,7 @@
     <MESSAGE value="stack inspiration" />
     <MESSAGE value="structure to add incrementally new things" />
     <MESSAGE value="portfolio" />
-    <option name="LAST_COMMIT_MESSAGE" value="portfolio" />
+    <MESSAGE value="pomodoro ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="pomodoro ui" />
   </component>
 </project>
