@@ -173,7 +173,7 @@ const GitHubItem = ({
         <CardHeader className="flex items-start gap-2 p-3">
             <div className="flex flex-wrap gap-2">
                 {links.map((link, i) => (
-                    <Link href={link.href} target={'_blank'}>
+                    <Link key={i} href={link.href} target={'_blank'}>
                         <Button key={i} className={"hover:bg-gray-200"}
                                 variant={'secondary'} size={'sm'}>
                             {link.icon}

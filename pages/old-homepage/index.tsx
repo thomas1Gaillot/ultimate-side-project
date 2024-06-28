@@ -1,8 +1,7 @@
 import {BentoGridThirdDemo} from "@/components/[locale]/bento-grid-third-demo";
 import HeroSection from "@/components/[locale]/hero-section";
 import StackInspiration from "@/components/[locale]/stack-inspiration";
-
-export default function Home() {
+export default function OldHomepage() {
     return (
         <>
             <div>

@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="stack inspiration">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="open in new tab links">
+      <change afterPath="$PROJECT_DIR$/pages/components/Sidebar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/data/pages.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/old-homepage/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/github-repo/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/github-repo/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/centralized-app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/centralized-app/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/pages/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/form-made-with-zod/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/components.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/[locale]/stack-inspiration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/[locale]/stack-inspiration.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -56,11 +68,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\styles" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\hooks" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\hii" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\lib" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -88,6 +100,9 @@
       <workItem from="1718803874564" duration="7364000" />
       <workItem from="1718824322328" duration="7217000" />
       <workItem from="1718866791827" duration="5238000" />
+      <workItem from="1719402352620" duration="3501000" />
+      <workItem from="1719561239656" duration="16000" />
+      <workItem from="1719576551600" duration="4589000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
