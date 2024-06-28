@@ -21,8 +21,8 @@ export default function Home() {
                     </>
                 </TypographyP>
                 <TypographyP>
-                        Le but de ce site est également de partager des bonnes pratiques, inspirations et de
-                    pouvoir passer un bon moment en faisant évoluer ce site, sans qu'il ne meure comme les autres ...
+                    {` Le but de ce site est également de partager des bonnes pratiques, inspirations et de
+                    pouvoir passer un bon moment en faisant évoluer ce site, sans qu'il ne meure comme les autres ...`}
                 </TypographyP>
                 <TypographyBlockquote>
                     {`"How to finish a project ? Stop starting new ones." - John Doe, Sept. 2024`}

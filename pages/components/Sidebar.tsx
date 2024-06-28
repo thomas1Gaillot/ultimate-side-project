@@ -2,7 +2,7 @@
 import Link from "next/link";
 import {useRouter} from "next/router";
 import {cn} from "@/lib/utils";
-import {pages} from "@/pages/data/pages";
+import {pages} from "@/data/pages";
 
 
 export default function Sidebar() {
