@@ -1,17 +1,11 @@
-import {Inter} from "next/font/google";
-
-const inter = Inter({subsets: ["latin"]});
-
 export default function RootLayout({
                                        children,
                                    }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-        <body className={inter.className}>
-        {children}
-        </body>
-        </html>
+        <div className={"mx-auto w-full max-w-3xl px-4 py-12 pb-10 md:px-8"}>
+            {children}
+        </div>
     );
 }

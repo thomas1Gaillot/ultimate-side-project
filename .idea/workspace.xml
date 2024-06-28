@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="open in new tab links">
-      <change afterPath="$PROJECT_DIR$/pages/components/Sidebar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/data/pages.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/old-homepage/index.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="portfolio">
+      <change afterPath="$PROJECT_DIR$/components/ui/typography.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/avocado.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/enogrid-logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/github-repo/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/github-repo/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/centralized-app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/centralized-app/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/pages/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/form-made-with-zod/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/form-made-with-zod/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/components.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/[locale]/stack-inspiration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/[locale]/stack-inspiration.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,28 +43,31 @@
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ThomasGaillot/Desktop/ultimate-side-project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/ThomasGaillot/Desktop/ultimate-side-project/components/ui",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\ui" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\styles" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\styles" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\hooks" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -102,7 +97,7 @@
       <workItem from="1718866791827" duration="5238000" />
       <workItem from="1719402352620" duration="3501000" />
       <workItem from="1719561239656" duration="16000" />
-      <workItem from="1719576551600" duration="4589000" />
+      <workItem from="1719576551600" duration="13678000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -264,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718831847877</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="structure to add incrementally new things">
+      <option name="closed" value="true" />
+      <created>1719581480798</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1719581480798</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +302,8 @@
     <MESSAGE value="magic ui for a bit of spice" />
     <MESSAGE value="new page" />
     <MESSAGE value="stack inspiration" />
-    <option name="LAST_COMMIT_MESSAGE" value="stack inspiration" />
+    <MESSAGE value="structure to add incrementally new things" />
+    <MESSAGE value="portfolio" />
+    <option name="LAST_COMMIT_MESSAGE" value="portfolio" />
   </component>
 </project>
