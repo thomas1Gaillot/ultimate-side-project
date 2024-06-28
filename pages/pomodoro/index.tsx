@@ -13,7 +13,7 @@ import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {Simulate} from "react-dom/test-utils";
 import {Separator} from "@/components/ui/separator";
-import {formatTime} from "@/pages/pomodoro/lib/formatTime";
+import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
 import submit = Simulate.submit;
 
 const FormSchema = z.object({
@@ -149,7 +149,7 @@ export default function Pomodoro() {
                         <TypographySmall>{task.name}</TypographySmall>
 
                         <div className="flex items-center gap-2">
-                            <TypographySmall>{formatTime(task.duration)}</TypographySmall>
+                            <TypographySmall>{formatSecondsToMmss(task.duration)}</TypographySmall>
                             <Button variant="outline" size="icon" onClick={() => handleDeleteTask(task.id)}>
                                 <TrashIcon className="w-4 h-4"/>
                             </Button>

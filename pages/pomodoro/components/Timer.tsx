@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import {formatTime} from "@/pages/pomodoro/lib/formatTime";
+import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
 
 const Timer = ({secondsLeft, setSecondsLeft, resetTimer, setResetTimer}: {
     resetTimer: boolean, setResetTimer: (b: boolean) => void,
@@ -17,7 +17,7 @@ const Timer = ({secondsLeft, setSecondsLeft, resetTimer, setResetTimer}: {
 
     return (
         <div className={"text-7xl font-bold text-gray-900"}>
-            {formatTime(secondsLeft)}
+            {formatSecondsToMmss(secondsLeft)}
         </div>
     );
 };
