@@ -14,6 +14,8 @@ import {Separator} from "@/components/ui/separator";
 import {TypographySmall} from "@/components/ui/typography";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
 import {Simulate} from "react-dom/test-utils";
+import Head from "next/head";
+import {formatStringToXChar} from "@/lib/format-string-to-X-char";
 import submit = Simulate.submit;
 
 const FormSchema = z.object({
@@ -94,6 +96,11 @@ export default function PomodoroWidget() {
     };
 
     return <>
+        <Head>
+            <title>{`${formatSecondsToMmss(secondsLeft)} 🍅 - ${formatStringToXChar(tasks[tasks.length - 1]?.name, 20)} `}</title>
+            <meta name="description" content="Building Things front-end side"/>
+            <link rel="icon" href="/avocado.ico"/>
+        </Head>
         <Card className={'p-4 py-2 flex flex-col gap-4'}>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6 ">
