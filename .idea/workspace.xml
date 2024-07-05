@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add timer in tab">
-      <change afterPath="$PROJECT_DIR$/components/[locale]/code-blocks.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/pomodoro-widget-index.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="show code in tab">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pomodoro/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +44,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ThomasGaillot/Desktop/ultimate-side-project/components/ui&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ThomasGaillot/Desktop/enogrid/admin-center&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -98,7 +95,12 @@
       <workItem from="1719561239656" duration="16000" />
       <workItem from="1719576551600" duration="14912000" />
       <workItem from="1719601348507" duration="9154000" />
-      <workItem from="1719735160737" duration="8150000" />
+      <workItem from="1719735160737" duration="8284000" />
+      <workItem from="1720165094752" duration="156000" />
+      <workItem from="1720171147860" duration="435000" />
+      <workItem from="1720171651307" duration="1514000" />
+      <workItem from="1720178425654" duration="2632000" />
+      <workItem from="1720188453685" duration="914000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -348,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719846472932</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="show code in tab">
+      <option name="closed" value="true" />
+      <created>1719849351082</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1719849351082</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +377,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="boilerplate" />
     <MESSAGE value="add form dash start" />
     <MESSAGE value="page centered" />
     <MESSAGE value="fix form page format" />
@@ -392,6 +401,7 @@
     <MESSAGE value="adding page structure for widget pages" />
     <MESSAGE value="add tabs from shadcn-ui" />
     <MESSAGE value="add timer in tab" />
-    <option name="LAST_COMMIT_MESSAGE" value="add timer in tab" />
+    <MESSAGE value="show code in tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="show code in tab" />
   </component>
 </project>
