@@ -1,9 +1,7 @@
 import PomodoroWidget from "@/pages/pomodoro/PomodoroWidget";
 import {TypographyH1, TypographyH2, TypographyLead} from "@/components/ui/typography";
-import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {Card} from "@/components/ui/card";
-import CodeBlocks from "@/components/[locale]/code-blocks";
-import pomodoroWidgetContent from "@/data/pomodoro-widget-index";
+
 export default function Pomodoro() {
     return (
         <div className={"flex flex-col gap-8 pb-8"}>
