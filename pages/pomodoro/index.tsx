@@ -14,22 +14,9 @@ export default function Pomodoro() {
                 A time management technique that uses a timer to break down work into intervals, traditionally 25
                 minutes in length, separated by short breaks.
             </TypographyLead>
-            <Tabs defaultValue="widget" className="w-full">
-                <TabsList>
-                    <TabsTrigger value="widget">Widget</TabsTrigger>
-                    <TabsTrigger value="code">index.ts</TabsTrigger>
-                    <TabsTrigger value="hook">pomodoroHook.ts</TabsTrigger>
-
-                </TabsList>
-                <TabsContent value="widget">
-                    <Card className={"w-full p-8"}>
-                        <PomodoroWidget/>
-                    </Card>
-                </TabsContent>
-                <TabsContent value="code">
-                    <CodeBlocks codeString={pomodoroWidgetContent}/>
-                </TabsContent>
-            </Tabs>
+            <Card className={"w-full p-8"}>
+                <PomodoroWidget/>
+            </Card>
             <TypographyH2>
                 Stack
             </TypographyH2>
