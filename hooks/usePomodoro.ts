@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useSound from "@/hooks/useSound";
 
 const pomodoroPattern = [
     { type: 'work', duration: 25 * 60 },
@@ -17,6 +18,7 @@ const pomodoroPattern = [
  */
 
 export const usePomodoro = (onPhaseChange: (type: string) => void, updateTaskDuration: (duration: number) => void) => {
+    const { play } = useSound("/ding.mp3");
     const [patternIndex, setPatternIndex] = useState(0);
     const [secondsLeft, setSecondsLeft] = useState(pomodoroPattern[0].duration);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -32,6 +34,7 @@ export const usePomodoro = (onPhaseChange: (type: string) => void, updateTaskDur
 
             return () => clearInterval(timerId); // Cleanup interval on component unmount
         } else if (secondsLeft === 0) {
+            play();
             const nextIndex = (patternIndex + 1) % pomodoroPattern.length;
             setPatternIndex(nextIndex);
             setSecondsLeft(pomodoroPattern[nextIndex].duration);
