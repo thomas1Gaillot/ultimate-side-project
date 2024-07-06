@@ -10,6 +10,11 @@ const pomodoroPattern = [
     { type: 'work', duration: 25 * 60 },
     { type: 'longBreak', duration: 15 * 60 },
 ];
+/**
+ * Custom hook to manage the Pomodoro timer
+ * @param onPhaseChange
+ * @param updateTaskDuration
+ */
 
 export const usePomodoro = (onPhaseChange: (type: string) => void, updateTaskDuration: (duration: number) => void) => {
     const [patternIndex, setPatternIndex] = useState(0);

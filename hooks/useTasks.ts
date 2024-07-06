@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { usePomodoroStats } from "@/hooks/usePomodoroStats";
+import {useState} from "react";
+import {useForm} from "react-hook-form";
+import {z} from "zod";
+import {zodResolver} from "@hookform/resolvers/zod";
 
 const FormSchema = z.object({
     task: z.string().min(2, {
@@ -15,6 +14,9 @@ type Task = {
     name: string;
     duration: number;
 };
+/**
+ * Custom hook to manage the tasks logic
+ **/
 
 export const useTasks = () => {
     const [tasks, setTasks] = useState<Task[]>([]);

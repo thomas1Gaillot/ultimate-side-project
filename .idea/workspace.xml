@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="usePomodoro widget operationnal">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="useStats and Tasks operational">
+      <change afterPath="$PROJECT_DIR$/pages/pomodoro/components/TaskForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/pomodoro/components/TaskList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/pomodoro/components/TimerControls.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hooks/usePomodoro.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/usePomodoro.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hooks/usePomodoroStats.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/usePomodoroStats.ts" afterDir="false" />
@@ -19,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -107,7 +110,7 @@
       <workItem from="1720196321855" duration="412000" />
       <workItem from="1720197349026" duration="122000" />
       <workItem from="1720198053953" duration="2133000" />
-      <workItem from="1720252802167" duration="3653000" />
+      <workItem from="1720252802167" duration="4210000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -381,7 +384,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720255827463</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="useStats and Tasks operational">
+      <option name="closed" value="true" />
+      <created>1720256754852</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1720256754852</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,7 +411,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix form page format" />
     <MESSAGE value="hero section" />
     <MESSAGE value="hero page completed" />
     <MESSAGE value="form continued" />
@@ -425,6 +435,7 @@
     <MESSAGE value="show code in tab" />
     <MESSAGE value="redirect to monenergiecollective to create a project in admin center" />
     <MESSAGE value="usePomodoro widget operationnal" />
-    <option name="LAST_COMMIT_MESSAGE" value="usePomodoro widget operationnal" />
+    <MESSAGE value="useStats and Tasks operational" />
+    <option name="LAST_COMMIT_MESSAGE" value="useStats and Tasks operational" />
   </component>
 </project>
