@@ -1,22 +1,31 @@
-import { useState } from "react";
+import { useMemo } from "react";
 
-export const usePomodoroStats = () => {
-    const [numberOfPomodoro, setNumberOfPomodoro] = useState(0);
-    const [numberOfShortBreak, setNumberOfShortBreak] = useState(0);
-    const [numberOfLongBreak, setNumberOfLongBreak] = useState(0);
+export const usePomodoroStats = (tasks: { duration: number }[]) => {
+    const { numberOfPomodoro, numberOfShortBreak, numberOfLongBreak } = useMemo(() => {
+        let pomodoros = 0;
+        let shortBreaks = 0;
+        let longBreaks = 0;
 
-    const incrementPomodoro = () => setNumberOfPomodoro((prev) => prev + 1);
-    const decrementPomodoro = () => setNumberOfPomodoro((prev) => prev - 1);
-    const incrementShortBreak = () => setNumberOfShortBreak((prev) => prev + 1);
-    const incrementLongBreak = () => setNumberOfLongBreak((prev) => prev + 1);
+        tasks?.forEach((task) => {
+            const pomodoroSessions = Math.floor(task.duration / (25 * 60));
+            const breaks = pomodoroSessions < 4 ? pomodoroSessions : 3;
+            const longBreaksCount = pomodoroSessions >= 4 ? 1 : 0;
+
+            pomodoros += pomodoroSessions;
+            shortBreaks += breaks;
+            longBreaks += longBreaksCount;
+        });
+
+        return {
+            numberOfPomodoro: pomodoros,
+            numberOfShortBreak: shortBreaks,
+            numberOfLongBreak: longBreaks,
+        };
+    }, [tasks]);
 
     return {
         numberOfPomodoro,
         numberOfShortBreak,
         numberOfLongBreak,
-        incrementPomodoro,
-        decrementPomodoro,
-        incrementShortBreak,
-        incrementLongBreak,
     };
 };

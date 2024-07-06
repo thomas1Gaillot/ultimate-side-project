@@ -18,7 +18,6 @@ type Task = {
 
 export const useTasks = () => {
     const [tasks, setTasks] = useState<Task[]>([]);
-    const { incrementPomodoro, decrementPomodoro } = usePomodoroStats();
 
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
@@ -38,19 +37,17 @@ export const useTasks = () => {
                     duration: 0,
                 },
             ]);
-            incrementPomodoro();
         }
     };
 
     const deleteTask = (id: number) => {
         setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
-        decrementPomodoro();
     };
 
-    const updateTaskDuration = (taskName: string, duration: number) => {
+    const updateTaskDuration = (duration: number) => {
         setTasks((prevTasks) =>
             prevTasks.map((task) => {
-                if (task.name === taskName) {
+                if (task.name === form.getValues("task")) {
                     return {
                         ...task,
                         duration: task.duration + duration,

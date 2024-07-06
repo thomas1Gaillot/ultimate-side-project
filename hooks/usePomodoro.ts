@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const pomodoroPattern = [
-    { type: 'work', duration: 25  },
+    { type: 'work', duration: 25 * 60 },
     { type: 'break', duration: 5 * 60 },
     { type: 'work', duration: 25 * 60 },
     { type: 'break', duration: 5 * 60 },
@@ -11,7 +11,7 @@ const pomodoroPattern = [
     { type: 'longBreak', duration: 15 * 60 },
 ];
 
-export const usePomodoro = (onPhaseChange: (type: string) => void) => {
+export const usePomodoro = (onPhaseChange: (type: string) => void, updateTaskDuration: (duration: number) => void) => {
     const [patternIndex, setPatternIndex] = useState(0);
     const [secondsLeft, setSecondsLeft] = useState(pomodoroPattern[0].duration);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -20,6 +20,9 @@ export const usePomodoro = (onPhaseChange: (type: string) => void) => {
         if (secondsLeft > 0 && isPlaying) {
             const timerId = setInterval(() => {
                 setSecondsLeft((prev) => prev - 1);
+                if (pomodoroPattern[patternIndex].type === 'work') {
+                    updateTaskDuration(1); // Update task duration by 1 second
+                }
             }, 1000);
 
             return () => clearInterval(timerId); // Cleanup interval on component unmount
@@ -34,10 +37,10 @@ export const usePomodoro = (onPhaseChange: (type: string) => void) => {
 
     const togglePlayPause = () => setIsPlaying((prev) => !prev);
 
-    const reset = (e:any) => {
-        e.preventDefault()
+    const reset = (e: any) => {
+        e.preventDefault();
         setSecondsLeft(pomodoroPattern[patternIndex].duration);
-        togglePlayPause()
+        togglePlayPause();
     };
 
     return {
