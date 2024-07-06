@@ -27,34 +27,6 @@ export default function Home() {
                     {`Bonjour, je m'appelle Thomas 👋.
                     Je suis un développeur front-end passionné par la création d'expériences fantastiques.`}
                 </TypographyP>
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <Button variant="outline">Open</Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-56">
-                        <DropdownMenuLabel>Appearance</DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuCheckboxItem
-                            checked={showStatusBar}
-                            onCheckedChange={setShowStatusBar}
-                        >
-                            Status Bar
-                        </DropdownMenuCheckboxItem>
-                        <DropdownMenuCheckboxItem
-                            checked={showActivityBar}
-                            onCheckedChange={setShowActivityBar}
-                            disabled
-                        >
-                            Activity Bar
-                        </DropdownMenuCheckboxItem>
-                        <DropdownMenuCheckboxItem
-                            checked={showPanel}
-                            onCheckedChange={setShowPanel}
-                        >
-                            Panel
-                        </DropdownMenuCheckboxItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
                 <TypographyP>
                     <>
                         Bienvenue sur mon site.

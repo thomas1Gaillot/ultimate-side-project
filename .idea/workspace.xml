@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="show code in tab">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="redirect to monenergiecollective to create a project in admin center">
+      <change afterPath="$PROJECT_DIR$/hooks/usePomodoro.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/usePomodoroStats.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/useTasks.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/Timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/components/Timer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,31 +43,33 @@
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ThomasGaillot/Desktop/enogrid/admin-center&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/ThomasGaillot/Desktop/ultimate-side-project/pages/components",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\components" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\hooks" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\lib" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\styles" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -100,7 +106,11 @@
       <workItem from="1720171147860" duration="435000" />
       <workItem from="1720171651307" duration="1514000" />
       <workItem from="1720178425654" duration="2632000" />
-      <workItem from="1720188453685" duration="914000" />
+      <workItem from="1720188453685" duration="1007000" />
+      <workItem from="1720196321855" duration="412000" />
+      <workItem from="1720197349026" duration="122000" />
+      <workItem from="1720198053953" duration="2133000" />
+      <workItem from="1720252802167" duration="2772000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -358,7 +368,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719849351082</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="redirect to monenergiecollective to create a project in admin center">
+      <option name="closed" value="true" />
+      <created>1720193193648</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1720193193648</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +395,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add form dash start" />
     <MESSAGE value="page centered" />
     <MESSAGE value="fix form page format" />
     <MESSAGE value="hero section" />
@@ -402,6 +419,7 @@
     <MESSAGE value="add tabs from shadcn-ui" />
     <MESSAGE value="add timer in tab" />
     <MESSAGE value="show code in tab" />
-    <option name="LAST_COMMIT_MESSAGE" value="show code in tab" />
+    <MESSAGE value="redirect to monenergiecollective to create a project in admin center" />
+    <option name="LAST_COMMIT_MESSAGE" value="redirect to monenergiecollective to create a project in admin center" />
   </component>
 </project>

@@ -6,160 +6,123 @@ import Timer from "@/pages/pomodoro/components/Timer";
 import PomodoroStats from "@/pages/pomodoro/components/PomodoroStats";
 import {Button} from "@/components/ui/button";
 import {PauseIcon, PlayIcon, TrashIcon, Undo2} from "lucide-react";
-import {useEffect, useState} from "react";
-import {useForm} from "react-hook-form";
-import {z} from "zod";
-import {zodResolver} from "@hookform/resolvers/zod";
+import Head from "next/head";
 import {Separator} from "@/components/ui/separator";
 import {TypographySmall} from "@/components/ui/typography";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
-import {Simulate} from "react-dom/test-utils";
-import Head from "next/head";
 import {formatStringToXChar} from "@/lib/format-string-to-X-char";
-import submit = Simulate.submit;
-
-const FormSchema = z.object({
-    task: z.string().min(2, {
-        message: "Task is required.",
-    }),
-})
-
-type Task = {
-    id: number;
-    name: string;
-    duration: number;
-}
+import {usePomodoro} from "@/hooks/usePomodoro";
+import {useTasks} from "@/hooks/useTasks";
+import {usePomodoroStats} from "@/hooks/usePomodoroStats";
 
 export default function PomodoroWidget() {
-    const [secondsLeft, setSecondsLeft] = useState(25 * 60);
+    const {tasks, form, addTask, deleteTask, updateTaskDuration} = useTasks();
+    const {numberOfPomodoro, numberOfShortBreak, numberOfLongBreak} = usePomodoroStats();
 
-    const [numberOfPomodoro, setNumberOfPomodoro] = useState(0)
-    const [numberOfShortBreak, setNumberOfShortBreak] = useState(0)
-    const [numberOfLongBreak, setNumberOfLongBreak] = useState(0)
-    const [resetTimer, setResetTimer] = useState(false);
-    const [isPlaying, setIsPlaying] = useState(false)
-    const [tasks, setTasks] = useState<Task[]>([])
-
-    useEffect(() => {
-        if (secondsLeft > 0 && isPlaying) {
-            const timerId = setInterval(() => {
-                setSecondsLeft(secondsLeft - 1);
-                setTasks((prevTasks) => prevTasks.map((task) => {
-                    if (task.name === form.getValues('task')) {
-                        return {
-                            ...task,
-                            duration: task.duration + 1
-                        }
-                    }
-                    return {
-                        ...task,
-                        duration: task.duration === 0 ? 25 * 60 : task.duration
-                    }
-                }))
-            }, 1000);
-
-            return () => clearInterval(timerId); // Cleanup interval on component unmount
+    const handlePhaseChange = (type: string) => {
+        switch (type) {
+            case 'work':
+                form.setValue("task", "new task");
+                break;
+            case 'break':
+                form.setValue("task", "5 min break");
+                break;
+            case 'longBreak':
+                form.setValue("task", "15 min break");
+                break;
+            default:
+                form.setValue("task", "");
         }
-    }, [secondsLeft, isPlaying]);
-
-    const handleDeleteTask = (id: number) => {
-        setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id))
-        setNumberOfPomodoro(prev => prev - 1)
-    }
-    const form = useForm<z.infer<typeof FormSchema>>({
-        resolver: zodResolver(FormSchema),
-        defaultValues: {
-            task: "",
-        },
-    })
-
-    function onSubmit() {
-        setIsPlaying(prev => !prev)
-        const thisTaskDoesntExist = tasks.every(task => task.name !== form.getValues('task'))
-        if (!isPlaying && thisTaskDoesntExist) {
-            setTasks((prevTasks) => [
-                ...prevTasks,
-                {
-                    id: Math.random(),
-                    name: form.getValues('task'),
-                    duration: 0
-                }
-            ])
-            setNumberOfPomodoro(prev => prev + 1)
-        }
-    }
-
-    const reset = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault()
-        setResetTimer(true); // Change the reset key to trigger the timer reset
-        setIsPlaying(false);
     };
 
-    return <>
-        <Head>
-            <title>{`${formatSecondsToMmss(secondsLeft)} 🍅 - ${formatStringToXChar(tasks[tasks.length - 1]?.name, 20)} `}</title>
-            <meta name="description" content="Building Things front-end side"/>
-            <link rel="icon" href="/avocado.ico"/>
-        </Head>
-        <Card className={'p-4 py-2 flex flex-col gap-4'}>
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6 ">
-                    <FormField
-                        control={form.control}
-                        name="task"
-                        render={({field}) => (
-                            <FormItem>
-                                <FormControl>
-                                    <div className={"flex items-center gap-2"}>
-                                        <Image src={'/tomato.svg'} alt={'tomato'} width={50} height={50}
-                                               className={'h-5 w-5 '}/>
-                                        <Input className={"border-none bg-gray-50 "}
-                                               placeholder="Add a task"  {...field} />
-                                    </div>
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem>
-                        )}
-                    />
-                    <Timer secondsLeft={secondsLeft}
-                           setSecondsLeft={setSecondsLeft}
-                           resetTimer={resetTimer} setResetTimer={setResetTimer}/>
-                    <div className={"flex w-full justify-between items-center gap-4 md:gap-16"}>
-                        <PomodoroStats pomodoro={numberOfPomodoro} shortBreak={numberOfShortBreak}
-                                       longBreak={numberOfLongBreak}/>
-                        <div className={"flex gap-2 items-center "}>
-                            <Button onClick={() => submit}
-                                    variant={'default'}
-                                    disabled={!form.watch('task')}
-                                    className={'px-6'}>
-                                {isPlaying ? <PauseIcon size={24} className={"cursor-pointer text-gray-50 "}/>
-                                    : <PlayIcon size={24} className={"cursor-pointer text-gray-50 "}/>}
-                            </Button>
-                            <Button onClick={reset} variant={'outline'} className={'px-2'}>
-                                <Undo2 size={24} className={"cursor-pointer text-gray-700 "}/>
+    const {
+        secondsLeft,
+        isPlaying,
+        togglePlayPause,
+        reset,
+        currentPhase,
+    } = usePomodoro(handlePhaseChange);
+
+    const onSubmit = () => {
+        togglePlayPause();
+        if (!isPlaying) {
+            addTask(form.getValues("task"));
+        }
+    };
+
+    function currentPhaseIcon(type: string) {
+        switch (type) {
+            case 'work':
+                return '/tomato.svg';
+            case 'break':
+                return '/teapot.svg';
+            case 'longBreak':
+                return '/beer.svg';
+            default:
+                return '/tomato.svg';
+        }
+    }
+
+    return (
+        <>
+            <Head>
+                <title>{`${formatSecondsToMmss(secondsLeft)} 🍅 - ${formatStringToXChar(tasks[tasks.length - 1]?.name, 20)} `}</title>
+                <meta name="description" content="Building Things front-end side"/>
+                <link rel="icon" href="/avocado.ico"/>
+            </Head>
+            <Card className={"p-4 py-2 flex flex-col gap-4"}>
+                <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6 ">
+                        <FormField
+                            control={form.control}
+                            name="task"
+                            render={({field}) => (
+                                <FormItem>
+                                    <FormControl>
+                                        <div className={"flex items-center gap-2"}>
+                                            <Image src={currentPhaseIcon(currentPhase)} alt={"tomato"} width={50}
+                                                   height={50} className={"h-5 w-5 "}/>
+                                            <Input className={"border-none bg-gray-50 "}
+                                                   placeholder="Add a task" {...field} />
+                                        </div>
+                                    </FormControl>
+                                    <FormMessage/>
+                                </FormItem>
+                            )}
+                        />
+                        <Timer secondsLeft={secondsLeft}/>
+                        <div className={"flex w-full justify-between items-center gap-4 md:gap-16"}>
+                            <PomodoroStats pomodoro={numberOfPomodoro} shortBreak={numberOfShortBreak}
+                                           longBreak={numberOfLongBreak}/>
+                            <div className={"flex gap-2 items-center "}>
+                                <Button onClick={form.handleSubmit(onSubmit)} variant={"default"}
+                                        disabled={!form.watch("task")} className={"px-6"}>
+                                    {isPlaying ? <PauseIcon size={24} className={"cursor-pointer text-gray-50 "}/> :
+                                        <PlayIcon size={24} className={"cursor-pointer text-gray-50 "}/>}
+                                </Button>
+                                <Button onClick={reset} variant={"outline"} className={"px-2"}>
+                                    <Undo2 size={24} className={"cursor-pointer text-gray-700 "}/>
+                                </Button>
+                            </div>
+                        </div>
+                    </form>
+                </Form>
+            </Card>
+            <Separator className={"my-7 w-[150px]"}/>
+            <div className="grid gap-2 w-full">
+                {tasks.map((task) => (
+                    <div key={task.id}
+                         className="flex items-center justify-between gap-8 bg-muted rounded-md pr-2 pl-4 py-1">
+                        <TypographySmall>{task.name}</TypographySmall>
+                        <div className="flex items-center gap-2">
+                            <TypographySmall>{formatSecondsToMmss(task.duration)}</TypographySmall>
+                            <Button variant="outline" size="icon" onClick={() => deleteTask(task.id)}>
+                                <TrashIcon className="w-4 h-4"/>
                             </Button>
                         </div>
                     </div>
-                </form>
-            </Form>
-        </Card>
-        <Separator className={'my-7 w-[150px]'}/>
-        <div className="grid gap-2 w-full">
-            {tasks.map((task) => (
-                <div key={task.id}
-                     className="flex items-center justify-between gap-8 bg-muted rounded-md pr-2 pl-4 py-1">
-                    <TypographySmall>{task.name}</TypographySmall>
-
-                    <div className="flex items-center gap-2">
-                        <TypographySmall>{formatSecondsToMmss(task.duration)}</TypographySmall>
-                        <Button variant="outline" size="icon" onClick={() => handleDeleteTask(task.id)}>
-                            <TrashIcon className="w-4 h-4"/>
-                        </Button>
-                    </div>
-
-                </div>
-            ))}
-        </div>
-    </>
-
+                ))}
+            </div>
+        </>
+    );
 }
