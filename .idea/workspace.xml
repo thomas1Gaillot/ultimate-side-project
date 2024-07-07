@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add missing component">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add wip sections and fix enogrid logo import">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/stack/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/stack/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +112,7 @@
       <workItem from="1720197349026" duration="122000" />
       <workItem from="1720198053953" duration="2133000" />
       <workItem from="1720252802167" duration="5686000" />
-      <workItem from="1720342098178" duration="7984000" />
+      <workItem from="1720342098178" duration="9005000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -481,7 +482,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720349616615</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="add wip sections and fix enogrid logo import">
+      <option name="closed" value="true" />
+      <created>1720350983373</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1720350983373</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +509,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="new page" />
     <MESSAGE value="stack inspiration" />
     <MESSAGE value="structure to add incrementally new things" />
     <MESSAGE value="portfolio" />
@@ -525,6 +533,7 @@
     <MESSAGE value="[pomodoro widget bugfix] - task break timer" />
     <MESSAGE value="navbar on mobile view" />
     <MESSAGE value="add missing component" />
-    <option name="LAST_COMMIT_MESSAGE" value="add missing component" />
+    <MESSAGE value="add wip sections and fix enogrid logo import" />
+    <option name="LAST_COMMIT_MESSAGE" value="add wip sections and fix enogrid logo import" />
   </component>
 </project>

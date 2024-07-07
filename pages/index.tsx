@@ -18,16 +18,20 @@ export default function Home() {
                 <TypographyP>
                     <>
                         Bienvenue sur mon site.
-                        Découvre <Link className={'hover:underline text-blue-700'} href={'/stack'}>la stack</Link> avec
-                        NextJS et shadcn-ui entre autre.
                     </>
                 </TypographyP>
                 <TypographyP>
-                    {` Le but de ce site est également de partager des bonnes pratiques, inspirations et de
-                    pouvoir passer un bon moment en faisant évoluer ce site.`}
+                    <>
+                        {`Tu y trouveras `}
+                        <Link className={'hover:underline text-indigo-700'} href={'/pomodoro'}>des widgets</Link>
+                        {`, jeux et inspirations pour t'aider à rester concentré et productif.`}
+                    </>
+                </TypographyP>
+                <TypographyP>
+                    {` Ce site est en construction, n'hésite pas à revenir plus tard pour voir les nouveautés.`}
                 </TypographyP>
                 <TypographyBlockquote>
-                    {`"How to finish a project ? Stop starting new ones." - John Doe, Sept. 2024`}
+                    {`"How to finish a project ? Stop starting new ones." - Jean, Sept. 2024`}
                 </TypographyBlockquote>
             </section>
 
