@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="[UI] - stack page first content">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="[pomodoro widget bugfix] - task break timer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/usePomodoro.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/usePomodoro.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/useTasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useTasks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/stack/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/stack/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/Sidebar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +111,7 @@
       <workItem from="1720197349026" duration="122000" />
       <workItem from="1720198053953" duration="2133000" />
       <workItem from="1720252802167" duration="5686000" />
-      <workItem from="1720342098178" duration="5454000" />
+      <workItem from="1720342098178" duration="7056000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -459,7 +457,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720347452861</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="[pomodoro widget bugfix] - task break timer">
+      <option name="closed" value="true" />
+      <created>1720347869818</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1720347869818</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +484,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="PRM identifier OTP" />
     <MESSAGE value="PRM identifier OTP responsive" />
     <MESSAGE value="magic ui for a bit of spice" />
     <MESSAGE value="new page" />
@@ -503,6 +508,7 @@
     <MESSAGE value="[UI] - remove style form tasklist" />
     <MESSAGE value="[UI] - remove style from pomodoro widget" />
     <MESSAGE value="[UI] - stack page first content" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UI] - stack page first content" />
+    <MESSAGE value="[pomodoro widget bugfix] - task break timer" />
+    <option name="LAST_COMMIT_MESSAGE" value="[pomodoro widget bugfix] - task break timer" />
   </component>
 </project>

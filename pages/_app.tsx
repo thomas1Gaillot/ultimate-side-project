@@ -16,7 +16,7 @@ function MyApp({Component, pageProps}: AppProps) {
                 <meta name="description" content="Building Things front-end side"/>
                 <link rel="icon" href="/avocado.ico" />
             </Head>
-            <div className={`${inter.className} relative flex h-screen max-h-screen overflow-hidden w-full`}>
+            <div className={`${inter.className} relative flex flex-col md:flex-row h-screen max-h-screen overflow-hidden w-full`}>
                 <Sidebar/>
                 <div className={"overflow-y-auto w-full"}>
                     <RootLayout>
