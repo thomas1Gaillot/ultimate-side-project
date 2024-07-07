@@ -67,7 +67,7 @@ export default function PomodoroWidget() {
                     />
                 </div>
             </Card>
-            <Separator className={"my-7 w-[150px]"} />
+            <Separator className={"my-7 w-full"} />
             <TaskList tasks={tasks} deleteTask={deleteTask} />
         </>
     );
