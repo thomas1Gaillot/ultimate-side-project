@@ -25,7 +25,7 @@ export const  pages = [
             },
             {
                 href: '/inspiration',
-                label: 'Inspiration',
+                label: 'Inspiration (WIP)',
                 icon: StarIcon,
             },
         ]
@@ -39,11 +39,11 @@ export const  pages = [
                 icon: TimerIcon,
             }, {
                 href: '/croissant',
-                label: 'Croissant',
+                label: 'Croissant (WIP)',
                 icon: CroissantIcon,
             },{
                 href: '/spotify',
-                label: 'Spotify',
+                label: 'Spotify (WIP)',
                 icon: MusicIcon,
             },
         ]
@@ -53,11 +53,11 @@ export const  pages = [
         pages: [
             {
                 href: '/ux-games',
-                label: 'UX Games',
+                label: 'UX Games (WIP)',
                 icon: JoystickIcon,
             }, {
                 href: '/site-reproduction',
-                label: 'Site reproduction',
+                label: 'Site reproduction (WIP)',
                 icon: Layers2Icon,
             },
         ]

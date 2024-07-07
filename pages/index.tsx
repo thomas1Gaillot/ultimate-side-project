@@ -35,7 +35,7 @@ export default function Home() {
                 <TypographyH2>Expériences</TypographyH2>
                 <div className={'grid grid-cols-1 md:grid-cols-2 gap-4 pt-7'}>
                     <JobCard
-                        img={{src: '/enogrid-logo.png', alt: 'enogrid-logo'}}
+                        img={{src: '/logos/enogrid-logo.png', alt: 'enogrid-logo'}}
                         jobtitle={'Développeur Front-End'}
                         company={'Enogrid'}
                         from={'Sept. 2021'}
