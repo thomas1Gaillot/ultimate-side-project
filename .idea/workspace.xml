@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add wip sections and fix enogrid logo import">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="spotify widget">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ui/progress.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/login.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/callback.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/spotify/SpotifyWidget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/spotify/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/music/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/music/cofree.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/music/lofi-hip-hop.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/avocado.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/avocado.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/pomodoro/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/stack/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/stack/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -42,22 +55,22 @@
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/ThomasGaillot/Desktop/ultimate-side-project/public/logos",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ThomasGaillot/Desktop/ultimate-side-project/public/logos&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\logos" />
@@ -66,11 +79,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\music" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api\spotify" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\stack" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\logos" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\hooks" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\lib" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -112,7 +125,8 @@
       <workItem from="1720197349026" duration="122000" />
       <workItem from="1720198053953" duration="2133000" />
       <workItem from="1720252802167" duration="5686000" />
-      <workItem from="1720342098178" duration="9005000" />
+      <workItem from="1720342098178" duration="18062000" />
+      <workItem from="1720366793024" duration="4505000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -490,7 +504,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720350983373</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="text">
+      <option name="closed" value="true" />
+      <created>1720351900608</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1720351900608</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,8 +531,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="stack inspiration" />
-    <MESSAGE value="structure to add incrementally new things" />
     <MESSAGE value="portfolio" />
     <MESSAGE value="pomodoro ui" />
     <MESSAGE value="pomodoro input with start and pause" />
@@ -534,6 +554,8 @@
     <MESSAGE value="navbar on mobile view" />
     <MESSAGE value="add missing component" />
     <MESSAGE value="add wip sections and fix enogrid logo import" />
-    <option name="LAST_COMMIT_MESSAGE" value="add wip sections and fix enogrid logo import" />
+    <MESSAGE value="text" />
+    <MESSAGE value="spotify widget" />
+    <option name="LAST_COMMIT_MESSAGE" value="spotify widget" />
   </component>
 </project>

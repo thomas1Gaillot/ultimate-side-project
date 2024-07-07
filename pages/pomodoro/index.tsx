@@ -1,7 +1,7 @@
 import PomodoroWidget from "@/pages/pomodoro/PomodoroWidget";
 import {TypographyBlockquote, TypographyH1, TypographyLead, TypographyList} from "@/components/ui/typography";
 
-export default function Pomodoro() {
+export default function PomodoroPage() {
     return (
         <div className={"flex flex-col gap-4 pb-8"}>
             <TypographyH1>

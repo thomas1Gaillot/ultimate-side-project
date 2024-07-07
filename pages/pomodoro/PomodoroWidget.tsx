@@ -52,7 +52,7 @@ export default function PomodoroWidget() {
             <Head>
                 <title>{`${formatSecondsToMmss(secondsLeft)} 🍅 - ${formatStringToXChar(tasks[tasks.length - 1]?.name, 20)} `}</title>
                 <meta name="description" content="Building Things front-end side" />
-                <link rel="icon" href="/avocado.ico" />
+                <link rel="icon" href="/public/avocado.ico" />
             </Head>
             <Card className={"p-4 py-2 flex flex-col gap-4"}>
                 <TaskForm form={form} currentPhase={currentPhase} onSubmit={onSubmit} />

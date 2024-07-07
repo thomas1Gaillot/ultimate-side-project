@@ -14,9 +14,10 @@ function MyApp({Component, pageProps}: AppProps) {
             <Head>
                 <title>Thomas Gaillot</title>
                 <meta name="description" content="Building Things front-end side"/>
-                <link rel="icon" href="/avocado.ico" />
+                <link rel="icon" href="/public/avocado.ico"/>
             </Head>
-            <div className={`${inter.className} relative flex flex-col md:flex-row h-screen max-h-screen overflow-hidden w-full`}>
+            <div
+                className={`${inter.className} relative flex flex-col md:flex-row h-screen max-h-screen overflow-hidden w-full`}>
                 <Sidebar/>
                 <div className={"overflow-y-auto w-full"}>
                     <RootLayout>
