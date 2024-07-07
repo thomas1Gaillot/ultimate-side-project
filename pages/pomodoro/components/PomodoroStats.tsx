@@ -1,6 +1,5 @@
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import Image from "next/image";
-import {Separator} from "@/components/ui/separator";
 
 export default function PomodoroStats({pomodoro, shortBreak, longBreak}: {
     pomodoro: number,
