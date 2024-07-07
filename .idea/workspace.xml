@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="[UI] - remove style form tasklist">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="[UI] - remove style from pomodoro widget">
+      <change afterPath="$PROJECT_DIR$/data/stack.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/stack/StackWidget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/stack/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logos/nextjs.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logos/shadcn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logos/typescript.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/TaskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/components/TaskList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/pomodoro/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/enogrid-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/logos/enogrid-logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,33 +48,35 @@
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ThomasGaillot/Desktop/ultimate-side-project/pages/components&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/ThomasGaillot/Desktop/ultimate-side-project/public/logos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\logos" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\components" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\stack" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\logos" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\hooks" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\lib" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -110,7 +118,7 @@
       <workItem from="1720197349026" duration="122000" />
       <workItem from="1720198053953" duration="2133000" />
       <workItem from="1720252802167" duration="5686000" />
-      <workItem from="1720342098178" duration="948000" />
+      <workItem from="1720342098178" duration="5030000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -440,7 +448,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720342818592</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="[UI] - remove style from pomodoro widget">
+      <option name="closed" value="true" />
+      <created>1720343164045</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1720343164045</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +475,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="lock updated" />
     <MESSAGE value="segment tooltip in popover" />
     <MESSAGE value="PRM identifier OTP" />
     <MESSAGE value="PRM identifier OTP responsive" />
@@ -484,6 +499,7 @@
     <MESSAGE value="remove unused stuff" />
     <MESSAGE value="fix build" />
     <MESSAGE value="[UI] - remove style form tasklist" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UI] - remove style form tasklist" />
+    <MESSAGE value="[UI] - remove style from pomodoro widget" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UI] - remove style from pomodoro widget" />
   </component>
 </project>

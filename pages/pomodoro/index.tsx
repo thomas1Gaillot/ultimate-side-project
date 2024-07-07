@@ -1,6 +1,5 @@
 import PomodoroWidget from "@/pages/pomodoro/PomodoroWidget";
-import {TypographyH1, TypographyH2, TypographyLead} from "@/components/ui/typography";
-import {Card} from "@/components/ui/card";
+import {TypographyH1, TypographyLead} from "@/components/ui/typography";
 
 export default function Pomodoro() {
     return (
@@ -16,13 +15,6 @@ export default function Pomodoro() {
             <div className={"flex flex-col"}>
                 <PomodoroWidget/>
             </div>
-            <TypographyH2>
-                Stack
-            </TypographyH2>
-            <TypographyH2>
-                Architecture
-            </TypographyH2>
-
         </div>
     );
 }
