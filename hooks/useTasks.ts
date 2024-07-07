@@ -49,6 +49,7 @@ export const useTasks = () => {
     const updateTaskDuration = (duration: number) => {
         setTasks((prevTasks) =>
             prevTasks.map((task) => {
+                console.log('updateTaskDuration  :',task.name, form.getValues("task"));
                 if (task.name === form.getValues("task")) {
                     return {
                         ...task,

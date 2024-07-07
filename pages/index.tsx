@@ -4,22 +4,10 @@ import {Card} from "@/components/ui/card";
 import Image from "next/image";
 import {Icon} from "@tabler/icons-react";
 import {DribbbleIcon, GithubIcon, LinkedinIcon} from "lucide-react";
-import {
-    DropdownMenu, DropdownMenuCheckboxItem,
-    DropdownMenuContent,
-    DropdownMenuLabel,
-    DropdownMenuSeparator, DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu";
-import {Button} from "@/components/ui/button";
-import {useState} from "react";
-import {DropdownMenuCheckboxItemProps} from "@radix-ui/react-dropdown-menu";
 
-type Checked = DropdownMenuCheckboxItemProps["checked"]
 
 export default function Home() {
-    const [showStatusBar, setShowStatusBar] = useState<Checked>(true)
-    const [showActivityBar, setShowActivityBar] = useState<Checked>(false)
-    const [showPanel, setShowPanel] = useState<Checked>(false)
+
     return (
         <>
             <section className="my-8">
