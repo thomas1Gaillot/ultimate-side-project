@@ -4,24 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="spotify widget">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/progress.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/login.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/callback.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/spotify/SpotifyWidget.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/spotify/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/music/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/music/cofree.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/music/lofi-hip-hop.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/avocado.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/avocado.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pomodoro/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="spotify sdk working ;)">
+      <change afterPath="$PROJECT_DIR$/components/ui/skeleton.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +110,7 @@
       <workItem from="1720198053953" duration="2133000" />
       <workItem from="1720252802167" duration="5686000" />
       <workItem from="1720342098178" duration="18062000" />
-      <workItem from="1720366793024" duration="4505000" />
+      <workItem from="1720366793024" duration="4928000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -512,7 +496,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720351900608</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="spotify sdk working ;)">
+      <option name="closed" value="true" />
+      <created>1720372389945</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1720372389945</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +523,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="portfolio" />
     <MESSAGE value="pomodoro ui" />
     <MESSAGE value="pomodoro input with start and pause" />
     <MESSAGE value="pomodoro tasks listing" />
@@ -556,6 +547,7 @@
     <MESSAGE value="add wip sections and fix enogrid logo import" />
     <MESSAGE value="text" />
     <MESSAGE value="spotify widget" />
-    <option name="LAST_COMMIT_MESSAGE" value="spotify widget" />
+    <MESSAGE value="spotify sdk working ;)" />
+    <option name="LAST_COMMIT_MESSAGE" value="spotify sdk working ;)" />
   </component>
 </project>
