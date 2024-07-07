@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="fix build">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="[UI] - remove style form tasklist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/TaskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/components/TaskList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +110,7 @@
       <workItem from="1720197349026" duration="122000" />
       <workItem from="1720198053953" duration="2133000" />
       <workItem from="1720252802167" duration="5686000" />
-      <workItem from="1720342098178" duration="622000" />
+      <workItem from="1720342098178" duration="948000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />
@@ -430,7 +432,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720342570957</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="[UI] - remove style form tasklist">
+      <option name="closed" value="true" />
+      <created>1720342818592</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1720342818592</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +459,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="submit a form easily with zod" />
     <MESSAGE value="lock updated" />
     <MESSAGE value="segment tooltip in popover" />
     <MESSAGE value="PRM identifier OTP" />
@@ -474,6 +483,7 @@
     <MESSAGE value="hit a ding sound after each steps" />
     <MESSAGE value="remove unused stuff" />
     <MESSAGE value="fix build" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix build" />
+    <MESSAGE value="[UI] - remove style form tasklist" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UI] - remove style form tasklist" />
   </component>
 </project>

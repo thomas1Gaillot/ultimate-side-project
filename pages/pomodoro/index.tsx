@@ -12,9 +12,10 @@ export default function Pomodoro() {
                 A time management technique that uses a timer to break down work into intervals, traditionally 25
                 minutes in length, separated by short breaks.
             </TypographyLead>
-            <Card className={"w-full p-8"}>
+
+            <div className={"flex flex-col"}>
                 <PomodoroWidget/>
-            </Card>
+            </div>
             <TypographyH2>
                 Stack
             </TypographyH2>

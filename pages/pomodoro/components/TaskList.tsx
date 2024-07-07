@@ -8,7 +8,7 @@ const TaskList = ({tasks, deleteTask}: {
     deleteTask: (id: number) => void;
 }) => {
     return (
-        <div className="grid gap-2 w-full">
+        <div className="grid gap-2 w-full pt-8">
             {tasks?.map((task) => (
                 <div key={task.id}
                      className="flex items-center justify-between gap-8  pr-2 pl-4 py-1">
