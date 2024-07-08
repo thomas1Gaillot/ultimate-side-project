@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="spotify sdk working ;)">
-      <change afterPath="$PROJECT_DIR$/components/ui/skeleton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/types/global.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/types/spotify.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/spotify/SpotifyWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/spotify/SpotifyWidget.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -111,6 +114,8 @@
       <workItem from="1720252802167" duration="5686000" />
       <workItem from="1720342098178" duration="18062000" />
       <workItem from="1720366793024" duration="4928000" />
+      <workItem from="1720422416826" duration="34000" />
+      <workItem from="1720455918891" duration="221000" />
     </task>
     <task id="LOCAL-00001" summary="boilerplate">
       <option name="closed" value="true" />

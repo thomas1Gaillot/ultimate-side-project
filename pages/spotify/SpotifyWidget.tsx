@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Pause, Play, SkipBack, SkipForward, Loader } from 'lucide-react';
+import { Pause, Play, SkipBack, SkipForward } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Progress } from "@/components/ui/progress";
-import {Skeleton} from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const SpotifyWidget: React.FC = () => {
     const [player, setPlayer] = useState<Spotify.Player | null>(null);
@@ -24,24 +24,24 @@ const SpotifyWidget: React.FC = () => {
             window.onSpotifyWebPlaybackSDKReady = () => {
                 const player = new window.Spotify.Player({
                     name: 'Web Playback SDK Quick Start Player',
-                    getOAuthToken: cb => {
+                    getOAuthToken: (cb: (arg0: string) => void) => {
                         cb(token);
                     },
                 });
 
                 setPlayer(player);
 
-                player.addListener('ready', ({ device_id }) => {
+                player.addListener('ready', ({ device_id }: Spotify.WebPlaybackInstance) => {
                     console.log('Ready with Device ID', device_id);
                     setDeviceId(device_id);
                     setIsLoading(false);
                 });
 
-                player.addListener('not_ready', ({ device_id }) => {
+                player.addListener('not_ready', ({ device_id }: Spotify.WebPlaybackInstance) => {
                     console.log('Device ID has gone offline', device_id);
                 });
 
-                player.addListener('player_state_changed', state => {
+                player.addListener('player_state_changed', (state: Spotify.PlayerState | null) => {
                     if (!state) {
                         return;
                     }
@@ -49,7 +49,7 @@ const SpotifyWidget: React.FC = () => {
                     setSpotifyTrack(state.track_window.current_track);
                     setIsPlaying(!state.paused);
 
-                    player.getCurrentState().then(state => {
+                    player.getCurrentState().then((state:any) => {
                         if (!state) {
                             setIsPlaying(false);
                         } else {
@@ -70,7 +70,7 @@ const SpotifyWidget: React.FC = () => {
             fetch(`https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`, {
                 method: 'PUT',
                 body: JSON.stringify({
-                    uris: ['spotify:track:3n3Ppam7vgaVa1iaRUc9Lp'], // Remplacez par l'URI de la piste Spotify de votre choix
+                    uris: ['spotify:track:3n3Ppam7vgaVa1iaRUc9Lp'], // Replace with the Spotify track URI of your choice
                 }),
                 headers: {
                     'Content-Type': 'application/json',
@@ -96,40 +96,39 @@ const SpotifyWidget: React.FC = () => {
             {/* Head section */}
             <div className="flex justify-between items-center">
                 <div className="flex flex-col w-full items-center gap-1">
-                    <p className="uppercase text-[11px] font-light leading-none tracking-wide">Lecture à partir de </p>
-                    <h4 className="text-xs leading-none font-semibold tracking-tight">Ma playlist Chill</h4>
+                    <p className="uppercase text-[11px] font-light leading-none tracking-wide">Playing from </p>
+                    <h4 className="text-xs leading-none font-semibold tracking-tight">My Chill Playlist</h4>
                 </div>
             </div>
-                <>
-                    {!isLoading && spotifyTrack ? (
-                            <div className="flex flex-col">
-                                <h2 className="font-semibold">{spotifyTrack.name}</h2>
-                                <p className="text-opacity-60 text-sm">{spotifyTrack.artists[0].name}</p>
-                                <img src={spotifyTrack.album.images[0].url} alt="album cover" style={{width: 50}}/>
-                            </div>
-                        ) :
-                        <div className="flex flex-col gap-2">
-                            <Skeleton className=" h-4 w-[250px] bg-white/10"/>
-                            <Skeleton className=" h-4 w-[250px] bg-white/10"/>
-                            <Skeleton className=" h-[50px] w-[50px] bg-white/10"/>
-                        </div>
-                    }
-                    <Progress className="w-full" value={progress}/>
-
-                    {/* Main section */}
-                    <div className="flex justify-center space-x-4 w-full">
-                        <Button onClick={() => player?.previousTrack()} variant="ghost">
-                            <SkipBack className="w-6 h-6"/>
-                        </Button>
-                        <Button onClick={playPauseTrack} variant="ghost">
-                            {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
-                        </Button>
-                        <Button onClick={() => player?.nextTrack()} variant="ghost">
-                            <SkipForward className="w-6 h-6" />
-                        </Button>
+            <>
+                {!isLoading && spotifyTrack ? (
+                    <div className="flex flex-col">
+                        <h2 className="font-semibold">{spotifyTrack.name}</h2>
+                        <p className="text-opacity-60 text-sm">{spotifyTrack.artists[0].name}</p>
+                        <img src={spotifyTrack.album.images[0].url} alt="album cover" style={{ width: 50 }} />
                     </div>
-                </>
+                ) : (
+                    <div className="flex flex-col gap-2">
+                        <Skeleton className=" h-4 w-[250px] bg-white/10" />
+                        <Skeleton className=" h-4 w-[250px] bg-white/10" />
+                        <Skeleton className=" h-[50px] w-[50px] bg-white/10" />
+                    </div>
+                )}
+                <Progress className="w-full" value={progress} />
 
+                {/* Main section */}
+                <div className="flex justify-center space-x-4 w-full">
+                    <Button onClick={() => player?.previousTrack()} variant="ghost">
+                        <SkipBack className="w-6 h-6" />
+                    </Button>
+                    <Button onClick={playPauseTrack} variant="ghost">
+                        {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
+                    </Button>
+                    <Button onClick={() => player?.nextTrack()} variant="ghost">
+                        <SkipForward className="w-6 h-6" />
+                    </Button>
+                </div>
+            </>
         </div>
     );
 };
