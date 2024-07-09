@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui/card";
 import Head from "next/head";
-import { Separator } from "@/components/ui/separator";
 import { formatSecondsToMmss } from "@/lib/format-seconds-to-mmss";
 import { formatStringToXChar } from "@/lib/format-string-to-X-char";
 import { usePomodoro } from "@/hooks/usePomodoro";

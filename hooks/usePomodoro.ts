@@ -1,16 +1,9 @@
 import {useEffect, useState} from "react";
 import useSound from "@/hooks/useSound";
+import {pomodoroPattern} from "@/domain/pomodoro/Pomodoro";
+import usePomodoroStore from "./usePomodoroStore";
 
-const pomodoroPattern = [
-    {type: 'work', duration: 25 * 60},
-    {type: 'break', duration: 5 * 60},
-    {type: 'work', duration: 25 * 60},
-    {type: 'break', duration: 5 * 60},
-    {type: 'work', duration: 25 * 60},
-    {type: 'break', duration: 5 * 60},
-    {type: 'work', duration: 25 * 60},
-    {type: 'longBreak', duration: 15 * 60},
-];
+
 /**
  * Custom hook to manage the Pomodoro timer
  * @param onPhaseChange
@@ -19,14 +12,12 @@ const pomodoroPattern = [
 
 export const usePomodoro = (onPhaseChange: (type: string) => void, updateTaskDuration: (duration: number) => void) => {
     const {play} = useSound("/ding.mp3");
-    const [patternIndex, setPatternIndex] = useState(0);
-    const [secondsLeft, setSecondsLeft] = useState(pomodoroPattern[0].duration);
-    const [isPlaying, setIsPlaying] = useState(false);
+    const {setSecondsLeft, setPatternIndex, setIsPlaying, patternIndex, secondsLeft, isPlaying} = usePomodoroStore();
 
     useEffect(() => {
         if (secondsLeft > 0 && isPlaying) {
             const timerId = setInterval(() => {
-                setSecondsLeft((prev) => prev - 1);
+                setSecondsLeft(secondsLeft - 1);
                 updateTaskDuration(1); // Update task duration by 1 second
             }, 1000);
 
@@ -41,7 +32,7 @@ export const usePomodoro = (onPhaseChange: (type: string) => void, updateTaskDur
         }
     }, [secondsLeft, isPlaying]);
 
-    const togglePlayPause = () => setIsPlaying((prev) => !prev);
+    const togglePlayPause = () => setIsPlaying(!isPlaying);
 
     const reset = (e: any) => {
         e.preventDefault();

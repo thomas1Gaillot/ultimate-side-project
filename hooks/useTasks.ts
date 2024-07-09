@@ -1,7 +1,7 @@
-import {useState} from "react";
 import {useForm} from "react-hook-form";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
+import usePomodoroStore from "@/hooks/usePomodoroStore";
 
 const FormSchema = z.object({
     task: z.string().min(2, {
@@ -9,30 +9,24 @@ const FormSchema = z.object({
     }),
 });
 
-type Task = {
-    id: number;
-    name: string;
-    duration: number;
-};
+
 /**
  * Custom hook to manage the tasks logic
  **/
 
 export const useTasks = () => {
-    const [tasks, setTasks] = useState<Task[]>([]);
+    const {tasks, setTasks, formValues, setFormValues} = usePomodoroStore();
 
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
-        defaultValues: {
-            task: "",
-        },
+        defaultValues: formValues,
     });
 
     const addTask = (taskName: string) => {
         const taskExists = tasks.some((task) => task.name === taskName);
         if (!taskExists) {
-            setTasks((prevTasks) => [
-                ...prevTasks,
+            setTasks([
+                ...tasks,
                 {
                     id: Math.random(),
                     name: taskName,
@@ -43,13 +37,11 @@ export const useTasks = () => {
     };
 
     const deleteTask = (id: number) => {
-        setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+        setTasks(tasks.filter((task) => task.id !== id));
     };
 
     const updateTaskDuration = (duration: number) => {
-        setTasks((prevTasks) =>
-            prevTasks.map((task) => {
-                console.log('updateTaskDuration  :',task.name, form.getValues("task"));
+        setTasks(tasks.map((task) => {
                 if (task.name === form.getValues("task")) {
                     return {
                         ...task,
@@ -60,6 +52,14 @@ export const useTasks = () => {
             })
         );
     };
+
+    form.watch((values) => {
+        if (!values.task) return;
+        const newValues = {
+            task: values.task
+        }
+        setFormValues(newValues);
+    });
 
     return {
         tasks,

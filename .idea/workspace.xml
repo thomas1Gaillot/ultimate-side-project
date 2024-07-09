@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="spotify sdk working ;)">
-      <change afterPath="$PROJECT_DIR$/types/global.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/spotify.d.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment=".idea ciao">
+      <change afterPath="$PROJECT_DIR$/domain/pomodoro/Pomodoro.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/pomodoro/Task.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/usePomodoroStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/spotify/SpotifyWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/spotify/SpotifyWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/usePomodoro.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/usePomodoro.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useTasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useTasks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,23 +120,8 @@
       <workItem from="1720342098178" duration="18062000" />
       <workItem from="1720366793024" duration="4928000" />
       <workItem from="1720422416826" duration="34000" />
-      <workItem from="1720455918891" duration="221000" />
-    </task>
-    <task id="LOCAL-00001" summary="boilerplate">
-      <option name="closed" value="true" />
-      <created>1718645819314</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1718645819314</updated>
-    </task>
-    <task id="LOCAL-00002" summary="add form dash start">
-      <option name="closed" value="true" />
-      <created>1718659631785</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1718659631785</updated>
+      <workItem from="1720455918891" duration="4342000" />
+      <workItem from="1720545691137" duration="3667000" />
     </task>
     <task id="LOCAL-00003" summary="page centered">
       <option name="closed" value="true" />
@@ -509,7 +499,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720372389945</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="add global types for compilation">
+      <option name="closed" value="true" />
+      <created>1720456443377</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1720456443377</updated>
+    </task>
+    <task id="LOCAL-00051" summary=".idea ciao">
+      <option name="closed" value="true" />
+      <created>1720459042888</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1720459042888</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,8 +534,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="pomodoro ui" />
-    <MESSAGE value="pomodoro input with start and pause" />
     <MESSAGE value="pomodoro tasks listing" />
     <MESSAGE value="adding dot-patterns to widget page" />
     <MESSAGE value="adding page structure for widget pages" />
@@ -553,6 +557,8 @@
     <MESSAGE value="text" />
     <MESSAGE value="spotify widget" />
     <MESSAGE value="spotify sdk working ;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="spotify sdk working ;)" />
+    <MESSAGE value="add global types for compilation" />
+    <MESSAGE value=".idea ciao" />
+    <option name="LAST_COMMIT_MESSAGE" value=".idea ciao" />
   </component>
 </project>
