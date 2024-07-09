@@ -26,12 +26,12 @@ export const useTasks = () => {
         const taskExists = tasks.some((task) => task.name === taskName);
         if (!taskExists) {
             setTasks([
-                ...tasks,
                 {
                     id: Math.random(),
                     name: taskName,
                     duration: 0,
                 },
+                ...tasks,
             ]);
         }
     };

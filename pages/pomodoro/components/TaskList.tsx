@@ -2,16 +2,19 @@ import {TypographySmall} from "@/components/ui/typography";
 import {Button} from "@/components/ui/button";
 import {TrashIcon} from "lucide-react";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
+import {cn} from "@/lib/utils";
 
-const TaskList = ({tasks, deleteTask}: {
+const TaskList = ({tasks, deleteTask, currentTask}: {
     tasks: { id: number; name: string; duration: number }[];
     deleteTask: (id: number) => void;
+    currentTask: string;
 }) => {
     return (
         <div className="grid gap-2 w-full pt-8">
             {tasks?.map((task) => (
                 <div key={task.id}
-                     className="flex items-center justify-between gap-8  pr-2 pl-4 py-1">
+                     className={cn("flex items-center justify-between gap-8  pr-2 pl-4 py-1",
+                         task.name === currentTask && 'bg-gray-100' )}>
                     <TypographySmall>{task.name}</TypographySmall>
                     <div className="flex items-center gap-2 text-slate-800">
                         <TypographySmall>{formatSecondsToMmss(task.duration)}</TypographySmall>

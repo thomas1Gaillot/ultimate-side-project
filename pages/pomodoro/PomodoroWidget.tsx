@@ -66,7 +66,7 @@ export default function PomodoroWidget() {
                     />
                 </div>
             </Card>
-            <TaskList tasks={tasks} deleteTask={deleteTask} />
+            <TaskList tasks={tasks} deleteTask={deleteTask} currentTask={form.getValues('task')} />
         </>
     );
 }
