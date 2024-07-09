@@ -83,7 +83,6 @@ export const usePages = () => {
     const [pages, setPages] = useState(defaultPages);
     const {tasks} = usePomodoroStore();
     useEffect(() => {
-        if(tasks.length >0) {
             const newPages = pages.map((page) => {
                 if(page.section === 'Widgets') {
                     return {
@@ -92,7 +91,7 @@ export const usePages = () => {
                             if(widget.label.includes('Pomodoro')) {
                                 return {
                                     ...widget,
-                                    label: `Pomodoro (${tasks.length})`
+                                    label: `Pomodoro ${tasks.length === 0 ? '' : ' - ' + tasks.length}`,
                                 }
                             }
                             return widget
@@ -101,9 +100,7 @@ export const usePages = () => {
                 }
                 return page
             })
-            console.log(tasks.length, newPages)
             setPages(newPages)
-        }
     }, [tasks]);
     return pages
 }
