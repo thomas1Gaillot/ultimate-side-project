@@ -9,8 +9,10 @@ import {
     StarIcon,
     TimerIcon
 } from "lucide-react";
+import {useEffect, useState} from "react";
+import usePomodoroStore from "@/hooks/usePomodoroStore";
 
-export const  pages = [
+const defaultPages  = [
     {
         section: '',
         pages: [
@@ -77,3 +79,31 @@ export const  pages = [
         ]
     }
 ]
+export const usePages = () => {
+    const [pages, setPages] = useState(defaultPages);
+    const {tasks} = usePomodoroStore();
+    useEffect(() => {
+        if(tasks.length >0) {
+            const newPages = pages.map((page) => {
+                if(page.section === 'Widgets') {
+                    return {
+                        ...page,
+                        pages: page.pages.map((widget) => {
+                            if(widget.label.includes('Pomodoro')) {
+                                return {
+                                    ...widget,
+                                    label: `Pomodoro (${tasks.length})`
+                                }
+                            }
+                            return widget
+                        })
+                    }
+                }
+                return page
+            })
+            console.log(tasks.length, newPages)
+            setPages(newPages)
+        }
+    }, [tasks]);
+    return pages
+}

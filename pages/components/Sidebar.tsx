@@ -2,14 +2,16 @@
 import Link from "next/link";
 import {useRouter} from "next/router";
 import {cn} from "@/lib/utils";
-import {pages} from "@/data/pages";
 import {Button} from "@/components/ui/button";
 import {Menu} from "lucide-react";
 import {Sheet, SheetClose, SheetContent, SheetTrigger} from "@/components/ui/sheet";
+import {usePages} from "@/data/pages";
 
 
 export default function Sidebar() {
+    const pages = usePages()
     const pathName = useRouter().asPath
+    console.log({pages})
     return <>
         <aside
             className={"absolute -translate-x-full 3xl:w-80 z-30 flex h-full max-h-screen min-h-screen w-3/4 flex-none transform flex-col overflow-y-auto border-r border-gray-150 bg-white pb-10 transition duration-200 ease-in-out dark:border-gray-800 dark:bg-gray-900 sm:w-1/2 sm:pb-0 md:w-1/3 lg:relative lg:w-56 lg:translate-x-0 lg:bg-gray-50 lg:dark:bg-gray-900 2xl:w-72"}>
@@ -44,6 +46,7 @@ export default function Sidebar() {
 
 const MobileSidebar = () => {
     const pathName = useRouter().asPath
+    const pages = usePages()
 
     return <header className="sticky top-0 mt-4 mb-2 flex h-16 items-center gap-4 bg-background px-4 md:px-6">
         <Sheet>

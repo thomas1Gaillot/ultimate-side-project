@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment=".idea ciao">
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/Pomodoro.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/Task.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hooks/usePomodoroStore.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="store what's needed for use of pomodoro in all app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/usePomodoro.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/usePomodoro.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/useTasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useTasks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/usePomodoroStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/usePomodoroStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/Sidebar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,15 +116,7 @@
       <workItem from="1720366793024" duration="4928000" />
       <workItem from="1720422416826" duration="34000" />
       <workItem from="1720455918891" duration="4342000" />
-      <workItem from="1720545691137" duration="3667000" />
-    </task>
-    <task id="LOCAL-00003" summary="page centered">
-      <option name="closed" value="true" />
-      <created>1718659693765</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1718659693765</updated>
+      <workItem from="1720545691137" duration="5319000" />
     </task>
     <task id="LOCAL-00004" summary="fix form page format">
       <option name="closed" value="true" />
@@ -515,7 +502,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720459042888</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="store what's needed for use of pomodoro in all app">
+      <option name="closed" value="true" />
+      <created>1720549479076</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1720549479076</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +529,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="pomodoro tasks listing" />
     <MESSAGE value="adding dot-patterns to widget page" />
     <MESSAGE value="adding page structure for widget pages" />
     <MESSAGE value="add tabs from shadcn-ui" />
@@ -559,6 +553,7 @@
     <MESSAGE value="spotify sdk working ;)" />
     <MESSAGE value="add global types for compilation" />
     <MESSAGE value=".idea ciao" />
-    <option name="LAST_COMMIT_MESSAGE" value=".idea ciao" />
+    <MESSAGE value="store what's needed for use of pomodoro in all app" />
+    <option name="LAST_COMMIT_MESSAGE" value="store what's needed for use of pomodoro in all app" />
   </component>
 </project>

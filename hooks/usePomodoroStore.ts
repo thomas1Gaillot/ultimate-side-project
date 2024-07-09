@@ -34,7 +34,6 @@ const usePomodoroStore = create(
         }),
         {
             name: 'pomodoro-store', // unique name for the storage,
-            storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
         } as PersistOptions<PomodoroState> // Type assertion for PersistOptions
     )
 );
