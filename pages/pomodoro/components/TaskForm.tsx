@@ -2,6 +2,7 @@ import {Form, FormControl, FormField, FormItem, FormMessage} from "@/components/
 import Image from "next/image";
 import {Input} from "@/components/ui/input";
 import {UseFormReturn} from "react-hook-form";
+import usePomodoroStore from "@/hooks/usePomodoroStore";
 
 function displayCurrentPhaseIcon(type: string) {
     switch (type) {
@@ -21,6 +22,7 @@ const TaskForm = ({form, currentPhase, onSubmit}: {
     currentPhase: string;
     onSubmit: () => void;
 }) => {
+    const {setIsPlaying} = usePomodoroStore();
     return (
         form &&
         <Form {...form}>
@@ -34,7 +36,14 @@ const TaskForm = ({form, currentPhase, onSubmit}: {
                                 <div className={"flex items-center gap-2"}>
                                     <Image src={displayCurrentPhaseIcon(currentPhase)} alt={"icon"} width={50}
                                            height={50} className={"h-5 w-5 "}/>
-                                    <Input className={"border-none bg-gray-50 "} placeholder="Add a task" {...field} />
+                                    <Input
+                                        onChange={(e) => {
+                                            field.onChange(e);
+                                            setIsPlaying(false);
+                                        }}
+                                        className={"border-none bg-gray-50 "}
+                                        placeholder="Add a task"
+                                         />
                                 </div>
                             </FormControl>
                             <FormMessage/>
