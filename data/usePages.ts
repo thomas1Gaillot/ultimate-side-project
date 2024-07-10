@@ -1,5 +1,5 @@
 import {
-    BlocksIcon,
+    BlocksIcon, ConstructionIcon,
     CroissantIcon,
     HomeIcon,
     JoystickIcon,
@@ -27,8 +27,13 @@ const defaultPages = [
                 icon: BlocksIcon,
             },
             {
+                href: '/roadmap',
+                label: 'Roadmap (WIP)',
+                icon: ConstructionIcon,
+            },
+            {
                 href: '/inspiration',
-                label: 'Inspiration (WIP)',
+                label: 'Inspiration (Todo)',
                 icon: StarIcon,
             },
         ]
@@ -42,7 +47,7 @@ const defaultPages = [
                 icon: TimerIcon,
             }, {
                 href: '/croissant',
-                label: 'Croissant (WIP)',
+                label: 'Croissant (Todo)',
                 icon: CroissantIcon,
             }, {
                 href: '/spotify',
@@ -56,11 +61,11 @@ const defaultPages = [
         pages: [
             {
                 href: '/ux-games',
-                label: 'UX Games (WIP)',
+                label: 'UX Games (Todo)',
                 icon: JoystickIcon,
             }, {
                 href: '/site-reproduction',
-                label: 'Site reproduction (WIP)',
+                label: 'Site reproduction (Todo)',
                 icon: Layers2Icon,
             },
         ]
