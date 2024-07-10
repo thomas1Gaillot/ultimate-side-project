@@ -11,6 +11,16 @@ import PomodoroStats from "@/app/(locale)/pomodoro/components/PomodoroStats";
 import TaskForm from "@/app/(locale)/pomodoro/components/TaskForm";
 import TimerControls from "@/app/(locale)/pomodoro/components/TimerControls";
 import TaskList from "@/app/(locale)/pomodoro/components/TaskList";
+import {Metadata} from "next";
+import {useEffect} from "react";
+
+export const metadata:Metadata = {
+    title: "Thomas Gaillot",
+    description: "Building Things front-end side",
+    icons: {
+        icon: "/avocado.ico",
+    },
+};
 
 export default function PomodoroWidget() {
     const { tasks, form, addTask, deleteTask, updateTaskDuration } = useTasks();
@@ -40,6 +50,10 @@ export default function PomodoroWidget() {
         currentPhase,
     } = usePomodoro(handlePhaseChange, updateTaskDuration);
 
+    useEffect(() => {
+        document.title = `${formatSecondsToMmss(secondsLeft)} 🍅 - ${formatStringToXChar(form.getValues("task"), 20)}`;
+    }, [secondsLeft, tasks]);
+
     const onSubmit = () => {
         togglePlayPause();
         if (!isPlaying) {
@@ -49,11 +63,6 @@ export default function PomodoroWidget() {
 
     return (
         <>
-            <Head>
-                <title>{`${formatSecondsToMmss(secondsLeft)} 🍅 - ${formatStringToXChar(tasks[tasks.length - 1]?.name, 20)} `}</title>
-                <meta name="description" content="Building Things front-end side" />
-                <link rel="icon" href="/avocado.ico" />
-            </Head>
             <Card className={"p-4 py-2 flex flex-col gap-4"}>
                 <TaskForm form={form} currentPhase={currentPhase} onSubmit={onSubmit} />
                 <Timer secondsLeft={secondsLeft} />

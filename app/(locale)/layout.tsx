@@ -3,18 +3,22 @@ import "@/app/(locale)/styles/globals.css";
 import Sidebar from "@/app/(locale)/components/Sidebar";
 import {Toaster} from "@/components/ui/toaster";
 import {Inter} from "next/font/google";
+import {Metadata} from "next";
 const inter = Inter({subsets: ["latin"]});
+
+export const metadata:Metadata = {
+    title: "Thomas Gaillot",
+    description: "Building Things front-end side",
+    icons: {
+        icon: "/avocado.ico",
+    },
+};
 export default function RootLayout({
                                        children,
                                    }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (<>
-        <Head>
-            <title>Thomas Gaillot</title>
-            <meta name="description" content="Building Things front-end side"/>
-            <link rel="icon" href="/avocado.ico"/>
-        </Head>
         <html>
         <body
             className={`${inter.className} relative flex flex-col md:flex-row h-screen max-h-screen overflow-hidden w-full`}>
