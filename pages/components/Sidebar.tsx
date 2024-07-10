@@ -5,7 +5,7 @@ import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
 import {Menu} from "lucide-react";
 import {Sheet, SheetClose, SheetContent, SheetTrigger} from "@/components/ui/sheet";
-import {usePages} from "@/data/pages";
+import {usePages} from "@/data/usePages";
 
 
 export default function Sidebar() {

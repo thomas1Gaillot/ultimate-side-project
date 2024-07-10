@@ -4,15 +4,17 @@ import {
     CroissantIcon,
     HomeIcon,
     JoystickIcon,
-    Layers2Icon,
+    Layers2Icon, LoaderCircle,
     MusicIcon,
+    Pause,
+    Play,
     StarIcon,
     TimerIcon
 } from "lucide-react";
 import {useEffect, useState} from "react";
 import usePomodoroStore from "@/hooks/usePomodoroStore";
 
-const defaultPages  = [
+const defaultPages = [
     {
         section: '',
         pages: [
@@ -43,7 +45,7 @@ const defaultPages  = [
                 href: '/croissant',
                 label: 'Croissant (WIP)',
                 icon: CroissantIcon,
-            },{
+            }, {
                 href: '/spotify',
                 label: 'Spotify (WIP)',
                 icon: MusicIcon,
@@ -81,26 +83,27 @@ const defaultPages  = [
 ]
 export const usePages = () => {
     const [pages, setPages] = useState(defaultPages);
-    const {tasks} = usePomodoroStore();
+    const {tasks, isPlaying} = usePomodoroStore();
     useEffect(() => {
-            const newPages = pages.map((page) => {
-                if(page.section === 'Widgets') {
-                    return {
-                        ...page,
-                        pages: page.pages.map((widget) => {
-                            if(widget.label.includes('Pomodoro')) {
-                                return {
-                                    ...widget,
-                                    label: `Pomodoro ${tasks.length === 0 ? '' : ' - ' + tasks.length}`,
-                                }
+        const newPages = pages.map((page) => {
+            if (page.section === 'Widgets') {
+                return {
+                    ...page,
+                    pages: page.pages.map((widget) => {
+                        if (widget.label.includes('Pomodoro')) {
+                            return {
+                                ...widget,
+                                label: `Pomodoro ${tasks.length === 0 ? '' : ' - ' + tasks.length}`,
+                                icon: tasks.length > 0 ? (isPlaying ? LoaderCircle : Play) : TimerIcon
                             }
-                            return widget
-                        })
-                    }
+                        }
+                        return widget
+                    })
                 }
-                return page
-            })
-            setPages(newPages)
-    }, [tasks]);
+            }
+            return page
+        })
+        setPages(newPages)
+    }, [tasks, isPlaying]);
     return pages
 }
