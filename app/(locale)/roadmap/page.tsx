@@ -16,8 +16,12 @@ export default function RoadMapPage() {
         const fetchRoadmaps = async () => {
             const response = await fetch('/api/roadmap');
             const data: Roadmap[] = await response.json();
-            setSelectedRoadmap(data.filter(roadmap => roadmap.selected));
-            setVotingRoadmap(data.filter(roadmap => !roadmap.selected));
+            setSelectedRoadmap(data
+                .filter(roadmap => roadmap.selected)
+                .sort((a, b) => b.upvotes - a.upvotes));
+            setVotingRoadmap(data
+                .filter(roadmap => !roadmap.selected)
+                .sort((a, b) => b.upvotes - a.upvotes));
             setIsLoading(false);
         };
 
@@ -33,8 +37,8 @@ export default function RoadMapPage() {
         </TypographyLead>
         <Tabs defaultValue="selected">
             <TabsList className="grid grid-cols-2 max-w-lg">
-                <TabsTrigger value="selected">Selectionné</TabsTrigger>
-                <TabsTrigger value="voting">Ouvert aux votes</TabsTrigger>
+                <TabsTrigger value="selected">Selected</TabsTrigger>
+                <TabsTrigger value="voting">Open to vote</TabsTrigger>
             </TabsList>
             <TabsContent value="selected">
                 {

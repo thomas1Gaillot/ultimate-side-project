@@ -23,8 +23,10 @@ export default function RootLayout({
         <body
             className={`${inter.className} relative flex flex-col md:flex-row h-screen max-h-screen overflow-hidden w-full`}>
             <Sidebar/>
-            <div className={"overflow-y-auto  mx-auto w-full h-full max-w-3xl px-4 py-12 pb-10 md:px-8"}>
-                {children}
+            <div className={"overflow-y-auto   w-full h-full  px-4 py-12 pb-10 md:px-8"}>
+                <div className={"max-w-3xl mx-auto"}>
+                    {children}
+                </div>
             </div>
             <Toaster/>
         </body>

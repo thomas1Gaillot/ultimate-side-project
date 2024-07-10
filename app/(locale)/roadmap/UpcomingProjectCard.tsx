@@ -22,7 +22,10 @@ export default function UpcomingProjectCard({id, title, description, upvotes, ba
 
         if (res.ok) {
             const updatedRoadmap = await res.json();
-            toast({title: 'success', description: `Upvoted ${title}`});
+            toast({
+                title: 'Thanks for the vote',
+                description: `Thank you for voting to :  ${title}`,
+            });
         }
     };
 
