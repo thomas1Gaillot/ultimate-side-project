@@ -1,6 +1,7 @@
 import {TypographyH1, TypographyLead} from "@/components/ui/typography";
 import UpcomingProjectCard from "@/app/(locale)/roadmap/UpcomingProjectCard";
-import {roadmapSortedByUpvotes} from "@/data/roadmap";
+import {roadmap} from "@/data/roadmap";
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 
 
 export default function RoadMapPage() {
@@ -12,8 +13,22 @@ export default function RoadMapPage() {
         <TypographyLead>
             {`Upvote for the feature you'd like on this website.`}
         </TypographyLead>
-        {
-            roadmapSortedByUpvotes.map((item, index) => <UpcomingProjectCard key={index} {...item}/>)
-        }
+        <Tabs defaultValue="selected">
+            <TabsList className="gridgrid-cols-2">
+                <TabsTrigger value="selected">Selectionné</TabsTrigger>
+                <TabsTrigger value="voting">Ouvert aux votes</TabsTrigger>
+            </TabsList>
+            <TabsContent value="selected">
+                {
+                    roadmap.selectedRoadmap.map((item, index) => <UpcomingProjectCard key={index} {...item}/>)
+                }
+            </TabsContent>
+            <TabsContent value="voting" className={"grid gap-4"}>
+                {
+                    roadmap.votingRoadmap.map((item, index) => <UpcomingProjectCard key={index} {...item}/>)
+                }
+            </TabsContent>
+        </Tabs>
+
     </div>
 }

@@ -1,9 +1,10 @@
-import {TypographyBlockquote, TypographyH2, TypographyP, TypographySmall} from "@/components/ui/typography";
+import {TypographyBlockquote, TypographyH2, TypographyP} from "@/components/ui/typography";
 import Link from "next/link";
-import {Card} from "@/components/ui/card";
+import {Card, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import Image from "next/image";
 import {Icon} from "@tabler/icons-react";
 import {DribbbleIcon, GithubIcon, LinkedinIcon} from "lucide-react";
+import {Badge} from "@/components/ui/badge";
 
 
 export default function Home() {
@@ -37,11 +38,11 @@ export default function Home() {
 
             <section className="my-8">
                 <TypographyH2>Expériences</TypographyH2>
-                <div className={'grid grid-cols-1 md:grid-cols-2 gap-4 pt-7'}>
+                <div className={'grid grid-cols-1 gap-4 pt-7'}>
                     <JobCard
                         img={{src: '/logos/enogrid-logo.png', alt: 'enogrid-logo'}}
                         jobtitle={'Développeur Front-End'}
-                        company={'Enogrid'}
+                        description={'Développeur front-end chez Enogrid, startup tech qui propose des solutions de gestion de l\'énergie. Durée : 4 ans.'}
                         from={'Sept. 2021'}
                         to={'Présent'}
                     />
@@ -79,31 +80,29 @@ const LinkToSocial = ({href, Icon}: { href: string, Icon: any }) => {
     </Link>
 
 }
-const JobCard = ({img, company, jobtitle, from, to}: {
+const JobCard = ({img, description, jobtitle, from, to}: {
     img: {
         src: string,
         alt: string,
     },
-    company: string,
+    description: string,
     jobtitle: string,
     from: string,
     to: string
 
 }) => {
-    return <Card className={'p-4 space-y-4'}>
-        <div className={'flex items-center gap-4'}>
-            <div className={"rounded-full bg-gray-100 min-w-[62px] min-h-[62px] flex items-center justify-center"}>
-                <Image src={img.src} alt={img.alt}
-                       width={48} height={48}
-                />
-            </div>
-            <div className={'flex flex-col'}>
-                <p className={'text-gray-700 font-semibold'}>{jobtitle}</p>
-                <p className={'text-gray-700'}>
-                    {company}
-                </p>
-            </div>
-        </div>
-        <TypographySmall>{`${from} - ${to}`}</TypographySmall>
+    return <Card className="w-full max-w-xl ">
+        <CardHeader>
+            <CardTitle className="flex flex-col gap-2">
+                <Badge variant="secondary" className="w-max">{from} - {to}</Badge>
+                <span className="text-xl font-semibold text-gray-800">{jobtitle}</span>
+            </CardTitle>
+            <CardDescription>
+                {description}
+            </CardDescription>
+        </CardHeader>
+        <CardFooter>
+            <Image src={img.src} alt={img.alt} width={60} height={60}/>
+        </CardFooter>
     </Card>
 }

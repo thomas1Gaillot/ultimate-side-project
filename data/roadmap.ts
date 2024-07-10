@@ -6,7 +6,7 @@ type roadmap = {
 }
 
 
-const roadmap: roadmap[] = [
+const votingRoadmap: roadmap[] = [
     {
         title: "Spotify Playlist",
         description: "Share my Spotify playlist and load music to the website.",
@@ -18,12 +18,6 @@ const roadmap: roadmap[] = [
         description: "A section to bookmark my favorite articles and websites that I use everyday.",
         upvotes: 0,
         badge: "Page"
-    },
-    {
-        title: "A Prisma Backend",
-        description: "A Backend to store upvotes from the roadmap, and trying Prisma.",
-        upvotes: 119,
-        badge: "Feature"
     },
     {
         title: "An UX Game",
@@ -38,7 +32,20 @@ const roadmap: roadmap[] = [
         badge: "Projects"
     },
 ]
+const selectedRoadmap: roadmap[] = [
+    {
+        title: "A Prisma Backend",
+        description: "A Backend to store upvotes from the roadmap, and trying Prisma.",
+        upvotes: 119,
+        badge: "Feature"
+    },
+]
+const sortedByVote =(roadmap : roadmap[]) =>  roadmap.sort((a, b) => b.upvotes - a.upvotes)
+const roadmap = {
+    votingRoadmap: sortedByVote(votingRoadmap),
+    selectedRoadmap: sortedByVote(selectedRoadmap)
+}
 
-const roadmapSortedByUpvotes = roadmap.sort((a, b) => b.upvotes - a.upvotes)
-
-export {roadmapSortedByUpvotes}
+export {
+    roadmap
+}
