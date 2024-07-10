@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link";
-import {usePathname, useRouter} from "next/navigation";
+import {usePathname} from "next/navigation";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
 import {Menu} from "lucide-react";
@@ -44,7 +44,7 @@ export default function Sidebar() {
 
 
 const MobileSidebar = () => {
-    const pathName = useRouter().asPath
+    const pathName = usePathname()
     const pages = usePages()
 
     return <header className="sticky top-0 mt-4 mb-2 flex h-16 items-center gap-4 bg-background px-4 md:px-6">

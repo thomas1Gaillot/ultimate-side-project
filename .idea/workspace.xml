@@ -4,40 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- adding roadmap link,&#10;- fix image broken on stack page">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/spotify/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/stack/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/github-repo/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/login.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- merge to app/ folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/components.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/github-repo/route.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/login.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/callback.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/callback.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/centralized-app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/centralized-app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/form-made-with-zod/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/form-made-with-zod/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/old-homepage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/old-homepage/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/PomodoroStats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/PomodoroStats.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/TaskForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/TaskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/Timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/Timer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/TimerControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TimerControls.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pomodoro/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/spotify/SpotifyWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/spotify/SpotifyWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/spotify/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/stack/StackWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/stack/StackWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/stack/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/callback.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/spotify/SpotifyWidget.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/spotify/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/spotify/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/login.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/types/global.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/types/spotify.d.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,15 +140,7 @@
       <workItem from="1720455918891" duration="4342000" />
       <workItem from="1720545691137" duration="9654000" />
       <workItem from="1720594457382" duration="2534000" />
-      <workItem from="1720597050309" duration="658000" />
-    </task>
-    <task id="LOCAL-00015" summary="PRM identifier OTP">
-      <option name="closed" value="true" />
-      <created>1718809340492</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1718809340492</updated>
+      <workItem from="1720597050309" duration="748000" />
     </task>
     <task id="LOCAL-00016" summary="PRM identifier OTP responsive">
       <option name="closed" value="true" />
@@ -559,7 +526,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720596861826</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="- merge to app/ folder">
+      <option name="closed" value="true" />
+      <created>1720597771792</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1720597771794</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,7 +553,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix build" />
     <MESSAGE value="[UI] - remove style form tasklist" />
     <MESSAGE value="[UI] - remove style from pomodoro widget" />
     <MESSAGE value="[UI] - stack page first content" />
@@ -603,6 +577,7 @@
     <MESSAGE value="lint" />
     <MESSAGE value="do not display legacy pages anymore" />
     <MESSAGE value="- adding roadmap link,&#10;- fix image broken on stack page" />
-    <option name="LAST_COMMIT_MESSAGE" value="- adding roadmap link,&#10;- fix image broken on stack page" />
+    <MESSAGE value="- merge to app/ folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="- merge to app/ folder" />
   </component>
 </project>

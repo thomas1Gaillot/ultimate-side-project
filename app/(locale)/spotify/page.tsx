@@ -1,5 +1,4 @@
 import {TypographyBlockquote, TypographyH1, TypographyLead} from "@/components/ui/typography";
-import SpotifyWidget from "@/app/(locale)/spotify/SpotifyWidget";
 
 export default function SpotifyPage() {
 
@@ -14,8 +13,6 @@ export default function SpotifyPage() {
             <TypographyBlockquote>
                 {`"Music is the cherry on top of the cake."`}
             </TypographyBlockquote>
-            <SpotifyWidget/>
-
         </div>
     );
 }
