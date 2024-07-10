@@ -4,6 +4,7 @@ import React from 'react';
 import {ExternalLink} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {techStack} from "@/data/stack";
+import Image from "next/image";
 
 const StackWidget: React.FC = () => {
     return (
@@ -15,7 +16,7 @@ const StackWidget: React.FC = () => {
                     className="group relative h-min flex flex-col items-start p-4 hover:bg-gray-100 rounded-lg"
                     onClick={() => window.open(tech.link, '_blank')}
                 >
-                    <img src={tech.logo} alt={tech.name} className="w-12 h-12 mb-2 "/>
+                    <Image src={tech.logo} alt={tech.name} className="w-12 h-12 mb-2 "/>
                     <div className="text-start">
                         <h4 className=" leading-8 font-medium">{tech.name}</h4>
                         <p className="text-gray-600 font-normal text-wrap">{tech.shortDescription}</p>

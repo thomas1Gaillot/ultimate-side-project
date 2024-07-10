@@ -3,7 +3,7 @@ import { Pause, Play, SkipBack, SkipForward } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Progress } from "@/components/ui/progress";
 import { Skeleton } from "@/components/ui/skeleton";
-
+import Image from 'next/image';
 const SpotifyWidget: React.FC = () => {
     const [player, setPlayer] = useState<Spotify.Player | null>(null);
     const [spotifyTrack, setSpotifyTrack] = useState<Spotify.Track | null>(null);
@@ -105,7 +105,7 @@ const SpotifyWidget: React.FC = () => {
                     <div className="flex flex-col">
                         <h2 className="font-semibold">{spotifyTrack.name}</h2>
                         <p className="text-opacity-60 text-sm">{spotifyTrack.artists[0].name}</p>
-                        <img src={spotifyTrack.album.images[0].url} alt="album cover" style={{ width: 50 }} />
+                        <Image src={spotifyTrack.album.images[0].url} alt="album cover" style={{ width: 50 }} />
                     </div>
                 ) : (
                     <div className="flex flex-col gap-2">
