@@ -37,7 +37,7 @@ export const usePomodoro = (onPhaseChange: (type: string) => void, updateTaskDur
     const reset = (e: any) => {
         e.preventDefault();
         setSecondsLeft(pomodoroPattern[patternIndex].duration);
-        togglePlayPause();
+        setIsPlaying(false)
     };
 
     return {

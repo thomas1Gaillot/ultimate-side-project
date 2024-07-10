@@ -2,6 +2,7 @@ import {useForm} from "react-hook-form";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
 import usePomodoroStore from "@/hooks/usePomodoroStore";
+import {useEffect} from "react";
 
 const FormSchema = z.object({
     task: z.string().min(2, {
@@ -16,11 +17,19 @@ const FormSchema = z.object({
 
 export const useTasks = () => {
     const {tasks, setTasks, formValues, setFormValues} = usePomodoroStore();
-
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: formValues,
     });
+
+    form.watch((values) => {
+        if (!values.task) return;
+        const newValues = {
+            task: values.task
+        }
+        setFormValues(newValues);
+    });
+
 
     const addTask = (taskName: string) => {
         const taskExists = tasks.some((task) => task.name === taskName);
@@ -53,13 +62,7 @@ export const useTasks = () => {
         );
     };
 
-    form.watch((values) => {
-        if (!values.task) return;
-        const newValues = {
-            task: values.task
-        }
-        setFormValues(newValues);
-    });
+
 
     return {
         tasks,

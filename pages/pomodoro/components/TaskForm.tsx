@@ -41,6 +41,7 @@ const TaskForm = ({form, currentPhase, onSubmit}: {
                                             field.onChange(e);
                                             setIsPlaying(false);
                                         }}
+                                        value={field.value}
                                         className={"border-none bg-gray-50 "}
                                         placeholder="Add a task"
                                          />
