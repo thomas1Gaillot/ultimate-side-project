@@ -1,12 +1,11 @@
 import {
-    ArchiveIcon,
     BlocksIcon,
     CroissantIcon,
     HomeIcon,
     JoystickIcon,
-    Layers2Icon, LoaderCircle,
+    Layers2Icon,
+    LoaderCircle,
     MusicIcon,
-    Pause,
     Play,
     StarIcon,
     TimerIcon
@@ -63,20 +62,6 @@ const defaultPages = [
                 href: '/site-reproduction',
                 label: 'Site reproduction (WIP)',
                 icon: Layers2Icon,
-            },
-        ]
-    },
-    {
-        section: 'Legacy',
-        pages: [
-            {
-                href: '/form-made-with-zod',
-                label: 'Forms with Zod',
-                icon: ArchiveIcon,
-            }, {
-                href: '/old-homepage',
-                label: 'old homepage',
-                icon: ArchiveIcon,
             },
         ]
     }
