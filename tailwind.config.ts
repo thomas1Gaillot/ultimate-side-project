@@ -9,7 +9,7 @@ const config = {
     darkMode: ["class"],
     content: [
         './components/**/*.{ts,tsx}',
-        './pages/**/*.{ts,tsx}',
+        './app/**/*.{ts,tsx}',
         './src/**/*.{ts,tsx}',
     ],
     prefix: "",

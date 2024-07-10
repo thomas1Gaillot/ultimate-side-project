@@ -1,5 +1,5 @@
-import {TypographyH1, TypographyLarge, TypographyLead, TypographyP} from "@/components/ui/typography";
-import StackWidget from "@/pages/stack/StackWidget";
+import {TypographyH1, TypographyLead} from "@/components/ui/typography";
+import StackWidget from "@/app/(locale)/stack/StackWidget";
 
 export default function Stack() {
     return (

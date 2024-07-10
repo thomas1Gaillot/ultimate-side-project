@@ -1,3 +1,4 @@
+'use client'
 import {Form, FormControl, FormField, FormItem, FormMessage} from "@/components/ui/form";
 import Image from "next/image";
 import {Input} from "@/components/ui/input";

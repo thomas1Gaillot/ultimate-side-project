@@ -1,3 +1,4 @@
+'use client'
 import {TypographySmall} from "@/components/ui/typography";
 import {Button} from "@/components/ui/button";
 import {TrashIcon} from "lucide-react";

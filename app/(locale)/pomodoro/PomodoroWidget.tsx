@@ -1,3 +1,4 @@
+'use client'
 import { Card } from "@/components/ui/card";
 import Head from "next/head";
 import { formatSecondsToMmss } from "@/lib/format-seconds-to-mmss";
@@ -5,11 +6,11 @@ import { formatStringToXChar } from "@/lib/format-string-to-X-char";
 import { usePomodoro } from "@/hooks/usePomodoro";
 import { useTasks } from "@/hooks/useTasks";
 import { usePomodoroStats } from "@/hooks/usePomodoroStats";
-import Timer from "@/pages/pomodoro/components/Timer";
-import PomodoroStats from "@/pages/pomodoro/components/PomodoroStats";
-import TaskForm from "@/pages/pomodoro/components/TaskForm";
-import TimerControls from "@/pages/pomodoro/components/TimerControls";
-import TaskList from "@/pages/pomodoro/components/TaskList";
+import Timer from "@/app/(locale)/pomodoro/components/Timer";
+import PomodoroStats from "@/app/(locale)/pomodoro/components/PomodoroStats";
+import TaskForm from "@/app/(locale)/pomodoro/components/TaskForm";
+import TimerControls from "@/app/(locale)/pomodoro/components/TimerControls";
+import TaskList from "@/app/(locale)/pomodoro/components/TaskList";
 
 export default function PomodoroWidget() {
     const { tasks, form, addTask, deleteTask, updateTaskDuration } = useTasks();
@@ -51,7 +52,7 @@ export default function PomodoroWidget() {
             <Head>
                 <title>{`${formatSecondsToMmss(secondsLeft)} 🍅 - ${formatStringToXChar(tasks[tasks.length - 1]?.name, 20)} `}</title>
                 <meta name="description" content="Building Things front-end side" />
-                <link rel="icon" href="/public/avocado.ico" />
+                <link rel="icon" href="/avocado.ico" />
             </Head>
             <Card className={"p-4 py-2 flex flex-col gap-4"}>
                 <TaskForm form={form} currentPhase={currentPhase} onSubmit={onSubmit} />

@@ -1,5 +1,5 @@
 import {TypographyBlockquote, TypographyH1, TypographyLead} from "@/components/ui/typography";
-import SpotifyWidget from "@/pages/spotify/SpotifyWidget";
+import SpotifyWidget from "@/app/(locale)/spotify/SpotifyWidget";
 
 export default function SpotifyPage() {
 

@@ -1,4 +1,4 @@
-import PomodoroWidget from "@/pages/pomodoro/PomodoroWidget";
+import PomodoroWidget from "@/app/(locale)/pomodoro/PomodoroWidget";
 import {TypographyBlockquote, TypographyH1, TypographyLead, TypographyList} from "@/components/ui/typography";
 
 export default function PomodoroPage() {

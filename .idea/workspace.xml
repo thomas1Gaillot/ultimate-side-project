@@ -4,11 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="store what's needed for use of pomodoro in all app">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- adding roadmap link,&#10;- fix image broken on stack page">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/spotify/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/stack/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/github-repo/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/login.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/usePomodoroStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/usePomodoroStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/components.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/github-repo/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/login.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/callback.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/callback.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/centralized-app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/centralized-app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/form-made-with-zod/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/form-made-with-zod/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/old-homepage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/old-homepage/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/PomodoroWidget.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/PomodoroStats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/PomodoroStats.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/TaskForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/TaskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/Timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/Timer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/components/TimerControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TimerControls.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pomodoro/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/spotify/SpotifyWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/spotify/SpotifyWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/spotify/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/stack/StackWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/stack/StackWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/stack/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +82,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -66,12 +96,29 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\(locale)\pomodoro" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\(locale)" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\music" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api\spotify" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\stack" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\logos" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.lint" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -116,95 +163,9 @@
       <workItem from="1720366793024" duration="4928000" />
       <workItem from="1720422416826" duration="34000" />
       <workItem from="1720455918891" duration="4342000" />
-      <workItem from="1720545691137" duration="5319000" />
-    </task>
-    <task id="LOCAL-00004" summary="fix form page format">
-      <option name="closed" value="true" />
-      <created>1718694611771</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1718694611771</updated>
-    </task>
-    <task id="LOCAL-00005" summary="hero section">
-      <option name="closed" value="true" />
-      <created>1718699019598</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1718699019598</updated>
-    </task>
-    <task id="LOCAL-00006" summary="hero page completed">
-      <option name="closed" value="true" />
-      <created>1718702161129</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1718702161129</updated>
-    </task>
-    <task id="LOCAL-00007" summary="form continued">
-      <option name="closed" value="true" />
-      <created>1718704620443</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1718704620443</updated>
-    </task>
-    <task id="LOCAL-00008" summary="adding new components">
-      <option name="closed" value="true" />
-      <created>1718704663663</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1718704663663</updated>
-    </task>
-    <task id="LOCAL-00009" summary="submit a form easily with zod">
-      <option name="closed" value="true" />
-      <created>1718784326105</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1718784326105</updated>
-    </task>
-    <task id="LOCAL-00010" summary="submit a form easily with zod">
-      <option name="closed" value="true" />
-      <created>1718790958156</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1718790958156</updated>
-    </task>
-    <task id="LOCAL-00011" summary="lock updated">
-      <option name="closed" value="true" />
-      <created>1718797816300</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1718797816300</updated>
-    </task>
-    <task id="LOCAL-00012" summary="lock updated">
-      <option name="closed" value="true" />
-      <created>1718797846110</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1718797846110</updated>
-    </task>
-    <task id="LOCAL-00013" summary="segment tooltip in popover">
-      <option name="closed" value="true" />
-      <created>1718808715349</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1718808715349</updated>
-    </task>
-    <task id="LOCAL-00014" summary="PRM identifier OTP">
-      <option name="closed" value="true" />
-      <created>1718809320690</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1718809320690</updated>
+      <workItem from="1720545691137" duration="9654000" />
+      <workItem from="1720594457382" duration="2534000" />
+      <workItem from="1720597050309" duration="658000" />
     </task>
     <task id="LOCAL-00015" summary="PRM identifier OTP">
       <option name="closed" value="true" />
@@ -510,7 +471,95 @@
       <option name="project" value="LOCAL" />
       <updated>1720549479076</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="show in sidebar the tasks number">
+      <option name="closed" value="true" />
+      <created>1720551186307</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1720551186307</updated>
+    </task>
+    <task id="LOCAL-00054" summary="fix pomodoro sidebar when tasks are lenght 0">
+      <option name="closed" value="true" />
+      <created>1720552719025</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1720552719026</updated>
+    </task>
+    <task id="LOCAL-00055" summary="outline current task">
+      <option name="closed" value="true" />
+      <created>1720553818946</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1720553818946</updated>
+    </task>
+    <task id="LOCAL-00056" summary="pause pomodoro timer when taskform input change">
+      <option name="closed" value="true" />
+      <created>1720554365368</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1720554365368</updated>
+    </task>
+    <task id="LOCAL-00057" summary="pause pomodoro timer when task is deleted">
+      <option name="closed" value="true" />
+      <created>1720554634531</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1720554634531</updated>
+    </task>
+    <task id="LOCAL-00058" summary="POMODORO TIMER WORKING &lt;3">
+      <option name="closed" value="true" />
+      <created>1720595534257</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1720595534257</updated>
+    </task>
+    <task id="LOCAL-00059" summary="widget placement">
+      <option name="closed" value="true" />
+      <created>1720595835984</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1720595835985</updated>
+    </task>
+    <task id="LOCAL-00060" summary="sidebar pomodoro icon when playing change">
+      <option name="closed" value="true" />
+      <created>1720596314499</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1720596314500</updated>
+    </task>
+    <task id="LOCAL-00061" summary="lint">
+      <option name="closed" value="true" />
+      <created>1720596427797</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1720596427797</updated>
+    </task>
+    <task id="LOCAL-00062" summary="do not display legacy pages anymore">
+      <option name="closed" value="true" />
+      <created>1720596513584</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1720596513584</updated>
+    </task>
+    <task id="LOCAL-00063" summary="- adding roadmap link,&#10;- fix image broken on stack page">
+      <option name="closed" value="true" />
+      <created>1720596861826</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1720596861826</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,17 +578,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="adding dot-patterns to widget page" />
-    <MESSAGE value="adding page structure for widget pages" />
-    <MESSAGE value="add tabs from shadcn-ui" />
-    <MESSAGE value="add timer in tab" />
-    <MESSAGE value="show code in tab" />
-    <MESSAGE value="redirect to monenergiecollective to create a project in admin center" />
-    <MESSAGE value="usePomodoro widget operationnal" />
-    <MESSAGE value="useStats and Tasks operational" />
-    <MESSAGE value="comments" />
-    <MESSAGE value="hit a ding sound after each steps" />
-    <MESSAGE value="remove unused stuff" />
     <MESSAGE value="fix build" />
     <MESSAGE value="[UI] - remove style form tasklist" />
     <MESSAGE value="[UI] - remove style from pomodoro widget" />
@@ -554,6 +592,17 @@
     <MESSAGE value="add global types for compilation" />
     <MESSAGE value=".idea ciao" />
     <MESSAGE value="store what's needed for use of pomodoro in all app" />
-    <option name="LAST_COMMIT_MESSAGE" value="store what's needed for use of pomodoro in all app" />
+    <MESSAGE value="show in sidebar the tasks number" />
+    <MESSAGE value="fix pomodoro sidebar when tasks are lenght 0" />
+    <MESSAGE value="outline current task" />
+    <MESSAGE value="pause pomodoro timer when taskform input change" />
+    <MESSAGE value="pause pomodoro timer when task is deleted" />
+    <MESSAGE value="POMODORO TIMER WORKING &lt;3" />
+    <MESSAGE value="widget placement" />
+    <MESSAGE value="sidebar pomodoro icon when playing change" />
+    <MESSAGE value="lint" />
+    <MESSAGE value="do not display legacy pages anymore" />
+    <MESSAGE value="- adding roadmap link,&#10;- fix image broken on stack page" />
+    <option name="LAST_COMMIT_MESSAGE" value="- adding roadmap link,&#10;- fix image broken on stack page" />
   </component>
 </project>
