@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="stack update">
-      <change afterPath="$PROJECT_DIR$/pages/api/roadmap/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/roadmap/upvote.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/20240710125138_init/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/migration_lock.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/seed.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="prisma setup and vote implemented with backend">
+      <change afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/roadmap/UpcomingProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/UpcomingProjectCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/roadmap/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/github-repo/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/github-repo/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/roadmap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/data/roadmap.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,15 +149,7 @@
       <workItem from="1720545691137" duration="9654000" />
       <workItem from="1720594457382" duration="2534000" />
       <workItem from="1720597050309" duration="921000" />
-      <workItem from="1720606610761" duration="7624000" />
-    </task>
-    <task id="LOCAL-00023" summary="portfolio">
-      <option name="closed" value="true" />
-      <created>1719592331307</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1719592331307</updated>
+      <workItem from="1720606610761" duration="8530000" />
     </task>
     <task id="LOCAL-00024" summary="pomodoro ui">
       <option name="closed" value="true" />
@@ -555,7 +535,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720614292089</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="prisma setup and vote implemented with backend">
+      <option name="closed" value="true" />
+      <created>1720617015088</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1720617015088</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +562,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="text" />
     <MESSAGE value="spotify widget" />
     <MESSAGE value="spotify sdk working ;)" />
     <MESSAGE value="add global types for compilation" />
@@ -599,6 +586,7 @@
     <MESSAGE value="refactor job card" />
     <MESSAGE value="defualt button style" />
     <MESSAGE value="stack update" />
-    <option name="LAST_COMMIT_MESSAGE" value="stack update" />
+    <MESSAGE value="prisma setup and vote implemented with backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="prisma setup and vote implemented with backend" />
   </component>
 </project>
