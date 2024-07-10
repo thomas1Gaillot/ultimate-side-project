@@ -4,7 +4,6 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    console.log('REQUEST ----------------------------- ', req.method, req.url)
     if (req.method === 'GET') {
         try {
             const roadmaps = await prisma.roadmap.findMany();

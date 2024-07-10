@@ -2,32 +2,16 @@ import {Card, CardDescription, CardFooter, CardHeader, CardTitle} from "@/compon
 import {Button} from "@/components/ui/button";
 import {ThumbsUpIcon} from "lucide-react";
 import {Badge} from "@/components/ui/badge";
-import {toast} from "@/components/hooks/use-toast";
 
-export default function UpcomingProjectCard({id, title, description, upvotes, badge}: {
+export default function UpcomingProjectCard({id, title, description, upvotes, badge, handleUpvote}: {
     id: string,
     title: string,
     description: string,
     upvotes: number,
-    badge: string
+    badge: string,
+    handleUpvote: () => void,
 }) {
-    const handleUpvote = async () => {
-        const res = await fetch('/api/roadmap/upvote', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({id: id}),
-        });
 
-        if (res.ok) {
-            const updatedRoadmap = await res.json();
-            toast({
-                title: 'Thanks for the vote',
-                description: `Thank you for voting to :  ${title}`,
-            });
-        }
-    };
 
     return <Card className="w-full max-w-xl ">
         <CardHeader>

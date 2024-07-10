@@ -6,12 +6,14 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {useEffect, useState} from "react";
 import {Card, CardFooter, CardHeader} from "@/components/ui/card";
 import {Skeleton} from "@/components/ui/skeleton";
+import {toast} from "@/components/hooks/use-toast";
 
 
 export default function RoadMapPage() {
     const [selectedRoadmap, setSelectedRoadmap] = useState<Roadmap[]>([]);
     const [votingRoadmap, setVotingRoadmap] = useState<Roadmap[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
         const fetchRoadmaps = async () => {
             const response = await fetch('/api/roadmap');
@@ -28,6 +30,32 @@ export default function RoadMapPage() {
         fetchRoadmaps();
     }, []);
 
+    const handleUpvote = async (id: string) => {
+
+        const res = await fetch('/api/roadmap/upvote', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({id: id}),
+        });
+        const response = await fetch('/api/roadmap');
+        const data: Roadmap[] = await response.json();
+        setSelectedRoadmap(data
+            .filter(roadmap => roadmap.selected)
+            .sort((a, b) => b.upvotes - a.upvotes));
+        setVotingRoadmap(data
+            .filter(roadmap => !roadmap.selected)
+            .sort((a, b) => b.upvotes - a.upvotes));
+
+        if (res.ok) {
+            toast({
+                title: 'Thanks for the vote',
+                description: `Thank you for voting !`,
+            });
+        }
+    };
+
     return <div className={"flex flex-col gap-4 pb-8"}>
         <TypographyH1>
             Roadmap for this website
@@ -42,13 +70,15 @@ export default function RoadMapPage() {
             </TabsList>
             <TabsContent value="selected">
                 {
-                    selectedRoadmap.map((item) => <UpcomingProjectCard key={item.id} {...item} />)
+                    selectedRoadmap.map((item) => <UpcomingProjectCard handleUpvote={() => handleUpvote(item.id)}
+                                                                       key={item.id} {...item} />)
                 }
 
             </TabsContent>
             <TabsContent value="voting" className={"grid gap-4"}>
                 {
-                    votingRoadmap.map((item) => <UpcomingProjectCard key={item.id} {...item} />)
+                    votingRoadmap.map((item) => <UpcomingProjectCard handleUpvote={() => handleUpvote(item.id)}
+                                                                     key={item.id} {...item} />)
                 }
             </TabsContent>
         </Tabs>
@@ -62,7 +92,7 @@ function UpcomingProjectCardSkeleton() {
         <CardHeader>
             <Skeleton className="w-20 h-4"/>
             <Skeleton className="w-32 h-6"/>
-                <Skeleton className="w-full h-4"/>
+            <Skeleton className="w-full h-4"/>
         </CardHeader>
         <CardFooter className="justify-between items-center">
             <Skeleton className="w-[100px] h-4"/>
