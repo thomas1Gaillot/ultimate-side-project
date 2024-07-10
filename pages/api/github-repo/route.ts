@@ -1,4 +1,4 @@
-// app/api/github-repo/route.ts
+// app/api/github-repo/index.ts
 import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {

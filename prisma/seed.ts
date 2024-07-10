@@ -1,14 +1,8 @@
-export type Roadmap = {
-    id : string
-    title: string
-    description: string
-    upvotes: number
-    badge: string
-    selected : boolean
-}
+const { PrismaClient } = require('@prisma/client');
 
-type RoadmapWithoutId = Omit<Roadmap, 'id'>
-const roadMapList: RoadmapWithoutId[] = [
+const prisma = new PrismaClient();
+
+const roadMapList = [
     {
         title: "Spotify Playlist",
         description: "Share my Spotify playlist and load music to the website.",
@@ -41,19 +35,24 @@ const roadMapList: RoadmapWithoutId[] = [
         title: "A Prisma Backend",
         description: "A Backend to store upvotes from the roadmap, and trying Prisma.",
         upvotes: 119,
-        badge: "Feature", selected: true
-
+        badge: "Feature",
+        selected: true
     },
-]
-const selectedRoadmap: RoadmapWithoutId[] = roadMapList.filter((item) => item.selected)
-const votingRoadmap: RoadmapWithoutId[] = roadMapList.filter((item) => !item.selected)
+];
 
-const sortedByVote =(roadmap : RoadmapWithoutId[]) =>  roadmap.sort((a, b) => b.upvotes - a.upvotes)
-const roadmap = {
-    votingRoadmap: sortedByVote(votingRoadmap),
-    selectedRoadmap: sortedByVote(selectedRoadmap)
+async function main() {
+    for (const roadmap of roadMapList) {
+        await prisma.roadmap.create({
+            data: roadmap,
+        });
+    }
 }
 
-export {
-    roadmap
-}
+main()
+    .catch((e) => {
+        console.error(e);
+        process.exit(1);
+    })
+    .finally(async () => {
+        await prisma.$disconnect();
+    });
