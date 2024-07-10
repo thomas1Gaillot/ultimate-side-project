@@ -51,7 +51,12 @@ export default function Home() {
             <section className="my-8">
                 <TypographyH2>Projets</TypographyH2>
                 <TypographyP>
-                    Au boulot !
+                    <>
+                        {`Faits un tour sur  `}
+                        <Link className={'hover:underline text-indigo-700'} href={'/roadmap'}>la roadmap</Link>
+                        {` pour y trouver ce qui est prévu prochainement.`}
+                    </>
+
                 </TypographyP>
             </section>
 

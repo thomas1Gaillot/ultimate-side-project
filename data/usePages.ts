@@ -1,5 +1,6 @@
 import {
-    BlocksIcon, ConstructionIcon,
+    BlocksIcon,
+    ConstructionIcon,
     CroissantIcon,
     HomeIcon,
     JoystickIcon,
@@ -22,18 +23,18 @@ const defaultPages = [
                 label: 'Home',
                 icon: HomeIcon,
             }, {
+                href: '/roadmap',
+                label: 'Roadmap',
+                icon: ConstructionIcon,
+            }, {
                 href: '/stack',
                 label: 'Stack',
                 icon: BlocksIcon,
             },
+
             {
-                href: '/roadmap',
-                label: 'Roadmap (WIP)',
-                icon: ConstructionIcon,
-            },
-            {
-                href: '/inspiration',
-                label: 'Inspiration (Todo)',
+                href: '/bookmarks',
+                label: 'Bookmarks (Todo)',
                 icon: StarIcon,
             },
         ]
