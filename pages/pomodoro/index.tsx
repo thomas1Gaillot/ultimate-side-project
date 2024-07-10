@@ -11,6 +11,9 @@ export default function PomodoroPage() {
                 A time management technique that uses a timer to break down work into intervals, traditionally 25
                 minutes in length, separated by short breaks.
             </TypographyLead>
+            <div className={"flex flex-col pt-8"}>
+                <PomodoroWidget/>
+            </div>
             <TypographyList texts={[
                 "Splitting tasks into short intervals makes you create achievable goals.",
                 "Taking 3 short breaks and 1 long break allows you to feel refreshed and ready to start each new task.",
@@ -20,9 +23,7 @@ export default function PomodoroPage() {
             <TypographyBlockquote>
                 {`"This technique makes me more productive, but also more relaxed."`}
             </TypographyBlockquote>
-            <div className={"flex flex-col"}>
-                <PomodoroWidget/>
-            </div>
+
         </div>
     );
 }
