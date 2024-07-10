@@ -9,23 +9,25 @@ export default function UpcomingProjectCard({title, description, upvotes, badge}
     upvotes: number,
     badge: string
 }) {
-    return <Card className="w-full max-w-xl">
+    return <Card className="w-full max-w-xl ">
         <CardHeader>
-            <CardTitle className={"flex flex-col gap-2"}>
-                <Badge variant={"secondary"} className={'w-max'}>{badge}</Badge>
-
-                {title}
+            <CardTitle className="flex flex-col gap-2">
+                <Badge variant="secondary" className="w-max">{badge}</Badge>
+                <span className="text-xl font-semibold text-gray-800">{title}</span>
             </CardTitle>
-            <CardDescription>
+            <CardDescription >
                 {description}
             </CardDescription>
         </CardHeader>
-        <CardFooter className="justify-between">
-            <Button size={'sm'} className={'bg-indigo-500 hover:bg-indigo-500/90 hover:scale-105'}>
+        <CardFooter className="justify-between items-center">
+            <Button size="sm" className="bg-indigo-500 hover:bg-indigo-600 transition-transform duration-300 transform hover:scale-105 flex items-center">
                 <ThumbsUpIcon className="mr-2 h-4 w-4"/>
                 Upvote
             </Button>
-            <div className="text-sm text-muted-foreground">{upvotes} upvotes</div>
+            <div className="flex items-center text-sm text-gray-500">
+                <ThumbsUpIcon className="mr-1 h-4 w-4"/>
+                {upvotes} upvotes
+            </div>
         </CardFooter>
     </Card>
 }

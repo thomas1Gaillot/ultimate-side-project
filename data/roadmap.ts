@@ -5,7 +5,8 @@ type roadmap = {
     badge: string
 }
 
-export const roadmap: roadmap[] = [
+
+const roadmap: roadmap[] = [
     {
         title: "Spotify Playlist",
         description: "Share my Spotify playlist and load music to the website.",
@@ -37,3 +38,7 @@ export const roadmap: roadmap[] = [
         badge: "Projects"
     },
 ]
+
+const roadmapSortedByUpvotes = roadmap.sort((a, b) => b.upvotes - a.upvotes)
+
+export {roadmapSortedByUpvotes}
