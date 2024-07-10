@@ -13,7 +13,7 @@ export const usePomodoroStats = (tasks: { duration: number }[]) => {
         let longBreaks = 0;
 
         tasks?.forEach((task) => {
-            const pomodoroSessions = Math.floor(task.duration / (25 * 60));
+            const pomodoroSessions = task.duration / (25 * 60);
             const breaks = pomodoroSessions < 4 ? pomodoroSessions : 3;
             const longBreaksCount = pomodoroSessions >= 4 ? 1 : 0;
 
@@ -23,9 +23,9 @@ export const usePomodoroStats = (tasks: { duration: number }[]) => {
         });
 
         return {
-            numberOfPomodoro: pomodoros,
-            numberOfShortBreak: shortBreaks,
-            numberOfLongBreak: longBreaks,
+            numberOfPomodoro: Math.floor(pomodoros),
+            numberOfShortBreak: Math.floor(shortBreaks),
+            numberOfLongBreak: Math.floor(longBreaks),
         };
     }, [tasks]);
 
