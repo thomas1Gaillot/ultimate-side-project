@@ -1,10 +1,7 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import {z} from "zod";
-import prisma from "@/prisma/prisma";
 import {roadmapSchema} from "@/domain/roadmap/Roadmap";
-
-
-
+import prisma from "@/prisma/prisma";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'GET') {

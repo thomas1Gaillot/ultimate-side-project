@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- create new roadmap project">
-      <change afterPath="$PROJECT_DIR$/domain/roadmap/Roadmap.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/roadmap/use-add-project-idea.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/roadmap/use-fetch-roadmaps.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/roadmap/use-upvote.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- refactor into hooks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/roadmap/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/api/roadmap/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/roadmap/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/roadmap/upvote.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/roadmap/upvote.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/prisma.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/prisma.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,15 +155,7 @@
       <workItem from="1720644581779" duration="2237000" />
       <workItem from="1720682381123" duration="20000" />
       <workItem from="1720682746400" duration="11000" />
-      <workItem from="1720714243325" duration="3214000" />
-    </task>
-    <task id="LOCAL-00026" summary="pomodoro tasks listing">
-      <option name="closed" value="true" />
-      <created>1719611490947</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1719611490947</updated>
+      <workItem from="1720714243325" duration="4418000" />
     </task>
     <task id="LOCAL-00027" summary="pomodoro tasks listing">
       <option name="closed" value="true" />
@@ -550,7 +541,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720717087944</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="- refactor into hooks">
+      <option name="closed" value="true" />
+      <created>1720717788542</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1720717788542</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +568,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add global types for compilation" />
     <MESSAGE value=".idea ciao" />
     <MESSAGE value="store what's needed for use of pomodoro in all app" />
     <MESSAGE value="show in sidebar the tasks number" />
@@ -594,6 +592,7 @@
     <MESSAGE value="prisma setup and vote implemented with backend" />
     <MESSAGE value="- instanciate prisma once,&#10;- add form to add an project idea" />
     <MESSAGE value="- create new roadmap project" />
-    <option name="LAST_COMMIT_MESSAGE" value="- create new roadmap project" />
+    <MESSAGE value="- refactor into hooks" />
+    <option name="LAST_COMMIT_MESSAGE" value="- refactor into hooks" />
   </component>
 </project>
