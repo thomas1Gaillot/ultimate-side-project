@@ -2,6 +2,8 @@ import {Card, CardDescription, CardFooter, CardHeader, CardTitle} from "@/compon
 import {Button} from "@/components/ui/button";
 import {ThumbsUpIcon} from "lucide-react";
 import {Badge} from "@/components/ui/badge";
+import {Skeleton} from "@/components/ui/skeleton";
+import React from "react";
 
 export default function UpcomingProjectCard({id, title, description, upvotes, badge, handleUpvote}: {
     id: string,
@@ -32,6 +34,21 @@ export default function UpcomingProjectCard({id, title, description, upvotes, ba
                 <ThumbsUpIcon className="mr-1 h-4 w-4"/>
                 {upvotes} upvotes
             </div>
+        </CardFooter>
+    </Card>
+}
+
+
+export function UpcomingProjectCardSkeleton() {
+    return <Card key={'UpcomingProjectCardSkeleton'} className="w-full max-w-xl ">
+        <CardHeader>
+            <Skeleton className="w-20 h-4"/>
+            <Skeleton className="w-32 h-6"/>
+            <Skeleton className="w-full h-4"/>
+        </CardHeader>
+        <CardFooter className="justify-between items-center">
+            <Skeleton className="w-[100px] h-4"/>
+            <Skeleton className="w-[100px] h-4"/>
         </CardFooter>
     </Card>
 }

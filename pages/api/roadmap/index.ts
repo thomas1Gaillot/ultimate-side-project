@@ -1,5 +1,14 @@
-import {NextApiRequest, NextApiResponse} from 'next';
-import prisma from '@/prisma/prisma';
+import {NextApiRequest, NextApiResponse} from "next";
+import {z} from "zod";
+import prisma from "@/prisma/prisma";
+
+export const roadmapSchema = z.object({
+    title: z.string().min(1, "Project title is required"),
+    type: z.string().min(1, "Type is required"),
+    description: z.string().min(1, "Description is required"),
+});
+
+export type RoadmapSchema = z.infer<typeof roadmapSchema>;
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -10,8 +19,32 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         } catch (error) {
             res.status(500).json({error: 'Error fetching roadmaps'});
         }
+    } else if (req.method === 'POST') {
+        try {
+            // Valider les données de la requête
+            const {title, type, description} = roadmapSchema.parse(req.body);
+
+            // Créer une nouvelle ligne dans la table roadmap
+            const newRoadmap = await prisma.roadmap.create({
+                data: {
+                    title: title,
+                    description: description,
+                    upvotes: 0,
+                    badge: type,
+                    selected: false
+                },
+            });
+            res.status(201).json(newRoadmap);
+        } catch (error) {
+            if (error instanceof z.ZodError) {
+                // Retourner les erreurs de validation
+                res.status(400).json({error: error.errors});
+            } else {
+                res.status(500).json({error: 'Error creating roadmap'});
+            }
+        }
     } else {
-        res.setHeader('Allow', ['GET']);
+        res.setHeader('Allow', ['GET', 'POST']);
         res.status(405).end(`Method ${req.method} Not Allowed`);
     }
 }

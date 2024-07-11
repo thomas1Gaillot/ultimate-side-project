@@ -1,9 +1,9 @@
-import Head from "next/head";
 import "@/app/(locale)/styles/globals.css";
 import Sidebar from "@/app/(locale)/components/Sidebar";
 import {Toaster} from "@/components/ui/toaster";
 import {Inter} from "next/font/google";
 import {Metadata} from "next";
+
 const inter = Inter({subsets: ["latin"]});
 
 export const metadata:Metadata = {
