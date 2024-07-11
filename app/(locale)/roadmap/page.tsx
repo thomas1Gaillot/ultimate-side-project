@@ -1,11 +1,10 @@
 'use client'
-import {TypographyH1, TypographyLead} from "@/components/ui/typography";
-import UpcomingProjectCard, {UpcomingProjectCardSkeleton} from "@/app/(locale)/roadmap/UpcomingProjectCard";
-import {Roadmap} from "@/data/roadmap";
-import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import React, {useEffect, useState} from "react";
-import {Button} from "@/components/ui/button";
-import {SquarePlusIcon} from "lucide-react";
+import { TypographyH1, TypographyLead } from "@/components/ui/typography";
+import UpcomingProjectCard, { UpcomingProjectCardSkeleton } from "@/app/(locale)/roadmap/UpcomingProjectCard";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { SquarePlusIcon } from "lucide-react";
 import {
     Dialog,
     DialogContent,
@@ -15,84 +14,29 @@ import {
     DialogTitle,
     DialogTrigger
 } from "@/components/ui/dialog";
-import {Input} from "@/components/ui/input";
-import {toast} from "@/components/hooks/use-toast";
-import {useForm} from 'react-hook-form';
-import {zodResolver} from '@hookform/resolvers/zod';
-import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
-import {RoadmapSchema, roadmapSchema} from "@/pages/api/roadmap";
-
+import { Input } from "@/components/ui/input";
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { RoadmapSchema, roadmapSchema } from "@/domain/roadmap/Roadmap";
+import { useFetchRoadmaps } from '@/domain/roadmap/use-fetch-roadmaps';
+import { useUpvote } from '@/domain/roadmap/use-upvote';
+import { useAddProjectIdea } from '@/domain/roadmap/use-add-project-idea';
 
 export default function RoadMapPage() {
-    const [selectedRoadmap, setSelectedRoadmap] = useState<Roadmap[]>([]);
-    const [votingRoadmap, setVotingRoadmap] = useState<Roadmap[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [openDialog, seOpenDialog] = useState(false);
+    const { selectedRoadmap, votingRoadmap, isLoading, fetchRoadmaps } = useFetchRoadmaps();
+    const { handleUpvote } = useUpvote();
+    const { addProjectIdea } = useAddProjectIdea();
+    const [openDialog, setOpenDialog] = useState(false);
     const form = useForm<RoadmapSchema>({
         resolver: zodResolver(roadmapSchema),
     });
 
-    useEffect(() => {
-        const fetchRoadmaps = async () => {
-            const response = await fetch('/api/roadmap');
-            const data: Roadmap[] = await response.json();
-            setSelectedRoadmap(data
-                .filter(roadmap => roadmap.selected)
-                .sort((a, b) => b.upvotes - a.upvotes));
-            setVotingRoadmap(data
-                .filter(roadmap => !roadmap.selected)
-                .sort((a, b) => b.upvotes - a.upvotes));
-            setIsLoading(false);
-        };
-
-        fetchRoadmaps();
-    }, []);
-    const fetchRoadmapsAndReload = async () => {
-        const response = await fetch('/api/roadmap');
-        const data: Roadmap[] = await response.json();
-        setSelectedRoadmap(data
-            .filter(roadmap => roadmap.selected)
-            .sort((a, b) => b.upvotes - a.upvotes));
-        setVotingRoadmap(data
-            .filter(roadmap => !roadmap.selected)
-            .sort((a, b) => b.upvotes - a.upvotes));
-        setIsLoading(false);
-    }
-    const handleUpvote = async (id: string) => {
-        const res = await fetch('/api/roadmap/upvote', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({id: id}),
-        });
-        await fetchRoadmapsAndReload()
-        if (res.ok) {
-            toast({
-                title: 'Thanks for the vote',
-                description: `Thank you for voting !`,
-            });
-        }
-    };
-
     const onSubmit = async (data: RoadmapSchema) => {
-        console.log(data);
-        // Vous pouvez envoyer les données validées à votre API ici
-        // Par exemple:
-        await fetch('/api/roadmap', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-        await fetchRoadmapsAndReload()
-        toast({
-            title: 'Project idea submitted',
-            description: 'Your project idea has been submitted successfully.',
-        });
+        await addProjectIdea(data);
+        await fetchRoadmaps();
         form.reset();
-        seOpenDialog(false)
+        setOpenDialog(false);
     };
 
     return (
@@ -110,7 +54,10 @@ export default function RoadMapPage() {
                 </TabsList>
                 <TabsContent value="selected">
                     {
-                        selectedRoadmap.map((item) => <UpcomingProjectCard handleUpvote={() => handleUpvote(item.id)}
+                        selectedRoadmap.map((item) => <UpcomingProjectCard handleUpvote={() => {
+                            handleUpvote(item.id)
+                            fetchRoadmaps()
+                        }}
                                                                            key={item.id} {...item} />)
                     }
                 </TabsContent>
@@ -118,11 +65,11 @@ export default function RoadMapPage() {
                     <Dialog open={openDialog}>
                         <DialogTrigger>
                             <Button
-                                onClick={() => seOpenDialog(true)}
+                                onClick={() => setOpenDialog(true)}
                                 className={"border-dashed border h-24 w-full hover:scale-100 "}
                                 size={'lg'}
                                 variant={'outline'}>
-                                <SquarePlusIcon className={"w-6 h-6  mr-2"}/>
+                                <SquarePlusIcon className={"w-6 h-6  mr-2"} />
                                 Add a project idea
                             </Button>
                         </DialogTrigger>
@@ -138,42 +85,39 @@ export default function RoadMapPage() {
                                     <FormField
                                         control={form.control}
                                         name="title"
-                                        render={({field}) => (
+                                        render={({ field }) => (
                                             <FormItem>
                                                 <FormLabel>Project title</FormLabel>
                                                 <FormControl>
                                                     <Input placeholder="An awesome idea" {...field} />
                                                 </FormControl>
-                                                <FormMessage/>
-
+                                                <FormMessage />
                                             </FormItem>
                                         )}
                                     />
                                     <FormField
                                         control={form.control}
                                         name="type"
-                                        render={({field}) => (
+                                        render={({ field }) => (
                                             <FormItem>
-
                                                 <FormLabel>Type</FormLabel>
                                                 <FormControl>
                                                     <Input placeholder="Page" {...field} />
                                                 </FormControl>
-                                                <FormMessage/>
+                                                <FormMessage />
                                             </FormItem>
                                         )}
                                     />
                                     <FormField
                                         control={form.control}
                                         name="description"
-                                        render={({field}) => (
+                                        render={({ field }) => (
                                             <FormItem>
-
-                                                <FormLabel>Type</FormLabel>
+                                                <FormLabel>Description</FormLabel>
                                                 <FormControl>
                                                     <Input placeholder="Describe what you would want." {...field} />
                                                 </FormControl>
-                                                <FormMessage/>
+                                                <FormMessage />
                                             </FormItem>
                                         )}
                                     />
@@ -185,12 +129,15 @@ export default function RoadMapPage() {
                         </DialogContent>
                     </Dialog>
                     {
-                        votingRoadmap.map((item) => <UpcomingProjectCard handleUpvote={() => handleUpvote(item.id)}
+                        votingRoadmap.map((item) => <UpcomingProjectCard handleUpvote={() => {
+                            handleUpvote(item.id)
+                            fetchRoadmaps()
+                        }}
                                                                          key={item.id} {...item} />)
                     }
                 </TabsContent>
             </Tabs>
-            {isLoading && <UpcomingProjectCardSkeleton/>}
+            {isLoading && <UpcomingProjectCardSkeleton />}
         </div>
     );
 }

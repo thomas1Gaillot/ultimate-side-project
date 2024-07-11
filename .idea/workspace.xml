@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="trying to reduce latency by going to frankfurt region">
-      <change afterPath="$PROJECT_DIR$/components/ui/select.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/textarea.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/prisma.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- create new roadmap project">
+      <change afterPath="$PROJECT_DIR$/domain/roadmap/Roadmap.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/roadmap/use-add-project-idea.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/roadmap/use-fetch-roadmaps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/roadmap/use-upvote.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/roadmap/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/api/roadmap/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/roadmap/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/roadmap/upvote.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/roadmap/upvote.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,11 +71,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\domain\roadmap" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api\roadmap" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\(locale)\pomodoro" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\(locale)" />
     </key>
   </component>
   <component name="RunManager" selected="npm.seed">
@@ -156,23 +153,10 @@
       <workItem from="1720594457382" duration="2534000" />
       <workItem from="1720597050309" duration="921000" />
       <workItem from="1720606610761" duration="8530000" />
-      <workItem from="1720644581779" duration="2190000" />
-    </task>
-    <task id="LOCAL-00024" summary="pomodoro ui">
-      <option name="closed" value="true" />
-      <created>1719606118783</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1719606118783</updated>
-    </task>
-    <task id="LOCAL-00025" summary="pomodoro input with start and pause">
-      <option name="closed" value="true" />
-      <created>1719608991956</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1719608991956</updated>
+      <workItem from="1720644581779" duration="2237000" />
+      <workItem from="1720682381123" duration="20000" />
+      <workItem from="1720682746400" duration="11000" />
+      <workItem from="1720714243325" duration="3214000" />
     </task>
     <task id="LOCAL-00026" summary="pomodoro tasks listing">
       <option name="closed" value="true" />
@@ -550,7 +534,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720617015088</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="- instanciate prisma once,&#10;- add form to add an project idea">
+      <option name="closed" value="true" />
+      <created>1720646849195</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1720646849196</updated>
+    </task>
+    <task id="LOCAL-00074" summary="- create new roadmap project">
+      <option name="closed" value="true" />
+      <created>1720717087944</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1720717087944</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,8 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="spotify widget" />
-    <MESSAGE value="spotify sdk working ;)" />
     <MESSAGE value="add global types for compilation" />
     <MESSAGE value=".idea ciao" />
     <MESSAGE value="store what's needed for use of pomodoro in all app" />
@@ -594,6 +592,8 @@
     <MESSAGE value="defualt button style" />
     <MESSAGE value="stack update" />
     <MESSAGE value="prisma setup and vote implemented with backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="prisma setup and vote implemented with backend" />
+    <MESSAGE value="- instanciate prisma once,&#10;- add form to add an project idea" />
+    <MESSAGE value="- create new roadmap project" />
+    <option name="LAST_COMMIT_MESSAGE" value="- create new roadmap project" />
   </component>
 </project>

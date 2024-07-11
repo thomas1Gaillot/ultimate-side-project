@@ -1,14 +1,9 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import {z} from "zod";
 import prisma from "@/prisma/prisma";
+import {roadmapSchema} from "@/domain/roadmap/Roadmap";
 
-export const roadmapSchema = z.object({
-    title: z.string().min(1, "Project title is required"),
-    type: z.string().min(1, "Type is required"),
-    description: z.string().min(1, "Description is required"),
-});
 
-export type RoadmapSchema = z.infer<typeof roadmapSchema>;
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
