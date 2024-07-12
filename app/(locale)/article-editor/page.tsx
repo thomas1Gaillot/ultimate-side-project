@@ -8,7 +8,7 @@ import {Separator} from "@/components/ui/separator";
 import usePreset from "@/app/(locale)/article-editor/use-preset";
 
 export default function ArticleEditor() {
-    const {selectedPreset, setSelectedPreset, articleContent} = usePreset()
+    const {selectedPreset, setSelectedPreset, articleContent, setArticleContent} = usePreset()
 
     return (
         <div className={"flex flex-col gap-4 pb-8"}>
@@ -32,7 +32,7 @@ export default function ArticleEditor() {
                     </CardHeader>
                     <Separator/>
                     <CardContent>
-                        <ArticleEditorWidget articleContent={articleContent}/>
+                        <ArticleEditorWidget articleContent={articleContent} setArticleContent={setArticleContent}/>
                     </CardContent>
                 </Card>
             </div>

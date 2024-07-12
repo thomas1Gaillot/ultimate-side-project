@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add more space">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownPreview.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/use-preset.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="article to preview mvp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/ArticleEditorWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/ArticleEditorWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/components/PresetSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/PresetSelector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownPreview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownPreview.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/comparison-article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/comparison-article.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/how-to-guide.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/how-to-guide.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/presets.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/presets.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/resource-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/resource-list.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/top-3.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/trend-article.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/video-tutorial.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/roadmap/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/useSound.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/use-sound.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/use-preset.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/use-preset.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/typography.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/typography.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,15 +165,7 @@
       <workItem from="1720682746400" duration="11000" />
       <workItem from="1720714243325" duration="4559000" />
       <workItem from="1720767608087" duration="5115000" />
-      <workItem from="1720775890591" duration="7184000" />
-    </task>
-    <task id="LOCAL-00036" summary="comments">
-      <option name="closed" value="true" />
-      <created>1720257407772</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1720257407772</updated>
+      <workItem from="1720775890591" duration="11710000" />
     </task>
     <task id="LOCAL-00037" summary="hit a ding sound after each steps">
       <option name="closed" value="true" />
@@ -556,7 +551,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720780990290</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="article to preview mvp">
+      <option name="closed" value="true" />
+      <created>1720785380185</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1720785380185</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +578,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="sidebar pomodoro icon when playing change" />
     <MESSAGE value="lint" />
     <MESSAGE value="do not display legacy pages anymore" />
     <MESSAGE value="- adding roadmap link,&#10;- fix image broken on stack page" />
@@ -600,6 +602,7 @@
     <MESSAGE value="editor article page ui" />
     <MESSAGE value="resizable panel" />
     <MESSAGE value="add more space" />
-    <option name="LAST_COMMIT_MESSAGE" value="add more space" />
+    <MESSAGE value="article to preview mvp" />
+    <option name="LAST_COMMIT_MESSAGE" value="article to preview mvp" />
   </component>
 </project>

@@ -5,9 +5,6 @@ import {opinionPiece} from "@/app/(locale)/article-editor/data/opinion-piece";
 import {interview} from "@/app/(locale)/article-editor/data/interview";
 import {comparisonArticle} from "@/app/(locale)/article-editor/data/comparison-article";
 import {productReview} from "@/app/(locale)/article-editor/data/product-review";
-import {top3} from "@/app/(locale)/article-editor/data/top-3";
-import {trendArticle} from "@/app/(locale)/article-editor/data/trend-article";
-import {videoTutorial} from "@/app/(locale)/article-editor/data/video-tutorial";
 
 export interface Preset {
     id: string
@@ -51,19 +48,5 @@ export const presets: Preset[] = [
         name: "Product/Service Review",
         md: productReview
     },
-    {
-        id: "4641ef41-1c0f-421d-b4b2-70fe431081f3",
-        name: "Top 3",
-        md: top3
-    },
-    {
-        id: "48d34082-72f3-4a1b-a14d-f15aca4f57a0",
-        name: "Trend Article",
-        md: trendArticle
-    },
-    {
-        id: "dfd42fd5-0394-4810-92c6-cc907d3bfd1a",
-        name: "Video Tutorial",
-        md: videoTutorial
-    },
+
 ]

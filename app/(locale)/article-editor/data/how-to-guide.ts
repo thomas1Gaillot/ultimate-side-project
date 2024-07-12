@@ -1,17 +1,19 @@
-export const howToGuide = `# How to [Perform a Specific Task]
+export const howToGuide = `# How to Create a Modern Front-End Website
+Creating a front-end website nowadays involves using modern frameworks and tools that enhance development efficiency and user experience. In this guide, we will create a simple front-end website using Next.js, Tailwind CSS, and TypeScript.
+\n
+## Prerequisites
+Before you begin, ensure you have the following installed:
+- Node.js (version 14 or higher)
+- npm (Node Package Manager) or yarn \n
+## Step 1: Setting Up the Project
+First, create a new Next.js project. You can use the following command: \n
+\`npx create-next-app my-website --typescript \n
+## Step 2: Installing Tailwind CSS
+Next, install Tailwind CSS and its dependencies by running the following command: \n
+\`npm install tailwindcss postcss autoprefixer
+\n
+## Step 3: Configuring Tailwind CSS
+Create a Tailwind CSS configuration file by running the following command: \n
+\`npx tailwindcss init -p
 
-## Introduction
-A brief introduction about the task you are going to explain and why it is important.
-
-## Steps
-### Step 1: [Title of Step 1]
-Detailed description of step 1.
-
-### Step 2: [Title of Step 2]
-Detailed description of step 2.
-
-### Step 3: [Title of Step 3]
-Detailed description of step 3.
-
-## Conclusion
-A summary of what you did and additional tips or resources to go further`
+`

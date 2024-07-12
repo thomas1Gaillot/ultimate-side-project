@@ -4,7 +4,7 @@ import {SquareIcon, TabletSmartphoneIcon} from "lucide-react";
 import {ResizableHandle, ResizablePanel, ResizablePanelGroup} from "@/components/ui/resizable";
 import MarkdownPreview from "@/app/(locale)/article-editor/components/MarkdownPreview";
 
-export default function ArticleEditorWidget({articleContent}:{articleContent: string}) {
+export default function ArticleEditorWidget({articleContent, setArticleContent}:{articleContent: string, setArticleContent(content: string): void}) {
     return (<>
         <Tabs defaultValue="withPreview" className="flex-1 p-4">
             <div className="w-full flex  justify-end mb-4">
@@ -29,6 +29,7 @@ export default function ArticleEditorWidget({articleContent}:{articleContent: st
                         <ResizablePanelGroup direction="horizontal">
                             <ResizablePanel defaultSize={33} minSize={20} className={"rounded-l-md border min-w-xs"}>
                                 <Textarea
+                                    onChange={(e) => setArticleContent(e.target.value)}
                                     value={articleContent}
                                     placeholder="Start writing your article here..."
                                     className="h-full min-h-[300px] lg:min-h-[700px] xl:min-h-[700px] rounded-none border-none"
@@ -45,6 +46,7 @@ export default function ArticleEditorWidget({articleContent}:{articleContent: st
             <TabsContent value="default">
                 <div className="flex h-full flex-col space-y-4">
                     <Textarea
+                        onChange={(e) => setArticleContent(e.target.value)}
                         value={articleContent}
                         placeholder="Start writing your article here..."
                         className="h-full min-h-[300px] lg:min-h-[700px] xl:min-h-[700px] "

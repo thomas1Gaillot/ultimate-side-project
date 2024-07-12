@@ -4,7 +4,7 @@ export const resourceList = `# [Title of the Resource List]
 A brief introduction about the importance of the listed resources.
 
 ## Resources
-1. **[Name of Resource 1]** - [Link](URL)
+1. **[Name of Resource 1]** - [link](https://example.com)
    Description of resource 1.
 2. **[Name of Resource 2]** - [Link](URL)
    Description of resource 2.

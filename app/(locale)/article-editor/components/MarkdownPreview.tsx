@@ -5,45 +5,90 @@ import {
     TypographyH2,
     TypographyH3,
     TypographyH4,
-    TypographyInlineCode,
-    TypographyLarge,
-    TypographyLead,
-    TypographyMuted,
-    TypographyList,
+    TypographyInlineCode, TypographyList,
     TypographyP,
-    TypographySmall,
-    TypographyTable
+    TypographySmall
 } from '@/components/ui/typography';
+import Link from "next/link";
 
 const parseMarkdown = (markdown: string) => {
     const lines = markdown.split('\n');
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const boldRegex = /\*\*(.*?)\*\*/g;
+    const codeBlockRegex = /```([\s\S]*?)```/g;
 
-    return lines.map((line, index) => {
-        if (/^#\s/.test(line)) {
-            return <TypographyH1 key={index}>{line.replace(/^#\s/, '')}</TypographyH1>;
+    const elements: JSX.Element[] = [];
+
+    let isInCodeBlock = false;
+    let codeBlockContent:string[] = [];
+
+    lines.forEach((line, index) => {
+        if (codeBlockRegex.test(line)) {
+            if (!isInCodeBlock) {
+                isInCodeBlock = true;
+                codeBlockContent.push(line.replace(/```/, ''));
+            } else {
+                isInCodeBlock = false;
+                codeBlockContent.push(line.replace(/```/, ''));
+                elements.push(
+                    <TypographyInlineCode key={index}>
+                        {codeBlockContent.join('\n')}
+                    </TypographyInlineCode>
+                );
+                codeBlockContent = [];
+            }
+        } else if (isInCodeBlock) {
+            codeBlockContent.push(line);
+        } else if (/^#\s/.test(line)) {
+            elements.push(<TypographyH1 key={index}>{line.replace(/^#\s/, '')}</TypographyH1>);
         } else if (/^##\s/.test(line)) {
-            return <TypographyH2 key={index}>{line.replace(/^##\s/, '')}</TypographyH2>;
+            elements.push(<TypographyH2 key={index}>{line.replace(/^##\s/, '')}</TypographyH2>);
         } else if (/^###\s/.test(line)) {
-            return <TypographyH3 key={index}>{line.replace(/^###\s/, '')}</TypographyH3>;
+            elements.push(<TypographyH3 key={index}>{line.replace(/^###\s/, '')}</TypographyH3>);
         } else if (/^####\s/.test(line)) {
-            return <TypographyH4 key={index}>{line.replace(/^####\s/, '')}</TypographyH4>;
+            elements.push(<TypographyH4 key={index}>{line.replace(/^####\s/, '')}</TypographyH4>);
         } else if (/^>\s/.test(line)) {
-            return <TypographyBlockquote key={index}>{line.replace(/^>\s/, '')}</TypographyBlockquote>;
+            elements.push(<TypographyBlockquote key={index}>{line.replace(/^>\s/, '')}</TypographyBlockquote>);
         } else if (/^`/.test(line)) {
-            return <TypographyInlineCode key={index}>{line.replace(/^`/, '').replace(/`$/, '')}</TypographyInlineCode>;
+            elements.push(<TypographyInlineCode className={"w-max"} key={index}>{line.replace(/^`/, '').replace(/`$/, '')}</TypographyInlineCode>);
         } else if (/^\*\s/.test(line)) {
-            return <li key={index}><TypographySmall>{line.replace(/^\*\s/, '')}</TypographySmall></li>;
+            elements.push(<TypographySmall>{line.replace(/^\*\s/, '')}</TypographySmall>);
+        } else if (/^\-\s/.test(line)) {
+            elements.push(<ul className="ml-6 list-disc text-gray-800 [&>li]:mt-2">
+                    <li key={index}>{line.replace(/^\-\s/, '')}</li>
+            </ul>
+        )
+            ;
+        } else if (linkRegex.test(line) || boldRegex.test(line)) {
+            const parts = [];
+            let lastIndex = 0;
+            line.replace(linkRegex, (match, text, url, offset) => {
+                parts.push(line.substring(lastIndex, offset));
+                parts.push(<Link className="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer" href={url} key={offset}>{text}</Link>);
+                lastIndex = offset + match.length;
+                return match;
+            });
+            line.replace(boldRegex, (match, text, offset) => {
+                parts.push(line.substring(lastIndex, offset));
+                parts.push(<strong key={offset}>{text}</strong>);
+                lastIndex = offset + match.length;
+                return match;
+            });
+            parts.push(line.substring(lastIndex));
+            elements.push(<TypographyP key={index}>{<>parts</>}</TypographyP>);
         } else {
-            return <TypographyP key={index}>{line}</TypographyP>;
+            elements.push(<TypographyP key={index}>{line}</TypographyP>);
         }
     });
+
+    return elements;
 };
 
-const MarkdownPreview = ({ content }:{content : string}) => {
+const MarkdownPreview = ({content}: { content: string }) => {
     const parsedContent = parseMarkdown(content);
 
     return (
-        <div>
+        <div className={'grid'}>
             {parsedContent}
         </div>
     );

@@ -12,5 +12,5 @@ export default function usePreset() {
         }
     }, [selectedPreset])
 
-    return {selectedPreset, setSelectedPreset, articleContent}
+    return {selectedPreset, setSelectedPreset, articleContent, setArticleContent}
 }

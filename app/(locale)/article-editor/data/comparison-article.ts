@@ -1,6 +1,4 @@
-export const comparisonArticle = `# Comparison between [Option A] and [Option B]
-
-## Introduction
+export const comparisonArticle = `# Comparison : [Option A] vs [Option B]
 Introduction of the two options being compared and the context of the comparison.
 
 ## Criterion 1: [Title of Criterion 1]

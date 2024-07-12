@@ -1,3 +1,5 @@
+import {cn} from "@/lib/utils";
+
 function TypographyBlockquote({children}: { children: JSX.Element | string }) {
     return (
         <blockquote className="mt-6 border-l-2 pl-6 italic text-gray-600">
@@ -37,9 +39,9 @@ function TypographyH4({children}: { children: JSX.Element | string }) {
     )
 }
 
-function TypographyInlineCode({children}: { children: JSX.Element | string }) {
+function TypographyInlineCode({children, className}: { children: JSX.Element | string, className ?: string}) {
     return (
-        <code className="relative rounded bg-gray-200 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-gray-800">
+        <code className={cn("relative rounded bg-gray-200 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-gray-800", className)}>
             {children}
         </code>
     )
@@ -63,7 +65,7 @@ function TypographyMuted({children}: { children: JSX.Element | string }) {
     )
 }
 
-function TypographyList({texts}: { texts: JSX.Element[] | string[] }) {
+function TypographyList({texts}: { texts: (JSX.Element | string )[]}) {
     return (
         <ul className="my-6 ml-6 list-disc text-gray-800 [&>li]:mt-2">
             {texts.map((child, index) => (
