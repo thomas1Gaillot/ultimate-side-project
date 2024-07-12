@@ -3,7 +3,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import usePomodoroStore from "@/domain/pomodoro/use-pomodoro-store";
 import { useEffect } from "react";
-import useSound from "@/hooks/useSound";
+import useSound from "@/hooks/use-sound";
 import { pomodoroPattern } from "@/domain/pomodoro/Pomodoro";
 
 const FormSchema = z.object({

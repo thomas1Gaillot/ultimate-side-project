@@ -1,28 +1,24 @@
 "use client"
 
 import * as React from "react"
-import { useRouter } from "next/navigation"
-import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons"
-import { PopoverProps } from "@radix-ui/react-popover"
+import {CaretSortIcon, CheckIcon} from "@radix-ui/react-icons"
+import {PopoverProps} from "@radix-ui/react-popover"
 
-import { cn } from "@/lib/utils"
-
+import {cn} from "@/lib/utils"
 
 
-import { Preset } from "../data/presets"
+import {Preset, presets} from "../data/presets"
 import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
 import {Button} from "@/components/ui/button";
 import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList} from "@/components/ui/command";
 
 interface PresetSelectorProps extends PopoverProps {
-    presets: Preset[]
+    selectedPreset?: Preset ;
+    setSelectedPreset: (p: Preset) => void;
 }
 
-export function PresetSelector({ presets, ...props }: PresetSelectorProps) {
+export function PresetSelector({selectedPreset, setSelectedPreset, ...props}: PresetSelectorProps) {
     const [open, setOpen] = React.useState(false)
-    const [selectedPreset, setSelectedPreset] = React.useState<Preset>()
-    const router = useRouter()
-
     return (
         <Popover open={open} onOpenChange={setOpen} {...props}>
             <PopoverTrigger asChild>
@@ -34,12 +30,12 @@ export function PresetSelector({ presets, ...props }: PresetSelectorProps) {
                     className="flex-1 justify-between md:max-w-[200px] lg:max-w-[300px]"
                 >
                     {selectedPreset ? selectedPreset.name : "Load a preset..."}
-                    <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                    <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50"/>
                 </Button>
             </PopoverTrigger>
             <PopoverContent className="w-[300px] p-0">
                 <Command>
-                    <CommandInput placeholder="Search presets..." />
+                    <CommandInput placeholder="Search presets..."/>
                     <CommandList>
                         <CommandEmpty>No presets found.</CommandEmpty>
                         <CommandGroup heading="Examples">

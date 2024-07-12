@@ -36,7 +36,7 @@ export default function PomodoroWidget() {
     };
 
     return (
-        <div className={"max-w-3xl"}>
+        <div className={"max-w-2xl"}>
             <Card className={"p-4 py-2 flex flex-col gap-4 "}>
                 <TaskForm form={form} currentPhase={currentPhase} onSubmit={onSubmit}/>
                 <Timer secondsLeft={secondsLeft}/>

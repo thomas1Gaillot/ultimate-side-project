@@ -56,7 +56,7 @@ export default function RoadMapPage() {
                     <TabsTrigger value="selected">Selected</TabsTrigger>
                     <TabsTrigger value="voting">Open to vote</TabsTrigger>
                 </TabsList>
-                <TabsContent value="selected" className={"grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl"}>
+                <TabsContent value="selected" className={"grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 "}>
                     {isLoading && <UpcomingProjectCardSkeleton/>}
                     {isLoading && <UpcomingProjectCardSkeleton/>}
                     {
@@ -64,7 +64,7 @@ export default function RoadMapPage() {
                                                                            key={item.id} {...item} />)
                     }
                 </TabsContent>
-                <TabsContent value="voting" className={"grid grid-cols-1 md:grid-cols-2  gap-4 max-w-xl"}>
+                <TabsContent value="voting" className={"grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-4 "}>
                     <Dialog open={openDialog} onOpenChange={setOpenDialog}>
                         <DialogTrigger>
                             <Button
