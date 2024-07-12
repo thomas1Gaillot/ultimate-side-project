@@ -1,5 +1,10 @@
-import PomodoroWidget from "@/app/(locale)/pomodoro/PomodoroWidget";
-import {TypographyBlockquote, TypographyH1, TypographyLead, TypographyList} from "@/components/ui/typography";
+import {TypographyH1, TypographyH4, TypographyLead} from "@/components/ui/typography";
+import ArticleEditorWidget from "@/app/(locale)/article-editor/ArticleEditorWidget";
+import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {PresetSelector} from "@/app/(locale)/article-editor/components/PresetSelector";
+import {presets} from "@/app/(locale)/article-editor/data/presets";
+import {Button} from "@/components/ui/button";
+import {Separator} from "@/components/ui/separator";
 
 export default function ArticleEditor() {
     return (
@@ -11,7 +16,21 @@ export default function ArticleEditor() {
                 Create and edit articles with ease by giving an .md file.
             </TypographyLead>
             <div className={"flex flex-col pt-8"}>
-                Editor Widget
+                <Card>
+                    <CardHeader>
+                        <CardTitle className={"flex w-full justify-between"}>
+                            <p className="scroll-m-20 text-lg font-semibold tracking-tight text-black">Article Editor</p>
+                            <div className={"flex gap-2"}>
+                                <PresetSelector presets={presets}/>
+                                <Button variant={'secondary'}>Export .md</Button>
+                            </div>
+                        </CardTitle>
+                    </CardHeader>
+                    <Separator/>
+                    <CardContent>
+                        <ArticleEditorWidget/>
+                    </CardContent>
+                </Card>
             </div>
         </div>
     );
