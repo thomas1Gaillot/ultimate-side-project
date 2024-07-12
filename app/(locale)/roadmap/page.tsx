@@ -1,12 +1,12 @@
 'use client'
-import { TypographyH1, TypographyLead } from "@/components/ui/typography";
-import UpcomingProjectCard, { UpcomingProjectCardSkeleton } from "@/app/(locale)/roadmap/UpcomingProjectCard";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { SquarePlusIcon } from "lucide-react";
+import {TypographyH1, TypographyLead} from "@/components/ui/typography";
+import UpcomingProjectCard, {UpcomingProjectCardSkeleton} from "@/app/(locale)/roadmap/UpcomingProjectCard";
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
+import React, {useState} from "react";
+import {Button} from "@/components/ui/button";
+import {SquarePlusIcon} from "lucide-react";
 import {
-    Dialog, DialogClose,
+    Dialog,
     DialogContent,
     DialogDescription,
     DialogFooter,
@@ -14,19 +14,19 @@ import {
     DialogTitle,
     DialogTrigger
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { RoadmapSchema, roadmapSchema } from "@/domain/roadmap/Roadmap";
-import { useFetchRoadmaps } from '@/domain/roadmap/use-fetch-roadmaps';
-import { useUpvote } from '@/domain/roadmap/use-upvote';
-import { useAddProjectIdea } from '@/domain/roadmap/use-add-project-idea';
+import {Input} from "@/components/ui/input";
+import {useForm} from 'react-hook-form';
+import {zodResolver} from '@hookform/resolvers/zod';
+import {Form, FormControl, FormField, FormItem, FormLabel} from "@/components/ui/form";
+import {RoadmapSchema, roadmapSchema} from "@/domain/roadmap/Roadmap";
+import {useFetchRoadmaps} from '@/domain/roadmap/use-fetch-roadmaps';
+import {useUpvote} from '@/domain/roadmap/use-upvote';
+import {useAddProjectIdea} from '@/domain/roadmap/use-add-project-idea';
 
 export default function RoadMapPage() {
-    const { selectedRoadmap, votingRoadmap, isLoading, fetchRoadmaps } = useFetchRoadmaps();
-    const { handleUpvote } = useUpvote();
-    const { addProjectIdea } = useAddProjectIdea();
+    const {selectedRoadmap, votingRoadmap, isLoading, fetchRoadmaps} = useFetchRoadmaps();
+    const {handleUpvote} = useUpvote();
+    const {addProjectIdea} = useAddProjectIdea();
     const [openDialog, setOpenDialog] = useState(false);
     const form = useForm<RoadmapSchema>({
         resolver: zodResolver(roadmapSchema),
@@ -48,11 +48,13 @@ export default function RoadMapPage() {
                 {`Upvote for the feature you'd like on this website.`}
             </TypographyLead>
             <Tabs defaultValue="selected">
-                <TabsList className="grid grid-cols-2 max-w-lg">
+                <TabsList className="grid grid-cols-2 max-w-sm">
                     <TabsTrigger value="selected">Selected</TabsTrigger>
                     <TabsTrigger value="voting">Open to vote</TabsTrigger>
                 </TabsList>
-                <TabsContent value="selected"  className={"grid gap-4 max-w-xl"}>
+                <TabsContent value="selected" className={"grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl"}>
+                    {isLoading && <UpcomingProjectCardSkeleton/>}
+                    {isLoading && <UpcomingProjectCardSkeleton/>}
                     {
                         selectedRoadmap.map((item) => <UpcomingProjectCard handleUpvote={() => {
                             handleUpvote(item.id)
@@ -61,14 +63,14 @@ export default function RoadMapPage() {
                                                                            key={item.id} {...item} />)
                     }
                 </TabsContent>
-                <TabsContent value="voting" className={"grid gap-4 max-w-xl"}>
+                <TabsContent value="voting" className={"grid grid-cols-1 md:grid-cols-2  gap-4 max-w-xl"}>
                     <Dialog open={openDialog} onOpenChange={setOpenDialog}>
                         <DialogTrigger>
                             <Button
-                                className={"border-dashed border h-24 w-full hover:scale-100 "}
+                                className={"border-dashed min-h-20 rounded-lg border text-gray-500 h-full w-full hover:scale-100 "}
                                 size={'lg'}
                                 variant={'outline'}>
-                                <SquarePlusIcon className={"w-6 h-6  mr-2"} />
+                                <SquarePlusIcon className={"w-6 h-6  mr-2"}/>
                                 Add a project idea
                             </Button>
                         </DialogTrigger>
@@ -84,7 +86,7 @@ export default function RoadMapPage() {
                                     <FormField
                                         control={form.control}
                                         name="title"
-                                        render={({ field }) => (
+                                        render={({field}) => (
                                             <FormItem>
                                                 <FormLabel>Project title</FormLabel>
                                                 <FormControl>
@@ -96,7 +98,7 @@ export default function RoadMapPage() {
                                     <FormField
                                         control={form.control}
                                         name="type"
-                                        render={({ field }) => (
+                                        render={({field}) => (
                                             <FormItem>
                                                 <FormLabel>Type</FormLabel>
                                                 <FormControl>
@@ -108,7 +110,7 @@ export default function RoadMapPage() {
                                     <FormField
                                         control={form.control}
                                         name="description"
-                                        render={({ field }) => (
+                                        render={({field}) => (
                                             <FormItem>
                                                 <FormLabel>Description</FormLabel>
                                                 <FormControl>
@@ -133,7 +135,7 @@ export default function RoadMapPage() {
                     }
                 </TabsContent>
             </Tabs>
-            {isLoading && <UpcomingProjectCardSkeleton />}
+
         </div>
     );
 }

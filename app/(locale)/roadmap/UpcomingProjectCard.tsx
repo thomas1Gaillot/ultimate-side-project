@@ -15,7 +15,7 @@ export default function UpcomingProjectCard({id, title, description, upvotes, ba
 }) {
 
 
-    return <Card className="w-full max-w-xl ">
+    return <Card className="w-full max-w-md flex flex-col justify-between ">
         <CardHeader>
             <CardTitle className="flex flex-col gap-2">
                 <Badge variant="secondary" className="w-max">{badge}</Badge>
