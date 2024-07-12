@@ -3,7 +3,6 @@ import {TypographyH1, TypographyLead} from "@/components/ui/typography";
 import ArticleEditorWidget from "@/app/(locale)/article-editor/ArticleEditorWidget";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {PresetSelector} from "@/app/(locale)/article-editor/components/PresetSelector";
-import {Button} from "@/components/ui/button";
 import {Separator} from "@/components/ui/separator";
 import usePreset from "@/app/(locale)/article-editor/use-preset";
 import CopyToClipboardButton from "@/components/[locale]/copy-to-clipboard-button";

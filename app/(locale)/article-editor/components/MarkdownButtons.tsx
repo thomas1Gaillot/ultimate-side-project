@@ -1,19 +1,18 @@
 import React from 'react';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Button } from "@/components/ui/button";
+import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
+import {Button} from "@/components/ui/button";
 import {
+    BoldIcon,
+    CodeIcon,
     Heading1Icon,
     Heading2Icon,
     Heading3Icon,
     Heading4Icon,
-    BoldIcon,
-    CodeIcon,
-    ListIcon,
     LinkIcon,
-    QuoteIcon,
-    CaseLowerIcon
+    ListIcon,
+    QuoteIcon
 } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
+import {Separator} from "@/components/ui/separator";
 
 export default function MarkdownButtons({ textareaRef, articleContent, setArticleContent }: {
     textareaRef: React.RefObject<HTMLTextAreaElement>,
