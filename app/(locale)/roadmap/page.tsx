@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { SquarePlusIcon } from "lucide-react";
 import {
-    Dialog,
+    Dialog, DialogClose,
     DialogContent,
     DialogDescription,
     DialogFooter,
@@ -52,7 +52,7 @@ export default function RoadMapPage() {
                     <TabsTrigger value="selected">Selected</TabsTrigger>
                     <TabsTrigger value="voting">Open to vote</TabsTrigger>
                 </TabsList>
-                <TabsContent value="selected">
+                <TabsContent value="selected"  className={"grid gap-4 max-w-xl"}>
                     {
                         selectedRoadmap.map((item) => <UpcomingProjectCard handleUpvote={() => {
                             handleUpvote(item.id)
@@ -62,10 +62,9 @@ export default function RoadMapPage() {
                     }
                 </TabsContent>
                 <TabsContent value="voting" className={"grid gap-4 max-w-xl"}>
-                    <Dialog open={openDialog}>
+                    <Dialog open={openDialog} onOpenChange={setOpenDialog}>
                         <DialogTrigger>
                             <Button
-                                onClick={() => setOpenDialog(true)}
                                 className={"border-dashed border h-24 w-full hover:scale-100 "}
                                 size={'lg'}
                                 variant={'outline'}>
@@ -91,7 +90,6 @@ export default function RoadMapPage() {
                                                 <FormControl>
                                                     <Input placeholder="An awesome idea" {...field} />
                                                 </FormControl>
-                                                <FormMessage />
                                             </FormItem>
                                         )}
                                     />
@@ -104,7 +102,6 @@ export default function RoadMapPage() {
                                                 <FormControl>
                                                     <Input placeholder="Page" {...field} />
                                                 </FormControl>
-                                                <FormMessage />
                                             </FormItem>
                                         )}
                                     />
@@ -117,7 +114,6 @@ export default function RoadMapPage() {
                                                 <FormControl>
                                                     <Input placeholder="Describe what you would want." {...field} />
                                                 </FormControl>
-                                                <FormMessage />
                                             </FormItem>
                                         )}
                                     />
