@@ -6,7 +6,7 @@ import {
     JoystickIcon,
     Layers2Icon,
     LoaderCircle,
-    MusicIcon,
+    MusicIcon, NotebookPenIcon,
     Play,
     StarIcon,
     TimerIcon
@@ -46,15 +46,11 @@ const defaultPages = [
                 href: '/pomodoro',
                 label: 'Pomodoro',
                 icon: TimerIcon,
-            }, {
-                href: '/croissant',
-                label: 'Croissant (Todo)',
-                icon: CroissantIcon,
-            }, {
-                href: '/spotify',
-                label: 'Spotify (WIP)',
-                icon: MusicIcon,
-            },
+            },{
+                href: '/article-editor',
+                label: 'Article Editor 🚧',
+                icon: NotebookPenIcon,
+            }
         ]
     },
     {
