@@ -4,7 +4,7 @@ import {Button} from "@/components/ui/button";
 import {TrashIcon} from "lucide-react";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
 import {cn} from "@/lib/utils";
-import usePomodoroStore from "@/hooks/usePomodoroStore";
+import usePomodoroStore from "@/domain/pomodoro/use-pomodoro-store";
 
 const TaskList = ({tasks, deleteTask, currentTask}: {
     tasks: { id: number; name: string; duration: number }[];

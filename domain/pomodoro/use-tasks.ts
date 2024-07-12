@@ -1,7 +1,7 @@
 import {useForm} from "react-hook-form";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
-import usePomodoroStore from "@/hooks/usePomodoroStore";
+import usePomodoroStore from "@/domain/pomodoro/use-pomodoro-store";
 import {useEffect} from "react";
 
 const FormSchema = z.object({
@@ -17,6 +17,7 @@ const FormSchema = z.object({
 
 export const useTasks = () => {
     const {tasks, setTasks, formValues, setFormValues} = usePomodoroStore();
+    console.log(tasks, formValues)
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: formValues,
@@ -62,6 +63,22 @@ export const useTasks = () => {
         );
     };
 
+    const handlePhaseChange = (type: string) => {
+        switch (type) {
+            case 'work':
+                form.setValue("task", "new task");
+                break;
+            case 'break':
+                form.setValue("task", "5 min break");
+                break;
+            case 'longBreak':
+                form.setValue("task", "15 min break");
+                break;
+            default:
+                form.setValue("task", "");
+        }
+    };
+
 
 
     return {
@@ -70,5 +87,6 @@ export const useTasks = () => {
         addTask,
         deleteTask,
         updateTaskDuration,
+        handlePhaseChange
     };
 };

@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- refactor into hooks">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- ui ux roadmap updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/roadmap/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/roadmap/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/roadmap/upvote.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/roadmap/upvote.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/prisma.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/prisma.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/usePages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/data/usePages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/usePomodoro.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/usePomodoroStats.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-stats.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/usePomodoroStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useTasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-tasks.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,11 +74,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\domain\pomodoro" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\domain\roadmap" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api\roadmap" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)" />
     </key>
   </component>
   <component name="RunManager" selected="npm.seed">
@@ -155,31 +159,8 @@
       <workItem from="1720644581779" duration="2237000" />
       <workItem from="1720682381123" duration="20000" />
       <workItem from="1720682746400" duration="11000" />
-      <workItem from="1720714243325" duration="4418000" />
-    </task>
-    <task id="LOCAL-00027" summary="pomodoro tasks listing">
-      <option name="closed" value="true" />
-      <created>1719611739442</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1719611739442</updated>
-    </task>
-    <task id="LOCAL-00028" summary="adding dot-patterns to widget page">
-      <option name="closed" value="true" />
-      <created>1719737698487</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1719737698487</updated>
-    </task>
-    <task id="LOCAL-00029" summary="adding page structure for widget pages">
-      <option name="closed" value="true" />
-      <created>1719765844931</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1719765844931</updated>
+      <workItem from="1720714243325" duration="4559000" />
+      <workItem from="1720767608087" duration="4412000" />
     </task>
     <task id="LOCAL-00030" summary="add tabs from shadcn-ui">
       <option name="closed" value="true" />
@@ -549,7 +530,31 @@
       <option name="project" value="LOCAL" />
       <updated>1720717788542</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="- fix prisma">
+      <option name="closed" value="true" />
+      <created>1720719098763</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1720719098763</updated>
+    </task>
+    <task id="LOCAL-00077" summary="- fix roadmap ux dialog">
+      <option name="closed" value="true" />
+      <created>1720768890601</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1720768890601</updated>
+    </task>
+    <task id="LOCAL-00078" summary="- ui ux roadmap updated">
+      <option name="closed" value="true" />
+      <created>1720769775691</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1720769775691</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,9 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value=".idea ciao" />
-    <MESSAGE value="store what's needed for use of pomodoro in all app" />
-    <MESSAGE value="show in sidebar the tasks number" />
     <MESSAGE value="fix pomodoro sidebar when tasks are lenght 0" />
     <MESSAGE value="outline current task" />
     <MESSAGE value="pause pomodoro timer when taskform input change" />
@@ -593,6 +595,9 @@
     <MESSAGE value="- instanciate prisma once,&#10;- add form to add an project idea" />
     <MESSAGE value="- create new roadmap project" />
     <MESSAGE value="- refactor into hooks" />
-    <option name="LAST_COMMIT_MESSAGE" value="- refactor into hooks" />
+    <MESSAGE value="- fix prisma" />
+    <MESSAGE value="- fix roadmap ux dialog" />
+    <MESSAGE value="- ui ux roadmap updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="- ui ux roadmap updated" />
   </component>
 </project>

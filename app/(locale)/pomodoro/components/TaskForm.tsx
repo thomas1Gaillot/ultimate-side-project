@@ -3,7 +3,7 @@ import {Form, FormControl, FormField, FormItem, FormMessage} from "@/components/
 import Image from "next/image";
 import {Input} from "@/components/ui/input";
 import {UseFormReturn} from "react-hook-form";
-import usePomodoroStore from "@/hooks/usePomodoroStore";
+import usePomodoroStore from "@/domain/pomodoro/use-pomodoro-store";
 
 function displayCurrentPhaseIcon(type: string) {
     switch (type) {

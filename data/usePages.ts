@@ -12,7 +12,7 @@ import {
     TimerIcon
 } from "lucide-react";
 import {useEffect, useState} from "react";
-import usePomodoroStore from "@/hooks/usePomodoroStore";
+import usePomodoroStore from "@/domain/pomodoro/use-pomodoro-store";
 
 const defaultPages = [
     {
