@@ -86,17 +86,6 @@ export default function MarkdownButtons({ textareaRef, articleContent, setArticl
                 <TooltipProvider>
                     <Tooltip>
                         <TooltipTrigger asChild>
-                            <Button onClick={() => addMarkdownToCursorPosition('* small text')} variant="ghost" size="icon">
-                                <CaseLowerIcon className="size-4" />
-                                <span className="sr-only">Add Small text</span>
-                            </Button>
-                        </TooltipTrigger>
-                        <TooltipContent side="top">Add Small text</TooltipContent>
-                    </Tooltip>
-                </TooltipProvider>
-                <TooltipProvider>
-                    <Tooltip>
-                        <TooltipTrigger asChild>
                             <Button onClick={() => addMarkdownToCursorPosition('**bold text**')} variant="ghost" size="icon">
                                 <BoldIcon className="size-4" />
                                 <span className="sr-only">Add Bold Text</span>
