@@ -6,6 +6,7 @@ import {PresetSelector} from "@/app/(locale)/article-editor/components/PresetSel
 import {Button} from "@/components/ui/button";
 import {Separator} from "@/components/ui/separator";
 import usePreset from "@/app/(locale)/article-editor/use-preset";
+import CopyToClipboardButton from "@/components/[locale]/copy-to-clipboard-button";
 
 export default function ArticleEditor() {
     const {selectedPreset, setSelectedPreset, articleContent, setArticleContent} = usePreset()
@@ -26,7 +27,7 @@ export default function ArticleEditor() {
                                 Editor</p>
                             <div className={"flex gap-2"}>
                                 <PresetSelector selectedPreset={selectedPreset} setSelectedPreset={setSelectedPreset}/>
-                                <Button variant={'secondary'}>Export .md</Button>
+                                <CopyToClipboardButton textToCopy={articleContent}/>
                             </div>
                         </CardTitle>
                     </CardHeader>

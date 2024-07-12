@@ -48,7 +48,7 @@ const defaultPages = [
                 icon: TimerIcon,
             },{
                 href: '/article-editor',
-                label: 'Article Editor 🚧',
+                label: 'Article Editor',
                 icon: NotebookPenIcon,
             }
         ]
