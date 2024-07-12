@@ -39,6 +39,10 @@ export default function RoadMapPage() {
         setOpenDialog(false);
     };
 
+    const upvoteAndRefresh = async (id: string) => {
+        await handleUpvote(id)
+        await fetchRoadmaps()
+    }
     return (
         <div className={"flex flex-col gap-4 pb-8"}>
             <TypographyH1>
@@ -56,10 +60,7 @@ export default function RoadMapPage() {
                     {isLoading && <UpcomingProjectCardSkeleton/>}
                     {isLoading && <UpcomingProjectCardSkeleton/>}
                     {
-                        selectedRoadmap.map((item) => <UpcomingProjectCard handleUpvote={() => {
-                            handleUpvote(item.id)
-                            fetchRoadmaps()
-                        }}
+                        selectedRoadmap.map((item) => <UpcomingProjectCard handleUpvote={() => upvoteAndRefresh(item.id)}
                                                                            key={item.id} {...item} />)
                     }
                 </TabsContent>
@@ -127,10 +128,7 @@ export default function RoadMapPage() {
                         </DialogContent>
                     </Dialog>
                     {
-                        votingRoadmap.map((item) => <UpcomingProjectCard handleUpvote={() => {
-                            handleUpvote(item.id)
-                            fetchRoadmaps()
-                        }}
+                        votingRoadmap.map((item) => <UpcomingProjectCard handleUpvote={() => upvoteAndRefresh(item.id)}
                                                                          key={item.id} {...item} />)
                     }
                 </TabsContent>
