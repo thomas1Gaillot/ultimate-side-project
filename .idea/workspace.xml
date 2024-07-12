@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="article to preview mvp">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="How to guide looks cool">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownButtons.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/ArticleEditorWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/ArticleEditorWidget.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownPreview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownPreview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/comparison-article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/comparison-article.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/how-to-guide.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/how-to-guide.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/presets.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/presets.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/resource-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/resource-list.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/top-3.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/trend-article.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/video-tutorial.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/use-preset.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/use-preset.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/typography.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/typography.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,15 +160,7 @@
       <workItem from="1720682746400" duration="11000" />
       <workItem from="1720714243325" duration="4559000" />
       <workItem from="1720767608087" duration="5115000" />
-      <workItem from="1720775890591" duration="11710000" />
-    </task>
-    <task id="LOCAL-00037" summary="hit a ding sound after each steps">
-      <option name="closed" value="true" />
-      <created>1720257917583</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1720257917583</updated>
+      <workItem from="1720775890591" duration="14806000" />
     </task>
     <task id="LOCAL-00038" summary="hit a ding sound after each steps">
       <option name="closed" value="true" />
@@ -559,7 +546,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720785380185</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="How to guide looks cool">
+      <option name="closed" value="true" />
+      <created>1720790183286</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1720790183286</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="lint" />
     <MESSAGE value="do not display legacy pages anymore" />
     <MESSAGE value="- adding roadmap link,&#10;- fix image broken on stack page" />
     <MESSAGE value="- merge to app/ folder" />
@@ -603,6 +597,7 @@
     <MESSAGE value="resizable panel" />
     <MESSAGE value="add more space" />
     <MESSAGE value="article to preview mvp" />
-    <option name="LAST_COMMIT_MESSAGE" value="article to preview mvp" />
+    <MESSAGE value="How to guide looks cool" />
+    <option name="LAST_COMMIT_MESSAGE" value="How to guide looks cool" />
   </component>
 </project>

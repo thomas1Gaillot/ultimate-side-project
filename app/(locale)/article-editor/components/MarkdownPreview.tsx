@@ -5,86 +5,76 @@ import {
     TypographyH2,
     TypographyH3,
     TypographyH4,
-    TypographyInlineCode, TypographyList,
+    TypographyInlineCode,
     TypographyP,
     TypographySmall
 } from '@/components/ui/typography';
 import Link from "next/link";
+import { marked } from 'marked';
 
-const parseMarkdown = (markdown: string) => {
-    const lines = markdown.split('\n');
-    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-    const boldRegex = /\*\*(.*?)\*\*/g;
-    const codeBlockRegex = /```([\s\S]*?)```/g;
-
-    const elements: JSX.Element[] = [];
-
-    let isInCodeBlock = false;
-    let codeBlockContent:string[] = [];
-
-    lines.forEach((line, index) => {
-        if (codeBlockRegex.test(line)) {
-            if (!isInCodeBlock) {
-                isInCodeBlock = true;
-                codeBlockContent.push(line.replace(/```/, ''));
-            } else {
-                isInCodeBlock = false;
-                codeBlockContent.push(line.replace(/```/, ''));
-                elements.push(
-                    <TypographyInlineCode key={index}>
-                        {codeBlockContent.join('\n')}
-                    </TypographyInlineCode>
+const renderTokens = (tokens:any) => {
+    return tokens.map((token:any, index:number) => {
+        switch (token.type) {
+            case 'heading':
+                switch (token.depth) {
+                    case 1:
+                        return <TypographyH1 key={index}>{token.text}</TypographyH1>;
+                    case 2:
+                        return <TypographyH2 key={index}>{token.text}</TypographyH2>;
+                    case 3:
+                        return <TypographyH3 key={index}>{token.text}</TypographyH3>;
+                    case 4:
+                        return <TypographyH4 key={index}>{token.text}</TypographyH4>;
+                    default:
+                        return <TypographyP key={index}>{token.text}</TypographyP>;
+                }
+            case 'paragraph':
+                return <TypographyP key={index}>{renderInlineTokens(token.tokens)}</TypographyP>;
+            case 'blockquote':
+                return <TypographyBlockquote key={index}>{renderInlineTokens(token.tokens)}</TypographyBlockquote>;
+            case 'list':
+                return (
+                    <ul key={index} className="ml-6 list-disc text-gray-800 [&>li]:mt-2">
+                        {token.items.map((item:any, itemIndex:number) => (
+                            <li key={itemIndex}>{renderInlineTokens(item.tokens)}</li>
+                        ))}
+                    </ul>
                 );
-                codeBlockContent = [];
-            }
-        } else if (isInCodeBlock) {
-            codeBlockContent.push(line);
-        } else if (/^#\s/.test(line)) {
-            elements.push(<TypographyH1 key={index}>{line.replace(/^#\s/, '')}</TypographyH1>);
-        } else if (/^##\s/.test(line)) {
-            elements.push(<TypographyH2 key={index}>{line.replace(/^##\s/, '')}</TypographyH2>);
-        } else if (/^###\s/.test(line)) {
-            elements.push(<TypographyH3 key={index}>{line.replace(/^###\s/, '')}</TypographyH3>);
-        } else if (/^####\s/.test(line)) {
-            elements.push(<TypographyH4 key={index}>{line.replace(/^####\s/, '')}</TypographyH4>);
-        } else if (/^>\s/.test(line)) {
-            elements.push(<TypographyBlockquote key={index}>{line.replace(/^>\s/, '')}</TypographyBlockquote>);
-        } else if (/^`/.test(line)) {
-            elements.push(<TypographyInlineCode className={"w-max"} key={index}>{line.replace(/^`/, '').replace(/`$/, '')}</TypographyInlineCode>);
-        } else if (/^\*\s/.test(line)) {
-            elements.push(<TypographySmall>{line.replace(/^\*\s/, '')}</TypographySmall>);
-        } else if (/^\-\s/.test(line)) {
-            elements.push(<ul className="ml-6 list-disc text-gray-800 [&>li]:mt-2">
-                    <li key={index}>{line.replace(/^\-\s/, '')}</li>
-            </ul>
-        )
-            ;
-        } else if (linkRegex.test(line) || boldRegex.test(line)) {
-            const parts = [];
-            let lastIndex = 0;
-            line.replace(linkRegex, (match, text, url, offset) => {
-                parts.push(line.substring(lastIndex, offset));
-                parts.push(<Link className="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer" href={url} key={offset}>{text}</Link>);
-                lastIndex = offset + match.length;
-                return match;
-            });
-            line.replace(boldRegex, (match, text, offset) => {
-                parts.push(line.substring(lastIndex, offset));
-                parts.push(<strong key={offset}>{text}</strong>);
-                lastIndex = offset + match.length;
-                return match;
-            });
-            parts.push(line.substring(lastIndex));
-            elements.push(<TypographyP key={index}>{<>parts</>}</TypographyP>);
-        } else {
-            elements.push(<TypographyP key={index}>{line}</TypographyP>);
+            case 'code':
+                return <TypographyInlineCode key={index}>{token.text}</TypographyInlineCode>;
+            default:
+                return <TypographyP key={index}>{token.text}</TypographyP>;
         }
     });
-
-    return elements;
 };
 
-const MarkdownPreview = ({content}: { content: string }) => {
+const renderInlineTokens = (tokens:any) => {
+    return tokens.map((token:any, index:number) => {
+        switch (token.type) {
+            case 'text':
+                return token.text;
+            case 'strong':
+                return <strong key={index}>{renderInlineTokens(token.tokens)}</strong>;
+            case 'link':
+                return (
+                    <Link key={index} href={token.href} className="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">
+                        {renderInlineTokens(token.tokens)}
+                    </Link>
+                );
+            case 'codespan':
+                return <TypographyInlineCode key={index}>{token.text}</TypographyInlineCode>;
+            default:
+                return token.text;
+        }
+    });
+};
+
+const parseMarkdown = (markdown: string) => {
+    const tokens = marked.lexer(markdown);
+    return renderTokens(tokens);
+};
+
+const MarkdownPreview = ({ content }: { content: string }) => {
     const parsedContent = parseMarkdown(content);
 
     return (

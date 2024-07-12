@@ -38,6 +38,7 @@
     "input-otp": "^1.2.4",
     "leaflet-geosearch": "^4.0.0",
     "lucide-react": "^0.395.0",
+    "marked": "^13.0.2",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.4",
     "node-fetch": "^3.3.2",
