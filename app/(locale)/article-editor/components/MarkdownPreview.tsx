@@ -73,7 +73,6 @@ const renderInlineTokens = (tokens: any) => {
 
 const parseMarkdown = (markdown: string) => {
     const tokens = marked.lexer(markdown);
-    console.log(tokens);
     return renderTokens(tokens);
 };
 

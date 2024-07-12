@@ -3,29 +3,38 @@ import {Textarea} from "@/components/ui/textarea";
 import {SquareIcon, TabletSmartphoneIcon} from "lucide-react";
 import {ResizableHandle, ResizablePanel, ResizablePanelGroup} from "@/components/ui/resizable";
 import MarkdownPreview from "@/app/(locale)/article-editor/components/MarkdownPreview";
-import {useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import MarkdownButtons from "@/app/(locale)/article-editor/components/MarkdownButtons";
+import useScreenSize from "@/hooks/use-screen-size";
 
 export default function ArticleEditorWidget({articleContent, setArticleContent}: {
     articleContent: string,
     setArticleContent(content: string): void
 }) {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
+    const { width } = useScreenSize();
+    const [tab, setTab] = useState('default');
 
-
+    useEffect(() => {
+        if (width >= 768) { // Taille md selon TailwindCSS
+            setTab('withPreview');
+        } else {
+            setTab('default');
+        }
+    }, [width]);
     return (<>
-        <Tabs defaultValue="withPreview" className="flex-1 p-4">
+        <Tabs value={tab} className="flex-1 p-4">
             <div className="w-full flex  justify-end mb-4">
-                <TabsList className="grid grid-cols-3">
-                    <TabsTrigger value="default">
+                <TabsList className="grid md:grid-cols-3 grid-cols-2">
+                    <TabsTrigger value="default" onClick={() => setTab('default')}>
                         <SquareIcon className="h-5 w-5 mr-2"/>
                         <span>Editor</span>
                     </TabsTrigger>
-                    <TabsTrigger value="withPreview">
+                    <TabsTrigger value="withPreview" onClick={() => setTab('withPreview')} className={'hidden md:flex'}>
                         <TabletSmartphoneIcon className={'h-5 w-5 mr-2'}/>
                         <span>Editor + Preview</span>
                     </TabsTrigger>
-                    <TabsTrigger value="preview">
+                    <TabsTrigger value="preview" onClick={() => setTab('preview')}>
                         <TabletSmartphoneIcon className={'h-5 w-5 mr-2'}/>
                         <span>Preview</span>
                     </TabsTrigger>
