@@ -24,7 +24,7 @@ export default function RootLayout({
             className={`${inter.className} relative flex flex-col md:flex-row h-screen max-h-screen overflow-hidden w-full`}>
             <Sidebar/>
             <div className={"overflow-y-auto   w-full h-full  px-4 py-12 pb-10 md:px-8"}>
-                <div className={"max-w-3xl mx-auto"}>
+                <div className={"max-w-5xl mx-auto"}>
                     {children}
                 </div>
             </div>

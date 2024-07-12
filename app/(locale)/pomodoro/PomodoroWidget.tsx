@@ -36,8 +36,8 @@ export default function PomodoroWidget() {
     };
 
     return (
-        <>
-            <Card className={"p-4 py-2 flex flex-col gap-4"}>
+        <div className={"max-w-3xl"}>
+            <Card className={"p-4 py-2 flex flex-col gap-4 "}>
                 <TaskForm form={form} currentPhase={currentPhase} onSubmit={onSubmit}/>
                 <Timer secondsLeft={secondsLeft}/>
                 <div className={"flex w-full justify-between items-center gap-4 md:gap-16"}>
@@ -52,6 +52,6 @@ export default function PomodoroWidget() {
                 </div>
             </Card>
             <TaskList tasks={tasks} deleteTask={deleteTask} currentTask={form.getValues('task')}/>
-        </>
+        </div>
     );
 }
