@@ -4,23 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="editor article page created">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/ArticleEditorWidget.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/PresetSelector.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/case-study.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/comparison-article.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/how-to-guide.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/interview.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/opinion-piece.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/presets.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/product-review.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/resource-list.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/top-3.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/trend-article.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/video-tutorial.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/hover-card.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="editor article page ui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/ArticleEditorWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/ArticleEditorWidget.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
@@ -170,15 +156,7 @@
       <workItem from="1720682746400" duration="11000" />
       <workItem from="1720714243325" duration="4559000" />
       <workItem from="1720767608087" duration="5115000" />
-      <workItem from="1720775890591" duration="3763000" />
-    </task>
-    <task id="LOCAL-00033" summary="redirect to monenergiecollective to create a project in admin center">
-      <option name="closed" value="true" />
-      <created>1720193193648</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1720193193648</updated>
+      <workItem from="1720775890591" duration="4531000" />
     </task>
     <task id="LOCAL-00034" summary="usePomodoro widget operationnal">
       <option name="closed" value="true" />
@@ -564,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720777003426</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="editor article page ui">
+      <option name="closed" value="true" />
+      <created>1720780087404</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1720780087404</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="pause pomodoro timer when task is deleted" />
     <MESSAGE value="POMODORO TIMER WORKING &lt;3" />
     <MESSAGE value="widget placement" />
     <MESSAGE value="sidebar pomodoro icon when playing change" />
@@ -608,6 +593,7 @@
     <MESSAGE value="pomodoro fixed ?" />
     <MESSAGE value="async upvote and refresh" />
     <MESSAGE value="editor article page created" />
-    <option name="LAST_COMMIT_MESSAGE" value="editor article page created" />
+    <MESSAGE value="editor article page ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="editor article page ui" />
   </component>
 </project>
