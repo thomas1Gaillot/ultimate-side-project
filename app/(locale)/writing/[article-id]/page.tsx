@@ -1,18 +1,20 @@
 'use client'
 import {useParams, useRouter} from "next/navigation";
-import {presetArticles} from "@/domain/article/Article";
 import MarkdownPreview from "@/app/(locale)/article-editor/components/MarkdownPreview";
 import {Button} from "@/components/ui/button";
 import {CornerUpLeftIcon} from "lucide-react";
+import useGetArticle from "@/domain/article/use-get-article";
 
 export default function ArticlePage() {
     const router = useRouter();
     const params = useParams();
     const articleId = params?.['article-id']
 
+    const {articles, isLoading} = useGetArticle()
+    const article = articles.find(article => article.href === articleId);
+    console.log(articleId, article)
     if (typeof articleId !== 'string') return null;
 
-    const article = presetArticles.find(article => article.href === articleId);
     if (!article) return null;
 
 

@@ -21,7 +21,6 @@ model Article {
   id        String   @id @default(cuid()) // Utilisation de cuid() pour générer des IDs uniques
   name      String
   href      String
-  icon      String // Vous pouvez stocker le nom de l'icône ou une référence à l'icône
   md        String
   updatedAt DateTime @updatedAt // Mise à jour automatique de la date et de l'heure
 

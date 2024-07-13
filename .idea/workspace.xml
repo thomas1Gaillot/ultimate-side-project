@@ -4,12 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="migrate to axios">
-      <change afterPath="$PROJECT_DIR$/lib/formatDateString.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/article/index.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="mixed view between lg and md fixed">
+      <change afterPath="$PROJECT_DIR$/domain/article/use-get-article.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/20240713100406_remove_icon_from_article/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/music/notification.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/writing/[article-id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/[article-id]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/article/Article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/article/Article.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/article/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/article/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/button-click.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/ding.mp3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,11 +78,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\music" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\home" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\domain\article" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\roadmap\data" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\stack\data" />
     </key>
   </component>
   <component name="RunManager" selected="npm.seed">
@@ -157,15 +165,7 @@
       <workItem from="1720682746400" duration="11000" />
       <workItem from="1720714243325" duration="4559000" />
       <workItem from="1720767608087" duration="5115000" />
-      <workItem from="1720775890591" duration="28906000" />
-    </task>
-    <task id="LOCAL-00048" summary="text">
-      <option name="closed" value="true" />
-      <created>1720351900608</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1720351900608</updated>
+      <workItem from="1720775890591" duration="32579000" />
     </task>
     <task id="LOCAL-00049" summary="spotify sdk working ;)">
       <option name="closed" value="true" />
@@ -551,7 +551,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720863038264</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="mixed view between lg and md fixed">
+      <option name="closed" value="true" />
+      <created>1720864690791</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1720864690791</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +578,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="stack update" />
     <MESSAGE value="prisma setup and vote implemented with backend" />
     <MESSAGE value="- instanciate prisma once,&#10;- add form to add an project idea" />
     <MESSAGE value="- create new roadmap project" />
@@ -595,6 +602,7 @@
     <MESSAGE value="writting base page" />
     <MESSAGE value="mobile navigation" />
     <MESSAGE value="migrate to axios" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrate to axios" />
+    <MESSAGE value="mixed view between lg and md fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="mixed view between lg and md fixed" />
   </component>
 </project>

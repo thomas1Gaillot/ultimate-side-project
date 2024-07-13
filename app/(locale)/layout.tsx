@@ -4,7 +4,6 @@ import {Toaster} from "@/components/ui/toaster";
 import {Inter} from "next/font/google";
 import {Metadata} from "next";
 import ArticleSideBar from "./writing/components/ArticleSideBar";
-import {usePathname} from "next/navigation";
 
 const inter = Inter({subsets: ["latin"]});
 

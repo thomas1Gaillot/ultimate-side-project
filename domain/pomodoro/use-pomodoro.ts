@@ -14,7 +14,7 @@ const FormSchema = z.object({
 
 export const usePomodoro = () => {
     const { tasks, setTasks, formValues, setFormValues, setSecondsLeft, setPatternIndex, setIsPlaying, patternIndex, secondsLeft, isPlaying } = usePomodoroStore();
-    const { play } = useSound("/ding.mp3");
+    const { play } = useSound("/music/notification.mp3");
 
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
