@@ -35,6 +35,7 @@
     "clipboard": "^2.0.11",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
+    "date-fns": "^3.6.0",
     "framer-motion": "^11.2.10",
     "input-otp": "^1.2.4",
     "leaflet-geosearch": "^4.0.0",
