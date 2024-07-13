@@ -9,7 +9,7 @@
     "generate": "prisma generate",
     "migrate": "prisma migrate deploy",
     "seed": "ts-node prisma/seed.ts",
-    "postinstall": "prisma migrate deploy"
+    "postinstall": "prisma generate && prisma migrate deploy"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.6.0",
