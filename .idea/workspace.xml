@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="mixed view between lg and md fixed">
-      <change afterPath="$PROJECT_DIR$/domain/article/use-get-article.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/20240713100406_remove_icon_from_article/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/music/notification.mp3" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- create new article is possible&#10;- sound pomodoro changed to smoother">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/writing/components/CreateArticleButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/writing/components/EditArticleDialog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/article/useArticleStore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/article/[id]/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/writing/[article-id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/[article-id]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/article/Article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/article/Article.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/article/use-get-article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/article/use-get-article.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/api/article/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/article/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/button-click.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ding.mp3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,15 +161,7 @@
       <workItem from="1720682746400" duration="11000" />
       <workItem from="1720714243325" duration="4559000" />
       <workItem from="1720767608087" duration="5115000" />
-      <workItem from="1720775890591" duration="32579000" />
-    </task>
-    <task id="LOCAL-00049" summary="spotify sdk working ;)">
-      <option name="closed" value="true" />
-      <created>1720372389945</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1720372389945</updated>
+      <workItem from="1720775890591" duration="39283000" />
     </task>
     <task id="LOCAL-00050" summary="add global types for compilation">
       <option name="closed" value="true" />
@@ -559,7 +547,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720864690791</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="- create new article is possible&#10;- sound pomodoro changed to smoother">
+      <option name="closed" value="true" />
+      <created>1720868637028</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1720868637028</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="prisma setup and vote implemented with backend" />
     <MESSAGE value="- instanciate prisma once,&#10;- add form to add an project idea" />
     <MESSAGE value="- create new roadmap project" />
     <MESSAGE value="- refactor into hooks" />
@@ -603,6 +598,7 @@
     <MESSAGE value="mobile navigation" />
     <MESSAGE value="migrate to axios" />
     <MESSAGE value="mixed view between lg and md fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="mixed view between lg and md fixed" />
+    <MESSAGE value="- create new article is possible&#10;- sound pomodoro changed to smoother" />
+    <option name="LAST_COMMIT_MESSAGE" value="- create new article is possible&#10;- sound pomodoro changed to smoother" />
   </component>
 </project>

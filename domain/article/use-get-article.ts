@@ -1,9 +1,10 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {Article} from "@/domain/article/Article";
+import useArticleStore from "@/domain/article/useArticleStore";
 
 export default function useGetArticle(){
-    const [articles, setArticles] = useState<Article[]>([])
+    const {articles, setArticles} = useArticleStore()
     const [isLoading, setIsLoading] = useState<boolean>(true)
     useEffect(() => {
         setIsLoading(true)

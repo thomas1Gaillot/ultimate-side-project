@@ -2,7 +2,6 @@ import {create} from "zustand";
 import {Task} from "@/domain/pomodoro/Task";
 import {pomodoroPattern} from "@/domain/pomodoro/Pomodoro";
 import {persist, PersistOptions} from "zustand/middleware";
-import {createJSONStorage} from "zustand/middleware";
 
 
 interface PomodoroState {
