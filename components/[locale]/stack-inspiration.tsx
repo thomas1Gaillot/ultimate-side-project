@@ -14,6 +14,7 @@ import {
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
+import axios from "axios";
 
 export default function StackInspiration() {
     const githubItems = [
@@ -158,8 +159,8 @@ const GitHubItem = ({
                 const owner = encodeURIComponent('shadcn-ui');
                 const repo = encodeURIComponent('ui');
 
-                const response = await fetch(`/api/github-repo?owner=${owner}&repo=${repo}`);
-                const data = await response.json();
+                const response = await axios.get(`/api/github-repo?owner=${owner}&repo=${repo}`);
+                const data = await response.data.json();
                 setStars(data.stars);
             } catch (error) {
                 console.error('Failed to fetch stars:', error);

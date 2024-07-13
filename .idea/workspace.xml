@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="writting base page">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="mobile navigation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/writing/[article-id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/[article-id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/writing/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/article/Article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/article/Article.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/[locale]/stack-inspiration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/[locale]/stack-inspiration.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/roadmap/use-add-project-idea.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/roadmap/use-add-project-idea.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/roadmap/use-fetch-roadmaps.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/roadmap/use-fetch-roadmaps.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/roadmap/use-upvote.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/roadmap/use-upvote.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/github.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/github.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/roadmap/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/roadmap/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,15 +160,7 @@
       <workItem from="1720682746400" duration="11000" />
       <workItem from="1720714243325" duration="4559000" />
       <workItem from="1720767608087" duration="5115000" />
-      <workItem from="1720775890591" duration="26552000" />
-    </task>
-    <task id="LOCAL-00045" summary="navbar on mobile view">
-      <option name="closed" value="true" />
-      <created>1720349520767</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1720349520767</updated>
+      <workItem from="1720775890591" duration="27295000" />
     </task>
     <task id="LOCAL-00046" summary="add missing component">
       <option name="closed" value="true" />
@@ -554,7 +546,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720860116728</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="mobile navigation">
+      <option name="closed" value="true" />
+      <created>1720862227017</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1720862227017</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="refactor job card" />
     <MESSAGE value="defualt button style" />
     <MESSAGE value="stack update" />
     <MESSAGE value="prisma setup and vote implemented with backend" />
@@ -598,6 +597,7 @@
     <MESSAGE value="widget article editors" />
     <MESSAGE value="refacto" />
     <MESSAGE value="writting base page" />
-    <option name="LAST_COMMIT_MESSAGE" value="writting base page" />
+    <MESSAGE value="mobile navigation" />
+    <option name="LAST_COMMIT_MESSAGE" value="mobile navigation" />
   </component>
 </project>

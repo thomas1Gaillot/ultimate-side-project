@@ -16,3 +16,14 @@ model Roadmap {
   badge       String
   selected    Boolean @default(false)
 }
+
+model Article {
+  id        String   @id @default(cuid()) // Utilisation de cuid() pour générer des IDs uniques
+  name      String
+  href      String
+  icon      String // Vous pouvez stocker le nom de l'icône ou une référence à l'icône
+  md        String
+  updatedAt DateTime @updatedAt // Mise à jour automatique de la date et de l'heure
+
+  @@map("articles") // Optionnel : nom de la table dans la base de données
+}
