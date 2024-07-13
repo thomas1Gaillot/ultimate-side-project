@@ -3,12 +3,12 @@
 import React from 'react';
 import {ExternalLink} from "lucide-react";
 import {Button} from "@/components/ui/button";
-import {techStack} from "@/data/stack";
+import {techStack} from "@/app/(locale)/stack/data/stack";
 import Image from "next/image";
 
 const StackWidget: React.FC = () => {
     return (
-        <div className={"grid grid-cols-1 md:grid-cols-2 gap-8 my-8"}>
+        <div className={"grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8 my-8"}>
             {techStack.map((tech, index) => (
                 <Button
                     variant={'ghost'}

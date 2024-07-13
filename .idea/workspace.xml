@@ -4,18 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="fix markdown preview with complex implementation">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="widget article editors">
+      <change afterPath="$PROJECT_DIR$/public/logos/lucide.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownButtons.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownPreview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownPreview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/case-study.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/case-study.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/comparison-article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/comparison-article.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/how-to-guide.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/how-to-guide.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/interview.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/opinion-piece.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/opinion-piece.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/presets.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/data/presets.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/product-review.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/resource-list.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/centralized-app/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/form-made-with-zod/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/old-homepage/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/roadmap/UpcomingProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/UpcomingProjectCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/spotify/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/stack/StackWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/stack/StackWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/roadmap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/data/roadmap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/stack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/stack/data/stack.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/usePages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/data/usePages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/roadmap/use-fetch-roadmaps.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/roadmap/use-fetch-roadmaps.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,38 +54,38 @@
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ThomasGaillot/Desktop/ultimate-side-project/app/(locale)/article-editor/data&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
-    &quot;npm.seed.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/ThomasGaillot/Desktop/ultimate-side-project/public/logos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.lint.executor": "Run",
+    "npm.seed.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\article-editor\data" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\logos" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\article-editor\data" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\components" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\roadmap\data" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\stack\data" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\domain\pomodoro" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\domain\roadmap" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api\roadmap" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages" />
     </key>
   </component>
   <component name="RunManager" selected="npm.seed">
@@ -163,39 +168,7 @@
       <workItem from="1720682746400" duration="11000" />
       <workItem from="1720714243325" duration="4559000" />
       <workItem from="1720767608087" duration="5115000" />
-      <workItem from="1720775890591" duration="17591000" />
-    </task>
-    <task id="LOCAL-00039" summary="remove unused stuff">
-      <option name="closed" value="true" />
-      <created>1720258134759</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1720258134759</updated>
-    </task>
-    <task id="LOCAL-00040" summary="fix build">
-      <option name="closed" value="true" />
-      <created>1720342570957</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1720342570957</updated>
-    </task>
-    <task id="LOCAL-00041" summary="[UI] - remove style form tasklist">
-      <option name="closed" value="true" />
-      <created>1720342818592</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1720342818592</updated>
-    </task>
-    <task id="LOCAL-00042" summary="[UI] - remove style from pomodoro widget">
-      <option name="closed" value="true" />
-      <created>1720343164045</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1720343164045</updated>
+      <workItem from="1720775890591" duration="21227000" />
     </task>
     <task id="LOCAL-00043" summary="[UI] - stack page first content">
       <option name="closed" value="true" />
@@ -557,7 +530,39 @@
       <option name="project" value="LOCAL" />
       <updated>1720793526440</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="complex markdown working with lists">
+      <option name="closed" value="true" />
+      <created>1720796686834</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1720796686834</updated>
+    </task>
+    <task id="LOCAL-00089" summary="handle preview editor responsive">
+      <option name="closed" value="true" />
+      <created>1720797396295</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1720797396295</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Widget DONE">
+      <option name="closed" value="true" />
+      <created>1720798071133</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1720798071133</updated>
+    </task>
+    <task id="LOCAL-00091" summary="widget article editors">
+      <option name="closed" value="true" />
+      <created>1720799036787</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1720799036787</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,10 +581,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="- adding roadmap link,&#10;- fix image broken on stack page" />
-    <MESSAGE value="- merge to app/ folder" />
-    <MESSAGE value="- fix build,&#10;- remove spotify widget" />
-    <MESSAGE value="- roadmap ui" />
     <MESSAGE value="Card UI," />
     <MESSAGE value="Head Next fixed cause app/ router" />
     <MESSAGE value="refactor job card" />
@@ -601,6 +602,10 @@
     <MESSAGE value="article to preview mvp" />
     <MESSAGE value="How to guide looks cool" />
     <MESSAGE value="fix markdown preview with complex implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix markdown preview with complex implementation" />
+    <MESSAGE value="complex markdown working with lists" />
+    <MESSAGE value="handle preview editor responsive" />
+    <MESSAGE value="Widget DONE" />
+    <MESSAGE value="widget article editors" />
+    <option name="LAST_COMMIT_MESSAGE" value="widget article editors" />
   </component>
 </project>

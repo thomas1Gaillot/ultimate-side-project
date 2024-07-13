@@ -5,7 +5,7 @@ import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
 import {LucideProps, Menu} from "lucide-react";
 import {Sheet, SheetClose, SheetContent, SheetTrigger} from "@/components/ui/sheet";
-import {usePages} from "@/data/usePages";
+import {usePages} from "@/app/(locale)/data/usePages";
 import {ForwardRefExoticComponent, RefAttributes, useEffect} from "react";
 import {usePomodoro} from "@/domain/pomodoro/use-pomodoro";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";

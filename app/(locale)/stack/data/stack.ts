@@ -35,4 +35,10 @@ export const techStack = [
         link: 'https://www.prisma.io/',
         shortDescription: 'Easy to use, understand and maintain ORM for Node.js.'
     },
+    {
+        name: 'Lucide.dev',
+        logo: '/logos/lucide.svg',
+        link: 'https://lucide.dev/',
+        shortDescription: 'Largest TailwindCSS compatible icon library.'
+    },
 ];

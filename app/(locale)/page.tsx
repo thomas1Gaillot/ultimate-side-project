@@ -24,7 +24,7 @@ export default function Home() {
                 <TypographyP>
                     <>
                         {`Tu y trouveras `}
-                        <Link className={'hover:underline text-indigo-700'} href={'/pomodoro'}>des widgets</Link>
+                        <Link className={'hover:underline text-primary'} href={'/pomodoro'}>des widgets</Link>
                         {`, jeux et inspirations pour t'aider à rester concentré et productif.`}
                     </>
                 </TypographyP>
@@ -54,7 +54,7 @@ export default function Home() {
                 <TypographyP>
                     <>
                         {`Faits un tour sur  `}
-                        <Link className={'hover:underline text-indigo-700'} href={'/roadmap'}>la roadmap</Link>
+                        <Link className={'hover:underline text-primary'} href={'/roadmap'}>la roadmap</Link>
                         {` pour y trouver ce qui est prévu prochainement.`}
                     </>
 

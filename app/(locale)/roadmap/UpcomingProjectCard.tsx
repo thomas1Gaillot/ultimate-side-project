@@ -26,7 +26,7 @@ export default function UpcomingProjectCard({id, title, description, upvotes, ba
             </CardDescription>
         </CardHeader>
         <CardFooter className="justify-between items-center">
-            <Button onClick={handleUpvote} size="sm" className="bg-indigo-500 hover:bg-indigo-600  flex items-center">
+            <Button onClick={handleUpvote} size="sm" className="bg-primary hover:bg-primary/90  flex items-center">
                 <ThumbsUpIcon className="mr-2 h-4 w-4"/>
                 Upvote
             </Button>

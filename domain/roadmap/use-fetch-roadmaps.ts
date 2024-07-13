@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Roadmap } from "@/data/roadmap";
+import { Roadmap } from "@/app/(locale)/roadmap/data/roadmap";
 
 export const useFetchRoadmaps = () => {
     const [selectedRoadmap, setSelectedRoadmap] = useState<Roadmap[]>([]);

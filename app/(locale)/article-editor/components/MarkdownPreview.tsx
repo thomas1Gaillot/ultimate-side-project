@@ -59,7 +59,7 @@ const renderInlineTokens = (tokens: any) => {
                 return <strong key={index}>{renderInlineTokens(token.tokens)}</strong>;
             case 'link':
                 return (
-                    <Link key={index} href={token.href} className="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">
+                    <Link key={index} href={token.href} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
                         {renderInlineTokens(token.tokens)}
                     </Link>
                 );
