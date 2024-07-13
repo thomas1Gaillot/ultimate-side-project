@@ -3,6 +3,8 @@ import Sidebar from "@/app/(locale)/components/Sidebar";
 import {Toaster} from "@/components/ui/toaster";
 import {Inter} from "next/font/google";
 import {Metadata} from "next";
+import ArticleSideBar from "./writing/components/ArticleSideBar";
+import {usePathname} from "next/navigation";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -23,6 +25,7 @@ export default function RootLayout({
         <body
             className={`${inter.className} relative flex flex-col md:flex-row h-screen max-h-screen overflow-hidden w-full`}>
             <Sidebar/>
+            <ArticleSideBar/>   
             <div className={"overflow-y-auto   w-full h-full  px-4 py-12 pb-10 md:px-8"}>
                 <div className={"max-w-5xl mx-auto"}>
                     {children}

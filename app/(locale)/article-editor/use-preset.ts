@@ -1,9 +1,9 @@
 'use client'
 import {useEffect, useState} from "react";
-import {Preset} from "@/app/(locale)/article-editor/data/presets";
+import {Article} from "@/domain/article/Article";
 
 export default function usePreset() {
-    const [selectedPreset, setSelectedPreset] = useState<Preset>()
+    const [selectedPreset, setSelectedPreset] = useState<Article>()
     const [articleContent, setArticleContent] = useState<string>('')
 
     useEffect(() => {

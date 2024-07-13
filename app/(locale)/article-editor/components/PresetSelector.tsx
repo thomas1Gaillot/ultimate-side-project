@@ -7,14 +7,14 @@ import {PopoverProps} from "@radix-ui/react-popover"
 import {cn} from "@/lib/utils"
 
 
-import {Preset, presets} from "../data/presets"
 import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
 import {Button} from "@/components/ui/button";
 import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList} from "@/components/ui/command";
+import {Article, presetArticles} from "@/domain/article/Article";
 
 interface PresetSelectorProps extends PopoverProps {
-    selectedPreset?: Preset ;
-    setSelectedPreset: (p: Preset) => void;
+    selectedPreset?: Article ;
+    setSelectedPreset: (p: Article) => void;
 }
 
 export function PresetSelector({selectedPreset, setSelectedPreset, ...props}: PresetSelectorProps) {
@@ -35,11 +35,11 @@ export function PresetSelector({selectedPreset, setSelectedPreset, ...props}: Pr
             </PopoverTrigger>
             <PopoverContent className="w-[300px] p-0">
                 <Command>
-                    <CommandInput placeholder="Search presets..."/>
+                    <CommandInput placeholder="Search article..."/>
                     <CommandList>
-                        <CommandEmpty>No presets found.</CommandEmpty>
+                        <CommandEmpty>No article found.</CommandEmpty>
                         <CommandGroup heading="Examples">
-                            {presets.map((preset) => (
+                            {presetArticles.map((preset) => (
                                 <CommandItem
                                     key={preset.id}
                                     onSelect={() => {

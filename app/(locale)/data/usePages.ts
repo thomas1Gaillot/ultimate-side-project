@@ -1,5 +1,5 @@
 import {
-    BlocksIcon,
+    BlocksIcon, BookOpenTextIcon,
     ConstructionIcon,
     CroissantIcon,
     HomeIcon,
@@ -19,10 +19,16 @@ const defaultPages = [
         section: '',
         pages: [
             {
-                href: '/',
+                href: '/home',
                 label: 'Home',
                 icon: HomeIcon,
-            }, {
+            },
+            {
+                href: '/writing',
+                label: 'Writing ',
+                icon: BookOpenTextIcon,
+            },
+            {
                 href: '/roadmap',
                 label: 'Roadmap',
                 icon: ConstructionIcon,
@@ -30,12 +36,6 @@ const defaultPages = [
                 href: '/stack',
                 label: 'Stack',
                 icon: BlocksIcon,
-            },
-
-            {
-                href: '/bookmarks',
-                label: 'Bookmarks (Todo)',
-                icon: StarIcon,
             },
         ]
     },

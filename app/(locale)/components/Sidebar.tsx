@@ -34,11 +34,11 @@ export default function Sidebar() {
                             <li key={href} className={"flex items-stretch space-x-1 cursor-pointer"}>
                                 <Link href={href}
                                       className={cn("flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-regular",
-                                          pathName === href ?
+                                          pathName?.startsWith(href) ?
                                               'text-gray-50 dark:text-gray-900 bg-gray-900' :
                                               "text-gray-900 dark:text-gray-50 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200")}>
                                     <Icon className={cn("w-4 h-4 text-muted-foreground mr-2 ",
-                                        pathName === href ?
+                                        pathName?.startsWith(href) ?
                                             "text-gray-50 dark:text-gray-900" : "text-gray-900 dark:text-gray-50"
                                     )}/>
                                     {label}
@@ -66,7 +66,7 @@ const MobileSidebar = ({pathName, pages}: {
     }[]
 }) => {
 
-    return <header className="sticky top-0 mt-4 mb-2 flex h-16 items-center gap-4 bg-background px-4 md:px-6">
+    return <header className="md:hidden flex sticky top-0 mt-4 mb-2  h-16 items-center gap-4 bg-background px-4 md:px-6">
         <Sheet>
             <SheetTrigger asChild>
                 <Button
@@ -90,11 +90,11 @@ const MobileSidebar = ({pathName, pages}: {
                                     <SheetClose asChild>
                                         <Link href={href}
                                               className={cn("flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-regular",
-                                                  pathName === href ?
+                                                  pathName?.startsWith(href) ?
                                                       'text-gray-50 dark:text-gray-900 bg-gray-900' :
                                                       "text-gray-900 dark:text-gray-50 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200")}>
                                             <Icon className={cn("w-4 h-4 text-muted-foreground mr-2 ",
-                                                pathName === href ?
+                                                pathName?.startsWith(href) ?
                                                     "text-gray-50 dark:text-gray-900" : "text-gray-900 dark:text-gray-50"
                                             )}/>
                                             {label}

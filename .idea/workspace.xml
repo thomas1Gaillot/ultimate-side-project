@@ -4,23 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="widget article editors">
-      <change afterPath="$PROJECT_DIR$/public/logos/lucide.svg" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="refacto">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/home/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/writing/[article-id]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/writing/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownPreview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownPreview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/centralized-app/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/components/PresetSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/PresetSelector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/data/presets.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/article/Article.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/use-preset.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/use-preset.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/form-made-with-zod/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/old-homepage/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/data/usePages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/data/usePages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/roadmap/UpcomingProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/UpcomingProjectCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/spotify/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/stack/StackWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/stack/StackWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/roadmap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/data/roadmap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/stack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/stack/data/stack.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/usePages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/data/usePages.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/roadmap/use-fetch-roadmaps.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/roadmap/use-fetch-roadmaps.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,24 +50,24 @@
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/ThomasGaillot/Desktop/ultimate-side-project/public/logos",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.lint.executor": "Run",
-    "npm.seed.executor": "Run",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ThomasGaillot/Desktop/ultimate-side-project/public/logos&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
+    &quot;npm.seed.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\logos" />
@@ -81,11 +77,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\home" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\domain\article" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\roadmap\data" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\stack\data" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\domain\pomodoro" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\domain\roadmap" />
     </key>
   </component>
   <component name="RunManager" selected="npm.seed">
@@ -168,15 +164,7 @@
       <workItem from="1720682746400" duration="11000" />
       <workItem from="1720714243325" duration="4559000" />
       <workItem from="1720767608087" duration="5115000" />
-      <workItem from="1720775890591" duration="21227000" />
-    </task>
-    <task id="LOCAL-00043" summary="[UI] - stack page first content">
-      <option name="closed" value="true" />
-      <created>1720347452861</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1720347452861</updated>
+      <workItem from="1720775890591" duration="24582000" />
     </task>
     <task id="LOCAL-00044" summary="[pomodoro widget bugfix] - task break timer">
       <option name="closed" value="true" />
@@ -562,7 +550,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720799036787</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="refacto">
+      <option name="closed" value="true" />
+      <created>1720856622232</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1720856622233</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +577,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Card UI," />
     <MESSAGE value="Head Next fixed cause app/ router" />
     <MESSAGE value="refactor job card" />
     <MESSAGE value="defualt button style" />
@@ -606,6 +601,7 @@
     <MESSAGE value="handle preview editor responsive" />
     <MESSAGE value="Widget DONE" />
     <MESSAGE value="widget article editors" />
-    <option name="LAST_COMMIT_MESSAGE" value="widget article editors" />
+    <MESSAGE value="refacto" />
+    <option name="LAST_COMMIT_MESSAGE" value="refacto" />
   </component>
 </project>
