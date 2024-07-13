@@ -67,7 +67,7 @@ const MobileSidebar = ({pathName, pages}: {
 }) => {
     if(pathName.startsWith('/writing/')) return null
 
-    return <header className="md:hidden flex sticky top-0 mt-4 mb-2  h-16 items-center gap-4 bg-background px-4 md:px-6">
+    return <header className="lg:hidden flex sticky top-0 mt-4 mb-2  h-16 items-center gap-4 bg-background px-4 lg:px-6">
         <Sheet>
             <SheetTrigger asChild>
                 <Button

@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="mobile navigation">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="migrate to axios">
+      <change afterPath="$PROJECT_DIR$/lib/formatDateString.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/article/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/[locale]/stack-inspiration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/[locale]/stack-inspiration.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/roadmap/use-add-project-idea.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/roadmap/use-add-project-idea.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/roadmap/use-fetch-roadmaps.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/roadmap/use-fetch-roadmaps.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/roadmap/use-upvote.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/roadmap/use-upvote.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/github.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/github.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/roadmap/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/roadmap/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -160,23 +157,7 @@
       <workItem from="1720682746400" duration="11000" />
       <workItem from="1720714243325" duration="4559000" />
       <workItem from="1720767608087" duration="5115000" />
-      <workItem from="1720775890591" duration="27295000" />
-    </task>
-    <task id="LOCAL-00046" summary="add missing component">
-      <option name="closed" value="true" />
-      <created>1720349616615</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1720349616615</updated>
-    </task>
-    <task id="LOCAL-00047" summary="add wip sections and fix enogrid logo import">
-      <option name="closed" value="true" />
-      <created>1720350983373</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1720350983373</updated>
+      <workItem from="1720775890591" duration="28906000" />
     </task>
     <task id="LOCAL-00048" summary="text">
       <option name="closed" value="true" />
@@ -554,7 +535,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720862227017</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="migrate to axios">
+      <option name="closed" value="true" />
+      <created>1720863006217</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1720863006217</updated>
+    </task>
+    <task id="LOCAL-00096" summary="migrate to axios">
+      <option name="closed" value="true" />
+      <created>1720863038264</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1720863038264</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +570,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="defualt button style" />
     <MESSAGE value="stack update" />
     <MESSAGE value="prisma setup and vote implemented with backend" />
     <MESSAGE value="- instanciate prisma once,&#10;- add form to add an project idea" />
@@ -598,6 +594,7 @@
     <MESSAGE value="refacto" />
     <MESSAGE value="writting base page" />
     <MESSAGE value="mobile navigation" />
-    <option name="LAST_COMMIT_MESSAGE" value="mobile navigation" />
+    <MESSAGE value="migrate to axios" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrate to axios" />
   </component>
 </project>

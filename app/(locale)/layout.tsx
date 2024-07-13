@@ -23,7 +23,7 @@ export default function RootLayout({
     return (<>
         <html>
         <body
-            className={`${inter.className} relative flex flex-col md:flex-row h-screen max-h-screen overflow-hidden w-full`}>
+            className={`${inter.className} relative flex flex-col lg:flex-row h-screen max-h-screen overflow-hidden w-full`}>
             <Sidebar/>
             <ArticleSideBar/>   
             <div className={"overflow-y-auto   w-full h-full  px-4 py-12 pb-10 md:px-8"}>
