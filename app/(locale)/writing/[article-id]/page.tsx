@@ -12,24 +12,22 @@ export default function ArticlePage() {
 
     const {articles, isLoading} = useGetArticle()
     const article = articles.find(article => article.href === articleId);
-    console.log(articleId, article)
     if (typeof articleId !== 'string') return null;
-
     if (!article) return null;
 
 
-    return (<>
-        <Button
-            variant="outline"
-            size="icon"
-            className="shrink-0 lg:hidden mb-8"
-            onClick={() => router.push('/writing')}
-        >
-            <CornerUpLeftIcon className="h-5 w-5"/>
-            <span className="sr-only">Toggle navigation menu</span>
-        </Button>
+    return (<div className={"lg:ml-80 2xl:ml-96"}>
+            <Button
+                variant="outline"
+                size="icon"
+                className="shrink-0 lg:hidden mb-8"
+                onClick={() => router.push('/writing')}
+            >
+                <CornerUpLeftIcon className="h-5 w-5"/>
+                <span className="sr-only">Toggle navigation menu</span>
+            </Button>
 
-        <MarkdownPreview content={article.md}/>
-        </>
+            <MarkdownPreview content={article.md}/>
+        </div>
     )
 }

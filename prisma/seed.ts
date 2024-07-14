@@ -38,6 +38,13 @@ const roadMapList = [
         badge: "Feature",
         selected: true
     },
+    {
+        title: "A Stripe Integration",
+        description: "A way to monetize the website with a subscription.",
+        upvotes: 14,
+        badge: "Feature",
+        selected: true
+    },
 ];
 
 async function main() {

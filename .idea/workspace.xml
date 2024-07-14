@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="Add tooltip to sidebar">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="fix upvote call">
+      <change afterPath="$PROJECT_DIR$/domain/roadmap/use-fetch-last-selected-roadmap.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/roadmap/last-selected/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/roadmap/use-add-project-idea.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/roadmap/use-add-project-idea.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/roadmap/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/roadmap/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/home/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/roadmap/UpcomingProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/UpcomingProjectCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/writing/[article-id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/[article-id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/seed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/seed.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -41,24 +46,25 @@
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ThomasGaillot/Desktop/ultimate-side-project/public/logos&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
-    &quot;npm.seed.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/ThomasGaillot/Desktop/ultimate-side-project/public/logos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.generate.executor": "Run",
+    "npm.lint.executor": "Run",
+    "npm.seed.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\logos" />
@@ -68,14 +74,24 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api\roadmap\last-selected" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api\roadmap" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\music" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\home" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\domain\article" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\roadmap\data" />
     </key>
   </component>
   <component name="RunManager" selected="npm.seed">
+    <configuration name="generate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="generate" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -99,6 +115,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.seed" />
+        <item itemvalue="npm.generate" />
         <item itemvalue="npm.lint" />
       </list>
     </recent_temporary>
@@ -156,23 +173,7 @@
       <workItem from="1720714243325" duration="4559000" />
       <workItem from="1720767608087" duration="5115000" />
       <workItem from="1720775890591" duration="40514000" />
-      <workItem from="1720956241923" duration="4975000" />
-    </task>
-    <task id="LOCAL-00055" summary="outline current task">
-      <option name="closed" value="true" />
-      <created>1720553818946</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1720553818946</updated>
-    </task>
-    <task id="LOCAL-00056" summary="pause pomodoro timer when taskform input change">
-      <option name="closed" value="true" />
-      <created>1720554365368</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1720554365368</updated>
+      <workItem from="1720956241923" duration="7836000" />
     </task>
     <task id="LOCAL-00057" summary="pause pomodoro timer when task is deleted">
       <option name="closed" value="true" />
@@ -550,7 +551,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720962716265</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="fix create roadmap idea psot">
+      <option name="closed" value="true" />
+      <created>1720963184932</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1720963184932</updated>
+    </task>
+    <task id="LOCAL-00105" summary="fix upvote call">
+      <option name="closed" value="true" />
+      <created>1720963460021</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1720963460021</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,8 +586,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="- fix roadmap ux dialog" />
-    <MESSAGE value="- ui ux roadmap updated" />
     <MESSAGE value="pomodoro fixed ?" />
     <MESSAGE value="async upvote and refresh" />
     <MESSAGE value="editor article page created" />
@@ -594,6 +609,8 @@
     <MESSAGE value="deploy with migration" />
     <MESSAGE value="sidebar and layout updates for it" />
     <MESSAGE value="Add tooltip to sidebar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add tooltip to sidebar" />
+    <MESSAGE value="fix create roadmap idea psot" />
+    <MESSAGE value="fix upvote call" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix upvote call" />
   </component>
 </project>
