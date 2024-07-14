@@ -52,20 +52,6 @@ const defaultPages = [
                 icon: NotebookPenIcon,
             }
         ]
-    },
-    {
-        section: 'Projects',
-        pages: [
-            {
-                href: '/ux-games',
-                label: 'UX Games (Todo)',
-                icon: JoystickIcon,
-            }, {
-                href: '/site-reproduction',
-                label: 'Site reproduction (Todo)',
-                icon: Layers2Icon,
-            },
-        ]
     }
 ]
 export const usePages = () => {
