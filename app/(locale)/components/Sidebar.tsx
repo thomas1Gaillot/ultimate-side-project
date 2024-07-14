@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link";
-import {usePathname} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
 import {LucideProps, Menu} from "lucide-react";
@@ -14,13 +14,14 @@ import {useSidebarToggle} from "@/components/hooks/use-sidebar-toggle";
 import {SidebarToggle} from "@/app/(locale)/components/sidebar-toggle";
 import {DotsHorizontalIcon} from "@radix-ui/react-icons";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
+import Image from "next/image";
 
 
 export default function Sidebar() {
     const pages = usePages()
     const pathName = usePathname()
     const sidebar = useSidebarToggle()
-
+    const router = useRouter()
 
     const {tasks, formValues, secondsLeft} = usePomodoro();
 
@@ -38,39 +39,43 @@ export default function Sidebar() {
             <SidebarToggle isOpen={sidebar?.isOpen} setIsOpen={sidebar?.setIsOpen}/>
 
             <nav className={"flex-1 px-3 py-3 space-y-2"}>
-                {pages.map(({section, pages}) => (
-                    <ul key={section} className={"space-y-2 py-4 "}>
-                        {section &&
-                            <h4 className={"px-2 text-xs  text-gray-700 text-opacity-40 dark:text-white"}>
-                                {sidebar?.isOpen ? section : <DotsHorizontalIcon className={"size-3"}/>}
-                            </h4>}
-                        {pages.map(({href, label, icon: Icon}) => (
-                            <li key={href} className={"flex items-stretch space-x-1 cursor-pointer"}>
+                <Button onClick={() => router.push('/home')} variant={'ghost'} size={'icon'}>
+                    <Image alt={'avocado-icon'} src={'/avocado.ico'} width={24} height={24}/>
+                </Button>
+                    {pages.map(({section, pages}) => (
+                        <ul key={section} className={"space-y-2 py-4 "}>
+                            {section &&
+                                <h4 className={"px-2 text-xs  text-gray-700 text-opacity-40 dark:text-white"}>
+                                    {sidebar?.isOpen ? section : <DotsHorizontalIcon className={"size-3"}/>}
+                                </h4>}
+                            {pages.map(({href, label, icon: Icon}) => (
+                                <li key={href} className={"flex items-stretch space-x-1 cursor-pointer"}>
 
-                                <TooltipProvider>
-                                    <Tooltip>
-                                        <TooltipTrigger className={'w-full'}>
-                                            <Link href={href}
-                                                  className={cn("flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-regular",
-                                                      pathName?.startsWith(href) ?
-                                                          'text-gray-50 dark:text-gray-900 bg-gray-900' :
-                                                          "text-gray-900 dark:text-gray-50 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200")}>
-                                                <Icon className={cn("w-4 h-4 min-h-4 min-w-4 text-muted-foreground mr-2 ",
-                                                    pathName?.startsWith(href) ?
-                                                        "text-gray-50 dark:text-gray-900" : "text-gray-900 dark:text-gray-50"
-                                                )}/>
-                                                {sidebar?.isOpen && <>{label}</>}
-                                            </Link>
-                                        </TooltipTrigger>
-                                        <TooltipContent side={'right'}>
-                                            {label}
-                                        </TooltipContent>
-                                    </Tooltip>
-                                </TooltipProvider>
-                            </li>
-                        ))}
-                    </ul>
-                ))}
+                                    <TooltipProvider>
+                                        <Tooltip>
+                                            <TooltipTrigger className={'w-full'}>
+                                                <Link href={href}
+                                                      className={cn("flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-regular",
+                                                          pathName?.startsWith(href) ?
+                                                              'text-gray-50 dark:text-gray-900 bg-gray-900' :
+                                                              "text-gray-900 dark:text-gray-50 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200")}>
+                                                    <Icon
+                                                        className={cn("w-4 h-4 min-h-4 min-w-4 text-muted-foreground mr-2 ",
+                                                            pathName?.startsWith(href) ?
+                                                                "text-gray-50 dark:text-gray-900" : "text-gray-900 dark:text-gray-50"
+                                                        )}/>
+                                                    {sidebar?.isOpen && <>{label}</>}
+                                                </Link>
+                                            </TooltipTrigger>
+                                            <TooltipContent side={'right'}>
+                                                {label}
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </TooltipProvider>
+                                </li>
+                            ))}
+                        </ul>
+                    ))}
             </nav>
         </aside>
         {pathName && <MobileSidebar pathName={pathName} pages={pages}/>}
