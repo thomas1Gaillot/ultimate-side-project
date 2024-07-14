@@ -13,6 +13,7 @@ import {formatStringToXChar} from "@/lib/format-string-to-X-char";
 import {useSidebarToggle} from "@/components/hooks/use-sidebar-toggle";
 import {SidebarToggle} from "@/app/(locale)/components/sidebar-toggle";
 import {DotsHorizontalIcon} from "@radix-ui/react-icons";
+import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 
 
 export default function Sidebar() {
@@ -27,14 +28,14 @@ export default function Sidebar() {
         document.title = `${formatSecondsToMmss(secondsLeft)} 🍅 - ${formatStringToXChar(formValues.task, 20)}`;
     }, [secondsLeft, tasks]);
 
-    if(!sidebar) return null;
+    if (!sidebar) return null;
 
     return <>
 
         <aside
             className={cn("z-40 fixed  h-screen border bg-background -translate-x-full lg:translate-x-0 transition-[width] ease-in-out duration-300",
                 sidebar?.isOpen === false ? "w-[60px]" : "w-3/4  sm:w-1/2  lg:w-56  2xl:w-72 3xl:w-80 ")}>
-            <SidebarToggle isOpen={sidebar?.isOpen} setIsOpen={sidebar?.setIsOpen} />
+            <SidebarToggle isOpen={sidebar?.isOpen} setIsOpen={sidebar?.setIsOpen}/>
 
             <nav className={"flex-1 px-3 py-3 space-y-2"}>
                 {pages.map(({section, pages}) => (
@@ -45,17 +46,27 @@ export default function Sidebar() {
                             </h4>}
                         {pages.map(({href, label, icon: Icon}) => (
                             <li key={href} className={"flex items-stretch space-x-1 cursor-pointer"}>
-                                <Link href={href}
-                                      className={cn("flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-regular",
-                                          pathName?.startsWith(href) ?
-                                              'text-gray-50 dark:text-gray-900 bg-gray-900' :
-                                              "text-gray-900 dark:text-gray-50 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200")}>
-                                    <Icon className={cn("w-4 h-4 text-muted-foreground mr-2 ",
-                                        pathName?.startsWith(href) ?
-                                            "text-gray-50 dark:text-gray-900" : "text-gray-900 dark:text-gray-50"
-                                    )}/>
-                                    {sidebar?.isOpen && <>{label}</>}
-                                </Link>
+
+                                <TooltipProvider>
+                                    <Tooltip>
+                                        <TooltipTrigger className={'w-full'}>
+                                            <Link href={href}
+                                                  className={cn("flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-regular",
+                                                      pathName?.startsWith(href) ?
+                                                          'text-gray-50 dark:text-gray-900 bg-gray-900' :
+                                                          "text-gray-900 dark:text-gray-50 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200")}>
+                                                <Icon className={cn("w-4 h-4 min-h-4 min-w-4 text-muted-foreground mr-2 ",
+                                                    pathName?.startsWith(href) ?
+                                                        "text-gray-50 dark:text-gray-900" : "text-gray-900 dark:text-gray-50"
+                                                )}/>
+                                                {sidebar?.isOpen && <>{label}</>}
+                                            </Link>
+                                        </TooltipTrigger>
+                                        <TooltipContent side={'right'}>
+                                            {label}
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
                             </li>
                         ))}
                     </ul>
@@ -78,9 +89,10 @@ const MobileSidebar = ({pathName, pages}: {
         }[]
     }[]
 }) => {
-    if(pathName.startsWith('/writing/')) return null
+    if (pathName.startsWith('/writing/')) return null
 
-    return <header className="lg:hidden flex sticky top-0 mt-4 mb-2  h-16 items-center gap-4 bg-background px-4 lg:px-6">
+    return <header
+        className="lg:hidden flex sticky top-0 mt-4 mb-2  h-16 items-center gap-4 bg-background px-4 lg:px-6">
         <Sheet>
             <SheetTrigger asChild>
                 <Button
