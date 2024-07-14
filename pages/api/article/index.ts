@@ -4,7 +4,11 @@ import prisma from '@/prisma/prisma';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'GET') {
         try {
-            const articles = await prisma.article.findMany();
+            const articles = await prisma.article.findMany({
+                orderBy: {
+                    updatedAt: 'desc'
+                }
+            });
             res.status(200).json(articles);
         } catch (error) {
             res.status(500).json({error: 'Error fetching articles'});

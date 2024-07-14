@@ -8,6 +8,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 where: {
                     selected: true
                 },
+                orderBy: {
+                    updatedAt: 'desc'
+                }
             });
             if (lastSelectedRoadmap) {
                 res.status(200).json(lastSelectedRoadmap);
