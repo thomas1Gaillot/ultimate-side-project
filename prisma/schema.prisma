@@ -9,20 +9,23 @@ datasource db {
 }
 
 model Roadmap {
-  id          Int     @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   title       String
   description String
-  upvotes     Int     @default(0)
+  upvotes     Int       @default(0)
   badge       String
-  selected    Boolean @default(false)
+  selected    Boolean   @default(false)
+  createdAt   DateTime? @default(now())
+  updatedAt   DateTime? @default(now()) @updatedAt
 }
 
 model Article {
-  id        String   @id @default(cuid()) // Utilisation de cuid() pour générer des IDs uniques
+  id        String    @id @default(cuid()) // Utilisation de cuid() pour générer des IDs uniques
   name      String
   href      String
   md        String
-  updatedAt DateTime @updatedAt // Mise à jour automatique de la date et de l'heure
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @default(now()) @updatedAt
 
   @@map("articles") // Optionnel : nom de la table dans la base de données
 }

@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="fix upvote call">
-      <change afterPath="$PROJECT_DIR$/domain/roadmap/use-fetch-last-selected-roadmap.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/roadmap/last-selected/index.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ui sidebar icon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/home/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/roadmap/UpcomingProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/UpcomingProjectCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/writing/[article-id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/[article-id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/seed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/seed.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,47 +167,7 @@
       <workItem from="1720714243325" duration="4559000" />
       <workItem from="1720767608087" duration="5115000" />
       <workItem from="1720775890591" duration="40514000" />
-      <workItem from="1720956241923" duration="7836000" />
-    </task>
-    <task id="LOCAL-00057" summary="pause pomodoro timer when task is deleted">
-      <option name="closed" value="true" />
-      <created>1720554634531</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1720554634531</updated>
-    </task>
-    <task id="LOCAL-00058" summary="POMODORO TIMER WORKING &lt;3">
-      <option name="closed" value="true" />
-      <created>1720595534257</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1720595534257</updated>
-    </task>
-    <task id="LOCAL-00059" summary="widget placement">
-      <option name="closed" value="true" />
-      <created>1720595835984</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1720595835985</updated>
-    </task>
-    <task id="LOCAL-00060" summary="sidebar pomodoro icon when playing change">
-      <option name="closed" value="true" />
-      <created>1720596314499</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1720596314500</updated>
-    </task>
-    <task id="LOCAL-00061" summary="lint">
-      <option name="closed" value="true" />
-      <created>1720596427797</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1720596427797</updated>
+      <workItem from="1720956241923" duration="9925000" />
     </task>
     <task id="LOCAL-00062" summary="do not display legacy pages anymore">
       <option name="closed" value="true" />
@@ -567,7 +521,47 @@
       <option name="project" value="LOCAL" />
       <updated>1720963460021</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="updating article view to match new sidebar system">
+      <option name="closed" value="true" />
+      <created>1720966250004</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1720966250004</updated>
+    </task>
+    <task id="LOCAL-00107" summary="noiiice width global">
+      <option name="closed" value="true" />
+      <created>1720966336709</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1720966336709</updated>
+    </task>
+    <task id="LOCAL-00108" summary="noiiice width global">
+      <option name="closed" value="true" />
+      <created>1720966442258</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1720966442258</updated>
+    </task>
+    <task id="LOCAL-00109" summary="ui">
+      <option name="closed" value="true" />
+      <created>1720966649686</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1720966649686</updated>
+    </task>
+    <task id="LOCAL-00110" summary="ui sidebar icon">
+      <option name="closed" value="true" />
+      <created>1720967366345</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1720967366345</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,10 +580,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="pomodoro fixed ?" />
-    <MESSAGE value="async upvote and refresh" />
-    <MESSAGE value="editor article page created" />
-    <MESSAGE value="editor article page ui" />
     <MESSAGE value="resizable panel" />
     <MESSAGE value="add more space" />
     <MESSAGE value="article to preview mvp" />
@@ -611,6 +601,10 @@
     <MESSAGE value="Add tooltip to sidebar" />
     <MESSAGE value="fix create roadmap idea psot" />
     <MESSAGE value="fix upvote call" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix upvote call" />
+    <MESSAGE value="updating article view to match new sidebar system" />
+    <MESSAGE value="noiiice width global" />
+    <MESSAGE value="ui" />
+    <MESSAGE value="ui sidebar icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui sidebar icon" />
   </component>
 </project>
