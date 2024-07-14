@@ -16,7 +16,6 @@ const postRoadmap = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         // Valider les données de la requête
         const { title, type, description } = roadmapSchema.parse(req.body);
-
         // Créer une nouvelle ligne dans la table roadmap
         const newRoadmap = await prisma.roadmap.create({
             data: {

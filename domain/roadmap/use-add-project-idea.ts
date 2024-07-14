@@ -6,7 +6,9 @@ export const useAddProjectIdea = () => {
 
     const addProjectIdea = async (data: RoadmapSchema) => {
         await axios.post('/api/roadmap', {
-            body: JSON.stringify(data),
+            title : data.title,
+            type: data.type,
+            description: data.description,
         });
         toast({
             title: 'Project idea submitted',

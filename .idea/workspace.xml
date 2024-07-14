@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="sidebar and layout updates for it">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="Add tooltip to sidebar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/roadmap/use-add-project-idea.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/roadmap/use-add-project-idea.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/roadmap/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/roadmap/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,15 +156,7 @@
       <workItem from="1720714243325" duration="4559000" />
       <workItem from="1720767608087" duration="5115000" />
       <workItem from="1720775890591" duration="40514000" />
-      <workItem from="1720956241923" duration="4496000" />
-    </task>
-    <task id="LOCAL-00054" summary="fix pomodoro sidebar when tasks are lenght 0">
-      <option name="closed" value="true" />
-      <created>1720552719025</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1720552719026</updated>
+      <workItem from="1720956241923" duration="4975000" />
     </task>
     <task id="LOCAL-00055" summary="outline current task">
       <option name="closed" value="true" />
@@ -549,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720962279234</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="Add tooltip to sidebar">
+      <option name="closed" value="true" />
+      <created>1720962716264</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1720962716265</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="- fix prisma" />
     <MESSAGE value="- fix roadmap ux dialog" />
     <MESSAGE value="- ui ux roadmap updated" />
     <MESSAGE value="pomodoro fixed ?" />
@@ -593,6 +593,7 @@
     <MESSAGE value="- create article, update article" />
     <MESSAGE value="deploy with migration" />
     <MESSAGE value="sidebar and layout updates for it" />
-    <option name="LAST_COMMIT_MESSAGE" value="sidebar and layout updates for it" />
+    <MESSAGE value="Add tooltip to sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tooltip to sidebar" />
   </component>
 </project>
