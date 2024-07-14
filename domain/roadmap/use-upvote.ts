@@ -5,7 +5,7 @@ export const useUpvote = () => {
 
     const handleUpvote = async (id: string) => {
         const res = await axios.post('/api/roadmap/upvote', {
-            body: JSON.stringify({ id: id }),
+            id: id
         });
         if (res.status === 200) {
             toast({
