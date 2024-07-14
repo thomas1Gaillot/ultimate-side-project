@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="deploy with migration" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="deploy with migration">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/components/sidebar-toggle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/main-layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/hooks/use-sidebar-toggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/ArticleEditorWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/ArticleEditorWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -151,15 +160,8 @@
       <workItem from="1720682746400" duration="11000" />
       <workItem from="1720714243325" duration="4559000" />
       <workItem from="1720767608087" duration="5115000" />
-      <workItem from="1720775890591" duration="39859000" />
-    </task>
-    <task id="LOCAL-00052" summary="store what's needed for use of pomodoro in all app">
-      <option name="closed" value="true" />
-      <created>1720549479076</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1720549479076</updated>
+      <workItem from="1720775890591" duration="40514000" />
+      <workItem from="1720956241923" duration="3980000" />
     </task>
     <task id="LOCAL-00053" summary="show in sidebar the tasks number">
       <option name="closed" value="true" />
@@ -545,7 +547,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720877987343</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="deploy with migration">
+      <option name="closed" value="true" />
+      <created>1720878067592</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1720878067592</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

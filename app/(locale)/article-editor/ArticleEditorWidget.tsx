@@ -44,7 +44,7 @@ export default function ArticleEditorWidget({articleContent, setArticleContent}:
             <TabsContent value="withPreview" className="mt-0 border-0 p-0">
                 <div className="flex flex-col space-y-4">
                     <ResizablePanelGroup direction="horizontal">
-                        <ResizablePanel defaultSize={33} minSize={20} className={"rounded-l-md border min-w-xs"}>
+                        <ResizablePanel defaultSize={50} minSize={20} className={"rounded-l-md border min-w-xs"}>
                             <MarkdownButtons textareaRef={textareaRef} articleContent={articleContent}
                                              setArticleContent={setArticleContent}/>
                             <Textarea
@@ -56,7 +56,7 @@ export default function ArticleEditorWidget({articleContent, setArticleContent}:
                             />
                         </ResizablePanel>
                         <ResizableHandle withHandle/>
-                        <ResizablePanel defaultSize={67} minSize={30}
+                        <ResizablePanel defaultSize={50} minSize={30}
                                         className="rounded-r-md bg-muted/40  min-w-xs p-8">
 
                             <MarkdownPreview content={articleContent}/>

@@ -32,7 +32,7 @@ export default function ArticleSideBar() {
     return <>
         <aside
             className={" 2xl:w-96 z-30 flex h-full max-h-screen min-h-screen w-full flex-none transform flex-col overflow-y-auto border-r border-gray-150 bg-white pb-10 transition duration-200 ease-in-out dark:border-gray-800 sm:pb-0  lg:w-80 lg:translate-x-0 bg-gray-50 dark:bg-gray-900"}>
-            <nav className={"flex-1 px-3 py-3 space-y-2 w-full"}>
+            <nav className={"pl-6 flex-1 px-3 py-3 space-y-2 w-full"}>
                 <div className={"w-full flex justify-between"}>
                     <TypographyH4>Articles</TypographyH4>
                     <CreateArticleButton/>

@@ -10,11 +10,16 @@ import {ForwardRefExoticComponent, RefAttributes, useEffect} from "react";
 import {usePomodoro} from "@/domain/pomodoro/use-pomodoro";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
 import {formatStringToXChar} from "@/lib/format-string-to-X-char";
+import {useSidebarToggle} from "@/components/hooks/use-sidebar-toggle";
+import {SidebarToggle} from "@/app/(locale)/components/sidebar-toggle";
+import {DotsHorizontalIcon} from "@radix-ui/react-icons";
 
 
 export default function Sidebar() {
     const pages = usePages()
     const pathName = usePathname()
+    const sidebar = useSidebarToggle()
+
 
     const {tasks, formValues, secondsLeft} = usePomodoro();
 
@@ -22,14 +27,22 @@ export default function Sidebar() {
         document.title = `${formatSecondsToMmss(secondsLeft)} 🍅 - ${formatStringToXChar(formValues.task, 20)}`;
     }, [secondsLeft, tasks]);
 
+    if(!sidebar) return null;
+
     return <>
+
         <aside
-            className={"absolute -translate-x-full 3xl:w-80 z-30 flex h-full max-h-screen min-h-screen w-3/4 flex-none transform flex-col overflow-y-auto border-r border-gray-150 bg-white pb-10 transition duration-200 ease-in-out dark:border-gray-800 dark:bg-gray-900 sm:w-1/2 sm:pb-0 md:w-1/3 lg:relative lg:w-56 lg:translate-x-0 lg:bg-gray-50 lg:dark:bg-gray-900 2xl:w-72"}>
+            className={cn("z-40 fixed  h-screen border bg-background -translate-x-full lg:translate-x-0 transition-[width] ease-in-out duration-300",
+                sidebar?.isOpen === false ? "w-[60px]" : "w-3/4  sm:w-1/2  lg:w-56  2xl:w-72 3xl:w-80 ")}>
+            <SidebarToggle isOpen={sidebar?.isOpen} setIsOpen={sidebar?.setIsOpen} />
+
             <nav className={"flex-1 px-3 py-3 space-y-2"}>
                 {pages.map(({section, pages}) => (
                     <ul key={section} className={"space-y-2 py-4 "}>
                         {section &&
-                            <h4 className={"px-2 text-xs  text-gray-700 text-opacity-40 dark:text-white"}>{section}</h4>}
+                            <h4 className={"px-2 text-xs  text-gray-700 text-opacity-40 dark:text-white"}>
+                                {sidebar?.isOpen ? section : <DotsHorizontalIcon className={"size-3"}/>}
+                            </h4>}
                         {pages.map(({href, label, icon: Icon}) => (
                             <li key={href} className={"flex items-stretch space-x-1 cursor-pointer"}>
                                 <Link href={href}
@@ -41,7 +54,7 @@ export default function Sidebar() {
                                         pathName?.startsWith(href) ?
                                             "text-gray-50 dark:text-gray-900" : "text-gray-900 dark:text-gray-50"
                                     )}/>
-                                    {label}
+                                    {sidebar?.isOpen && <>{label}</>}
                                 </Link>
                             </li>
                         ))}

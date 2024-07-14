@@ -4,10 +4,13 @@ import {Toaster} from "@/components/ui/toaster";
 import {Inter} from "next/font/google";
 import {Metadata} from "next";
 import ArticleSideBar from "./writing/components/ArticleSideBar";
+import {cn} from "@/lib/utils";
+import {useSidebarToggle} from "@/components/hooks/use-sidebar-toggle";
+import MainLayout from "@/app/(locale)/main-layout";
 
 const inter = Inter({subsets: ["latin"]});
 
-export const metadata:Metadata = {
+export const metadata: Metadata = {
     title: "Thomas Gaillot",
     description: "Building Things front-end side",
     icons: {
@@ -19,21 +22,19 @@ export default function RootLayout({
                                    }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return (<>
-        <html>
-        <body
-            className={`${inter.className} relative flex flex-col lg:flex-row h-screen max-h-screen overflow-hidden w-full`}>
-            <Sidebar/>
-            <ArticleSideBar/>   
-            <div className={"overflow-y-auto   w-full h-full  px-4 py-12 pb-10 md:px-8"}>
-                <div className={"max-w-5xl mx-auto"}>
-                    {children}
-                </div>
-            </div>
-            <Toaster/>
-        </body>
 
-        </html>
-    </>
+    return (<>
+            <html>
+            <body
+                className={`${inter.className}`}>
+            <Sidebar/>
+                <MainLayout>
+                    {children}
+                </MainLayout>
+            <Toaster/>
+            </body>
+
+            </html>
+        </>
     );
 }
