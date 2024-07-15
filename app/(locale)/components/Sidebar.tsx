@@ -3,7 +3,7 @@ import Link from "next/link";
 import {usePathname, useRouter} from "next/navigation";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
-import {LucideProps, Menu} from "lucide-react";
+import {ExternalLinkIcon, LucideProps, Menu} from "lucide-react";
 import {Sheet, SheetClose, SheetContent, SheetTrigger} from "@/components/ui/sheet";
 import {usePages} from "@/app/(locale)/data/usePages";
 import {ForwardRefExoticComponent, RefAttributes, useEffect} from "react";
@@ -48,13 +48,13 @@ export default function Sidebar() {
                                 <h4 className={"px-2 text-xs  text-gray-700 text-opacity-40 dark:text-white"}>
                                     {sidebar?.isOpen ? section : <DotsHorizontalIcon className={"size-3"}/>}
                                 </h4>}
-                            {pages.map(({href, label, icon: Icon}) => (
+                            {pages.map(({href, label, icon: Icon, newTab}) => (
                                 <li key={href} className={"flex items-stretch space-x-1 cursor-pointer"}>
 
                                     <TooltipProvider>
                                         <Tooltip>
                                             <TooltipTrigger className={'w-full'}>
-                                                <Link href={href}
+                                                <Link target={newTab ? '_blank' : ''} href={href}
                                                       className={cn("flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-regular",
                                                           pathName?.startsWith(href) ?
                                                               'text-gray-50 dark:text-gray-900 bg-gray-900' :
@@ -65,6 +65,7 @@ export default function Sidebar() {
                                                                 "text-gray-50 dark:text-gray-900" : "text-gray-900 dark:text-gray-50"
                                                         )}/>
                                                     {sidebar?.isOpen && <>{label}</>}
+                                                    {newTab && <ExternalLinkIcon className={'size-4'}/>}
                                                 </Link>
                                             </TooltipTrigger>
                                             <TooltipContent side={'right'}>
@@ -90,7 +91,8 @@ const MobileSidebar = ({pathName, pages}: {
         pages: {
             href: string
             label: string
-            icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>
+            icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>,
+            newTab : boolean
         }[]
     }[]
 }) => {
@@ -115,11 +117,11 @@ const MobileSidebar = ({pathName, pages}: {
                         <ul key={section} className={"space-y-2 py-4 first:mt-4"}>
                             {section &&
                                 <h4 className={"px-2 text-xs  text-gray-700 text-opacity-40 dark:text-white"}>{section}</h4>}
-                            {pages.map(({href, label, icon: Icon}) => (
+                            {pages.map(({href, label, icon: Icon, newTab}) => (
 
                                 <li key={href} className={"flex items-stretch space-x-1 cursor-pointer"}>
                                     <SheetClose asChild>
-                                        <Link href={href}
+                                        <Link target={newTab ? '_blank' : ''} href={href}
                                               className={cn("flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-regular",
                                                   pathName?.startsWith(href) ?
                                                       'text-gray-50 dark:text-gray-900 bg-gray-900' :
@@ -129,6 +131,7 @@ const MobileSidebar = ({pathName, pages}: {
                                                     "text-gray-50 dark:text-gray-900" : "text-gray-900 dark:text-gray-50"
                                             )}/>
                                             {label}
+                                            {newTab && <ExternalLinkIcon className={'size-4'}/>}
                                         </Link>
                                     </SheetClose>
                                 </li>

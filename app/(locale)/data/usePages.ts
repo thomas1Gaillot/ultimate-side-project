@@ -1,5 +1,5 @@
 import {
-    BlocksIcon, BookOpenTextIcon,
+    BlocksIcon, BookOpenTextIcon, CarrotIcon,
     ConstructionIcon,
     CroissantIcon,
     HomeIcon,
@@ -22,20 +22,24 @@ const defaultPages = [
                 href: '/home',
                 label: 'Home',
                 icon: HomeIcon,
+                newTab: false
             },
             {
                 href: '/writing',
                 label: 'Writing ',
                 icon: BookOpenTextIcon,
+                newTab: false
             },
             {
                 href: '/roadmap',
                 label: 'Roadmap',
                 icon: ConstructionIcon,
+                newTab: false
             }, {
                 href: '/stack',
                 label: 'Stack',
                 icon: BlocksIcon,
+                newTab: false
             },
         ]
     },
@@ -46,10 +50,23 @@ const defaultPages = [
                 href: '/pomodoro',
                 label: 'Pomodoro',
                 icon: TimerIcon,
+                newTab: false
             },{
                 href: '/article-editor',
                 label: 'Article Editor',
                 icon: NotebookPenIcon,
+                newTab: false
+            }
+        ]
+    },
+    {
+        section: 'Projects',
+        pages: [
+            {
+                href: 'https://snapcarrot.vercel.app',
+                label: 'SnapCarrot',
+                icon: CarrotIcon,
+                newTab: true
             }
         ]
     }
