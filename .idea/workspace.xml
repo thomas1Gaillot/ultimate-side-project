@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add configuration to local supabase">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="handle code block as ``` ``` for articles">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/UploadImage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/supabaseClient.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/upload-image/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownPreview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownPreview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/typography.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/typography.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -174,15 +180,7 @@
       <workItem from="1721060752706" duration="1002000" />
       <workItem from="1721211847424" duration="560000" />
       <workItem from="1721825983623" duration="2898000" />
-      <workItem from="1721836942600" duration="1074000" />
-    </task>
-    <task id="LOCAL-00068" summary="Head Next fixed cause app/ router">
-      <option name="closed" value="true" />
-      <created>1720609336380</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1720609336380</updated>
+      <workItem from="1721836942600" duration="3412000" />
     </task>
     <task id="LOCAL-00069" summary="refactor job card">
       <option name="closed" value="true" />
@@ -568,7 +566,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721837926959</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="handle code block as ``` ``` for articles">
+      <option name="closed" value="true" />
+      <created>1721838115784</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1721838115784</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,7 +593,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="complex markdown working with lists" />
     <MESSAGE value="handle preview editor responsive" />
     <MESSAGE value="Widget DONE" />
     <MESSAGE value="widget article editors" />
@@ -612,6 +617,7 @@
     <MESSAGE value="remove project from sidebar since no projects yet" />
     <MESSAGE value="link to snapcarrot project" />
     <MESSAGE value="add configuration to local supabase" />
-    <option name="LAST_COMMIT_MESSAGE" value="add configuration to local supabase" />
+    <MESSAGE value="handle code block as ``` ``` for articles" />
+    <option name="LAST_COMMIT_MESSAGE" value="handle code block as ``` ``` for articles" />
   </component>
 </project>

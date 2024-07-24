@@ -1,6 +1,7 @@
 import React from 'react';
 import {
-    TypographyBlockquote, TypographyCodeBlock,
+    TypographyBlockquote,
+    TypographyCodeBlock,
     TypographyH1,
     TypographyH2,
     TypographyH3,
@@ -9,10 +10,8 @@ import {
     TypographyP
 } from '@/components/ui/typography';
 import Link from "next/link";
-import { marked } from 'marked';
-import {cn} from "@/lib/utils";
-
-
+import {marked} from 'marked';
+import he from 'he';
 
 const renderTokens = (tokens: any) => {
     return tokens.map((token: any, index: number) => {
@@ -44,12 +43,20 @@ const renderTokens = (tokens: any) => {
                 );
             case 'code':
                 if (token.text.includes('\n')) {
-                    // Blocs de code multilignes
-                    return <TypographyCodeBlock key={index}>{token.text}</TypographyCodeBlock>;
+                    return <TypographyCodeBlock key={index}>{he.decode(token.text)}</TypographyCodeBlock>;
                 } else {
-                    // Inline code
-                    return <TypographyInlineCode key={index}>{token.text}</TypographyInlineCode>;
+                    return <TypographyInlineCode key={index}>{he.decode(token.text)}</TypographyInlineCode>;
                 }
+            case 'image':
+                return (
+                    <div key={index} className="relative w-full h-auto">
+                        <img
+                            src={token.href}
+                            alt={he.decode(token.text)}
+                            className="w-full h-auto"
+                        />
+                    </div>
+                );
             default:
                 return <TypographyP key={index}>{renderInlineTokens(token.tokens)}</TypographyP>;
         }
@@ -63,19 +70,30 @@ const renderInlineTokens = (tokens: any) => {
                 if (token.tokens && token.tokens.length > 0) {
                     return <span key={index}>{renderInlineTokens(token.tokens)}</span>;
                 }
-                return token.text;
+                return he.decode(token.text);
             case 'strong':
                 return <strong key={index}>{renderInlineTokens(token.tokens)}</strong>;
             case 'link':
                 return (
-                    <Link key={index} href={token.href} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                    <Link key={index} href={token.href} className="text-primary hover:underline" target="_blank"
+                          rel="noopener noreferrer">
                         {renderInlineTokens(token.tokens)}
                     </Link>
                 );
             case 'codespan':
-                return <TypographyInlineCode key={index}>{token.text}</TypographyInlineCode>;
+                return <TypographyInlineCode key={index}>{he.decode(token.text)}</TypographyInlineCode>;
+            case 'image':
+                return (
+                    <span key={index} className="relative inline-block w-auto h-auto">
+                        <img
+                            src={token.href}
+                            alt={he.decode(token.text)}
+                            className="inline w-auto h-auto"
+                        />
+                    </span>
+                );
             default:
-                return token.text;
+                return he.decode(token.text);
         }
     });
 };
@@ -85,7 +103,7 @@ const parseMarkdown = (markdown: string) => {
     return renderTokens(tokens);
 };
 
-const MarkdownPreview = ({ content }: { content: string }) => {
+const MarkdownPreview = ({content}: { content: string }) => {
     const parsedContent = parseMarkdown(content);
 
     return (
@@ -94,5 +112,6 @@ const MarkdownPreview = ({ content }: { content: string }) => {
         </div>
     );
 };
+
 
 export default MarkdownPreview;

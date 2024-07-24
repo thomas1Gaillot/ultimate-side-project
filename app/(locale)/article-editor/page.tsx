@@ -6,6 +6,7 @@ import {PresetSelector} from "@/app/(locale)/article-editor/components/PresetSel
 import {Separator} from "@/components/ui/separator";
 import usePreset from "@/app/(locale)/article-editor/use-preset";
 import CopyToClipboardButton from "@/components/[locale]/copy-to-clipboard-button";
+import UploadImage from "@/app/(locale)/article-editor/components/UploadImage";
 
 export default function ArticleEditor() {
     const {selectedPreset, setSelectedPreset, articleContent, setArticleContent} = usePreset()
@@ -15,6 +16,7 @@ export default function ArticleEditor() {
             <TypographyH1>
                 Article Editor
             </TypographyH1>
+            <UploadImage/>
             <TypographyLead>
                 Create and edit articles with ease by giving an .md file.
             </TypographyLead>
