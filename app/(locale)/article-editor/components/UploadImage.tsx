@@ -16,7 +16,7 @@ const UploadImage = () => {
         const formData = new FormData();
         formData.append('file', image);
 
-        const res = await fetch('/api/upload-image', {
+        const res = await fetch('/api/upload', {
             method: 'POST',
             body: formData,
         });

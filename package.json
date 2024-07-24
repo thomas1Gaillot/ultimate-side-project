@@ -58,6 +58,7 @@
     "zustand": "^4.5.4"
   },
   "devDependencies": {
+    "@types/formidable": "^3.4.5",
     "@types/he": "^1.2.3",
     "@types/node": "^20.14.2",
     "@types/react": "^18",
