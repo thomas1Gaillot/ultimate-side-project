@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    TypographyBlockquote,
+    TypographyBlockquote, TypographyCodeBlock,
     TypographyH1,
     TypographyH2,
     TypographyH3,
@@ -10,6 +10,9 @@ import {
 } from '@/components/ui/typography';
 import Link from "next/link";
 import { marked } from 'marked';
+import {cn} from "@/lib/utils";
+
+
 
 const renderTokens = (tokens: any) => {
     return tokens.map((token: any, index: number) => {
@@ -40,7 +43,13 @@ const renderTokens = (tokens: any) => {
                     </ul>
                 );
             case 'code':
-                return <TypographyInlineCode key={index}>{token.text}</TypographyInlineCode>;
+                if (token.text.includes('\n')) {
+                    // Blocs de code multilignes
+                    return <TypographyCodeBlock key={index}>{token.text}</TypographyCodeBlock>;
+                } else {
+                    // Inline code
+                    return <TypographyInlineCode key={index}>{token.text}</TypographyInlineCode>;
+                }
             default:
                 return <TypographyP key={index}>{renderInlineTokens(token.tokens)}</TypographyP>;
         }

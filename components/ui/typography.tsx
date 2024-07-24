@@ -1,4 +1,5 @@
 import {cn} from "@/lib/utils";
+import React from "react";
 
 function TypographyBlockquote({children}: { children: JSX.Element | string }) {
     return (
@@ -38,7 +39,15 @@ function TypographyH4({children}: { children: JSX.Element | string }) {
         </h4>
     )
 }
-
+const TypographyCodeBlock = ({children, className}: { children: JSX.Element | string, className ?: string }) => {
+    return (
+        <pre className={cn("relative rounded bg-gray-200 p-4 font-mono text-sm text-gray-800 overflow-x-auto", className)}>
+            <code>
+                {children}
+            </code>
+        </pre>
+    );
+};
 function TypographyInlineCode({children, className}: { children: JSX.Element | string, className ?: string}) {
     return (
         <code className={cn("relative rounded bg-gray-200 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-gray-800", className)}>
@@ -142,5 +151,6 @@ export {
     TypographyList,
     TypographyP,
     TypographySmall,
-    TypographyTable
+    TypographyTable,
+    TypographyCodeBlock
 }

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="link to snapcarrot project">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add configuration to local supabase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownPreview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownPreview.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/typography.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/typography.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,15 +174,7 @@
       <workItem from="1721060752706" duration="1002000" />
       <workItem from="1721211847424" duration="560000" />
       <workItem from="1721825983623" duration="2898000" />
-      <workItem from="1721836942600" duration="845000" />
-    </task>
-    <task id="LOCAL-00067" summary="Card UI,">
-      <option name="closed" value="true" />
-      <created>1720608847815</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1720608847815</updated>
+      <workItem from="1721836942600" duration="1074000" />
     </task>
     <task id="LOCAL-00068" summary="Head Next fixed cause app/ router">
       <option name="closed" value="true" />
@@ -567,7 +560,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721061952259</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="add configuration to local supabase">
+      <option name="closed" value="true" />
+      <created>1721837926958</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1721837926959</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +587,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix markdown preview with complex implementation" />
     <MESSAGE value="complex markdown working with lists" />
     <MESSAGE value="handle preview editor responsive" />
     <MESSAGE value="Widget DONE" />
@@ -611,6 +611,7 @@
     <MESSAGE value="order by most recent" />
     <MESSAGE value="remove project from sidebar since no projects yet" />
     <MESSAGE value="link to snapcarrot project" />
-    <option name="LAST_COMMIT_MESSAGE" value="link to snapcarrot project" />
+    <MESSAGE value="add configuration to local supabase" />
+    <option name="LAST_COMMIT_MESSAGE" value="add configuration to local supabase" />
   </component>
 </project>
