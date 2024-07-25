@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="handle images">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownButtons.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="handle multi code button">
+      <change beforePath="$PROJECT_DIR$/pages/api/upload/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/upload/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,15 +173,7 @@
       <workItem from="1721211847424" duration="560000" />
       <workItem from="1721825983623" duration="2898000" />
       <workItem from="1721836942600" duration="3907000" />
-      <workItem from="1721893640142" duration="3830000" />
-    </task>
-    <task id="LOCAL-00072" summary="prisma setup and vote implemented with backend">
-      <option name="closed" value="true" />
-      <created>1720617015088</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1720617015088</updated>
+      <workItem from="1721893640142" duration="4114000" />
     </task>
     <task id="LOCAL-00073" summary="- instanciate prisma once,&#10;- add form to add an project idea">
       <option name="closed" value="true" />
@@ -568,7 +559,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721897447225</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="handle multi code button">
+      <option name="closed" value="true" />
+      <created>1721897680058</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1721897680058</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,7 +586,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="refacto" />
     <MESSAGE value="writting base page" />
     <MESSAGE value="mobile navigation" />
     <MESSAGE value="migrate to axios" />
@@ -612,6 +610,7 @@
     <MESSAGE value="handle special chars" />
     <MESSAGE value="wip handle image on articles" />
     <MESSAGE value="handle images" />
-    <option name="LAST_COMMIT_MESSAGE" value="handle images" />
+    <MESSAGE value="handle multi code button" />
+    <option name="LAST_COMMIT_MESSAGE" value="handle multi code button" />
   </component>
 </project>
