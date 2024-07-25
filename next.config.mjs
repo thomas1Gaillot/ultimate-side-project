@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['127.0.0.1'],
+        domains: [process.env.NEXT_PUBLIC_SUPABASE_DOMAIN],
     },
 };
 

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="handle multi code button">
-      <change beforePath="$PROJECT_DIR$/pages/api/upload/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/upload/index.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="resolve build">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,15 +175,7 @@
       <workItem from="1721211847424" duration="560000" />
       <workItem from="1721825983623" duration="2898000" />
       <workItem from="1721836942600" duration="3907000" />
-      <workItem from="1721893640142" duration="4114000" />
-    </task>
-    <task id="LOCAL-00073" summary="- instanciate prisma once,&#10;- add form to add an project idea">
-      <option name="closed" value="true" />
-      <created>1720646849195</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1720646849196</updated>
+      <workItem from="1721893640142" duration="4933000" />
     </task>
     <task id="LOCAL-00074" summary="- create new roadmap project">
       <option name="closed" value="true" />
@@ -567,7 +561,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721897680058</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="resolve build">
+      <option name="closed" value="true" />
+      <created>1721897934291</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1721897934291</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +588,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="writting base page" />
     <MESSAGE value="mobile navigation" />
     <MESSAGE value="migrate to axios" />
     <MESSAGE value="mixed view between lg and md fixed" />
@@ -611,6 +612,7 @@
     <MESSAGE value="wip handle image on articles" />
     <MESSAGE value="handle images" />
     <MESSAGE value="handle multi code button" />
-    <option name="LAST_COMMIT_MESSAGE" value="handle multi code button" />
+    <MESSAGE value="resolve build" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolve build" />
   </component>
 </project>
