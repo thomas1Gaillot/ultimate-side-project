@@ -11,7 +11,7 @@ import {
     ImageIcon,
     LinkIcon,
     ListIcon,
-    QuoteIcon
+    QuoteIcon, SquareCodeIcon
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import useImageUpload from "@/app/(locale)/article-editor/components/useImageUpload";
@@ -108,6 +108,17 @@ export default function MarkdownButtons({ textareaRef, articleContent, setArticl
                             </Button>
                         </TooltipTrigger>
                         <TooltipContent side="top">Add Inline Code</TooltipContent>
+                    </Tooltip>
+                </TooltipProvider>
+                <TooltipProvider>
+                    <Tooltip>
+                        <TooltipTrigger asChild>
+                            <Button onClick={() => addMarkdownToCursorPosition('```\nline 1\nline 2\n```')} variant="ghost" size="icon">
+                                <SquareCodeIcon className="size-4" />
+                                <span className="sr-only">Add Multilines Code</span>
+                            </Button>
+                        </TooltipTrigger>
+                        <TooltipContent side="top">Add Multilines Code</TooltipContent>
                     </Tooltip>
                 </TooltipProvider>
                 <TooltipProvider>

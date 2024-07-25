@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="wip handle image on articles">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/useImageUpload.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="handle images">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/components/MarkdownButtons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/components/UploadImage.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/upload/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/upload/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,15 +174,7 @@
       <workItem from="1721211847424" duration="560000" />
       <workItem from="1721825983623" duration="2898000" />
       <workItem from="1721836942600" duration="3907000" />
-      <workItem from="1721893640142" duration="3666000" />
-    </task>
-    <task id="LOCAL-00071" summary="stack update">
-      <option name="closed" value="true" />
-      <created>1720614292089</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1720614292089</updated>
+      <workItem from="1721893640142" duration="3830000" />
     </task>
     <task id="LOCAL-00072" summary="prisma setup and vote implemented with backend">
       <option name="closed" value="true" />
@@ -573,7 +560,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721840962322</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="handle images">
+      <option name="closed" value="true" />
+      <created>1721897447224</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1721897447225</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +587,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="widget article editors" />
     <MESSAGE value="refacto" />
     <MESSAGE value="writting base page" />
     <MESSAGE value="mobile navigation" />
@@ -617,6 +611,7 @@
     <MESSAGE value="handle code block as ``` ``` for articles" />
     <MESSAGE value="handle special chars" />
     <MESSAGE value="wip handle image on articles" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip handle image on articles" />
+    <MESSAGE value="handle images" />
+    <option name="LAST_COMMIT_MESSAGE" value="handle images" />
   </component>
 </project>
