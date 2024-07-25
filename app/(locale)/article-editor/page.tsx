@@ -1,12 +1,11 @@
 'use client'
-import {TypographyH1, TypographyLead} from "@/components/ui/typography";
+import {TypographyH1, TypographyH4, TypographyLead} from "@/components/ui/typography";
 import ArticleEditorWidget from "@/app/(locale)/article-editor/ArticleEditorWidget";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {PresetSelector} from "@/app/(locale)/article-editor/components/PresetSelector";
 import {Separator} from "@/components/ui/separator";
 import usePreset from "@/app/(locale)/article-editor/use-preset";
 import CopyToClipboardButton from "@/components/[locale]/copy-to-clipboard-button";
-import UploadImage from "@/app/(locale)/article-editor/components/UploadImage";
 
 export default function ArticleEditor() {
     const {selectedPreset, setSelectedPreset, articleContent, setArticleContent} = usePreset()
@@ -16,7 +15,6 @@ export default function ArticleEditor() {
             <TypographyH1>
                 Article Editor
             </TypographyH1>
-            <UploadImage/>
             <TypographyLead>
                 Create and edit articles with ease by giving an .md file.
             </TypographyLead>

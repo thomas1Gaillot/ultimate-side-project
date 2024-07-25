@@ -1,6 +1,6 @@
 import React from 'react';
-import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
-import {Button} from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
 import {
     BoldIcon,
     CodeIcon,
@@ -8,11 +8,13 @@ import {
     Heading2Icon,
     Heading3Icon,
     Heading4Icon,
+    ImageIcon,
     LinkIcon,
     ListIcon,
     QuoteIcon
 } from "lucide-react";
-import {Separator} from "@/components/ui/separator";
+import { Separator } from "@/components/ui/separator";
+import useImageUpload from "@/app/(locale)/article-editor/components/useImageUpload";
 
 export default function MarkdownButtons({ textareaRef, articleContent, setArticleContent }: {
     textareaRef: React.RefObject<HTMLTextAreaElement>,
@@ -24,16 +26,20 @@ export default function MarkdownButtons({ textareaRef, articleContent, setArticl
         if (textarea) {
             const startPos = textarea.selectionStart;
             const endPos = textarea.selectionEnd;
-            const newValue = articleContent.substring(0, startPos) + `\n${markdown}\n` + articleContent.substring(endPos);
+            const newValue = articleContent.substring(0, startPos) + `${markdown}` + articleContent.substring(endPos);
             setArticleContent(newValue);
 
             // Move the cursor after the inserted text
             setTimeout(() => {
-                textarea.setSelectionRange(startPos + `\n${markdown}\n`.length, startPos + `\n${markdown}\n`.length);
+                textarea.setSelectionRange(startPos + `${markdown}`.length, startPos + `${markdown}`.length);
                 textarea.focus();
             }, 0);
         }
     };
+
+    const { triggerFileInput, handleImageChange, fileInputRef } = useImageUpload((url) => {
+        addMarkdownToCursorPosition(`![alt text](${url})`);
+    });
 
     return (
         <>
@@ -135,6 +141,25 @@ export default function MarkdownButtons({ textareaRef, articleContent, setArticl
                             </Button>
                         </TooltipTrigger>
                         <TooltipContent side="top">Add Blockquote</TooltipContent>
+                    </Tooltip>
+                </TooltipProvider>
+                <TooltipProvider>
+                    <Tooltip>
+                        <TooltipTrigger asChild>
+                            <div className={'space-x-2'}>
+                                <input
+                                    type="file"
+                                    onChange={handleImageChange}
+                                    ref={fileInputRef}
+                                    style={{ display: 'none' }}
+                                />
+                                <Button onClick={triggerFileInput} variant="ghost" size="icon">
+                                    <ImageIcon className="size-4" />
+                                    <span className="sr-only">Add Image</span>
+                                </Button>
+                            </div>
+                        </TooltipTrigger>
+                        <TooltipContent side="top">Add Image</TooltipContent>
                     </Tooltip>
                 </TooltipProvider>
             </div>

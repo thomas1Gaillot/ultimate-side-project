@@ -1,14 +1,21 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, useRef, useEffect } from 'react';
 
-const UploadImage = () => {
+const useImageUpload = (onImageUpload: (url: string) => void) => {
     const [image, setImage] = useState<File | null>(null);
     const [imageUrl, setImageUrl] = useState<string | null>(null);
+    const fileInputRef = useRef<HTMLInputElement | null>(null);
 
     const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
         if (event.target.files && event.target.files[0]) {
             setImage(event.target.files[0]);
         }
     };
+
+    useEffect(() => {
+        if (image) {
+            uploadImage();
+        }
+    }, [image]);
 
     const uploadImage = async () => {
         if (!image) return;
@@ -23,20 +30,14 @@ const UploadImage = () => {
 
         const data = await res.json();
         setImageUrl(data.url);
+        onImageUpload(data.url); // Call the callback function with the image URL
     };
 
-    return (
-        <div>
-            <input type="file" onChange={handleImageChange} />
-            <button onClick={uploadImage}>Upload Image</button>
-            {imageUrl && (
-                <div>
-                    <p>Image URL: {imageUrl}</p>
-                    <img src={imageUrl} alt="Uploaded" />
-                </div>
-            )}
-        </div>
-    );
+    const triggerFileInput = () => {
+        fileInputRef.current?.click();
+    };
+
+    return { triggerFileInput, handleImageChange, imageUrl, fileInputRef };
 };
 
-export default UploadImage;
+export default useImageUpload;

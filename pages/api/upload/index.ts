@@ -33,18 +33,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
             // Uploader le fichier sur Supabase Storage
             const { data: uploadData, error: uploadError } = await supabase.storage
-                .from('articles-images')
+                .from('article-images')
                 .upload(fileName, data);
 
             if (uploadError) {
                 return res.status(500).json({ message: 'Error uploading file', error: uploadError });
             }
 
-            const { publicURL } = supabase.storage
+            const supabaseData = supabase.storage
                 .from('article-images')
                 .getPublicUrl(fileName);
 
-            return res.status(200).json({ url: publicURL });
+            return res.status(200).json({ url: supabaseData.data.publicUrl });
         });
     });
 };
