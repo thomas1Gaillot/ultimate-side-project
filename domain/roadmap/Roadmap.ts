@@ -2,7 +2,7 @@ import {z} from "zod";
 
 // Define the Roadmap schema and type
 export const roadmapSchema = z.object({
-    id: z.string().optional(),
+    id: z.number().optional(),
     title: z.string().min(1, "Project title is required"),
     description: z.string().min(1, "Description is required"),
     badge: z.string(),

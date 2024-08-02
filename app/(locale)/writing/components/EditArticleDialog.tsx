@@ -21,7 +21,7 @@ import {Button} from "@/components/ui/button";
 import {DotsVerticalIcon} from "@radix-ui/react-icons";
 import {Article} from "@/domain/article/Article";
 import {useState} from "react";
-import useArticleStore from "@/domain/article/useArticleStore";
+import {useMutation, useQueryClient} from "@tanstack/react-query";
 
 const formSchema2 = z.object({
     title: z.string().min(2).max(100),
@@ -29,7 +29,6 @@ const formSchema2 = z.object({
 })
 
 const EditArticleButton = ({article}: { article: Article, }) => {
-    const { setArticles} = useArticleStore()
 
     const [open, setOpen] = useState(false)
     const form2 = useForm<z.infer<typeof formSchema2>>({
@@ -37,26 +36,42 @@ const EditArticleButton = ({article}: { article: Article, }) => {
         defaultValues: {
             title: article.name,
             article: article.md
-        },
+        }
     })
 
-    async function onSubmit(values: z.infer<typeof formSchema2>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        const res = await axios.put(`/api/article/${article.id}`, {
-            name: values.title,
-            md: values.article
-        })
-        if (res.status === 200) {
-            const articlesUpdated = await axios.get(`/api/article`)
-            setArticles(articlesUpdated.data)
-            toast({
-                title: 'Thanks for sharing !',
+    const queryClient = useQueryClient();
+    // Define the mutation using useMutation
+    const mutation = useMutation({
+        mutationFn: async (values: z.infer<typeof formSchema2>) => {
+            // API call to update the article
+            const res = await axios.put(`/api/article/${article.id}`, {
+                name: values.title,
+                md: values.article,
             });
-            setOpen(false)
+            return res.data;
+        },
+        onSuccess: () => {
+            // Invalidate the articles query to refresh the list
+            queryClient.invalidateQueries({queryKey : ['articles']});
+            toast({
+                title: 'Article updated successfully!',
+            });
+            setOpen(false);
+        },
+        onError: (error: any) => {
+            console.error('Error updating article:', error);
+            toast({
+                title: 'Failed to update article.',
+                description: error?.message || 'An error occurred.',
+                variant: 'destructive',
+            });
+        },
+    });
 
-        }
-    }
+
+    const onSubmit = async (values: z.infer<typeof formSchema2>) => {
+        mutation.mutate(values);
+    };
 
     return <>
         <Dialog open={open} onOpenChange={setOpen}>
@@ -111,7 +126,7 @@ const EditArticleButton = ({article}: { article: Article, }) => {
                             )}
                         />
                         <DialogFooter>
-                            <Button type="submit">
+                            <Button type="submit" loading={mutation.isPending} disabled={mutation.isPending}>
                                 Edit Article
                             </Button>
                         </DialogFooter>

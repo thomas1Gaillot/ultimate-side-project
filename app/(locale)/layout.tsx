@@ -3,9 +3,6 @@ import Sidebar from "@/app/(locale)/components/Sidebar";
 import {Toaster} from "@/components/ui/toaster";
 import {Inter} from "next/font/google";
 import {Metadata} from "next";
-import ArticleSideBar from "./writing/components/ArticleSideBar";
-import {cn} from "@/lib/utils";
-import {useSidebarToggle} from "@/components/hooks/use-sidebar-toggle";
 import MainLayout from "@/app/(locale)/main-layout";
 
 const inter = Inter({subsets: ["latin"]});
@@ -28,9 +25,9 @@ export default function RootLayout({
             <body
                 className={`${inter.className}`}>
             <Sidebar/>
-                <MainLayout>
-                    {children}
-                </MainLayout>
+            <MainLayout>
+                {children}
+            </MainLayout>
             <Toaster/>
             </body>
 

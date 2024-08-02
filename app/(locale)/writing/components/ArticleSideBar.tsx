@@ -8,15 +8,23 @@ import axios from "axios";
 import {Skeleton} from "@/components/ui/skeleton";
 import {formatDateString} from "@/lib/formatDateString";
 import {toast} from "@/components/hooks/use-toast";
-import useGetArticle from "@/domain/article/use-get-article";
 import EditArticleButton from "@/app/(locale)/writing/components/EditArticleDialog";
 import CreateArticleButton from "@/app/(locale)/writing/components/CreateArticleButton";
+import {useQuery} from "@tanstack/react-query";
+import {fetchArticles} from "@/domain/article/fetch-articles";
 
 
 export default function ArticleSideBar() {
     const pathName = usePathname()
     const {width} = useScreenSize();
-    const {articles, isLoading} = useGetArticle()
+
+    const { data: articles = [], error, isLoading } = useQuery({
+        queryKey: ['articles'],
+        queryFn: fetchArticles,
+        refetchOnWindowFocus: false, // Disable refetching when the window regains focus
+    });
+
+    if(error)return <pre>{JSON.stringify(error)}</pre>
 
     const onDelete = async (articleId: string) => {
         const res = await axios.delete(`/api/article/${articleId}`);

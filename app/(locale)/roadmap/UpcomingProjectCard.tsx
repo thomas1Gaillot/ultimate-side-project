@@ -5,8 +5,7 @@ import {Badge} from "@/components/ui/badge";
 import {Skeleton} from "@/components/ui/skeleton";
 import React from "react";
 
-export default function UpcomingProjectCard({id, title, description, upvotes, badge, handleUpvote}: {
-    id: string,
+export default function UpcomingProjectCard({ title, description, upvotes, badge, handleUpvote}: {
     title: string,
     description: string,
     upvotes: number,
