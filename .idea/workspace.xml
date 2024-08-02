@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="PoC use tanstack Query">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="fix build">
+      <change afterPath="$PROJECT_DIR$/domain/article/use-article-editor-store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/roadmap/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/Task.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/Task.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/roadmap/use-upvote.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/roadmap/use-upvote.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/article-editor/use-preset.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/article-editor/use-preset.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,15 +177,7 @@
       <workItem from="1721836942600" duration="3907000" />
       <workItem from="1721893640142" duration="6214000" />
       <workItem from="1721901644513" duration="67000" />
-      <workItem from="1722614673296" duration="11741000" />
-    </task>
-    <task id="LOCAL-00078" summary="- ui ux roadmap updated">
-      <option name="closed" value="true" />
-      <created>1720769775691</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1720769775691</updated>
+      <workItem from="1722614673296" duration="12357000" />
     </task>
     <task id="LOCAL-00079" summary="pomodoro fixed ?">
       <option name="closed" value="true" />
@@ -572,7 +563,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722626949962</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="fix build">
+      <option name="closed" value="true" />
+      <created>1722628871182</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1722628871182</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +590,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="- create article, update article" />
     <MESSAGE value="deploy with migration" />
     <MESSAGE value="sidebar and layout updates for it" />
     <MESSAGE value="Add tooltip to sidebar" />
@@ -616,6 +614,7 @@
     <MESSAGE value="refactor to roadmap schema zod" />
     <MESSAGE value="validate data when calling api" />
     <MESSAGE value="PoC use tanstack Query" />
-    <option name="LAST_COMMIT_MESSAGE" value="PoC use tanstack Query" />
+    <MESSAGE value="fix build" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix build" />
   </component>
 </project>
