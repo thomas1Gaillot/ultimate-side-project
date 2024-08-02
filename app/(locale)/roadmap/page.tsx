@@ -35,7 +35,6 @@ export default function RoadMapPage() {
             selected: false
         },
     });
-    console.log(form.getValues())
     const onSubmit = async (data: RoadmapWithoutId) => {
         await addProjectIdea(data);
         await fetchRoadmaps();
@@ -43,7 +42,8 @@ export default function RoadMapPage() {
         setOpenDialog(false);
     };
 
-    const upvoteAndRefresh = async (id: string) => {
+    const upvoteAndRefresh = async (id?: number) => {
+        if(!id) return console.error('No id provided')
         await handleUpvote(id)
         await fetchRoadmaps()
     }

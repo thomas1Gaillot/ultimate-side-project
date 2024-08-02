@@ -6,4 +6,4 @@ export const taskSchema = z.object({
     duration: z.number(),
 });
 
-export type TaskSchema = z.infer<typeof taskSchema>;
+export type Task = z.infer<typeof taskSchema>;

@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const useUpvote = () => {
 
-    const handleUpvote = async (id: string) => {
+    const handleUpvote = async (id: number) => {
         const res = await axios.post('/api/roadmap/upvote', {
             id: id
         });
