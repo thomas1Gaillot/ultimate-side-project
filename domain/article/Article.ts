@@ -3,13 +3,17 @@ import {caseStudy} from "@/app/(locale)/article-editor/data/case-study";
 import {opinionPiece} from "@/app/(locale)/article-editor/data/opinion-piece";
 import {comparisonArticle} from "@/app/(locale)/article-editor/data/comparison-article";
 
-export interface Article {
-    id: string
-    name: string
-    href: string
-    md: string
-    updatedAt?: string
-}
+import { z } from "zod";
+
+// Define the Article schema and type
+export const articleSchema = z.object({
+    id: z.string(),
+    name: z.string(),
+    href: z.string(),
+    md: z.string(),
+    updatedAt: z.string().optional(), // Optional string
+});
+export type Article = z.infer<typeof articleSchema>;
 
 export const presetArticles: Article[] = [
     {

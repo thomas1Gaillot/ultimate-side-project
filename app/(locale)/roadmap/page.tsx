@@ -18,21 +18,25 @@ import {Input} from "@/components/ui/input";
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {Form, FormControl, FormField, FormItem, FormLabel} from "@/components/ui/form";
-import {RoadmapSchema, roadmapSchema} from "@/domain/roadmap/Roadmap";
 import {useFetchRoadmaps} from '@/domain/roadmap/use-fetch-roadmaps';
 import {useUpvote} from '@/domain/roadmap/use-upvote';
 import {useAddProjectIdea} from '@/domain/roadmap/use-add-project-idea';
+import {Roadmap, roadmapSchema, RoadmapWithoutId} from "@/domain/roadmap/Roadmap";
 
 export default function RoadMapPage() {
     const {selectedRoadmap, votingRoadmap, isLoading, fetchRoadmaps} = useFetchRoadmaps();
     const {handleUpvote} = useUpvote();
     const {addProjectIdea} = useAddProjectIdea();
     const [openDialog, setOpenDialog] = useState(false);
-    const form = useForm<RoadmapSchema>({
+    const form = useForm<RoadmapWithoutId>({
         resolver: zodResolver(roadmapSchema),
+        defaultValues: {
+            upvotes: 0,
+            selected: false
+        },
     });
-
-    const onSubmit = async (data: RoadmapSchema) => {
+    console.log(form.getValues())
+    const onSubmit = async (data: RoadmapWithoutId) => {
         await addProjectIdea(data);
         await fetchRoadmaps();
         form.reset();
@@ -60,8 +64,9 @@ export default function RoadMapPage() {
                     {isLoading && <UpcomingProjectCardSkeleton/>}
                     {isLoading && <UpcomingProjectCardSkeleton/>}
                     {
-                        selectedRoadmap.map((item) => <UpcomingProjectCard handleUpvote={() => upvoteAndRefresh(item.id)}
-                                                                           key={item.id} {...item} />)
+                        selectedRoadmap.map((item) => <UpcomingProjectCard
+                            handleUpvote={() => upvoteAndRefresh(item.id)}
+                            key={item.id} {...item} />)
                     }
                 </TabsContent>
                 <TabsContent value="voting" className={"grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-4 "}>
@@ -98,7 +103,7 @@ export default function RoadMapPage() {
                                     />
                                     <FormField
                                         control={form.control}
-                                        name="type"
+                                        name="badge"
                                         render={({field}) => (
                                             <FormItem>
                                                 <FormLabel>Type</FormLabel>

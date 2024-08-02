@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="resolve build">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="next config domain">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/roadmap/data/roadmap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/data/roadmap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/roadmap/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/roadmap/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/article/Article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/article/Article.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/Task.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/Task.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/roadmap/Roadmap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/roadmap/Roadmap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/roadmap/use-add-project-idea.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/roadmap/use-add-project-idea.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/roadmap/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/roadmap/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,15 +182,9 @@
       <workItem from="1721211847424" duration="560000" />
       <workItem from="1721825983623" duration="2898000" />
       <workItem from="1721836942600" duration="3907000" />
-      <workItem from="1721893640142" duration="4933000" />
-    </task>
-    <task id="LOCAL-00074" summary="- create new roadmap project">
-      <option name="closed" value="true" />
-      <created>1720717087944</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1720717087944</updated>
+      <workItem from="1721893640142" duration="6214000" />
+      <workItem from="1721901644513" duration="67000" />
+      <workItem from="1722614673296" duration="2406000" />
     </task>
     <task id="LOCAL-00075" summary="- refactor into hooks">
       <option name="closed" value="true" />
@@ -569,7 +570,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721897934291</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="next config domain">
+      <option name="closed" value="true" />
+      <created>1721899639506</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1721899639506</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,7 +597,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="mobile navigation" />
     <MESSAGE value="migrate to axios" />
     <MESSAGE value="mixed view between lg and md fixed" />
     <MESSAGE value="- create new article is possible&#10;- sound pomodoro changed to smoother" />
@@ -613,6 +621,7 @@
     <MESSAGE value="handle images" />
     <MESSAGE value="handle multi code button" />
     <MESSAGE value="resolve build" />
-    <option name="LAST_COMMIT_MESSAGE" value="resolve build" />
+    <MESSAGE value="next config domain" />
+    <option name="LAST_COMMIT_MESSAGE" value="next config domain" />
   </component>
 </project>

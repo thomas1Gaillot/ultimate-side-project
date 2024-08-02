@@ -15,14 +15,14 @@ const getRoadmaps = async (req: NextApiRequest, res: NextApiResponse) => {
 const postRoadmap = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         // Valider les données de la requête
-        const { title, type, description } = roadmapSchema.parse(req.body);
+        const { title, badge, description } = roadmapSchema.parse(req.body);
         // Créer une nouvelle ligne dans la table roadmap
         const newRoadmap = await prisma.roadmap.create({
             data: {
                 title: title,
                 description: description,
                 upvotes: 0,
-                badge: type,
+                badge: badge,
                 selected: false,
             },
         });

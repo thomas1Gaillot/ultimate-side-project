@@ -1,13 +1,6 @@
-export type Roadmap = {
-    id : string
-    title: string
-    description: string
-    upvotes: number
-    badge: string
-    selected : boolean
-}
+import {RoadmapWithoutId} from "@/domain/roadmap/Roadmap";
 
-type RoadmapWithoutId = Omit<Roadmap, 'id'>
+
 const roadMapList: RoadmapWithoutId[] = [
     {
         title: "Spotify Playlist",

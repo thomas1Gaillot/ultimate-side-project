@@ -9,7 +9,8 @@
     "generate": "prisma generate",
     "migrate": "prisma migrate deploy",
     "seed": "ts-node prisma/seed.ts",
-    "postinstall": "prisma generate && prisma migrate deploy"
+    "postinstall": "prisma generate && prisma migrate deploy",
+    "supabase:create": "pnpx supabase start --ignore-health-check"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.6.0",
