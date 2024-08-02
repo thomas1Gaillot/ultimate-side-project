@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Roadmap } from "@/app/(locale)/roadmap/data/roadmap";
 import axios from "axios";
+import {Roadmap, roadmapSchema} from "@/domain/roadmap/Roadmap";
+import {Article, articleSchema} from "@/domain/article/Article";
 
 export const useFetchRoadmaps = () => {
     const [selectedRoadmap, setSelectedRoadmap] = useState<Roadmap[]>([]);
@@ -9,11 +10,12 @@ export const useFetchRoadmaps = () => {
 
     const fetchRoadmaps = async () => {
         const response = await axios.get('/api/roadmap');
-        const data: Roadmap[] = await response.data;
-        setSelectedRoadmap(data
+        const validatedData: Roadmap[] = await response.data.map((roadmap:any) => roadmapSchema.parse(roadmap));
+
+        setSelectedRoadmap(validatedData
             .filter(roadmap => roadmap.selected)
             .sort((a, b) => b.upvotes - a.upvotes));
-        setVotingRoadmap(data
+        setVotingRoadmap(validatedData
             .filter(roadmap => !roadmap.selected)
             .sort((a, b) => b.upvotes - a.upvotes));
         setIsLoading(false);

@@ -1,6 +1,6 @@
 'use client'
 import {useEffect, useState} from "react";
-import {Roadmap} from "@/domain/roadmap/Roadmap";
+import {Roadmap, roadmapSchema} from "@/domain/roadmap/Roadmap";
 import axios from "axios";
 
 export default function useFetchLastSelectedRoadmap() {
@@ -10,8 +10,8 @@ export default function useFetchLastSelectedRoadmap() {
     useEffect(() => {
         const fetchLastSelectedRoadmap = async () => {
             const response = await axios.get('/api/roadmap/last-selected');
-            const data = await response.data;
-            setLastSelectedRoadmap(data);
+            const validatedData: Roadmap = await roadmapSchema.parse(response.data);
+            setLastSelectedRoadmap(validatedData);
             setIsLoading(false);
         };
 
