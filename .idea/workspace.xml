@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="local store article preview">
-      <change afterPath="$PROJECT_DIR$/components/[locale]/error-inline.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="use query">
+      <change afterPath="$PROJECT_DIR$/public/logos/tanstack-query-logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/writing/components/ArticleSideBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/article/fetch-articles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/article/fetch-articles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/stack/data/stack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/stack/data/stack.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,11 +69,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\logos" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api\roadmap\last-selected" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api\roadmap" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\music" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\home" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\domain\article" />
     </key>
   </component>
   <component name="RunManager" selected="npm.seed">
@@ -180,15 +179,7 @@
       <workItem from="1721901644513" duration="67000" />
       <workItem from="1722614673296" duration="13928000" />
       <workItem from="1722673664769" duration="1959000" />
-      <workItem from="1722675794239" duration="1756000" />
-    </task>
-    <task id="LOCAL-00080" summary="async upvote and refresh">
-      <option name="closed" value="true" />
-      <created>1720772940452</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1720772940452</updated>
+      <workItem from="1722675794239" duration="2526000" />
     </task>
     <task id="LOCAL-00081" summary="editor article page created">
       <option name="closed" value="true" />
@@ -574,7 +565,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722630370600</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="use query">
+      <option name="closed" value="true" />
+      <created>1722686066973</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1722686066973</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +592,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="sidebar and layout updates for it" />
     <MESSAGE value="Add tooltip to sidebar" />
     <MESSAGE value="fix create roadmap idea psot" />
     <MESSAGE value="fix upvote call" />
@@ -618,6 +616,7 @@
     <MESSAGE value="PoC use tanstack Query" />
     <MESSAGE value="fix build" />
     <MESSAGE value="local store article preview" />
-    <option name="LAST_COMMIT_MESSAGE" value="local store article preview" />
+    <MESSAGE value="use query" />
+    <option name="LAST_COMMIT_MESSAGE" value="use query" />
   </component>
 </project>

@@ -41,4 +41,10 @@ export const techStack = [
         link: 'https://lucide.dev/',
         shortDescription: 'Largest TailwindCSS compatible icon library.'
     },
+    {
+        name: 'TanStack Query',
+        logo: '/logos/tanstack-query-logo.png',
+        link: 'https://tanstack.com/query/latest',
+        shortDescription: "Powerful data fetching and caching library for frontend applications."
+    },
 ];
