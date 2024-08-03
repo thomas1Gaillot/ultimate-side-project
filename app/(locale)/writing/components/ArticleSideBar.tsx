@@ -12,6 +12,7 @@ import EditArticleButton from "@/app/(locale)/writing/components/EditArticleDial
 import CreateArticleButton from "@/app/(locale)/writing/components/CreateArticleButton";
 import {useQuery} from "@tanstack/react-query";
 import {fetchArticles} from "@/domain/article/fetch-articles";
+import ErrorInline from "@/components/[locale]/error-inline";
 
 
 export default function ArticleSideBar() {
@@ -24,7 +25,7 @@ export default function ArticleSideBar() {
         refetchOnWindowFocus: false, // Disable refetching when the window regains focus
     });
 
-    if(error)return <pre>{JSON.stringify(error)}</pre>
+    if(error)return <ErrorInline error={error}/>
 
     const onDelete = async (articleId: string) => {
         const res = await axios.delete(`/api/article/${articleId}`);
