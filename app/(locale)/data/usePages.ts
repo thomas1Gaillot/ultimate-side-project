@@ -63,10 +63,10 @@ const defaultPages = [
         section: 'Projects',
         pages: [
             {
-                href: 'https://snapcarrot.vercel.app',
-                label: 'SnapCarrot',
+                href: '/zester',
+                label: 'Zester',
                 icon: CarrotIcon,
-                newTab: true
+                newTab: false
             }
         ]
     }

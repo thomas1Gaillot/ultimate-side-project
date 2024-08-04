@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="use query">
-      <change afterPath="$PROJECT_DIR$/public/logos/tanstack-query-logo.png" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add stack tanstack">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/zester/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ui/carousel.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/zester/description.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/zester/play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/zester/rejoindre.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/zester/snapcarrot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/zester/titre.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/stack/data/stack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/stack/data/stack.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/data/usePages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/data/usePages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,11 +77,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\components\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\zester" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\logos" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api\roadmap\last-selected" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\api\roadmap" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\music" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\home" />
     </key>
   </component>
   <component name="RunManager" selected="npm.seed">
@@ -179,15 +187,9 @@
       <workItem from="1721901644513" duration="67000" />
       <workItem from="1722614673296" duration="13928000" />
       <workItem from="1722673664769" duration="1959000" />
-      <workItem from="1722675794239" duration="2526000" />
-    </task>
-    <task id="LOCAL-00081" summary="editor article page created">
-      <option name="closed" value="true" />
-      <created>1720777003426</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1720777003426</updated>
+      <workItem from="1722675794239" duration="2964000" />
+      <workItem from="1722686756541" duration="6000" />
+      <workItem from="1722788061145" duration="3153000" />
     </task>
     <task id="LOCAL-00082" summary="editor article page ui">
       <option name="closed" value="true" />
@@ -573,7 +575,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722686066973</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="add stack tanstack">
+      <option name="closed" value="true" />
+      <created>1722686483221</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1722686483221</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +602,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add tooltip to sidebar" />
     <MESSAGE value="fix create roadmap idea psot" />
     <MESSAGE value="fix upvote call" />
     <MESSAGE value="updating article view to match new sidebar system" />
@@ -617,6 +626,7 @@
     <MESSAGE value="fix build" />
     <MESSAGE value="local store article preview" />
     <MESSAGE value="use query" />
-    <option name="LAST_COMMIT_MESSAGE" value="use query" />
+    <MESSAGE value="add stack tanstack" />
+    <option name="LAST_COMMIT_MESSAGE" value="add stack tanstack" />
   </component>
 </project>
