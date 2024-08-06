@@ -1,6 +1,6 @@
 import {
-    BlocksIcon, BookOpenTextIcon, CarrotIcon,
-    ConstructionIcon,
+    BlocksIcon, BookOpenTextIcon, CarrotIcon, ChefHatIcon,
+    ConstructionIcon, CookingPotIcon,
     CroissantIcon,
     HomeIcon,
     JoystickIcon,
@@ -66,6 +66,12 @@ const defaultPages = [
                 href: '/zester',
                 label: 'Zester',
                 icon: CarrotIcon,
+                newTab: false
+            },
+            {
+                href: '/churro-ciao',
+                label: 'Churro Ciao',
+                icon: ChefHatIcon,
                 newTab: false
             }
         ]

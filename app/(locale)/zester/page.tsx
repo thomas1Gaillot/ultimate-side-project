@@ -1,3 +1,4 @@
+'use client'
 import { TypographyH1, TypographyP } from "@/components/ui/typography";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -46,17 +47,14 @@ const Images = [
 ];
 
 export default function ZesterPage() {
+    function openInNewTab() {
+        window.open("https://snapcarrot.vercel.app", "_blank");
+    }
     return (
         <div className={"grid gap-2 w-max-screen w-full"}>
             <TypographyH1>Zester</TypographyH1>
-            <Button className={"w-full max-w-lg"} size={"lg"}>
-                <a
-                    href="https://snapcarrot.vercel.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+            <Button onClick={openInNewTab} className={"w-full max-w-lg"} size={"lg"}>
                     Visit Zester
-                </a>
                 <ExternalLinkIcon className={"size-5 ml-2"} />
             </Button>
             <TypographyP>
