@@ -31,16 +31,16 @@ export default function ChurroCiaoPage() {
                 {"Features : "}
             </TypographyP>
             <TypographyList texts={[
-                "4 pages : Home, Gallery, Menu, and Contact",
+                "3 pages : Home, Gallery, Menu ☑️",
+                "Responsive for mobile and desktop ☑️",
+                "PWA App ☑️",
+                "Dark mode ☑️",
+                "Link to socials ☑️",
+                "MagicUI & Acernity animations ☑️",
                 "SEO",
-                "Responsive for mobile and desktop",
-                "PWA App",
-                "Dark mode",
                 "Internationalization",
                 "Menu with QR code",
-                "Link to socials",
                 "Stars on google",
-                "MagicUI & Acernity animations"
             ]}/>
 
             <Card className="w-[300px]">
