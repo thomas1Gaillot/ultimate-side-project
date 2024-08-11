@@ -42,15 +42,15 @@ const TimerControls = ({isPlaying, form, onSubmit, reset, resetPomodoro}: {
                         onClick={form?.handleSubmit(onSubmit)} variant={"default"} disabled={!form?.watch("task")}>
                         <p className={"text-xs "}>Start / Pause  </p>
                         {isPlaying ?
-                        <PauseIcon size={24} className={"cursor-pointer text-gray-50 "}/> :
-                        <PlayIcon size={24} className={"cursor-pointer text-gray-50 "}/>}
+                        <PauseIcon size={16} className={"cursor-pointer text-gray-50 "}/> :
+                        <PlayIcon size={16} className={"cursor-pointer text-gray-50 "}/>}
                     </Button>
                     <Button className={"px-2 flex gap-2 justify-start"}
-                            onClick={reset} variant={"ghost"}>
-                        <p className={"text-xs  text-gray-600"}>Reset Timer </p>
-                        <Undo size={24} className={"cursor-pointer text-gray-700 "}/>
+                            onClick={reset}  variant={"ghost"}>
+                        <p className={"text-xs  text-gray-600"}>Restart Timer </p>
+                        <Undo size={16} className={"cursor-pointer text-gray-700 "}/>
                     </Button>
-                    <Button onClick={resetPomodoro} size={'sm'} variant={"ghost"}
+                    <Button onClick={resetPomodoro} variant={"ghost"}
                                 className={"px-2 flex gap-2"}>
                             <p className={"text-xs text-gray-600"}>Restart to first pattern  </p>
                             <Undo2 size={16} className={"cursor-pointer text-gray-700 "}/>
