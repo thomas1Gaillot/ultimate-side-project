@@ -4,7 +4,7 @@ import {Button} from "@/components/ui/button";
 import {ArrowUpIcon, ClipboardIcon, PencilIcon, TrashIcon} from "lucide-react";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
 import {cn} from "@/lib/utils";
-import index from "@/domain/pomodoro/stores";
+import usePomodoroStore from "@/domain/pomodoro/stores";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {usePomodoro} from "@/domain/pomodoro/hooks/use-pomodoro";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
@@ -15,13 +15,12 @@ import {CreateTask} from "@/domain/pomodoro/entities/Task";
 import {Badge} from "@/components/ui/badge";
 import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
 import {Input} from "@/components/ui/input";
-import {Form} from "@/components/ui/form";
 
 const TaskList = ({form}: { form: UseFormReturn<CreateTask> }) => {
     const {tasks, deleteTask, redoTask, renameTask} = usePomodoro(form)
     const [copiedText, copyToClipboard] = useCopyToClipboard();
 
-    const {setIsPlaying} = index();
+    const {setIsPlaying} = usePomodoroStore();
 
     function handleDeleteTask(id: number) {
         deleteTask(id);
@@ -48,7 +47,7 @@ const TaskList = ({form}: { form: UseFormReturn<CreateTask> }) => {
         })
     }
 
-    const submitNewRowValue = (e, id) => {
+    const submitNewRowValue = (e:any, id:number) => {
         e.preventDefault();
         renameTask(id, e.target.task.value);
         setIsPlaying(false);
@@ -92,7 +91,7 @@ const TaskList = ({form}: { form: UseFormReturn<CreateTask> }) => {
                                             </PopoverTrigger>
                                             <PopoverContent className={'grid gap-1'}>
                                                 <TypographySmall>Edit Task : {task.name}</TypographySmall>
-                                                <form onSubmit={(e)=> submitNewRowValue(e, task.id)}>
+                                                <form onSubmit={(e) => submitNewRowValue(e, task.id)}>
                                                     <Input
                                                         name="task"
                                                         defaultValue={task.name}
@@ -100,7 +99,6 @@ const TaskList = ({form}: { form: UseFormReturn<CreateTask> }) => {
                                                         className="w-full"/>
                                                 </form>
                                                 <TypographyMuted>Press Enter to submit</TypographyMuted>
-
 
 
                                             </PopoverContent>

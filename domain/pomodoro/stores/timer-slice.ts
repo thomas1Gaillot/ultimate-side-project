@@ -1,4 +1,4 @@
-import {pomodoroPhases} from "@/domain/pomodoro/entities/Timer";
+import {Phase, pomodoroPhases} from "@/domain/pomodoro/entities/Timer";
 
 export interface TimerSlice {
     patternIndex: number;
@@ -7,11 +7,11 @@ export interface TimerSlice {
     setSecondsLeft: (secondsLeft: number) => void;
     isPlaying: boolean;
     setIsPlaying: (isPlaying: boolean) => void;
-    currentPhase: string;
-    setCurrentPhase: (phase: string) => void;
+    currentPhase: Phase;
+    setCurrentPhase: (phase: Phase) => void;
 }
 
-export const createTimerSlice = (set: any): TimerSlice => ({
+export const createTimerSlice = (set): TimerSlice => ({
     patternIndex: 0,
     setPatternIndex: (patternIndex: number) => {
         const phase = pomodoroPhases[patternIndex].type;
@@ -22,5 +22,5 @@ export const createTimerSlice = (set: any): TimerSlice => ({
     isPlaying: false,
     setIsPlaying: (isPlaying: boolean) => set({ isPlaying }),
     currentPhase: pomodoroPhases[0].type,
-    setCurrentPhase: (phase: string) => set({ currentPhase: phase }),
+    setCurrentPhase: (phase: Phase) => set({ currentPhase: phase }),
 });

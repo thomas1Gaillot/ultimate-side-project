@@ -10,6 +10,7 @@ import {Metadata} from "next";
 import {usePomodoroControls} from "@/domain/pomodoro/hooks/use-pomodoro-controls";
 import {UseFormReturn} from "react-hook-form";
 import {CreateTask} from "@/domain/pomodoro/entities/Task";
+import usePomodoroStore from "@/domain/pomodoro/stores";
 
 export const metadata: Metadata = {
     title: "Thomas Gaillot",
@@ -23,10 +24,11 @@ export default function PomodoroWidget({form}: { form: UseFormReturn<CreateTask>
     const {
         addTask, secondsLeft,
         isPlaying,
-        currentPhase
+        currentPhase,
     } = usePomodoro(form);
     const {togglePlayPause, resetTimer, resetPomodoro} = usePomodoroControls(form);
     const {numberOfPomodoro, numberOfShortBreak, numberOfLongBreak} = usePomodoroStats();
+    const {setIsPlaying, patternIndex } = usePomodoroStore()
 
 
     const onSubmit = () => {
@@ -39,7 +41,7 @@ export default function PomodoroWidget({form}: { form: UseFormReturn<CreateTask>
     return (
         <Card>
             <CardHeader>
-                <TaskForm form={form} currentPhase={currentPhase} onSubmit={onSubmit}/>
+                <TaskForm form={form} currentPhase={currentPhase} onSubmit={onSubmit} setIsPlaying={setIsPlaying} patternIndex={patternIndex}/>
             </CardHeader>
             <CardContent>
                 <Timer secondsLeft={secondsLeft}/>

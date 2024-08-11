@@ -3,21 +3,17 @@ import {Form, FormControl, FormField, FormItem, FormMessage} from "@/components/
 import Image from "next/image";
 import {Input} from "@/components/ui/input";
 import {UseFormReturn} from "react-hook-form";
-import index from "@/domain/pomodoro/stores";
 import {displayCurrentPhaseIcon, getNumberOfPomodoro, Phase} from "@/domain/pomodoro/entities/Timer";
-import usePomodoroStore from "@/domain/pomodoro/stores";
 import {Badge} from "@/components/ui/badge";
-import {useEffect} from "react";
 
 
-
-const TaskForm = ({form, currentPhase, onSubmit}: {
+const TaskForm = ({form, currentPhase, onSubmit, setIsPlaying, patternIndex}: {
     form: UseFormReturn<{ task: string }, any, undefined>;
-    currentPhase: string;
+    currentPhase: Phase;
     onSubmit: () => void;
+    setIsPlaying: (isPlaying: boolean) => void;
+    patternIndex: number;
 }) => {
-    const {setIsPlaying} = index();
-    const {patternIndex} = usePomodoroStore()
 
     return (
         form &&
@@ -31,7 +27,8 @@ const TaskForm = ({form, currentPhase, onSubmit}: {
                             <FormControl>
                                 <div className={"flex items-center gap-2"}>
                                     <div className={'flex gap-1'}>
-                                        <Badge  variant="solid" className="rounded-lg px-3 py-1.5 bg-secondary text-secondary-foreground">
+                                        <Badge variant="outline"
+                                               className="rounded-lg px-3 py-1.5 bg-secondary text-secondary-foreground">
                                             <p className={'font-bold'}>{getNumberOfPomodoro(patternIndex)}</p>
                                             <p className={'font-light px-1 pl-0.5 opacity-60'}>{'/4'}</p>
                                             <Image src={displayCurrentPhaseIcon(currentPhase)} alt={"icon"} width={50}

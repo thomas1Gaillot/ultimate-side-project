@@ -9,7 +9,7 @@ interface PomodoroState extends TaskSlice, TimerSlice {
 
 const usePomodoroStore = create(
     persist(
-        (set) => ({
+        (set: (partial: Partial<PomodoroState>) => void) => ({
             ...createTaskSlice(set),
             ...createTimerSlice(set),
         }),

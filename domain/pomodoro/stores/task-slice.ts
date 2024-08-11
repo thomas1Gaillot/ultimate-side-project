@@ -5,7 +5,7 @@ export interface TaskSlice {
     setTasks: (tasks: Task[]) => void;
 }
 
-export const createTaskSlice = (set: any): TaskSlice => ({
+export const createTaskSlice = (set): TaskSlice => ({
     tasks: [],
     setTasks: (tasks: Task[]) => set({ tasks }),
 });

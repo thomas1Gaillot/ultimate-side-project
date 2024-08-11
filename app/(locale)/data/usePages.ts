@@ -1,18 +1,17 @@
 import {
-    BlocksIcon, BookOpenTextIcon, CarrotIcon, ChefHatIcon,
-    ConstructionIcon, CookingPotIcon,
-    CroissantIcon,
+    BlocksIcon,
+    BookOpenTextIcon,
+    CarrotIcon,
+    ChefHatIcon,
+    ConstructionIcon,
     HomeIcon,
-    JoystickIcon,
-    Layers2Icon,
     LoaderCircle,
-    MusicIcon, NotebookPenIcon,
+    NotebookPenIcon,
     Play,
-    StarIcon,
     TimerIcon
 } from "lucide-react";
 import {useEffect, useState} from "react";
-import index from "@/domain/pomodoro/stores";
+import usePomodoroStore from "@/domain/pomodoro/stores";
 
 const defaultPages = [
     {
@@ -51,7 +50,7 @@ const defaultPages = [
                 label: 'Pomodoro',
                 icon: TimerIcon,
                 newTab: false
-            },{
+            }, {
                 href: '/article-editor',
                 label: 'Article Editor',
                 icon: NotebookPenIcon,
@@ -79,7 +78,7 @@ const defaultPages = [
 ]
 export const usePages = () => {
     const [pages, setPages] = useState(defaultPages);
-    const {tasks, isPlaying} = index();
+    const {tasks, isPlaying} = usePomodoroStore();
     useEffect(() => {
         const newPages = pages.map((page) => {
             if (page.section === 'Widgets') {
