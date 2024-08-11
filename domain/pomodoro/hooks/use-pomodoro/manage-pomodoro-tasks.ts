@@ -1,4 +1,4 @@
-import {CreateTask} from "@/domain/pomodoro/Task";
+import {CreateTask} from "@/domain/pomodoro/entities/Task";
 
 const managePomodoroTasks = (
     tasks: any[],

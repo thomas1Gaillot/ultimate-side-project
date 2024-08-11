@@ -1,7 +1,7 @@
 import {z} from "zod";
-import {taskSchema} from "@/domain/pomodoro/Task";
-import {timerSchema} from "@/domain/pomodoro/Timer";
-import {formSchema} from "@/domain/pomodoro/Form";
+import {taskSchema} from "@/domain/pomodoro/entities/Task";
+import {timerSchema} from "@/domain/pomodoro/entities/Timer";
+import {formSchema} from "@/domain/pomodoro/entities/Form";
 
 
 export const PomodoroSchema = z.object({

@@ -1,4 +1,4 @@
-import {CreateTask, createTaskSchema} from "@/domain/pomodoro/Task";
+import {CreateTask, createTaskSchema} from "@/domain/pomodoro/entities/Task";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 

@@ -14,7 +14,7 @@ import {SidebarToggle} from "@/app/(locale)/components/sidebar-toggle";
 import {DotsHorizontalIcon} from "@radix-ui/react-icons";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import Image from "next/image";
-import {usePomodoro} from "@/domain/pomodoro/use-pomodoro";
+import {usePomodoro} from "../../../domain/pomodoro/hooks/use-pomodoro";
 
 
 export default function Sidebar() {

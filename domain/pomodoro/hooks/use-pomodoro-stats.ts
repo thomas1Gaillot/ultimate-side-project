@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import usePomodoroStore from "@/domain/pomodoro/use-pomodoro-store";
+import usePomodoroStore from "@/domain/pomodoro/stores";
 
 /**
  * Custom hook to return the number of Pomodoro, Short Break, and Long Break sessions

@@ -1,7 +1,7 @@
 'use client'
 import {Card} from "@/components/ui/card";
-import {usePomodoro} from "@/domain/pomodoro/use-pomodoro";
-import {usePomodoroStats} from "@/domain/pomodoro/use-pomodoro-stats";
+import {usePomodoro} from "../../../domain/pomodoro/hooks/use-pomodoro";
+import {usePomodoroStats} from "@/domain/pomodoro/hooks/use-pomodoro-stats";
 import Timer from "@/app/(locale)/pomodoro/components/Timer";
 import PomodoroStats from "@/app/(locale)/pomodoro/components/PomodoroStats";
 import TaskForm from "@/app/(locale)/pomodoro/components/TaskForm";

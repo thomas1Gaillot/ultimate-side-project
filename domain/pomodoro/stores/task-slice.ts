@@ -1,4 +1,4 @@
-import {Task} from "@/domain/pomodoro/Task";
+import {Task} from "@/domain/pomodoro/entities/Task";
 
 export interface TaskSlice {
     tasks: Task[];

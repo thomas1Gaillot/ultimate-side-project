@@ -1,9 +1,9 @@
-import index from "@/domain/pomodoro/use-pomodoro-store";
+import index from "@/domain/pomodoro/stores";
 import useSound from "@/hooks/use-sound";
-import { pomodoroPhases } from "@/domain/pomodoro/Pomodoro";
+import { pomodoroPhases } from "@/domain/pomodoro/entities/Pomodoro";
 import { useEffect } from "react";
-import managePomodoroTasks from "@/domain/pomodoro/use-pomodoro/manage-pomodoro-tasks";
-import usePomodoroForm from "@/domain/pomodoro/use-pomodoro/use-pomodoro-form";
+import managePomodoroTasks from "@/domain/pomodoro/hooks/use-pomodoro/manage-pomodoro-tasks";
+import usePomodoroForm from "@/domain/pomodoro/hooks/use-pomodoro/use-pomodoro-form";
 
 export const usePomodoro = () => {
     const {

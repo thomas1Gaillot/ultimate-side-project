@@ -3,7 +3,7 @@ import { persist, PersistOptions } from "zustand/middleware";
 import { createTaskSlice, TaskSlice } from "./task-slice";
 import { createTimerSlice, TimerSlice } from "./timer-slice";
 import { createFormSlice, FormSlice } from "./form-slice";
-import {Pomodoro} from "@/domain/pomodoro/Pomodoro";
+import {Pomodoro} from "@/domain/pomodoro/entities/Pomodoro";
 
 interface PomodoroState extends TaskSlice, TimerSlice, FormSlice {}
 
