@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- edit a task">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- fix build">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/data/usePages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/data/usePages.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/stores/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/stores/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/stores/task-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/stores/task-slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/stores/timer-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/stores/timer-slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TimerControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TimerControls.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,15 +194,7 @@
       <workItem from="1722788061145" duration="3539000" />
       <workItem from="1722927669284" duration="1244000" />
       <workItem from="1723286178744" duration="3268000" />
-      <workItem from="1723366471365" duration="18893000" />
-    </task>
-    <task id="LOCAL-00098" summary="- create new article is possible&#10;- sound pomodoro changed to smoother">
-      <option name="closed" value="true" />
-      <created>1720868637028</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1720868637028</updated>
+      <workItem from="1723366471365" duration="19369000" />
     </task>
     <task id="LOCAL-00099" summary="- create article, update article">
       <option name="closed" value="true" />
@@ -593,7 +580,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723387836710</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="- fix build">
+      <option name="closed" value="true" />
+      <created>1723388612968</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1723388612968</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,7 +607,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add configuration to local supabase" />
     <MESSAGE value="handle code block as ``` ``` for articles" />
     <MESSAGE value="handle special chars" />
     <MESSAGE value="wip handle image on articles" />
@@ -637,6 +631,7 @@
     <MESSAGE value="copy tasks to clipboard as plain text" />
     <MESSAGE value="- instanciate form only once to do not have bugs,&#10;- remove current task from local storage from now" />
     <MESSAGE value="- edit a task" />
-    <option name="LAST_COMMIT_MESSAGE" value="- edit a task" />
+    <MESSAGE value="- fix build" />
+    <option name="LAST_COMMIT_MESSAGE" value="- fix build" />
   </component>
 </project>

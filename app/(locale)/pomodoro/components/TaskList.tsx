@@ -90,7 +90,7 @@ const TaskList = ({form}: { form: UseFormReturn<CreateTask> }) => {
                                                 </Button>
                                             </PopoverTrigger>
                                             <PopoverContent className={'grid gap-1'}>
-                                                <TypographySmall>Edit Task : {task.name}</TypographySmall>
+                                                <TypographySmall><>Edit Task : {task.name}</></TypographySmall>
                                                 <form onSubmit={(e) => submitNewRowValue(e, task.id)}>
                                                     <Input
                                                         name="task"

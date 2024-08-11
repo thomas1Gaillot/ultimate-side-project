@@ -31,7 +31,7 @@ const TimerControls = ({isPlaying, form, onSubmit, reset, resetPomodoro}: {
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                     <Button onClick={reset} variant={"ghost"} size={'sm'} className={"px-2"}>
-                        <DotsVerticalIcon size={24} className={"cursor-pointer text-gray-700 "}/>
+                        <DotsVerticalIcon  className={"cursor-pointer text-gray-700 size-6 "}/>
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-max">
@@ -42,18 +42,18 @@ const TimerControls = ({isPlaying, form, onSubmit, reset, resetPomodoro}: {
                         onClick={form?.handleSubmit(onSubmit)} variant={"default"} disabled={!form?.watch("task")}>
                         <p className={"text-xs "}>Start / Pause  </p>
                         {isPlaying ?
-                        <PauseIcon size={16} className={"cursor-pointer text-gray-50 "}/> :
-                        <PlayIcon size={16} className={"cursor-pointer text-gray-50 "}/>}
+                        <PauseIcon className={"cursor-pointer text-gray-50 size-4 "}/> :
+                        <PlayIcon className={"cursor-pointer text-gray-50 size-4 "}/>}
                     </Button>
                     <Button className={"px-2 flex gap-2 justify-start"}
                             onClick={reset}  variant={"ghost"}>
                         <p className={"text-xs  text-gray-600"}>Restart Timer </p>
-                        <Undo size={16} className={"cursor-pointer text-gray-700 "}/>
+                        <Undo  className={"cursor-pointer text-gray-700  size-4"}/>
                     </Button>
                     <Button onClick={resetPomodoro} variant={"ghost"}
                                 className={"px-2 flex gap-2"}>
                             <p className={"text-xs text-gray-600"}>Restart to first pattern  </p>
-                            <Undo2 size={16} className={"cursor-pointer text-gray-700 "}/>
+                            <Undo2 className={"cursor-pointer text-gray-700 size-4 "}/>
                         </Button>
                     </DropdownMenuGroup>
                 </DropdownMenuContent>
