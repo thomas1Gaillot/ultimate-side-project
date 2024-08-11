@@ -1,10 +1,11 @@
 'use client'
 import PomodoroWidget from "@/app/(locale)/pomodoro/PomodoroWidget";
 import {TypographyBlockquote, TypographyH1, TypographyLead, TypographyList} from "@/components/ui/typography";
-import TaskList from "@/app/(locale)/pomodoro/components/TaskList";
-import {usePomodoro} from "@/domain/pomodoro/hooks/use-pomodoro";
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
+import TaskList from "@/app/(locale)/pomodoro/components/TaskWidget";
 import usePomodoroForm from "@/domain/pomodoro/hooks/use-pomodoro/use-pomodoro-form";
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
+import TasksStats from "@/app/(locale)/pomodoro/components/TasksStats";
+import TaskWidget from "@/app/(locale)/pomodoro/components/TaskWidget";
 
 export default function PomodoroPage() {
     const form = usePomodoroForm()
@@ -17,9 +18,11 @@ export default function PomodoroPage() {
                 A time management technique that uses a timer to break down work into intervals, traditionally 25
                 minutes in length, separated by short breaks.
             </TypographyLead>
-            <div className={"flex flex-col pt-8 max-w-2xl gap-4"}>
+            <div className={"flex flex-col pt-8 max-w-2xl gap-16"}>
                 <PomodoroWidget form={form}/>
-                <TaskList form={form}/>
+                <TaskWidget form={form}/>
+
+
             </div>
             <TypographyList texts={[
                 "Splitting tasks into short intervals makes you create achievable goals.",

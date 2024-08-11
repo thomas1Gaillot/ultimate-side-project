@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="mostly linting">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="tasklist ui">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskWidget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TasksStats.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TasksTable.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -194,14 +198,6 @@
       <workItem from="1722927669284" duration="1244000" />
       <workItem from="1723286178744" duration="3268000" />
       <workItem from="1723366471365" duration="19369000" />
-    </task>
-    <task id="LOCAL-00100" summary="deploy with migration">
-      <option name="closed" value="true" />
-      <created>1720877987343</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1720877987343</updated>
     </task>
     <task id="LOCAL-00101" summary="deploy with migration">
       <option name="closed" value="true" />
@@ -587,7 +583,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723400206256</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="tasklist ui">
+      <option name="closed" value="true" />
+      <created>1723400880156</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1723400880156</updated>
+    </task>
+    <option name="localTasksCounter" value="150" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,7 +610,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="handle special chars" />
     <MESSAGE value="wip handle image on articles" />
     <MESSAGE value="handle images" />
     <MESSAGE value="handle multi code button" />
@@ -631,6 +634,7 @@
     <MESSAGE value="- edit a task" />
     <MESSAGE value="- fix build" />
     <MESSAGE value="mostly linting" />
-    <option name="LAST_COMMIT_MESSAGE" value="mostly linting" />
+    <MESSAGE value="tasklist ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="tasklist ui" />
   </component>
 </project>
