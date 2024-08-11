@@ -9,6 +9,8 @@ import TimerControls from "@/app/(locale)/pomodoro/components/TimerControls";
 import TaskList from "@/app/(locale)/pomodoro/components/TaskList";
 import {Metadata} from "next";
 import {usePomodoroControls} from "@/domain/pomodoro/hooks/use-pomodoro-controls";
+import {Button} from "@/components/ui/button";
+import {Undo, Undo2} from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Thomas Gaillot",
@@ -24,7 +26,7 @@ export default function PomodoroWidget() {
         isPlaying,
         currentPhase
     } = usePomodoro();
-    const {togglePlayPause, reset} = usePomodoroControls();
+    const {togglePlayPause, resetTimer, resetPomodoro} = usePomodoroControls(form);
     const {numberOfPomodoro, numberOfShortBreak, numberOfLongBreak} = usePomodoroStats();
 
 
@@ -47,8 +49,11 @@ export default function PomodoroWidget() {
                         isPlaying={isPlaying}
                         form={form}
                         onSubmit={onSubmit}
-                        reset={reset}
+                        reset={resetTimer}
                     />
+                    <Button onClick={resetPomodoro} variant={"outline"} className={"px-2"}>
+                        <Undo size={24} className={"cursor-pointer text-gray-700 "}/>
+                    </Button>
                 </div>
             </Card>
             <TaskList tasks={tasks} deleteTask={deleteTask} currentTask={form.getValues('task')}/>
