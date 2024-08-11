@@ -72,7 +72,7 @@ const TaskList = ({form}: { form: UseFormReturn<CreateTask> }) => {
                         <TableHeader>
                             <TableRow>
                                 <TableHead>Task</TableHead>
-                                <TableHead>Duration (s)</TableHead>
+                                <TableHead className={'w-max truncate'}>Duration</TableHead>
                                 <TableHead>Action</TableHead>
                             </TableRow>
                         </TableHeader>
@@ -86,7 +86,7 @@ const TaskList = ({form}: { form: UseFormReturn<CreateTask> }) => {
                                         <Popover>
                                             <PopoverTrigger>
                                                 <Button variant="ghost" size="icon">
-                                                    <PencilIcon className="size-4"/>
+                                                    <PencilIcon className="size-4 text-secondary-foreground/60"/>
                                                 </Button>
                                             </PopoverTrigger>
                                             <PopoverContent className={'grid gap-1'}>
@@ -108,7 +108,7 @@ const TaskList = ({form}: { form: UseFormReturn<CreateTask> }) => {
                                     <TableCell>
                                         <TypographySmall>{formatSecondsToMmss(task.duration)}</TypographySmall>
                                     </TableCell>
-                                    <TableCell>
+                                    <TableCell className={'flex gap-1 item-center justify-center'}>
 
                                         <Button variant="ghost" size="icon" onClick={() => handleRedoTask(task.name)}>
                                             <ArrowUpIcon className="w-4 h-4"/>

@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- fix build">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="mostly linting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro-controls.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro-controls.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-phase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-phase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/stores/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/stores/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/stores/task-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/stores/task-slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/stores/timer-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/stores/timer-slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,14 +194,6 @@
       <workItem from="1722927669284" duration="1244000" />
       <workItem from="1723286178744" duration="3268000" />
       <workItem from="1723366471365" duration="19369000" />
-    </task>
-    <task id="LOCAL-00099" summary="- create article, update article">
-      <option name="closed" value="true" />
-      <created>1720877529731</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1720877529731</updated>
     </task>
     <task id="LOCAL-00100" summary="deploy with migration">
       <option name="closed" value="true" />
@@ -592,7 +579,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723388612968</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="mostly linting">
+      <option name="closed" value="true" />
+      <created>1723400206256</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1723400206256</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +606,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="handle code block as ``` ``` for articles" />
     <MESSAGE value="handle special chars" />
     <MESSAGE value="wip handle image on articles" />
     <MESSAGE value="handle images" />
@@ -636,6 +630,7 @@
     <MESSAGE value="- instanciate form only once to do not have bugs,&#10;- remove current task from local storage from now" />
     <MESSAGE value="- edit a task" />
     <MESSAGE value="- fix build" />
-    <option name="LAST_COMMIT_MESSAGE" value="- fix build" />
+    <MESSAGE value="mostly linting" />
+    <option name="LAST_COMMIT_MESSAGE" value="mostly linting" />
   </component>
 </project>
