@@ -1,7 +1,7 @@
 'use client'
 import {TypographySmall} from "@/components/ui/typography";
 import {Button} from "@/components/ui/button";
-import {ClipboardIcon, TrashIcon} from "lucide-react";
+import {ArrowUpIcon, ClipboardIcon, TrashIcon} from "lucide-react";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
 import {cn} from "@/lib/utils";
 import index from "@/domain/pomodoro/stores";
@@ -10,17 +10,23 @@ import {usePomodoro} from "@/domain/pomodoro/hooks/use-pomodoro";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {useCopyToClipboard} from "@uidotdev/usehooks";
 import {toast} from "@/components/hooks/use-toast";
+import {red} from "next/dist/lib/picocolors";
+import {UseFormReturn} from "react-hook-form";
+import {CreateTask} from "@/domain/pomodoro/entities/Task";
 
-const TaskList = () => {
-    const {
-        tasks, form, deleteTask,
-    } = usePomodoro();
+const TaskList = ({form}:{ form:UseFormReturn<CreateTask> }) => {
+    const {tasks, deleteTask,redoTask,} = usePomodoro(form)
     const [copiedText, copyToClipboard] = useCopyToClipboard();
 
     const {setIsPlaying} = index();
 
     function handleDeleteTask(id: number) {
         deleteTask(id);
+        setIsPlaying(false);
+    }
+
+    function handleRedoTask(taskText: string) {
+        redoTask(taskText);
         setIsPlaying(false);
     }
 
@@ -74,7 +80,10 @@ const TaskList = () => {
                                         <TypographySmall>{formatSecondsToMmss(task.duration)}</TypographySmall>
                                     </TableCell>
                                     <TableCell>
-                                        <Button variant="ghost" size="icon" onClick={() => handleDeleteTask(task.id)}>
+                                        <Button variant="ghost" size="icon" onClick={() => handleRedoTask(task.name)}>
+                                            <ArrowUpIcon className="w-4 h-4"/>
+                                        </Button>
+                                        <Button variant="ghost" size="icon" onClick={() => handleDeleteTask(task.name)}>
                                             <TrashIcon className="w-4 h-4"/>
                                         </Button>
                                     </TableCell>

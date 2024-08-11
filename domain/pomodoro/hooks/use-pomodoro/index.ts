@@ -1,17 +1,16 @@
-import index from "@/domain/pomodoro/stores";
+import usePomodoroStore from "@/domain/pomodoro/stores";
 import useSound from "@/hooks/use-sound";
 import {useEffect} from "react";
 import manageTasks from "@/domain/pomodoro/hooks/use-pomodoro/manage-tasks";
-import usePomodoroForm from "@/domain/pomodoro/hooks/use-pomodoro/use-pomodoro-form";
 import {pomodoroPhases} from "@/domain/pomodoro/entities/Timer";
 import {managePhase} from "@/domain/pomodoro/hooks/use-pomodoro/manage-phase";
+import {UseFormReturn} from "react-hook-form";
+import {CreateTask} from "@/domain/pomodoro/entities/Task";
 
-export const usePomodoro = () => {
+export const usePomodoro = (form: UseFormReturn<CreateTask>) => {
     const {
         tasks,
         setTasks,
-        formValues,
-        setFormValues,
         setSecondsLeft,
         setPatternIndex,
         setIsPlaying,
@@ -20,12 +19,11 @@ export const usePomodoro = () => {
         isPlaying,
         currentPhase,
         setCurrentPhase,
-    } = index();
+    } = usePomodoroStore();
 
-    const {play : notifyBell} = useSound("/music/notification.mp3");
-    const form = usePomodoroForm(formValues, setFormValues);
+    const {play: notifyBell} = useSound("/music/notification.mp3");
 
-    const {addTask, deleteTask, updateTaskDuration} = manageTasks(tasks, setTasks, formValues);
+    const {addTask, deleteTask, updateTaskDuration, redoTask} = manageTasks(tasks, setTasks, form);
 
 
     useEffect(() => {
@@ -51,14 +49,13 @@ export const usePomodoro = () => {
         }
     }, [secondsLeft, isPlaying]);
 
-
     return {
         tasks,
         form,
-        formValues,
         currentPhase,
         addTask,
         deleteTask,
+        redoTask,
         secondsLeft,
         isPlaying,
     };

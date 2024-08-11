@@ -8,13 +8,12 @@ import {Sheet, SheetClose, SheetContent, SheetTrigger} from "@/components/ui/she
 import {usePages} from "@/app/(locale)/data/usePages";
 import {ForwardRefExoticComponent, RefAttributes, useEffect} from "react";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
-import {formatStringToXChar} from "@/lib/format-string-to-X-char";
 import {useSidebarToggle} from "@/components/hooks/use-sidebar-toggle";
 import {SidebarToggle} from "@/app/(locale)/components/sidebar-toggle";
 import {DotsHorizontalIcon} from "@radix-ui/react-icons";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import Image from "next/image";
-import {usePomodoro} from "../../../domain/pomodoro/hooks/use-pomodoro";
+import usePomodoroStore from "@/domain/pomodoro/stores";
 
 
 export default function Sidebar() {
@@ -23,10 +22,10 @@ export default function Sidebar() {
     const sidebar = useSidebarToggle()
     const router = useRouter()
 
-    const {tasks, formValues, secondsLeft} = usePomodoro();
+    const {tasks, secondsLeft} = usePomodoroStore();
 
     useEffect(() => {
-        document.title = `${formatSecondsToMmss(secondsLeft)} 🍅 - ${formatStringToXChar(formValues.task, 20)}`;
+        document.title = `${formatSecondsToMmss(secondsLeft)} 🍅 `;
     }, [secondsLeft, tasks]);
 
     if (!sidebar) return null;
@@ -42,41 +41,41 @@ export default function Sidebar() {
                 <Button onClick={() => router.push('/home')} variant={'ghost'} size={'icon'}>
                     <Image alt={'avocado-icon'} src={'/avocado.ico'} width={24} height={24}/>
                 </Button>
-                    {pages.map(({section, pages}) => (
-                        <ul key={section} className={"space-y-2 py-4 "}>
-                            {section &&
-                                <h4 className={"px-2 text-xs  text-gray-700 text-opacity-40 dark:text-white"}>
-                                    {sidebar?.isOpen ? section : <DotsHorizontalIcon className={"size-3"}/>}
-                                </h4>}
-                            {pages.map(({href, label, icon: Icon, newTab}) => (
-                                <li key={href} className={"flex items-stretch space-x-1 cursor-pointer"}>
+                {pages.map(({section, pages}) => (
+                    <ul key={section} className={"space-y-2 py-4 "}>
+                        {section &&
+                            <h4 className={"px-2 text-xs  text-gray-700 text-opacity-40 dark:text-white"}>
+                                {sidebar?.isOpen ? section : <DotsHorizontalIcon className={"size-3"}/>}
+                            </h4>}
+                        {pages.map(({href, label, icon: Icon, newTab}) => (
+                            <li key={href} className={"flex items-stretch space-x-1 cursor-pointer"}>
 
-                                    <TooltipProvider>
-                                        <Tooltip>
-                                            <TooltipTrigger className={'w-full'}>
-                                                <Link target={newTab ? '_blank' : ''} href={href}
-                                                      className={cn("flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-regular",
-                                                          pathName?.startsWith(href) ?
-                                                              'text-gray-50 dark:text-gray-900 bg-gray-900' :
-                                                              "text-gray-900 dark:text-gray-50 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200")}>
-                                                    <Icon
-                                                        className={cn("w-4 h-4 min-h-4 min-w-4 text-muted-foreground mr-2 ",
-                                                            pathName?.startsWith(href) ?
-                                                                "text-gray-50 dark:text-gray-900" : "text-gray-900 dark:text-gray-50"
-                                                        )}/>
-                                                    {sidebar?.isOpen && <>{label}</>}
-                                                    {newTab && <ExternalLinkIcon className={'size-4'}/>}
-                                                </Link>
-                                            </TooltipTrigger>
-                                            <TooltipContent side={'right'}>
-                                                {label}
-                                            </TooltipContent>
-                                        </Tooltip>
-                                    </TooltipProvider>
-                                </li>
-                            ))}
-                        </ul>
-                    ))}
+                                <TooltipProvider>
+                                    <Tooltip>
+                                        <TooltipTrigger className={'w-full'}>
+                                            <Link target={newTab ? '_blank' : ''} href={href}
+                                                  className={cn("flex flex-1 items-center space-x-3 rounded-md px-2 py-1.5 text-sm font-regular",
+                                                      pathName?.startsWith(href) ?
+                                                          'text-gray-50 dark:text-gray-900 bg-gray-900' :
+                                                          "text-gray-900 dark:text-gray-50 sm:hover:bg-gray-200 sm:hover:text-gray-900 sm:dark:hover:bg-gray-700 sm:dark:hover:text-gray-200")}>
+                                                <Icon
+                                                    className={cn("w-4 h-4 min-h-4 min-w-4 text-muted-foreground mr-2 ",
+                                                        pathName?.startsWith(href) ?
+                                                            "text-gray-50 dark:text-gray-900" : "text-gray-900 dark:text-gray-50"
+                                                    )}/>
+                                                {sidebar?.isOpen && <>{label}</>}
+                                                {newTab && <ExternalLinkIcon className={'size-4'}/>}
+                                            </Link>
+                                        </TooltipTrigger>
+                                        <TooltipContent side={'right'}>
+                                            {label}
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
+                            </li>
+                        ))}
+                    </ul>
+                ))}
             </nav>
         </aside>
         {pathName && <MobileSidebar pathName={pathName} pages={pages}/>}
@@ -92,7 +91,7 @@ const MobileSidebar = ({pathName, pages}: {
             href: string
             label: string
             icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>,
-            newTab : boolean
+            newTab: boolean
         }[]
     }[]
 }) => {

@@ -7,6 +7,7 @@ import index from "@/domain/pomodoro/stores";
 import {displayCurrentPhaseIcon, getNumberOfPomodoro, Phase} from "@/domain/pomodoro/entities/Timer";
 import usePomodoroStore from "@/domain/pomodoro/stores";
 import {Badge} from "@/components/ui/badge";
+import {useEffect} from "react";
 
 
 
@@ -17,6 +18,7 @@ const TaskForm = ({form, currentPhase, onSubmit}: {
 }) => {
     const {setIsPlaying} = index();
     const {patternIndex} = usePomodoroStore()
+
     return (
         form &&
         <Form {...form}>

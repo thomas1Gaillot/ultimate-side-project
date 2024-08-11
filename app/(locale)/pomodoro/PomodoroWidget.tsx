@@ -1,5 +1,5 @@
 'use client'
-import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
+import {Card, CardContent, CardFooter, CardHeader} from "@/components/ui/card";
 import {usePomodoro} from "../../../domain/pomodoro/hooks/use-pomodoro";
 import {usePomodoroStats} from "@/domain/pomodoro/hooks/use-pomodoro-stats";
 import Timer from "@/app/(locale)/pomodoro/components/Timer";
@@ -8,6 +8,8 @@ import TaskForm from "@/app/(locale)/pomodoro/components/TaskForm";
 import TimerControls from "@/app/(locale)/pomodoro/components/TimerControls";
 import {Metadata} from "next";
 import {usePomodoroControls} from "@/domain/pomodoro/hooks/use-pomodoro-controls";
+import {UseFormReturn} from "react-hook-form";
+import {CreateTask} from "@/domain/pomodoro/entities/Task";
 
 export const metadata: Metadata = {
     title: "Thomas Gaillot",
@@ -17,12 +19,12 @@ export const metadata: Metadata = {
     },
 };
 
-export default function PomodoroWidget() {
+export default function PomodoroWidget({form}: { form: UseFormReturn<CreateTask> }) {
     const {
-        tasks, form, addTask, deleteTask, secondsLeft,
+        addTask, secondsLeft,
         isPlaying,
         currentPhase
-    } = usePomodoro();
+    } = usePomodoro(form);
     const {togglePlayPause, resetTimer, resetPomodoro} = usePomodoroControls(form);
     const {numberOfPomodoro, numberOfShortBreak, numberOfLongBreak} = usePomodoroStats();
 

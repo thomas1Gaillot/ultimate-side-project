@@ -1,20 +1,15 @@
+import {useForm, UseFormReturn} from "react-hook-form";
 import {CreateTask, createTaskSchema} from "@/domain/pomodoro/entities/Task";
-import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 
-const usePomodoroForm = (defaultValues: CreateTask, setFormValues: (values: any) => void) => {
-    const form = useForm<CreateTask>({
+function usePomodoroForm(){
+    const form: UseFormReturn<CreateTask> = useForm<CreateTask>({
         resolver: zodResolver(createTaskSchema),
-        defaultValues,
+        defaultValues: {
+            task: ""
+        },
     });
-
-    form.watch((values) => {
-        if (values.task) {
-            setFormValues({ task: values.task });
-        }
-    });
-
-    return form;
-};
+    return form
+}
 
 export default usePomodoroForm;

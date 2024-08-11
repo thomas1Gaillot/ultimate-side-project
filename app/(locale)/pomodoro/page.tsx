@@ -4,9 +4,10 @@ import {TypographyBlockquote, TypographyH1, TypographyLead, TypographyList} from
 import TaskList from "@/app/(locale)/pomodoro/components/TaskList";
 import {usePomodoro} from "@/domain/pomodoro/hooks/use-pomodoro";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
+import usePomodoroForm from "@/domain/pomodoro/hooks/use-pomodoro/use-pomodoro-form";
 
 export default function PomodoroPage() {
-
+    const form = usePomodoroForm()
     return (
         <div className={"flex flex-col gap-4 pb-8"}>
             <TypographyH1>
@@ -17,8 +18,8 @@ export default function PomodoroPage() {
                 minutes in length, separated by short breaks.
             </TypographyLead>
             <div className={"flex flex-col pt-8 max-w-2xl gap-4"}>
-                <PomodoroWidget/>
-                <TaskList />
+                <PomodoroWidget form={form}/>
+                <TaskList form={form}/>
             </div>
             <TypographyList texts={[
                 "Splitting tasks into short intervals makes you create achievable goals.",
