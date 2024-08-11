@@ -47,7 +47,7 @@ const TaskForm = ({form, currentPhase, onSubmit}: {
                                         }}
                                         value={field.value}
                                         className={"border-none bg-gray-50 "}
-                                        placeholder="Add a task"
+                                        placeholder="What are you working on? 🚀 #pomodoro #dev #reading"
                                     />
                                 </div>
                             </FormControl>

@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="copy tasks to clipboard as plain text">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- instanciate form only once to do not have bugs,&#10;- remove current task from local storage from now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-tasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-tasks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/use-pomodoro-form.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/use-pomodoro-form.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/stores/form-slice.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/stores/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/stores/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,15 +196,7 @@
       <workItem from="1722788061145" duration="3539000" />
       <workItem from="1722927669284" duration="1244000" />
       <workItem from="1723286178744" duration="3268000" />
-      <workItem from="1723366471365" duration="16327000" />
-    </task>
-    <task id="LOCAL-00096" summary="migrate to axios">
-      <option name="closed" value="true" />
-      <created>1720863038264</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1720863038264</updated>
+      <workItem from="1723366471365" duration="18080000" />
     </task>
     <task id="LOCAL-00097" summary="mixed view between lg and md fixed">
       <option name="closed" value="true" />
@@ -596,7 +582,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723382715168</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="- instanciate form only once to do not have bugs,&#10;- remove current task from local storage from now">
+      <option name="closed" value="true" />
+      <created>1723386057382</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1723386057382</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,7 +609,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="remove project from sidebar since no projects yet" />
     <MESSAGE value="link to snapcarrot project" />
     <MESSAGE value="add configuration to local supabase" />
     <MESSAGE value="handle code block as ``` ``` for articles" />
@@ -640,6 +633,7 @@
     <MESSAGE value="add reset all pomodoro pattern" />
     <MESSAGE value="show number of pomodoro as badge" />
     <MESSAGE value="copy tasks to clipboard as plain text" />
-    <option name="LAST_COMMIT_MESSAGE" value="copy tasks to clipboard as plain text" />
+    <MESSAGE value="- instanciate form only once to do not have bugs,&#10;- remove current task from local storage from now" />
+    <option name="LAST_COMMIT_MESSAGE" value="- instanciate form only once to do not have bugs,&#10;- remove current task from local storage from now" />
   </component>
 </project>

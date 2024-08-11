@@ -1,7 +1,7 @@
 'use client'
-import {TypographySmall} from "@/components/ui/typography";
+import {TypographyMuted, TypographySmall} from "@/components/ui/typography";
 import {Button} from "@/components/ui/button";
-import {ArrowUpIcon, ClipboardIcon, TrashIcon} from "lucide-react";
+import {ArrowUpIcon, ClipboardIcon, PencilIcon, TrashIcon} from "lucide-react";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
 import {cn} from "@/lib/utils";
 import index from "@/domain/pomodoro/stores";
@@ -10,12 +10,15 @@ import {usePomodoro} from "@/domain/pomodoro/hooks/use-pomodoro";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {useCopyToClipboard} from "@uidotdev/usehooks";
 import {toast} from "@/components/hooks/use-toast";
-import {red} from "next/dist/lib/picocolors";
 import {UseFormReturn} from "react-hook-form";
 import {CreateTask} from "@/domain/pomodoro/entities/Task";
+import {Badge} from "@/components/ui/badge";
+import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
+import {Input} from "@/components/ui/input";
+import {Form} from "@/components/ui/form";
 
-const TaskList = ({form}:{ form:UseFormReturn<CreateTask> }) => {
-    const {tasks, deleteTask,redoTask,} = usePomodoro(form)
+const TaskList = ({form}: { form: UseFormReturn<CreateTask> }) => {
+    const {tasks, deleteTask, redoTask, renameTask} = usePomodoro(form)
     const [copiedText, copyToClipboard] = useCopyToClipboard();
 
     const {setIsPlaying} = index();
@@ -29,6 +32,7 @@ const TaskList = ({form}:{ form:UseFormReturn<CreateTask> }) => {
         redoTask(taskText);
         setIsPlaying(false);
     }
+
 
     function copy() {
         let tableText = "Task        | Duration (s) | Action\n";
@@ -44,6 +48,11 @@ const TaskList = ({form}:{ form:UseFormReturn<CreateTask> }) => {
         })
     }
 
+    const submitNewRowValue = (e, id) => {
+        e.preventDefault();
+        renameTask(id, e.target.task.value);
+        setIsPlaying(false);
+    }
     return (
         <>
             <Card>
@@ -73,17 +82,40 @@ const TaskList = ({form}:{ form:UseFormReturn<CreateTask> }) => {
                                 <TableRow key={task.id} className={cn(
                                     task.name === form.getValues('task') && 'bg-gray-100'
                                 )}>
-                                    <TableCell>
-                                        <TypographySmall>{task.name}</TypographySmall>
+                                    <TableCell className={'flex justify-between items-center'}>
+                                        <Task name={task.name}/>
+                                        <Popover>
+                                            <PopoverTrigger>
+                                                <Button variant="ghost" size="icon">
+                                                    <PencilIcon className="size-4"/>
+                                                </Button>
+                                            </PopoverTrigger>
+                                            <PopoverContent className={'grid gap-1'}>
+                                                <TypographySmall>Edit Task : {task.name}</TypographySmall>
+                                                <form onSubmit={(e)=> submitNewRowValue(e, task.id)}>
+                                                    <Input
+                                                        name="task"
+                                                        defaultValue={task.name}
+                                                        placeholder="Task"
+                                                        className="w-full"/>
+                                                </form>
+                                                <TypographyMuted>Press Enter to submit</TypographyMuted>
+
+
+
+                                            </PopoverContent>
+                                        </Popover>
+
                                     </TableCell>
                                     <TableCell>
                                         <TypographySmall>{formatSecondsToMmss(task.duration)}</TypographySmall>
                                     </TableCell>
                                     <TableCell>
+
                                         <Button variant="ghost" size="icon" onClick={() => handleRedoTask(task.name)}>
                                             <ArrowUpIcon className="w-4 h-4"/>
                                         </Button>
-                                        <Button variant="ghost" size="icon" onClick={() => handleDeleteTask(task.name)}>
+                                        <Button variant="ghost" size="icon" onClick={() => handleDeleteTask(task.id)}>
                                             <TrashIcon className="w-4 h-4"/>
                                         </Button>
                                     </TableCell>
@@ -98,3 +130,27 @@ const TaskList = ({form}:{ form:UseFormReturn<CreateTask> }) => {
 };
 
 export default TaskList;
+
+const Task = ({name}: { name: string }) => {
+    const renderContent = (text: string) => {
+        return text.split(" ").map((word, index) =>
+            word.startsWith("#") ? (
+                <Badge
+                    variant="default"
+                    className="rounded-lg  bg-secondary text-secondary-foreground mr-1 first:ml-4"
+                    key={index}
+                >
+                    {word.slice(1)}
+                </Badge>
+            ) : (
+                word + " "
+            )
+        );
+    };
+
+    return (
+        <TypographySmall><>{renderContent(name)}</>
+        </TypographySmall>
+    );
+
+}

@@ -1,5 +1,3 @@
-import {CreateTask} from "@/domain/pomodoro/entities/Task";
-
 const manageTasks = (
     tasks: any[],
     setTasks: (tasks: any[]) => void,
@@ -8,7 +6,7 @@ const manageTasks = (
     const addTask = (taskName: string) => {
         const taskExists = tasks.some((task) => task.name === taskName);
         if (!taskExists) {
-            setTasks([{ id: Math.random(), name: taskName, duration: 0 }, ...tasks]);
+            setTasks([{id: Math.random(), name: taskName, duration: 0}, ...tasks]);
         }
     };
 
@@ -20,7 +18,7 @@ const manageTasks = (
         setTasks(
             tasks.map((task) =>
                 task.name === form.getValues("task")
-                    ? { ...task, duration: task.duration + duration }
+                    ? {...task, duration: task.duration + duration}
                     : task
             )
         );
@@ -29,6 +27,18 @@ const manageTasks = (
     const redoTask = (taskName: string) => {
         form.setValue("task", taskName)
     }
-    return { addTask, deleteTask, updateTaskDuration, redoTask };
+
+
+    const renameTask = (id: number, newName: string) => {
+        setTasks(
+            tasks.map((task) =>
+                task.id === id
+                    ? {...task, name: newName}
+                    : task
+            )
+        );
+    }
+
+    return {addTask, deleteTask, renameTask, updateTaskDuration, redoTask};
 };
 export default manageTasks;
