@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add reset all pomodoro pattern">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="show number of pomodoro as badge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/entities/Timer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/entities/Timer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,15 +193,7 @@
       <workItem from="1722788061145" duration="3539000" />
       <workItem from="1722927669284" duration="1244000" />
       <workItem from="1723286178744" duration="3268000" />
-      <workItem from="1723366471365" duration="10322000" />
-    </task>
-    <task id="LOCAL-00093" summary="writting base page">
-      <option name="closed" value="true" />
-      <created>1720860116728</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1720860116728</updated>
+      <workItem from="1723366471365" duration="10424000" />
     </task>
     <task id="LOCAL-00094" summary="mobile navigation">
       <option name="closed" value="true" />
@@ -588,7 +579,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723376160471</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="show number of pomodoro as badge">
+      <option name="closed" value="true" />
+      <created>1723379975659</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1723379975659</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,7 +606,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="migrate adding created and updated values" />
     <MESSAGE value="order by most recent" />
     <MESSAGE value="remove project from sidebar since no projects yet" />
     <MESSAGE value="link to snapcarrot project" />
@@ -632,6 +630,7 @@
     <MESSAGE value="extract pomodoro controls" />
     <MESSAGE value="add reset all control" />
     <MESSAGE value="add reset all pomodoro pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="add reset all pomodoro pattern" />
+    <MESSAGE value="show number of pomodoro as badge" />
+    <option name="LAST_COMMIT_MESSAGE" value="show number of pomodoro as badge" />
   </component>
 </project>

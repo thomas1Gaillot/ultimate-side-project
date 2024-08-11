@@ -30,8 +30,8 @@ const TaskForm = ({form, currentPhase, onSubmit}: {
                                 <div className={"flex items-center gap-2"}>
                                     <div className={'flex gap-1'}>
                                         <Badge  variant="solid" className="rounded-lg px-3 py-1.5 bg-secondary text-secondary-foreground">
-                                            {getNumberOfPomodoro(patternIndex)}
-                                            {'/4'}
+                                            <p className={'font-bold'}>{getNumberOfPomodoro(patternIndex)}</p>
+                                            <p className={'font-light px-1 pl-0.5 opacity-60'}>{'/4'}</p>
                                             <Image src={displayCurrentPhaseIcon(currentPhase)} alt={"icon"} width={50}
                                                    height={50} className={"h-5 w-5 "}/>
 
