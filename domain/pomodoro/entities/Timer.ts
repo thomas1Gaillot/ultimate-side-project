@@ -19,3 +19,21 @@ export const pomodoroPhases = [
     {type: PhaseEnum.enum.work, duration: 25*60},
     {type: PhaseEnum.enum.longBreak, duration: 15*60},
 ];
+
+export const getNumberOfPomodoro = (patternIndex: number) => {
+    return Math.floor(patternIndex / 2) + 1 ;
+
+}
+export function displayCurrentPhaseIcon(type: Phase) {
+    switch (type) {
+        case  PhaseEnum.enum.work:
+            return '/tomato.svg';
+        case  PhaseEnum.enum.break:
+            return '/teapot.svg';
+        case  PhaseEnum.enum.longBreak:
+            return '/beer.svg';
+        default:
+            return '/tomato.svg';
+    }
+}
+

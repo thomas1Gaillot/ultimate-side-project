@@ -4,19 +4,11 @@ import Image from "next/image";
 import {Input} from "@/components/ui/input";
 import {UseFormReturn} from "react-hook-form";
 import index from "@/domain/pomodoro/stores";
+import {displayCurrentPhaseIcon, getNumberOfPomodoro, Phase} from "@/domain/pomodoro/entities/Timer";
+import usePomodoroStore from "@/domain/pomodoro/stores";
+import {Badge} from "@/components/ui/badge";
 
-function displayCurrentPhaseIcon(type: string) {
-    switch (type) {
-        case 'work':
-            return '/tomato.svg';
-        case 'break':
-            return '/teapot.svg';
-        case 'longBreak':
-            return '/beer.svg';
-        default:
-            return '/tomato.svg';
-    }
-}
+
 
 const TaskForm = ({form, currentPhase, onSubmit}: {
     form: UseFormReturn<{ task: string }, any, undefined>;
@@ -24,6 +16,7 @@ const TaskForm = ({form, currentPhase, onSubmit}: {
     onSubmit: () => void;
 }) => {
     const {setIsPlaying} = index();
+    const {patternIndex} = usePomodoroStore()
     return (
         form &&
         <Form {...form}>
@@ -35,8 +28,16 @@ const TaskForm = ({form, currentPhase, onSubmit}: {
                         <FormItem>
                             <FormControl>
                                 <div className={"flex items-center gap-2"}>
-                                    <Image src={displayCurrentPhaseIcon(currentPhase)} alt={"icon"} width={50}
-                                           height={50} className={"h-5 w-5 "}/>
+                                    <div className={'flex gap-1'}>
+                                        <Badge  variant="solid" className="rounded-lg px-3 py-1.5 bg-secondary text-secondary-foreground">
+                                            {getNumberOfPomodoro(patternIndex)}
+                                            {'/4'}
+                                            <Image src={displayCurrentPhaseIcon(currentPhase)} alt={"icon"} width={50}
+                                                   height={50} className={"h-5 w-5 "}/>
+
+                                        </Badge>
+                                    </div>
+
                                     <Input
                                         onChange={(e) => {
                                             field.onChange(e);
@@ -45,7 +46,7 @@ const TaskForm = ({form, currentPhase, onSubmit}: {
                                         value={field.value}
                                         className={"border-none bg-gray-50 "}
                                         placeholder="Add a task"
-                                         />
+                                    />
                                 </div>
                             </FormControl>
                             <FormMessage/>
