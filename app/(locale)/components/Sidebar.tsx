@@ -7,7 +7,6 @@ import {ExternalLinkIcon, LucideProps, Menu} from "lucide-react";
 import {Sheet, SheetClose, SheetContent, SheetTrigger} from "@/components/ui/sheet";
 import {usePages} from "@/app/(locale)/data/usePages";
 import {ForwardRefExoticComponent, RefAttributes, useEffect} from "react";
-import {usePomodoro} from "@/domain/pomodoro/use-pomodoro";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
 import {formatStringToXChar} from "@/lib/format-string-to-X-char";
 import {useSidebarToggle} from "@/components/hooks/use-sidebar-toggle";
@@ -15,6 +14,7 @@ import {SidebarToggle} from "@/app/(locale)/components/sidebar-toggle";
 import {DotsHorizontalIcon} from "@radix-ui/react-icons";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import Image from "next/image";
+import {usePomodoro} from "@/domain/pomodoro/use-pomodoro";
 
 
 export default function Sidebar() {

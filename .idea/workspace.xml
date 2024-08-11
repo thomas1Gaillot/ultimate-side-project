@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="show Zester project">
+      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro/manage-pomodoro-tasks.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro/use-pomodoro-form.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/churro-ciao/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/churro-ciao/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/zester/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/zester/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/churro-ciao.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/churro-ciao.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/zester/description.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/zester/description.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/zester/play.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/zester/play.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/zester/rejoindre.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/zester/rejoindre.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/zester/snapcarrot.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/zester/snapcarrot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/zester/titre.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/zester/titre.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/Pomodoro.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/Pomodoro.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/Task.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/Task.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -47,30 +46,32 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/thoma/Desktop/ultimate-side-project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.generate.executor": "Run",
-    "npm.lint.executor": "Run",
-    "npm.seed.executor": "Run",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\thoma\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/thoma/Desktop/ultimate-side-project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.generate.executor&quot;: &quot;Run&quot;,
+    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
+    &quot;npm.seed.executor&quot;: &quot;Run&quot;,
+    &quot;npm.supabase:create.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\thoma\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\churro-ciao" />
@@ -80,14 +81,14 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\thoma\Desktop\ultimate-side-project\domain\pomodoro\use-pomodoro" />
       <recent name="C:\Users\thoma\Desktop\ultimate-side-project\public\zester" />
       <recent name="C:\Users\thoma\Desktop\ultimate-side-project\public" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\zester" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\logos" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.seed">
+  <component name="RunManager" selected="npm.supabase:create">
     <configuration name="generate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -118,8 +119,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="supabase:create" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="supabase:create" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.supabase:create" />
         <item itemvalue="npm.seed" />
         <item itemvalue="npm.generate" />
         <item itemvalue="npm.lint" />
@@ -187,15 +199,8 @@
       <workItem from="1722686756541" duration="6000" />
       <workItem from="1722788061145" duration="3539000" />
       <workItem from="1722927669284" duration="1244000" />
-      <workItem from="1723286178744" duration="518000" />
-    </task>
-    <task id="LOCAL-00083" summary="resizable panel">
-      <option name="closed" value="true" />
-      <created>1720780790541</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1720780790541</updated>
+      <workItem from="1723286178744" duration="3268000" />
+      <workItem from="1723366471365" duration="4061000" />
     </task>
     <task id="LOCAL-00084" summary="add more space">
       <option name="closed" value="true" />
@@ -581,7 +586,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722791347176</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="show Zester project">
+      <option name="closed" value="true" />
+      <created>1723286741238</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1723286741238</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
