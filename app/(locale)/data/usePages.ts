@@ -12,7 +12,7 @@ import {
     TimerIcon
 } from "lucide-react";
 import {useEffect, useState} from "react";
-import usePomodoroStore from "@/domain/pomodoro/use-pomodoro-store";
+import index from "@/domain/pomodoro/use-pomodoro-store";
 
 const defaultPages = [
     {
@@ -79,7 +79,7 @@ const defaultPages = [
 ]
 export const usePages = () => {
     const [pages, setPages] = useState(defaultPages);
-    const {tasks, isPlaying} = usePomodoroStore();
+    const {tasks, isPlaying} = index();
     useEffect(() => {
         const newPages = pages.map((page) => {
             if (page.section === 'Widgets') {

@@ -4,14 +4,14 @@ import {Button} from "@/components/ui/button";
 import {TrashIcon} from "lucide-react";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
 import {cn} from "@/lib/utils";
-import usePomodoroStore from "@/domain/pomodoro/use-pomodoro-store";
+import index from "@/domain/pomodoro/use-pomodoro-store";
 
 const TaskList = ({tasks, deleteTask, currentTask}: {
     tasks: { id: number; name: string; duration: number }[];
     deleteTask: (id: number) => void;
     currentTask: string;
 }) => {
-    const {setIsPlaying} = usePomodoroStore();
+    const {setIsPlaying} = index();
     function handleDeleteTask(id: number) {
         deleteTask(id);
         setIsPlaying(false);

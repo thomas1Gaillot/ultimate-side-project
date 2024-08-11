@@ -1,4 +1,4 @@
-import usePomodoroStore from "@/domain/pomodoro/use-pomodoro-store";
+import index from "@/domain/pomodoro/use-pomodoro-store";
 import useSound from "@/hooks/use-sound";
 import { pomodoroPhases } from "@/domain/pomodoro/Pomodoro";
 import { useEffect } from "react";
@@ -19,7 +19,7 @@ export const usePomodoro = () => {
         isPlaying,
         currentPhase,
         setCurrentPhase,
-    } = usePomodoroStore();
+    } = index();
 
     const { play } = useSound("/music/notification.mp3");
     const form = usePomodoroForm(formValues, setFormValues);

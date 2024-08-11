@@ -4,16 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="show Zester project">
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro/manage-pomodoro-tasks.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro/use-pomodoro-form.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="refactor pomodoro logic">
+      <change afterPath="$PROJECT_DIR$/domain/pomodoro/Form.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/pomodoro/Timer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store/form-slice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store/task-slice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store/timer-slice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/data/usePages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/data/usePages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/pomodoro/Pomodoro.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/Pomodoro.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/pomodoro/Task.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/Task.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,11 +86,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\thoma\Desktop\ultimate-side-project\domain\pomodoro\use-pomodoro-store" />
       <recent name="C:\Users\thoma\Desktop\ultimate-side-project\domain\pomodoro\use-pomodoro" />
       <recent name="C:\Users\thoma\Desktop\ultimate-side-project\public\zester" />
       <recent name="C:\Users\thoma\Desktop\ultimate-side-project\public" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\zester" />
     </key>
   </component>
   <component name="RunManager" selected="npm.supabase:create">
@@ -200,15 +205,7 @@
       <workItem from="1722788061145" duration="3539000" />
       <workItem from="1722927669284" duration="1244000" />
       <workItem from="1723286178744" duration="3268000" />
-      <workItem from="1723366471365" duration="4061000" />
-    </task>
-    <task id="LOCAL-00084" summary="add more space">
-      <option name="closed" value="true" />
-      <created>1720780990290</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1720780990290</updated>
+      <workItem from="1723366471365" duration="4847000" />
     </task>
     <task id="LOCAL-00085" summary="article to preview mvp">
       <option name="closed" value="true" />
@@ -594,7 +591,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723286741238</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="refactor pomodoro logic">
+      <option name="closed" value="true" />
+      <created>1723371232140</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1723371232140</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,7 +618,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix upvote call" />
     <MESSAGE value="updating article view to match new sidebar system" />
     <MESSAGE value="noiiice width global" />
     <MESSAGE value="ui" />
@@ -638,6 +642,7 @@
     <MESSAGE value="use query" />
     <MESSAGE value="add stack tanstack" />
     <MESSAGE value="show Zester project" />
-    <option name="LAST_COMMIT_MESSAGE" value="show Zester project" />
+    <MESSAGE value="refactor pomodoro logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor pomodoro logic" />
   </component>
 </project>
