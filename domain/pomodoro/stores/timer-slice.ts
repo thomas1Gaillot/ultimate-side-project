@@ -11,7 +11,7 @@ export interface TimerSlice {
     setCurrentPhase: (phase: Phase) => void;
 }
 
-export const createTimerSlice = (set): TimerSlice => ({
+export const createTimerSlice = (set:any): TimerSlice => ({
     patternIndex: 0,
     setPatternIndex: (patternIndex: number) => {
         const phase = pomodoroPhases[patternIndex].type;

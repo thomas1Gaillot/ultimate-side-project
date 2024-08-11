@@ -3,7 +3,7 @@ import {Phase, PhaseEnum} from "@/domain/pomodoro/entities/Timer";
 interface PhaseManagementOptions {
     type: Phase;
     setCurrentPhase: (phase: Phase) => void;
-    setFormValue: (key: string, value: string) => void;
+    setFormValue: (key: any, value: string) => void;
 }
 
 export const managePhase = ({ type, setCurrentPhase, setFormValue }: PhaseManagementOptions) => {

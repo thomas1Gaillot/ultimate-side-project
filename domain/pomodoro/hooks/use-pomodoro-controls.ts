@@ -4,7 +4,7 @@ import {managePhase} from "@/domain/pomodoro/hooks/use-pomodoro/manage-phase";
 import {UseFormReturn} from "react-hook-form";
 import {CreateTask} from "@/domain/pomodoro/entities/Task";
 
-export const usePomodoroControls = (form:  UseFormReturn<CreateTask, any, undefined>) => {
+export const usePomodoroControls = (form:  UseFormReturn<CreateTask>) => {
 
     const { setSecondsLeft, setIsPlaying, patternIndex, isPlaying, setPatternIndex, setCurrentPhase } = usePomodoroStore()
     const togglePlayPause = () => {
