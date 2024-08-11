@@ -1,17 +1,13 @@
 'use client'
-import {Card} from "@/components/ui/card";
+import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {usePomodoro} from "../../../domain/pomodoro/hooks/use-pomodoro";
 import {usePomodoroStats} from "@/domain/pomodoro/hooks/use-pomodoro-stats";
 import Timer from "@/app/(locale)/pomodoro/components/Timer";
 import PomodoroStats from "@/app/(locale)/pomodoro/components/PomodoroStats";
 import TaskForm from "@/app/(locale)/pomodoro/components/TaskForm";
 import TimerControls from "@/app/(locale)/pomodoro/components/TimerControls";
-import TaskList from "@/app/(locale)/pomodoro/components/TaskList";
 import {Metadata} from "next";
 import {usePomodoroControls} from "@/domain/pomodoro/hooks/use-pomodoro-controls";
-import {Button} from "@/components/ui/button";
-import {Undo2} from "lucide-react";
-import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 
 export const metadata: Metadata = {
     title: "Thomas Gaillot",
@@ -39,24 +35,24 @@ export default function PomodoroWidget() {
     };
 
     return (
-        <div className={"max-w-2xl"}>
-            <Card className={"p-4 py-2 flex flex-col gap-4 "}>
+        <Card>
+            <CardHeader>
                 <TaskForm form={form} currentPhase={currentPhase} onSubmit={onSubmit}/>
+            </CardHeader>
+            <CardContent>
                 <Timer secondsLeft={secondsLeft}/>
-                <div className={"flex w-full justify-between items-center gap-4 md:gap-16"}>
-                    <PomodoroStats pomodoro={numberOfPomodoro} shortBreak={numberOfShortBreak}
-                                   longBreak={numberOfLongBreak}/>
-                    <TimerControls
-                        isPlaying={isPlaying}
-                        form={form}
-                        onSubmit={onSubmit}
-                        reset={resetTimer}
-                        resetPomodoro={resetPomodoro}
-                    />
-
-                </div>
-            </Card>
-            <TaskList tasks={tasks} deleteTask={deleteTask} currentTask={form.getValues('task')}/>
-        </div>
+            </CardContent>
+            <CardFooter className={'w-full flex justify-between gap-4 md:gap-16'}>
+                <PomodoroStats pomodoro={numberOfPomodoro} shortBreak={numberOfShortBreak}
+                               longBreak={numberOfLongBreak}/>
+                <TimerControls
+                    isPlaying={isPlaying}
+                    form={form}
+                    onSubmit={onSubmit}
+                    reset={resetTimer}
+                    resetPomodoro={resetPomodoro}
+                />
+            </CardFooter>
+        </Card>
     );
 }
