@@ -8,9 +8,9 @@ import {useCopyToClipboard} from "@uidotdev/usehooks";
 import {toast} from "@/components/hooks/use-toast";
 import {UseFormReturn} from "react-hook-form";
 import {CreateTask} from "@/domain/pomodoro/entities/Task";
-import TasksTable from "@/app/(locale)/pomodoro/components/TasksTable";
+import TasksTable from "@/app/(locale)/pomodoro/components/task-widget/TasksTable";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import {TasksStats} from "@/app/(locale)/pomodoro/components/TasksStats";
+import {TasksStats} from "@/app/(locale)/pomodoro/components/task-widget/TasksStats";
 
 const TaskWidget = ({form}: { form: UseFormReturn<CreateTask> }) => {
     const {tasks} = usePomodoro(form)

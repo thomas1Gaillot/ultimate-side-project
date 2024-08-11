@@ -1,11 +1,11 @@
 'use client'
 import {Card, CardContent, CardFooter, CardHeader} from "@/components/ui/card";
-import {usePomodoro} from "../../../domain/pomodoro/hooks/use-pomodoro";
+import {usePomodoro} from "../../../../../domain/pomodoro/hooks/use-pomodoro";
 import {usePomodoroStats} from "@/domain/pomodoro/hooks/use-pomodoro-stats";
-import Timer from "@/app/(locale)/pomodoro/components/Timer";
-import PomodoroStats from "@/app/(locale)/pomodoro/components/PomodoroStats";
+import Timer from "@/app/(locale)/pomodoro/components/pomodoro-widget/Timer";
+import PomodoroStats from "@/app/(locale)/pomodoro/components/pomodoro-widget/PomodoroStats";
 import TaskForm from "@/app/(locale)/pomodoro/components/TaskForm";
-import TimerControls from "@/app/(locale)/pomodoro/components/TimerControls";
+import TimerControls from "@/app/(locale)/pomodoro/components/pomodoro-widget/TimerControls";
 import {Metadata} from "next";
 import {usePomodoroControls} from "@/domain/pomodoro/hooks/use-pomodoro-controls";
 import {UseFormReturn} from "react-hook-form";

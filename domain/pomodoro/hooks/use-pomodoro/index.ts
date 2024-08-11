@@ -30,7 +30,7 @@ export const usePomodoro = (form: UseFormReturn<CreateTask>) => {
         if (secondsLeft > 0 && isPlaying) {
             const timerId = setInterval(() => {
                 setSecondsLeft(secondsLeft - 1);
-                updateTaskDuration(1); // Update task duration by 1 second
+                updateTaskDuration(1); // Update task-pomodoro-widget duration by 1 second
             }, 1000);
 
             return () => clearInterval(timerId); // Cleanup interval on component unmount

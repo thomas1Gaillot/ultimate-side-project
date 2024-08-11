@@ -1,11 +1,8 @@
 'use client'
-import PomodoroWidget from "@/app/(locale)/pomodoro/PomodoroWidget";
+import PomodoroWidget from "@/app/(locale)/pomodoro/components/pomodoro-widget/PomodoroWidget";
 import {TypographyBlockquote, TypographyH1, TypographyLead, TypographyList} from "@/components/ui/typography";
-import TaskList from "@/app/(locale)/pomodoro/components/TaskWidget";
+import TaskWidget from "@/app/(locale)/pomodoro/components/task-widget/TaskWidget";
 import usePomodoroForm from "@/domain/pomodoro/hooks/use-pomodoro/use-pomodoro-form";
-import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import TasksStats from "@/app/(locale)/pomodoro/components/TasksStats";
-import TaskWidget from "@/app/(locale)/pomodoro/components/TaskWidget";
 
 export default function PomodoroPage() {
     const form = usePomodoroForm()
@@ -26,7 +23,7 @@ export default function PomodoroPage() {
             </div>
             <TypographyList texts={[
                 "Splitting tasks into short intervals makes you create achievable goals.",
-                "Taking 3 short breaks and 1 long break allows you to feel refreshed and ready to start each new task.",
+                "Taking 3 short breaks and 1 long break allows you to feel refreshed and ready to start each new task-pomodoro-widget.",
                 "In two hours, you achieve 4 tasks ! That's big."
             ]}>
             </TypographyList>

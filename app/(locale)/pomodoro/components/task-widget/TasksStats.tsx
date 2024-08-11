@@ -6,12 +6,13 @@ import {CreateTask, Task} from "@/domain/pomodoro/entities/Task";
 import {UseFormReturn} from "react-hook-form";
 
 // Utilisation des tâches pour générer les données du graphique
-function generateChartData(tasks:Task[]) {
+function generateChartData(tasks: Task[]) {
     return tasks.map(task => ({
         name: task.name,
         duration: task.duration,
     }));
 }
+
 const chartConfig = {
     duration: {
         label: "Duration",
@@ -23,7 +24,7 @@ const chartConfig = {
 } satisfies ChartConfig
 
 export function TasksStats({form}: { form: UseFormReturn<CreateTask> }) {
-    const {tasks, deleteTask, redoTask, renameTask} = usePomodoro(form)
+    const {tasks} = usePomodoro(form)
 
     // Générer les données du graphique à partir des tâches
     const chartData = generateChartData(tasks);
@@ -39,7 +40,7 @@ export function TasksStats({form}: { form: UseFormReturn<CreateTask> }) {
                         right: 16,
                     }}
                 >
-                    <CartesianGrid horizontal={false} />
+                    <CartesianGrid horizontal={false}/>
                     <YAxis
                         dataKey="name"
                         type="category"
@@ -49,10 +50,10 @@ export function TasksStats({form}: { form: UseFormReturn<CreateTask> }) {
                         tickFormatter={(value) => value.slice(0, 3)}
                         hide
                     />
-                    <XAxis dataKey="duration" type="number" hide />
+                    <XAxis dataKey="duration" type="number" hide/>
                     <ChartTooltip
                         cursor={false}
-                        content={<ChartTooltipContent indicator="line" />}
+                        content={<ChartTooltipContent indicator="line"/>}
                     />
                     <Bar
                         dataKey="duration"
@@ -61,10 +62,10 @@ export function TasksStats({form}: { form: UseFormReturn<CreateTask> }) {
                         radius={4}
                     >
                         <LabelList
-                            dataKey="month"
+                            dataKey="name"
                             position="insideLeft"
                             offset={8}
-                            className="fill-[--color-label]"
+                            className="fill-[--color-label] truncate"
                             fontSize={12}
                         />
                         <LabelList
