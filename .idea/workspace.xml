@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="tasklist ui">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskWidget.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TasksStats.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TasksTable.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="tasklist ux as tabs for switching between list and chart view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TasksStats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TasksStats.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-tasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-tasks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,14 +199,6 @@
       <workItem from="1722927669284" duration="1244000" />
       <workItem from="1723286178744" duration="3268000" />
       <workItem from="1723366471365" duration="19369000" />
-    </task>
-    <task id="LOCAL-00101" summary="deploy with migration">
-      <option name="closed" value="true" />
-      <created>1720878067592</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1720878067592</updated>
     </task>
     <task id="LOCAL-00102" summary="sidebar and layout updates for it">
       <option name="closed" value="true" />
@@ -591,7 +584,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723400880156</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="tasklist ux as tabs for switching between list and chart view">
+      <option name="closed" value="true" />
+      <created>1723402360980</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1723402360980</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +611,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="wip handle image on articles" />
     <MESSAGE value="handle images" />
     <MESSAGE value="handle multi code button" />
     <MESSAGE value="resolve build" />
@@ -635,6 +635,7 @@
     <MESSAGE value="- fix build" />
     <MESSAGE value="mostly linting" />
     <MESSAGE value="tasklist ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="tasklist ui" />
+    <MESSAGE value="tasklist ux as tabs for switching between list and chart view" />
+    <option name="LAST_COMMIT_MESSAGE" value="tasklist ux as tabs for switching between list and chart view" />
   </component>
 </project>

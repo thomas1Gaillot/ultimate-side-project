@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const manageTasks = (
     tasks: any[],
     setTasks: (tasks: any[]) => void,
@@ -6,7 +8,7 @@ const manageTasks = (
     const addTask = (taskName: string) => {
         const taskExists = tasks.some((task) => task.name === taskName);
         if (!taskExists) {
-            setTasks([{id: Math.random(), name: taskName, duration: 0}, ...tasks]);
+            setTasks([{id: uuidv4(), name: taskName, duration: 0}, ...tasks]);
         }
     };
 

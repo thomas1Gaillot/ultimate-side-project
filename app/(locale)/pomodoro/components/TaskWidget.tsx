@@ -1,6 +1,6 @@
 'use client'
 import {Button} from "@/components/ui/button";
-import {AreaChartIcon, ClipboardIcon, ListIcon} from "lucide-react";
+import {ClipboardIcon} from "lucide-react";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {usePomodoro} from "@/domain/pomodoro/hooks/use-pomodoro";
@@ -10,7 +10,7 @@ import {UseFormReturn} from "react-hook-form";
 import {CreateTask} from "@/domain/pomodoro/entities/Task";
 import TasksTable from "@/app/(locale)/pomodoro/components/TasksTable";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import TasksStats from "@/app/(locale)/pomodoro/components/TasksStats";
+import {TasksStats} from "@/app/(locale)/pomodoro/components/TasksStats";
 
 const TaskWidget = ({form}: { form: UseFormReturn<CreateTask> }) => {
     const {tasks} = usePomodoro(form)
@@ -44,7 +44,7 @@ const TaskWidget = ({form}: { form: UseFormReturn<CreateTask> }) => {
                                 <TabsTrigger value="list">
                                     <p className={"text-xs"}>List</p>
                                 </TabsTrigger>
-                                <TabsTrigger value="stats" >
+                                <TabsTrigger value="stats">
                                     <p className={"text-xs"}>Charts</p>
 
                                 </TabsTrigger>
