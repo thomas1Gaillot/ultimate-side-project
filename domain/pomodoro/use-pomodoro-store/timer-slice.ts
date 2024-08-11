@@ -1,4 +1,4 @@
-import { pomodoroPhases } from "@/domain/pomodoro/Pomodoro";
+import {pomodoroPhases} from "@/domain/pomodoro/Timer";
 
 export interface TimerSlice {
     patternIndex: number;

@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import usePomodoroStore from "@/domain/pomodoro/use-pomodoro-store";
 
 /**
  * Custom hook to return the number of Pomodoro, Short Break, and Long Break sessions
@@ -6,7 +7,8 @@ import { useMemo } from "react";
  * @returns {numberOfPomodoro, numberOfShortBreak, numberOfLongBreak}
  **/
 
-export const usePomodoroStats = (tasks: { duration: number }[]) => {
+export const usePomodoroStats = () => {
+    const {tasks} = usePomodoroStore()
     const { numberOfPomodoro, numberOfShortBreak, numberOfLongBreak } = useMemo(() => {
         let pomodoros = 0;
 

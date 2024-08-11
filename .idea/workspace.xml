@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="refactor pomodoro logic">
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/Form.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/Timer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store/form-slice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store/task-slice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store/timer-slice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/data/usePages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/data/usePages.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/pomodoro/Pomodoro.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/Pomodoro.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/Task.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/Task.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/Timer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/Timer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-stats.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-stats.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store/timer-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/use-pomodoro-store/timer-slice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,15 +196,7 @@
       <workItem from="1722788061145" duration="3539000" />
       <workItem from="1722927669284" duration="1244000" />
       <workItem from="1723286178744" duration="3268000" />
-      <workItem from="1723366471365" duration="4847000" />
-    </task>
-    <task id="LOCAL-00085" summary="article to preview mvp">
-      <option name="closed" value="true" />
-      <created>1720785380185</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1720785380185</updated>
+      <workItem from="1723366471365" duration="5007000" />
     </task>
     <task id="LOCAL-00086" summary="How to guide looks cool">
       <option name="closed" value="true" />
@@ -599,7 +582,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723371232140</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="refactor pomodoro logic">
+      <option name="closed" value="true" />
+      <created>1723371963977</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1723371963977</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

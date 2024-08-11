@@ -13,18 +13,6 @@ export const PomodoroSchema = z.object({
 export type Pomodoro = z.infer<typeof PomodoroSchema>;
 
 
-export type Pomodoro = z.infer<typeof PomodoroSchema>;
 
-
-export const pomodoroPhases = [
-    {type: 'work', duration: 25 * 60},
-    {type: 'break', duration: 5 * 60},
-    {type: 'work', duration: 25 * 60},
-    {type: 'break', duration: 5 * 60},
-    {type: 'work', duration: 25 * 60},
-    {type: 'break', duration: 5 * 60},
-    {type: 'work', duration: 25 * 60},
-    {type: 'longBreak', duration: 15 * 60},
-];
 
 
