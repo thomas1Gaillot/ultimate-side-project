@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="extract pomodoro controls">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add reset all control">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/entities/Timer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/entities/Timer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro-controls.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro-controls.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-phase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-phase.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TimerControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TimerControls.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/button.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,15 +195,7 @@
       <workItem from="1722788061145" duration="3539000" />
       <workItem from="1722927669284" duration="1244000" />
       <workItem from="1723286178744" duration="3268000" />
-      <workItem from="1723366471365" duration="7709000" />
-    </task>
-    <task id="LOCAL-00090" summary="Widget DONE">
-      <option name="closed" value="true" />
-      <created>1720798071133</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1720798071133</updated>
+      <workItem from="1723366471365" duration="8830000" />
     </task>
     <task id="LOCAL-00091" summary="widget article editors">
       <option name="closed" value="true" />
@@ -590,7 +581,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723373653890</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="add reset all control">
+      <option name="closed" value="true" />
+      <created>1723374837399</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1723374837399</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,7 +608,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ui" />
     <MESSAGE value="ui sidebar icon" />
     <MESSAGE value="migrate adding created and updated values" />
     <MESSAGE value="order by most recent" />
@@ -634,6 +632,7 @@
     <MESSAGE value="refactor pomodoro logic" />
     <MESSAGE value="add folders" />
     <MESSAGE value="extract pomodoro controls" />
-    <option name="LAST_COMMIT_MESSAGE" value="extract pomodoro controls" />
+    <MESSAGE value="add reset all control" />
+    <option name="LAST_COMMIT_MESSAGE" value="add reset all control" />
   </component>
 </project>
