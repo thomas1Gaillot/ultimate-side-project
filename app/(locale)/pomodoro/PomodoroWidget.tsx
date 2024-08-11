@@ -8,6 +8,7 @@ import TaskForm from "@/app/(locale)/pomodoro/components/TaskForm";
 import TimerControls from "@/app/(locale)/pomodoro/components/TimerControls";
 import TaskList from "@/app/(locale)/pomodoro/components/TaskList";
 import {Metadata} from "next";
+import {usePomodoroControls} from "@/domain/pomodoro/hooks/use-pomodoro-controls";
 
 export const metadata: Metadata = {
     title: "Thomas Gaillot",
@@ -19,13 +20,12 @@ export const metadata: Metadata = {
 
 export default function PomodoroWidget() {
     const {
-        tasks, form, addTask, deleteTask, updateTaskDuration, secondsLeft,
+        tasks, form, addTask, deleteTask, secondsLeft,
         isPlaying,
-        togglePlayPause,
-        reset,
         currentPhase
     } = usePomodoro();
-    const {numberOfPomodoro, numberOfShortBreak, numberOfLongBreak} = usePomodoroStats(tasks);
+    const {togglePlayPause, reset} = usePomodoroControls();
+    const {numberOfPomodoro, numberOfShortBreak, numberOfLongBreak} = usePomodoroStats();
 
 
     const onSubmit = () => {

@@ -1,9 +1,9 @@
 import index from "@/domain/pomodoro/stores";
 import useSound from "@/hooks/use-sound";
-import { pomodoroPhases } from "@/domain/pomodoro/entities/Pomodoro";
-import { useEffect } from "react";
-import managePomodoroTasks from "@/domain/pomodoro/hooks/use-pomodoro/manage-pomodoro-tasks";
+import {useEffect} from "react";
+import manageTasks from "@/domain/pomodoro/hooks/use-pomodoro/manage-tasks";
 import usePomodoroForm from "@/domain/pomodoro/hooks/use-pomodoro/use-pomodoro-form";
+import {pomodoroPhases} from "@/domain/pomodoro/entities/Timer";
 
 export const usePomodoro = () => {
     const {
@@ -21,19 +21,11 @@ export const usePomodoro = () => {
         setCurrentPhase,
     } = index();
 
-    const { play } = useSound("/music/notification.mp3");
+    const {notifyBell} = useSound("/music/notification.mp3");
     const form = usePomodoroForm(formValues, setFormValues);
 
-    const { addTask, deleteTask, updateTaskDuration } = managePomodoroTasks(tasks, setTasks, formValues);
+    const {addTask, deleteTask, updateTaskDuration} = manageTasks(tasks, setTasks, formValues);
 
-    const controls = {
-        togglePlayPause: () => setIsPlaying(!isPlaying),
-        reset: (e: any) => {
-            e.preventDefault();
-            setSecondsLeft(pomodoroPhases[patternIndex].duration);
-            setIsPlaying(false);
-        },
-    };
 
     const phaseManagement = {
         handlePhaseChange: (type: string) => {
@@ -63,8 +55,9 @@ export const usePomodoro = () => {
 
             return () => clearInterval(timerId); // Cleanup interval on component unmount
         } else if (secondsLeft === 0) {
-            play();
             const nextIndex = (patternIndex + 1) % pomodoroPhases.length;
+
+            notifyBell();
             setPatternIndex(nextIndex);
             setSecondsLeft(pomodoroPhases[nextIndex].duration);
             setIsPlaying(false);
@@ -72,15 +65,14 @@ export const usePomodoro = () => {
         }
     }, [secondsLeft, isPlaying]);
 
+
     return {
         tasks,
         form,
         formValues,
-        ...controls,
         currentPhase,
         addTask,
         deleteTask,
-        updateTaskDuration,
         secondsLeft,
         isPlaying,
     };

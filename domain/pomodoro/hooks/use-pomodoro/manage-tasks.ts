@@ -1,6 +1,6 @@
 import {CreateTask} from "@/domain/pomodoro/entities/Task";
 
-const managePomodoroTasks = (
+const manageTasks = (
     tasks: any[],
     setTasks: (tasks: any[]) => void,
     formValues: CreateTask
@@ -28,4 +28,4 @@ const managePomodoroTasks = (
 
     return { addTask, deleteTask, updateTaskDuration };
 };
-export default managePomodoroTasks;
+export default manageTasks;
