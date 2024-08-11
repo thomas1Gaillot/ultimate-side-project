@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add folders">
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro-controls.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-phase.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="extract pomodoro controls">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/entities/Timer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/entities/Timer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-pomodoro-tasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-tasks.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,15 +194,7 @@
       <workItem from="1722788061145" duration="3539000" />
       <workItem from="1722927669284" duration="1244000" />
       <workItem from="1723286178744" duration="3268000" />
-      <workItem from="1723366471365" duration="6208000" />
-    </task>
-    <task id="LOCAL-00088" summary="complex markdown working with lists">
-      <option name="closed" value="true" />
-      <created>1720796686834</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1720796686834</updated>
+      <workItem from="1723366471365" duration="6564000" />
     </task>
     <task id="LOCAL-00089" summary="handle preview editor responsive">
       <option name="closed" value="true" />
@@ -591,7 +580,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723372381046</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="extract pomodoro controls">
+      <option name="closed" value="true" />
+      <created>1723373319450</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1723373319450</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +607,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="noiiice width global" />
     <MESSAGE value="ui" />
     <MESSAGE value="ui sidebar icon" />
     <MESSAGE value="migrate adding created and updated values" />
@@ -635,6 +631,7 @@
     <MESSAGE value="show Zester project" />
     <MESSAGE value="refactor pomodoro logic" />
     <MESSAGE value="add folders" />
-    <option name="LAST_COMMIT_MESSAGE" value="add folders" />
+    <MESSAGE value="extract pomodoro controls" />
+    <option name="LAST_COMMIT_MESSAGE" value="extract pomodoro controls" />
   </component>
 </project>

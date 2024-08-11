@@ -4,6 +4,7 @@ import {useEffect} from "react";
 import manageTasks from "@/domain/pomodoro/hooks/use-pomodoro/manage-tasks";
 import usePomodoroForm from "@/domain/pomodoro/hooks/use-pomodoro/use-pomodoro-form";
 import {pomodoroPhases} from "@/domain/pomodoro/entities/Timer";
+import {managePhase} from "@/domain/pomodoro/hooks/use-pomodoro/manage-phase";
 
 export const usePomodoro = () => {
     const {
@@ -21,30 +22,11 @@ export const usePomodoro = () => {
         setCurrentPhase,
     } = index();
 
-    const {notifyBell} = useSound("/music/notification.mp3");
+    const {play : notifyBell} = useSound("/music/notification.mp3");
     const form = usePomodoroForm(formValues, setFormValues);
 
     const {addTask, deleteTask, updateTaskDuration} = manageTasks(tasks, setTasks, formValues);
 
-
-    const phaseManagement = {
-        handlePhaseChange: (type: string) => {
-            setCurrentPhase(type); // Update the current phase in the store
-            switch (type) {
-                case 'work':
-                    form.setValue("task", "new task");
-                    break;
-                case 'break':
-                    form.setValue("task", "5 min break");
-                    break;
-                case 'longBreak':
-                    form.setValue("task", "15 min break");
-                    break;
-                default:
-                    form.setValue("task", "");
-            }
-        },
-    };
 
     useEffect(() => {
         if (secondsLeft > 0 && isPlaying) {
@@ -61,7 +43,11 @@ export const usePomodoro = () => {
             setPatternIndex(nextIndex);
             setSecondsLeft(pomodoroPhases[nextIndex].duration);
             setIsPlaying(false);
-            phaseManagement.handlePhaseChange(pomodoroPhases[nextIndex].type);
+            managePhase({
+                type: pomodoroPhases[nextIndex].type,
+                setCurrentPhase,
+                setFormValue: form.setValue,
+            });
         }
     }, [secondsLeft, isPlaying]);
 
