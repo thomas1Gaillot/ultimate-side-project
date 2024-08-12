@@ -14,7 +14,7 @@ import {Badge} from "@/components/ui/badge";
 
 export default function TasksTable({form}: { form: UseFormReturn<CreateTask> }) {
     const {setIsPlaying} = usePomodoroStore();
-    const {tasks, deleteTask, redoTask, renameTask} = usePomodoro(form);
+    const {tasks, deleteTask, redoTask, renameTask, retimeTask} = usePomodoro(form);
 
     function handleDeleteTask(id: number) {
         deleteTask(id);
@@ -29,6 +29,12 @@ export default function TasksTable({form}: { form: UseFormReturn<CreateTask> }) 
     const submitNewRowValue = (e: any, id: number) => {
         e.preventDefault();
         renameTask(id, e.target.task.value);
+        setIsPlaying(false);
+    }
+
+    const submitNewDuration = (e: any, id: number) => {
+        e.preventDefault();
+        retimeTask(id, e.target.duration.value);
         setIsPlaying(false);
     }
     return <Table>
@@ -67,8 +73,29 @@ export default function TasksTable({form}: { form: UseFormReturn<CreateTask> }) 
                         </Popover>
 
                     </TableCell>
-                    <TableCell>
-                        <TypographySmall>{formatSecondsToMmss(task.duration)}</TypographySmall>
+                    <TableCell className={"w-[100px]"}>
+                        <TypographySmall>
+                            {formatSecondsToMmss(task.duration)}
+                        </TypographySmall>
+                        <Popover>
+                            <PopoverTrigger>
+                                <Button variant="ghost" size="icon">
+                                    <PencilIcon className="size-4 text-secondary-foreground/60"/>
+                                </Button>
+                            </PopoverTrigger>
+                            <PopoverContent className={'grid gap-1'}>
+                                <TypographySmall><>Edit Duration : {task.duration} s.</>
+                                </TypographySmall>
+                                <form onSubmit={(e) => submitNewDuration(e, task.id)}>
+                                    <Input
+                                        name="duration"
+                                        defaultValue={task.duration}
+                                        placeholder="duration"
+                                        className="w-full"/>
+                                </form>
+                                <TypographyMuted>Press Enter to submit</TypographyMuted>
+                            </PopoverContent>
+                        </Popover>
                     </TableCell>
                     <TableCell className={'flex gap-1 item-center justify-center'}>
 

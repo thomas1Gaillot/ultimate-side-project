@@ -40,7 +40,16 @@ const manageTasks = (
             )
         );
     }
+    const retimeTask = (id: number, newDuration: number) => {
+        setTasks(
+            tasks.map((task) =>
+                task.id === id
+                    ? {...task, duration: newDuration}
+                    : task
+            )
+        );
+    }
 
-    return {addTask, deleteTask, renameTask, updateTaskDuration, redoTask};
+    return {addTask, deleteTask, renameTask, updateTaskDuration,retimeTask, redoTask};
 };
 export default manageTasks;

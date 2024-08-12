@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="first Bar chart">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TasksBarChartByName.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="2 charts type">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TaskWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TaskWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TasksStats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TaskBarChartByTag.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TasksTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TasksTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-tasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-tasks.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,15 +203,8 @@
       <workItem from="1722927669284" duration="1244000" />
       <workItem from="1723286178744" duration="3268000" />
       <workItem from="1723366471365" duration="19369000" />
-      <workItem from="1723447388181" duration="402000" />
-    </task>
-    <task id="LOCAL-00104" summary="fix create roadmap idea psot">
-      <option name="closed" value="true" />
-      <created>1720963184932</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1720963184932</updated>
+      <workItem from="1723447388181" duration="1210000" />
+      <workItem from="1723478262064" duration="891000" />
     </task>
     <task id="LOCAL-00105" summary="fix upvote call">
       <option name="closed" value="true" />
@@ -597,7 +590,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723408757362</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="2 charts type">
+      <option name="closed" value="true" />
+      <created>1723447813620</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1723447813620</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,7 +617,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="resolve build" />
     <MESSAGE value="next config domain" />
     <MESSAGE value="refactor to roadmap schema zod" />
     <MESSAGE value="validate data when calling api" />
@@ -641,6 +641,7 @@
     <MESSAGE value="tasklist ux as tabs for switching between list and chart view" />
     <MESSAGE value="show first chart" />
     <MESSAGE value="first Bar chart" />
-    <option name="LAST_COMMIT_MESSAGE" value="first Bar chart" />
+    <MESSAGE value="2 charts type" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 charts type" />
   </component>
 </project>

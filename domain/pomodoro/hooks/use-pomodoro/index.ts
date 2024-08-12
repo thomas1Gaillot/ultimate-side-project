@@ -23,7 +23,7 @@ export const usePomodoro = (form: UseFormReturn<CreateTask>) => {
 
     const {play: notifyBell} = useSound("/music/notification.mp3");
 
-    const {addTask, deleteTask, updateTaskDuration, redoTask, renameTask} = manageTasks(tasks, setTasks, form);
+    const {addTask, deleteTask,retimeTask, updateTaskDuration, redoTask, renameTask} = manageTasks(tasks, setTasks, form);
 
 
     useEffect(() => {
@@ -59,5 +59,6 @@ export const usePomodoro = (form: UseFormReturn<CreateTask>) => {
         redoTask,
         secondsLeft,
         isPlaying,
+        retimeTask
     };
 };
