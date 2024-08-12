@@ -10,7 +10,8 @@ import {UseFormReturn} from "react-hook-form";
 import {CreateTask} from "@/domain/pomodoro/entities/Task";
 import TasksTable from "@/app/(locale)/pomodoro/components/task-widget/TasksTable";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import {TasksStats} from "@/app/(locale)/pomodoro/components/task-widget/TasksStats";
+import {TasksBarChartByName} from "@/app/(locale)/pomodoro/components/task-widget/TasksBarChartByName";
+import {TaskBarChartByTag} from "@/app/(locale)/pomodoro/components/task-widget/TaskBarChartByTag";
 
 const TaskWidget = ({form}: { form: UseFormReturn<CreateTask> }) => {
     const {tasks} = usePomodoro(form)
@@ -64,7 +65,23 @@ const TaskWidget = ({form}: { form: UseFormReturn<CreateTask> }) => {
                             <TasksTable form={form}/>
                         </TabsContent>
                         <TabsContent value="stats">
-                            <TasksStats form={form}/>
+                            <Tabs defaultValue={'by-name'}>
+                                <TabsList className={"relative bottom-4 left-4"}>
+                                    <TabsTrigger value="by-name">
+                                        <p className={"text-xs"}>by Name</p>
+                                    </TabsTrigger>
+                                    <TabsTrigger value="by-tags">
+                                        <p className={"text-xs"}>by Tags</p>
+
+                                    </TabsTrigger>
+                                </TabsList>
+                                <TabsContent value={'by-name'}>
+                                    <TasksBarChartByName form={form}/>
+                                </TabsContent>
+                                <TabsContent value={'by-tags'}>
+                                    <TaskBarChartByTag form={form}/>
+                                </TabsContent>
+                            </Tabs>
                         </TabsContent>
 
 

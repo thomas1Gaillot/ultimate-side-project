@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="show first chart">
-      <change afterPath="$PROJECT_DIR$/components/ui/chart.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="first Bar chart">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TasksBarChartByName.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/PomodoroWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/pomodoro-widget/PomodoroWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/PomodoroStats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/pomodoro-widget/PomodoroStats.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TaskWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TaskWidget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TasksStats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TasksStats.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TasksTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TasksTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/Timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/pomodoro-widget/Timer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/TimerControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/pomodoro-widget/TimerControls.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TaskWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TaskWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TasksStats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TaskBarChartByTag.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,27 +46,27 @@
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/thoma/Desktop/ultimate-side-project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.generate.executor": "Run",
-    "npm.lint.executor": "Run",
-    "npm.seed.executor": "Run",
-    "npm.supabase:create.executor": "Run",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/thoma/Desktop/ultimate-side-project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.generate.executor&quot;: &quot;Run&quot;,
+    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
+    &quot;npm.seed.executor&quot;: &quot;Run&quot;,
+    &quot;npm.supabase:create.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\churro-ciao" />
@@ -140,6 +133,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.17011.90" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -203,14 +203,7 @@
       <workItem from="1722927669284" duration="1244000" />
       <workItem from="1723286178744" duration="3268000" />
       <workItem from="1723366471365" duration="19369000" />
-    </task>
-    <task id="LOCAL-00103" summary="Add tooltip to sidebar">
-      <option name="closed" value="true" />
-      <created>1720962716264</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1720962716265</updated>
+      <workItem from="1723447388181" duration="402000" />
     </task>
     <task id="LOCAL-00104" summary="fix create roadmap idea psot">
       <option name="closed" value="true" />
@@ -596,7 +589,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723403993678</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="first Bar chart">
+      <option name="closed" value="true" />
+      <created>1723408757362</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1723408757362</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,7 +616,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="handle multi code button" />
     <MESSAGE value="resolve build" />
     <MESSAGE value="next config domain" />
     <MESSAGE value="refactor to roadmap schema zod" />
@@ -640,6 +640,7 @@
     <MESSAGE value="tasklist ui" />
     <MESSAGE value="tasklist ux as tabs for switching between list and chart view" />
     <MESSAGE value="show first chart" />
-    <option name="LAST_COMMIT_MESSAGE" value="show first chart" />
+    <MESSAGE value="first Bar chart" />
+    <option name="LAST_COMMIT_MESSAGE" value="first Bar chart" />
   </component>
 </project>
