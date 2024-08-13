@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="2 charts type">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="allow edit duration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TasksTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TasksTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-tasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-tasks.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,15 +202,8 @@
       <workItem from="1723286178744" duration="3268000" />
       <workItem from="1723366471365" duration="19369000" />
       <workItem from="1723447388181" duration="1210000" />
-      <workItem from="1723478262064" duration="891000" />
-    </task>
-    <task id="LOCAL-00105" summary="fix upvote call">
-      <option name="closed" value="true" />
-      <created>1720963460021</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1720963460021</updated>
+      <workItem from="1723478262064" duration="1013000" />
+      <workItem from="1723534009237" duration="299000" />
     </task>
     <task id="LOCAL-00106" summary="updating article view to match new sidebar system">
       <option name="closed" value="true" />
@@ -598,7 +589,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723447813620</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="allow edit duration">
+      <option name="closed" value="true" />
+      <created>1723479215780</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1723479215780</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,7 +616,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="next config domain" />
     <MESSAGE value="refactor to roadmap schema zod" />
     <MESSAGE value="validate data when calling api" />
     <MESSAGE value="PoC use tanstack Query" />
@@ -642,6 +640,7 @@
     <MESSAGE value="show first chart" />
     <MESSAGE value="first Bar chart" />
     <MESSAGE value="2 charts type" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 charts type" />
+    <MESSAGE value="allow edit duration" />
+    <option name="LAST_COMMIT_MESSAGE" value="allow edit duration" />
   </component>
 </project>

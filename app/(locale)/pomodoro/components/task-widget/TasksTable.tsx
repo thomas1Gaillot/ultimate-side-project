@@ -33,10 +33,12 @@ export default function TasksTable({form}: { form: UseFormReturn<CreateTask> }) 
     }
 
     const submitNewDuration = (e: any, id: number) => {
+        const newDuration : number = Number(e.target.duration.value)
         e.preventDefault();
-        retimeTask(id, e.target.duration.value);
+        retimeTask(id, newDuration);
         setIsPlaying(false);
     }
+    console.log({tasks})
     return <Table>
         <TableHeader>
             <TableRow>
