@@ -1,27 +1,9 @@
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow
-} from "@/components/ui/table";
+import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {cn} from "@/lib/utils";
-import {
-    Dialog,
-    DialogContent,
-    DialogTrigger
-} from "@/components/ui/dialog";
+import {Dialog, DialogContent, DialogTrigger} from "@/components/ui/dialog";
 import {Button} from "@/components/ui/button";
-import {
-    ArrowUpIcon,
-    PencilIcon,
-    TrashIcon
-} from "lucide-react";
-import {
-    TypographyMuted,
-    TypographySmall
-} from "@/components/ui/typography";
+import {ArrowUpIcon, PencilIcon, TrashIcon} from "lucide-react";
+import {TypographyMuted, TypographySmall} from "@/components/ui/typography";
 import {Input} from "@/components/ui/input";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
 import usePomodoroStore from "@/domain/pomodoro/stores";
@@ -33,7 +15,7 @@ import {Badge} from "@/components/ui/badge";
 export default function TasksTable({
                                        form
                                    }: {
-    form: UseFormReturn < CreateTask > ;
+    form: UseFormReturn<CreateTask>;
 }) {
     const {setIsPlaying} = usePomodoroStore();
     const {
@@ -78,65 +60,65 @@ export default function TasksTable({
             {tasks?.map((task) => (
                 <TableRow key={task.id} className={cn(
                     task.name === form.getValues('task') && 'bg-gray-100',
-                    'group' // Add group class to enable group-hover
+                    'group ' // Add group class to enable group-hover
                 )}>
-                    <TableCell className={'flex justify-between items-center w-full'}>
-                        <Task name={task.name} />
-                        <Dialog>
-                            <DialogTrigger className="hidden  group-hover:block">
-
-                                <Button variant="ghost" size="icon" >
-                                    <PencilIcon className="size-4 text-secondary-foreground/60" />
-                                </Button>
-                            </DialogTrigger>
-                            <DialogContent className={'grid gap-1'}>
-                                <TypographySmall><>Edit Task : {task.name}</>
-                                </TypographySmall>
-                                <form onSubmit={(e) => submitNewRowValue(e, task.id)}>
-                                    <Input
-                                        name="task"
-                                        defaultValue={task.name}
-                                        placeholder="Task"
-                                        className="w-full" />
-                                </form>
-                                <TypographyMuted>Press Enter to submit</TypographyMuted>
-                            </DialogContent>
-                        </Dialog>
-
+                    <TableCell>
+                        <div className={"w-[300px] justify-between flex items-center"}>
+                            <Task name={task.name}/>
+                            <Dialog>
+                                <DialogTrigger className="hidden  group-hover:block">
+                                    <Button variant="ghost" size="icon">
+                                        <PencilIcon className="size-3 text-secondary-foreground/60"/>
+                                    </Button>
+                                </DialogTrigger>
+                                <DialogContent className={'grid gap-1'}>
+                                    <TypographySmall><>Edit Task : {task.name}</>
+                                    </TypographySmall>
+                                    <form onSubmit={(e) => submitNewRowValue(e, task.id)}>
+                                        <Input
+                                            name="task"
+                                            defaultValue={task.name}
+                                            placeholder="Task"
+                                            className="w-full"/>
+                                    </form>
+                                    <TypographyMuted>Press Enter to submit</TypographyMuted>
+                                </DialogContent>
+                            </Dialog>
+                        </div>
                     </TableCell>
-                    <TableCell >
-                        <div className={"w-[100px] flex items-center"}>
-                        <TypographySmall>
-                            {formatSecondsToMmss(task.duration)}
-                        </TypographySmall>
-                        <Dialog>
-                            <DialogTrigger className="hidden group-hover:block">
-                                <Button variant="ghost" size="icon" >
-                                    <PencilIcon className="size-4 text-secondary-foreground/60" />
-                                </Button>
-                            </DialogTrigger>
-                            <DialogContent className={'grid gap-1'}>
-                                <TypographySmall><>Edit Duration : {task.duration} s.</>
-                                </TypographySmall>
-                                <form onSubmit={(e) => submitNewDuration(e, task.id)}>
-                                    <Input
-                                        name="duration"
-                                        defaultValue={task.duration}
-                                        placeholder="duration"
-                                        className="w-full" />
-                                </form>
-                                <TypographyMuted>Press Enter to submit</TypographyMuted>
-                            </DialogContent>
-                        </Dialog>
+                    <TableCell>
+                    <div className={"w-[100px] flex items-center"}>
+                            <TypographySmall>
+                                {formatSecondsToMmss(task.duration)}
+                            </TypographySmall>
+                            <Dialog>
+                                <DialogTrigger className="hidden group-hover:block">
+                                    <Button variant="ghost" size="icon">
+                                        <PencilIcon className="size-3 text-secondary-foreground/60"/>
+                                    </Button>
+                                </DialogTrigger>
+                                <DialogContent className={'grid gap-1'}>
+                                    <TypographySmall><>Edit Duration : {task.duration} s.</>
+                                    </TypographySmall>
+                                    <form onSubmit={(e) => submitNewDuration(e, task.id)}>
+                                        <Input
+                                            name="duration"
+                                            defaultValue={task.duration}
+                                            placeholder="duration"
+                                            className="w-full"/>
+                                    </form>
+                                    <TypographyMuted>Press Enter to submit</TypographyMuted>
+                                </DialogContent>
+                            </Dialog>
                         </div>
                     </TableCell>
                     <TableCell className={'flex gap-1 item-center justify-center'}>
 
                         <Button variant="ghost" size="icon" onClick={() => handleRedoTask(task.name)}>
-                            <ArrowUpIcon className="w-4 h-4" />
+                            <ArrowUpIcon className="w-4 h-4"/>
                         </Button>
                         <Button variant="ghost" size="icon" onClick={() => handleDeleteTask(task.id)}>
-                            <TrashIcon className="w-4 h-4" />
+                            <TrashIcon className="w-4 h-4"/>
                         </Button>
                     </TableCell>
                 </TableRow>
@@ -151,7 +133,7 @@ const Task = ({name}: { name: string }) => {
             word.startsWith("#") ? (
                 <Badge
                     variant="default"
-                    className="rounded-lg  bg-secondary text-secondary-foreground mr-1 first:ml-4"
+                    className="rounded-lg   bg-secondary text-secondary-foreground mr-1 first:ml-4"
                     key={index}
                 >
                     {word.slice(1)}
@@ -163,8 +145,13 @@ const Task = ({name}: { name: string }) => {
     };
 
     return (
-        <TypographySmall><>{renderContent(name)}</>
-        </TypographySmall>
+        <div className={"h-full flex items-center max-w-full"}>
+            <TypographySmall>
+                <div className={"min-h-[36px] text-wrap"}>
+                    {renderContent(name)}
+                </div>
+            </TypographySmall>
+        </div>
     );
 
 }
