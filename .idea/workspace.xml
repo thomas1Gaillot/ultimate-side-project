@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="duration edit bugfix">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="table cell">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/bar-chart-by-name/chart-config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/bar-chart-by-name/data.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/pie-chart-by-tag/data.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/pie-chart-by-tag/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TasksTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TasksTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TaskBarChartByTag.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TaskWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TaskWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/TasksBarChartByName.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/bar-chart-by-name/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -74,11 +80,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\pomodoro\components\task-widget\chart-by-tag" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\pomodoro\components\task-widget\chart-by-name" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\pomodoro\components\pomodoro-widget" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\pomodoro\components\task-widget" />
       <recent name="C:\Users\thoma\Desktop\ultimate-side-project\domain\pomodoro\hooks" />
-      <recent name="C:\Users\thoma\Desktop\ultimate-side-project\domain\pomodoro\stores" />
-      <recent name="C:\Users\thoma\Desktop\ultimate-side-project\domain\pomodoro\entities" />
     </key>
   </component>
   <component name="RunManager" selected="npm.supabase:create">
@@ -205,15 +211,7 @@
       <workItem from="1723478262064" duration="1013000" />
       <workItem from="1723534009237" duration="846000" />
       <workItem from="1723536240162" duration="36000" />
-      <workItem from="1723655882022" duration="2103000" />
-    </task>
-    <task id="LOCAL-00108" summary="noiiice width global">
-      <option name="closed" value="true" />
-      <created>1720966442258</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1720966442258</updated>
+      <workItem from="1723655882022" duration="6213000" />
     </task>
     <task id="LOCAL-00109" summary="ui">
       <option name="closed" value="true" />
@@ -599,7 +597,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723534840976</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <task id="LOCAL-00157" summary="table cell">
+      <option name="closed" value="true" />
+      <created>1723658152520</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1723658152520</updated>
+    </task>
+    <option name="localTasksCounter" value="158" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,7 +624,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="validate data when calling api" />
     <MESSAGE value="PoC use tanstack Query" />
     <MESSAGE value="fix build" />
     <MESSAGE value="local store article preview" />
@@ -643,6 +648,7 @@
     <MESSAGE value="2 charts type" />
     <MESSAGE value="allow edit duration" />
     <MESSAGE value="duration edit bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="duration edit bugfix" />
+    <MESSAGE value="table cell" />
+    <option name="LAST_COMMIT_MESSAGE" value="table cell" />
   </component>
 </project>

@@ -10,8 +10,8 @@ import {UseFormReturn} from "react-hook-form";
 import {CreateTask} from "@/domain/pomodoro/entities/Task";
 import TasksTable from "@/app/(locale)/pomodoro/components/task-widget/TasksTable";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import {TasksBarChartByName} from "@/app/(locale)/pomodoro/components/task-widget/TasksBarChartByName";
-import {TaskBarChartByTag} from "@/app/(locale)/pomodoro/components/task-widget/TaskBarChartByTag";
+import {PieChartByTag} from "@/app/(locale)/pomodoro/components/task-widget/pie-chart-by-tag";
+import {TasksBarChartByName} from "@/app/(locale)/pomodoro/components/task-widget/bar-chart-by-name";
 
 const TaskWidget = ({form}: { form: UseFormReturn<CreateTask> }) => {
     const {tasks} = usePomodoro(form)
@@ -79,7 +79,7 @@ const TaskWidget = ({form}: { form: UseFormReturn<CreateTask> }) => {
                                     <TasksBarChartByName form={form}/>
                                 </TabsContent>
                                 <TabsContent value={'by-tags'}>
-                                    <TaskBarChartByTag form={form}/>
+                                    <PieChartByTag form={form}/>
                                 </TabsContent>
                             </Tabs>
                         </TabsContent>

@@ -1,56 +1,19 @@
-import {TrendingUp} from "lucide-react"
-import {Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis} from "recharts"
-import {ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent,} from "@/components/ui/chart"
+import {TrendingUp} from "lucide-react";
+import {Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis} from "recharts";
+import {ChartContainer, ChartTooltip, ChartTooltipContent} from "@/components/ui/chart";
 import {usePomodoro} from "@/domain/pomodoro/hooks/use-pomodoro";
-import {CreateTask, Task} from "@/domain/pomodoro/entities/Task";
+import {CreateTask} from "@/domain/pomodoro/entities/Task";
 import {UseFormReturn} from "react-hook-form";
-import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
+import {chartConfig, truncateText} from "@/app/(locale)/pomodoro/components/task-widget/bar-chart-by-name/chart-config";
+import {generateTop5TasksName} from "@/app/(locale)/pomodoro/components/task-widget/bar-chart-by-name/data";
 
-// Utilisation des tâches pour générer les données du graphique
-function generateChartData(tasks: Task[]): { tagName: string, duration: number, formattedDuration: string }[] {
-    let dataByTags: { tagName: string, duration: number, formattedDuration: string }[] = [];
 
-    tasks.forEach(task => {
-        // Extract tags from the task name using a regular expression
-        const tags = task.name.match(/#[a-zA-Z0-9]+/g) || [];
+export function TasksBarChartByName({form}: { form: UseFormReturn<CreateTask> }) {
+    const {tasks} = usePomodoro(form);
 
-        tags.forEach(tag => {
-            // Find the tag in dataByTags
-            const tagData = dataByTags.find(data => data.tagName === tag);
+    // Generate chart data from tasks
+    const chartData = generateTop5TasksName(tasks);
 
-            if (tagData) {
-                // If the tag already exists, add the task duration to the existing tag duration
-                tagData.duration += task.duration;
-                tagData.formattedDuration = formatSecondsToMmss(tagData.duration); // Update the formatted duration
-            } else {
-                // If the tag does not exist, create a new entry in dataByTags
-                dataByTags.push({
-                    tagName: tag,
-                    duration: task.duration,
-                    formattedDuration: formatSecondsToMmss(task.duration)
-                });
-            }
-        });
-    });
-
-    return dataByTags;
-}
-const chartConfig = {
-    duration: {
-        label: "Duration",
-        color: "hsl(var(--chart-4))",
-    },
-    label: {
-        color: "hsl(var(--background))",
-    },
-} satisfies ChartConfig
-
-export function TaskBarChartByTag({form}: { form: UseFormReturn<CreateTask> }) {
-    const {tasks} = usePomodoro(form)
-
-    // Générer les données du graphique à partir des tâches
-    const chartData = generateChartData(tasks);
-    console.log(chartData)
     return (
         <div className={"grid gap-4"}>
             <ChartContainer config={chartConfig}>
@@ -64,7 +27,7 @@ export function TaskBarChartByTag({form}: { form: UseFormReturn<CreateTask> }) {
                 >
                     <CartesianGrid horizontal={false}/>
                     <YAxis
-                        dataKey="tagName"
+                        dataKey="name"
                         type="category"
                         tickLine={false}
                         tickMargin={10}
@@ -84,11 +47,12 @@ export function TaskBarChartByTag({form}: { form: UseFormReturn<CreateTask> }) {
                         radius={4}
                     >
                         <LabelList
-                            dataKey="tagName"
+                            dataKey="name"
                             position="insideLeft"
                             offset={8}
-                            className="fill-[--color-label] truncate"
+                            className="fill-[--color-label] "
                             fontSize={12}
+                            formatter={(value: string) => truncateText(value, 30)} // Truncate within LabelList
                         />
                         <LabelList
                             dataKey="formattedDuration"
@@ -109,5 +73,5 @@ export function TaskBarChartByTag({form}: { form: UseFormReturn<CreateTask> }) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
