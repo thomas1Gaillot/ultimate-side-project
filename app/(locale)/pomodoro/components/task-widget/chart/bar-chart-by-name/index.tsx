@@ -4,8 +4,8 @@ import {ChartContainer, ChartTooltip, ChartTooltipContent} from "@/components/ui
 import {usePomodoro} from "@/domain/pomodoro/hooks/use-pomodoro";
 import {CreateTask} from "@/domain/pomodoro/entities/Task";
 import {UseFormReturn} from "react-hook-form";
-import {chartConfig, truncateText} from "@/app/(locale)/pomodoro/components/task-widget/bar-chart-by-name/chart-config";
-import {generateTop5TasksName} from "@/app/(locale)/pomodoro/components/task-widget/bar-chart-by-name/data";
+import {chartConfig, truncateText} from "@/app/(locale)/pomodoro/components/task-widget/chart/bar-chart-by-name/chart-config";
+import {generateTop5TasksName} from "@/app/(locale)/pomodoro/components/task-widget/chart/bar-chart-by-name/data";
 
 
 export function TasksBarChartByName({form}: { form: UseFormReturn<CreateTask> }) {

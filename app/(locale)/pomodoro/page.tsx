@@ -1,7 +1,7 @@
 'use client'
 import PomodoroWidget from "@/app/(locale)/pomodoro/components/pomodoro-widget/PomodoroWidget";
 import {TypographyBlockquote, TypographyH1, TypographyLead, TypographyList} from "@/components/ui/typography";
-import TaskWidget from "@/app/(locale)/pomodoro/components/task-widget/TaskWidget";
+import TaskWidget from "@/app/(locale)/pomodoro/components/task-widget";
 import usePomodoroForm from "@/domain/pomodoro/hooks/use-pomodoro/use-pomodoro-form";
 
 export default function PomodoroPage() {

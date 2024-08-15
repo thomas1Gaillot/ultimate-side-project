@@ -8,10 +8,11 @@ import {useCopyToClipboard} from "@uidotdev/usehooks";
 import {toast} from "@/components/hooks/use-toast";
 import {UseFormReturn} from "react-hook-form";
 import {CreateTask} from "@/domain/pomodoro/entities/Task";
-import TasksTable from "@/app/(locale)/pomodoro/components/task-widget/TasksTable";
+import TasksTable from "@/app/(locale)/pomodoro/components/task-widget/list/TasksTable";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import {PieChartByTag} from "@/app/(locale)/pomodoro/components/task-widget/pie-chart-by-tag";
-import {TasksBarChartByName} from "@/app/(locale)/pomodoro/components/task-widget/bar-chart-by-name";
+import {TasksBarChartByName} from "./chart/bar-chart-by-name";
+import {PieChartByTag} from "@/app/(locale)/pomodoro/components/task-widget/chart/pie-chart-by-tag";
+import {Separator} from "@/components/ui/separator";
 
 const TaskWidget = ({form}: { form: UseFormReturn<CreateTask> }) => {
     const {tasks} = usePomodoro(form)
@@ -38,26 +39,31 @@ const TaskWidget = ({form}: { form: UseFormReturn<CreateTask> }) => {
 
             <Card>
                 <Tabs defaultValue="list">
-                    <CardHeader>
-                        <CardTitle className={'w-full justify-between flex items-end'}>
-                            Pomodoro Tasks
-                            <TabsList className={"relative bottom-4 left-4"}>
-                                <TabsTrigger value="list">
-                                    <p className={"text-xs"}>List</p>
-                                </TabsTrigger>
-                                <TabsTrigger value="stats">
-                                    <p className={"text-xs"}>Charts</p>
+                    <div className={"flex justify-between w-full p-2 gap-2"}>
 
-                                </TabsTrigger>
-                            </TabsList>
+                        <TabsList className={" w-max relative "}>
+                            <TabsTrigger value="list">
+                                <p className={"text-xs"}>List</p>
+                            </TabsTrigger>
+                            <TabsTrigger value="stats">
+                                <p className={"text-xs"}>Charts</p>
+                            </TabsTrigger>
+                        </TabsList>
+                        <Button onClick={copy} variant="ghost" size={'icon'}>
+                            <ClipboardIcon className="size-3"/>
+                        </Button>
+                    </div>
+                    <Separator className={" w-full"}/>
+                    <CardHeader>
+
+                        <CardTitle>
+                            Pomodoro Tasks
                         </CardTitle>
-                        <CardDescription className={'flex w-full justify-between'}>
+                        <CardDescription>
                             A list of tasks with their durations for your Pomodoro sessions.
-                            <Button onClick={copy} variant="outline" size={'sm'}>
-                                <ClipboardIcon className="w-4 h-4 mr-2"/>
-                                Copy
-                            </Button></CardDescription>
+                        </CardDescription>
                     </CardHeader>
+
                     <CardContent>
 
 

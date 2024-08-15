@@ -4,6 +4,8 @@ export const taskSchema = z.object({
     id: z.number(),
     name: z.string(),
     duration: z.number(),
+    createdAt: z.string(),
+    updatedAt: z.string(),
 });
 export const createTaskSchema = z.object({
     task: z.string().min(2, {

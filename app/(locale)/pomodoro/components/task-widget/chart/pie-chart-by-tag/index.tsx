@@ -4,7 +4,7 @@ import {usePomodoro} from "@/domain/pomodoro/hooks/use-pomodoro";
 import {CreateTask, Task} from "@/domain/pomodoro/entities/Task";
 import {UseFormReturn} from "react-hook-form";
 import {formatSecondsToMmss} from "@/lib/format-seconds-to-mmss";
-import {generateTop5TasksTag} from "@/app/(locale)/pomodoro/components/task-widget/pie-chart-by-tag/data";
+import {generateTop5TasksTag} from "@/app/(locale)/pomodoro/components/task-widget/chart/pie-chart-by-tag/data";
 
 
 

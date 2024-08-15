@@ -8,7 +8,13 @@ const manageTasks = (
     const addTask = (taskName: string) => {
         const taskExists = tasks.some((task) => task.name === taskName);
         if (!taskExists) {
-            setTasks([{id: uuidv4(), name: taskName, duration: 0}, ...tasks]);
+            setTasks([{
+                id: uuidv4(),
+                name: taskName,
+                duration: 0,
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString(),
+            }, ...tasks]);
         }
     };
 
@@ -20,7 +26,10 @@ const manageTasks = (
         setTasks(
             tasks.map((task) =>
                 task.name === form.getValues("task")
-                    ? {...task, duration: task.duration + duration}
+                    ? {...task,
+                        duration: task.duration + duration,
+                        updatedAt: new Date().toISOString()
+            }
                     : task
             )
         );
@@ -35,7 +44,8 @@ const manageTasks = (
         setTasks(
             tasks.map((task) =>
                 task.id === id
-                    ? {...task, name: newName}
+                    ? {...task,
+                        name: newName}
                     : task
             )
         );

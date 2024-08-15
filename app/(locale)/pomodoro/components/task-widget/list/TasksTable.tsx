@@ -87,7 +87,7 @@ export default function TasksTable({
                         </div>
                     </TableCell>
                     <TableCell>
-                    <div className={"w-[100px] flex items-center"}>
+                        <div className={"w-[100px] flex items-center"}>
                             <TypographySmall>
                                 {formatSecondsToMmss(task.duration)}
                             </TypographySmall>
