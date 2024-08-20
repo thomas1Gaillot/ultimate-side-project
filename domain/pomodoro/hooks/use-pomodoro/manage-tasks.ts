@@ -41,11 +41,11 @@ const manageTasks = (
 
 
     const renameTask = (id: number, newName: string) => {
+        console.log('rerenameTaskname', id, newName)
         setTasks(
             tasks.map((task) =>
                 task.id === id
-                    ? {...task,
-                        name: newName}
+                    ? {...task, name: newName}
                     : task
             )
         );
@@ -60,6 +60,17 @@ const manageTasks = (
         );
     }
 
-    return {addTask, deleteTask, renameTask, updateCurrentTaskDuration, retimeTask, redoTask};
+    const retimeAndRenameTask = (id: number, newName: string, newDuration: number) => {
+        setTasks(
+            tasks.map((task) =>
+                task.id === id
+                    ? {...task, duration: newDuration, name: newName}
+                    : task
+            )
+        );
+
+    }
+
+    return {addTask, deleteTask, renameTask, updateCurrentTaskDuration, retimeTask, redoTask, retimeAndRenameTask};
 };
 export default manageTasks;

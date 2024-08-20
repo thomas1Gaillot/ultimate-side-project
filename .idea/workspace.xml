@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ui">
-      <change afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/use-count-time-left.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="fix timer lagging when browser lagging">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/list/Task.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/list/TaskCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/home/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/list/TasksTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/pomodoro/components/task-widget/list/TasksTable.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-tasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pomodoro/hooks/use-pomodoro/manage-tasks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -211,15 +211,7 @@
       <workItem from="1723536240162" duration="36000" />
       <workItem from="1723655882022" duration="8274000" />
       <workItem from="1724055597139" duration="27000" />
-      <workItem from="1724177044442" duration="3726000" />
-    </task>
-    <task id="LOCAL-00111" summary="migrate adding created and updated values">
-      <option name="closed" value="true" />
-      <created>1720969224165</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1720969224165</updated>
+      <workItem from="1724177044442" duration="7821000" />
     </task>
     <task id="LOCAL-00112" summary="migrate adding created and updated values">
       <option name="closed" value="true" />
@@ -605,7 +597,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723714498334</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="fix timer lagging when browser lagging">
+      <option name="closed" value="true" />
+      <created>1724181151446</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1724181151446</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,7 +624,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="local store article preview" />
     <MESSAGE value="use query" />
     <MESSAGE value="add stack tanstack" />
     <MESSAGE value="show Zester project" />
@@ -649,6 +648,7 @@
     <MESSAGE value="table cell" />
     <MESSAGE value="charts showing only most used data" />
     <MESSAGE value="ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="ui" />
+    <MESSAGE value="fix timer lagging when browser lagging" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix timer lagging when browser lagging" />
   </component>
 </project>

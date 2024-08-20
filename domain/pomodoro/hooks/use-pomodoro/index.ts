@@ -27,6 +27,7 @@ export const usePomodoro = (form: UseFormReturn<CreateTask>) => {
         addTask,
         deleteTask,
         retimeTask,
+        retimeAndRenameTask,
         updateCurrentTaskDuration,
         redoTask,
         renameTask
@@ -96,6 +97,7 @@ export const usePomodoro = (form: UseFormReturn<CreateTask>) => {
         redoTask,
         secondsLeft,
         isPlaying,
-        retimeTask
+        retimeTask,
+        retimeAndRenameTask
     };
 };
