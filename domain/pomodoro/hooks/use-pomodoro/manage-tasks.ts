@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
 const manageTasks = (
     tasks: any[],
@@ -22,7 +22,7 @@ const manageTasks = (
         setTasks(tasks.filter((task) => task.id !== id));
     };
 
-    const updateTaskDuration = (duration: number) => {
+    const updateCurrentTaskDuration = (duration: number) => {
         setTasks(
             tasks.map((task) =>
                 task.name === form.getValues("task")
@@ -60,6 +60,6 @@ const manageTasks = (
         );
     }
 
-    return {addTask, deleteTask, renameTask, updateTaskDuration,retimeTask, redoTask};
+    return {addTask, deleteTask, renameTask, updateCurrentTaskDuration, retimeTask, redoTask};
 };
 export default manageTasks;

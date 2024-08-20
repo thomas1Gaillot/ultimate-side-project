@@ -42,7 +42,7 @@ export default function Home() {
                     {`This site is under construction, feel free to come back later to see the updates.`}
                 </TypographyP>
                 <TypographyBlockquote>
-                    {`"How to finish a project? Stop starting new ones." - Jean, Sept. 2024`}
+                    {`"How to finish a project? Stop starting new ones." - Steve Jobs, Sept. 2024`}
                 </TypographyBlockquote>
             </section>
 
