@@ -11,7 +11,7 @@ export const managePhase = ({ type, setCurrentPhase, setFormValue }: PhaseManage
     let taskValue = "";
     switch (type) {
         case PhaseEnum.enum.work:
-            taskValue = "doing something #application #ui #design ";
+            taskValue = "";
             break;
         case PhaseEnum.enum.break:
             taskValue = "5 min break";
