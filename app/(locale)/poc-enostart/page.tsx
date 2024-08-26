@@ -1,11 +1,12 @@
 'use client'
 import {useState} from 'react'
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
-import {BellIcon, CircleIcon, HourglassIcon} from "lucide-react"
+import {BellIcon} from "lucide-react"
 import SmallStep from './components/SmallStep'
 import RadialChart from "@/app/(locale)/poc-enostart/components/RadialChart";
-import {Separator} from "@/components/ui/separator";
 import {cn} from "@/lib/utils";
+import MonECTabs from "@/app/(locale)/poc-enostart/components/MonECTabs";
+import {Separator} from "@/components/ui/separator";
 
 export default function Component() {
     const [activeTab, setActiveTab] = useState("nouvelles-candidatures")
@@ -108,7 +109,7 @@ export default function Component() {
                                            numberOfTask={2} index={0}/>
                                 <SmallStep label={"Les contrats de ventes sont edités"} numberOfTaskDone={2}
                                            numberOfTask={3}
-                                           />
+                                />
                                 <SmallStep disabled={true}
                                            label={"J'envoi les documents aux consommateurs pour signature"}
                                            numberOfTaskDone={0} numberOfTask={2}
@@ -155,59 +156,65 @@ export default function Component() {
     }
 
     return (
-        <Tabs orientation="vertical" value={activeTab} onValueChange={setActiveTab} className="h-full">
-            <div className="flex h-72">
-                <TabsList className="flex-grow h-full flex flex-col p-1">
-                    <span className={"uppercase ml-2 text-xs w-full text-left"}>démarches</span>
-                    {demarchesTabs.map((tab) => (
-                        <TabsTrigger
-                            key={tab.id}
-                            value={tab.id}
-                            className="flex justify-between items-center w-96 px-3 py-2 text-sm"
-                        >
-                            <div className={"flex items-center"}>
-                                <span className="text-left truncate mr-2">{tab.label}</span>
-                            </div>
-                            {tab.ping ? <BellIcon className="size-4  text-primary"/> :
-                                <></>}
-                        </TabsTrigger>
-                    ))}
-                    <span className={"uppercase text-xs w-full text-left ml-2 mt-4"}>Participants</span>
-
-                    {tabs.map((tab, index) => (
-                        <TabsTrigger
-                            key={tab.id}
-                            value={tab.id}
-                            className="flex justify-between items-center w-96 px-3 text-sm"
-                        >
-                            <div className={"flex items-center "}>
-                                <div className={"flex flex-col gap-0.5 items-center justify-center"}>
-                                    <div className={cn(' h-3 w-0.5 bg-gray-400', index === 0 && 'bg-gray-50')}/>
-                                    <div className={"size-3 bg-gray-400 rounded-full"}/>
-                                    <div className={cn(' h-3 w-0.5 bg-gray-400', index === tabs.length - 1 && 'bg-gray-50')}/>
-
+        <>
+            <Tabs orientation="vertical" value={activeTab} onValueChange={setActiveTab} className="h-full">
+                <div className="flex h-72">
+                    <TabsList className="flex-grow h-full flex flex-col p-1">
+                        <span className={"uppercase ml-2 text-xs w-full text-left"}>démarches</span>
+                        {demarchesTabs.map((tab) => (
+                            <TabsTrigger
+                                key={tab.id}
+                                value={tab.id}
+                                className="flex justify-between items-center w-96 px-3 py-2 text-sm"
+                            >
+                                <div className={"flex items-center"}>
+                                    <span className="text-left truncate mr-2">{tab.label}</span>
                                 </div>
-                                <span className="text-left truncate mx-2">{tab.label}</span>
-                            </div>
-                            {tab.ping ? <BellIcon className="size-4  text-primary"/> :
-                                <></>}
-                        </TabsTrigger>
-                    ))}
-                </TabsList>
-                <div className="flex-grow w-full p-4 h-full bg-gray-50 rounded-r-lg overflow-y-auto">
-                    {demarchesTabs.map((tab) => (
-                        <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
-                            {tabContents[tab.id]}
-                        </TabsContent>
-                    ))}
-                    {tabs.map((tab) => (
-                        <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
-                            {tabContents[tab.id]}
-                        </TabsContent>
-                    ))}
+                                {tab.ping ? <BellIcon className="size-4  text-primary"/> :
+                                    <></>}
+                            </TabsTrigger>
+                        ))}
+                        <span className={"uppercase text-xs w-full text-left ml-2 mt-4"}>Participants</span>
+
+                        {tabs.map((tab, index) => (
+                            <TabsTrigger
+                                key={tab.id}
+                                value={tab.id}
+                                className="flex justify-between items-center w-96 px-3 text-sm"
+                            >
+                                <div className={"flex items-center "}>
+                                    <div className={"flex flex-col gap-0.5 items-center justify-center"}>
+                                        <div className={cn(' h-3 w-0.5 bg-gray-400', index === 0 && 'bg-gray-50')}/>
+                                        <div className={"size-3 bg-gray-400 rounded-full"}/>
+                                        <div
+                                            className={cn(' h-3 w-0.5 bg-gray-400', index === tabs.length - 1 && 'bg-gray-50')}/>
+
+                                    </div>
+                                    <span className="text-left truncate mx-2">{tab.label}</span>
+                                </div>
+                                {tab.ping ? <BellIcon className="size-4  text-primary"/> :
+                                    <></>}
+                            </TabsTrigger>
+                        ))}
+                    </TabsList>
+                    <div className="flex-grow w-full p-4 h-full bg-gray-50 rounded-r-lg overflow-y-auto">
+                        {demarchesTabs.map((tab) => (
+                            <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
+                                {tabContents[tab.id]}
+                            </TabsContent>
+                        ))}
+                        {tabs.map((tab) => (
+                            <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
+                                {tabContents[tab.id]}
+                            </TabsContent>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </Tabs>
+            </Tabs>
+            <MonECTabs/>
+            <Separator orientation={'horizontal'}/>
+
+        </>
     )
 }
 
