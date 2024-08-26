@@ -7,7 +7,7 @@ import RadialChart from "@/app/(locale)/poc-enostart/components/RadialChart";
 
 interface SmallStepProps {
     label: string
-    index: number
+    index?: number
     link?: string
     disabled?: boolean
     numberOfTaskDone?: number
@@ -38,8 +38,9 @@ const SmallStep = ({
             className="flex items-center justify-start w-max gap-2"
         >
             <div
-                className="mr-2 text-xs size-6 min-w-6 rounded-full flex justify-center items-center border text-gray-700">
-                {isDone ? <CheckIcon className={"size-4"}/> : index + 1}
+                className={cn("mr-2 text-xs size-6 min-w-6 rounded-full flex justify-center items-center border text-gray-700",
+                    index === undefined && 'opacity-0')}>
+                {isDone ? <CheckIcon className={"size-4"}/> : (index || 0) + 1}
             </div>
 
             <div className="flex gap-2 text-wrap">
@@ -49,7 +50,6 @@ const SmallStep = ({
                         className="text-gray-700 flex gap-2 hover:underline"
                     >
                         {label}
-                        <MoveRightIcon className={"size-4"}/>
                     </a>
                 ) : (
                     <span className={cn(isDone && "line-through text-gray-700")}>

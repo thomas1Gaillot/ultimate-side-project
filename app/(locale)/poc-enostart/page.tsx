@@ -1,29 +1,32 @@
 'use client'
 import {useState} from 'react'
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
-import {BellIcon, HourglassIcon} from "lucide-react"
+import {BellIcon, CircleIcon, HourglassIcon} from "lucide-react"
 import SmallStep from './components/SmallStep'
 import RadialChart from "@/app/(locale)/poc-enostart/components/RadialChart";
+import {Separator} from "@/components/ui/separator";
+import {cn} from "@/lib/utils";
 
 export default function Component() {
     const [activeTab, setActiveTab] = useState("nouvelles-candidatures")
 
     const tabs = [
-
-        {id: "demarches", label: "Démarches", count: 3, ping: true},
-        {id: "nouvelles-candidatures", label: "Mes Candidatures", count: 7, ping: true},
-        {id: "pre-integrations", label: "Mes Pré-intégrations", count: 3, ping: false},
-        {id: "passages-en-exploitation", label: "Mes Passages en exploitation", count: 2, ping: false},
+        {id: "nouvelles-candidatures", label: "J'accepte les candidatures", ping: true},
+        {id: "pre-integrations", label: "Je propose mes conditions de vente ", ping: true},
+        {id: "documents", label: "Je fais signer mes documents", ping: true},
+        {id: "passages-en-exploitation", label: "Je gère mon opération auprès d'Enedis", ping: false},
+    ]
+    const demarchesTabs = [
+        {id: "demarches", label: "Je crée ma PMO et déclare mon projet", ping: true},
     ]
 
     const tabContents: any = {
-
         "demarches": (
             <>
                  <span className={"text-xs text-gray-700"}>
-                     Pour créer une opération, vous devez créer une association PMO et communiquer à Enedis.
+                     Pour lancer votre opération, vous devez créer une association PMO et déclarer votre projet à Enedis.
                 </span>
-                <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-2"}>
+                <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-3"}>
                     <div>
                         <div className={"flex items-center gap-4 mb-2"}>
                             <h3 className="font-semibold text-sm "> Démarches PMO</h3>
@@ -31,17 +34,19 @@ export default function Component() {
                         </div>
                         <ul className="space-y-1 text-sm">
                             <SmallStep label={"Je crée mon association PMO"} done={true} index={0}/>
-                            <SmallStep label={"J'édite les bulletins d'adhésion"} index={1}/>
+                            <SmallStep label={"Mon association PMO est créée"} done={true} index={1}/>
+                            <SmallStep label={"J'édite les bulletins d'adhésion"} index={2}/>
                         </ul>
                     </div>
                     <div>
                         <div className={"flex items-center gap-4 mb-2"}>
-                            <h3 className="font-semibold text-sm "> Démarches ENEDIS</h3>
+                            <h3 className="font-semibold text-sm "> Déclaration ENEDIS</h3>
                             <RadialChart current={0} total={2}/>
                         </div>
                         <ul className="space-y-1 text-sm">
                             <SmallStep label={"J'envoi la déclaration de mise en oeuvre"} index={0}/>
-                            <SmallStep disabled={true} label={"J'édite les accords de participation"}
+                            <SmallStep label={"Mon association PMO est créée"} done={true} index={0}/>
+                            <SmallStep disabled={false} label={"J'édite les accords de participation"}
                                        index={1}/>
                         </ul>
                     </div>
@@ -52,15 +57,19 @@ export default function Component() {
             (
                 <>
                 <span className={"text-xs text-gray-700"}>
-                           Vous avez 7 candidatures en attente.  Vérifiez le périmètre et pré-intégrez le participant.
+                           Vous avez 7 candidatures en attente.
                 </span>
-                    <h3 className="font-semibold text-sm mt-2">Pré-intégrer un participant</h3>
+                    <h3 className="font-semibold text-sm mt-2">Comment accepter des candidatures ?</h3>
 
                     <ul className="text-sm grid  grid-cols-1">
 
                         <SmallStep link={'#'}
                                    label={"Je vérifie le périmètre"} index={0}/>
-                        <SmallStep link={'#'} label={"J'accepte le consommateur"} done={false} index={1}/>
+                        <SmallStep link={'#'} label={"J'accepte les consommateurs"} done={false} index={1}/>
+                        <SmallStep link={'#'} label={"Je télécharge les données pour étude"}
+                                   numberOfTaskDone={2}
+                                   numberOfTask={3}
+                                   index={2}/>
                     </ul>
                 </>
             ),
@@ -69,21 +78,48 @@ export default function Component() {
                 <>
                     <div className={"grid gap-4 mt-2  grid-cols-1 lg:grid-cols-2"}>
                         <div>
-                            <h3 className="font-semibold text-sm mb-2">{"J'étudie les données et propose un prix"}</h3>
+                            <h3 className="font-semibold text-sm mb-2">{"Comment faire valider mon prix de vente aux consommateurs?"}</h3>
 
                             <ul className="text-sm grid   grid-cols-1">
-                                <SmallStep link={'#'} label={"Je télécharge les données pour étude"}
-                                           numberOfTaskDone={2}
-                                           numberOfTask={3}
-                                           index={0}/>
-                                <SmallStep label={"Je propose un prix de vente à chaque consommateur"}
+
+                                <SmallStep label={"Je propose un prix de vente pour chaque consommateur"}
                                            numberOfTaskDone={3}
                                            numberOfTask={3}
-                                           index={1}/>
-                                <SmallStep label={"Chaque consommateur accepte le prix"} done={false} index={2}/>
+                                           index={0}/>
+                                <SmallStep label={"Chaque consommateur accepte son prix de vente"} numberOfTaskDone={2}
+                                           numberOfTask={3} done={false} index={1}/>
+                                <SmallStep label={"J'édite le contrat de vente pour chaque consommateur"}
+                                           numberOfTaskDone={2}
+                                           numberOfTask={3}
+                                           index={2}/>
                             </ul>
                         </div>
                     </div>
+                </>
+            ),
+        "documents":
+            (
+                <>
+                    <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-2"}>
+                        <div>
+                            <h3 className="font-semibold text-sm mb-2">{"Comment finaliser les démarches avec mes consommateurs ?"}</h3>
+                            <ul className="text-sm grid grid-cols-1 ">
+                                <SmallStep label={"Les démarches de mon projet sont terminées"} numberOfTaskDone={1}
+                                           numberOfTask={2} index={0}/>
+                                <SmallStep label={"Les contrats de ventes sont edités"} numberOfTaskDone={2}
+                                           numberOfTask={3}
+                                           />
+                                <SmallStep disabled={true}
+                                           label={"J'envoi les documents aux consommateurs pour signature"}
+                                           numberOfTaskDone={0} numberOfTask={2}
+                                           index={1}/>
+                                <SmallStep disabled={true} numberOfTaskDone={0} numberOfTask={2}
+                                           label={"Je reçois les documents signés"} done={false}
+                                           index={2}/>
+                            </ul>
+                        </div>
+                    </div>
+
                 </>
             ),
         "passages-en-exploitation":
@@ -91,28 +127,25 @@ export default function Component() {
                 <>
                     <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-2"}>
                         <div>
-                            <h3 className="font-semibold text-sm mb-2">{"Envoyer les documents pour signature"}</h3>
+                            <h3 className="font-semibold text-sm mb-2">{"Comment démarrer mon opération?"}</h3>
                             <ul className="text-sm grid grid-cols-1 ">
-                                <SmallStep label={"Les démarches sont terminées"} numberOfTaskDone={1} numberOfTask={4}
+                                <SmallStep disabled={true} label={"Je sélectionne les participants à intégrer"}
+                                           done={false}
                                            index={0}/>
-                                <SmallStep label={"J'édite les contrats de vente "} numberOfTaskDone={2}
-                                           numberOfTask={2}
+                                <SmallStep disabled={true} label={"J'édite la convention d'autoconsommation collective"}
+                                           done={false}
                                            index={1}/>
-                                <SmallStep disabled={true}
-                                           label={"J'envoi les documents aux consommateurs pour signature"}
-                                           numberOfTaskDone={0} numberOfTask={2}
+                                <SmallStep disabled={true} label={"J'envoi la convention à Enedis"} done={false}
                                            index={2}/>
                             </ul>
                         </div>
                         <div>
-                            <h3 className="font-semibold text-sm mb-2">{"Editer et envoyer la convention"}</h3>
+                            <h3 className="font-semibold text-sm mb-2">{"ou comment ajouter les participants dans mon opération ?"}</h3>
                             <ul className="text-sm grid grid-cols-1 ">
-                                <SmallStep disabled={true} numberOfTaskDone={0} numberOfTask={2} label={"Je reçois les documents signés"} done={false}
-                                           index={3}/>
-                                <SmallStep disabled={true}  label={"Je crée la convention d'ACC"} done={false}
-                                           index={4}/>
-                                <SmallStep disabled={true}  label={"J'envoi la convention à Enedis"} done={false}
-                                           index={5}/>
+                                <SmallStep disabled={true} label={"J'exporte la liste des participants sur EnoPower"}
+                                           done={false}
+                                           index={0}/>
+
                             </ul>
                         </div>
                     </div>
@@ -123,26 +156,50 @@ export default function Component() {
 
     return (
         <Tabs orientation="vertical" value={activeTab} onValueChange={setActiveTab} className="h-full">
-            <div className="flex h-48">
-                <TabsList className="flex-grow h-full flex flex-col space-y-1 p-1">
-                    {tabs.map((tab) => (
+            <div className="flex h-72">
+                <TabsList className="flex-grow h-full flex flex-col p-1">
+                    <span className={"uppercase ml-2 text-xs w-full text-left"}>démarches</span>
+                    {demarchesTabs.map((tab) => (
                         <TabsTrigger
                             key={tab.id}
                             value={tab.id}
-                            className="flex justify-between items-center w-72 px-3 py-2 text-sm"
+                            className="flex justify-between items-center w-96 px-3 py-2 text-sm"
                         >
                             <div className={"flex items-center"}>
                                 <span className="text-left truncate mr-2">{tab.label}</span>
-                                <span
-                                    className="bg-background rounded-full px-2 py-1 text-xs flex-shrink-0">{tab.count}</span>
-
                             </div>
                             {tab.ping ? <BellIcon className="size-4  text-primary"/> :
-                                <HourglassIcon className="size-4 text-gray-700"/>}
+                                <></>}
+                        </TabsTrigger>
+                    ))}
+                    <span className={"uppercase text-xs w-full text-left ml-2 mt-4"}>Participants</span>
+
+                    {tabs.map((tab, index) => (
+                        <TabsTrigger
+                            key={tab.id}
+                            value={tab.id}
+                            className="flex justify-between items-center w-96 px-3 text-sm"
+                        >
+                            <div className={"flex items-center "}>
+                                <div className={"flex flex-col gap-0.5 items-center justify-center"}>
+                                    <div className={cn(' h-3 w-0.5 bg-gray-400', index === 0 && 'bg-gray-50')}/>
+                                    <div className={"size-3 bg-gray-400 rounded-full"}/>
+                                    <div className={cn(' h-3 w-0.5 bg-gray-400', index === tabs.length - 1 && 'bg-gray-50')}/>
+
+                                </div>
+                                <span className="text-left truncate mx-2">{tab.label}</span>
+                            </div>
+                            {tab.ping ? <BellIcon className="size-4  text-primary"/> :
+                                <></>}
                         </TabsTrigger>
                     ))}
                 </TabsList>
                 <div className="flex-grow w-full p-4 h-full bg-gray-50 rounded-r-lg overflow-y-auto">
+                    {demarchesTabs.map((tab) => (
+                        <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
+                            {tabContents[tab.id]}
+                        </TabsContent>
+                    ))}
                     {tabs.map((tab) => (
                         <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
                             {tabContents[tab.id]}
