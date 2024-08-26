@@ -14,18 +14,20 @@ export default function Component() {
         {id: "demarches", label: "Démarches", count: "1 /4"},
         {id: "nouvelles-candidatures", label: "Mes Candidatures", count: 7},
         {id: "pre-integrations", label: "Mes Pré-intégrations", count: 5},
-        {id: "passages-en-exploitation", label: "Mes Passages en exploitation", count: 0},
+        {id: "passages-en-exploitation", label: "Mes Passages en exploitation", count: 2},
     ]
 
-    const tabContents : any = {
+    const tabContents: any = {
 
         "demarches": (
             <>
-                <h3 className="font-semibold text-lg mb-2">Quelles démarches ?</h3>
 
                 <div className={"grid mb-2 "}>
+                    <span
+                        className={"text-xs text-gray-700"}>Il vous reste 3 démarches à faire pour créer une opération</span>
                     <Progress className={'w-48'} label={'1/4'} value={25}/>
                 </div>
+
 
                 <div className={"grid gap-4  grid-cols-1 lg:grid-cols-2"}>
                     <div>
@@ -47,8 +49,15 @@ export default function Component() {
         ),
         "nouvelles-candidatures": (
             <>
-                <h2 className="text-lg font-semibold mb-2">Comment pré-intégrer un candidat ?</h2>
-                <ul className="text-sm grid gap-2 grid-cols-1">
+                <span className={"text-xs text-gray-700"}>
+                           Vous avez 7 candidatures en attente.  Vérifiez le périmètre et pré-intégrez le participant.
+                </span>
+                <Progress className={'w-48'} label={'5/12'} value={60}/>
+
+                <h3 className="font-semibold text-sm mt-2">Pré-intégrer un participant</h3>
+
+                <ul className="text-sm grid  grid-cols-1">
+
                     <SmallStep link={'#'}
                                label={"Je vérifie le périmètre"} done={false} index={0}/>
                     <SmallStep link={'#'} label={"J'accepte le consommateur"} done={false} index={1}/>
@@ -57,25 +66,70 @@ export default function Component() {
         ),
         "pre-integrations": (
             <>
-                <h2 className="text-lg font-semibold mb-2">{"Comment intégrer les candidats ? "}</h2>
-                <ul className="text-sm grid gap-2  grid-cols-1">
-                    <SmallStep link={'#'} label={"Je télécharge les données pour étude (4/5)"} done={false} index={0}/>
-                    <SmallStep label={"Je propose un prix de vente à chaque consommateur (5/5)"} done={true}
-                               index={1}/>
-                    <SmallStep label={"Chaque consommateur accepte le prix (2/5)"} done={false} index={2}/>
-                    <SmallStep label={"J'édite les contrats de vente (2/2)"} done={true} index={3}/>
-                </ul>
+                <span className={"text-xs text-gray-700 mb-2"}>Intégrez vos candidats en plusieurs étapes.</span>
+
+                <div className={"grid gap-4 mt-2  grid-cols-1 lg:grid-cols-2"}>
+                    <div>
+                        <h3 className="font-semibold text-sm mb-2">{"J'étudie les données et propose un prix"}</h3>
+                        <span
+                            className={"text-xs text-gray-700"}>
+                           A jour
+                        </span>
+                        <Progress className={'w-48'} label={'5/5'} value={100}/>
+
+                        <ul className="text-sm grid   grid-cols-1">
+                            <SmallStep link={'#'} label={"Je télécharge les données pour étude (4/5)"} done={false}
+                                       index={0}/>
+                            <SmallStep label={"Je propose un prix de vente à chaque consommateur (5/5)"} done={true}
+                                       index={1}/>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-sm mb-2">{"Ensuite, j'édite les contrats de vente"}</h3>
+                        <span
+                            className={"text-xs text-gray-700"}>
+                           Attendez que les 3 consommateurs acceptent le prix.
+                        </span>
+                        <Progress className={'w-48'} label={'2/5'} value={40}/>
+
+                        <ul className="text-sm grid   grid-cols-1">
+                            <SmallStep label={"Chaque consommateur accepte le prix (2/5)"} done={false} index={2}/>
+                            <SmallStep label={"J'édite les contrats de vente (2/2)"} done={true} index={3}/>
+                        </ul>
+                    </div>
+                </div>
             </>
         ),
         "passages-en-exploitation": (
             <>
-                <h2 className="text-lg font-semibold mb-2">Passage en exploitation</h2>
-                <ul className="text-sm grid gap-2 grid-cols-1 ">
-                    <SmallStep label={"J'envoi les documents aux consommateurs pour signature"} done={false} index={0}/>
-                    <SmallStep label={"Je reçois les documents signés"} done={false} index={1}/>
-                    <SmallStep label={"Je crée la convention d'ACC"} done={false} index={2}/>
-                    <SmallStep label={"J'envoi la convention à Enedis"} done={false} index={3}/>
-                </ul>
+                <span className={"text-xs text-gray-700"}>
+                    Vous avez 3 démarches à terminer et 2 consommateurs pré-intégrés en attente.
+                </span>
+                <Progress className={'w-48'} label={'1/4'} value={25}/>
+                <h3 className="font-semibold text-sm mt-2">Passez en exploitation</h3>
+
+                <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-2"}>
+                    <div>
+                        <h3 className="font-semibold text-sm mb-2">{"Envoyer les documents pour signature"}</h3>
+                        <ul className="text-sm grid grid-cols-1 ">
+                            <SmallStep label={"Les démarches sont terminées (1/4)"} done={false}
+                                       index={0}/>
+                            <SmallStep label={"Les pré-intégrations sont terminées (2)"} done={true}
+                                       index={1}/>
+                            <SmallStep label={"J'envoi les documents aux consommateurs pour signature"} done={false}
+                                       index={2}/>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-sm mb-2">{"Editer et envoyer la convention"}</h3>
+                        <ul className="text-sm grid grid-cols-1 ">
+                            <SmallStep label={"Je reçois les documents signés"} done={false} index={3}/>
+                            <SmallStep label={"Je crée la convention d'ACC"} done={false} index={4}/>
+                            <SmallStep label={"J'envoi la convention à Enedis"} done={false} index={5}/>
+                        </ul>
+                    </div>
+                </div>
+
             </>
         ),
     }

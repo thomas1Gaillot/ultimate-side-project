@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ux">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/checkbox.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="poc enostart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/progress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/progress.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,15 +214,8 @@
       <workItem from="1724421682694" duration="220000" />
       <workItem from="1724425689236" duration="5885000" />
       <workItem from="1724493108287" duration="586000" />
-      <workItem from="1724579907153" duration="10363000" />
-    </task>
-    <task id="LOCAL-00114" summary="remove project from sidebar since no projects yet">
-      <option name="closed" value="true" />
-      <created>1720972071071</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1720972071071</updated>
+      <workItem from="1724579907153" duration="11176000" />
+      <workItem from="1724660303769" duration="5890000" />
     </task>
     <task id="LOCAL-00115" summary="link to snapcarrot project">
       <option name="closed" value="true" />
@@ -612,7 +601,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724421795604</updated>
     </task>
-    <option name="localTasksCounter" value="163" />
+    <task id="LOCAL-00163" summary="poc enostart">
+      <option name="closed" value="true" />
+      <created>1724594354448</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1724594354448</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -631,7 +628,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="show Zester project" />
     <MESSAGE value="refactor pomodoro logic" />
     <MESSAGE value="add folders" />
     <MESSAGE value="extract pomodoro controls" />
@@ -656,6 +652,7 @@
     <MESSAGE value="fix timer lagging when browser lagging" />
     <MESSAGE value="show cards" />
     <MESSAGE value="ux" />
-    <option name="LAST_COMMIT_MESSAGE" value="ux" />
+    <MESSAGE value="poc enostart" />
+    <option name="LAST_COMMIT_MESSAGE" value="poc enostart" />
   </component>
 </project>
