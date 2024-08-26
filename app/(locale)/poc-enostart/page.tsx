@@ -106,7 +106,6 @@ export default function Component() {
                     Vous avez 3 démarches à terminer et 2 consommateurs pré-intégrés en attente.
                 </span>
                 <Progress className={'w-48'} label={'1/4'} value={25}/>
-                <h3 className="font-semibold text-sm mt-2">Passez en exploitation</h3>
 
                 <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-2"}>
                     <div>
