@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="poc enostart">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/RadialChart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/SmallStep.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/progress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/progress.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,15 +217,7 @@
       <workItem from="1724425689236" duration="5885000" />
       <workItem from="1724493108287" duration="586000" />
       <workItem from="1724579907153" duration="11176000" />
-      <workItem from="1724660303769" duration="9832000" />
-    </task>
-    <task id="LOCAL-00117" summary="handle code block as ``` ``` for articles">
-      <option name="closed" value="true" />
-      <created>1721838115784</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1721838115784</updated>
+      <workItem from="1724660303769" duration="12213000" />
     </task>
     <task id="LOCAL-00118" summary="handle special chars">
       <option name="closed" value="true" />
@@ -610,7 +603,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724669021838</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="poc enostart">
+      <option name="closed" value="true" />
+      <created>1724674566637</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1724674566637</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
