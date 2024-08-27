@@ -43,6 +43,7 @@ const SmallStep = ({
                 {isDone ? <CheckIcon className={"size-4"}/> : (index || 0) + 1}
             </div>
 
+
             <div className="flex gap-2 text-wrap">
                 {link ? (
                     <a

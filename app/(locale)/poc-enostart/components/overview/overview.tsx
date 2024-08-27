@@ -3,7 +3,7 @@ import RadialChart from "@/app/(locale)/poc-enostart/components/RadialChart";
 import SmallStep from "@/app/(locale)/poc-enostart/components/SmallStep";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {BellIcon} from "lucide-react";
-import {cn} from "@/lib/utils";
+import Timeline from "@/app/(locale)/poc-enostart/components/Timeline";
 
 export default function Overview() {
 
@@ -176,16 +176,10 @@ export default function Overview() {
                     <TabsTrigger
                         key={tab.id}
                         value={tab.id}
-                        className="flex justify-between items-center w-80 px-3 text-sm"
+                        className="flex py-0 justify-between items-center w-80 px-3 text-sm"
                     >
                         <div className={"flex items-center "}>
-                            <div className={"flex flex-col gap-0.5 items-center justify-center"}>
-                                <div className={cn(' h-3 w-0.5 bg-gray-400', index === 0 && 'bg-gray-50')}/>
-                                <div className={"size-3 bg-gray-400 rounded-full"}/>
-                                <div
-                                    className={cn(' h-3 w-0.5 bg-gray-400', index === tabs.length - 1 && 'bg-gray-50')}/>
-
-                            </div>
+                            <Timeline index={index} length={tabs.length}/>
                             <span className="text-left truncate mx-2">{tab.label}</span>
                         </div>
                         {tab.ping ? <BellIcon className="size-4  text-primary"/> :

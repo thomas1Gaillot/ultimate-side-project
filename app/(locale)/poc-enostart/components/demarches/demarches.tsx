@@ -16,7 +16,7 @@ export default function DemarchesContent() {
     ]
 
     return (
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-max">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-4">
                 {tabData.map((tab) => (
                     <TabsTrigger key={tab.id} value={tab.id}>

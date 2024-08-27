@@ -33,7 +33,7 @@ export default function MonECTabs() {
             </TabsList>
             <Separator orientation={'horizontal'}/>
             <TabsContent className={"py-4"} value={'mon-projet'}>
-                <Overview/>
+
             </TabsContent>
             <TabsContent className={"py-4"} value={'mes-participants'}>
                 <ParticipantsContent/>
