@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import {TypographyH4} from "@/components/ui/typography";
 
 // Dummy data for participants
 const participants = [
@@ -13,7 +14,6 @@ const participants = [
 ]
 
 export default function ParticipantsContent() {
-    const [activeTab, setActiveTab] = useState("candidatures")
 
     const tabData = [
         { id: "candidatures", label: "1. Candidatures", buttonText: "J'accepte les candidatures" },
@@ -24,18 +24,22 @@ export default function ParticipantsContent() {
     ]
 
     return (
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-5">
-                {tabData.map((tab) => (
-                    <TabsTrigger key={tab.id} value={tab.id}>
+        <Tabs defaultValue={tabData[0].id} className={'flex w-full gap-8'} >
+            <TabsList className="w-64 h-max  flex flex-col items-stretch bg-background">
+                {tabData.map(tab => (
+                    <TabsTrigger
+                        key={tab.id}
+                        value={tab.id}
+                        className="justify-start px-4 py-2 text-left hover:bg-muted"
+                    >
                         {tab.label}
                     </TabsTrigger>
                 ))}
             </TabsList>
-            {tabData.map((tab) => (
-                <TabsContent key={tab.id} value={tab.id}>
+                <TabsContent className={'flex flex-col w-full gap-2'} key={'candidatures'} value={'candidatures'}>
+                    <TypographyH4>{tabData[0].label}</TypographyH4>
                     <div className="mb-4">
-                        <Button>{tab.buttonText}</Button>
+                        <Button>{tabData[0].buttonText}</Button>
                     </div>
                     <Table>
                         <TableHeader>
@@ -56,7 +60,6 @@ export default function ParticipantsContent() {
                         </TableBody>
                     </Table>
                 </TabsContent>
-            ))}
         </Tabs>
     )
 }

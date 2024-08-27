@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add tabs">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/Timeline.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add timeline">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/MonECTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/MonECTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/SmallStep.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/SmallStep.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/demarches/demarches.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/demarches/demarches.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/participants/participantsContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/participants/participantsContent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/tabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/tabs.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,15 +221,7 @@
       <workItem from="1724579907153" duration="11176000" />
       <workItem from="1724660303769" duration="12213000" />
       <workItem from="1724678876324" duration="15555000" />
-      <workItem from="1724766986528" duration="822000" />
-    </task>
-    <task id="LOCAL-00121" summary="handle multi code button">
-      <option name="closed" value="true" />
-      <created>1721897680058</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1721897680058</updated>
+      <workItem from="1724766986528" duration="4154000" />
     </task>
     <task id="LOCAL-00122" summary="resolve build">
       <option name="closed" value="true" />
@@ -616,7 +607,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724747510075</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="add timeline">
+      <option name="closed" value="true" />
+      <created>1724767908860</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1724767908860</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +634,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add folders" />
     <MESSAGE value="extract pomodoro controls" />
     <MESSAGE value="add reset all control" />
     <MESSAGE value="add reset all pomodoro pattern" />
@@ -660,6 +658,7 @@
     <MESSAGE value="ux" />
     <MESSAGE value="poc enostart" />
     <MESSAGE value="add tabs" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tabs" />
+    <MESSAGE value="add timeline" />
+    <option name="LAST_COMMIT_MESSAGE" value="add timeline" />
   </component>
 </project>

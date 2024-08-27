@@ -3,7 +3,6 @@ import ParticipantsContent from "@/app/(locale)/poc-enostart/components/particip
 import DemarchesContent from "@/app/(locale)/poc-enostart/components/demarches/demarches";
 import {MapIcon} from "lucide-react";
 import {Separator} from "@/components/ui/separator";
-import Overview from "@/app/(locale)/poc-enostart/components/overview/overview";
 
 export default function MonECTabs() {
     return (
@@ -11,29 +10,28 @@ export default function MonECTabs() {
             <TabsList className="flex gap-2  w-full items-center grid-cols-4 p-1 bg-white h-max">
                 <TabsTrigger
                     value="mon-projet"
-                    className="data-[state=active]:bg-indigo-100 data-[state=active]:text-indigo-700 rounded-md py-2"
+                    className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary rounded-md py-2"
                 >
                     Mon projet
                 </TabsTrigger>
                 <TabsTrigger
-                    className="data-[state=active]:bg-indigo-100 data-[state=active]:text-indigo-700 rounded-md py-2"
+                    className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary rounded-md py-2"
                     value="mon-perimetre">
                     Mon périmètre
                 </TabsTrigger>
                 <TabsTrigger
-                    className="data-[state=active]:bg-indigo-100 data-[state=active]:text-indigo-700 rounded-md py-2"
+                    className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary rounded-md py-2"
                     value="mes-participants">
                     Mes participants
                 </TabsTrigger>
                 <TabsTrigger
-                    className="data-[state=active]:bg-indigo-100 data-[state=active]:text-indigo-700 rounded-md py-2"
+                    className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary rounded-md py-2"
                     value="mes-demarches">
                     Mes démarches
                 </TabsTrigger>
             </TabsList>
             <Separator orientation={'horizontal'}/>
             <TabsContent className={"py-4"} value={'mon-projet'}>
-
             </TabsContent>
             <TabsContent className={"py-4"} value={'mes-participants'}>
                 <ParticipantsContent/>

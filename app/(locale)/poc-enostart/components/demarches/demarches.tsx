@@ -16,16 +16,20 @@ export default function DemarchesContent() {
     ]
 
     return (
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-4">
-                {tabData.map((tab) => (
-                    <TabsTrigger key={tab.id} value={tab.id}>
+        <Tabs value={activeTab} onValueChange={setActiveTab} className={'flex w-full gap-8'}>
+            <TabsList className="w-64 h-max  flex flex-col items-stretch bg-background">
+                {tabData.map(tab => (
+                    <TabsTrigger
+                        key={tab.id}
+                        value={tab.id}
+                        className="justify-start px-4 py-2 text-left hover:bg-muted"
+                    >
                         {tab.label}
                     </TabsTrigger>
                 ))}
             </TabsList>
             {tabData.map((tab) => (
-                <TabsContent key={tab.id} value={tab.id}>
+                <TabsContent className={'w-full'} key={tab.id} value={tab.id}>
                     <div className={"w-full rounded h-48 bg-gray-50 flex items-center justify-center"}>
                         <span>Choix du plan</span>
                     </div>
