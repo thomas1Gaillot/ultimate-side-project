@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="poc enostart">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/MonECTabs.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add tabs">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/demarches/demarches.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/participants/participantsContent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/MonECTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/MonECTabs.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -217,15 +220,7 @@
       <workItem from="1724493108287" duration="586000" />
       <workItem from="1724579907153" duration="11176000" />
       <workItem from="1724660303769" duration="12213000" />
-      <workItem from="1724678876324" duration="11020000" />
-    </task>
-    <task id="LOCAL-00119" summary="wip handle image on articles">
-      <option name="closed" value="true" />
-      <created>1721840962322</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1721840962322</updated>
+      <workItem from="1724678876324" duration="14714000" />
     </task>
     <task id="LOCAL-00120" summary="handle images">
       <option name="closed" value="true" />
@@ -611,7 +606,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724691152140</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="add tabs">
+      <option name="closed" value="true" />
+      <created>1724691608667</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1724691608667</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,7 +633,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="refactor pomodoro logic" />
     <MESSAGE value="add folders" />
     <MESSAGE value="extract pomodoro controls" />
     <MESSAGE value="add reset all control" />
@@ -655,6 +657,7 @@
     <MESSAGE value="show cards" />
     <MESSAGE value="ux" />
     <MESSAGE value="poc enostart" />
-    <option name="LAST_COMMIT_MESSAGE" value="poc enostart" />
+    <MESSAGE value="add tabs" />
+    <option name="LAST_COMMIT_MESSAGE" value="add tabs" />
   </component>
 </project>
