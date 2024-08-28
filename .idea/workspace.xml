@@ -4,22 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="flow accept candidats OK">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/use-pmo-documents.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/components/pmo-plan.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation-banner.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/contract-edition/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/proposal/page.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="demarches pmo ok">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/accords/components/accords-participation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/accords/components/accords-plan.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/pmo-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/pmo-status.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/use-pmo-documents.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/use-documents.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/accords/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/accords/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/components/pmo-plan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-plan.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -57,41 +53,41 @@
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/thoma/Desktop/ultimate-side-project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.generate.executor&quot;: &quot;Run&quot;,
-    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
-    &quot;npm.seed.executor&quot;: &quot;Run&quot;,
-    &quot;npm.supabase:create.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/ThomasGaillot/Desktop/ultimate-side-project/app/(locale)/poc-enostart/my-demarches/accords/components",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.generate.executor": "Run",
+    "npm.lint.executor": "Run",
+    "npm.seed.executor": "Run",
+    "npm.supabase:create.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\ThomasGaillot\\Desktop\\ultimate-side-project\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\my-demarches\accords\components" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\churro-ciao" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\logos" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\article-editor\data" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\my-demarches\pmo\component" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\my-demarches\pmo" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\my-demarches" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\pomodoro\components\task-widget\chart" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\pomodoro\components\task-widget\list" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\pomodoro\components\task-widget\chart-by-tag" />
     </key>
   </component>
   <component name="RunManager" selected="npm.supabase:create">
@@ -230,15 +226,7 @@
       <workItem from="1724579907153" duration="11176000" />
       <workItem from="1724660303769" duration="12213000" />
       <workItem from="1724678876324" duration="15555000" />
-      <workItem from="1724766986528" duration="36348000" />
-    </task>
-    <task id="LOCAL-00135" summary="refactor pomodoro logic">
-      <option name="closed" value="true" />
-      <created>1723372095514</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1723372095514</updated>
+      <workItem from="1724766986528" duration="37090000" />
     </task>
     <task id="LOCAL-00136" summary="add folders">
       <option name="closed" value="true" />
@@ -624,7 +612,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724855914619</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="demarches pmo ok">
+      <option name="closed" value="true" />
+      <created>1724862562999</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1724862562999</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -643,7 +639,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="tasklist ui" />
     <MESSAGE value="tasklist ux as tabs for switching between list and chart view" />
     <MESSAGE value="show first chart" />
     <MESSAGE value="first Bar chart" />
@@ -668,6 +663,7 @@
     <MESSAGE value="flow working for participants until last step" />
     <MESSAGE value="start with participants inmemory" />
     <MESSAGE value="flow accept candidats OK" />
-    <option name="LAST_COMMIT_MESSAGE" value="flow accept candidats OK" />
+    <MESSAGE value="demarches pmo ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="demarches pmo ok" />
   </component>
 </project>

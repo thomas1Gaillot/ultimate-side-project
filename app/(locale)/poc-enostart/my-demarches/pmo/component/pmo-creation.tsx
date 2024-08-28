@@ -3,11 +3,11 @@ import {Button} from "@/components/ui/button"
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table"
 import {Check, Edit, Eye, UploadIcon} from "lucide-react"
 import PmoCreationBanner from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation-banner";
-import {usePmoDocuments, usePmoStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-pmo-documents";
+import {useDocuments, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
 
 export default function PmoCreation() {
-    const {statutPmo, reglementInterieur} = usePmoDocuments()
-    const {setStatutPmo, setReglementInterieur} = usePmoStoredDocuments()
+    const {statutPmo, reglementInterieur} = useDocuments()
+    const {setStatutPmo, setReglementInterieur} = useStoredDocuments()
 
     function actionFor(name: string, action: string) {
         if (action === "Téléverser en pdf" ) {

@@ -28,8 +28,8 @@ const participantsTab = (participants: Participant[]) => {
         {id: "passages-en-exploitation", label: "Je gère mon opération auprès d'Enedis", ping: false},
     ]
 }
-const demarchesTabs = [
-    {id: "demarches", label: "Je crée ma PMO", ping: true},
+const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited : boolean) =>  [
+    {id: "demarches", label: "Je crée ma PMO", ping: !isBulletinEdited || !isAccordsEdited},
     {id: "declaration", label: "Je déclare mon opération", ping: true},
 ]
 
@@ -169,7 +169,7 @@ const demarches_pmo_flow = (isPmoCreated : boolean, isBulletinEdited : boolean) 
     return steps;
 }
 
-const demarches_pmo_accords = (isPmoCreated : boolean) => {
+const demarches_pmo_accords = (isPmoCreated : boolean, isEdited : boolean) => {
 
     const steps: Step[] = [
         {
@@ -181,7 +181,8 @@ const demarches_pmo_accords = (isPmoCreated : boolean) => {
         {
             label: "J'édite les accords de participation",
             href: '/poc-enostart/my-demarches/accords',
-            disabled: !isPmoCreated
+            disabled: !isPmoCreated,
+            done : isPmoCreated && isEdited
         }
     ]
     return steps;

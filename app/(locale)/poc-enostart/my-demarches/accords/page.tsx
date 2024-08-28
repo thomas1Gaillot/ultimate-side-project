@@ -1,14 +1,13 @@
-import { Button } from "@/components/ui/button";
+import AccordsPlan from "@/app/(locale)/poc-enostart/my-demarches/accords/components/accords-plan";
+import PmoCreation from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation";
+import AccordsParticipation from "@/app/(locale)/poc-enostart/my-demarches/accords/components/accords-participation";
 
 export default function AccordsPage() {
     return (
-        <div className="w-full">
-            <div className="w-full rounded h-48 bg-gray-50 flex items-center justify-center">
-                <span>Choix du plan - Accords de participation</span>
-            </div>
-            <div className="mb-4">
-                <Button>Créer mon association</Button>
-            </div>
+        <div className="grid gap-4">
+            <AccordsPlan/>
+            <PmoCreation/>
+            <AccordsParticipation/>
         </div>
     );
 }

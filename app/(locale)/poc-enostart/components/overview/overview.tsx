@@ -14,18 +14,18 @@ import {
     signatures_flow
 } from "@/app/(locale)/poc-enostart/data/flow";
 import {Participant, useStoredParticipants} from "@/app/(locale)/poc-enostart/data/participants";
-import {usePmoDocuments} from "@/app/(locale)/poc-enostart/data/use-pmo-documents";
+import {useDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
 
 export default function Overview() {
 
     const [activeTab, setActiveTab] = useState("nouvelles-candidatures")
     const {participants} = useStoredParticipants()
-    const {isPmoCreated, isBulletinEdited} = usePmoDocuments()
+    const {isPmoCreated, isBulletinEdited, isAccordsParticipationEdited} = useDocuments()
     const candidatures = candidatures_flow(participants)
     const sales = sales_flow(participants)
     const signatures = signatures_flow(participants)
     const demarchesPmo = demarches_pmo_flow(isPmoCreated, isBulletinEdited )
-    const demarchesAccords = demarches_pmo_accords(isPmoCreated )
+    const demarchesAccords = demarches_pmo_accords(isPmoCreated, isAccordsParticipationEdited )
     const declaration = declaration_flow()
     const tabContents: any = {
         "demarches": (
@@ -187,7 +187,7 @@ export default function Overview() {
                         <TabsList className="flex-grow h-full flex flex-col ">
 
                             <span className={"uppercase ml-2 text-xs w-full text-left"}>démarches</span>
-                            {demarchesTabs.map((tab) => (
+                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited).map((tab) => (
                                 <TabsTrigger
                                     key={tab.id}
                                     value={tab.id}
@@ -221,7 +221,7 @@ export default function Overview() {
                             ))}
                         </TabsList>
                         <div className="flex-grow w-full p-4 h-full bg-white/50 rounded-r-lg overflow-y-auto">
-                            {demarchesTabs.map((tab) => (
+                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited).map((tab) => (
                                 <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full ">
                                     {tabContents[tab.id]}
                                 </TabsContent>

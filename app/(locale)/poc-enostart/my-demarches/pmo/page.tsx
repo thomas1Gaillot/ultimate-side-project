@@ -1,4 +1,4 @@
-import PMOPlan from "@/app/(locale)/poc-enostart/my-demarches/components/pmo-plan";
+import PMOPlan from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-plan";
 import PmoCreation from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation";
 import Bulletin from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin";
 

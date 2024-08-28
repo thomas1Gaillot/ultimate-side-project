@@ -2,11 +2,11 @@
 import {Button} from "@/components/ui/button"
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table"
 import {Check, Edit, Eye, UploadIcon} from "lucide-react"
-import {usePmoDocuments, usePmoStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-pmo-documents";
+import {useDocuments, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
 
 export default function Bulletin() {
-    const {bulletin, isPmoCreated} = usePmoDocuments()
-    const {setBulletinDocument} = usePmoStoredDocuments()
+    const {bulletin, isPmoCreated} = useDocuments()
+    const {setBulletinDocument} = useStoredDocuments()
     function actionFor(action: string) {
         if (action === "Éditer le fichier" ) {
             setBulletinDocument({
