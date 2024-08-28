@@ -36,7 +36,7 @@ const initialParticipants: Participant[] = [
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
-        sales: SalesStatus.PrixPropose
+        sales: SalesStatus.ProposerUnPrix
     },
     {
         id: 3,
@@ -47,7 +47,7 @@ const initialParticipants: Participant[] = [
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
-        sales: SalesStatus.PrixPropose
+        sales: SalesStatus.ProposerUnPrix
     }
 ]
 

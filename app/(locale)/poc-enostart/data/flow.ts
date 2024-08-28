@@ -14,7 +14,8 @@ export type Step = {
 
 const participantsTab = (participants: Participant[]) => {
     const {candidatures} = parse(participants)
-
+    const hasSalesThingsToDo = participants.some(p => p.status === 'pre-integre' &&
+        (p.sales === SalesStatus.ProposerUnPrix || p.sales === SalesStatus.PrixPropose || p.sales === SalesStatus.EditerLeContrat || p.sales === SalesStatus.EnvoyerLeContrat))
     return [
         {
             id: "nouvelles-candidatures",
@@ -22,7 +23,7 @@ const participantsTab = (participants: Participant[]) => {
             ping: candidatures.length > 0,
             number: candidatures.length
         },
-        {id: "pre-integrations", label: "Je propose mes conditions de vente ", ping: false},
+        {id: "pre-integrations", label: "Je propose mes conditions de vente ", ping: hasSalesThingsToDo},
         {id: "documents", label: "Je fais signer mes documents", ping: false},
         {id: "passages-en-exploitation", label: "Je gère mon opération auprès d'Enedis", ping: false},
     ]
@@ -49,7 +50,8 @@ const candidatures_flow = (p: Participant[]) => {
             label: "J'exporte les données pour étude (optionnel)",
             href: '/poc-enostart/my-participants/pre-integres',
             numberOfTaskDone: numberOfPreIntegresWithDataLoaded,
-            numberOfTask: numberOfPreIntegres
+            numberOfTask: numberOfPreIntegres,
+            disabled : numberOfPreIntegres === 0
         },
     ]
     return {
@@ -80,13 +82,15 @@ const sales_flow = (p: Participant[]) => {
             label: "Chaque consommateur accepte son prix de vente",
             href: '/poc-enostart/my-participants/pre-integres',
             numberOfTaskDone: numberOfPreIntegresWithPriceAccepted,
-            numberOfTask: total
+            numberOfTask: numberOfPreIntegresWithPriceProposed + numberOfPreIntegresWithPriceAccepted,
+            disabled : (numberOfPreIntegresWithPriceProposed + numberOfPreIntegresWithPriceAccepted )=== 0
         },
         {
             label: "J'édite le contrat de vente pour chaque consommateur",
             href: '/poc-enostart/my-demarches/vente',
             numberOfTaskDone: numberOfEditedContract,
-            numberOfTask: total
+            numberOfTask: numberOfEditedContract + numberOfPreIntegresWithPriceAccepted,
+            disabled : (numberOfEditedContract + numberOfPreIntegresWithPriceAccepted) === 0
         },
     ]
     return {

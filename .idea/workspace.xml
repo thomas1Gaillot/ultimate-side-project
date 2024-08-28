@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="start with participants inmemory">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="flow accept candidats OK">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/candidatures/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/candidatures/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/integres/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/integres/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/passage-exploitation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/passage-exploitation/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/refuses/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/refuses/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,15 +219,7 @@
       <workItem from="1724579907153" duration="11176000" />
       <workItem from="1724660303769" duration="12213000" />
       <workItem from="1724678876324" duration="15555000" />
-      <workItem from="1724766986528" duration="29186000" />
-    </task>
-    <task id="LOCAL-00133" summary="refactor pomodoro logic">
-      <option name="closed" value="true" />
-      <created>1723371232140</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1723371232140</updated>
+      <workItem from="1724766986528" duration="30331000" />
     </task>
     <task id="LOCAL-00134" summary="refactor pomodoro logic">
       <option name="closed" value="true" />
@@ -618,7 +605,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724852945612</updated>
     </task>
-    <option name="localTasksCounter" value="182" />
+    <task id="LOCAL-00182" summary="flow accept candidats OK">
+      <option name="closed" value="true" />
+      <created>1724854587808</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1724854587808</updated>
+    </task>
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +632,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="mostly linting" />
     <MESSAGE value="tasklist ui" />
     <MESSAGE value="tasklist ux as tabs for switching between list and chart view" />
     <MESSAGE value="show first chart" />
@@ -662,6 +656,7 @@
     <MESSAGE value="flow" />
     <MESSAGE value="flow working for participants until last step" />
     <MESSAGE value="start with participants inmemory" />
-    <option name="LAST_COMMIT_MESSAGE" value="start with participants inmemory" />
+    <MESSAGE value="flow accept candidats OK" />
+    <option name="LAST_COMMIT_MESSAGE" value="flow accept candidats OK" />
   </component>
 </project>

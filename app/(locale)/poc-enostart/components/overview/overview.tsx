@@ -87,7 +87,7 @@ export default function Overview() {
                     <ul className="text-sm grid  grid-cols-1 ml-6">
                         {candidatures.steps.map((step, index) => (
                             <SmallStep key={index} link={step.href} label={step.label} index={index} done={step.done}
-                                       numberOfTaskDone={step.numberOfTaskDone}
+                                       numberOfTaskDone={step.numberOfTaskDone} disabled={step.disabled}
                                        numberOfTask={step.numberOfTask}/>
                         ))}
                     </ul>
@@ -106,7 +106,7 @@ export default function Overview() {
                             <ul className="ml-6 text-sm grid grid-cols-1">
                                 {sales.steps.map((step, index) => (
                                     <SmallStep key={index} link={step.href} label={step.label} index={index}
-                                               done={step.done}
+                                               done={step.done} disabled={step.disabled}
                                                numberOfTaskDone={step.numberOfTaskDone}
                                                numberOfTask={step.numberOfTask}/>
                                 ))}
