@@ -1,6 +1,6 @@
 import {EnedisStatus, enedisStatus, PmoStatus, pmoStatus, SalesStatus, salesStatus} from "./status"
 
-type Participant = {
+export type Participant = {
     id: number,
     name: string,
     perimeter: string,
@@ -18,7 +18,7 @@ const candidatures: Participant[] = [
     {id: 4, name: "Henry Cavill", perimeter: "0.12 km", consumption: 6000},
 
 ]
-const pre_integres: Participant[] = [
+const preIntegres: Participant[] = [
     {
         id: 1,
         name: "Alice Dupont",
@@ -50,7 +50,7 @@ const pre_integres: Participant[] = [
         sales: salesStatus[SalesStatus.PrixPropose]
     },
 ]
-const passage_exploitation = [
+const passageExploitation = [
     {id: 1, name: "Jean Reno", perimeter: "1.67 km", consumption: 14500},
 ]
 const integres: Participant[] = [
@@ -61,4 +61,11 @@ const refuses = [
     {id: 2, name: "Toto Martin", email: "bob@example.com"},
 ]
 
-export {candidatures, pre_integres, passage_exploitation, integres, refuses}
+const participants = {
+    candidatures,
+    preIntegres,
+    passageExploitation,
+    integres,
+    refuses
+}
+export {participants}

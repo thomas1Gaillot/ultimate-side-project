@@ -2,7 +2,7 @@ import {TypographyH4} from "@/components/ui/typography";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {Button} from "@/components/ui/button";
 import {CheckIcon, TrashIcon, XIcon} from "lucide-react";
-import {candidatures} from "@/app/(locale)/poc-enostart/data/participants";
+import {participants} from "@/app/(locale)/poc-enostart/data/participants";
 
 
 
@@ -19,7 +19,7 @@ export default function Page() {
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {candidatures.map((participant) => (
+                {participants.candidatures.map((participant) => (
                     <TableRow key={participant.id}>
                         <TableCell>{participant.name}</TableCell>
                         <TableCell>{participant.perimeter}</TableCell>

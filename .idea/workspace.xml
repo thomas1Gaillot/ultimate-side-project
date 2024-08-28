@@ -4,16 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="fix tabs">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/status.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="start isolate data">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/MonECTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/MonECTabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/SmallStep.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/SmallStep.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/status.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/candidatures/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/candidatures/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/integres/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/integres/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/passage-exploitation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/passage-exploitation/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/refuses/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/refuses/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/tabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/tabs.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,15 +228,7 @@
       <workItem from="1724579907153" duration="11176000" />
       <workItem from="1724660303769" duration="12213000" />
       <workItem from="1724678876324" duration="15555000" />
-      <workItem from="1724766986528" duration="13533000" />
-    </task>
-    <task id="LOCAL-00127" summary="fix build">
-      <option name="closed" value="true" />
-      <created>1722628871182</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1722628871182</updated>
+      <workItem from="1724766986528" duration="16036000" />
     </task>
     <task id="LOCAL-00128" summary="local store article preview">
       <option name="closed" value="true" />
@@ -618,7 +614,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724835675542</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="start isolate data">
+      <option name="closed" value="true" />
+      <created>1724836256450</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1724836256450</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +641,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="copy tasks to clipboard as plain text" />
     <MESSAGE value="- instanciate form only once to do not have bugs,&#10;- remove current task from local storage from now" />
     <MESSAGE value="- edit a task" />
     <MESSAGE value="- fix build" />
@@ -662,6 +665,7 @@
     <MESSAGE value="as page" />
     <MESSAGE value="table for consumers" />
     <MESSAGE value="fix tabs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix tabs" />
+    <MESSAGE value="start isolate data" />
+    <option name="LAST_COMMIT_MESSAGE" value="start isolate data" />
   </component>
 </project>

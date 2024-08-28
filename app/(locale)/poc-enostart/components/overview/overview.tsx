@@ -5,21 +5,12 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {BellIcon, FootprintsIcon} from "lucide-react";
 import Timeline from "@/app/(locale)/poc-enostart/components/Timeline";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
+import {candidatures_flow, demarchesTabs, participantsTab} from "@/app/(locale)/poc-enostart/data/flow";
 
 export default function Overview() {
 
     const [activeTab, setActiveTab] = useState("nouvelles-candidatures")
-
-    const tabs = [
-        {id: "nouvelles-candidatures", label: "J'accepte les candidatures", ping: true},
-        {id: "pre-integrations", label: "Je propose mes conditions de vente ", ping: true},
-        {id: "documents", label: "Je fais signer mes documents", ping: true},
-        {id: "passages-en-exploitation", label: "Je gère mon opération auprès d'Enedis", ping: false},
-    ]
-    const demarchesTabs = [
-        {id: "demarches", label: "Je crée ma PMO et déclare mon projet", ping: true},
-    ]
-
+    const candidatures = candidatures_flow()
     const tabContents: any = {
         "demarches": (
             <>
@@ -57,19 +48,16 @@ export default function Overview() {
             (
                 <>
                 <span className={"text-xs text-gray-700"}>
-                           Vous avez 7 candidatures en attente.
+                           Vous avez {candidatures.number} candidatures en attente.
                 </span>
                     <h3 className="font-semibold text-sm mt-2">Comment accepter des candidatures ?</h3>
 
                     <ul className="text-sm grid  grid-cols-1">
-
-                        <SmallStep link={'#'}
-                                   label={"Je vérifie le périmètre"} index={0}/>
-                        <SmallStep link={'#'} label={"J'accepte les consommateurs"} done={false} index={1}/>
-                        <SmallStep link={'#'} label={"Je télécharge les données pour étude"}
-                                   numberOfTaskDone={2}
-                                   numberOfTask={3}
-                                   index={2}/>
+                        {candidatures.steps.map((step, index) => (
+                            <SmallStep key={index} link={step.href} label={step.label} index={index} done={step.done}
+                                       numberOfTaskDone={step.numberOfTaskDone}
+                                       numberOfTask={step.numberOfTask}/>
+                        ))}
                     </ul>
                 </>
             ),
@@ -154,7 +142,7 @@ export default function Overview() {
             ),
     }
 
-    return <Accordion type="single" collapsible className={""}>
+    return <Accordion type="single" defaultValue={"item-1"}  collapsible className={""}>
         <AccordionItem value="item-1" className={"bg-gray-50  px-8"}>
             <AccordionTrigger>
                 <div className={"w-max flex"}>
@@ -172,7 +160,7 @@ export default function Overview() {
                                 <TabsTrigger
                                     key={tab.id}
                                     value={tab.id}
-                                    className="flex justify-between items-center w-80 px-3 py-2 text-sm"
+                                    className="flex data-[state=active]:bg-white justify-between items-center w-80 px-3 py-2 text-sm"
                                 >
                                     <div className={"flex items-center"}>
                                         <span className="text-left truncate mr-2">{tab.label}</span>
@@ -183,14 +171,14 @@ export default function Overview() {
                             ))}
                             <span className={"uppercase text-xs w-full text-left ml-2 mt-4"}>Participants</span>
 
-                            {tabs.map((tab, index) => (
+                            {participantsTab.map((tab, index) => (
                                 <TabsTrigger
                                     key={tab.id}
                                     value={tab.id}
-                                    className="flex py-0 justify-between items-center w-80 px-3 text-sm"
+                                    className="flex data-[state=active]:bg-white py-0 justify-between items-center w-80 px-3 text-sm"
                                 >
                                     <div className={"flex items-center "}>
-                                        <Timeline index={index} length={tabs.length}/>
+                                        <Timeline index={index} length={participantsTab.length}/>
                                         <span className="text-left truncate mx-2">{tab.label}</span>
                                     </div>
                                     {tab.ping ? <BellIcon className="size-4  text-primary"/> :
@@ -204,7 +192,7 @@ export default function Overview() {
                                     {tabContents[tab.id]}
                                 </TabsContent>
                             ))}
-                            {tabs.map((tab) => (
+                            {participantsTab.map((tab) => (
                                 <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
                                     {tabContents[tab.id]}
                                 </TabsContent>

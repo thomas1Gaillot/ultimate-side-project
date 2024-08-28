@@ -26,7 +26,7 @@ export enum PmoStatus {
     Ignore = 'Ignore',
 }
 const pmoStatus = {
-    [PmoStatus.IdentifierLaPmo]: { name: 'Identifier la PMO', icon: BellIcon },
+    [PmoStatus.IdentifierLaPmo]: { name: 'Créer mon association', icon: BellIcon },
     [PmoStatus.EnvoyerLeBulletin]: { name: 'Envoyer le bulletin', icon: BellIcon },
     [PmoStatus.BulletinEnvoye]: { name: 'Bulletin envoyé', icon: HourglassIcon },
     [PmoStatus.BulletinSigne]: { name: 'Bulletin signé', icon: CheckIcon },

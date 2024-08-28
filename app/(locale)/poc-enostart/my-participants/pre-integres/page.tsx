@@ -3,7 +3,7 @@ import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/c
 import {Button} from "@/components/ui/button";
 import {BellIcon, DownloadIcon, SendIcon, TrashIcon} from "lucide-react";
 import {cn} from "@/lib/utils";
-import {pre_integres} from "../../data/participants";
+import {participants} from "@/app/(locale)/poc-enostart/data/participants";
 
 
 export default function Page() {
@@ -21,7 +21,7 @@ export default function Page() {
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {pre_integres.map((participant) => (
+                {participants.preIntegres.map((participant) => (
                     <TableRow key={participant.id}>
                         <TableCell>{participant.name}</TableCell>
                         <TableCell>{participant.perimeter}</TableCell>

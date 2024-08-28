@@ -1,6 +1,6 @@
 import {TypographyH4} from "@/components/ui/typography";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
-import {integres} from "@/app/(locale)/poc-enostart/data/participants";
+import {participants} from "@/app/(locale)/poc-enostart/data/participants";
 
 
 export default function Page() {
@@ -14,7 +14,7 @@ export default function Page() {
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {integres.map((participant) => (
+                {participants.integres.map((participant) => (
                     <TableRow key={participant.id}>
                         <TableCell>{participant.name}</TableCell>
                         <TableCell>{participant.perimeter}</TableCell>
