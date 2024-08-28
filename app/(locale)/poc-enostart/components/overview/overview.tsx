@@ -1,12 +1,13 @@
 import {useState} from "react";
-import RadialChart from "@/app/(locale)/poc-enostart/components/RadialChart";
 import SmallStep from "@/app/(locale)/poc-enostart/components/SmallStep";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {BellIcon, FootprintsIcon, InfoIcon} from "lucide-react";
 import Timeline from "@/app/(locale)/poc-enostart/components/Timeline";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {
-    candidatures_flow,
+    candidatures_flow, declaration_flow,
+    demarches_pmo_accords,
+    demarches_pmo_flow,
     demarchesTabs,
     participantsTab,
     sales_flow,
@@ -19,34 +20,56 @@ export default function Overview() {
     const candidatures = candidatures_flow()
     const sales = sales_flow()
     const signatures = signatures_flow()
+    const demarchesPmo = demarches_pmo_flow()
+    const demarchesAccords = demarches_pmo_accords()
+    const declaration = declaration_flow()
     const tabContents: any = {
         "demarches": (
             <>
                  <span className={"text-xs text-gray-700"}>
-                     Pour lancer votre opération, vous devez créer une association PMO et déclarer votre projet à Enedis.
+                     Pour lancer votre opération, vous devez créer une association PMO. Ensuite, editez les bulletins d'adhésion et les accords de participation pour vos participants.
                 </span>
                 <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-3"}>
                     <div>
                         <div className={"flex items-center gap-4 mb-2"}>
                             <h3 className="font-semibold text-sm "> Démarches PMO</h3>
-                            <RadialChart current={1} total={2}/>
                         </div>
                         <ul className="space-y-1 text-sm">
-                            <SmallStep label={"Je crée mon association PMO"} done={true} index={0}/>
-                            <SmallStep label={"Mon association PMO est créée"} done={true} index={1}/>
-                            <SmallStep label={"J'édite les bulletins d'adhésion"} index={2}/>
+                            {demarchesPmo.map((step, index) => (
+                                <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
+                                           done={step.done} index={index}/>
+                            ))}
                         </ul>
                     </div>
                     <div>
                         <div className={"flex items-center gap-4 mb-2"}>
-                            <h3 className="font-semibold text-sm "> Déclaration ENEDIS</h3>
-                            <RadialChart current={0} total={2}/>
+                            <h3 className="font-semibold text-sm "> Accords de participation</h3>
                         </div>
                         <ul className="space-y-1 text-sm">
-                            <SmallStep label={"J'envoi la déclaration de mise en oeuvre"} index={0}/>
-                            <SmallStep label={"Mon association PMO est créée"} done={true} index={0}/>
-                            <SmallStep disabled={false} label={"J'édite les accords de participation"}
-                                       index={1}/>
+                            {demarchesAccords.map((step, index) => (
+                                <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
+                                           done={step.done} index={index}/>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </>
+        ),
+        "declaration": (
+            <>
+                <span className={"text-xs text-gray-700"}>
+                     {"Pour lancer votre opération, vous devez déclarer votre projet auprès d'Enedis."}
+                </span>
+                <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-3"}>
+                    <div>
+                        <div className={"flex items-center gap-4 mb-2"}>
+                            <h3 className="font-semibold text-sm ">Déclaration Enedis</h3>
+                        </div>
+                        <ul className="space-y-1 text-sm">
+                            {declaration.map((step, index) => (
+                                <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
+                                             done={step.done} index={index}/>
+                            ))}
                         </ul>
                     </div>
                 </div>
@@ -80,9 +103,10 @@ export default function Overview() {
 
                             <ul className="ml-6 text-sm grid grid-cols-1">
                                 {sales.steps.map((step, index) => (
-                                    <SmallStep key={index} link={step.href} label={step.label} index={index} done={step.done}
-                                                  numberOfTaskDone={step.numberOfTaskDone}
-                                                  numberOfTask={step.numberOfTask}/>
+                                    <SmallStep key={index} link={step.href} label={step.label} index={index}
+                                               done={step.done}
+                                               numberOfTaskDone={step.numberOfTaskDone}
+                                               numberOfTask={step.numberOfTask}/>
                                 ))}
                             </ul>
                         </div>
@@ -100,9 +124,10 @@ export default function Overview() {
                             </h3>
                             <ul className="text-sm grid grid-cols-1 ml-6">
                                 {signatures.steps.map((step, index) => (
-                                    <SmallStep key={index} link={step.href} label={step.label} index={index} done={step.done}
-                                                  numberOfTaskDone={step.numberOfTaskDone} disabled={step.disabled}
-                                                  numberOfTask={step.numberOfTask}/>
+                                    <SmallStep key={index} link={step.href} label={step.label} index={index}
+                                               done={step.done}
+                                               numberOfTaskDone={step.numberOfTaskDone} disabled={step.disabled}
+                                               numberOfTask={step.numberOfTask}/>
                                 ))}
                             </ul>
                         </div>
@@ -132,7 +157,7 @@ export default function Overview() {
                         <div>
                             <h3 className="font-semibold text-sm mb-2">{"ou comment ajouter les participants dans mon opération ?"}</h3>
                             <ul className="text-sm grid grid-cols-1 ">
-                            <SmallStep disabled={true} label={"J'exporte la liste des participants sur EnoPower"}
+                                <SmallStep disabled={true} label={"J'exporte la liste des participants sur EnoPower"}
                                            done={false}
                                            index={0}/>
 
@@ -144,7 +169,7 @@ export default function Overview() {
             ),
     }
 
-    return <Accordion type="single" defaultValue={"item-1"}  collapsible className={""}>
+    return <Accordion type="single" defaultValue={"item-1"} collapsible className={""}>
         <AccordionItem value="item-1" className={"bg-gray-50  px-8"}>
             <AccordionTrigger>
                 <div className={"w-max flex"}>
@@ -171,7 +196,8 @@ export default function Overview() {
                                         <></>}
                                 </TabsTrigger>
                             ))}
-                            <span className={"uppercase text-xs w-full text-left ml-2 mt-4"}>Participants</span>
+                            <span
+                                className={"uppercase text-xs w-full text-left ml-2 mt-4"}>démarches Participants</span>
 
                             {participantsTab.map((tab, index) => (
                                 <TabsTrigger
@@ -184,7 +210,7 @@ export default function Overview() {
                                         <span className="text-left truncate mx-2">{tab.label}</span>
                                     </div>
                                     {tab.ping ? <div className={"flex text-sm  text-primary gap-1 items-center"}>
-                                            {tab.number || ''} <BellIcon className="size-4" />
+                                            {tab.number || ''} <BellIcon className="size-4"/>
                                         </div> :
                                         <></>}
                                 </TabsTrigger>

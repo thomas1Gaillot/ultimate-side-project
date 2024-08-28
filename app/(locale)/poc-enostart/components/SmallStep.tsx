@@ -39,7 +39,7 @@ const SmallStep = ({
             variant="ghost"
             size="sm"
             className={cn("flex items-center justify-start w-max gap-2",
-                pathName === link ? "bg-primary/10 text-primary" : "")}
+                pathName === link && !disabled ? "bg-primary/10 text-primary" : "")}
         >
             <div
                 className={cn("mr-2 text-xs size-6 min-w-6 rounded-full flex justify-center items-center border text-gray-700",

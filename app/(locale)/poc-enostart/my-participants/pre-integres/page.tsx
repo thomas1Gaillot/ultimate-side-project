@@ -4,7 +4,9 @@ import {Button} from "@/components/ui/button";
 import {BellIcon, DownloadIcon, SendIcon, TrashIcon} from "lucide-react";
 import {cn} from "@/lib/utils";
 import {participants} from "@/app/(locale)/poc-enostart/data/participants";
-import {enedisMapper, pmoMapper, salesMapper} from "@/app/(locale)/poc-enostart/data/status";
+import {enedisMapper} from "@/app/(locale)/poc-enostart/data/enedis-status";
+import { pmoMapper } from "../../data/pmo-status";
+import {salesMapper} from "@/app/(locale)/poc-enostart/data/sales-status";
 
 
 export default function Page() {
@@ -16,7 +18,7 @@ export default function Page() {
                     <TableHead>Périmètre</TableHead>
                     <TableHead>{"Date d'export"}</TableHead>
                     <TableHead>Démarches PMO</TableHead>
-                    <TableHead>Démarches Enedis</TableHead>
+                    <TableHead>Accords de participation</TableHead>
                     <TableHead>Démarches de vente</TableHead>
                     <TableHead>Actions</TableHead>
                 </TableRow>
@@ -33,21 +35,21 @@ export default function Page() {
                             <TableCell>{p.exportDate}</TableCell>
                             <TableCell>
                                 {p.pmo && <div className={cn("flex items-center text-xs",
-                                    pmoMapper(p.pmo).icon === BellIcon ? 'text-primary' : 'text-gray-300')}>
+                                    pmoMapper(p.pmo).icon === BellIcon ? 'text-gray-700' : 'text-gray-300')}>
                                     {pmoMapper(p.pmo).name}
                                     <PmoIcon className={'size-4 ml-2'}/>
                                 </div>}
                             </TableCell>
                             <TableCell>
                                 {p.enedis && <div className={cn("flex items-center text-xs",
-                                    EnedisIcon === BellIcon ? 'text-primary' : 'text-gray-300')}>
+                                    EnedisIcon === BellIcon ? 'text-gray-700' : 'text-gray-300')}>
                                     {enedisMapper(p.enedis).name}
                                     <EnedisIcon className={'size-4 ml-2'}/>
                                 </div>}
                             </TableCell>
                             <TableCell>
                                 {p.sales && <div className={cn("flex items-center text-xs",
-                                    SalesIcon === BellIcon ? 'text-primary' : 'text-gray-300')}>
+                                    SalesIcon === BellIcon ? 'text-gray-700' : 'text-gray-300')}>
                                     {salesMapper(p.sales).name}
                                     <SalesIcon className={'size-4 ml-2'}/>
                                 </div>}

@@ -1,4 +1,6 @@
-import {EnedisStatus, PmoStatus, SalesStatus} from "./status"
+import {EnedisStatus} from "./enedis-status"
+import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
+import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
 
 export type Participant = {
     id: number,
@@ -26,7 +28,7 @@ const preIntegres: Participant[] = [
         consumption: 4500,
         exportDate: "-",
         pmo: PmoStatus.IdentifierLaPmo,
-        enedis: EnedisStatus.EditerLAccord,
+        enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.ProposerUnPrix
     },
     {
@@ -36,7 +38,7 @@ const preIntegres: Participant[] = [
         consumption: 4500,
         exportDate: "05 Juillet 2024",
         pmo: PmoStatus.IdentifierLaPmo,
-        enedis: EnedisStatus.EditerLAccord,
+        enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.PrixPropose
     },
     {
@@ -46,7 +48,7 @@ const preIntegres: Participant[] = [
         consumption: 4500,
         exportDate: "05 Juillet 2024",
         pmo: PmoStatus.IdentifierLaPmo,
-        enedis: EnedisStatus.EditerLAccord,
+        enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.PrixPropose
     },
 ]

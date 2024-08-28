@@ -5,7 +5,9 @@ import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs";
 
 const tabData = [
     {id: "pmo", label: "Démarches PMO", href: "/poc-enostart/my-demarches/pmo"},
-    {id: "enedis", label: "Déclaration Enedis", href: "/poc-enostart/my-demarches/enedis"},
+    {id: "enedis", label: "Déclaration de mise en oeuvre", href: "/poc-enostart/my-demarches/enedis"},
+    {id: "accords", label: "Accords de participation", href: "/poc-enostart/my-demarches/accords"},
+
     {id: "vente", label: "Démarches de Vente", href: "/poc-enostart/my-demarches/vente"},
     {id: "convention", label: "Convention ACC", href: "/poc-enostart/my-demarches/convention"},
 ];

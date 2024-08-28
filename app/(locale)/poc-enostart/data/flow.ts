@@ -1,5 +1,15 @@
 import {participants} from "@/app/(locale)/poc-enostart/data/participants";
-import {EnedisStatus, PmoStatus, SalesStatus} from "@/app/(locale)/poc-enostart/data/status";
+import {EnedisStatus} from "@/app/(locale)/poc-enostart/data/enedis-status";
+import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
+import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
+export type Step = {
+    label: string,
+    href: string,
+    done?: boolean,
+    numberOfTaskDone?: number,
+    numberOfTask?: number,
+    disabled?: boolean
+}
 
 const participantsTab = [
     {
@@ -13,16 +23,10 @@ const participantsTab = [
     {id: "passages-en-exploitation", label: "Je gère mon opération auprès d'Enedis", ping: false},
 ]
 const demarchesTabs = [
-    {id: "demarches", label: "Je crée ma PMO et déclare mon projet", ping: true},
+    {id: "demarches", label: "Je crée ma PMO", ping: true},
+    {id: "declaration", label: "Je déclare mon opération", ping: true},
 ]
-export type Step = {
-    label: string,
-    href: string,
-    done?: boolean,
-    numberOfTaskDone?: number,
-    numberOfTask?: number,
-    disabled?: boolean
-}
+
 const candidatures_flow = () => {
     const numberOfCandidatures = participants.candidatures.length
     const numberOfPreIntegres = participants.preIntegres.length
@@ -134,4 +138,57 @@ const signatures_flow = () => {
 
 }
 
-export {participantsTab, demarchesTabs, candidatures_flow, sales_flow, signatures_flow}
+const demarches_pmo_flow = () => {
+    const pmoCreated = participants.preIntegres[0].pmo !== PmoStatus.IdentifierLaPmo && participants.preIntegres[0].pmo !== PmoStatus.Ignore
+
+    const steps: Step[] = [
+        {
+            label: "Je crée mon association PMO",
+            href: '/poc-enostart/my-demarches/pmo',
+            done : pmoCreated
+        },
+        {
+            label: "J'édite les bulletins d'adhésion",
+            href: '/poc-enostart/my-demarches/pmo',
+            disabled : !pmoCreated
+        }
+    ]
+    return steps;
+}
+
+const demarches_pmo_accords = () => {
+    const pmoCreated = participants.preIntegres[0].pmo !== PmoStatus.IdentifierLaPmo && participants.preIntegres[0].pmo !== PmoStatus.Ignore
+
+    const steps: Step[] = [
+        {
+            label: "Je crée mon association PMO",
+            href: '/poc-enostart/my-demarches/pmo',
+            done : pmoCreated
+
+        },
+        {
+            label: "J'édite les accords de participation",
+            href: '/poc-enostart/my-demarches/accords',
+            disabled : !pmoCreated
+        }
+    ]
+    return steps;
+}
+
+const declaration_flow = () => {
+
+    const steps: Step[] = [
+        {
+            label: "J'envoi la déclaration de mise en oeuvre",
+            href: '/poc-enostart/my-demarches/enedis',
+            disabled : false
+        },
+        {
+            label: "Je renseigne le numéro NOVA de mon opération",
+            href: '/poc-enostart/my-demarches/enedis',
+            disabled : true
+        }
+    ]
+    return steps;
+}
+export {participantsTab, demarchesTabs, candidatures_flow, sales_flow, signatures_flow,demarches_pmo_flow, demarches_pmo_accords, declaration_flow}
