@@ -27,12 +27,12 @@ function Header() {
         <header className="h-[60px] border-b border-gray-200 bg-white px-8 flex items-center justify-between">
             <div className="flex items-center">
                 <CodepenIcon className="size-8 text-green-600 mr-2"/>
-                <span className="text-gray-800 font-semibold text-sm">Mon énergie collective</span>
+                <span className="text-gray-800 font-semibold text-sm">{"Mon énergie collective"}</span>
             </div>
             <div className="flex items-center space-x-4">
                 <Button variant="ghost" className="text-gray-600 flex items-center">
                     <QuestionMarkCircledIcon className="mr-2 h-4 w-4"/>
-                    Centre d'aide
+                    {"Centre d'aide"}
                 </Button>
                 <Button variant="ghost" size="icon" className="rounded-full">
                     <span className="sr-only">User profile</span>
