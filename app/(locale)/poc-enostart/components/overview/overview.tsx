@@ -13,15 +13,17 @@ import {
     sales_flow,
     signatures_flow
 } from "@/app/(locale)/poc-enostart/data/flow";
+import {Participant, useStoredParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 
 export default function Overview() {
 
     const [activeTab, setActiveTab] = useState("nouvelles-candidatures")
-    const candidatures = candidatures_flow()
-    const sales = sales_flow()
-    const signatures = signatures_flow()
-    const demarchesPmo = demarches_pmo_flow()
-    const demarchesAccords = demarches_pmo_accords()
+    const {participants} = useStoredParticipants()
+    const candidatures = candidatures_flow(participants)
+    const sales = sales_flow(participants)
+    const signatures = signatures_flow(participants)
+    const demarchesPmo = demarches_pmo_flow(participants)
+    const demarchesAccords = demarches_pmo_accords(participants)
     const declaration = declaration_flow()
     const tabContents: any = {
         "demarches": (
@@ -199,7 +201,7 @@ export default function Overview() {
                             <span
                                 className={"uppercase text-xs w-full text-left ml-2 mt-4"}>démarches Participants</span>
 
-                            {participantsTab.map((tab, index) => (
+                            {participantsTab(participants).map((tab, index) => (
                                 <TabsTrigger
                                     key={tab.id}
                                     value={tab.id}
@@ -222,7 +224,7 @@ export default function Overview() {
                                     {tabContents[tab.id]}
                                 </TabsContent>
                             ))}
-                            {participantsTab.map((tab) => (
+                            {participantsTab(participants).map((tab) => (
                                 <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
                                     {tabContents[tab.id]}
                                 </TabsContent>

@@ -4,12 +4,14 @@ import Overview from "@/app/(locale)/poc-enostart/components/overview/overview";
 import {Button} from "@/components/ui/button";
 import {QuestionMarkCircledIcon} from "@radix-ui/react-icons";
 import {CodepenIcon} from "lucide-react";
+import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 
 export default function Layout({
                                    children,
                                }: Readonly<{
     children: React.ReactNode;
 }>) {
+    useParticipants()
     return (
         <>
             <Header/>

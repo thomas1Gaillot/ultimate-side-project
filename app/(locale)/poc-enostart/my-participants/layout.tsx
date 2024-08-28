@@ -2,39 +2,41 @@
 
 import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {usePathname, useRouter} from "next/navigation";
+import {parse, useStoredParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 
 // Dummy data for participants
 
 export default function TabsLayout({children}: { children: React.ReactNode }) {
     const pathname = usePathname();
     const router = useRouter();
-
+    const {participants} = useStoredParticipants()
+    const {candidatures, preIntegres, passageExploitation, integres, refuses} = parse(participants)
     const tabData = [
         {
             id: "candidatures",
-            label: "1. Candidatures (4)",
+            label: `1. Candidatures (${candidatures.length})`,
             buttonText: "J'accepte les candidatures",
             href: "/poc-enostart/my-participants/candidatures"
         },
         {
             id: "pre-integres",
-            label: "2. Pré-intégrés (3)",
+            label: `2. Pré-intégrés (${preIntegres.length})`,
             buttonText: "Proposer un prix de vente",
             href: "/poc-enostart/my-participants/pre-integres"
         },
         {
             id: "passage-passage-exploitation",
-            label: "3. Passage en exploitation (1)",
+            label: `3. Passage en exploitation (${passageExploitation.length})`,
             buttonText: "Passer en exploitation",
             href: "/poc-enostart/my-participants/passage-exploitation"
         },
         {
             id: "integres",
-            label: "4. Intégrés",
+            label: `4. Intégrés (${integres.length})`,
             buttonText: "Exporter sur Enopower",
             href: "/poc-enostart/my-participants/integres"
         },
-        {id: "refuses", label: "Refusés", buttonText: "Refuser", href: "/poc-enostart/my-participants/refuses"},
+        {id: "refuses", label: `Refusés (${refuses.length})`, buttonText: "Refuser", href: "/poc-enostart/my-participants/refuses"},
     ]
 
     return (
