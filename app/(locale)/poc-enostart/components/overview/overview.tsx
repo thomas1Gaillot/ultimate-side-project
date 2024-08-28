@@ -2,8 +2,9 @@ import {useState} from "react";
 import RadialChart from "@/app/(locale)/poc-enostart/components/RadialChart";
 import SmallStep from "@/app/(locale)/poc-enostart/components/SmallStep";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import {BellIcon} from "lucide-react";
+import {BellIcon, FootprintsIcon} from "lucide-react";
 import Timeline from "@/app/(locale)/poc-enostart/components/Timeline";
+import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 
 export default function Overview() {
 
@@ -153,52 +154,66 @@ export default function Overview() {
             ),
     }
 
-    return <Tabs orientation="vertical" value={activeTab} onValueChange={setActiveTab} className="h-full ">
-        <div className="flex h-72">
-            <TabsList className="flex-grow h-full flex flex-col p-1 px-2">
-                <span className={"uppercase ml-2 text-xs w-full text-left"}>démarches</span>
-                {demarchesTabs.map((tab) => (
-                    <TabsTrigger
-                        key={tab.id}
-                        value={tab.id}
-                        className="flex justify-between items-center w-80 px-3 py-2 text-sm"
-                    >
-                        <div className={"flex items-center"}>
-                            <span className="text-left truncate mr-2">{tab.label}</span>
-                        </div>
-                        {tab.ping ? <BellIcon className="size-4  text-primary"/> :
-                            <></>}
-                    </TabsTrigger>
-                ))}
-                <span className={"uppercase text-xs w-full text-left ml-2 mt-4"}>Participants</span>
+    return <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+            <AccordionTrigger>
+                <div className={"w-max flex"}>
+                    <FootprintsIcon className={"size-4 mr-4"}/>
+                    {'Mon parcours '}
+                </div>
+            </AccordionTrigger>
+            <AccordionContent>
+                <Tabs orientation="vertical" value={activeTab} onValueChange={setActiveTab} className="h-full ">
+                    <div className="flex h-72 bg-gray-50">
+                        <TabsList className="flex-grow h-full flex flex-col p-1 px-2">
 
-                {tabs.map((tab, index) => (
-                    <TabsTrigger
-                        key={tab.id}
-                        value={tab.id}
-                        className="flex py-0 justify-between items-center w-80 px-3 text-sm"
-                    >
-                        <div className={"flex items-center "}>
-                            <Timeline index={index} length={tabs.length}/>
-                            <span className="text-left truncate mx-2">{tab.label}</span>
+                            <span className={"uppercase ml-2 text-xs w-full text-left"}>démarches</span>
+                            {demarchesTabs.map((tab) => (
+                                <TabsTrigger
+                                    key={tab.id}
+                                    value={tab.id}
+                                    className="flex justify-between items-center w-80 px-3 py-2 text-sm"
+                                >
+                                    <div className={"flex items-center"}>
+                                        <span className="text-left truncate mr-2">{tab.label}</span>
+                                    </div>
+                                    {tab.ping ? <BellIcon className="size-4  text-primary"/> :
+                                        <></>}
+                                </TabsTrigger>
+                            ))}
+                            <span className={"uppercase text-xs w-full text-left ml-2 mt-4"}>Participants</span>
+
+                            {tabs.map((tab, index) => (
+                                <TabsTrigger
+                                    key={tab.id}
+                                    value={tab.id}
+                                    className="flex py-0 justify-between items-center w-80 px-3 text-sm"
+                                >
+                                    <div className={"flex items-center "}>
+                                        <Timeline index={index} length={tabs.length}/>
+                                        <span className="text-left truncate mx-2">{tab.label}</span>
+                                    </div>
+                                    {tab.ping ? <BellIcon className="size-4  text-primary"/> :
+                                        <></>}
+                                </TabsTrigger>
+                            ))}
+                        </TabsList>
+                        <div className="flex-grow w-full p-4 h-full bg-white/50 rounded-r-lg overflow-y-auto">
+                            {demarchesTabs.map((tab) => (
+                                <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full ">
+                                    {tabContents[tab.id]}
+                                </TabsContent>
+                            ))}
+                            {tabs.map((tab) => (
+                                <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
+                                    {tabContents[tab.id]}
+                                </TabsContent>
+                            ))}
                         </div>
-                        {tab.ping ? <BellIcon className="size-4  text-primary"/> :
-                            <></>}
-                    </TabsTrigger>
-                ))}
-            </TabsList>
-            <div className="flex-grow w-full p-4 h-full bg-white rounded-r-lg overflow-y-auto">
-                {demarchesTabs.map((tab) => (
-                    <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full ">
-                        {tabContents[tab.id]}
-                    </TabsContent>
-                ))}
-                {tabs.map((tab) => (
-                    <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
-                        {tabContents[tab.id]}
-                    </TabsContent>
-                ))}
-            </div>
-        </div>
-    </Tabs>
+                    </div>
+                </Tabs>
+            </AccordionContent>
+        </AccordionItem>
+
+    </Accordion>
 }

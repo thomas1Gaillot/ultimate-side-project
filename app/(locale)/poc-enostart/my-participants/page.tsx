@@ -36,30 +36,30 @@ export default function ParticipantsContent() {
                     </TabsTrigger>
                 ))}
             </TabsList>
-                <TabsContent className={'flex flex-col w-full gap-2'} key={'candidatures'} value={'candidatures'}>
-                    <TypographyH4>{tabData[0].label}</TypographyH4>
-                    <div className="mb-4">
-                        <Button>{tabData[0].buttonText}</Button>
-                    </div>
-                    <Table>
-                        <TableHeader>
-                            <TableRow>
-                                <TableHead>Nom</TableHead>
-                                <TableHead>Email</TableHead>
-                                <TableHead>Statut</TableHead>
+            <TabsContent className={'flex flex-col w-full gap-2'} key={'candidatures'} value={'candidatures'}>
+                <TypographyH4>{tabData[0].label}</TypographyH4>
+                <div className="mb-4">
+                    <Button>{tabData[0].buttonText}</Button>
+                </div>
+                <Table>
+                    <TableHeader>
+                        <TableRow>
+                            <TableHead>Nom</TableHead>
+                            <TableHead>Email</TableHead>
+                            <TableHead>Statut</TableHead>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                        {participants.map((participant) => (
+                            <TableRow key={participant.id}>
+                                <TableCell>{participant.name}</TableCell>
+                                <TableCell>{participant.email}</TableCell>
+                                <TableCell>{participant.status}</TableCell>
                             </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            {participants.map((participant) => (
-                                <TableRow key={participant.id}>
-                                    <TableCell>{participant.name}</TableCell>
-                                    <TableCell>{participant.email}</TableCell>
-                                    <TableCell>{participant.status}</TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TabsContent>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TabsContent>
         </Tabs>
     )
 }

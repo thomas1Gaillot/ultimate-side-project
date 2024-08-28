@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add timeline">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ui colors, and show tabs content as vertical">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/convention/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/enedis/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-perimeter/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/MonECTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/MonECTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/demarches/demarches.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/demarches/demarches.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/participants/participantsContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/participants/participantsContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/demarches/demarches.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/participants/participantsContent.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ui/tabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/tabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,11 +88,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\pages\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\my-demarches\pmo" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\my-demarches" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\pomodoro\components\task-widget\chart" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\pomodoro\components\task-widget\list" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\pomodoro\components\task-widget\chart-by-tag" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\pomodoro\components\task-widget\chart-by-name" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\pomodoro\components\pomodoro-widget" />
     </key>
   </component>
   <component name="RunManager" selected="npm.supabase:create">
@@ -221,15 +231,7 @@
       <workItem from="1724579907153" duration="11176000" />
       <workItem from="1724660303769" duration="12213000" />
       <workItem from="1724678876324" duration="15555000" />
-      <workItem from="1724766986528" duration="4154000" />
-    </task>
-    <task id="LOCAL-00122" summary="resolve build">
-      <option name="closed" value="true" />
-      <created>1721897934291</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1721897934291</updated>
+      <workItem from="1724766986528" duration="7273000" />
     </task>
     <task id="LOCAL-00123" summary="next config domain">
       <option name="closed" value="true" />
@@ -615,7 +617,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724767908860</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="ui colors, and show tabs content as vertical">
+      <option name="closed" value="true" />
+      <created>1724772778439</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1724772778439</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,7 +644,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="extract pomodoro controls" />
     <MESSAGE value="add reset all control" />
     <MESSAGE value="add reset all pomodoro pattern" />
     <MESSAGE value="show number of pomodoro as badge" />
@@ -659,6 +668,7 @@
     <MESSAGE value="poc enostart" />
     <MESSAGE value="add tabs" />
     <MESSAGE value="add timeline" />
-    <option name="LAST_COMMIT_MESSAGE" value="add timeline" />
+    <MESSAGE value="ui colors, and show tabs content as vertical" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui colors, and show tabs content as vertical" />
   </component>
 </project>
