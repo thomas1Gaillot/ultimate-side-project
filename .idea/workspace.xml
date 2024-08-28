@@ -4,23 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ui colors, and show tabs content as vertical">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/convention/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/enedis/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-perimeter/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="as page">
+      <change afterPath="$PROJECT_DIR$/components/ui/accordion.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/MonECTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/MonECTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/demarches/demarches.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/main-layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/main-layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/participants/participantsContent.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/tabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/tabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,15 +220,7 @@
       <workItem from="1724579907153" duration="11176000" />
       <workItem from="1724660303769" duration="12213000" />
       <workItem from="1724678876324" duration="15555000" />
-      <workItem from="1724766986528" duration="7273000" />
-    </task>
-    <task id="LOCAL-00123" summary="next config domain">
-      <option name="closed" value="true" />
-      <created>1721899639506</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1721899639506</updated>
+      <workItem from="1724766986528" duration="8178000" />
     </task>
     <task id="LOCAL-00124" summary="refactor to roadmap schema zod">
       <option name="closed" value="true" />
@@ -625,7 +606,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724772778439</updated>
     </task>
-    <option name="localTasksCounter" value="172" />
+    <task id="LOCAL-00172" summary="as page">
+      <option name="closed" value="true" />
+      <created>1724830034244</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1724830034244</updated>
+    </task>
+    <option name="localTasksCounter" value="173" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +633,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add reset all control" />
     <MESSAGE value="add reset all pomodoro pattern" />
     <MESSAGE value="show number of pomodoro as badge" />
     <MESSAGE value="copy tasks to clipboard as plain text" />
@@ -669,6 +657,7 @@
     <MESSAGE value="add tabs" />
     <MESSAGE value="add timeline" />
     <MESSAGE value="ui colors, and show tabs content as vertical" />
-    <option name="LAST_COMMIT_MESSAGE" value="ui colors, and show tabs content as vertical" />
+    <MESSAGE value="as page" />
+    <option name="LAST_COMMIT_MESSAGE" value="as page" />
   </component>
 </project>

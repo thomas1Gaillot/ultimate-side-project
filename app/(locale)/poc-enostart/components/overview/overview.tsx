@@ -154,8 +154,8 @@ export default function Overview() {
             ),
     }
 
-    return <Accordion type="single" collapsible>
-        <AccordionItem value="item-1">
+    return <Accordion type="single" collapsible className={""}>
+        <AccordionItem value="item-1" className={"bg-gray-50  px-8"}>
             <AccordionTrigger>
                 <div className={"w-max flex"}>
                     <FootprintsIcon className={"size-4 mr-4"}/>
@@ -165,7 +165,7 @@ export default function Overview() {
             <AccordionContent>
                 <Tabs orientation="vertical" value={activeTab} onValueChange={setActiveTab} className="h-full ">
                     <div className="flex h-72 bg-gray-50">
-                        <TabsList className="flex-grow h-full flex flex-col p-1 px-2">
+                        <TabsList className="flex-grow h-full flex flex-col ">
 
                             <span className={"uppercase ml-2 text-xs w-full text-left"}>démarches</span>
                             {demarchesTabs.map((tab) => (
