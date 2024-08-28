@@ -1,11 +1,6 @@
 import {TypographyH4} from "@/components/ui/typography";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
-import {Button} from "@/components/ui/button";
-import {DownloadIcon, SendIcon} from "lucide-react";
-
-const participants = [
-    {id: 1, name: "Gilles Lelouche", perimeter: "1.67 km", consumption: 14500},
-]
+import {integres} from "@/app/(locale)/poc-enostart/data/participants";
 
 
 export default function Page() {
@@ -19,7 +14,7 @@ export default function Page() {
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {participants.map((participant) => (
+                {integres.map((participant) => (
                     <TableRow key={participant.id}>
                         <TableCell>{participant.name}</TableCell>
                         <TableCell>{participant.perimeter}</TableCell>

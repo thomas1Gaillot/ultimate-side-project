@@ -2,14 +2,9 @@ import {TypographyH4} from "@/components/ui/typography";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {Button} from "@/components/ui/button";
 import {CheckIcon, TrashIcon, XIcon} from "lucide-react";
+import {candidatures} from "@/app/(locale)/poc-enostart/data/participants";
 
-const participants = [
-    {id: 1, name: "JK Rowling", perimeter: "1.67 km", consumption: 14500},
-    {id: 2, name: "George Lucas", perimeter: "2.40 km", consumption: 7000},
-    {id: 3, name: "Steve Jobs", perimeter: "0.45 km", consumption: 14500},
-    {id: 4, name: "Henry Cavill", perimeter: "0.12 km", consumption: 6000},
 
-]
 
 
 export default function Page() {
@@ -24,7 +19,7 @@ export default function Page() {
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {participants.map((participant) => (
+                {candidatures.map((participant) => (
                     <TableRow key={participant.id}>
                         <TableCell>{participant.name}</TableCell>
                         <TableCell>{participant.perimeter}</TableCell>
