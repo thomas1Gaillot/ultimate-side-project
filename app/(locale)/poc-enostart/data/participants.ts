@@ -1,4 +1,4 @@
-import {EnedisStatus, enedisStatus, PmoStatus, pmoStatus, SalesStatus, salesStatus} from "./status"
+import {EnedisStatus, PmoStatus, SalesStatus} from "./status"
 
 export type Participant = {
     id: number,
@@ -6,9 +6,9 @@ export type Participant = {
     perimeter: string,
     consumption: number,
     exportDate?: string,
-    pmo?: { name: string, icon: any },
-    enedis?: { name: string, icon: any },
-    sales?: { name: string, icon: any },
+    pmo?: PmoStatus,
+    enedis?: EnedisStatus,
+    sales?: SalesStatus,
 }
 
 const candidatures: Participant[] = [
@@ -25,9 +25,9 @@ const preIntegres: Participant[] = [
         perimeter: "1.67 km",
         consumption: 4500,
         exportDate: "-",
-        pmo: pmoStatus[PmoStatus.IdentifierLaPmo],
-        enedis: enedisStatus[EnedisStatus.EditerLAccord],
-        sales: salesStatus[SalesStatus.ProposerUnPrix]
+        pmo: PmoStatus.IdentifierLaPmo,
+        enedis: EnedisStatus.EditerLAccord,
+        sales: SalesStatus.ProposerUnPrix
     },
     {
         id: 2,
@@ -35,9 +35,9 @@ const preIntegres: Participant[] = [
         perimeter: "0.45 km",
         consumption: 4500,
         exportDate: "05 Juillet 2024",
-        pmo: pmoStatus[PmoStatus.IdentifierLaPmo],
-        enedis: enedisStatus[EnedisStatus.EditerLAccord],
-        sales: salesStatus[SalesStatus.PrixPropose]
+        pmo: PmoStatus.IdentifierLaPmo,
+        enedis: EnedisStatus.EditerLAccord,
+        sales: SalesStatus.PrixPropose
     },
     {
         id: 3,
@@ -45,9 +45,9 @@ const preIntegres: Participant[] = [
         perimeter: "2.1 km",
         consumption: 4500,
         exportDate: "05 Juillet 2024",
-        pmo: pmoStatus[PmoStatus.IdentifierLaPmo],
-        enedis: enedisStatus[EnedisStatus.EditerLAccord],
-        sales: salesStatus[SalesStatus.PrixPropose]
+        pmo: PmoStatus.IdentifierLaPmo,
+        enedis: EnedisStatus.EditerLAccord,
+        sales: SalesStatus.PrixPropose
     },
 ]
 const passageExploitation = [

@@ -6,8 +6,9 @@ interface RadialChartProps {
 const RadialChart = ({current, total}: RadialChartProps) => {
     const radius = 16;
     const circumference = 2 * Math.PI * radius;
-    const progress = (current / total) * 100;
-    const strokeDashoffset = circumference - (progress / 100) * circumference;
+    const progress = current === 0 ? 0 : (current / total) * 100;
+    const progressPer100 = progress === 0 ? 0 : (progress / 100);
+    const strokeDashoffset = circumference - progressPer100 * circumference;
 
     return (
         <div className="relative h-8 w-8">

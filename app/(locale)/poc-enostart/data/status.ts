@@ -18,6 +18,13 @@ const salesStatus = {
     [SalesStatus.ContratSigne]: { name: 'Contrat signé', icon: CheckIcon },
     [SalesStatus.Ignore]: { name: 'Ignoré', icon: CheckIcon },
 };
+const salesMapper = (status: SalesStatus) => {
+    return {
+        name: salesStatus[status].name,
+        icon: salesStatus[status].icon,
+    };
+};
+
 export enum PmoStatus {
     IdentifierLaPmo = 'IdentifierLaPmo',
     EnvoyerLeBulletin = 'EnvoyerLeBulletin',
@@ -32,6 +39,14 @@ const pmoStatus = {
     [PmoStatus.BulletinSigne]: { name: 'Bulletin signé', icon: CheckIcon },
     [PmoStatus.Ignore]: { name: 'Ignoré', icon: CheckIcon },
 };
+
+const pmoMapper = (status: PmoStatus) => {
+    return {
+        name: pmoStatus[status].name,
+        icon: pmoStatus[status].icon,
+    };
+
+}
 export enum EnedisStatus {
     EditerLAccord = 'EditerLAccord',
     EnvoyerLAccord = 'EnvoyerLAccord',
@@ -47,5 +62,13 @@ const enedisStatus = {
     [EnedisStatus.Ignore]: { name: 'Ignoré', icon: CheckIcon },
 };
 
+const enedisMapper = (status: EnedisStatus) => {
+    return {
+        name: enedisStatus[status].name,
+        icon: enedisStatus[status].icon,
+    };
 
-export {salesStatus, pmoStatus, enedisStatus}
+}
+
+
+export {salesMapper, pmoMapper, enedisMapper}

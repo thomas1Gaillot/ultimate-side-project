@@ -4,6 +4,7 @@ import {Button} from "@/components/ui/button";
 import {BellIcon, DownloadIcon, SendIcon, TrashIcon} from "lucide-react";
 import {cn} from "@/lib/utils";
 import {participants} from "@/app/(locale)/poc-enostart/data/participants";
+import {enedisMapper, pmoMapper, salesMapper} from "@/app/(locale)/poc-enostart/data/status";
 
 
 export default function Page() {
@@ -13,7 +14,7 @@ export default function Page() {
                 <TableRow>
                     <TableHead>Nom</TableHead>
                     <TableHead>Périmètre</TableHead>
-                    <TableHead>Date d'export</TableHead>
+                    <TableHead>{"Date d'export"}</TableHead>
                     <TableHead>Démarches PMO</TableHead>
                     <TableHead>Démarches Enedis</TableHead>
                     <TableHead>Démarches de vente</TableHead>
@@ -21,42 +22,47 @@ export default function Page() {
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {participants.preIntegres.map((participant) => (
-                    <TableRow key={participant.id}>
-                        <TableCell>{participant.name}</TableCell>
-                        <TableCell>{participant.perimeter}</TableCell>
-                        <TableCell>{participant.exportDate}</TableCell>
-                        <TableCell>
-                            {participant.pmo && <div className={cn("flex items-center text-xs",
-                                participant.pmo.icon === BellIcon ? 'text-primary' : 'text-gray-300')}>
-                                {participant.pmo.name}
-                                <participant.pmo.icon className={'size-4 ml-2'}/>
-                            </div>}
-                        </TableCell>
-                        <TableCell>
-                            {participant.enedis && <div className={cn("flex items-center text-xs",
-                                participant.enedis.icon === BellIcon ? 'text-primary' : 'text-gray-300')}>
-                                {participant.enedis.name}
-                                <participant.enedis.icon className={'size-4 ml-2'}/>
-                            </div>}
-                        </TableCell>
-                        <TableCell>
-                            {participant.sales && <div className={cn("flex items-center text-xs",
-                                participant.sales.icon === BellIcon ? 'text-primary' : 'text-gray-300')}>
-                                {participant.sales.name}
-                                <participant.sales.icon className={'size-4 ml-2'}/>
-                            </div>}
-                        </TableCell>
-                        <TableCell>
-                            <Button size={'sm'} className={'text-xs text-gray-700'} variant={'link'}><DownloadIcon
-                                className={'size-4 ml-2'}/> </Button>
-                            <Button size={'sm'} className={'text-xs'} variant={'link'}><SendIcon
-                                className={'size-4 ml-2'}/> </Button>
-                            <Button size={'sm'} className={'text-red-500 text-xs'} variant={'link'}><TrashIcon
-                                className={'size-4 ml-2'}/> </Button>
-                        </TableCell>
-                    </TableRow>
-                ))}
+                {participants.preIntegres.map((p) => {
+                    const PmoIcon = p.pmo ?pmoMapper(p.pmo).icon as any : <></>
+                    const EnedisIcon = p.enedis ? enedisMapper(p.enedis).icon as any  : <></>
+                    const SalesIcon =  p.sales ? salesMapper(p.sales).icon as any  : <></>
+                    return (
+                        <TableRow key={p.id}>
+                            <TableCell>{p.name}</TableCell>
+                            <TableCell>{p.perimeter}</TableCell>
+                            <TableCell>{p.exportDate}</TableCell>
+                            <TableCell>
+                                {p.pmo && <div className={cn("flex items-center text-xs",
+                                    pmoMapper(p.pmo).icon === BellIcon ? 'text-primary' : 'text-gray-300')}>
+                                    {pmoMapper(p.pmo).name}
+                                    <PmoIcon className={'size-4 ml-2'}/>
+                                </div>}
+                            </TableCell>
+                            <TableCell>
+                                {p.enedis && <div className={cn("flex items-center text-xs",
+                                    EnedisIcon === BellIcon ? 'text-primary' : 'text-gray-300')}>
+                                    {enedisMapper(p.enedis).name}
+                                    <EnedisIcon className={'size-4 ml-2'}/>
+                                </div>}
+                            </TableCell>
+                            <TableCell>
+                                {p.sales && <div className={cn("flex items-center text-xs",
+                                    SalesIcon === BellIcon ? 'text-primary' : 'text-gray-300')}>
+                                    {salesMapper(p.sales).name}
+                                    <SalesIcon className={'size-4 ml-2'}/>
+                                </div>}
+                            </TableCell>
+                            <TableCell>
+                                <Button size={'sm'} className={'text-xs text-gray-700'} variant={'link'}><DownloadIcon
+                                    className={'size-4 ml-2'}/> </Button>
+                                <Button size={'sm'} className={'text-xs'} variant={'link'}><SendIcon
+                                    className={'size-4 ml-2'}/> </Button>
+                                <Button size={'sm'} className={'text-red-500 text-xs'} variant={'link'}><TrashIcon
+                                    className={'size-4 ml-2'}/> </Button>
+                            </TableCell>
+                        </TableRow>
+                    )
+                })}
             </TableBody>
         </Table>
     </div>

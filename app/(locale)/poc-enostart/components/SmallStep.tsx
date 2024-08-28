@@ -28,7 +28,7 @@ const SmallStep = ({
                    }: SmallStepProps) => {
 
     // Calculate progress as a percentage
-    const progress = (!numberOfTaskDone || !numberOfTask) ? null : (numberOfTaskDone / numberOfTask) * 100
+    const progress = (!numberOfTaskDone || !numberOfTask) ? null : numberOfTaskDone === 0 ? 0 : (numberOfTaskDone / numberOfTask) * 100
     const isDone = done || progress === 100
     const router = useRouter()
     const pathName = usePathname()
@@ -51,8 +51,8 @@ const SmallStep = ({
             <div className="flex gap-2 text-wrap">
                 <span className={cn(isDone && "line-through text-gray-700")}>{label}</span>
             </div>
-            {!disabled && numberOfTaskDone && numberOfTask &&
-                <RadialChart current={numberOfTaskDone} total={numberOfTask}/>}
+            {!disabled  && !!numberOfTask &&
+                <RadialChart current={numberOfTaskDone || 0} total={numberOfTask}/>}
         </Button>
     )
 }

@@ -2,15 +2,23 @@ import {useState} from "react";
 import RadialChart from "@/app/(locale)/poc-enostart/components/RadialChart";
 import SmallStep from "@/app/(locale)/poc-enostart/components/SmallStep";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import {BellIcon, FootprintsIcon} from "lucide-react";
+import {BellIcon, FootprintsIcon, InfoIcon} from "lucide-react";
 import Timeline from "@/app/(locale)/poc-enostart/components/Timeline";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
-import {candidatures_flow, demarchesTabs, participantsTab} from "@/app/(locale)/poc-enostart/data/flow";
+import {
+    candidatures_flow,
+    demarchesTabs,
+    participantsTab,
+    sales_flow,
+    signatures_flow
+} from "@/app/(locale)/poc-enostart/data/flow";
 
 export default function Overview() {
 
     const [activeTab, setActiveTab] = useState("nouvelles-candidatures")
     const candidatures = candidatures_flow()
+    const sales = sales_flow()
+    const signatures = signatures_flow()
     const tabContents: any = {
         "demarches": (
             <>
@@ -47,12 +55,11 @@ export default function Overview() {
         "nouvelles-candidatures":
             (
                 <>
-                <span className={"text-xs text-gray-700"}>
-                           Vous avez {candidatures.number} candidatures en attente.
-                </span>
-                    <h3 className="font-semibold text-sm mt-2">Comment accepter des candidatures ?</h3>
-
-                    <ul className="text-sm grid  grid-cols-1">
+                    <h3 className="font-semibold text-sm mb-2 flex items-center mt-2">
+                        <InfoIcon className={'size-6 mr-4'}/>
+                        {`Comment accepter des candidatures ? (${candidatures.number})`}
+                    </h3>
+                    <ul className="text-sm grid  grid-cols-1 ml-6">
                         {candidatures.steps.map((step, index) => (
                             <SmallStep key={index} link={step.href} label={step.label} index={index} done={step.done}
                                        numberOfTaskDone={step.numberOfTaskDone}
@@ -66,20 +73,17 @@ export default function Overview() {
                 <>
                     <div className={"grid gap-4 mt-2  grid-cols-1 lg:grid-cols-2"}>
                         <div>
-                            <h3 className="font-semibold text-sm mb-2">{"Comment faire valider mon prix de vente aux consommateurs?"}</h3>
+                            <h3 className="font-semibold text-sm mb-2 flex items-center">
+                                <InfoIcon className={'size-6 mr-4'}/>
+                                {"Comment faire valider mon prix de vente aux consommateurs?"}
+                            </h3>
 
-                            <ul className="text-sm grid   grid-cols-1">
-
-                                <SmallStep label={"Je propose un prix de vente pour chaque consommateur"}
-                                           numberOfTaskDone={3}
-                                           numberOfTask={3}
-                                           index={0}/>
-                                <SmallStep label={"Chaque consommateur accepte son prix de vente"} numberOfTaskDone={2}
-                                           numberOfTask={3} done={false} index={1}/>
-                                <SmallStep label={"J'édite le contrat de vente pour chaque consommateur"}
-                                           numberOfTaskDone={2}
-                                           numberOfTask={3}
-                                           index={2}/>
+                            <ul className="ml-6 text-sm grid grid-cols-1">
+                                {sales.steps.map((step, index) => (
+                                    <SmallStep key={index} link={step.href} label={step.label} index={index} done={step.done}
+                                                  numberOfTaskDone={step.numberOfTaskDone}
+                                                  numberOfTask={step.numberOfTask}/>
+                                ))}
                             </ul>
                         </div>
                     </div>
@@ -90,20 +94,16 @@ export default function Overview() {
                 <>
                     <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-2"}>
                         <div>
-                            <h3 className="font-semibold text-sm mb-2">{"Comment finaliser les démarches avec mes consommateurs ?"}</h3>
-                            <ul className="text-sm grid grid-cols-1 ">
-                                <SmallStep label={"Les démarches de mon projet sont terminées"} numberOfTaskDone={1}
-                                           numberOfTask={2} index={0}/>
-                                <SmallStep label={"Les contrats de ventes sont edités"} numberOfTaskDone={2}
-                                           numberOfTask={3}
-                                />
-                                <SmallStep disabled={true}
-                                           label={"J'envoi les documents aux consommateurs pour signature"}
-                                           numberOfTaskDone={0} numberOfTask={2}
-                                           index={1}/>
-                                <SmallStep disabled={true} numberOfTaskDone={0} numberOfTask={2}
-                                           label={"Je reçois les documents signés"} done={false}
-                                           index={2}/>
+                            <h3 className="font-semibold text-sm mb-2 flex items-center mt-2">
+                                <InfoIcon className={'size-6 mr-4'}/>
+                                {`Comment finaliser les démarches avec mes consommateurs ?`}
+                            </h3>
+                            <ul className="text-sm grid grid-cols-1 ml-6">
+                                {signatures.steps.map((step, index) => (
+                                    <SmallStep key={index} link={step.href} label={step.label} index={index} done={step.done}
+                                                  numberOfTaskDone={step.numberOfTaskDone} disabled={step.disabled}
+                                                  numberOfTask={step.numberOfTask}/>
+                                ))}
                             </ul>
                         </div>
                     </div>
@@ -114,9 +114,11 @@ export default function Overview() {
             (
                 <>
                     <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-2"}>
-                        <div>
-                            <h3 className="font-semibold text-sm mb-2">{"Comment démarrer mon opération?"}</h3>
-                            <ul className="text-sm grid grid-cols-1 ">
+                        <div><h3 className="font-semibold text-sm mb-2 flex items-center mt-2">
+                            <InfoIcon className={'size-6 mr-4'}/>
+                            {`Comment démarrer mon opération?`}
+                        </h3>
+                            <ul className="text-sm grid grid-cols-1 ml-6">
                                 <SmallStep disabled={true} label={"Je sélectionne les participants à intégrer"}
                                            done={false}
                                            index={0}/>
@@ -130,7 +132,7 @@ export default function Overview() {
                         <div>
                             <h3 className="font-semibold text-sm mb-2">{"ou comment ajouter les participants dans mon opération ?"}</h3>
                             <ul className="text-sm grid grid-cols-1 ">
-                                <SmallStep disabled={true} label={"J'exporte la liste des participants sur EnoPower"}
+                            <SmallStep disabled={true} label={"J'exporte la liste des participants sur EnoPower"}
                                            done={false}
                                            index={0}/>
 
@@ -181,7 +183,9 @@ export default function Overview() {
                                         <Timeline index={index} length={participantsTab.length}/>
                                         <span className="text-left truncate mx-2">{tab.label}</span>
                                     </div>
-                                    {tab.ping ? <BellIcon className="size-4  text-primary"/> :
+                                    {tab.ping ? <div className={"flex text-sm  text-primary gap-1 items-center"}>
+                                            {tab.number || ''} <BellIcon className="size-4" />
+                                        </div> :
                                         <></>}
                                 </TabsTrigger>
                             ))}
