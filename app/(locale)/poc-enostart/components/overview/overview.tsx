@@ -14,16 +14,18 @@ import {
     signatures_flow
 } from "@/app/(locale)/poc-enostart/data/flow";
 import {Participant, useStoredParticipants} from "@/app/(locale)/poc-enostart/data/participants";
+import {usePmoDocuments} from "@/app/(locale)/poc-enostart/data/use-pmo-documents";
 
 export default function Overview() {
 
     const [activeTab, setActiveTab] = useState("nouvelles-candidatures")
     const {participants} = useStoredParticipants()
+    const {isPmoCreated, isBulletinEdited} = usePmoDocuments()
     const candidatures = candidatures_flow(participants)
     const sales = sales_flow(participants)
     const signatures = signatures_flow(participants)
-    const demarchesPmo = demarches_pmo_flow(participants)
-    const demarchesAccords = demarches_pmo_accords(participants)
+    const demarchesPmo = demarches_pmo_flow(isPmoCreated, isBulletinEdited )
+    const demarchesAccords = demarches_pmo_accords(isPmoCreated )
     const declaration = declaration_flow()
     const tabContents: any = {
         "demarches": (

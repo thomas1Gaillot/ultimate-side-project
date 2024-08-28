@@ -64,7 +64,7 @@ export const useStoredParticipants = create<ParticipantsStore>((set) => ({
 }));
 
 const parse = (participants: Participant[]) => {
-    if(participants.length === 0) return {
+    if (participants.length === 0) return {
         candidatures: [],
         preIntegres: [],
         passageExploitation: [],
@@ -85,28 +85,31 @@ const useParticipants = () => {
 
     function accept(id: number) {
         const participant = participants.find(p => p.id === id)
-        if(participant) {
+        if (participant) {
             participant.status = 'pre-integre'
             useStoredParticipants.getState().setParticipants([...participants])
         }
     }
+
     function reject(id: number) {
         const participant = participants.find(p => p.id === id)
-        if(participant) {
+        if (participant) {
             participant.status = 'refuse'
             useStoredParticipants.getState().setParticipants([...participants])
         }
     }
+
     function exportData(id: number) {
         const participant = participants.find(p => p.id === id)
-        if(participant) {
+        if (participant) {
             participant.exportDate = "Aujourd'hui"
             useStoredParticipants.getState().setParticipants([...participants])
         }
     }
+
     function sendDocument(id: number) {
         const participant = participants.find(p => p.id === id)
-        if(participant) {
+        if (participant) {
             participant.pmo = PmoStatus.BulletinEnvoye;
             participant.enedis = EnedisStatus.AccordEnvoye;
             participant.sales = SalesStatus.ContratEnvoye;
@@ -114,58 +117,6 @@ const useParticipants = () => {
         }
     }
 
-    return { ...parse(participants), accept, reject, exportData, sendDocument}
+    return {...parse(participants), accept, reject, exportData, sendDocument}
 }
 export {parse, useParticipants}
-
-
-// const candidatures: Participant[] = [
-//     {id: 1, name: "JK Rowling", perimeter: "1.67 km", consumption: 14500},
-//     {id: 2, name: "George Lucas", perimeter: "2.40 km", consumption: 7000},
-//     {id: 3, name: "Steve Jobs", perimeter: "0.45 km", consumption: 14500},
-//     {id: 4, name: "Henry Cavill", perimeter: "0.12 km", consumption: 6000},
-//
-// ]
-// const preIntegres: Participant[] = [
-//     {
-//         id: 1,
-//         name: "Alice Dupont",
-//         perimeter: "1.67 km",
-//         consumption: 4500,
-//         exportDate: "-",
-//         pmo: PmoStatus.IdentifierLaPmo,
-//         enedis: EnedisStatus.IdentifierLaPmo,
-//         sales: SalesStatus.ProposerUnPrix
-//     },
-//     {
-//         id: 2,
-//         name: "Bob Martin",
-//         perimeter: "0.45 km",
-//         consumption: 4500,
-//         exportDate: "05 Juillet 2024",
-//         pmo: PmoStatus.IdentifierLaPmo,
-//         enedis: EnedisStatus.IdentifierLaPmo,
-//         sales: SalesStatus.PrixPropose
-//     },
-//     {
-//         id: 3,
-//         name: "Claire Leroy",
-//         perimeter: "2.1 km",
-//         consumption: 4500,
-//         exportDate: "05 Juillet 2024",
-//         pmo: PmoStatus.IdentifierLaPmo,
-//         enedis: EnedisStatus.IdentifierLaPmo,
-//         sales: SalesStatus.PrixPropose
-//     },
-// ]
-// const passageExploitation = [
-//     {id: 1, name: "Jean Reno", perimeter: "1.67 km", consumption: 14500},
-// ]
-// const integres: Participant[] = [
-//     {id: 1, name: "Gilles Lelouche", perimeter: "1.67 km", consumption: 14500},
-// ]
-// const refuses = [
-//     {id: 1, name: "Jean Dupont", email: "alice@example.com"},
-//     {id: 2, name: "Toto Martin", email: "bob@example.com"},
-// ]
-

@@ -74,7 +74,7 @@ const sales_flow = (p: Participant[]) => {
     const steps: Step[] = [
         {
             label: 'Je propose un prix de vente pour chaque consommateur',
-            href: '/poc-enostart/my-demarches/vente',
+            href: '/poc-enostart/my-demarches/vente/proposal',
             numberOfTaskDone: numberOfPreIntegresWithPriceProposed,
             numberOfTask: total
         },
@@ -87,7 +87,7 @@ const sales_flow = (p: Participant[]) => {
         },
         {
             label: "J'édite le contrat de vente pour chaque consommateur",
-            href: '/poc-enostart/my-demarches/vente',
+            href: '/poc-enostart/my-demarches/vente/contract-edition',
             numberOfTaskDone: numberOfEditedContract,
             numberOfTask: numberOfEditedContract + numberOfPreIntegresWithPriceAccepted,
             disabled : (numberOfEditedContract + numberOfPreIntegresWithPriceAccepted) === 0
@@ -126,7 +126,7 @@ const signatures_flow = (p: Participant[]) => {
         },
         {
             label: "Les contrats de ventes sont edités",
-            href: '/poc-enostart/my-demarches/vente',
+            href: '/poc-enostart/my-demarches/vente/contract-edition',
             numberOfTaskDone: numberOfEditedContract,
             numberOfTask: total
         },
@@ -151,40 +151,37 @@ const signatures_flow = (p: Participant[]) => {
 
 }
 
-const demarches_pmo_flow = (p: Participant[]) => {
-    const {preIntegres} = parse(p)
-    const pmoCreated = preIntegres[0] && (preIntegres[0].pmo !== PmoStatus.IdentifierLaPmo && preIntegres[0].pmo !== PmoStatus.Ignore)
+const demarches_pmo_flow = (isPmoCreated : boolean, isBulletinEdited : boolean) => {
 
     const steps: Step[] = [
         {
             label: "Je crée mon association PMO",
             href: '/poc-enostart/my-demarches/pmo',
-            done: pmoCreated
+            done: isPmoCreated
         },
         {
             label: "J'édite les bulletins d'adhésion",
             href: '/poc-enostart/my-demarches/pmo',
-            disabled: !pmoCreated
+            disabled: !isPmoCreated,
+            done : isPmoCreated && isBulletinEdited
         }
     ]
     return steps;
 }
 
-const demarches_pmo_accords = (p: Participant[]) => {
-    const {preIntegres} = parse(p)
-    const pmoCreated = preIntegres[0] && (preIntegres[0].pmo !== PmoStatus.IdentifierLaPmo && preIntegres[0].pmo !== PmoStatus.Ignore)
+const demarches_pmo_accords = (isPmoCreated : boolean) => {
 
     const steps: Step[] = [
         {
             label: "Je crée mon association PMO",
             href: '/poc-enostart/my-demarches/pmo',
-            done: pmoCreated
+            done: isPmoCreated
 
         },
         {
             label: "J'édite les accords de participation",
             href: '/poc-enostart/my-demarches/accords',
-            disabled: !pmoCreated
+            disabled: !isPmoCreated
         }
     ]
     return steps;

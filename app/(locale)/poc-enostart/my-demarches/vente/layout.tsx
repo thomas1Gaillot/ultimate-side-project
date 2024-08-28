@@ -1,14 +1,10 @@
-"use client";
-
-import {usePathname, useRouter} from "next/navigation";
+'use client'
 import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs";
+import {usePathname, useRouter} from "next/navigation";
 
 const tabData = [
-    {id: "pmo", label: "Démarches PMO", href: "/poc-enostart/my-demarches/pmo"},
-    {id: "enedis", label: "Déclaration de mise en oeuvre", href: "/poc-enostart/my-demarches/enedis"},
-    {id: "accords", label: "Accords de participation", href: "/poc-enostart/my-demarches/accords"},
-    {id: "vente", label: "Démarches de Vente", href: "/poc-enostart/my-demarches/vente/proposal"},
-    {id: "convention", label: "Convention ACC", href: "/poc-enostart/my-demarches/convention"},
+    {id: "proposal", label: "1. Je propose un prix de vente", href: "/poc-enostart/my-demarches/vente/proposal"},
+    {id: "contract-edition", label: "2. J'édite les contrats de vente", href: "/poc-enostart/my-demarches/vente/contract-edition"},
 ];
 
 export default function TabsLayout({children}: { children: React.ReactNode }) {
@@ -16,9 +12,12 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
     const router = useRouter();
 
     return (
-        <div className="flex w-full gap-8">
+        <div className="w-full">
+            <div className="w-full rounded h-48 bg-gray-50 flex items-center justify-center">
+                <span>Choix du plan - Vente</span>
+            </div>
             <Tabs value={pathname || ''} className="w-full flex">
-                <TabsList className="w-64 h-max flex flex-col items-stretch bg-background">
+                <TabsList className="w-max flex items-stretch bg-background">
                     {tabData.map((tab) => (
                         <TabsTrigger
                             onClick={() => router.push(tab.href)}
@@ -30,10 +29,10 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
                         </TabsTrigger>
                     ))}
                 </TabsList>
-                <div className="w-full p-16 ">
-                    {children}
-                </div>
             </Tabs>
+            <div className="w-full">
+                {children}
+            </div>
         </div>
     );
 }
