@@ -8,7 +8,7 @@ export type Participant = {
     name: string,
     perimeter: string,
     consumption: number,
-    exportDate: string,
+    exportDate: string | null,
     status: 'candidature' | 'pre-integre' | 'passage-exploitation' | 'integre' | 'refuse',
     pmo: PmoStatus,
     enedis: EnedisStatus,
@@ -21,7 +21,7 @@ const initialParticipants: Participant[] = [
         name: "Alice Dupont",
         perimeter: "1.67 km",
         consumption: 4500,
-        exportDate: "-",
+        exportDate: null,
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
@@ -32,7 +32,7 @@ const initialParticipants: Participant[] = [
         name: "Bob Martin",
         perimeter: "0.45 km",
         consumption: 4500,
-        exportDate: "05 Juillet 2024",
+        exportDate: null,
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
@@ -43,7 +43,7 @@ const initialParticipants: Participant[] = [
         name: "Claire Leroy",
         perimeter: "2.1 km",
         consumption: 4500,
-        exportDate: "05 Juillet 2024",
+        exportDate: null,
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
@@ -81,8 +81,40 @@ const parse = (participants: Participant[]) => {
 }
 
 const useParticipants = () => {
-    const {participants, setParticipants} = useStoredParticipants()
+    const {participants} = useStoredParticipants()
 
+    function accept(id: number) {
+        const participant = participants.find(p => p.id === id)
+        if(participant) {
+            participant.status = 'pre-integre'
+            useStoredParticipants.getState().setParticipants([...participants])
+        }
+    }
+    function reject(id: number) {
+        const participant = participants.find(p => p.id === id)
+        if(participant) {
+            participant.status = 'refuse'
+            useStoredParticipants.getState().setParticipants([...participants])
+        }
+    }
+    function exportData(id: number) {
+        const participant = participants.find(p => p.id === id)
+        if(participant) {
+            participant.exportDate = "Aujourd'hui"
+            useStoredParticipants.getState().setParticipants([...participants])
+        }
+    }
+    function sendDocument(id: number) {
+        const participant = participants.find(p => p.id === id)
+        if(participant) {
+            participant.pmo = PmoStatus.BulletinEnvoye;
+            participant.enedis = EnedisStatus.AccordEnvoye;
+            participant.sales = SalesStatus.ContratEnvoye;
+            useStoredParticipants.getState().setParticipants([...participants])
+        }
+    }
+
+    return { ...parse(participants), accept, reject, exportData, sendDocument}
 }
 export {parse, useParticipants}
 

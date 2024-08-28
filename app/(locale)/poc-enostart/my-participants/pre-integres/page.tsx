@@ -5,15 +5,16 @@ import {Button} from "@/components/ui/button";
 import {BellIcon, DownloadIcon, SendIcon, TrashIcon} from "lucide-react";
 import {cn} from "@/lib/utils";
 import {enedisMapper} from "@/app/(locale)/poc-enostart/data/enedis-status";
-import { pmoMapper } from "../../data/pmo-status";
+import {pmoMapper} from "../../data/pmo-status";
 import {salesMapper} from "@/app/(locale)/poc-enostart/data/sales-status";
-import {parse, useStoredParticipants} from "@/app/(locale)/poc-enostart/data/participants";
+import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
+import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 
 
 export default function Page() {
-    const {participants} = useStoredParticipants()
-    const {preIntegres}  = parse(participants)
-    return <div className={"p-16"}><TypographyH4>Consommateurs Pré-intégrés (3)</TypographyH4>
+    const {preIntegres, reject, exportData, sendDocument} = useParticipants()
+
+    return <div className={"p-16"}><TypographyH4>Consommateurs Pré-intégrés</TypographyH4>
         <Table>
             <TableHeader>
                 <TableRow>
@@ -58,12 +59,48 @@ export default function Page() {
                                 </div>}
                             </TableCell>
                             <TableCell>
-                                <Button size={'sm'} className={'text-xs text-gray-700'} variant={'link'}><DownloadIcon
-                                    className={'size-4 ml-2'}/> </Button>
-                                <Button size={'sm'} className={'text-xs'} variant={'link'}><SendIcon
-                                    className={'size-4 ml-2'}/> </Button>
-                                <Button size={'sm'} className={'text-red-500 text-xs'} variant={'link'}><TrashIcon
-                                    className={'size-4 ml-2'}/> </Button>
+                                <TooltipProvider>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <Button
+                                                onClick={() => exportData(p.id)}
+                                                size={'sm'} className={'text-xs text-gray-700'} variant={'link'}><DownloadIcon
+                                            className={'size-4 ml-2'}/> </Button></TooltipTrigger>
+                                        <TooltipContent>
+                                            <p>Exporter les données de {p.name}</p>
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
+                                <TooltipProvider>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <Button
+                                                onClick={() => sendDocument(p.id)}
+                                                size={'sm'} className={'text-xs'} variant={'link'}><SendIcon
+                                                className={'size-4 ml-2'}/> </Button>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                            <p>Envoyer les documents à {p.name} pour signature</p>
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
+
+                                <TooltipProvider>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <Button
+                                                onClick={() => reject(p.id)}
+                                                size={'sm'} className={'text-red-500 text-xs'} variant={'link'}><TrashIcon
+                                                className={'size-4 ml-2'}/> </Button>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                            <p>Refuser {p.name}</p>
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
+
+
+
                             </TableCell>
                         </TableRow>
                     )

@@ -19,7 +19,7 @@ const participantsTab = (participants: Participant[]) => {
         {
             id: "nouvelles-candidatures",
             label: "J'accepte les candidatures",
-            ping: true,
+            ping: candidatures.length > 0,
             number: candidatures.length
         },
         {id: "pre-integrations", label: "Je propose mes conditions de vente ", ping: false},
@@ -36,13 +36,14 @@ const candidatures_flow = (p: Participant[]) => {
     const {candidatures, preIntegres} = parse(p)
     const numberOfCandidatures = candidatures.length
     const numberOfPreIntegres = preIntegres.length
-    const numberOfPreIntegresWithDataLoaded = preIntegres.filter(p => p.exportDate !== "-").length
+    const numberOfPreIntegresWithDataLoaded = preIntegres.filter(p => p.exportDate !== null).length
     const steps: Step[] = [
         {label: 'Je vérifie le périmètre', href: '/poc-enostart/my-perimeter'},
         {
             label: "J'accepte les consommateurs",
             href: '/poc-enostart/my-participants/candidatures',
-            done: numberOfCandidatures === 0
+            numberOfTask : numberOfCandidatures,
+            numberOfTaskDone : 0,
         },
         {
             label: "J'exporte les données pour étude (optionnel)",

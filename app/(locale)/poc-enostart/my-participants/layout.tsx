@@ -2,15 +2,14 @@
 
 import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {usePathname, useRouter} from "next/navigation";
-import {parse, useStoredParticipants} from "@/app/(locale)/poc-enostart/data/participants";
+import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 
 // Dummy data for participants
 
 export default function TabsLayout({children}: { children: React.ReactNode }) {
     const pathname = usePathname();
     const router = useRouter();
-    const {participants} = useStoredParticipants()
-    const {candidatures, preIntegres, passageExploitation, integres, refuses} = parse(participants)
+    const {candidatures, preIntegres, passageExploitation, integres, refuses} = useParticipants()
     const tabData = [
         {
             id: "candidatures",
@@ -36,7 +35,12 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
             buttonText: "Exporter sur Enopower",
             href: "/poc-enostart/my-participants/integres"
         },
-        {id: "refuses", label: `Refusés (${refuses.length})`, buttonText: "Refuser", href: "/poc-enostart/my-participants/refuses"},
+        {
+            id: "refuses",
+            label: `Refusés (${refuses.length})`,
+            buttonText: "Refuser",
+            href: "/poc-enostart/my-participants/refuses"
+        },
     ]
 
     return (
