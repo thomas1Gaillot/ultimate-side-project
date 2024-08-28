@@ -21,7 +21,7 @@ export default function Bulletin() {
     return (
         <div className="w-full max-w-4xl">
             <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-semibold">2. J'édite les bulletins d'adhésion</h2>
+                <h2 className="text-xl font-semibold">{"2. J'édite les bulletins d'adhésion"}</h2>
             </div>
             {isPmoCreated ? <Table>
                 <TableHeader>
@@ -55,7 +55,7 @@ export default function Bulletin() {
                                                 className="h-4 w-4 ml-2"/></span> :
                                             action === "Téléverser en pdf" ?
                                                 <span
-                                                    className={"text-xs flex items-center"}>Téléverser en .pdf <UploadIcon
+                                                    className={"text-xs flex items-center"}>{"Téléverser en .pdf"} <UploadIcon
                                                     className="h-4 w-4 ml-2"/></span> :
                                                 <span className={"text-xs flex items-center"}><Eye
                                                     className="h-4 w-4"/></span>}
@@ -69,7 +69,7 @@ export default function Bulletin() {
                 </TableBody>
             </Table>:
             <span className={" text-sm"}>
-                Vous devez d'abord créer votre association PMO pour éditer votre bulletin d'adhésion
+                {"Vous devez d'abord créer votre association PMO pour éditer votre bulletin d'adhésion"}
             </span> }
         </div>
     )

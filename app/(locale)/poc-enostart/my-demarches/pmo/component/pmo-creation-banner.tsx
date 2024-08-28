@@ -20,14 +20,14 @@ export default function PmoCreationBanner() {
                         <Users className="h-8 w-8 text-primary" />
                     </div>
                     <h3 className="text-lg font-semibold mb-2">Étape 2</h3>
-                    <p className="text-sm text-muted-foreground">Réaliser l'assemblée générale de constitution</p>
+                    <p className="text-sm text-muted-foreground">{"Réaliser l'assemblée générale de constitution"}</p>
                 </div>
                 <div className="flex flex-col items-center text-center">
                     <div className="mb-4 p-2 bg-primary/10 rounded-full">
                         <Building className="h-8 w-8 text-primary" />
                     </div>
                     <h3 className="text-lg font-semibold mb-2">Étape 3</h3>
-                    <p className="text-sm text-muted-foreground">Déclarer l'association en préfecture</p>
+                    <p className="text-sm text-muted-foreground">{"Déclarer l'association en préfecture"}</p>
                 </div>
             </CardContent>
         </Card>

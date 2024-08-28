@@ -23,14 +23,13 @@ Elle est l'interlocuteur unique de l'opération avec le Gestionnaire de Réseau 
                                 <h3 className="font-semibold text-gray-700">Pourquoi faire ses démarches sur Mon énergie collective ?</h3>
                                 <ul className="text-xs text-gray-500 list-disc list-inside">
                                     <li>Selon la prestation choisie, vous pourrez :</li>
-                                    <li>Créer vos statuts PMO associative, votre réglement intérieur et de préparer votre PV de création d'AG
+                                    <li>{"Créer vos statuts PMO associative, votre réglement intérieur et de préparer votre PV de création d'AG"}
                                     </li>
-                                    <li>Editer  un bulletin d'adhésion à l'association PMO à chacun de vos consommateurs,
+                                    <li>{"Editer  un bulletin d'adhésion à l'association PMO à chacun de vos consommateurs,"}
                                     </li>
-                                    <li>Préparer les documents administratifs nécessaires à l'opération
-                                        d'autoconsommation collective
+                                    <li>{"Préparer les documents administratifs nécessaires à l'opération d'autoconsommation collective"}
                                     </li>
-                                    <li>Récupérer les documents signés, téléchargeables</li>
+                                    <li>{"Récupérer les documents signés, téléchargeables"}</li>
                                 </ul>
                             </div>
 

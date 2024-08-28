@@ -21,7 +21,7 @@ export default function AccordsParticipation() {
     return (
         <div className="w-full max-w-4xl">
             <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-semibold">2. J'édite les accords de participation</h2>
+                <h2 className="text-xl font-semibold">{"2. J'édite les accords de participation"}</h2>
             </div>
             {isPmoCreated ? <Table>
                     <TableHeader>
@@ -69,7 +69,7 @@ export default function AccordsParticipation() {
                     </TableBody>
                 </Table>:
                 <span className={" text-sm"}>
-                Vous devez d'abord créer votre association PMO pour éditer votre accordsParticipation d'adhésion
+                {"Vous devez d'abord créer votre association PMO pour éditer votre accordsParticipation d'adhésion"}
             </span> }
         </div>
     )

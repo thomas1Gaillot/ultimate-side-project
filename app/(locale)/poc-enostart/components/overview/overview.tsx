@@ -31,8 +31,7 @@ export default function Overview() {
         "demarches": (
             <>
                  <span className={"text-xs text-gray-700"}>
-                     Pour lancer votre opération, vous devez créer une association PMO. Ensuite, editez les bulletins d'adhésion et les accords de participation pour vos participants.
-                </span>
+{"Pour lancer votre opération, vous devez créer une association PMO. Ensuite, editez les bulletins d'adhésion et les accords de participation pour vos participants."}                </span>
                 <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-3"}>
                     <div>
                         <div className={"flex items-center gap-4 mb-2"}>
