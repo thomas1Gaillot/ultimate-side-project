@@ -21,7 +21,7 @@ export default function MonECTabs() {
                     Mon périmètre
                 </TabsTrigger>
                 <TabsTrigger
-                    onClick={() => router.push('/poc-enostart/my-participants')}
+                    onClick={() => router.push('/poc-enostart/my-participants/candidatures')}
                     className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary rounded-md py-2"
                     value="mes-participants">
                     Mes participants
