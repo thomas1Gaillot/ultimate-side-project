@@ -22,7 +22,7 @@ export default function PMOPlan() {
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="prestation">
                     <AccordionTrigger className="text-lg font-semibold">Prestation</AccordionTrigger>
-                    <AccordionContent>
+                    <AccordionContent className={"p-8 gap-4 grid"}>
                         <div className="space-y-4">
                             <div>
                                 <h3 className="font-semibold text-gray-700">{"Pourquoi faire ses démarches de PMO sur Mon énergie collective ?"}</h3>

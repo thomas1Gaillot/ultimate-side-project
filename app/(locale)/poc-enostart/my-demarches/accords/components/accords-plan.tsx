@@ -18,7 +18,7 @@ Elle est l'interlocuteur unique de l'opération avec le Gestionnaire de Réseau 
                 <AccordionItem value="prestation">
                     <AccordionTrigger className="text-lg font-semibold">Prestation</AccordionTrigger>
                     <AccordionContent>
-                        <div className="space-y-4">
+                        <div className="space-y-4 p-8">
                             <div>
                                 <h3 className="font-semibold text-gray-700">Pourquoi faire ses démarches sur Mon énergie collective ?</h3>
                                 <ul className="text-xs text-gray-500 list-disc list-inside">

@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="fix build">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="show more steps">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/SmallStep.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/SmallStep.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation-banner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation-banner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/accords/components/accords-participation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/accords/components/accords-participation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/accords/components/accords-plan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/accords/components/accords-plan.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-plan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-plan.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,23 +226,8 @@
       <workItem from="1724678876324" duration="15555000" />
       <workItem from="1724766986528" duration="37793000" />
       <workItem from="1724914680800" duration="14000" />
-      <workItem from="1724922100654" duration="176000" />
-    </task>
-    <task id="LOCAL-00138" summary="extract pomodoro controls">
-      <option name="closed" value="true" />
-      <created>1723373653890</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1723373653890</updated>
-    </task>
-    <task id="LOCAL-00139" summary="add reset all control">
-      <option name="closed" value="true" />
-      <created>1723374837399</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1723374837399</updated>
+      <workItem from="1724922100654" duration="210000" />
+      <workItem from="1724923008218" duration="1087000" />
     </task>
     <task id="LOCAL-00140" summary="add reset all pomodoro pattern">
       <option name="closed" value="true" />
@@ -614,7 +605,23 @@
       <option name="project" value="LOCAL" />
       <updated>1724863813250</updated>
     </task>
-    <option name="localTasksCounter" value="187" />
+    <task id="LOCAL-00187" summary="show more steps">
+      <option name="closed" value="true" />
+      <created>1724922293549</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1724922293549</updated>
+    </task>
+    <task id="LOCAL-00188" summary="show more steps">
+      <option name="closed" value="true" />
+      <created>1724922305249</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1724922305249</updated>
+    </task>
+    <option name="localTasksCounter" value="189" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +640,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="first Bar chart" />
     <MESSAGE value="2 charts type" />
     <MESSAGE value="allow edit duration" />
     <MESSAGE value="duration edit bugfix" />
@@ -658,6 +664,7 @@
     <MESSAGE value="demarches pmo ok" />
     <MESSAGE value="all pmo demarches ok" />
     <MESSAGE value="fix build" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix build" />
+    <MESSAGE value="show more steps" />
+    <option name="LAST_COMMIT_MESSAGE" value="show more steps" />
   </component>
 </project>

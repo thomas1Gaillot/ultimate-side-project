@@ -40,7 +40,8 @@ export default function Overview() {
                         <ul className="space-y-1 text-sm">
                             {demarchesPmo.map((step, index) => (
                                 <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
-                                           done={step.done} index={index}/>
+                                           done={step.done} index={index} numberOfTaskDone={step.numberOfTaskDone}
+                                numberOfTask={step.numberOfTask}/>
                             ))}
                         </ul>
                     </div>
@@ -51,7 +52,8 @@ export default function Overview() {
                         <ul className="space-y-1 text-sm">
                             {demarchesAccords.map((step, index) => (
                                 <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
-                                           done={step.done} index={index}/>
+                                           done={step.done} index={index} numberOfTaskDone={step.numberOfTaskDone}
+                                           numberOfTask={step.numberOfTask}/>
                             ))}
                         </ul>
                     </div>
@@ -177,7 +179,7 @@ export default function Overview() {
             <AccordionTrigger>
                 <div className={"w-max flex"}>
                     <FootprintsIcon className={"size-4 mr-4"}/>
-                    {'Mon parcours '}
+                    {'Ma checklist de lancement d\'opération'}
                 </div>
             </AccordionTrigger>
             <AccordionContent>

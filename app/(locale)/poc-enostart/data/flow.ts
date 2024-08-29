@@ -39,12 +39,13 @@ const candidatures_flow = (p: Participant[]) => {
     const numberOfPreIntegres = preIntegres.length
     const numberOfPreIntegresWithDataLoaded = preIntegres.filter(p => p.exportDate !== null).length
     const steps: Step[] = [
-        {label: 'Je vérifie le périmètre', href: '/poc-enostart/my-perimeter'},
+        {label: 'Je vérifie le périmètre', href: '/poc-enostart/my-perimeter', disabled : numberOfCandidatures === 0},
         {
             label: "J'accepte les consommateurs",
             href: '/poc-enostart/my-participants/candidatures',
             numberOfTask : numberOfCandidatures,
             numberOfTaskDone : 0,
+            disabled : numberOfCandidatures === 0
         },
         {
             label: "J'exporte les données pour étude (optionnel)",
@@ -160,7 +161,7 @@ const demarches_pmo_flow = (isPmoCreated : boolean, isBulletinEdited : boolean) 
             href: '/poc-enostart/my-demarches/pmo',
             numberOfTaskDone: isPmoCreated ? 1 : 0,
             numberOfTask: 1,
-            done: isPmoCreated
+            done: isPmoCreated,
         },
         {
             label: "J'édite les bulletins d'adhésion",
@@ -180,13 +181,17 @@ const demarches_pmo_accords = (isPmoCreated : boolean, isEdited : boolean) => {
         {
             label: "Je crée mon association PMO",
             href: '/poc-enostart/my-demarches/pmo',
-            done: isPmoCreated
+            numberOfTaskDone: isPmoCreated ? 1 : 0,
+            numberOfTask: 1,
+            done: isPmoCreated,
 
         },
         {
             label: "J'édite les accords de participation",
             href: '/poc-enostart/my-demarches/accords',
             disabled: !isPmoCreated,
+            numberOfTaskDone: isEdited ? 1 : 0,
+            numberOfTask: 1,
             done : isPmoCreated && isEdited
         }
     ]

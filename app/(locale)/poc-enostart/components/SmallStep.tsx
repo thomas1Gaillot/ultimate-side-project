@@ -51,7 +51,7 @@ const SmallStep = ({
             <div className="flex gap-2 text-wrap">
                 <span className={cn(isDone && "line-through text-gray-700")}>{label}</span>
             </div>
-            {!disabled  && !!numberOfTask &&
+            {!disabled  && !!numberOfTask && !done &&
                 <RadialChart current={numberOfTaskDone || 0} total={numberOfTask}/>}
         </Button>
     )
