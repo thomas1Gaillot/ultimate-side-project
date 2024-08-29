@@ -24,7 +24,7 @@ export default function AccordsParticipation() {
                 <AccordionTrigger
                     className="text-lg font-semibold">
                     <div className={"flex"}>
-                        {"2. J'édite les accords de participation"}
+                        {"J'édite les accords de participation"}
                         {isAccordsParticipationEdited && <CheckIcon className="h-6 w-6 text-green-500 ml-2"/>}
                     </div>
                     </AccordionTrigger>
@@ -75,7 +75,7 @@ export default function AccordsParticipation() {
                             </TableBody>
                         </Table>:
                         <span className={" text-sm"}>
-                {"Vous devez d'abord créer votre association PMO pour éditer votre accordsParticipation d'adhésion"}
+                {"Vous devez d'abord créer votre association PMO pour éditer vos accords de participation"}
             </span> }
                 </AccordionContent>
             </AccordionItem>

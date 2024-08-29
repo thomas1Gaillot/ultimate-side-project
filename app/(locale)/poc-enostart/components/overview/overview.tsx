@@ -5,15 +5,17 @@ import {BellIcon, FootprintsIcon, InfoIcon} from "lucide-react";
 import Timeline from "@/app/(locale)/poc-enostart/components/Timeline";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {
-    candidatures_flow, declaration_flow,
+    candidatures_flow,
+    declaration_flow,
     demarches_pmo_accords,
+    demarches_pmo_creation,
     demarches_pmo_flow,
     demarchesTabs,
     participantsTab,
     sales_flow,
     signatures_flow
 } from "@/app/(locale)/poc-enostart/data/flow";
-import {Participant, useStoredParticipants} from "@/app/(locale)/poc-enostart/data/participants";
+import {useStoredParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 import {useDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
 import {cn} from "@/lib/utils";
 
@@ -21,34 +23,48 @@ export default function Overview() {
 
     const [activeTab, setActiveTab] = useState("nouvelles-candidatures")
     const {participants} = useStoredParticipants()
-    const {isPmoCreated, isBulletinEdited, isAccordsParticipationEdited} = useDocuments()
+    const {isPmoCreated, isDeclarationSent, isBulletinEdited, isAccordsParticipationEdited} = useDocuments()
     const candidatures = candidatures_flow(participants)
     const sales = sales_flow(participants)
     const signatures = signatures_flow(participants)
-    const demarchesPmo = demarches_pmo_flow(isPmoCreated, isBulletinEdited )
-    const demarchesAccords = demarches_pmo_accords(isPmoCreated, isAccordsParticipationEdited )
-    const declaration = declaration_flow()
+    const demarchesPmo = demarches_pmo_flow(isPmoCreated, isBulletinEdited)
+    const demarchesPmoCreation = demarches_pmo_creation(isPmoCreated)
+    const demarchesAccords = demarches_pmo_accords(isPmoCreated, isAccordsParticipationEdited)
+    const declaration = declaration_flow(isDeclarationSent)
     const tabContents: any = {
         "demarches": (
             <>
                  <span className={"text-xs text-gray-700"}>
 {"Pour lancer votre opération, vous devez créer une association PMO. Ensuite, editez les bulletins d'adhésion et les accords de participation pour vos participants."}                </span>
-                <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-3"}>
+                <div>
+                    <div className={"flex items-center gap-4 mt-4"}>
+                        <h3 className="font-semibold text-sm ">1. Créer ma PMO</h3>
+                    </div>
+                    <ul className="space-y-1 text-sm">
+                        {demarchesPmoCreation.map((step, index) => (
+                            <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
+                                       done={step.done} index={index} numberOfTaskDone={step.numberOfTaskDone}
+                                       numberOfTask={step.numberOfTask}/>
+                        ))}
+                    </ul>
+                </div>
+                <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-2"}>
+
                     <div>
                         <div className={"flex items-center gap-4 mb-2"}>
-                            <h3 className="font-semibold text-sm "> Démarches PMO</h3>
+                            <h3 className="font-semibold text-sm "> 2. Démarches PMO</h3>
                         </div>
                         <ul className="space-y-1 text-sm">
                             {demarchesPmo.map((step, index) => (
                                 <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
                                            done={step.done} index={index} numberOfTaskDone={step.numberOfTaskDone}
-                                numberOfTask={step.numberOfTask}/>
+                                           numberOfTask={step.numberOfTask}/>
                             ))}
                         </ul>
                     </div>
                     <div>
                         <div className={"flex items-center gap-4 mb-2"}>
-                            <h3 className="font-semibold text-sm "> Accords de participation</h3>
+                            <h3 className="font-semibold text-sm "> 2. Accords de participation</h3>
                         </div>
                         <ul className="space-y-1 text-sm">
                             {demarchesAccords.map((step, index) => (
@@ -74,7 +90,7 @@ export default function Overview() {
                         <ul className="space-y-1 text-sm">
                             {declaration.map((step, index) => (
                                 <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
-                                             done={step.done} index={index}/>
+                                           done={step.done} index={index}/>
                             ))}
                         </ul>
                     </div>
@@ -188,23 +204,7 @@ export default function Overview() {
                     <div className="flex h-72 bg-gray-50">
                         <TabsList className="flex-grow h-full flex flex-col ">
 
-                            <span className={"uppercase ml-2 text-xs w-full text-left"}>démarches</span>
-                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited).map((tab) => (
-                                <TabsTrigger
-                                    key={tab.id}
-                                    value={tab.id}
-                                    className={cn("flex data-[state=active]:bg-white justify-between items-center w-80 px-3 py-2 text-sm",
-                                    tab.hide && 'line-through')}
-                                >
-                                    <div className={"flex items-center"}>
-                                        <span className={cn("text-left font-normal truncate mr-2", tab.ping && 'text-primary')}>
-                                            {tab.label}
-                                        </span>
-                                    </div>
-                                    {tab.ping ? <BellIcon className="size-4  text-primary"/> :
-                                        <></>}
-                                </TabsTrigger>
-                            ))}
+
                             <span
                                 className={"uppercase text-xs w-full text-left ml-2 mt-4"}>démarches par Participants</span>
 
@@ -212,22 +212,47 @@ export default function Overview() {
                                 <TabsTrigger
                                     key={tab.id}
                                     value={tab.id}
-                                    className="flex data-[state=active]:bg-white py-0 justify-between items-center w-80 px-3 text-sm"
+                                    className="flex data-[state=active]:bg-white py-0 justify-between items-center w-96 px-3 text-sm"
                                 >
                                     <div className={"flex items-center "}>
                                         <Timeline index={index} length={participantsTab(participants).length}/>
-                                        <span className={cn("text-left font-normal truncate ml-2", tab.ping && 'text-primary')}>
+                                        <span className={cn("text-left font-normal truncate ml-2",
+                                            tab.ping && 'text-primary  font-bold')}>
                                             {tab.label}</span>
                                     </div>
-                                    {tab.ping ? <div className={"flex text-sm  text-primary gap-1 items-center"}>
-                                            {tab.number || ''} <BellIcon className="size-4"/>
-                                        </div> :
+                                    {tab.ping ?
+                                        <span
+                                            className="flex text-sm  text-primary gap-1 items-center ms-1 py-0.5 px-1.5 rounded-full text-xs font-medium bg-primary/10 text-gray-800 dark:bg-neutral-700 dark:text-neutral-300">
+                                            <BellIcon className="size-4"/>  à faire
+                            </span> :
+                                        <></>}
+                                </TabsTrigger>
+                            ))}
+                            <span className={"uppercase ml-2 mt-4 text-xs w-full text-left"}>démarches</span>
+                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (
+                                <TabsTrigger
+                                    key={tab.id}
+                                    value={tab.id}
+                                    className={cn("flex data-[state=active]:bg-white justify-between items-center w-96 px-3 py-2 text-sm",
+                                        tab.hide && 'line-through')}
+                                >
+                                    <div className={"flex items-center"}>
+                                        <span className={cn("text-left font-normal truncate mr-2",
+                                            tab.ping && 'text-primary font-bold')}>
+                                            {tab.label}
+                                        </span>
+                                    </div>
+                                    {tab.ping ? <span
+                                            className="flex text-sm  text-primary gap-1 items-center ms-1 py-0.5 px-1.5 rounded-full text-xs font-medium bg-primary/10 text-gray-800 dark:bg-neutral-700 dark:text-neutral-300">
+
+                                            <BellIcon className="size-4"/> à faire
+                            </span> :
                                         <></>}
                                 </TabsTrigger>
                             ))}
                         </TabsList>
                         <div className="flex-grow w-full p-4 h-full bg-white/50 rounded-r-lg overflow-y-auto">
-                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited).map((tab) => (
+                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (
                                 <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full ">
                                     {tabContents[tab.id]}
                                 </TabsContent>

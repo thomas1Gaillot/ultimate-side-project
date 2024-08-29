@@ -13,6 +13,8 @@ interface Documents {
     statutPmo: Document;
     reglementInterieur: Document;
     bulletin: Document;
+    declaration:Document;
+    setDeclaration: (document: Document) => void;
     accordsParticipation: Document;
     setAccordsParticipation: (document: Document) => void;
     setBulletinDocument: (document: Document) => void;
@@ -22,6 +24,13 @@ interface Documents {
 
 
 export const useStoredDocuments = create<Documents>((set) => ({
+    declaration: {
+        name: "Déclaration de mise en oeuvre",
+        status: "à éditer",
+        document: "",
+        actions: ["Éditer le fichier", "Visualiser"]
+    },
+    setDeclaration: (document: Document) => set(state => ({declaration: document})),
     statutPmo: {
         name: "Statut PMO",
         status: "à téléverser",
@@ -54,11 +63,12 @@ export const useStoredDocuments = create<Documents>((set) => ({
 
 
 function useDocuments() {
-    const {statutPmo, reglementInterieur, bulletin, accordsParticipation} = useStoredDocuments()
+    const {statutPmo, reglementInterieur, bulletin, declaration, accordsParticipation} = useStoredDocuments()
     const isPmoCreated = statutPmo.status === "check"
     const isBulletinEdited = bulletin.status === "check"
+    const isDeclarationSent = declaration.status === "check"
     const isAccordsParticipationEdited = accordsParticipation.status === "check"
-    return {statutPmo, isPmoCreated, reglementInterieur, bulletin, isBulletinEdited, isAccordsParticipationEdited}
+    return {statutPmo, isPmoCreated, reglementInterieur, bulletin, isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent}
 }
 
 export {useDocuments}

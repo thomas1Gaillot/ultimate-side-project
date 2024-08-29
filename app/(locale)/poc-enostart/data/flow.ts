@@ -28,14 +28,14 @@ const participantsTab = (participants: Participant[]) => {
         {id: "passages-en-exploitation", label: "Je gère mon opération auprès d'Enedis", ping: false},
     ]
 }
-const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited: boolean) => [
+const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited: boolean, isDeclarationSent : boolean) => [
     {
         id: "demarches",
         label: "Je crée ma PMO",
         hide: isBulletinEdited && isAccordsEdited,
         ping: !isBulletinEdited || !isAccordsEdited
     },
-    {id: "declaration", label: "Je déclare mon opération", ping: true},
+    {id: "declaration", label: "Je déclare mon opération", ping: !isDeclarationSent, hide : isDeclarationSent},
 ]
 
 const candidatures_flow = (p: Participant[]) => {
@@ -157,8 +157,7 @@ const signatures_flow = (p: Participant[]) => {
     }
 
 }
-
-const demarches_pmo_flow = (isPmoCreated: boolean, isBulletinEdited: boolean) => {
+const demarches_pmo_creation = (isPmoCreated: boolean) => {
 
     const steps: Step[] = [
         {
@@ -167,7 +166,14 @@ const demarches_pmo_flow = (isPmoCreated: boolean, isBulletinEdited: boolean) =>
             numberOfTaskDone: isPmoCreated ? 1 : 0,
             numberOfTask: 1,
             done: isPmoCreated,
-        },
+        }
+    ]
+    return steps;
+}
+
+const demarches_pmo_flow = (isPmoCreated: boolean, isBulletinEdited: boolean) => {
+
+    const steps: Step[] = [
         {
             label: "J'édite les bulletins d'adhésion",
             href: '/poc-enostart/my-demarches/pmo',
@@ -184,16 +190,8 @@ const demarches_pmo_accords = (isPmoCreated: boolean, isEdited: boolean) => {
 
     const steps: Step[] = [
         {
-            label: "Je crée mon association PMO",
-            href: '/poc-enostart/my-demarches/pmo',
-            numberOfTaskDone: isPmoCreated ? 1 : 0,
-            numberOfTask: 1,
-            done: isPmoCreated,
-
-        },
-        {
             label: "J'édite les accords de participation",
-            href: '/poc-enostart/my-demarches/accords',
+            href: '/poc-enostart/my-demarches/enedis/accords',
             disabled: !isPmoCreated,
             numberOfTaskDone: isEdited ? 1 : 0,
             numberOfTask: 1,
@@ -203,24 +201,24 @@ const demarches_pmo_accords = (isPmoCreated: boolean, isEdited: boolean) => {
     return steps;
 }
 
-const declaration_flow = () => {
+const declaration_flow = (isDeclarationSent:boolean) => {
 
     const steps: Step[] = [
         {
             label: "J'envoi la déclaration de mise en oeuvre",
-            href: '/poc-enostart/my-demarches/enedis',
+            href: '/poc-enostart/my-demarches/enedis/enedis',
             numberOfTaskDone: 0,
             numberOfTask: 1,
-            done: false,
+            done: isDeclarationSent,
             disabled: false
         },
         {
             label: "Je renseigne le numéro NOVA de mon opération",
-            href: '/poc-enostart/my-demarches/enedis',
+            href: '/poc-enostart/my-demarches/enedis/enedis',
             disabled: true,
             numberOfTaskDone: 0,
             numberOfTask: 1,
-            done: false,
+            done: true,
         }
     ]
     return steps;
@@ -232,6 +230,7 @@ export {
     sales_flow,
     signatures_flow,
     demarches_pmo_flow,
+    demarches_pmo_creation,
     demarches_pmo_accords,
     declaration_flow
 }

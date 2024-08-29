@@ -1,7 +1,7 @@
-import AccordsPlan from "@/app/(locale)/poc-enostart/my-demarches/accords/components/accords-plan";
+import AccordsPlan from "@/app/(locale)/poc-enostart/my-demarches/enedis/accords/components/accords-plan";
 import PmoCreationAccordionItem
     from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation-accordion-item";
-import AccordsParticipation from "@/app/(locale)/poc-enostart/my-demarches/accords/components/accords-participation";
+import AccordsParticipation from "@/app/(locale)/poc-enostart/my-demarches/enedis/accords/components/accords-participation";
 import {Accordion} from "@/components/ui/accordion";
 
 export default function AccordsPage() {
@@ -16,8 +16,6 @@ Elle est l'interlocuteur unique de l'opération avec le Gestionnaire de Réseau 
                 </p>
             </div>
             <Accordion type="single" collapsible className="w-full grid gap-4 max-w-4xl">
-                <AccordsPlan/>
-                <PmoCreationAccordionItem/>
                 <AccordsParticipation/>
             </Accordion>
         </div>
