@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="small ux updates">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="wording">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,15 +222,7 @@
       <workItem from="1724914680800" duration="14000" />
       <workItem from="1724922100654" duration="210000" />
       <workItem from="1724923008218" duration="10288000" />
-      <workItem from="1724943332433" duration="1032000" />
-    </task>
-    <task id="LOCAL-00147" summary="- fix build">
-      <option name="closed" value="true" />
-      <created>1723388612968</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1723388612968</updated>
+      <workItem from="1724943332433" duration="1047000" />
     </task>
     <task id="LOCAL-00148" summary="mostly linting">
       <option name="closed" value="true" />
@@ -615,7 +608,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724942088554</updated>
     </task>
-    <option name="localTasksCounter" value="196" />
+    <task id="LOCAL-00196" summary="wording">
+      <option name="closed" value="true" />
+      <created>1724944466566</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1724944466566</updated>
+    </task>
+    <option name="localTasksCounter" value="197" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,7 +635,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ui" />
     <MESSAGE value="fix timer lagging when browser lagging" />
     <MESSAGE value="show cards" />
     <MESSAGE value="poc enostart" />
@@ -659,6 +659,7 @@
     <MESSAGE value="little badge" />
     <MESSAGE value="little ui fix" />
     <MESSAGE value="small ux updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="small ux updates" />
+    <MESSAGE value="wording" />
+    <option name="LAST_COMMIT_MESSAGE" value="wording" />
   </component>
 </project>
