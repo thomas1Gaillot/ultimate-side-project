@@ -197,7 +197,7 @@ export default function Overview() {
                                     tab.hide && 'line-through')}
                                 >
                                     <div className={"flex items-center"}>
-                                        <span className={cn("text-left truncate mr-2", tab.ping && 'text-primary')}>
+                                        <span className={cn("text-left font-normal truncate mr-2", tab.ping && 'text-primary')}>
                                             {tab.label}
                                         </span>
                                     </div>
@@ -216,7 +216,7 @@ export default function Overview() {
                                 >
                                     <div className={"flex items-center "}>
                                         <Timeline index={index} length={participantsTab.length}/>
-                                        <span className={cn("text-left truncate ml-2", tab.ping && 'text-primary')}>
+                                        <span className={cn("text-left font-normal truncate ml-2", tab.ping && 'text-primary')}>
                                             {tab.label}</span>
                                     </div>
                                     {tab.ping ? <div className={"flex text-sm  text-primary gap-1 items-center"}>

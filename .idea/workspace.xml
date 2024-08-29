@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="accords participation check">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ux">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,15 +221,7 @@
       <workItem from="1724766986528" duration="37793000" />
       <workItem from="1724914680800" duration="14000" />
       <workItem from="1724922100654" duration="210000" />
-      <workItem from="1724923008218" duration="2493000" />
-    </task>
-    <task id="LOCAL-00142" summary="show number of pomodoro as badge">
-      <option name="closed" value="true" />
-      <created>1723379975659</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1723379975659</updated>
+      <workItem from="1724923008218" duration="3047000" />
     </task>
     <task id="LOCAL-00143" summary="show number of pomodoro as badge">
       <option name="closed" value="true" />
@@ -616,7 +607,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724925069025</updated>
     </task>
-    <option name="localTasksCounter" value="191" />
+    <task id="LOCAL-00191" summary="ux">
+      <option name="closed" value="true" />
+      <created>1724925798670</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1724925798670</updated>
+    </task>
+    <option name="localTasksCounter" value="192" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -641,7 +640,6 @@
     <MESSAGE value="ui" />
     <MESSAGE value="fix timer lagging when browser lagging" />
     <MESSAGE value="show cards" />
-    <MESSAGE value="ux" />
     <MESSAGE value="poc enostart" />
     <MESSAGE value="add tabs" />
     <MESSAGE value="add timeline" />
@@ -660,6 +658,7 @@
     <MESSAGE value="show more steps" />
     <MESSAGE value="accordion everywhere" />
     <MESSAGE value="accords participation check" />
-    <option name="LAST_COMMIT_MESSAGE" value="accords participation check" />
+    <MESSAGE value="ux" />
+    <option name="LAST_COMMIT_MESSAGE" value="ux" />
   </component>
 </project>
