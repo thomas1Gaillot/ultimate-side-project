@@ -1,26 +1,22 @@
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion"
 import {Card, CardContent} from "@/components/ui/card"
 import {Button} from "@/components/ui/button"
+import {CheckIcon} from "lucide-react";
 
 export default function AccordsPlan() {
+    const hasPrestation = true
     return (
-        <div className="max-w-4xl space-y-4">
-            <div>
-                <h3 className="font-semibold text-gray-700">{"Qu'est ce que les accords de participation et pourquoi en ai-je besoin ?"}</h3>
-                <p className="text-xs text-gray-500">
-                    {`"Producteur(s) et consommateur(s) sont liés entre eux au sein d’une personne morale" (Article L 315-2 – code de l’énergie)
-La Personne Morale Organisatrice (PMO) doit rassembler tous les participants d'une opération d'autoconsommation collective.
-Elle est l'interlocuteur unique de l'opération avec le Gestionnaire de Réseau de Distribution (GRD)`}
-                </p>
-            </div>
-
-            <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="prestation">
-                    <AccordionTrigger className="text-lg font-semibold">Prestation</AccordionTrigger>
-                    <AccordionContent>
-                        <div className="space-y-4 p-8">
-                            <div>
-                                <h3 className="font-semibold text-gray-700">Pourquoi faire ses démarches sur Mon énergie collective ?</h3>
+        <AccordionItem value="accords-plan">
+                    <AccordionTrigger className="text-lg font-semibold">
+                        <div className={"flex"}>
+                            {"Prestation"}
+                            {hasPrestation && <CheckIcon className="h-6 w-6 text-green-500 ml-2"/>}
+                        </div>
+                        </AccordionTrigger>
+            <AccordionContent>
+                <div className="space-y-4 p-8">
+                    <div>
+                        <h3 className="font-semibold text-gray-700">Pourquoi faire ses démarches sur Mon énergie collective ?</h3>
                                 <ul className="text-xs text-gray-500 list-disc list-inside">
                                     <li>Selon la prestation choisie, vous pourrez :</li>
                                     <li>{"Créer vos statuts PMO associative, votre réglement intérieur et de préparer votre PV de création d'AG"}
@@ -53,7 +49,5 @@ Elle est l'interlocuteur unique de l'opération avec le Gestionnaire de Réseau 
                         </div>
                     </AccordionContent>
                 </AccordionItem>
-            </Accordion>
-        </div>
     )
 }

@@ -1,12 +1,12 @@
 'use client'
 import {Button} from "@/components/ui/button"
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table"
-import {Check, Edit, Eye, UploadIcon} from "lucide-react"
+import {Check, CheckIcon, Edit, Eye, UploadIcon} from "lucide-react"
 import {useDocuments, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 
 export default function AccordsParticipation() {
-    const { isPmoCreated} = useDocuments()
+    const { isPmoCreated, isAccordsParticipationEdited} = useDocuments()
     const {setAccordsParticipation, accordsParticipation} = useStoredDocuments()
     function actionFor(action: string) {
         if (action === "Éditer le fichier" ) {
@@ -20,14 +20,18 @@ export default function AccordsParticipation() {
     }
 
     return (
-        <Accordion type="single" collapsible className="w-full grid gap-4 max-w-4xl">
-            <AccordionItem value="prestation">
+            <AccordionItem value="acords-participation">
                 <AccordionTrigger
-                    className="text-lg font-semibold">{"2. J'édite les accords de participation"}</AccordionTrigger>
+                    className="text-lg font-semibold">
+                    <div className={"flex"}>
+                        {"2. J'édite les accords de participation"}
+                        {isAccordsParticipationEdited && <CheckIcon className="h-6 w-6 text-green-500 ml-2"/>}
+                    </div>
+                    </AccordionTrigger>
                 <AccordionContent className={"p-8 gap-4 grid"}>
                     {isPmoCreated ? <Table>
                             <TableHeader>
-                                <TableRow className="bg-gray-100">
+                            <TableRow className="bg-gray-100">
                                     <TableHead className="w-1/4">NOM</TableHead>
                                     <TableHead className="w-1/4">STATUT</TableHead>
                                     <TableHead className="w-1/4">DOCUMENT</TableHead>
@@ -75,6 +79,5 @@ export default function AccordsParticipation() {
             </span> }
                 </AccordionContent>
             </AccordionItem>
-        </Accordion>
     )
 }
