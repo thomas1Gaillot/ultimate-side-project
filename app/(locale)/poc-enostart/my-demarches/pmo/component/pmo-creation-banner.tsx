@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { FileText, Users, Building } from "lucide-react"
+import {FileText, Users, Building, DownloadIcon} from "lucide-react"
 
 export default function PmoCreationBanner() {
     return (
@@ -31,7 +31,7 @@ export default function PmoCreationBanner() {
                 </div>
                 <div className="flex flex-col items-center text-center">
                     <div className="mb-4 p-2 bg-primary/10 rounded-full">
-                        <Building className="h-8 w-8 text-primary"/>
+                        <DownloadIcon className="h-8 w-8 text-primary"/>
                     </div>
                     <h3 className="text-lg font-semibold mb-2">Étape 4</h3>
                     <p className="text-sm text-muted-foreground">{"Téléverser les statut PMO sur Mon énergie collective"}</p>
