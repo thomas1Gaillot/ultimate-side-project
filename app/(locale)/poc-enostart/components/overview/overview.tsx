@@ -15,6 +15,7 @@ import {
 } from "@/app/(locale)/poc-enostart/data/flow";
 import {Participant, useStoredParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 import {useDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
+import {cn} from "@/lib/utils";
 
 export default function Overview() {
 
@@ -192,17 +193,20 @@ export default function Overview() {
                                 <TabsTrigger
                                     key={tab.id}
                                     value={tab.id}
-                                    className="flex data-[state=active]:bg-white justify-between items-center w-80 px-3 py-2 text-sm"
+                                    className={cn("flex data-[state=active]:bg-white justify-between items-center w-80 px-3 py-2 text-sm",
+                                    tab.hide && 'line-through')}
                                 >
                                     <div className={"flex items-center"}>
-                                        <span className="text-left truncate mr-2">{tab.label}</span>
+                                        <span className={cn("text-left truncate mr-2", tab.ping && 'text-primary')}>
+                                            {tab.label}
+                                        </span>
                                     </div>
                                     {tab.ping ? <BellIcon className="size-4  text-primary"/> :
                                         <></>}
                                 </TabsTrigger>
                             ))}
                             <span
-                                className={"uppercase text-xs w-full text-left ml-2 mt-4"}>démarches Participants</span>
+                                className={"uppercase text-xs w-full text-left ml-2 mt-4"}>démarches par Participants</span>
 
                             {participantsTab(participants).map((tab, index) => (
                                 <TabsTrigger
@@ -212,7 +216,8 @@ export default function Overview() {
                                 >
                                     <div className={"flex items-center "}>
                                         <Timeline index={index} length={participantsTab.length}/>
-                                        <span className="text-left truncate mx-2">{tab.label}</span>
+                                        <span className={cn("text-left truncate ml-2", tab.ping && 'text-primary')}>
+                                            {tab.label}</span>
                                     </div>
                                     {tab.ping ? <div className={"flex text-sm  text-primary gap-1 items-center"}>
                                             {tab.number || ''} <BellIcon className="size-4"/>

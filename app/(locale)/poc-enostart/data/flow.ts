@@ -28,8 +28,13 @@ const participantsTab = (participants: Participant[]) => {
         {id: "passages-en-exploitation", label: "Je gère mon opération auprès d'Enedis", ping: false},
     ]
 }
-const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited : boolean) =>  [
-    {id: "demarches", label: "Je crée ma PMO", ping: !isBulletinEdited || !isAccordsEdited},
+const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited: boolean) => [
+    {
+        id: "demarches",
+        label: "Je crée ma PMO",
+        hide: isBulletinEdited && isAccordsEdited,
+        ping: !isBulletinEdited || !isAccordsEdited
+    },
     {id: "declaration", label: "Je déclare mon opération", ping: true},
 ]
 
@@ -39,20 +44,20 @@ const candidatures_flow = (p: Participant[]) => {
     const numberOfPreIntegres = preIntegres.length
     const numberOfPreIntegresWithDataLoaded = preIntegres.filter(p => p.exportDate !== null).length
     const steps: Step[] = [
-        {label: 'Je vérifie le périmètre', href: '/poc-enostart/my-perimeter', disabled : numberOfCandidatures === 0},
+        {label: 'Je vérifie le périmètre', href: '/poc-enostart/my-perimeter', disabled: numberOfCandidatures === 0},
         {
             label: "J'accepte les consommateurs",
             href: '/poc-enostart/my-participants/candidatures',
-            numberOfTask : numberOfCandidatures,
-            numberOfTaskDone : 0,
-            disabled : numberOfCandidatures === 0
+            numberOfTask: numberOfCandidatures,
+            numberOfTaskDone: 0,
+            disabled: numberOfCandidatures === 0
         },
         {
             label: "J'exporte les données pour étude (optionnel)",
             href: '/poc-enostart/my-participants/pre-integres',
             numberOfTaskDone: numberOfPreIntegresWithDataLoaded,
             numberOfTask: numberOfPreIntegres,
-            disabled : numberOfPreIntegres === 0
+            disabled: numberOfPreIntegres === 0
         },
     ]
     return {
@@ -78,21 +83,21 @@ const sales_flow = (p: Participant[]) => {
             href: '/poc-enostart/my-demarches/vente/proposal',
             numberOfTaskDone: numberOfPreIntegresWithPriceProposed,
             numberOfTask: total,
-            disabled : numberOfPreIntegresProposerUnPrix === 0
+            disabled: numberOfPreIntegresProposerUnPrix === 0
         },
         {
             label: "Chaque consommateur accepte son prix de vente",
             href: '/poc-enostart/my-participants/pre-integres',
             numberOfTaskDone: numberOfPreIntegresWithPriceAccepted,
             numberOfTask: numberOfPreIntegresWithPriceProposed + numberOfPreIntegresWithPriceAccepted,
-            disabled : (numberOfPreIntegresWithPriceProposed + numberOfPreIntegresWithPriceAccepted )=== 0
+            disabled: (numberOfPreIntegresWithPriceProposed + numberOfPreIntegresWithPriceAccepted) === 0
         },
         {
             label: "J'édite le contrat de vente pour chaque consommateur",
             href: '/poc-enostart/my-demarches/vente/contract-edition',
             numberOfTaskDone: numberOfEditedContract,
             numberOfTask: numberOfEditedContract + numberOfPreIntegresWithPriceAccepted,
-            disabled : (numberOfEditedContract + numberOfPreIntegresWithPriceAccepted) === 0
+            disabled: (numberOfEditedContract + numberOfPreIntegresWithPriceAccepted) === 0
         },
     ]
     return {
@@ -103,9 +108,9 @@ const sales_flow = (p: Participant[]) => {
 const signatures_flow = (p: Participant[]) => {
     const {preIntegres} = parse(p)
     const pmoStatusTerminated = preIntegres[0] && (preIntegres[0].pmo === PmoStatus.BulletinSigne
-    || preIntegres[0].pmo === PmoStatus.Ignore) ? 1 : 0
+        || preIntegres[0].pmo === PmoStatus.Ignore) ? 1 : 0
     const enedisStatusTerminated = preIntegres[0] && (preIntegres[0].enedis === EnedisStatus.Ignore
-    || preIntegres[0].enedis === EnedisStatus.AccordSigne) ? 1 : 0
+        || preIntegres[0].enedis === EnedisStatus.AccordSigne) ? 1 : 0
 
     const numberOfPreIntegresProposerUnPrix = preIntegres
         .filter(p => p.sales === SalesStatus.ProposerUnPrix).length
@@ -153,7 +158,7 @@ const signatures_flow = (p: Participant[]) => {
 
 }
 
-const demarches_pmo_flow = (isPmoCreated : boolean, isBulletinEdited : boolean) => {
+const demarches_pmo_flow = (isPmoCreated: boolean, isBulletinEdited: boolean) => {
 
     const steps: Step[] = [
         {
@@ -169,13 +174,13 @@ const demarches_pmo_flow = (isPmoCreated : boolean, isBulletinEdited : boolean) 
             disabled: !isPmoCreated,
             numberOfTaskDone: isBulletinEdited ? 1 : 0,
             numberOfTask: 1,
-            done : isPmoCreated && isBulletinEdited
+            done: isPmoCreated && isBulletinEdited
         }
     ]
     return steps;
 }
 
-const demarches_pmo_accords = (isPmoCreated : boolean, isEdited : boolean) => {
+const demarches_pmo_accords = (isPmoCreated: boolean, isEdited: boolean) => {
 
     const steps: Step[] = [
         {
@@ -192,7 +197,7 @@ const demarches_pmo_accords = (isPmoCreated : boolean, isEdited : boolean) => {
             disabled: !isPmoCreated,
             numberOfTaskDone: isEdited ? 1 : 0,
             numberOfTask: 1,
-            done : isPmoCreated && isEdited
+            done: isPmoCreated && isEdited
         }
     ]
     return steps;
@@ -204,18 +209,18 @@ const declaration_flow = () => {
         {
             label: "J'envoi la déclaration de mise en oeuvre",
             href: '/poc-enostart/my-demarches/enedis',
-            numberOfTaskDone : 0,
-            numberOfTask : 1,
-            done : false,
+            numberOfTaskDone: 0,
+            numberOfTask: 1,
+            done: false,
             disabled: false
         },
         {
             label: "Je renseigne le numéro NOVA de mon opération",
             href: '/poc-enostart/my-demarches/enedis',
             disabled: true,
-            numberOfTaskDone : 0,
-            numberOfTask : 1,
-            done : false,
+            numberOfTaskDone: 0,
+            numberOfTask: 1,
+            done: false,
         }
     ]
     return steps;
