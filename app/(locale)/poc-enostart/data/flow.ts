@@ -76,7 +76,8 @@ const sales_flow = (p: Participant[]) => {
             label: 'Je propose un prix de vente pour chaque consommateur',
             href: '/poc-enostart/my-demarches/vente/proposal',
             numberOfTaskDone: numberOfPreIntegresWithPriceProposed,
-            numberOfTask: total
+            numberOfTask: total,
+            disabled : numberOfPreIntegresProposerUnPrix === 0
         },
         {
             label: "Chaque consommateur accepte son prix de vente",
@@ -157,12 +158,16 @@ const demarches_pmo_flow = (isPmoCreated : boolean, isBulletinEdited : boolean) 
         {
             label: "Je crée mon association PMO",
             href: '/poc-enostart/my-demarches/pmo',
+            numberOfTaskDone: isPmoCreated ? 1 : 0,
+            numberOfTask: 1,
             done: isPmoCreated
         },
         {
             label: "J'édite les bulletins d'adhésion",
             href: '/poc-enostart/my-demarches/pmo',
             disabled: !isPmoCreated,
+            numberOfTaskDone: isBulletinEdited ? 1 : 0,
+            numberOfTask: 1,
             done : isPmoCreated && isBulletinEdited
         }
     ]
@@ -194,12 +199,18 @@ const declaration_flow = () => {
         {
             label: "J'envoi la déclaration de mise en oeuvre",
             href: '/poc-enostart/my-demarches/enedis',
+            numberOfTaskDone : 0,
+            numberOfTask : 1,
+            done : false,
             disabled: false
         },
         {
             label: "Je renseigne le numéro NOVA de mon opération",
             href: '/poc-enostart/my-demarches/enedis',
-            disabled: true
+            disabled: true,
+            numberOfTaskDone : 0,
+            numberOfTask : 1,
+            done : false,
         }
     ]
     return steps;
