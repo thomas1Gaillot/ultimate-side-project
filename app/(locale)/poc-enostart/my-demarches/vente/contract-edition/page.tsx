@@ -1,5 +1,3 @@
-export default function ContractEditionPage(){
-    return <>
-        ContractEditionPage
-    </>
+export default function ContractEditionPage() {
+    return <>Contract</>
 }

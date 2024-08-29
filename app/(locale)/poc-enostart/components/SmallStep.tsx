@@ -42,9 +42,8 @@ const SmallStep = ({
                 pathName === link && !disabled ? "bg-primary/10 text-primary" : "")}
         >
             <div
-                className={cn("mr-2 text-xs size-6 min-w-6 rounded-full flex justify-center items-center border text-gray-700",
-                    index === undefined && 'opacity-0')}>
-                {isDone ? <CheckIcon className={"size-4"}/> : (index || 0) + 1}
+                className={cn("mr-2 text-xs size-6 min-w-6 rounded-full flex justify-center items-center border text-gray-700")}>
+                {isDone ? <CheckIcon className={"size-4"}/> :index ?  ((index || 0) + 1) : ''}
             </div>
 
 

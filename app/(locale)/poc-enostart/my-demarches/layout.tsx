@@ -12,16 +12,14 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
     const pathname = usePathname();
     const router = useRouter();
     const {isPmoCreated, isBulletinEdited, isAccordsParticipationEdited} = useDocuments()
+    const enedisHref = pathname?.includes('/poc-enostart/my-demarches/enedis') ? pathname : '/poc-enostart/my-demarches/enedis';
+    const pmoHref = pathname?.includes('/poc-enostart/my-demarches/pmo') ? pathname : '/poc-enostart/my-demarches/pmo';
+    const venteHref = pathname?.includes('/poc-enostart/my-demarches/vente') ? pathname : '/poc-enostart/my-demarches/vente';
     const tabData = [
-        {id: "enedis", label: "Démarches Enedis", href: "/poc-enostart/my-demarches/enedis"},
-        {id: "pmo", label: "Démarches PMO", href: "/poc-enostart/my-demarches/pmo", done : isPmoCreated && isBulletinEdited},
-        {id: "vente", label: "Démarches de Vente", href: "/poc-enostart/my-demarches/vente/proposal"},
+        {id: "enedis", label: "Démarches Enedis", href: enedisHref},
+        {id: "pmo", label: "Démarches PMO", href: pmoHref, done : isPmoCreated && isBulletinEdited},
+        {id: "vente", label: "Démarches de Vente", href: venteHref},
     ];
-    const enedisTabs = [
-        {id: "accords", label: "Accords de participation", href: "/poc-enostart/my-demarches/enedis/accords",  done : isPmoCreated && isAccordsParticipationEdited},
-        {id: "enedis", label: "Déclaration de mise en oeuvre", href: "/poc-enostart/my-demarches/enedis/enedis"},
-        {id: "convention", label: "Convention ACC", href: "/poc-enostart/my-demarches/enedis/convention"},
-    ]
     return (
         <div className="flex w-full gap-8">
             <Tabs value={pathname || ''} className="w-full flex">

@@ -43,7 +43,7 @@ export default function Overview() {
                     <ul className="space-y-1 text-sm">
                         {demarchesPmoCreation.map((step, index) => (
                             <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
-                                       done={step.done} index={index} numberOfTaskDone={step.numberOfTaskDone}
+                                       done={step.done} numberOfTaskDone={step.numberOfTaskDone}
                                        numberOfTask={step.numberOfTask}/>
                         ))}
                     </ul>
@@ -57,7 +57,7 @@ export default function Overview() {
                         <ul className="space-y-1 text-sm">
                             {demarchesPmo.map((step, index) => (
                                 <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
-                                           done={step.done} index={index} numberOfTaskDone={step.numberOfTaskDone}
+                                           done={step.done} numberOfTaskDone={step.numberOfTaskDone}
                                            numberOfTask={step.numberOfTask}/>
                             ))}
                         </ul>
@@ -69,7 +69,7 @@ export default function Overview() {
                         <ul className="space-y-1 text-sm">
                             {demarchesAccords.map((step, index) => (
                                 <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
-                                           done={step.done} index={index} numberOfTaskDone={step.numberOfTaskDone}
+                                           done={step.done} numberOfTaskDone={step.numberOfTaskDone}
                                            numberOfTask={step.numberOfTask}/>
                             ))}
                         </ul>
