@@ -38,7 +38,7 @@ export default function Overview() {
 {"Pour lancer votre opération, vous devez créer une association PMO. Ensuite, editez les bulletins d'adhésion et les accords de participation pour vos participants."}                </span>
                 <div>
                     <div className={"flex items-center gap-4 mt-4"}>
-                        <h3 className="font-semibold text-sm ">1. J'identifie ma PMO</h3>
+                        <h3 className="font-semibold text-sm ">{"1. J'identifie ma PMO"}</h3>
                     </div>
                     <ul className="space-y-1 text-sm">
                         {demarchesPmoCreation.map((step, index) => (
