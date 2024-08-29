@@ -180,7 +180,7 @@ export default function Overview() {
             <AccordionTrigger>
                 <div className={"w-max flex"}>
                     <FootprintsIcon className={"size-4 mr-4"}/>
-                    {'Ma checklist de lancement d\'opération'}
+                    {'Ma checklist'}
                 </div>
             </AccordionTrigger>
             <AccordionContent>
