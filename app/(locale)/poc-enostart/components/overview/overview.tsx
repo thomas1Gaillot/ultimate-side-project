@@ -215,7 +215,7 @@ export default function Overview() {
                                     className="flex data-[state=active]:bg-white py-0 justify-between items-center w-80 px-3 text-sm"
                                 >
                                     <div className={"flex items-center "}>
-                                        <Timeline index={index} length={participantsTab.length}/>
+                                        <Timeline index={index} length={participantsTab(participants).length}/>
                                         <span className={cn("text-left font-normal truncate ml-2", tab.ping && 'text-primary')}>
                                             {tab.label}</span>
                                     </div>
