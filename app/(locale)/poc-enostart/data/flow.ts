@@ -31,7 +31,7 @@ const participantsTab = (participants: Participant[]) => {
 const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited: boolean, isDeclarationSent : boolean) => [
     {
         id: "demarches",
-        label: "Je crée ma PMO",
+        label: "J'identifie mon association PMO",
         hide: isBulletinEdited && isAccordsEdited,
         ping: !isBulletinEdited || !isAccordsEdited
     },
