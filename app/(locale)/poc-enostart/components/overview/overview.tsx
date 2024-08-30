@@ -11,7 +11,7 @@ import {
     demarches_pmo_creation,
     demarches_pmo_flow,
     demarchesTabs,
-    participantsTab,
+    participantsTab, sales_contract_flow,
     sales_flow,
     signatures_flow
 } from "@/app/(locale)/poc-enostart/data/flow";
@@ -23,7 +23,7 @@ export default function Overview() {
 
     const [activeTab, setActiveTab] = useState("nouvelles-candidatures")
     const {participants} = useStoredParticipants()
-    const {isPmoCreated, isDeclarationSent, isBulletinEdited, isAccordsParticipationEdited} = useDocuments()
+    const {isPmoCreated, isDeclarationSent, isBulletinEdited, isContractEdited, isAccordsParticipationEdited} = useDocuments()
     const candidatures = candidatures_flow(participants)
     const sales = sales_flow(participants)
     const signatures = signatures_flow(participants)
@@ -31,6 +31,7 @@ export default function Overview() {
     const demarchesPmoCreation = demarches_pmo_creation(isPmoCreated)
     const demarchesAccords = demarches_pmo_accords(isPmoCreated, isAccordsParticipationEdited)
     const declaration = declaration_flow(isDeclarationSent)
+    const salesContract = sales_contract_flow(isContractEdited)
     const tabContents: any = {
         "demarches": (
             <>
@@ -89,6 +90,23 @@ export default function Overview() {
                         </div>
                         <ul className="space-y-1 text-sm">
                             {declaration.map((step, index) => (
+                                <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
+                                           done={step.done} index={index}/>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </>
+        ),
+        "sales-contract": (
+            <>
+                <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-3"}>
+                    <div>
+                        <div className={"flex items-center gap-4 mb-2"}>
+                            <h3 className="font-semibold text-sm ">Contrats de vente</h3>
+                        </div>
+                        <ul className="space-y-1 text-sm">
+                            {salesContract.map((step, index) => (
                                 <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
                                            done={step.done} index={index}/>
                             ))}

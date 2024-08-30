@@ -13,7 +13,7 @@ interface Documents {
     statutPmo: Document;
     reglementInterieur: Document;
     bulletin: Document;
-    declaration:Document;
+    declaration: Document;
     setDeclaration: (document: Document) => void;
     accordsParticipation: Document;
     setAccordsParticipation: (document: Document) => void;
@@ -68,7 +68,17 @@ function useDocuments() {
     const isBulletinEdited = bulletin.status === "check"
     const isDeclarationSent = declaration.status === "check"
     const isAccordsParticipationEdited = accordsParticipation.status === "check"
-    return {statutPmo, isPmoCreated, reglementInterieur, bulletin, isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent}
+    const isContractEdited = false // TODO
+    return {
+        statutPmo,
+        isPmoCreated,
+        reglementInterieur,
+        bulletin,
+        isBulletinEdited,
+        isAccordsParticipationEdited,
+        isDeclarationSent,
+        isContractEdited
+    }
 }
 
 export {useDocuments}

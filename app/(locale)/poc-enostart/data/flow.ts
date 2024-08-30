@@ -36,7 +36,7 @@ const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited: boolean, isDe
         ping: !isBulletinEdited || !isAccordsEdited
     },
     {id: "declaration", label: "Je déclare mon opération", ping: !isDeclarationSent, hide : isDeclarationSent},
-    {id: "vente", label: "Je créé mes contrats de vente", ping: true, hide : false},
+    {id: "sales-contract", label: "Je crée mes contrats de vente", ping: true, hide : false},
 ]
 
 const candidatures_flow = (p: Participant[]) => {
@@ -81,7 +81,7 @@ const sales_flow = (p: Participant[]) => {
     const steps: Step[] = [
         {
             label: 'Je propose un prix de vente pour chaque consommateur',
-            href: '/poc-enostart/my-demarches/vente/proposal',
+            href: '/poc-enostart/my-demarches/vente',
             numberOfTaskDone: numberOfPreIntegresWithPriceProposed,
             numberOfTask: total,
             disabled: numberOfPreIntegresProposerUnPrix === 0
@@ -94,8 +94,8 @@ const sales_flow = (p: Participant[]) => {
             disabled: (numberOfPreIntegresWithPriceProposed + numberOfPreIntegresWithPriceAccepted) === 0
         },
         {
-            label: "J'édite le contrat de vente pour chaque consommateur",
-            href: '/poc-enostart/my-demarches/vente/contract-edition',
+            label: "J'associe un contrat de vente à chaque consommateur",
+            href: '/poc-enostart/my-demarches/vente',
             numberOfTaskDone: numberOfEditedContract,
             numberOfTask: numberOfEditedContract + numberOfPreIntegresWithPriceAccepted,
             disabled: (numberOfEditedContract + numberOfPreIntegresWithPriceAccepted) === 0
@@ -135,7 +135,7 @@ const signatures_flow = (p: Participant[]) => {
         },
         {
             label: "prérequis :  Les contrats de ventes sont edités",
-            href: '/poc-enostart/my-demarches/vente/contract-edition',
+            href: '/poc-enostart/my-demarches/vente',
             numberOfTaskDone: numberOfEditedContract,
             numberOfTask: total
         },
@@ -202,7 +202,19 @@ const demarches_pmo_accords = (isPmoCreated: boolean, isEdited: boolean) => {
     ]
     return steps;
 }
+const sales_contract_flow = (isContractEdited: boolean) => {
+        const steps: Step[] = [
+            {
+                label: "Je crée mes contrats de vente",
+                href: '/poc-enostart/my-demarches/vente',
+                numberOfTaskDone: isContractEdited ? 1 : 0,
+                numberOfTask: 1,
+                done: isContractEdited
+            }
+        ]
+        return steps;
 
+}
 const declaration_flow = (isDeclarationSent:boolean) => {
 
     const steps: Step[] = [
@@ -234,5 +246,6 @@ export {
     demarches_pmo_flow,
     demarches_pmo_creation,
     demarches_pmo_accords,
-    declaration_flow
+    declaration_flow,
+    sales_contract_flow
 }
