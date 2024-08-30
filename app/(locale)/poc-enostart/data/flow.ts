@@ -13,9 +13,11 @@ export type Step = {
 }
 
 const participantsTab = (participants: Participant[]) => {
-    const {candidatures} = parse(participants)
+    const {candidatures, preIntegres} = parse(participants)
     const hasSalesThingsToDo = participants.some(p => p.status === 'pre-integre' &&
-        (p.sales === SalesStatus.ProposerUnPrix  || p.sales === SalesStatus.AssocierLeContrat || p.sales === SalesStatus.EnvoyerLeContrat))
+        (p.sales === SalesStatus.ProposerUnPrix  || p.sales === SalesStatus.AssocierLeContrat))
+
+    const canSignDocuments = preIntegres.some(p => p.sales === SalesStatus.EnvoyerLeContrat && p.pmo === PmoStatus.EnvoyerLeBulletin && p.enedis === EnedisStatus.EnvoyerLAccord)
     return [
         {
             id: "nouvelles-candidatures",
@@ -24,7 +26,7 @@ const participantsTab = (participants: Participant[]) => {
             number: candidatures.length
         },
         {id: "pre-integrations", label: "Je propose mes conditions de vente ", ping: hasSalesThingsToDo},
-        {id: "documents", label: "Je fais signer mes documents", ping: false},
+        {id: "documents", label: "Je fais signer mes documents", ping: canSignDocuments},
         {id: "passages-en-exploitation", label: "Je gère mon opération auprès d'Enedis", ping: false},
     ]
 }
@@ -108,10 +110,10 @@ const sales_flow = (p: Participant[]) => {
 
 const signatures_flow = (p: Participant[]) => {
     const {preIntegres} = parse(p)
-    const pmoStatusTerminated = preIntegres[0] && (preIntegres[0].pmo === PmoStatus.BulletinSigne
-        || preIntegres[0].pmo === PmoStatus.Ignore) ? 1 : 0
-    const enedisStatusTerminated = preIntegres[0] && (preIntegres[0].enedis === EnedisStatus.Ignore
-        || preIntegres[0].enedis === EnedisStatus.AccordSigne) ? 1 : 0
+    const pmoStatusTerminated = preIntegres[0] && (preIntegres[0].pmo !== PmoStatus.IdentifierLaPmo
+        && preIntegres[0].pmo !== PmoStatus.EditerLeBulletin) ? 1 : 0
+    const enedisStatusTerminated = preIntegres[0] && (preIntegres[0].enedis !== EnedisStatus.IdentifierLaPmo
+        && preIntegres[0].enedis !== EnedisStatus.EditerLAccord) ? 1 : 0
 
     const numberOfPreIntegresProposerUnPrix = preIntegres
         .filter(p => p.sales === SalesStatus.ProposerUnPrix).length
@@ -124,7 +126,7 @@ const signatures_flow = (p: Participant[]) => {
     const numberOfWaitingSignature = preIntegres
         .filter(p => p.sales === SalesStatus.ContratEnvoye || p.pmo === PmoStatus.BulletinEnvoye || p.enedis === EnedisStatus.AccordEnvoye).length
     const total = numberOfPreIntegresProposerUnPrix + numberOfPreIntegresWithPriceProposed + numberOfPreIntegresWithPriceAccepted + numberOfWaitingSignature
-    const enableStep = pmoStatusTerminated + enedisStatusTerminated === 2 && numberOfEditedContract === total
+    const canSignDocuments = preIntegres.some(p => p.sales === SalesStatus.EnvoyerLeContrat && p.pmo === PmoStatus.EnvoyerLeBulletin && p.enedis === EnedisStatus.EnvoyerLAccord)
     const steps: Step[] = [
         {
             label: "prérequis : Les démarches de mon projet sont terminées",
@@ -144,14 +146,14 @@ const signatures_flow = (p: Participant[]) => {
             href: '/poc-enostart/my-participants/pre-integres',
             numberOfTaskDone: 0,
             numberOfTask: total,
-            disabled: !enableStep
+            disabled: !canSignDocuments
         },
         {
             label: "Je reçois les documents signés",
             href: '/poc-enostart/my-participants/exploitation',
             numberOfTaskDone: numberOfWaitingSignature,
             numberOfTask: total,
-            disabled: !enableStep
+            disabled: true
         },
     ]
     return {

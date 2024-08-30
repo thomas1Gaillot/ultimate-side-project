@@ -7,6 +7,17 @@ import {BellIcon, Settings2Icon, TrashIcon} from "lucide-react";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import {Button} from "@/components/ui/button";
 import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription, DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger
+} from "@/components/ui/dialog";
+import {Label} from "recharts";
+import { Input } from "@/components/ui/input";
+import {MyContracts} from "@/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion";
 
 export default function SendPriceAccordion() {
     const {preIntegres, reject, proposePrice} = useParticipants()
@@ -33,12 +44,30 @@ export default function SendPriceAccordion() {
                                 <TableRow key={p.id}>
                                     <TableCell>{p.name}</TableCell>
                                     <TableCell>
-                                        <Button
-                                            onClick={() => proposePrice(p.id)}
-                                            size={'sm'} className={'text-xs text-gray-700'} variant={'link'}>
-                                            Proposer un prix
-                                            <Settings2Icon
-                                                className={'size-4 ml-2'}/> </Button>
+                                        <Dialog>
+                                            <DialogTrigger asChild>
+                                                <Button
+                                                    size={'sm'} className={'text-xs text-gray-700'} variant={'link'}>
+                                                    Proposer un prix
+                                                    <Settings2Icon
+                                                        className={'size-4 ml-2'}/> </Button>
+                                            </DialogTrigger>
+                                            <DialogContent className="sm:max-w-xl">
+                                                <DialogHeader>
+                                                    <DialogTitle>{"Proposer un prix de vente"}</DialogTitle>
+                                                    <DialogDescription>
+                                                        {"Make changes to your profile here. Click save when you're done."}
+                                                    </DialogDescription>
+                                                </DialogHeader>
+                                                <MyContracts/>
+                                                <DialogFooter>
+                                                    <Button
+                                                        onClick={() => proposePrice(p.id)}
+                                                        type="submit">Envoyer cette proposition au consommateur </Button>
+                                                </DialogFooter>
+                                            </DialogContent>
+                                        </Dialog>
+
                                         <TooltipProvider>
                                             <Tooltip>
                                                 <TooltipTrigger>

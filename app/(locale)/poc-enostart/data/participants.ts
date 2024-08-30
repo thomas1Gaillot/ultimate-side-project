@@ -2,6 +2,8 @@ import {EnedisStatus} from "./enedis-status"
 import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
 import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
 import {create} from "zustand";
+import {useDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
+import {useEffect} from "react";
 
 export type Participant = {
     id: number,
@@ -80,7 +82,35 @@ const parse = (participants: Participant[]) => {
 
 const useParticipants = () => {
     const {participants} = useStoredParticipants()
+    const { isDeclarationSent, isAccordsParticipationEdited, isBulletinEdited, isPmoCreated, isContractEdited} = useDocuments()
 
+    useEffect(() => {
+        if(isPmoCreated){
+            const participant = participants.filter(p => p.pmo === PmoStatus.IdentifierLaPmo)
+            participant.forEach(p => {
+                p.pmo = PmoStatus.EditerLeBulletin
+                p.enedis = EnedisStatus.EditerLAccord
+                useStoredParticipants.getState().setParticipants([...participants])
+            })
+        }
+        if(isBulletinEdited){
+            const participant = participants.filter(p => p.pmo === PmoStatus.EditerLeBulletin)
+            participant.forEach(p => {
+                p.pmo = PmoStatus.EnvoyerLeBulletin
+                useStoredParticipants.getState().setParticipants([...participants])
+            })
+        }
+        if(isAccordsParticipationEdited){
+            const participant = participants.filter(p => p.enedis === EnedisStatus.EditerLAccord)
+            participant.forEach(p => {
+                p.enedis = EnedisStatus.EnvoyerLAccord
+                useStoredParticipants.getState().setParticipants([...participants])
+            })
+        }
+        if(isDeclarationSent && isAccordsParticipationEdited && isBulletinEdited ) {
+            //
+        }
+    }, [isPmoCreated, isBulletinEdited, isAccordsParticipationEdited])
     function accept(id: number) {
         const participant = participants.find(p => p.id === id)
         if (participant) {
@@ -130,7 +160,15 @@ const useParticipants = () => {
             useStoredParticipants.getState().setParticipants([...participants])
         }
     }
+    function associateContract(id: number) {
+        const participant = participants.find(p => p.id === id)
+        if (participant) {
+            participant.sales = SalesStatus.EnvoyerLeContrat
+            useStoredParticipants.getState().setParticipants([...participants])
+        }
+    }
 
-    return {...parse(participants), accept, reject, exportData, sendDocument, proposePrice, consumerAcceptPrice}
+
+    return {...parse(participants), accept, reject, exportData, sendDocument, proposePrice, consumerAcceptPrice, associateContract}
 }
 export {parse, useParticipants}
