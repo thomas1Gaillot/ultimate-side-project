@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="wording">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/page.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="small ux changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/SmallStep.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/SmallStep.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/contract-edition/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/contract-edition/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/proposal/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/proposal/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,15 +221,8 @@
       <workItem from="1724914680800" duration="14000" />
       <workItem from="1724922100654" duration="210000" />
       <workItem from="1724923008218" duration="10288000" />
-      <workItem from="1724943332433" duration="4258000" />
-    </task>
-    <task id="LOCAL-00150" summary="tasklist ux as tabs for switching between list and chart view">
-      <option name="closed" value="true" />
-      <created>1723402360980</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1723402360980</updated>
+      <workItem from="1724943332433" duration="4313000" />
+      <workItem from="1725002632843" duration="1739000" />
     </task>
     <task id="LOCAL-00151" summary="show first chart">
       <option name="closed" value="true" />
@@ -621,7 +608,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724944494664</updated>
     </task>
-    <option name="localTasksCounter" value="199" />
+    <task id="LOCAL-00199" summary="small ux changes">
+      <option name="closed" value="true" />
+      <created>1724948424591</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1724948424591</updated>
+    </task>
+    <option name="localTasksCounter" value="200" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -640,7 +635,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix timer lagging when browser lagging" />
     <MESSAGE value="show cards" />
     <MESSAGE value="poc enostart" />
     <MESSAGE value="add tabs" />
@@ -665,6 +659,7 @@
     <MESSAGE value="little ui fix" />
     <MESSAGE value="small ux updates" />
     <MESSAGE value="wording" />
-    <option name="LAST_COMMIT_MESSAGE" value="wording" />
+    <MESSAGE value="small ux changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small ux changes" />
   </component>
 </project>
