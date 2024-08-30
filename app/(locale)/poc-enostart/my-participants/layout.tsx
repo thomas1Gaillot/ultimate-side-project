@@ -9,7 +9,7 @@ import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 export default function TabsLayout({children}: { children: React.ReactNode }) {
     const pathname = usePathname();
     const router = useRouter();
-    const {candidatures, preIntegres, passageExploitation, integres, refuses} = useParticipants()
+    const {candidatures, preIntegres, exploitation, refuses} = useParticipants()
     const tabData = [
         {
             id: "candidatures",
@@ -26,18 +26,11 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
             href: "/poc-enostart/my-participants/pre-integres"
         },
         {
-            id: "passage-passage-exploitation",
-            label: `3. Passage en exploitation`,
-            number : passageExploitation.length,
-            buttonText: "Passer en exploitation",
-            href: "/poc-enostart/my-participants/passage-exploitation"
-        },
-        {
-            id: "integres",
-            label: `4. Intégrés`,
-            number : integres.length,
-            buttonText: "Exporter sur Enopower",
-            href: "/poc-enostart/my-participants/integres"
+            id: "passage-exploitation",
+            label: `3. Exploitation`,
+            number : exploitation.length,
+            buttonText: "Exploitation",
+            href: "/poc-enostart/my-participants/exploitation"
         },
         {
             id: "refuses",

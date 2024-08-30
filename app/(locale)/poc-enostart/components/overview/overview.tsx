@@ -201,10 +201,8 @@ export default function Overview() {
             </AccordionTrigger>
             <AccordionContent>
                 <Tabs orientation="vertical" value={activeTab} onValueChange={setActiveTab} className="h-full ">
-                    <div className="flex h-72 bg-gray-50">
+                    <div className="flex h-80 bg-gray-50">
                         <TabsList className="flex-grow h-full flex flex-col ">
-
-
                             <span
                                 className={"uppercase text-xs w-full text-left ml-2 mt-4"}>démarches par Participants</span>
 
@@ -212,7 +210,7 @@ export default function Overview() {
                                 <TabsTrigger
                                     key={tab.id}
                                     value={tab.id}
-                                    className="flex data-[state=active]:bg-white py-0 justify-between items-center w-96 px-3 text-sm"
+                                    className="flex data-[state=active]:bg-white py-0 justify-between items-center w-[400px] px-3 text-sm"
                                 >
                                     <div className={"flex items-center "}>
                                         <Timeline index={index} length={participantsTab(participants).length}/>
@@ -233,7 +231,7 @@ export default function Overview() {
                                 <TabsTrigger
                                     key={tab.id}
                                     value={tab.id}
-                                    className={cn("flex data-[state=active]:bg-white justify-between items-center w-96 px-3 py-2 text-sm",
+                                    className={cn("flex data-[state=active]:bg-white justify-between items-center w-[400px]  px-3 py-2 text-sm",
                                         tab.hide && 'line-through')}
                                 >
                                     <div className={"flex items-center"}>

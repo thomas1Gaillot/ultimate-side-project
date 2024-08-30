@@ -9,7 +9,7 @@ export type Participant = {
     perimeter: string,
     consumption: number,
     exportDate: string | null,
-    status: 'candidature' | 'pre-integre' | 'passage-exploitation' | 'integre' | 'refuse',
+    status: 'candidature' | 'pre-integre' | 'exploitation' | 'refuse',
     pmo: PmoStatus,
     enedis: EnedisStatus,
     sales: SalesStatus,
@@ -67,15 +67,13 @@ const parse = (participants: Participant[]) => {
     if (participants.length === 0) return {
         candidatures: [],
         preIntegres: [],
-        passageExploitation: [],
-        integres: [],
+        exploitation: [],
         refuses: []
     }
     return {
         candidatures: participants.filter(p => p.status === 'candidature'),
         preIntegres: participants.filter(p => p.status === 'pre-integre'),
-        passageExploitation: participants.filter(p => p.status === 'passage-exploitation'),
-        integres: participants.filter(p => p.status === 'integre'),
+        exploitation: participants.filter(p => p.status === 'exploitation'),
         refuses: participants.filter(p => p.status === 'refuse'),
     }
 }

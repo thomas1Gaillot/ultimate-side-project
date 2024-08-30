@@ -15,7 +15,7 @@ export type Step = {
 const participantsTab = (participants: Participant[]) => {
     const {candidatures} = parse(participants)
     const hasSalesThingsToDo = participants.some(p => p.status === 'pre-integre' &&
-        (p.sales === SalesStatus.ProposerUnPrix || p.sales === SalesStatus.PrixPropose || p.sales === SalesStatus.EditerLeContrat || p.sales === SalesStatus.EnvoyerLeContrat))
+        (p.sales === SalesStatus.ProposerUnPrix || p.sales === SalesStatus.PrixPropose || p.sales === SalesStatus.AssocierLeContrat || p.sales === SalesStatus.EnvoyerLeContrat))
     return [
         {
             id: "nouvelles-candidatures",
@@ -31,11 +31,12 @@ const participantsTab = (participants: Participant[]) => {
 const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited: boolean, isDeclarationSent : boolean) => [
     {
         id: "demarches",
-        label: "J'identifie mon association PMO",
+        label: "J'identifie ma PMO et édite les documents",
         hide: isBulletinEdited && isAccordsEdited,
         ping: !isBulletinEdited || !isAccordsEdited
     },
     {id: "declaration", label: "Je déclare mon opération", ping: !isDeclarationSent, hide : isDeclarationSent},
+    {id: "vente", label: "Je créé mes contrats de vente", ping: true, hide : false},
 ]
 
 const candidatures_flow = (p: Participant[]) => {
@@ -73,7 +74,7 @@ const sales_flow = (p: Participant[]) => {
     const numberOfPreIntegresWithPriceProposed = preIntegres
         .filter(p => p.sales === SalesStatus.PrixPropose).length
     const numberOfPreIntegresWithPriceAccepted = preIntegres
-        .filter(p => p.sales === SalesStatus.EditerLeContrat).length
+        .filter(p => p.sales === SalesStatus.AssocierLeContrat).length
     const numberOfEditedContract = preIntegres
         .filter(p => p.sales === SalesStatus.EnvoyerLeContrat).length
     const total = numberOfPreIntegresProposerUnPrix + numberOfPreIntegresWithPriceProposed + numberOfPreIntegresWithPriceAccepted
@@ -117,7 +118,7 @@ const signatures_flow = (p: Participant[]) => {
     const numberOfPreIntegresWithPriceProposed = preIntegres
         .filter(p => p.sales === SalesStatus.PrixPropose).length
     const numberOfPreIntegresWithPriceAccepted = preIntegres
-        .filter(p => p.sales === SalesStatus.EditerLeContrat).length
+        .filter(p => p.sales === SalesStatus.AssocierLeContrat).length
     const numberOfEditedContract = preIntegres
         .filter(p => p.sales === SalesStatus.EnvoyerLeContrat).length
     const numberOfWaitingSignature = preIntegres
@@ -126,13 +127,14 @@ const signatures_flow = (p: Participant[]) => {
     const enableStep = pmoStatusTerminated + enedisStatusTerminated === 2 && numberOfEditedContract === total
     const steps: Step[] = [
         {
-            label: "Les démarches de mon projet sont terminées",
+            label: "prérequis : Les démarches de mon projet sont terminées",
             href: '/poc-enostart/my-demarches/pmo',
             numberOfTaskDone: pmoStatusTerminated + enedisStatusTerminated,
-            numberOfTask: 2
+            numberOfTask: 2,
+
         },
         {
-            label: "Les contrats de ventes sont edités",
+            label: "prérequis :  Les contrats de ventes sont edités",
             href: '/poc-enostart/my-demarches/vente/contract-edition',
             numberOfTaskDone: numberOfEditedContract,
             numberOfTask: total
@@ -146,7 +148,7 @@ const signatures_flow = (p: Participant[]) => {
         },
         {
             label: "Je reçois les documents signés",
-            href: '/poc-enostart/my-participants/passage-exploitation',
+            href: '/poc-enostart/my-participants/exploitation',
             numberOfTaskDone: numberOfWaitingSignature,
             numberOfTask: total,
             disabled: !enableStep
