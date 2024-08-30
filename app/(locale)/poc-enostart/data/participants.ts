@@ -115,6 +115,22 @@ const useParticipants = () => {
         }
     }
 
-    return {...parse(participants), accept, reject, exportData, sendDocument}
+    function proposePrice(id: number) {
+        const participant = participants.find(p => p.id === id)
+        if (participant) {
+            participant.sales = SalesStatus.PrixPropose
+            useStoredParticipants.getState().setParticipants([...participants])
+        }
+    }
+
+    function consumerAcceptPrice(id: number) {
+        const participant = participants.find(p => p.id === id)
+        if (participant) {
+            participant.sales = SalesStatus.AssocierLeContrat
+            useStoredParticipants.getState().setParticipants([...participants])
+        }
+    }
+
+    return {...parse(participants), accept, reject, exportData, sendDocument, proposePrice, consumerAcceptPrice}
 }
 export {parse, useParticipants}

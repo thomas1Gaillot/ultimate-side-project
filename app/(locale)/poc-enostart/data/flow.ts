@@ -9,13 +9,13 @@ export type Step = {
     done?: boolean,
     numberOfTaskDone?: number,
     numberOfTask?: number,
-    disabled?: boolean
+    disabled?: boolean,
 }
 
 const participantsTab = (participants: Participant[]) => {
     const {candidatures} = parse(participants)
     const hasSalesThingsToDo = participants.some(p => p.status === 'pre-integre' &&
-        (p.sales === SalesStatus.ProposerUnPrix || p.sales === SalesStatus.PrixPropose || p.sales === SalesStatus.AssocierLeContrat || p.sales === SalesStatus.EnvoyerLeContrat))
+        (p.sales === SalesStatus.ProposerUnPrix  || p.sales === SalesStatus.AssocierLeContrat || p.sales === SalesStatus.EnvoyerLeContrat))
     return [
         {
             id: "nouvelles-candidatures",

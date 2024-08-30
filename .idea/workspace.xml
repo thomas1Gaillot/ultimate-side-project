@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="wording">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/associate-contract-accordion.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/send-price-accordion.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ux">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/use-documents.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/use-documents.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/contract-edition/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/proposal/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/associate-contract-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/associate-contract-accordion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/send-price-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/send-price-accordion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,15 +227,7 @@
       <workItem from="1724922100654" duration="210000" />
       <workItem from="1724923008218" duration="10288000" />
       <workItem from="1724943332433" duration="4313000" />
-      <workItem from="1725002632843" duration="7866000" />
-    </task>
-    <task id="LOCAL-00153" summary="2 charts type">
-      <option name="closed" value="true" />
-      <created>1723447813620</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1723447813620</updated>
+      <workItem from="1725002632843" duration="11361000" />
     </task>
     <task id="LOCAL-00154" summary="allow edit duration">
       <option name="closed" value="true" />
@@ -625,7 +613,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725021205141</updated>
     </task>
-    <option name="localTasksCounter" value="202" />
+    <task id="LOCAL-00202" summary="add vente accordions">
+      <option name="closed" value="true" />
+      <created>1725024771972</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1725024771972</updated>
+    </task>
+    <option name="localTasksCounter" value="203" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +640,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="poc enostart" />
     <MESSAGE value="add tabs" />
     <MESSAGE value="add timeline" />
     <MESSAGE value="ui colors, and show tabs content as vertical" />
@@ -662,13 +657,14 @@
     <MESSAGE value="show more steps" />
     <MESSAGE value="accordion everywhere" />
     <MESSAGE value="accords participation check" />
-    <MESSAGE value="ux" />
     <MESSAGE value="little badge" />
     <MESSAGE value="little ui fix" />
     <MESSAGE value="small ux updates" />
     <MESSAGE value="small ux changes" />
     <MESSAGE value="fix numbers 1 in task" />
     <MESSAGE value="wording" />
-    <option name="LAST_COMMIT_MESSAGE" value="wording" />
+    <MESSAGE value="add vente accordions" />
+    <MESSAGE value="ux" />
+    <option name="LAST_COMMIT_MESSAGE" value="ux" />
   </component>
 </project>

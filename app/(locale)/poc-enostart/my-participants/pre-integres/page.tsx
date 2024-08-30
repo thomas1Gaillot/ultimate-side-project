@@ -2,7 +2,7 @@
 import {TypographyH4} from "@/components/ui/typography";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {Button} from "@/components/ui/button";
-import {BellIcon, DownloadIcon, SendIcon, TrashIcon} from "lucide-react";
+import {BellIcon, DownloadIcon, SendIcon, TimerIcon, TrashIcon} from "lucide-react";
 import {cn} from "@/lib/utils";
 import {enedisMapper} from "@/app/(locale)/poc-enostart/data/enedis-status";
 import {pmoMapper} from "../../data/pmo-status";
@@ -12,7 +12,7 @@ import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/compon
 
 
 export default function Page() {
-    const {preIntegres, reject, exportData, sendDocument} = useParticipants()
+    const {preIntegres, reject, exportData, sendDocument, consumerAcceptPrice} = useParticipants()
 
     return <div className={"p-16"}><TypographyH4>Consommateurs Pré-intégrés</TypographyH4>
         <Table>
@@ -21,7 +21,7 @@ export default function Page() {
                     <TableHead>Nom</TableHead>
                     <TableHead>Périmètre</TableHead>
                     <TableHead>{"Date d'export"}</TableHead>
-                    <TableHead>Démarches PMO</TableHead>
+                    <TableHead>{"Bulletin d'adhésion"}</TableHead>
                     <TableHead>Accords de participation</TableHead>
                     <TableHead>Démarches de vente</TableHead>
                     <TableHead>Actions</TableHead>
@@ -56,6 +56,19 @@ export default function Page() {
                                     SalesIcon === BellIcon ? 'text-gray-700' : 'text-gray-300')}>
                                     {salesMapper(p.sales).name}
                                     <SalesIcon className={'size-4 ml-2'}/>
+                                    <TooltipProvider>
+                                        <Tooltip>
+                                            <TooltipTrigger>
+                                                <Button
+                                                    onClick={() => consumerAcceptPrice(p.id)}
+                                                    size={'sm'} className={'text-xs text-gray-700'} variant={'link'}><TimerIcon
+                                                    className={'size-3 ml-2'}/> </Button></TooltipTrigger>
+                                            <TooltipContent>
+                                                <p>Le consommateur accepte le prix</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </TooltipProvider>
+
                                 </div>}
                             </TableCell>
                             <TableCell>

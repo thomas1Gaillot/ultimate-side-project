@@ -222,7 +222,7 @@ export default function Overview() {
                     <div className="flex h-80 bg-gray-50">
                         <TabsList className="flex-grow h-full flex flex-col ">
                             <span
-                                className={"uppercase text-xs w-full text-left ml-2 mt-4"}>démarches par Participants</span>
+                                className={"uppercase text-xs w-full text-left ml-2 mt-4"}>Parcours des Participants</span>
 
                             {participantsTab(participants).map((tab, index) => (
                                 <TabsTrigger
