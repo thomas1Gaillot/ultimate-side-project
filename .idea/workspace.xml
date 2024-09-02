@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ux">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="SignDocuments start, end of sales contract">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/associate-contract-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/associate-contract-accordion.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/send-price-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/send-price-accordion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,15 +223,10 @@
       <workItem from="1724922100654" duration="210000" />
       <workItem from="1724923008218" duration="10288000" />
       <workItem from="1724943332433" duration="4313000" />
-      <workItem from="1725002632843" duration="14367000" />
-    </task>
-    <task id="LOCAL-00155" summary="duration edit bugfix">
-      <option name="closed" value="true" />
-      <created>1723534349356</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1723534349357</updated>
+      <workItem from="1725002632843" duration="14432000" />
+      <workItem from="1725263333726" duration="268000" />
+      <workItem from="1725266723299" duration="199000" />
+      <workItem from="1725267174453" duration="385000" />
     </task>
     <task id="LOCAL-00156" summary="duration edit bugfix">
       <option name="closed" value="true" />
@@ -620,7 +612,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725030126090</updated>
     </task>
-    <option name="localTasksCounter" value="204" />
+    <task id="LOCAL-00204" summary="SignDocuments start, end of sales contract">
+      <option name="closed" value="true" />
+      <created>1725033329110</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1725033329110</updated>
+    </task>
+    <option name="localTasksCounter" value="205" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +639,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add tabs" />
     <MESSAGE value="add timeline" />
     <MESSAGE value="ui colors, and show tabs content as vertical" />
     <MESSAGE value="as page" />
@@ -664,6 +663,7 @@
     <MESSAGE value="wording" />
     <MESSAGE value="add vente accordions" />
     <MESSAGE value="ux" />
-    <option name="LAST_COMMIT_MESSAGE" value="ux" />
+    <MESSAGE value="SignDocuments start, end of sales contract" />
+    <option name="LAST_COMMIT_MESSAGE" value="SignDocuments start, end of sales contract" />
   </component>
 </project>

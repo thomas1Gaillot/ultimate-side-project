@@ -54,7 +54,7 @@ export function MyContracts() {
 
         <Button onClick={() => createInMemoryContracts()} variant={'secondary'}>Ajouter un contrat de vente</Button>
         {salesContracts.map((contract, index) => (
-            <div className={"flex flex-wrap gap-2 rounded bg-gray-50 hover:bg-gray-100 p-4"}>
+            <div key={index} className={"flex flex-wrap gap-2 rounded bg-gray-50 hover:bg-gray-100 p-4"}>
                 <div className={" w-full flex items-center truncate"}>
                     <ReceiptIcon className={"size-4 mr-2"}/>
                     {contract.name}</div>
