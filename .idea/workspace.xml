@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="end flow for sales contract,&#10;pass participants to exploittaion">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="rename sales contrats tabs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/associate-contract-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/associate-contract-accordion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/send-price-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/send-price-accordion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,15 +226,8 @@
       <workItem from="1725263333726" duration="268000" />
       <workItem from="1725266723299" duration="199000" />
       <workItem from="1725267174453" duration="3501000" />
-      <workItem from="1725353355909" duration="5237000" />
-    </task>
-    <task id="LOCAL-00158" summary="charts showing only most used data">
-      <option name="closed" value="true" />
-      <created>1723712481753</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1723712481753</updated>
+      <workItem from="1725353355909" duration="5408000" />
+      <workItem from="1725371229796" duration="291000" />
     </task>
     <task id="LOCAL-00159" summary="ui">
       <option name="closed" value="true" />
@@ -623,7 +613,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725356041900</updated>
     </task>
-    <option name="localTasksCounter" value="207" />
+    <task id="LOCAL-00207" summary="rename sales contrats tabs">
+      <option name="closed" value="true" />
+      <created>1725368124044</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
+      <option name="project" value="LOCAL" />
+      <updated>1725368124044</updated>
+    </task>
+    <option name="localTasksCounter" value="208" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -642,7 +640,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ui colors, and show tabs content as vertical" />
     <MESSAGE value="as page" />
     <MESSAGE value="table for consumers" />
     <MESSAGE value="fix tabs" />
@@ -667,6 +664,7 @@
     <MESSAGE value="SignDocuments start, end of sales contract" />
     <MESSAGE value="fix build" />
     <MESSAGE value="end flow for sales contract,&#10;pass participants to exploittaion" />
-    <option name="LAST_COMMIT_MESSAGE" value="end flow for sales contract,&#10;pass participants to exploittaion" />
+    <MESSAGE value="rename sales contrats tabs" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename sales contrats tabs" />
   </component>
 </project>

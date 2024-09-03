@@ -28,10 +28,11 @@ export default function Page() {
                 <TableRow>
                     <TableHead>Nom</TableHead>
                     <TableHead>Périmètre</TableHead>
-                    <TableHead>{"Date d'export"}</TableHead>
+
                     <TableHead>{"Bulletin d'adhésion"}</TableHead>
                     <TableHead>Accords de participation</TableHead>
                     <TableHead>Démarches de vente</TableHead>
+                    <TableHead>{"Exporter les données"}</TableHead>
                     <TableHead>Actions</TableHead>
                 </TableRow>
             </TableHeader>
@@ -44,7 +45,6 @@ export default function Page() {
                         <TableRow key={p.id}>
                             <TableCell>{p.name}</TableCell>
                             <TableCell>{p.perimeter}</TableCell>
-                            <TableCell className={"text-xs"}>{p.exportDate}</TableCell>
                             <TableCell>
                                 {p.pmo && <div className={cn("flex items-center text-xs",
                                     pmoMapper(p.pmo).icon === BellIcon ? 'text-gray-700' : 'text-gray-300')}>
@@ -59,6 +59,8 @@ export default function Page() {
                                     <EnedisIcon className={'size-4 ml-2'}/>
                                 </div>}
                             </TableCell>
+
+
                             <TableCell>
                                 {p.sales && <div className={cn("flex items-center text-xs",
                                     SalesIcon === BellIcon ? 'text-gray-700' : 'text-gray-300')}>
@@ -80,20 +82,28 @@ export default function Page() {
 
                                 </div>}
                             </TableCell>
-                            <TableCell>
+                            <TableCell className={"text-xs"}>
+                                {p.exportDate}
                                 <TooltipProvider>
                                     <Tooltip>
                                         <TooltipTrigger>
+
                                             <Button
                                                 onClick={() => exportData(p.id)}
-                                                size={'sm'} className={'text-xs text-gray-700'}
-                                                variant={'link'}><DownloadIcon
-                                                className={'size-4 ml-2'}/> </Button></TooltipTrigger>
+                                                size={'sm'} className={cn('text-xs text-primary flex items-center',
+                                            p.exportDate && 'text-gray-700')}
+                                                variant={'link'}>
+                                                {!p.exportDate && 'Exporter les données'}
+                                                <DownloadIcon className={'size-4 ml-2'}/>
+                                            </Button>
+                                        </TooltipTrigger>
                                         <TooltipContent>
                                             <p>Exporter les données de {p.name}</p>
                                         </TooltipContent>
                                     </Tooltip>
-                                </TooltipProvider>
+                                </TooltipProvider></TableCell>
+                            <TableCell>
+
                                 {preIntegratedReadyToSign(p.id) && <TooltipProvider>
                                     <Tooltip>
                                         <TooltipTrigger>
