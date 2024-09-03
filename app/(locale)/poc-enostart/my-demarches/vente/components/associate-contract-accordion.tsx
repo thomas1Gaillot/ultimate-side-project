@@ -16,10 +16,12 @@ import {
     DialogTrigger
 } from "@/components/ui/dialog";
 import {MyContracts} from "@/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion";
+import {useDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
 
 export default function AssociateContractAccordion() {
     const {preIntegres, reject, associateContract} = useParticipants()
     const preIntegresToAssociatePrice = preIntegres.filter(p => p.sales === SalesStatus.AssocierLeContrat)
+    const {salesContractWithInfo} = useDocuments()
     return (
         <AccordionItem value="associate-contract">
             <AccordionTrigger
@@ -57,7 +59,7 @@ export default function AssociateContractAccordion() {
                                                             {"Make changes to your profile here. Click save when you're done."}
                                                         </DialogDescription>
                                                     </DialogHeader>
-                                                    <MyContracts/>
+                                                    <MyContracts storedContracts={salesContractWithInfo}/>
                                                     <DialogFooter>
                                                         <Button
                                                             onClick={() => associateContract(p.id)}

@@ -2,11 +2,12 @@
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {Button} from "@/components/ui/button";
 import {useState} from "react";
-import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
-import {ReceiptIcon} from "lucide-react";
+import {ReceiptIcon, XIcon} from "lucide-react";
+import {ContractDocument, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
 
-const contracts = [
+
+const contracts:ContractDocument[] = [
     {
         name : 'Contrat consommateur type particulier',
         duration : 'indéterminée',
@@ -23,6 +24,7 @@ const contracts = [
     },
 ]
 export default function CreateContractAccordion() {
+    const {salesContract} = useStoredDocuments()
 
 
     return (
@@ -37,34 +39,39 @@ export default function CreateContractAccordion() {
                 <div className={"flex justify-between w-full text-lg"}>
                     Liste des contrats
                 </div>
-                <MyContracts/>
+                <MyContracts storedContracts={salesContract}/>
+
 
             </AccordionContent>
         </AccordionItem>
     )
 }
 
-export function MyContracts() {
-    const [salesContracts, setSalesContracts] = useState<any[]>([])
-
+export function MyContracts({storedContracts}:{
+    storedContracts: ContractDocument[]
+}) {
+    const {setSalesContract} = useStoredDocuments()
     const createInMemoryContracts = () => {
-        setSalesContracts(contracts)
+        setSalesContract(contracts)
     }
     return <div className={"grid max-w-md gap-4"}>
 
         <Button onClick={() => createInMemoryContracts()} variant={'secondary'}>Ajouter un contrat de vente</Button>
-        {salesContracts.map((contract, index) => (
+        {storedContracts.map((contract, index) => (
             <div key={index} className={"flex flex-wrap gap-2 rounded bg-gray-50 hover:bg-gray-100 p-4"}>
+                <div className={"w-full flex justify-between"}>
                 <div className={" w-full flex items-center truncate"}>
                     <ReceiptIcon className={"size-4 mr-2"}/>
                     {contract.name}</div>
+                    <XIcon className={"size-4 cursor-pointer relative bottom-2 left-2"} onClick={() => setSalesContract(storedContracts.filter((_, i) => i !== index))}/>
+                </div>
                 <Badge variant={'secondary'}>{contract.duration}</Badge>
                 <Badge variant={'secondary'}>{contract.price}</Badge>
                 <Badge variant={'secondary'}>{contract.indexation}</Badge>
                 {!contract.moreInfo && <Badge variant={'destructive'}>Incomplet</Badge>}
             </div>
         ))}
-        {salesContracts.length === 0 && <div className={"text-left"}>Aucun contrat de vente créé.</div>}
+        {storedContracts.length === 0 && <div className={"text-left"}>Aucun contrat de vente créé.</div>}
 
     </div>
 }

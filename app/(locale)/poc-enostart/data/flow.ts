@@ -13,7 +13,7 @@ export type Step = {
 }
 
 const participantsTab = (participants: Participant[]) => {
-    const {candidatures, preIntegres} = parse(participants)
+    const {candidatures, preIntegres, exploitation} = parse(participants)
     const hasSalesThingsToDo = participants.some(p => p.status === 'pre-integre' &&
         (p.sales === SalesStatus.ProposerUnPrix  || p.sales === SalesStatus.AssocierLeContrat))
 
@@ -27,10 +27,10 @@ const participantsTab = (participants: Participant[]) => {
         },
         {id: "pre-integrations", label: "Je propose mes conditions de vente ", ping: hasSalesThingsToDo},
         {id: "documents", label: "Je fais signer mes documents", ping: canSignDocuments},
-        {id: "passages-en-exploitation", label: "Je gère mon opération auprès d'Enedis", ping: false},
+        {id: "passages-en-exploitation", label: "Je gère mon opération auprès d'Enedis", ping: exploitation.length >0},
     ]
 }
-const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited: boolean, isDeclarationSent : boolean) => [
+const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited: boolean, isDeclarationSent : boolean, hasSalesContract: boolean) => [
     {
         id: "demarches",
         label: "J'identifie ma PMO et édite les documents",
@@ -38,7 +38,7 @@ const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited: boolean, isDe
         ping: !isBulletinEdited || !isAccordsEdited
     },
     {id: "declaration", label: "Je déclare mon opération", ping: !isDeclarationSent, hide : isDeclarationSent},
-    {id: "sales-contract", label: "Je crée mes contrats de vente", ping: true, hide : false},
+    {id: "sales-contract", label: "Je crée mes contrats de vente", ping: !hasSalesContract, hide : false},
 ]
 
 const candidatures_flow = (p: Participant[]) => {
@@ -125,6 +125,8 @@ const signatures_flow = (p: Participant[]) => {
         .filter(p => p.sales === SalesStatus.EnvoyerLeContrat).length
     const numberOfWaitingSignature = preIntegres
         .filter(p => p.sales === SalesStatus.ContratEnvoye || p.pmo === PmoStatus.BulletinEnvoye || p.enedis === EnedisStatus.AccordEnvoye).length
+    const numberOfSignatures = preIntegres
+        .filter(p => p.sales === SalesStatus.ContratSigne && p.pmo === PmoStatus.BulletinSigne && p.enedis === EnedisStatus.AccordSigne).length
     const total = numberOfPreIntegresProposerUnPrix + numberOfPreIntegresWithPriceProposed + numberOfPreIntegresWithPriceAccepted + numberOfWaitingSignature
     const canSignDocuments = preIntegres.some(p => p.sales === SalesStatus.EnvoyerLeContrat && p.pmo === PmoStatus.EnvoyerLeBulletin && p.enedis === EnedisStatus.EnvoyerLAccord)
     const steps: Step[] = [
@@ -136,10 +138,10 @@ const signatures_flow = (p: Participant[]) => {
 
         },
         {
-            label: "prérequis :  Les contrats de ventes sont edités",
+            label: "prérequis :  Les contrats de ventes sont edités et associés aux consommateurs",
             href: '/poc-enostart/my-demarches/vente',
             numberOfTaskDone: numberOfEditedContract,
-            numberOfTask: total
+            numberOfTask: preIntegres.length
         },
         {
             label: "J'envoi les documents aux consommateurs pour signature",
@@ -151,9 +153,9 @@ const signatures_flow = (p: Participant[]) => {
         {
             label: "Je reçois les documents signés",
             href: '/poc-enostart/my-participants/exploitation',
-            numberOfTaskDone: numberOfWaitingSignature,
-            numberOfTask: total,
-            disabled: true
+            numberOfTaskDone: numberOfSignatures,
+            numberOfTask: numberOfWaitingSignature + numberOfSignatures,
+            disabled: numberOfWaitingSignature === 0
         },
     ]
     return {
@@ -204,14 +206,14 @@ const demarches_pmo_accords = (isPmoCreated: boolean, isEdited: boolean) => {
     ]
     return steps;
 }
-const sales_contract_flow = (isContractEdited: boolean) => {
+const sales_contract_flow = (hasContracts: boolean) => {
         const steps: Step[] = [
             {
                 label: "Je crée mes contrats de vente",
                 href: '/poc-enostart/my-demarches/vente',
-                numberOfTaskDone: isContractEdited ? 1 : 0,
+                numberOfTaskDone: hasContracts ? 1 : 0,
                 numberOfTask: 1,
-                done: isContractEdited
+                done: hasContracts
             }
         ]
         return steps;

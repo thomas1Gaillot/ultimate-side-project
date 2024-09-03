@@ -23,7 +23,7 @@ export default function Overview() {
 
     const [activeTab, setActiveTab] = useState("nouvelles-candidatures")
     const {participants} = useStoredParticipants()
-    const {isPmoCreated, isDeclarationSent, isBulletinEdited, isContractEdited, isAccordsParticipationEdited} = useDocuments()
+    const {isPmoCreated, isDeclarationSent, isBulletinEdited, hasSalesContract, isAccordsParticipationEdited} = useDocuments()
     const candidatures = candidatures_flow(participants)
     const sales = sales_flow(participants)
     const signatures = signatures_flow(participants)
@@ -31,7 +31,7 @@ export default function Overview() {
     const demarchesPmoCreation = demarches_pmo_creation(isPmoCreated)
     const demarchesAccords = demarches_pmo_accords(isPmoCreated, isAccordsParticipationEdited)
     const declaration = declaration_flow(isDeclarationSent)
-    const salesContract = sales_contract_flow(isContractEdited)
+    const salesContract = sales_contract_flow(hasSalesContract)
     const tabContents: any = {
         "demarches": (
             <>
@@ -245,7 +245,7 @@ export default function Overview() {
                                 </TabsTrigger>
                             ))}
                             <span className={"uppercase ml-2 mt-4 text-xs w-full text-left"}>démarches</span>
-                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (
+                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent, hasSalesContract).map((tab) => (
                                 <TabsTrigger
                                     key={tab.id}
                                     value={tab.id}
@@ -268,7 +268,7 @@ export default function Overview() {
                             ))}
                         </TabsList>
                         <div className="flex-grow w-full p-4 h-full bg-white/50 rounded-r-lg overflow-y-auto">
-                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (
+                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent, hasSalesContract).map((tab) => (
                                 <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full ">
                                     {tabContents[tab.id]}
                                 </TabsContent>

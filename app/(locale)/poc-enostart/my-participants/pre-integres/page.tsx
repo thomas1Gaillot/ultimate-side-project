@@ -2,19 +2,27 @@
 import {TypographyH4} from "@/components/ui/typography";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {Button} from "@/components/ui/button";
-import {BellIcon, DownloadIcon, SendIcon, TimerIcon, TrashIcon} from "lucide-react";
+import {BellIcon, Clock, DownloadIcon, SendIcon, TimerIcon, TrashIcon} from "lucide-react";
 import {cn} from "@/lib/utils";
-import {enedisMapper} from "@/app/(locale)/poc-enostart/data/enedis-status";
-import {pmoMapper} from "../../data/pmo-status";
-import {salesMapper} from "@/app/(locale)/poc-enostart/data/sales-status";
+import {enedisMapper, EnedisStatus} from "@/app/(locale)/poc-enostart/data/enedis-status";
+import {pmoMapper, PmoStatus} from "../../data/pmo-status";
+import {salesMapper, SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
 import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 
 
 export default function Page() {
-    const {preIntegres, reject, exportData, sendDocument, consumerAcceptPrice} = useParticipants()
+    const {preIntegres, reject, exportData, sendDocument, consumerAcceptPrice, consumersSignAllDocuments} = useParticipants()
+    const preIntegratedReadyToSign = (id: number) =>
+        preIntegres.some(p => p.id === id && p.sales === SalesStatus.EnvoyerLeContrat && p.pmo === PmoStatus.EnvoyerLeBulletin && p.enedis === EnedisStatus.EnvoyerLAccord)
 
-    return <div className={"p-16"}><TypographyH4>Consommateurs Pré-intégrés</TypographyH4>
+
+    return <div className={"p-16"}><TypographyH4>
+        <>
+            Consommateurs Pré-intégrés
+            <Clock onClick={consumersSignAllDocuments} className={"size-3"}/>
+        </>
+    </TypographyH4>
         <Table>
             <TableHeader>
                 <TableRow>
@@ -29,9 +37,9 @@ export default function Page() {
             </TableHeader>
             <TableBody>
                 {preIntegres.map((p) => {
-                    const PmoIcon = p.pmo ?pmoMapper(p.pmo).icon as any : <></>
-                    const EnedisIcon = p.enedis ? enedisMapper(p.enedis).icon as any  : <></>
-                    const SalesIcon =  p.sales ? salesMapper(p.sales).icon as any  : <></>
+                    const PmoIcon = p.pmo ? pmoMapper(p.pmo).icon as any : <></>
+                    const EnedisIcon = p.enedis ? enedisMapper(p.enedis).icon as any : <></>
+                    const SalesIcon = p.sales ? salesMapper(p.sales).icon as any : <></>
                     return (
                         <TableRow key={p.id}>
                             <TableCell>{p.name}</TableCell>
@@ -61,7 +69,8 @@ export default function Page() {
                                             <TooltipTrigger>
                                                 <Button
                                                     onClick={() => consumerAcceptPrice(p.id)}
-                                                    size={'sm'} className={'text-xs text-gray-700'} variant={'link'}><TimerIcon
+                                                    size={'sm'} className={'text-xs text-gray-700'}
+                                                    variant={'link'}><TimerIcon
                                                     className={'size-3 ml-2'}/> </Button></TooltipTrigger>
                                             <TooltipContent>
                                                 <p>Le consommateur accepte le prix</p>
@@ -77,33 +86,36 @@ export default function Page() {
                                         <TooltipTrigger>
                                             <Button
                                                 onClick={() => exportData(p.id)}
-                                                size={'sm'} className={'text-xs text-gray-700'} variant={'link'}><DownloadIcon
-                                            className={'size-4 ml-2'}/> </Button></TooltipTrigger>
+                                                size={'sm'} className={'text-xs text-gray-700'}
+                                                variant={'link'}><DownloadIcon
+                                                className={'size-4 ml-2'}/> </Button></TooltipTrigger>
                                         <TooltipContent>
                                             <p>Exporter les données de {p.name}</p>
                                         </TooltipContent>
                                     </Tooltip>
                                 </TooltipProvider>
-                                <TooltipProvider>
+                                {preIntegratedReadyToSign(p.id) && <TooltipProvider>
                                     <Tooltip>
                                         <TooltipTrigger>
                                             <Button
                                                 onClick={() => sendDocument(p.id)}
-                                                size={'sm'} className={'text-xs'} variant={'link'}><SendIcon
-                                                className={'size-4 ml-2'}/> </Button>
+                                                size={'sm'} className={'text-xs '} variant={'link'}>
+                                                Envoyer<SendIcon
+                                                className={'size-4 ml-2 animate-bounce hover:animate-none'}/> </Button>
                                         </TooltipTrigger>
                                         <TooltipContent>
                                             <p>Envoyer les documents à {p.name} pour signature</p>
                                         </TooltipContent>
                                     </Tooltip>
-                                </TooltipProvider>
+                                </TooltipProvider>}
 
                                 <TooltipProvider>
                                     <Tooltip>
                                         <TooltipTrigger>
                                             <Button
                                                 onClick={() => reject(p.id)}
-                                                size={'sm'} className={'text-red-500 text-xs'} variant={'link'}><TrashIcon
+                                                size={'sm'} className={'text-red-500 text-xs'}
+                                                variant={'link'}><TrashIcon
                                                 className={'size-4 ml-2'}/> </Button>
                                         </TooltipTrigger>
                                         <TooltipContent>
@@ -111,7 +123,6 @@ export default function Page() {
                                         </TooltipContent>
                                     </Tooltip>
                                 </TooltipProvider>
-
 
 
                             </TableCell>

@@ -1,6 +1,14 @@
 'use client'
 import {create} from "zustand";
 
+export type ContractDocument = {
+    name: string;
+    duration: string;
+    price: string;
+    indexation: string;
+    moreInfo: boolean;
+
+}
 type Document = {
     name: string;
     status: string;
@@ -14,6 +22,8 @@ interface Documents {
     reglementInterieur: Document;
     bulletin: Document;
     declaration: Document;
+    salesContract: ContractDocument[];
+    setSalesContract: (contract: ContractDocument[]) => void;
     setDeclaration: (document: Document) => void;
     accordsParticipation: Document;
     setAccordsParticipation: (document: Document) => void;
@@ -24,6 +34,8 @@ interface Documents {
 
 
 export const useStoredDocuments = create<Documents>((set) => ({
+    salesContract: [],
+    setSalesContract: (contract: ContractDocument[]) => set(state => ({salesContract: contract})),
     declaration: {
         name: "Déclaration de mise en oeuvre",
         status: "à éditer",
@@ -63,12 +75,20 @@ export const useStoredDocuments = create<Documents>((set) => ({
 
 
 function useDocuments() {
-    const {statutPmo, reglementInterieur, bulletin, declaration, accordsParticipation} = useStoredDocuments()
+    const {
+        statutPmo,
+        reglementInterieur,
+        bulletin,
+        declaration,
+        accordsParticipation,
+        salesContract
+    } = useStoredDocuments()
     const isPmoCreated = statutPmo.status === "check"
     const isBulletinEdited = bulletin.status === "check"
     const isDeclarationSent = declaration.status === "check"
     const isAccordsParticipationEdited = accordsParticipation.status === "check"
-    const isContractEdited = false // TODO
+    const hasSalesContract = salesContract.length > 0
+    const salesContractWithInfo = salesContract.filter(contract => contract.moreInfo)
     return {
         statutPmo,
         isPmoCreated,
@@ -77,7 +97,8 @@ function useDocuments() {
         isBulletinEdited,
         isAccordsParticipationEdited,
         isDeclarationSent,
-        isContractEdited
+        hasSalesContract,
+        salesContractWithInfo
     }
 }
 

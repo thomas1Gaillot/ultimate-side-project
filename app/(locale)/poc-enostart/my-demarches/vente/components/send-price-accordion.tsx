@@ -18,10 +18,12 @@ import {
 import {Label} from "recharts";
 import { Input } from "@/components/ui/input";
 import {MyContracts} from "@/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion";
+import {useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
 
 export default function SendPriceAccordion() {
     const {preIntegres, reject, proposePrice} = useParticipants()
     const preIntegresToSendPrice = preIntegres.filter(p => p.sales === SalesStatus.ProposerUnPrix)
+    const {salesContract} = useStoredDocuments()
     return (
         <AccordionItem value="send-price">
             <AccordionTrigger
@@ -59,7 +61,7 @@ export default function SendPriceAccordion() {
                                                         {"Make changes to your profile here. Click save when you're done."}
                                                     </DialogDescription>
                                                 </DialogHeader>
-                                                <MyContracts/>
+                                                <MyContracts storedContracts={salesContract}/>
                                                 <DialogFooter>
                                                     <Button
                                                         onClick={() => proposePrice(p.id)}
