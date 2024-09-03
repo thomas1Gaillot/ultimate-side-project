@@ -2,7 +2,7 @@ import {EnedisStatus} from "./enedis-status"
 import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
 import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
 import {create} from "zustand";
-import {useDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
+import {ContractDocument, useDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
 import {useEffect} from "react";
 
 export type Participant = {
@@ -15,6 +15,7 @@ export type Participant = {
     pmo: PmoStatus,
     enedis: EnedisStatus,
     sales: SalesStatus,
+    contractDocument?: ContractDocument
 }
 
 const initialParticipants: Participant[] = [
@@ -45,6 +46,83 @@ const initialParticipants: Participant[] = [
         name: "Claire Leroy",
         perimeter: "2.1 km",
         consumption: 4500,
+        exportDate: null,
+        status: 'candidature',
+        pmo: PmoStatus.IdentifierLaPmo,
+        enedis: EnedisStatus.IdentifierLaPmo,
+        sales: SalesStatus.ProposerUnPrix
+    },
+    {
+        id: 4,
+        name: "David Dupuis",
+        perimeter: "1.2 km",
+        consumption: 4500,
+        exportDate: null,
+        status: 'candidature',
+        pmo: PmoStatus.IdentifierLaPmo,
+        enedis: EnedisStatus.IdentifierLaPmo,
+        sales: SalesStatus.ProposerUnPrix
+    },
+    {
+        id: 5,
+        name: "Eva Martin",
+        perimeter: "0.45 km",
+        consumption: 4500,
+        exportDate: null,
+        status: 'candidature',
+        pmo: PmoStatus.IdentifierLaPmo,
+        enedis: EnedisStatus.IdentifierLaPmo,
+        sales: SalesStatus.ProposerUnPrix
+    },
+    {
+        id: 6,
+        name: "Fabrice Leroy",
+        perimeter: "2.1 km",
+        consumption: 4500,
+        exportDate: null,
+        status: 'candidature',
+        pmo: PmoStatus.IdentifierLaPmo,
+        enedis: EnedisStatus.IdentifierLaPmo,
+        sales: SalesStatus.ProposerUnPrix
+    },
+    {
+        id: 7,
+        name: "Gérard Dupuis",
+        perimeter: "1.2 km",
+        consumption: 4500,
+        exportDate: null,
+        status: 'candidature',
+        pmo: PmoStatus.IdentifierLaPmo,
+        enedis: EnedisStatus.IdentifierLaPmo,
+        sales: SalesStatus.ProposerUnPrix
+    },
+    {
+        id: 8,
+        name: "Hélène Martin",
+        perimeter: "0.45 km",
+        consumption: 4500,
+        exportDate: null,
+        status: 'candidature',
+        pmo: PmoStatus.IdentifierLaPmo,
+        enedis: EnedisStatus.IdentifierLaPmo,
+        sales: SalesStatus.ProposerUnPrix
+    },
+    {
+        id: 9,
+        name: "Isabelle Leroy",
+        perimeter: "2.1 km",
+        consumption: 6500,
+        exportDate: null,
+        status: 'candidature',
+        pmo: PmoStatus.IdentifierLaPmo,
+        enedis: EnedisStatus.IdentifierLaPmo,
+        sales: SalesStatus.ProposerUnPrix
+    },
+    {
+        id: 10,
+        name: "Jérôme Dupuis",
+        perimeter: "1.2 km",
+        consumption: 1200,
         exportDate: null,
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
@@ -82,10 +160,10 @@ const parse = (participants: Participant[]) => {
 
 const useParticipants = () => {
     const {participants} = useStoredParticipants()
-    const { isDeclarationSent, isAccordsParticipationEdited, isBulletinEdited, isPmoCreated} = useDocuments()
-    const {preIntegres, refuses, exploitation, candidatures}= parse(participants)
+    const {isDeclarationSent, isAccordsParticipationEdited, isBulletinEdited, isPmoCreated} = useDocuments()
+    const {preIntegres, refuses, exploitation, candidatures} = parse(participants)
     useEffect(() => {
-        if(isPmoCreated){
+        if (isPmoCreated) {
             const participant = participants.filter(p => p.pmo === PmoStatus.IdentifierLaPmo)
             participant.forEach(p => {
                 p.pmo = PmoStatus.EditerLeBulletin
@@ -93,24 +171,25 @@ const useParticipants = () => {
                 useStoredParticipants.getState().setParticipants([...participants])
             })
         }
-        if(isBulletinEdited){
+        if (isBulletinEdited) {
             const participant = participants.filter(p => p.pmo === PmoStatus.EditerLeBulletin)
             participant.forEach(p => {
                 p.pmo = PmoStatus.EnvoyerLeBulletin
                 useStoredParticipants.getState().setParticipants([...participants])
             })
         }
-        if(isAccordsParticipationEdited){
+        if (isAccordsParticipationEdited) {
             const participant = participants.filter(p => p.enedis === EnedisStatus.EditerLAccord)
             participant.forEach(p => {
                 p.enedis = EnedisStatus.EnvoyerLAccord
                 useStoredParticipants.getState().setParticipants([...participants])
             })
         }
-        if(isDeclarationSent && isAccordsParticipationEdited && isBulletinEdited ) {
+        if (isDeclarationSent && isAccordsParticipationEdited && isBulletinEdited) {
             //
         }
     }, [isPmoCreated, isBulletinEdited, isAccordsParticipationEdited])
+
     function accept(id: number) {
         const participant = participants.find(p => p.id === id)
         if (participant) {
@@ -145,10 +224,12 @@ const useParticipants = () => {
         }
     }
 
-    function proposePrice(id: number) {
+    function proposePrice(id: number, selectedContract: ContractDocument | null) {
+        if (!selectedContract) return;
         const participant = participants.find(p => p.id === id)
         if (participant) {
             participant.sales = SalesStatus.PrixPropose
+            participant.contractDocument = selectedContract
             useStoredParticipants.getState().setParticipants([...participants])
         }
     }
@@ -156,11 +237,14 @@ const useParticipants = () => {
     function consumerAcceptPrice(id: number) {
         const participant = participants.find(p => p.id === id)
         if (participant) {
-            participant.sales = SalesStatus.AssocierLeContrat
+            const participantContratIsComplete = !!participant.contractDocument?.moreInfo
+            participant.sales = participantContratIsComplete ? SalesStatus.EnvoyerLeContrat : SalesStatus.AssocierLeContrat
+
             useStoredParticipants.getState().setParticipants([...participants])
         }
     }
-    function associateContract(id: number) {
+
+    function completeContract(id: number) {
         const participant = participants.find(p => p.id === id)
         if (participant) {
             participant.sales = SalesStatus.EnvoyerLeContrat
@@ -168,7 +252,18 @@ const useParticipants = () => {
         }
     }
 
-    function consumersSignAllDocuments(){
+    function completeContractForAll(id: number) {
+        let contractToUpdate = participants.find(p => p.id === id)?.contractDocument
+        if (!contractToUpdate) return
+        contractToUpdate = {...contractToUpdate, moreInfo: true}
+        participants.forEach(p => {
+            p.contractDocument = contractToUpdate
+            p.sales = SalesStatus.EnvoyerLeContrat
+        })
+        useStoredParticipants.getState().setParticipants([...participants])
+    }
+
+    function consumersSignAllDocuments() {
 
         preIntegres.forEach(p => {
             p.pmo = PmoStatus.BulletinSigne
@@ -179,6 +274,21 @@ const useParticipants = () => {
         useStoredParticipants.getState().setParticipants([...preIntegres, ...refuses, ...exploitation, ...candidatures])
 
     }
-    return {preIntegres, refuses, exploitation, candidatures, accept, reject, exportData, sendDocument, proposePrice, consumerAcceptPrice, associateContract, consumersSignAllDocuments}
+
+    return {
+        preIntegres,
+        refuses,
+        exploitation,
+        candidatures,
+        accept,
+        reject,
+        exportData,
+        sendDocument,
+        proposePrice,
+        consumerAcceptPrice,
+        completeContract,
+        completeContractForAll,
+        consumersSignAllDocuments
+    }
 }
 export {parse, useParticipants}

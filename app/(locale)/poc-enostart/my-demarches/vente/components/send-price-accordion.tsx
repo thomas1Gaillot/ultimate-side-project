@@ -16,14 +16,18 @@ import {
     DialogTrigger
 } from "@/components/ui/dialog";
 import {MyContracts} from "@/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion";
-import {useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
+import {ContractDocument, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
 import {useRouter} from "next/navigation";
+import {useState} from "react";
 
 export default function SendPriceAccordion() {
     const {preIntegres, reject, proposePrice} = useParticipants()
     const preIntegresToSendPrice = preIntegres.filter(p => p.sales === SalesStatus.ProposerUnPrix)
     const {salesContract} = useStoredDocuments()
+    const [selectedContract, setSelectedContract] = useState<ContractDocument | null>(null);
+
     const router = useRouter()
+
     return (
         <AccordionItem value="send-price">
             <AccordionTrigger
@@ -61,12 +65,19 @@ export default function SendPriceAccordion() {
                                                             {"Make changes to your profile here. Click save when you're done."}
                                                         </DialogDescription>
                                                     </DialogHeader>
-                                                    <MyContracts storedContracts={salesContract}/>
+                                                    <MyContracts
+                                                        storedContracts={salesContract}
+                                                        onContractSelect={setSelectedContract}
+                                                        selectedContract={selectedContract}
+                                                    />
                                                     <DialogFooter>
                                                         <Button
-                                                            onClick={() => proposePrice(p.id)}
-                                                            type="submit">Envoyer cette proposition au
-                                                            consommateur </Button>
+                                                            onClick={() => proposePrice(p.id, selectedContract)}
+                                                            type="submit"
+                                                            disabled={!selectedContract}
+                                                        >
+                                                            Envoyer cette proposition au consommateur
+                                                        </Button>
                                                     </DialogFooter>
                                                 </DialogContent>
                                             </Dialog>
@@ -76,8 +87,9 @@ export default function SendPriceAccordion() {
                                                     <TooltipTrigger>
                                                         <Button
                                                             onClick={() => reject(p.id)}
-                                                            size={'sm'} className={'text-red-500 text-xs'} variant={'link'}><TrashIcon
-                                                            className={'size-4 ml-2'}/> </Button>
+                                                            size={'sm'} className={'text-red-500 text-xs'} variant={'link'}>
+                                                            <TrashIcon className={'size-4 ml-2'}/>
+                                                        </Button>
                                                     </TooltipTrigger>
                                                     <TooltipContent>
                                                         <p>Refuser {p.name}</p>
