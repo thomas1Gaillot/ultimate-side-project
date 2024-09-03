@@ -212,9 +212,9 @@ export default function Overview() {
     return <Accordion type="single" defaultValue={"item-1"} collapsible className={""}>
         <AccordionItem value="item-1" className={"bg-gray-50  px-8"}>
             <AccordionTrigger>
-                <div className={"w-max flex"}>
+                <div className={"w-max flex  text-primary"}>
                     <FootprintsIcon className={"size-4 mr-4"}/>
-                    {'Ma checklist'}
+                    {"J'ai besoin d'aide pour créer mon opération"}
                 </div>
             </AccordionTrigger>
             <AccordionContent>

@@ -27,7 +27,7 @@ export default function AssociateContractAccordion() {
             <AccordionTrigger
                 className="text-lg font-semibold">
                 <div className={"flex"}>
-                    {"2. J'associe un contrat de vente à chaque consommateur"}
+                    {"2. Je complète le contrat de vente pour chaque consommateur"}
                 </div>
             </AccordionTrigger>
             <AccordionContent className={"p-8 gap-4 grid"}>

@@ -96,7 +96,7 @@ const sales_flow = (p: Participant[]) => {
             disabled: (numberOfPreIntegresWithPriceProposed + numberOfPreIntegresWithPriceAccepted) === 0
         },
         {
-            label: "J'associe un contrat de vente à chaque consommateur",
+            label: "Je complète le contrat de vente pour chaque consommateur",
             href: '/poc-enostart/my-demarches/vente',
             numberOfTaskDone: numberOfEditedContract,
             numberOfTask: numberOfEditedContract + numberOfPreIntegresWithPriceAccepted,
