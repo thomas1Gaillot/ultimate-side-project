@@ -255,9 +255,10 @@ const useParticipants = () => {
 
     function completeContractForAll(id: number) {
         let contractToUpdate = participants.find(p => p.id === id)?.contractDocument
+        const participantWithContrat = participants.filter(p => p.contractDocument === contractToUpdate && p.sales === SalesStatus.AssocierLeContrat)
         if (!contractToUpdate) return
         contractToUpdate = {...contractToUpdate, moreInfo: true}
-        participants.forEach(p => {
+        participantWithContrat.forEach(p => {
             p.contractDocument = contractToUpdate
             p.sales = SalesStatus.EnvoyerLeContrat
         })

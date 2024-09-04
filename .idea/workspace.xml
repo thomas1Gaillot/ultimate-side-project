@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="flow contrat de vente">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="- editing demarches status on participant table,">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/enedis-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/enedis-status.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/pmo-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/pmo-status.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/sales-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/sales-status.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,15 +228,7 @@
       <workItem from="1725267174453" duration="3501000" />
       <workItem from="1725353355909" duration="5408000" />
       <workItem from="1725371229796" duration="3973000" />
-      <workItem from="1725434474718" duration="1858000" />
-    </task>
-    <task id="LOCAL-00161" summary="show cards">
-      <option name="closed" value="true" />
-      <created>1724185093758</created>
-      <option name="number" value="00161" />
-      <option name="presentableId" value="LOCAL-00161" />
-      <option name="project" value="LOCAL" />
-      <updated>1724185093758</updated>
+      <workItem from="1725434474718" duration="2799000" />
     </task>
     <task id="LOCAL-00162" summary="ux">
       <option name="closed" value="true" />
@@ -626,7 +614,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725375346485</updated>
     </task>
-    <option name="localTasksCounter" value="210" />
+    <task id="LOCAL-00210" summary="- editing demarches status on participant table,">
+      <option name="closed" value="true" />
+      <created>1725436486675</created>
+      <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
+      <option name="project" value="LOCAL" />
+      <updated>1725436486676</updated>
+    </task>
+    <option name="localTasksCounter" value="211" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +641,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix tabs" />
     <MESSAGE value="start isolate data" />
     <MESSAGE value="flow" />
     <MESSAGE value="flow working for participants until last step" />
@@ -670,6 +665,7 @@
     <MESSAGE value="rename sales contrats tabs" />
     <MESSAGE value="export date grouped" />
     <MESSAGE value="flow contrat de vente" />
-    <option name="LAST_COMMIT_MESSAGE" value="flow contrat de vente" />
+    <MESSAGE value="- editing demarches status on participant table," />
+    <option name="LAST_COMMIT_MESSAGE" value="- editing demarches status on participant table," />
   </component>
 </project>
