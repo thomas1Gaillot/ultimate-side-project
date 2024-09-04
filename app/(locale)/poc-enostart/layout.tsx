@@ -3,8 +3,10 @@ import MonECTabs from "@/app/(locale)/poc-enostart/components/MonECTabs";
 import Overview from "@/app/(locale)/poc-enostart/components/overview/overview";
 import {Button} from "@/components/ui/button";
 import {QuestionMarkCircledIcon} from "@radix-ui/react-icons";
-import {CodepenIcon} from "lucide-react";
+import {CodepenIcon, FileWarningIcon, XIcon} from "lucide-react";
 import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
+import {Separator} from "@/components/ui/separator";
+import WarningDemarchesBanner from "@/app/(locale)/poc-enostart/components/overview/warningDemarchesBanner";
 
 export default function Layout({
                                    children,
@@ -18,6 +20,7 @@ export default function Layout({
             <MonECTabs/>
             <Overview/>
             <div className={"3xl:px-32 2xl:px-16 px-4  md:px-8"}>
+                <WarningDemarchesBanner/>
                 {children}
             </div>
         </>

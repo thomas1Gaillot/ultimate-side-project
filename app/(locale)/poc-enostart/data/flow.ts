@@ -12,13 +12,13 @@ export type Step = {
     disabled?: boolean,
 }
 
-const participantsTab = (participants: Participant[], isPmoCreated : boolean, isAccordsEdited : boolean, isOperationDeclared : boolean) => {
+const participantsTab = (participants: Participant[], isBulletinEdited : boolean, isAccordsEdited : boolean) => {
     const {candidatures, preIntegres, exploitation} = parse(participants)
     const hasSalesThingsToDo = participants.some(p => p.status === 'pre-integre' &&
         (p.sales === SalesStatus.ProposerUnPrix  || p.sales === SalesStatus.AssocierLeContrat))
 
-    const canSignDocuments = preIntegres.some(p => p.sales === SalesStatus.EnvoyerLeContrat && p.pmo === PmoStatus.EnvoyerLeBulletin && p.enedis === EnedisStatus.EnvoyerLAccord)
-     && isPmoCreated && isAccordsEdited && isOperationDeclared
+    const canSignDocuments = preIntegres.some(p => p.sales === SalesStatus.EnvoyerLeContrat)
+
     return [
         {
             id: "nouvelles-candidatures",
@@ -31,15 +31,6 @@ const participantsTab = (participants: Participant[], isPmoCreated : boolean, is
         {id: "passages-en-exploitation", label: "Je gère mon opération auprès d'Enedis", ping: exploitation.length >0},
     ]
 }
-const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited: boolean, isDeclarationSent : boolean) => [
-    {
-        id: "demarches",
-        label: "J'identifie ma PMO et édite les documents",
-        hide: isBulletinEdited && isAccordsEdited,
-        ping: !isBulletinEdited || !isAccordsEdited
-    },
-    {id: "declaration", label: "Je déclare mon opération", ping: !isDeclarationSent, hide : isDeclarationSent},
-]
 
 const candidatures_flow = (p: Participant[]) => {
     const {candidatures, preIntegres} = parse(p)
@@ -121,8 +112,6 @@ const signatures_flow = (p: Participant[]) => {
         .filter(p => p.sales === SalesStatus.PrixPropose).length
     const numberOfPreIntegresWithPriceAccepted = preIntegres
         .filter(p => p.sales === SalesStatus.AssocierLeContrat).length
-    const numberOfEditedContract = preIntegres
-        .filter(p => p.sales === SalesStatus.EnvoyerLeContrat).length
     const numberOfWaitingSignature = preIntegres
         .filter(p => p.sales === SalesStatus.ContratEnvoye || p.pmo === PmoStatus.BulletinEnvoye || p.enedis === EnedisStatus.AccordEnvoye).length
     const numberOfSignatures = preIntegres
@@ -131,17 +120,16 @@ const signatures_flow = (p: Participant[]) => {
     const canSignDocuments = preIntegres.some(p => p.sales === SalesStatus.EnvoyerLeContrat && p.pmo === PmoStatus.EnvoyerLeBulletin && p.enedis === EnedisStatus.EnvoyerLAccord)
     const steps: Step[] = [
         {
-            label: "prérequis : Les démarches de mon projet sont terminées",
+            label: "prérequis : Les bulletins d'adhésions sont édités",
             href: '/poc-enostart/my-demarches/pmo',
-            numberOfTaskDone: pmoStatusTerminated + enedisStatusTerminated,
-            numberOfTask: 2,
-
+            numberOfTaskDone: pmoStatusTerminated ,
+            numberOfTask: 1,
         },
         {
-            label: "prérequis :  Les contrats de ventes sont edités et associés aux consommateurs",
-            href: '/poc-enostart/my-demarches/vente',
-            numberOfTaskDone: numberOfEditedContract,
-            numberOfTask: preIntegres.length
+            label: "prérequis :  Les accords de participation sont édités",
+            href: '/poc-enostart/my-demarches/enedis',
+            numberOfTaskDone: enedisStatusTerminated,
+            numberOfTask: 1
         },
         {
             label: "J'envoi les documents aux consommateurs pour signature",
@@ -230,7 +218,6 @@ const declaration_flow = (isDeclarationSent:boolean) => {
 }
 export {
     participantsTab,
-    demarchesTabs,
     candidatures_flow,
     sales_flow,
     signatures_flow,

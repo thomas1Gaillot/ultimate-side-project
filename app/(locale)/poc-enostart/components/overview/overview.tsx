@@ -10,7 +10,6 @@ import {
     demarches_pmo_accords,
     demarches_pmo_creation,
     demarches_pmo_flow,
-    demarchesTabs,
     participantsTab,
     sales_flow,
     signatures_flow
@@ -191,29 +190,30 @@ export default function Overview() {
             ),
     }
 
-    return <Accordion type="single" defaultValue={"item-1"} collapsible className={""}>
+    return <Accordion type="single"collapsible className={""}>
         <AccordionItem value="item-1" className={"bg-gray-50  px-8"}>
             <AccordionTrigger>
                 <div className={"w-max flex  text-primary"}>
                     <FootprintsIcon className={"size-4 mr-4"}/>
-                    {"J'ai besoin d'aide pour créer mon opération"}
+                    {"J'ai besoin d'aide dans le parcours des participants"}
                 </div>
             </AccordionTrigger>
             <AccordionContent>
                 <Tabs orientation="vertical" value={activeTab} onValueChange={setActiveTab} className="h-full ">
-                    <div className="flex h-80 bg-gray-50">
+                    <div className="flex h-48 bg-gray-50">
                         <TabsList className="flex-grow h-full flex flex-col ">
                             <span
                                 className={"uppercase text-xs w-full text-left ml-2 mt-4"}>Parcours des Participants</span>
 
-                            {participantsTab(participants, isPmoCreated, isAccordsParticipationEdited, isDeclarationSent).map((tab, index) => (
+                            {participantsTab(participants, isBulletinEdited, isAccordsParticipationEdited).map((tab, index) => (
                                 <TabsTrigger
                                     key={tab.id}
                                     value={tab.id}
                                     className="flex data-[state=active]:bg-white py-0 justify-between items-center w-[400px] px-3 text-sm"
                                 >
                                     <div className={"flex items-center "}>
-                                        <Timeline index={index} length={participantsTab(participants, isPmoCreated, isAccordsParticipationEdited, isDeclarationSent).length}/>
+                                        <Timeline index={index}
+                                                  length={participantsTab(participants, isBulletinEdited, isAccordsParticipationEdited).length}/>
                                         <span className={cn("text-left font-normal truncate ml-2",
                                             tab.ping && 'text-primary  font-bold')}>
                                             {tab.label}</span>
@@ -226,36 +226,36 @@ export default function Overview() {
                                         <></>}
                                 </TabsTrigger>
                             ))}
-                            <span className={"uppercase ml-2 mt-4 text-xs w-full text-left"}>démarches</span>
-                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (
-                                <TabsTrigger
-                                    key={tab.id}
-                                    value={tab.id}
-                                    className={cn("flex data-[state=active]:bg-white justify-between items-center w-[400px]  px-3 py-2 text-sm",
-                                        tab.hide && 'line-through')}
-                                >
-                                    <div className={"flex items-center"}>
-                                        <span className={cn("text-left font-normal truncate mr-2",
-                                            tab.ping && 'text-primary font-bold')}>
-                                            {tab.label}
-                                        </span>
-                                    </div>
-                                    {tab.ping ? <span
-                                            className="flex text-sm  text-primary gap-1 items-center ms-1 py-0.5 px-1.5 rounded-full text-xs font-medium bg-primary/10 text-gray-800 dark:bg-neutral-700 dark:text-neutral-300">
+                            {/*<span className={"uppercase ml-2 mt-4 text-xs w-full text-left"}>démarches</span>*/}
+                            {/*{demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (*/}
+                            {/*    <TabsTrigger*/}
+                            {/*        key={tab.id}*/}
+                            {/*        value={tab.id}*/}
+                            {/*        className={cn("flex data-[state=active]:bg-white justify-between items-center w-[400px]  px-3 py-2 text-sm",*/}
+                            {/*            tab.hide && 'line-through')}*/}
+                            {/*    >*/}
+                            {/*        <div className={"flex items-center"}>*/}
+                            {/*            <span className={cn("text-left font-normal truncate mr-2",*/}
+                            {/*                tab.ping && 'text-primary font-bold')}>*/}
+                            {/*                {tab.label}*/}
+                            {/*            </span>*/}
+                            {/*        </div>*/}
+                            {/*        {tab.ping ? <span*/}
+                            {/*                className="flex text-sm  text-primary gap-1 items-center ms-1 py-0.5 px-1.5 rounded-full text-xs font-medium bg-primary/10 text-gray-800 dark:bg-neutral-700 dark:text-neutral-300">*/}
 
-                                            <BellIcon className="size-4"/> à faire
-                            </span> :
-                                        <></>}
-                                </TabsTrigger>
-                            ))}
+                            {/*                <BellIcon className="size-4"/> à faire*/}
+                            {/*</span> :*/}
+                            {/*            <></>}*/}
+                            {/*    </TabsTrigger>*/}
+                            {/*))}*/}
                         </TabsList>
                         <div className="flex-grow w-full p-4 h-full bg-white/50 rounded-r-lg overflow-y-auto">
-                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (
-                                <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full ">
-                                    {tabContents[tab.id]}
-                                </TabsContent>
-                            ))}
-                            {participantsTab(participants, isPmoCreated, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (
+                            {/*{demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (*/}
+                            {/*    <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full ">*/}
+                            {/*        {tabContents[tab.id]}*/}
+                            {/*    </TabsContent>*/}
+                            {/*))}*/}
+                            {participantsTab(participants, isBulletinEdited, isAccordsParticipationEdited).map((tab) => (
                                 <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
                                     {tabContents[tab.id]}
                                 </TabsContent>
