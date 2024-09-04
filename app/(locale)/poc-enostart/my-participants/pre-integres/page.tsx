@@ -2,7 +2,7 @@
 import {TypographyH4} from "@/components/ui/typography";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {Button} from "@/components/ui/button";
-import {BellIcon, Clock, DownloadIcon, HourglassIcon, SendIcon, TimerIcon, TrashIcon} from "lucide-react";
+import {BellIcon, Clock, DownloadIcon, HourglassIcon, SendIcon, TimerIcon, TrashIcon, XIcon} from "lucide-react";
 import {cn} from "@/lib/utils";
 import {enedisMapper, EnedisStatus} from "@/app/(locale)/poc-enostart/data/enedis-status";
 import {pmoMapper, PmoStatus} from "../../data/pmo-status";
@@ -122,11 +122,8 @@ export default function Page() {
                                 <TooltipProvider>
                                     <Tooltip>
                                         <TooltipTrigger>
-                                            <Button
-                                                onClick={() => reject(p.id)}
-                                                size={'sm'} className={'text-red-500 text-xs'}
-                                                variant={'link'}><TrashIcon
-                                                className={'size-4 ml-2'}/> </Button>
+                                            <Button onClick={() => reject(p.id)} size={'sm'} className={'text-red-500 text-xs'} variant={'link'}>Refuser<XIcon
+                                                className={'size-4 ml-1'}/> </Button>
                                         </TooltipTrigger>
                                         <TooltipContent>
                                             <p>Refuser {p.name}</p>

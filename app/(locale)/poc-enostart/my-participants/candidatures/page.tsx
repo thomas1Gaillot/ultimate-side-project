@@ -25,7 +25,7 @@ export default function Page() {
                         <TableCell>{participant.perimeter}</TableCell>
                         <TableCell>{participant.consumption}</TableCell>
                         <TableCell>
-                            <Button onClick={() => accept(participant.id)} size={'sm'} className={'text-xs text-gray-700'} variant={'link'}>Accepter<CheckIcon
+                            <Button onClick={() => accept(participant.id)} size={'sm'} className={'text-xs text-gray-700'} variant={'link'}>Pré-intégrer<CheckIcon
                                 className={'size-4 ml-1'}/> </Button>
                             <Button onClick={() => reject(participant.id)} size={'sm'} className={'text-red-500 text-xs'} variant={'link'}>Refuser<XIcon
                                 className={'size-4 ml-1'}/> </Button>

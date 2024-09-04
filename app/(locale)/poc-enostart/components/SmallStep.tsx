@@ -36,9 +36,9 @@ const SmallStep = ({
         <Button
             disabled={disabled || isDone}
             onClick={() => link ?router.push(link) : undefined}
-            variant="ghost"
+            variant={"outline"}
             size="sm"
-            className={cn("flex items-center justify-start w-max gap-2",
+            className={cn("flex items-center justify-start w-max gap-2 py-1",
                 pathName === link && !disabled ? "bg-primary/10 text-primary" : "")}
         >
             <div

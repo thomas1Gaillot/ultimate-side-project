@@ -11,7 +11,7 @@ export type Participant = {
     perimeter: string,
     consumption: number,
     exportDate: string | null,
-    status: 'candidature' | 'pre-integre' | 'exploitation' | 'refuse',
+    status: 'candidature' | 'pre-integre' | 'exploitation' | 'integrated' | 'refuse',
     pmo: PmoStatus,
     enedis: EnedisStatus,
     sales: SalesStatus,
@@ -25,7 +25,7 @@ const initialParticipants: Participant[] = [
         perimeter: "1.67 km",
         consumption: 4500,
         exportDate: null,
-        status: 'candidature',
+        status: 'exploitation',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.ProposerUnPrix
@@ -153,7 +153,7 @@ const parse = (participants: Participant[]) => {
     return {
         candidatures: participants.filter(p => p.status === 'candidature'),
         preIntegres: participants.filter(p => p.status === 'pre-integre'),
-        exploitation: participants.filter(p => p.status === 'exploitation'),
+        exploitation: participants.filter(p => p.status === 'exploitation' || p.status === 'integrated'),
         refuses: participants.filter(p => p.status === 'refuse'),
     }
 }
@@ -278,6 +278,14 @@ const useParticipants = () => {
 
     }
 
+    function integrate(id: number) {
+        const participant = participants.find(p => p.id === id)
+        if (participant) {
+            participant.status = 'integrated'
+            useStoredParticipants.getState().setParticipants([...participants])
+        }
+    }
+
     return {
         preIntegres,
         refuses,
@@ -291,7 +299,8 @@ const useParticipants = () => {
         consumerAcceptPrice,
         completeContract,
         completeContractForAll,
-        consumersSignAllDocuments
+        consumersSignAllDocuments,
+        integrate
     }
 }
 export {parse, useParticipants}

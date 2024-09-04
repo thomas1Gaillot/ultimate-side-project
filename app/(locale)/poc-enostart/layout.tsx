@@ -15,9 +15,9 @@ export default function Layout({
     return (
         <>
             <Header/>
+            <MonECTabs/>
             <Overview/>
             <div className={"3xl:px-32 2xl:px-16 px-4  md:px-8"}>
-                <MonECTabs/>
                 {children}
             </div>
         </>

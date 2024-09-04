@@ -12,12 +12,13 @@ export type Step = {
     disabled?: boolean,
 }
 
-const participantsTab = (participants: Participant[]) => {
+const participantsTab = (participants: Participant[], isPmoCreated : boolean, isAccordsEdited : boolean, isOperationDeclared : boolean) => {
     const {candidatures, preIntegres, exploitation} = parse(participants)
     const hasSalesThingsToDo = participants.some(p => p.status === 'pre-integre' &&
         (p.sales === SalesStatus.ProposerUnPrix  || p.sales === SalesStatus.AssocierLeContrat))
 
     const canSignDocuments = preIntegres.some(p => p.sales === SalesStatus.EnvoyerLeContrat && p.pmo === PmoStatus.EnvoyerLeBulletin && p.enedis === EnedisStatus.EnvoyerLAccord)
+     && isPmoCreated && isAccordsEdited && isOperationDeclared
     return [
         {
             id: "nouvelles-candidatures",
@@ -30,7 +31,7 @@ const participantsTab = (participants: Participant[]) => {
         {id: "passages-en-exploitation", label: "Je gère mon opération auprès d'Enedis", ping: exploitation.length >0},
     ]
 }
-const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited: boolean, isDeclarationSent : boolean, hasSalesContract: boolean) => [
+const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited: boolean, isDeclarationSent : boolean) => [
     {
         id: "demarches",
         label: "J'identifie ma PMO et édite les documents",
@@ -38,7 +39,6 @@ const demarchesTabs = (isBulletinEdited: boolean, isAccordsEdited: boolean, isDe
         ping: !isBulletinEdited || !isAccordsEdited
     },
     {id: "declaration", label: "Je déclare mon opération", ping: !isDeclarationSent, hide : isDeclarationSent},
-    {id: "sales-contract", label: "Je crée mes contrats de vente", ping: !hasSalesContract, hide : false},
 ]
 
 const candidatures_flow = (p: Participant[]) => {
@@ -206,19 +206,6 @@ const demarches_pmo_accords = (isPmoCreated: boolean, isEdited: boolean) => {
     ]
     return steps;
 }
-const sales_contract_flow = (hasContracts: boolean) => {
-        const steps: Step[] = [
-            {
-                label: "Je crée mes contrats de vente",
-                href: '/poc-enostart/my-demarches/vente',
-                numberOfTaskDone: hasContracts ? 1 : 0,
-                numberOfTask: 1,
-                done: hasContracts
-            }
-        ]
-        return steps;
-
-}
 const declaration_flow = (isDeclarationSent:boolean) => {
 
     const steps: Step[] = [
@@ -251,5 +238,4 @@ export {
     demarches_pmo_creation,
     demarches_pmo_accords,
     declaration_flow,
-    sales_contract_flow
 }

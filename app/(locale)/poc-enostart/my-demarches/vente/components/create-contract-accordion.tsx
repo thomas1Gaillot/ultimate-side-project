@@ -33,7 +33,7 @@ export default function CreateContractAccordion() {
             <AccordionTrigger
                 className="text-lg font-semibold">
                 <div className={"flex"}>
-                    {"Je créé mes contrats de vente"}
+                    {"Je crée mes contrats de vente"}
                 </div>
             </AccordionTrigger>
             <AccordionContent className={"p-8 gap-4 grid"}>

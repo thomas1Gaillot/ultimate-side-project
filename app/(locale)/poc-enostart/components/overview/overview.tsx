@@ -11,7 +11,7 @@ import {
     demarches_pmo_creation,
     demarches_pmo_flow,
     demarchesTabs,
-    participantsTab, sales_contract_flow,
+    participantsTab,
     sales_flow,
     signatures_flow
 } from "@/app/(locale)/poc-enostart/data/flow";
@@ -23,7 +23,7 @@ export default function Overview() {
 
     const [activeTab, setActiveTab] = useState("nouvelles-candidatures")
     const {participants} = useStoredParticipants()
-    const {isPmoCreated, isDeclarationSent, isBulletinEdited, hasSalesContract, isAccordsParticipationEdited} = useDocuments()
+    const {isPmoCreated, isDeclarationSent, isBulletinEdited, isAccordsParticipationEdited} = useDocuments()
     const candidatures = candidatures_flow(participants)
     const sales = sales_flow(participants)
     const signatures = signatures_flow(participants)
@@ -31,7 +31,6 @@ export default function Overview() {
     const demarchesPmoCreation = demarches_pmo_creation(isPmoCreated)
     const demarchesAccords = demarches_pmo_accords(isPmoCreated, isAccordsParticipationEdited)
     const declaration = declaration_flow(isDeclarationSent)
-    const salesContract = sales_contract_flow(hasSalesContract)
     const tabContents: any = {
         "demarches": (
             <>
@@ -41,7 +40,7 @@ export default function Overview() {
                     <div className={"flex items-center gap-4 mt-4"}>
                         <h3 className="font-semibold text-sm ">{"1. J'identifie ma PMO"}</h3>
                     </div>
-                    <ul className="space-y-1 text-sm">
+                    <ul className="grid gap-2 text-sm pt-1 pb-2">
                         {demarchesPmoCreation.map((step, index) => (
                             <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
                                        done={step.done} numberOfTaskDone={step.numberOfTaskDone}
@@ -55,7 +54,7 @@ export default function Overview() {
                         <div className={"flex items-center gap-4 mb-2"}>
                             <h3 className="font-semibold text-sm "> 2. Démarches PMO</h3>
                         </div>
-                        <ul className="space-y-1 text-sm">
+                        <ul className="grid gap-2 text-sm pt-1 pb-2">
                             {demarchesPmo.map((step, index) => (
                                 <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
                                            done={step.done} numberOfTaskDone={step.numberOfTaskDone}
@@ -67,7 +66,7 @@ export default function Overview() {
                         <div className={"flex items-center gap-4 mb-2"}>
                             <h3 className="font-semibold text-sm "> 2. Accords de participation</h3>
                         </div>
-                        <ul className="space-y-1 text-sm">
+                        <ul className="grid gap-2 text-sm pt-1 pb-2">
                             {demarchesAccords.map((step, index) => (
                                 <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
                                            done={step.done} numberOfTaskDone={step.numberOfTaskDone}
@@ -88,25 +87,8 @@ export default function Overview() {
                         <div className={"flex items-center gap-4 mb-2"}>
                             <h3 className="font-semibold text-sm ">Déclaration Enedis</h3>
                         </div>
-                        <ul className="space-y-1 text-sm">
+                        <ul className="grid gap-2 text-sm pt-1 pb-2">
                             {declaration.map((step, index) => (
-                                <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
-                                           done={step.done} index={index}/>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </>
-        ),
-        "sales-contract": (
-            <>
-                <div className={"grid gap-4 mt-2 grid-cols-1 lg:grid-cols-3"}>
-                    <div>
-                        <div className={"flex items-center gap-4 mb-2"}>
-                            <h3 className="font-semibold text-sm ">Contrats de vente</h3>
-                        </div>
-                        <ul className="space-y-1 text-sm">
-                            {salesContract.map((step, index) => (
                                 <SmallStep disabled={step.disabled} key={index} link={step.href} label={step.label}
                                            done={step.done} index={index}/>
                             ))}
@@ -122,7 +104,7 @@ export default function Overview() {
                         <InfoIcon className={'size-6 mr-4'}/>
                         {`Comment accepter des candidatures ? (${candidatures.number})`}
                     </h3>
-                    <ul className="text-sm grid  grid-cols-1 ml-6">
+                    <ul className="grid gap-2 text-sm pt-1 pb-2">
                         {candidatures.steps.map((step, index) => (
                             <SmallStep key={index} link={step.href} label={step.label} index={index} done={step.done}
                                        numberOfTaskDone={step.numberOfTaskDone} disabled={step.disabled}
@@ -141,7 +123,7 @@ export default function Overview() {
                                 {"Comment faire valider mon prix de vente aux consommateurs?"}
                             </h3>
 
-                            <ul className="ml-6 text-sm grid grid-cols-1">
+                            <ul className="grid gap-2 text-sm pt-1 pb-2">
                                 {sales.steps.map((step, index) => (
                                     <SmallStep key={index} link={step.href} label={step.label} index={index}
                                                done={step.done} disabled={step.disabled}
@@ -162,7 +144,7 @@ export default function Overview() {
                                 <InfoIcon className={'size-6 mr-4'}/>
                                 {`Comment finaliser les démarches avec mes consommateurs ?`}
                             </h3>
-                            <ul className="text-sm grid grid-cols-1 ml-6">
+                            <ul className="grid gap-2 text-sm pt-1 pb-2">
                                 {signatures.steps.map((step, index) => (
                                     <SmallStep key={index} link={step.href} label={step.label} index={index}
                                                done={step.done}
@@ -183,7 +165,7 @@ export default function Overview() {
                             <InfoIcon className={'size-6 mr-4'}/>
                             {`Comment démarrer mon opération?`}
                         </h3>
-                            <ul className="text-sm grid grid-cols-1 ml-6">
+                            <ul className="grid gap-2 text-sm pt-1 pb-2">
                                 <SmallStep disabled={true} label={"Je sélectionne les participants à intégrer"}
                                            done={false}
                                            index={0}/>
@@ -196,7 +178,7 @@ export default function Overview() {
                         </div>
                         <div>
                             <h3 className="font-semibold text-sm mb-2">{"ou comment ajouter les participants dans mon opération ?"}</h3>
-                            <ul className="text-sm grid grid-cols-1 ">
+                            <ul className="grid gap-2 text-sm pt-1 pb-2">
                                 <SmallStep disabled={true} label={"J'exporte la liste des participants sur EnoPower"}
                                            done={false}
                                            index={0}/>
@@ -224,14 +206,14 @@ export default function Overview() {
                             <span
                                 className={"uppercase text-xs w-full text-left ml-2 mt-4"}>Parcours des Participants</span>
 
-                            {participantsTab(participants).map((tab, index) => (
+                            {participantsTab(participants, isPmoCreated, isAccordsParticipationEdited, isDeclarationSent).map((tab, index) => (
                                 <TabsTrigger
                                     key={tab.id}
                                     value={tab.id}
                                     className="flex data-[state=active]:bg-white py-0 justify-between items-center w-[400px] px-3 text-sm"
                                 >
                                     <div className={"flex items-center "}>
-                                        <Timeline index={index} length={participantsTab(participants).length}/>
+                                        <Timeline index={index} length={participantsTab(participants, isPmoCreated, isAccordsParticipationEdited, isDeclarationSent).length}/>
                                         <span className={cn("text-left font-normal truncate ml-2",
                                             tab.ping && 'text-primary  font-bold')}>
                                             {tab.label}</span>
@@ -245,7 +227,7 @@ export default function Overview() {
                                 </TabsTrigger>
                             ))}
                             <span className={"uppercase ml-2 mt-4 text-xs w-full text-left"}>démarches</span>
-                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent, hasSalesContract).map((tab) => (
+                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (
                                 <TabsTrigger
                                     key={tab.id}
                                     value={tab.id}
@@ -268,12 +250,12 @@ export default function Overview() {
                             ))}
                         </TabsList>
                         <div className="flex-grow w-full p-4 h-full bg-white/50 rounded-r-lg overflow-y-auto">
-                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent, hasSalesContract).map((tab) => (
+                            {demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (
                                 <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full ">
                                     {tabContents[tab.id]}
                                 </TabsContent>
                             ))}
-                            {participantsTab(participants).map((tab) => (
+                            {participantsTab(participants, isPmoCreated, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (
                                 <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
                                     {tabContents[tab.id]}
                                 </TabsContent>

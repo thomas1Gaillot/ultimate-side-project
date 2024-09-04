@@ -2,7 +2,7 @@
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
-import {Settings2Icon, TrashIcon} from "lucide-react";
+import {Settings2Icon, TrashIcon, XIcon} from "lucide-react";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import {Button} from "@/components/ui/button";
 import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
@@ -85,11 +85,8 @@ export default function SendPriceAccordion() {
                                             <TooltipProvider>
                                                 <Tooltip>
                                                     <TooltipTrigger>
-                                                        <Button
-                                                            onClick={() => reject(p.id)}
-                                                            size={'sm'} className={'text-red-500 text-xs'} variant={'link'}>
-                                                            <TrashIcon className={'size-4 ml-2'}/>
-                                                        </Button>
+                                                        <Button onClick={() => reject(p.id)} size={'sm'} className={'text-red-500 text-xs'} variant={'link'}>Refuser<XIcon
+                                                            className={'size-4 ml-1'}/> </Button>
                                                     </TooltipTrigger>
                                                     <TooltipContent>
                                                         <p>Refuser {p.name}</p>

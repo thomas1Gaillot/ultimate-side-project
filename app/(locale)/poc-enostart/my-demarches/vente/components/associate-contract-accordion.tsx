@@ -2,7 +2,7 @@ import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
-import {TrashIcon} from "lucide-react";
+import {TrashIcon, XIcon} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import {Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger} from "@/components/ui/dialog";
@@ -222,10 +222,8 @@ export default function AssociateContractAccordion() {
                                             <TooltipProvider>
                                                 <Tooltip>
                                                     <TooltipTrigger>
-                                                        <Button
-                                                            onClick={() => reject(p.id)}
-                                                            size={'sm'} className={'text-red-500 text-xs'} variant={'link'}><TrashIcon
-                                                            className={'size-4 ml-2'}/> </Button>
+                                                        <Button onClick={() => reject(p.id)} size={'sm'} className={'text-red-500 text-xs'} variant={'link'}>Refuser<XIcon
+                                                            className={'size-4 ml-1'}/> </Button>
                                                     </TooltipTrigger>
                                                     <TooltipContent>
                                                         <p>Refuser {p.name}</p>
