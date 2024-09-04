@@ -162,6 +162,7 @@ const useParticipants = () => {
     const {participants} = useStoredParticipants()
     const {isDeclarationSent, isAccordsParticipationEdited, isBulletinEdited, isPmoCreated} = useDocuments()
     const {preIntegres, refuses, exploitation, candidatures} = parse(participants)
+
     useEffect(() => {
         if (isPmoCreated) {
             const participant = participants.filter(p => p.pmo === PmoStatus.IdentifierLaPmo)
@@ -264,8 +265,9 @@ const useParticipants = () => {
     }
 
     function consumersSignAllDocuments() {
+        const preIntegresReadyToSign = preIntegres.filter(p => p.sales === SalesStatus.ContratEnvoye && p.pmo === PmoStatus.BulletinEnvoye && p.enedis === EnedisStatus.AccordEnvoye)
 
-        preIntegres.forEach(p => {
+        preIntegresReadyToSign.forEach(p => {
             p.pmo = PmoStatus.BulletinSigne
             p.enedis = EnedisStatus.AccordSigne
             p.sales = SalesStatus.ContratSigne

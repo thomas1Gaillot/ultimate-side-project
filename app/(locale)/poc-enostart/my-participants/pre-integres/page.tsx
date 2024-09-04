@@ -2,7 +2,7 @@
 import {TypographyH4} from "@/components/ui/typography";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {Button} from "@/components/ui/button";
-import {BellIcon, Clock, DownloadIcon, SendIcon, TimerIcon, TrashIcon} from "lucide-react";
+import {BellIcon, Clock, DownloadIcon, HourglassIcon, SendIcon, TimerIcon, TrashIcon} from "lucide-react";
 import {cn} from "@/lib/utils";
 import {enedisMapper, EnedisStatus} from "@/app/(locale)/poc-enostart/data/enedis-status";
 import {pmoMapper, PmoStatus} from "../../data/pmo-status";
@@ -16,11 +16,11 @@ export default function Page() {
     const preIntegratedReadyToSign = (id: number) =>
         preIntegres.some(p => p.id === id && p.sales === SalesStatus.EnvoyerLeContrat && p.pmo === PmoStatus.EnvoyerLeBulletin && p.enedis === EnedisStatus.EnvoyerLAccord)
 
-
+    const atLeastOneReadyToSign = preIntegres.some(p => p.sales === SalesStatus.ContratEnvoye && p.pmo === PmoStatus.BulletinEnvoye && p.enedis === EnedisStatus.AccordEnvoye)
     return <div className={"p-16"}><TypographyH4>
         <>
             Consommateurs Pré-intégrés
-            <Clock onClick={consumersSignAllDocuments} className={"size-3"}/>
+            {atLeastOneReadyToSign && <Clock onClick={consumersSignAllDocuments} className={"size-3"}/>}
         </>
     </TypographyH4>
         <Table>
@@ -38,35 +38,35 @@ export default function Page() {
             </TableHeader>
             <TableBody>
                 {preIntegres.map((p) => {
-                    const PmoIcon = p.pmo ? pmoMapper(p.pmo).icon as any : <></>
-                    const EnedisIcon = p.enedis ? enedisMapper(p.enedis).icon as any : <></>
-                    const SalesIcon = p.sales ? salesMapper(p.sales).icon as any : <></>
+                    const PmoIcon = p.pmo ? pmoMapper(p.pmo).icon : null
+                    const EnedisIcon = p.enedis ? enedisMapper(p.enedis).icon  : null
+                    const SalesIcon = p.sales ? salesMapper(p.sales).icon : null
                     return (
                         <TableRow key={p.id}>
                             <TableCell>{p.name}</TableCell>
                             <TableCell>{p.perimeter}</TableCell>
                             <TableCell>
                                 {p.pmo && <div className={cn("flex items-center text-xs",
-                                    pmoMapper(p.pmo).icon === BellIcon ? 'text-gray-700' : 'text-gray-300')}>
+                                    pmoMapper(p.pmo).icon === HourglassIcon ? 'text-gray-300' : 'text-gray-700')}>
                                     {pmoMapper(p.pmo).name}
-                                    <PmoIcon className={'size-4 ml-2'}/>
+                                    {PmoIcon && <PmoIcon className={'size-4 ml-2'}/>}
                                 </div>}
                             </TableCell>
                             <TableCell>
                                 {p.enedis && <div className={cn("flex items-center text-xs",
-                                    EnedisIcon === BellIcon ? 'text-gray-700' : 'text-gray-300')}>
+                                    EnedisIcon === HourglassIcon ? 'text-gray-300' : 'text-gray-700')}>
                                     {enedisMapper(p.enedis).name}
-                                    <EnedisIcon className={'size-4 ml-2'}/>
+                                    {EnedisIcon && <EnedisIcon className={'size-4 ml-2'}/>}
                                 </div>}
                             </TableCell>
 
 
                             <TableCell>
-                                {p.sales && <div className={cn("flex items-center text-xs",
-                                    SalesIcon === BellIcon ? 'text-gray-700' : 'text-gray-300')}>
+                                {p.sales  && <div className={cn("flex items-center text-xs",
+                                    SalesIcon  === HourglassIcon ? 'text-gray-300' : 'text-gray-700')}>
                                     {salesMapper(p.sales).name}
-                                    <SalesIcon className={'size-4 ml-2'}/>
-                                    <TooltipProvider>
+                                    {SalesIcon && <SalesIcon className={'size-4 ml-2'}/>}
+                                    {p.sales ===  'PrixPropose' && <TooltipProvider>
                                         <Tooltip>
                                             <TooltipTrigger>
                                                 <Button
@@ -78,7 +78,7 @@ export default function Page() {
                                                 <p>Le consommateur accepte le prix</p>
                                             </TooltipContent>
                                         </Tooltip>
-                                    </TooltipProvider>
+                                    </TooltipProvider>}
 
                                 </div>}
                             </TableCell>
