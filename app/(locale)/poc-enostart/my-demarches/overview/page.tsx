@@ -4,7 +4,7 @@ import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
 import {AlertCircle, ZoomInIcon} from "lucide-react";
 import Image from "next/image";
-import {useState} from "react";
+import {usePrestations, useStoredPrestations} from "@/app/(locale)/poc-enostart/my-demarches/data/use-prestations";
 
 export default function OverviewDemarches() {
     return <Flowchart/>
@@ -42,8 +42,8 @@ function Flowchart() {
 }
 
 function Plans() {
-    const [declinedPlans, setDeclinedPlans] = useState<string[]>([])
-    const [acceptedPlans, setAcceptedPlans] = useState<string[]>([])
+    const {pmoDemarches, enedisDemarches, salesDemarches, hasDisabled} = usePrestations();
+    const {setEnedisDemarches, setPmoDemarches, setSalesDemarches} = useStoredPrestations();
     const prestations = [
         {
             title: "Démarches PMO",
@@ -51,7 +51,9 @@ function Plans() {
                 "Aide à la création de la PMO",
                 "Édition des bulletins d'adhésion"
             ],
-            pricing: "5€ par signature de bulletin d'adhésion"
+            pricing: "5€ par signature de bulletin d'adhésion",
+            action: setPmoDemarches,
+            state: pmoDemarches
         },
         {
             title: "Démarches Enedis",
@@ -60,7 +62,9 @@ function Plans() {
                 "Édition des accords de participation",
                 "Convention ACC (aide à la création et édition)"
             ],
-            pricing: "10€ par signature d'accord de participation"
+            pricing: "10€ par signature d'accord de participation",
+            action: setEnedisDemarches,
+            state: enedisDemarches
         },
         {
             title: "Démarches de vente",
@@ -68,24 +72,18 @@ function Plans() {
                 "Aide à la création des contrats de vente",
                 "Proposition et acceptation du prix de vente à chaque consommateur"
             ],
-            pricing: "5€ par signature du prix de vente"
+            pricing: "5€ par signature du prix de vente",
+            action: setSalesDemarches,
+            state: salesDemarches
         }
     ]
 
-    const handleDecline = (title: string) => {
-        setDeclinedPlans(prev => [...prev, title])
-        setAcceptedPlans(prev => prev.filter((p) => p !== title))
-    }
-    const handleAccept = (title: string) => {
-        setAcceptedPlans(prev => [...prev, title])
-        setDeclinedPlans(prev => prev.filter((p) => p !== title))
-    }
 
     return (
         <div>
-            <h1 className="text-lg font-bold mt-6 mb-2">{"Je choisis mes prestations"}</h1>
+            <h1  id="choose-prestation" className="text-lg font-bold mt-6 mb-2">{"Je choisis mes prestations"}</h1>
 
-            {declinedPlans.length > 0 && (
+            {hasDisabled && (
                 <div className="mb-6 p-4 bg-yellow-100 rounded-lg flex items-center space-x-2 shadow">
                     <AlertCircle className="text-yellow-700 size-4 mt-0.5"/>
                     <p className="text-yellow-700 text-xs">
@@ -96,8 +94,8 @@ function Plans() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {prestations.map((prestation, index) => (
                     <Card key={index}
-                          className={cn(`rounded-lg shadow-lg ${declinedPlans.includes(prestation.title) ? "opacity-50" : ""}`,
-                              acceptedPlans.find((p) => p === prestation.title) && "border-2 bg-primary/5 border-primary"
+                          className={cn(`rounded-lg shadow-lg ${prestation.state === 'disabled' ? "opacity-50" : ""}`,
+                              prestation.state === 'active' && "border-2 bg-primary/5 border-primary"
                           )}>
                         <CardHeader>
                             <CardTitle className="text-sm font-semibold">{prestation.title}</CardTitle>
@@ -116,9 +114,9 @@ function Plans() {
                             </div>
                         </CardContent>
                         <CardFooter className="flex flex-col space-y-3">
-                            {!acceptedPlans.find((p) => p === prestation.title) && <Button
+                            {prestation.state !== 'active' && <Button
                                 className="w-full rounded-full bg-gradient-to-r from-gray-400 to-gray-500 text-white"
-                                onClick={() => handleAccept(prestation.title)}
+                                onClick={() => prestation.action('active')}
                             >
                                 Accepter
                             </Button>}
@@ -126,7 +124,7 @@ function Plans() {
                                 href="#"
                                 onClick={(e) => {
                                     e.preventDefault()
-                                    handleDecline(prestation.title)
+                                    prestation.action('disabled')
                                 }}
                                 className="text-sm text-gray-600 underline"
                             >
