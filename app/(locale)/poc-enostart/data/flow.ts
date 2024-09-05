@@ -28,7 +28,7 @@ const participantsTab = (participants: Participant[], isBulletinEdited : boolean
         },
         {id: "pre-integrations", label: "Je propose mes conditions de vente ", ping: hasSalesThingsToDo},
         {id: "documents", label: "Je fais signer mes documents", ping: canSignDocuments},
-        {id: "passages-en-exploitation", label: "Je gère mon opération auprès d'Enedis", ping: exploitation.length >0},
+        {id: "passages-en-exploitation", label: "Je gère l'exploitation de mon opération", ping: exploitation.length >0},
     ]
 }
 
@@ -99,7 +99,7 @@ const sales_flow = (p: Participant[]) => {
     }
 }
 
-const signatures_flow = (p: Participant[]) => {
+const signatures_flow = (p: Participant[], isOperationDeclared : boolean) => {
     const {preIntegres} = parse(p)
     const pmoStatusTerminated = preIntegres[0] && (preIntegres[0].pmo !== PmoStatus.IdentifierLaPmo
         && preIntegres[0].pmo !== PmoStatus.EditerLeBulletin) ? 1 : 0
@@ -129,6 +129,12 @@ const signatures_flow = (p: Participant[]) => {
             label: "prérequis :  Les accords de participation sont édités",
             href: '/poc-enostart/my-demarches/enedis',
             numberOfTaskDone: enedisStatusTerminated,
+            numberOfTask: 1
+        },
+        {
+            label: "prérequis :  La déclaration de mise en oeuvre est envoyée à Enedis",
+            href: '/poc-enostart/my-demarches/enedis',
+            numberOfTaskDone: isOperationDeclared ? 1 : 0,
             numberOfTask: 1
         },
         {

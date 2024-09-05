@@ -17,7 +17,7 @@ export default function Page() {
         preIntegres.some(p => p.id === id && p.sales === SalesStatus.EnvoyerLeContrat && p.pmo === PmoStatus.EnvoyerLeBulletin && p.enedis === EnedisStatus.EnvoyerLAccord)
 
     const atLeastOneReadyToSign = preIntegres.some(p => p.sales === SalesStatus.ContratEnvoye && p.pmo === PmoStatus.BulletinEnvoye && p.enedis === EnedisStatus.AccordEnvoye)
-    return <div className={"p-16"}><TypographyH4>
+    return <div className={" px-4"}><TypographyH4>
         <>
             Consommateurs Pré-intégrés
             {atLeastOneReadyToSign && <Clock onClick={consumersSignAllDocuments} className={"size-3"}/>}

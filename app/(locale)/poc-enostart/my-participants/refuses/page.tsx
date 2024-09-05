@@ -7,7 +7,7 @@ import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 export default function Page() {
     const {refuses} = useParticipants()
 
-    return <div className={"p-16"}><TypographyH4>Consommateurs Refusés</TypographyH4>
+    return <div className={"px-4"}><TypographyH4>Consommateurs Refusés</TypographyH4>
         <Table>
             <TableHeader>
                 <TableRow>

@@ -41,7 +41,6 @@ export default function PmoCreationAccordionItem() {
 
                 </AccordionTrigger>
             <AccordionContent className={"p-8 gap-4 grid"}>
-                <PmoCreationBanner/>
                 <Table>
                 <TableHeader>
                         <TableRow className="bg-gray-100">

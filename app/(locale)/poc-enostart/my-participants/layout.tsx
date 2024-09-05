@@ -3,6 +3,7 @@
 import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {usePathname, useRouter} from "next/navigation";
 import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
+import Overview from "@/app/(locale)/poc-enostart/components/overview/overview";
 
 // Dummy data for participants
 
@@ -41,8 +42,10 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
         },
     ]
 
-    return (
-        <div className="flex w-full gap-8">
+    return (<div>
+        <Overview/>
+        <div className="flex w-full gap-8 p-8">
+
             <Tabs value={pathname || ''} className="w-full flex">
                 <TabsList className="w-64 h-max flex flex-col items-stretch bg-background">
                     {tabData.map((tab) => (
@@ -65,6 +68,7 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
                     {children}
                 </div>
             </Tabs>
+        </div>
         </div>
     )
 }

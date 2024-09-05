@@ -1,7 +1,9 @@
-import PmoPrestationAccordionItem from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-prestation-accordion-item";
-import PmoCreationAccordionItem from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation-accordion-item";
+'use client'
+import PmoCreationAccordionItem
+    from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation-accordion-item";
 import BulletinAccordionItem from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin-accordion-item";
 import {Accordion} from "@/components/ui/accordion";
+import {PmoSteps} from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-description-dialog";
 
 export default function PmoPage() {
     return (
@@ -20,9 +22,10 @@ export default function PmoPage() {
                 </p>
             </div>
             <Accordion type="single" collapsible className="w-full">
-            {/*<PmoPrestationAccordionItem/>*/}
-            <PmoCreationAccordionItem/>
-            <BulletinAccordionItem/>
+                {/*<PmoPrestationAccordionItem/>*/}
+                <PmoSteps/>
+                <PmoCreationAccordionItem/>
+                <BulletinAccordionItem/>
             </Accordion>
         </div>
     );

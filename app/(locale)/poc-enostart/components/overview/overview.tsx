@@ -25,7 +25,7 @@ export default function Overview() {
     const {isPmoCreated, isDeclarationSent, isBulletinEdited, isAccordsParticipationEdited} = useDocuments()
     const candidatures = candidatures_flow(participants)
     const sales = sales_flow(participants)
-    const signatures = signatures_flow(participants)
+    const signatures = signatures_flow(participants, isDeclarationSent)
     const demarchesPmo = demarches_pmo_flow(isPmoCreated, isBulletinEdited)
     const demarchesPmoCreation = demarches_pmo_creation(isPmoCreated)
     const demarchesAccords = demarches_pmo_accords(isPmoCreated, isAccordsParticipationEdited)
@@ -165,22 +165,28 @@ export default function Overview() {
                             {`Comment démarrer mon opération?`}
                         </h3>
                             <ul className="grid gap-2 text-sm pt-1 pb-2">
-                                <SmallStep disabled={true} label={"Je sélectionne les participants à intégrer"}
+                                <SmallStep disabled={true} label={"Je fais signer mes contrats aux producteurs"}
                                            done={false}
                                            index={0}/>
-                                <SmallStep disabled={true} label={"J'édite la convention d'autoconsommation collective"}
+                                <SmallStep disabled={true} label={"Je sélectionne les participants à intégrer"}
                                            done={false}
                                            index={1}/>
-                                <SmallStep disabled={true} label={"J'envoi la convention à Enedis"} done={false}
+                                <SmallStep disabled={true} label={"J'édite la convention d'autoconsommation collective"}
+                                           done={false}
                                            index={2}/>
+                                <SmallStep disabled={true} label={"J'envoi la convention à Enedis"} done={false}
+                                           index={3}/>
                             </ul>
                         </div>
                         <div>
                             <h3 className="font-semibold text-sm mb-2">{"ou comment ajouter les participants dans mon opération ?"}</h3>
                             <ul className="grid gap-2 text-sm pt-1 pb-2">
-                                <SmallStep disabled={true} label={"J'exporte la liste des participants sur EnoPower"}
+                                <SmallStep disabled={true} label={"Je fais signer mes contrats aux producteurs"}
                                            done={false}
                                            index={0}/>
+                                <SmallStep disabled={true} label={"J'exporte la liste des participants sur EnoPower"}
+                                           done={false}
+                                           index={1}/>
 
                             </ul>
                         </div>
@@ -190,19 +196,15 @@ export default function Overview() {
             ),
     }
 
-    return <Accordion type="single"collapsible className={""}>
-        <AccordionItem value="item-1" className={"bg-gray-50  px-8"}>
-            <AccordionTrigger>
+    return (
+        <div className={"bg-gray-50  px-8 pt-4"}>
+            <div>
                 <div className={"w-max flex  text-primary"}>
                     <FootprintsIcon className={"size-4 mr-4"}/>
-                    {"J'ai besoin d'aide dans le parcours des participants"}
-                    <span
-                        className="flex text-sm  text-primary gap-1 items-center ms-1 py-0.5 px-1.5 rounded-full text-xs font-medium bg-primary/10 text-gray-800 dark:bg-neutral-700 dark:text-neutral-300">
-                                    <BellIcon className="size-4"/> à faire
-                    </span>
+                    {"Mon parcours participants"}
                 </div>
-            </AccordionTrigger>
-            <AccordionContent>
+            </div>
+            <div className={"p-4"}>
                 <Tabs orientation="vertical" value={activeTab} onValueChange={setActiveTab} className="h-full ">
                     <div className="flex h-48 bg-gray-50">
                         <TabsList className="flex-grow h-full flex flex-col ">
@@ -230,35 +232,9 @@ export default function Overview() {
                                         <></>}
                                 </TabsTrigger>
                             ))}
-                            {/*<span className={"uppercase ml-2 mt-4 text-xs w-full text-left"}>démarches</span>*/}
-                            {/*{demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (*/}
-                            {/*    <TabsTrigger*/}
-                            {/*        key={tab.id}*/}
-                            {/*        value={tab.id}*/}
-                            {/*        className={cn("flex data-[state=active]:bg-white justify-between items-center w-[400px]  px-3 py-2 text-sm",*/}
-                            {/*            tab.hide && 'line-through')}*/}
-                            {/*    >*/}
-                            {/*        <div className={"flex items-center"}>*/}
-                            {/*            <span className={cn("text-left font-normal truncate mr-2",*/}
-                            {/*                tab.ping && 'text-primary font-bold')}>*/}
-                            {/*                {tab.label}*/}
-                            {/*            </span>*/}
-                            {/*        </div>*/}
-                            {/*        {tab.ping ? <span*/}
-                            {/*                className="flex text-sm  text-primary gap-1 items-center ms-1 py-0.5 px-1.5 rounded-full text-xs font-medium bg-primary/10 text-gray-800 dark:bg-neutral-700 dark:text-neutral-300">*/}
-
-                            {/*                <BellIcon className="size-4"/> à faire*/}
-                            {/*</span> :*/}
-                            {/*            <></>}*/}
-                            {/*    </TabsTrigger>*/}
-                            {/*))}*/}
                         </TabsList>
-                        <div className="flex-grow w-full p-4 h-full bg-white/50 rounded-r-lg overflow-y-auto">
-                            {/*{demarchesTabs(isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent).map((tab) => (*/}
-                            {/*    <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full ">*/}
-                            {/*        {tabContents[tab.id]}*/}
-                            {/*    </TabsContent>*/}
-                            {/*))}*/}
+                        <div className="flex-grow w-full px-4 h-full bg-white/50 rounded-r-lg overflow-y-auto">
+
                             {participantsTab(participants, isBulletinEdited, isAccordsParticipationEdited).map((tab) => (
                                 <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
                                     {tabContents[tab.id]}
@@ -267,8 +243,7 @@ export default function Overview() {
                         </div>
                     </div>
                 </Tabs>
-            </AccordionContent>
-        </AccordionItem>
+            </div>
+        </div>)
 
-    </Accordion>
 }

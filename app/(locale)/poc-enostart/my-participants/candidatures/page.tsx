@@ -8,7 +8,7 @@ import {parse, useParticipants, useStoredParticipants} from "@/app/(locale)/poc-
 
 export default function Page() {
     const {candidatures, accept, reject} = useParticipants()
-    return <div className={"p-16"}><TypographyH4>Candidatures</TypographyH4>
+    return <div className={"px-4"}><TypographyH4>Candidatures</TypographyH4>
         <Table>
             <TableHeader>
                 <TableRow>
