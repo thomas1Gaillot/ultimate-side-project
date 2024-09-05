@@ -20,7 +20,7 @@ export default function PmoPage() {
                 </p>
             </div>
             <Accordion type="single" collapsible className="w-full">
-            <PmoPrestationAccordionItem/>
+            {/*<PmoPrestationAccordionItem/>*/}
             <PmoCreationAccordionItem/>
             <BulletinAccordionItem/>
             </Accordion>

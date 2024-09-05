@@ -34,7 +34,7 @@ export default function PmoCreationBanner() {
                         <DownloadIcon className="h-8 w-8 text-primary"/>
                     </div>
                     <h3 className="text-lg font-semibold mb-2">Étape 4</h3>
-                    <p className="text-sm text-muted-foreground">{"Téléverser les statut PMO sur Mon énergie collective"}</p>
+                    <p className="text-sm text-muted-foreground">{"Téléverser les statut PMO signés sur Mon énergie collective"}</p>
                 </div>
             </CardContent>
         </Card>

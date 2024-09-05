@@ -196,6 +196,10 @@ export default function Overview() {
                 <div className={"w-max flex  text-primary"}>
                     <FootprintsIcon className={"size-4 mr-4"}/>
                     {"J'ai besoin d'aide dans le parcours des participants"}
+                    <span
+                        className="flex text-sm  text-primary gap-1 items-center ms-1 py-0.5 px-1.5 rounded-full text-xs font-medium bg-primary/10 text-gray-800 dark:bg-neutral-700 dark:text-neutral-300">
+                                    <BellIcon className="size-4"/> à faire
+                    </span>
                 </div>
             </AccordionTrigger>
             <AccordionContent>

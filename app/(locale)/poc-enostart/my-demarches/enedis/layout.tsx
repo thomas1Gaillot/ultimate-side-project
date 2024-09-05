@@ -21,7 +21,7 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
     ]
     return (
         <div className="flex flex-col w-full gap-8">
-            <AccordsPlan/>
+            {/*<AccordsPlan/>*/}
 
             <Tabs value={pathname || ''} className="w-full flex">
                 <TabsList className=" flex items-stretch bg-background">

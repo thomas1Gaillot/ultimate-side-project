@@ -1,6 +1,7 @@
 import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {Separator} from "@/components/ui/separator";
 import {usePathname, useRouter} from "next/navigation";
+import {BellIcon} from "lucide-react";
 
 export default function MonECTabs() {
     const router = useRouter()
@@ -30,6 +31,7 @@ export default function MonECTabs() {
                     className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary rounded-md py-2"
                     value={participantsHref}>
                     Mes participants
+
                 </TabsTrigger>
                 <TabsTrigger
                     onClick={() => router.push('/poc-enostart/my-demarches/pmo')}

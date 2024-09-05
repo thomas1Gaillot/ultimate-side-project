@@ -19,8 +19,8 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
             href: "/poc-enostart/my-participants/candidatures"
         },
         {
-            id: "pre-integres",
-            label: `2. Pré-intégrés`,
+            id: "pre-integres-study",
+            label: `2. Pré-intégrations`,
             number : preIntegres.length,
             buttonText: "Proposer un prix de vente",
             href: "/poc-enostart/my-participants/pre-integres"

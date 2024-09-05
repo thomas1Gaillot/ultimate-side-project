@@ -13,7 +13,7 @@ export default function Page() {
 
     return (
         <div className="w-full">
-            <AccordsPlan/>
+            {/*<AccordsPlan/>*/}
             <Accordion type="single" collapsible className="w-full">
                 <CreateContractAccordion/>
                 <SendPriceAccordion/>
