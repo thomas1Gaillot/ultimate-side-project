@@ -18,8 +18,7 @@ export default function Layout({
         <>
             <Header/>
             <MonECTabs/>
-            <div className={"3xl:px-32 2xl:px-16 px-4  md:px-8"}>
-                <WarningDemarchesBanner/>
+            <div className={" 2xl:px-32 px-4   md:px-8"}>
                 {children}
             </div>
         </>

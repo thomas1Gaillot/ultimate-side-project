@@ -43,7 +43,7 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
     ]
 
     return (<div>
-        <Overview/>
+
         <div className="flex w-full gap-8 p-8">
 
             <Tabs value={pathname || ''} className="w-full flex">

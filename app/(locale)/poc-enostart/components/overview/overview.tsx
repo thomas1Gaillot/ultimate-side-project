@@ -197,16 +197,16 @@ export default function Overview() {
     }
 
     return (
-        <div className={"bg-gray-50  px-8 pt-4"}>
+        <div className={"bg-primary/5 rounded-lg border border-primary/40  px-8 pt-4"}>
             <div>
-                <div className={"w-max flex  text-primary"}>
+                <div className={"w-max flex items-center  text-gray-800 font-semibold text-md"}>
                     <FootprintsIcon className={"size-4 mr-4"}/>
                     {"Mon parcours participants"}
                 </div>
             </div>
             <div className={"p-4"}>
                 <Tabs orientation="vertical" value={activeTab} onValueChange={setActiveTab} className="h-full ">
-                    <div className="flex h-48 bg-gray-50">
+                    <div className="flex h-48">
                         <TabsList className="flex-grow h-full flex flex-col ">
                             <span
                                 className={"uppercase text-xs w-full text-left ml-2 mt-4"}>Parcours des Participants</span>
@@ -233,7 +233,7 @@ export default function Overview() {
                                 </TabsTrigger>
                             ))}
                         </TabsList>
-                        <div className="flex-grow w-full px-4 h-full bg-white/50 rounded-r-lg overflow-y-auto">
+                        <div className="flex-grow w-full px-4 h-full  rounded-r-lg overflow-y-auto">
 
                             {participantsTab(participants, isBulletinEdited, isAccordsParticipationEdited).map((tab) => (
                                 <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
