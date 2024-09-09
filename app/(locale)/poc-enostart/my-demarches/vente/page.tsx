@@ -12,8 +12,10 @@ export default function Page() {
 
     return (
         <div className="w-full">
-            {/*<AccordsPlan/>*/}
-            <AccordionPlan/>
+            {/*<AccordsPlan/>*/}+
+            <Suspense>
+                <AccordionPlan/>
+            </Suspense>
         </div>
     );
 }
@@ -21,11 +23,9 @@ export default function Page() {
 function AccordionPlan() {
     const searchParams = useSearchParams()
     const tab = searchParams?.get('tab') || 'create-contract'
-    return <Suspense>
-        <Accordion value={tab} type="single" collapsible className="w-full">
-            <CreateContractAccordion/>
-            <SendPriceAccordion/>
-            <AssociateContractAccordion/>
-        </Accordion>
-    </Suspense>
+    return <Accordion value={tab} type="single" collapsible className="w-full">
+        <CreateContractAccordion/>
+        <SendPriceAccordion/>
+        <AssociateContractAccordion/>
+    </Accordion>
 }
