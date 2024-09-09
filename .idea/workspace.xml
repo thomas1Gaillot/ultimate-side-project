@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ux">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="build">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/AccordSubscriptionContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/AccordSubscriptionContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/BulletinSubscriptionDialogContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/BulletinSubscriptionDialogContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/SalesSubscriptionDialogContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/SalesSubscriptionDialogContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/TimelineStep.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/TimelineStep.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,15 +234,7 @@
       <workItem from="1725518706409" duration="16974000" />
       <workItem from="1725567584066" duration="6890000" />
       <workItem from="1725628046133" duration="8576000" />
-      <workItem from="1725866121127" duration="25947000" />
-    </task>
-    <task id="LOCAL-00176" summary="start isolate data">
-      <option name="closed" value="true" />
-      <created>1724836256450</created>
-      <option name="number" value="00176" />
-      <option name="presentableId" value="LOCAL-00176" />
-      <option name="project" value="LOCAL" />
-      <updated>1724836256450</updated>
+      <workItem from="1725866121127" duration="26188000" />
     </task>
     <task id="LOCAL-00177" summary="flow">
       <option name="closed" value="true" />
@@ -634,7 +620,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725900319945</updated>
     </task>
-    <option name="localTasksCounter" value="225" />
+    <task id="LOCAL-00225" summary="build">
+      <option name="closed" value="true" />
+      <created>1725900661473</created>
+      <option name="number" value="00225" />
+      <option name="presentableId" value="LOCAL-00225" />
+      <option name="project" value="LOCAL" />
+      <updated>1725900661473</updated>
+    </task>
+    <option name="localTasksCounter" value="226" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -670,7 +664,6 @@
     <MESSAGE value="update ux" />
     <MESSAGE value="prestation" />
     <MESSAGE value="weeekdn" />
-    <MESSAGE value="build" />
     <MESSAGE value="ui" />
     <MESSAGE value="ui, ux" />
     <MESSAGE value="ui done" />
@@ -678,6 +671,7 @@
     <MESSAGE value="ping when new task" />
     <MESSAGE value="choose prestation on overview OK" />
     <MESSAGE value="ux" />
-    <option name="LAST_COMMIT_MESSAGE" value="ux" />
+    <MESSAGE value="build" />
+    <option name="LAST_COMMIT_MESSAGE" value="build" />
   </component>
 </project>

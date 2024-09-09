@@ -9,18 +9,23 @@ import SendPriceAccordion from "@/app/(locale)/poc-enostart/my-demarches/vente/c
 import {Suspense} from 'react'
 
 export default function Page() {
-    const searchParams = useSearchParams()
-    const tab = searchParams?.get('tab') || 'create-contract'
+
     return (
         <div className="w-full">
             {/*<AccordsPlan/>*/}
-            <Suspense>
-                <Accordion value={tab} type="single" collapsible className="w-full">
-                    <CreateContractAccordion/>
-                    <SendPriceAccordion/>
-                    <AssociateContractAccordion/>
-                </Accordion>
-            </Suspense>
+            <AccordionPlan/>
         </div>
     );
+}
+
+function AccordionPlan() {
+    const searchParams = useSearchParams()
+    const tab = searchParams?.get('tab') || 'create-contract'
+    return <Suspense>
+        <Accordion value={tab} type="single" collapsible className="w-full">
+            <CreateContractAccordion/>
+            <SendPriceAccordion/>
+            <AssociateContractAccordion/>
+        </Accordion>
+    </Suspense>
 }
