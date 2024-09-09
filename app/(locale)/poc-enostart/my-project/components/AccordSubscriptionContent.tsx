@@ -1,7 +1,23 @@
-import {FileCheck2Icon, FileSignatureIcon, FileTextIcon, FolderArchiveIcon} from "lucide-react";
+import {FileCheck2Icon, FileTextIcon, FolderArchiveIcon} from "lucide-react";
+import {Button} from "@/components/ui/button";
+import {useStoredPrestations} from "@/app/(locale)/poc-enostart/data/use-prestations";
 
-const AccordParticipationContent = () => (
-    <div className="  h-full flex flex-col justify-between md:max-h-[80vh] text-gray-900 dark:text-neutral-400">
+const AccordSubscriptionContent = ({close}: {
+    close: () => void
+}) => {
+    const {setEnedisDemarches} = useStoredPrestations();
+
+    function subscribe() {
+        setEnedisDemarches('active');
+        close()
+    }
+
+    function ignore() {
+        setEnedisDemarches('disabled');
+        close()
+    }
+
+    return (<div className="  h-full flex flex-col justify-between md:max-h-[80vh] text-gray-900 dark:text-neutral-400">
         <div className="space-y-6 px-4 py-10   overflow-y-auto lg:space-y-10">
 
             <div className={"grid grid-cols-[100px_1fr]"}>
@@ -110,15 +126,14 @@ const AccordParticipationContent = () => (
             <div className={"w-full text-right font-semibold text-primary text-lg"}>Inclus</div>
         </div>
 
-
-        <button className="mt-6 w-full py-3 bg-primary text-white font-semibold rounded-lg">Je souscris</button>
-
-        <p className="text-sm text-center mt-4">
+        <Button className={'mt-4'} onClick={subscribe} size={'lg'}>Je souscris</Button>
+        <Button onClick={ignore}
+                variant={'link'} size={'sm'} className="text-xs text-gray-500 text-center mt-4">
             Je ne souhaite pas me faire accompagner dans ces démarches.<br/> Je les réaliserai en dehors de Mon
             énergie collective.
-        </p>
-    </div>
-);
+        </Button>
+    </div>)
+};
 
 
-export default AccordParticipationContent;
+export default AccordSubscriptionContent;

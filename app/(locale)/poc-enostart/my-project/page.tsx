@@ -1,10 +1,15 @@
 'use client'
 import {useState} from 'react'
 import {Button} from "@/components/ui/button"
-import {FileCheck2Icon, FileIcon, FileTextIcon, FolderArchiveIcon, ScrollTextIcon} from 'lucide-react'
+import {FileCheck2Icon, FileTextIcon, FolderArchiveIcon, ScrollTextIcon} from 'lucide-react'
 import {IconFileEuro} from "@tabler/icons-react";
 import {Badge} from "@/components/ui/badge";
 import DocumentOverview from "@/app/(locale)/poc-enostart/my-project/components/Document";
+import AccordSubscriptionContent from "@/app/(locale)/poc-enostart/my-project/components/AccordSubscriptionContent";
+import BulletinSubscriptionDialogContent
+    from "@/app/(locale)/poc-enostart/my-project/components/BulletinSubscriptionDialogContent";
+import SalesSubscriptionDialogContent
+    from "@/app/(locale)/poc-enostart/my-project/components/SalesSubscriptionDialogContent";
 
 interface TimelineStep {
     title: string;
@@ -17,18 +22,37 @@ const documents = [
     {
         title: "Contrat de vente",
         icon: <IconFileEuro className="w-12 h-12"/>,
-        estimatedTime: '1 heure'
+        estimatedTime: '1 heure',
+        dialogContent: SalesSubscriptionDialogContent
     },
     {
         title: "Accord de participation",
         icon: <FileCheck2Icon className="w-12 h-12"/>,
-        estimatedTime: '3 mois'
+        estimatedTime: '3 mois',
+        dialogContent: AccordSubscriptionContent
     },
     {
         title: "Bulletin d'adhésion",
         icon: <ScrollTextIcon className="w-12 h-12"/>,
-        estimatedTime: '3 mois'
+        estimatedTime: '3 mois',
+        dialogContent: BulletinSubscriptionDialogContent
     },
+]
+const documentsExploitation = [
+    {
+        title: "Déclaration de mise en oeuvre",
+        icon: <FileTextIcon className="w-12 h-12"/>,
+        estimatedTime: '1 mois',
+        dialogContent: AccordSubscriptionContent
+    },
+    {
+        title: "Convention d'ACC",
+        asterix: "si votre opération n'est pas en exploitation",
+        icon: <FolderArchiveIcon className="w-12 h-12"/>,
+        estimatedTime: '2 semaines',
+        dialogContent: AccordSubscriptionContent
+    },
+
 ]
 const timelineSteps = [
     {
@@ -76,20 +100,7 @@ const timelineExploitationSteps = [
         button: 'Passage en exploitation'
     },
 ]
-const documentsExploitation = [
-    {
-        title: "Déclaration de mise en oeuvre",
-        icon: <FileTextIcon className="w-12 h-12"/>,
-        estimatedTime: '1 mois'
-    },
-    {
-        title: "Convention d'ACC",
-        asterix: "si votre opération n'est pas en exploitation",
-        icon: <FolderArchiveIcon className="w-12 h-12"/>,
-        estimatedTime: '2 semaines'
-    },
 
-]
 
 export default function Component() {
     const [openModal, setOpenModal] = useState('')

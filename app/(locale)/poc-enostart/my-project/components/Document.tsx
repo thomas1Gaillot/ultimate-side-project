@@ -1,10 +1,9 @@
 import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from "@/components/ui/dialog";
 import {Button} from "@/components/ui/button";
-import AccordParticipationContent from "@/app/(locale)/poc-enostart/my-project/components/AccordParticipantContent";
 
 export default function DocumentOverview({doc, index, openModal, setOpenModal}:{
-    doc: {icon: any, title: string, estimatedTime: string},
+    doc: {icon: any, title: string, estimatedTime: string, dialogContent : any},
     index: number,
     openModal: string,
     setOpenModal: (value: string) => void
@@ -26,17 +25,16 @@ export default function DocumentOverview({doc, index, openModal, setOpenModal}:{
             <Dialog open={openModal === doc.title}
                     onOpenChange={() => setOpenModal(openModal === doc.title ? '' : doc.title)}>
                 <DialogTrigger asChild>
-                    <Button variant="ghost" size='sm'
-                            className="text-primary w-full text-right">
-                        {"Continuer ->"}
+                    <Button  size='sm'
+                            className=" w-full text-right">
+                        {"Commencer ->"}
                     </Button>
                 </DialogTrigger>
                 <DialogContent className="bg-white">
                     <DialogHeader>
-                        <DialogTitle>Souscription à la prestation</DialogTitle>
+                        <DialogTitle>Souscription à la prestation : {doc.title}</DialogTitle>
                     </DialogHeader>
-                    {doc.title === "Accord de participation" ? <AccordParticipationContent/> :
-                        <p>Additional information about {doc.title} would go here.</p>}
+                    <doc.dialogContent close={() => setOpenModal('')}/>
                 </DialogContent>
             </Dialog>
         </CardFooter>

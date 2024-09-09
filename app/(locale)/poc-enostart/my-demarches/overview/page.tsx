@@ -1,6 +1,6 @@
 'use client'
 import {AlertCircle} from "lucide-react";
-import {usePrestations, useStoredPrestations} from "@/app/(locale)/poc-enostart/my-demarches/data/use-prestations";
+import {usePrestations, useStoredPrestations} from "@/app/(locale)/poc-enostart/data/use-prestations";
 import PrestationCard from "@/app/(locale)/poc-enostart/my-demarches/overview/components/PrestationCard";
 
 

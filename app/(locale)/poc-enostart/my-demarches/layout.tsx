@@ -5,7 +5,7 @@ import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {useDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
 import {cn} from "@/lib/utils";
 import {BellIcon, LockIcon, RocketIcon} from "lucide-react";
-import {usePrestations} from "@/app/(locale)/poc-enostart/my-demarches/data/use-prestations";
+import {usePrestations} from "@/app/(locale)/poc-enostart/data/use-prestations";
 import PmoDescriptionDialog from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-description-dialog";
 import {useState} from "react";
 
@@ -17,7 +17,7 @@ const demarchesTabs = (isPmoCreated: boolean, isBulletinEdited: boolean, isAccor
     const overviewHref = '/poc-enostart/my-demarches/overview'
 
     return [
-        {id: "overview", label: "Vue d'ensemble", href: overviewHref, ping: false, hide: false},
+        {id: "overview", label: "Mes prestations", href: overviewHref, ping: false, hide: false},
         {
             id: "enedis",
             label: "Accords, Déclaration, Convention",

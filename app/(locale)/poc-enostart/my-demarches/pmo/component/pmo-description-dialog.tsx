@@ -2,7 +2,7 @@ import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Building, FileText, PencilLine, Users} from "lucide-react";
 import {Dialog, DialogContent, DialogHeader, DialogTitle} from "@/components/ui/dialog";
 import PrestationCard from "@/app/(locale)/poc-enostart/my-demarches/overview/components/PrestationCard";
-import {useStoredPrestations} from "@/app/(locale)/poc-enostart/my-demarches/data/use-prestations";
+import {useStoredPrestations} from "@/app/(locale)/poc-enostart/data/use-prestations";
 import {useState} from "react";
 import {Switch} from "@/components/ui/switch";
 import {Label} from "@/components/ui/label";
