@@ -10,7 +10,7 @@ export default function DocumentOverview({doc, index, openModal, setOpenModal}:{
     setOpenModal: (value: string) => void
 }) {
     return <Card key={index}
-                 className="bg-gray-50 w-[300px] h-[250px] hover:shadow-none shadow-none border-none rounded">
+                 className="bg-gray-50 w-[200px] h-[250px] max-h-[250px] flex flex-col justify-between hover:shadow-none shadow-none border-none rounded">
         <CardHeader>
             <CardTitle
                 className="text-lg text-center text-gray-700 w-full">{doc.title}</CardTitle>
@@ -27,7 +27,7 @@ export default function DocumentOverview({doc, index, openModal, setOpenModal}:{
                 <DialogTrigger asChild>
                     <Button variant="ghost" size='sm'
                             className="text-primary w-full text-right">
-                        {"Je me fais accompagner ou non ->"}
+                        {"Continuer ->"}
                     </Button>
                 </DialogTrigger>
                 <DialogContent className="bg-white">
