@@ -20,7 +20,7 @@ const demarchesTabs = (isPmoCreated: boolean, isBulletinEdited: boolean, isAccor
         {id: "overview", label: "Vue d'ensemble", href: overviewHref, ping: false, hide: false},
         {
             id: "enedis",
-            label: "Démarches Enedis",
+            label: "Accords, Déclaration, Convention",
             href: enedisHref,
             ping: (!isAccordsEdited || !isDeclarationSent) && enedisPlan !== 'disabled',
             disabled: enedisPlan !== 'active',
@@ -28,7 +28,7 @@ const demarchesTabs = (isPmoCreated: boolean, isBulletinEdited: boolean, isAccor
         },
         {
             id: "pmo",
-            label: "Démarches PMO",
+            label: "Bulletin d'adhésion",
             href: pmoHref,
             done: isPmoCreated && isBulletinEdited,
             disabled: pmoPlan !== 'active',
@@ -37,7 +37,7 @@ const demarchesTabs = (isPmoCreated: boolean, isBulletinEdited: boolean, isAccor
         },
         {
             id: "vente",
-            label: "Démarches de Vente",
+            label: "Contrat de vente",
             href: venteHref,
             ping: !isContratCreated && salesPlan !== 'disabled',
             disabled: salesPlan !== 'active'
