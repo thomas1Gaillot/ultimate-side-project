@@ -12,10 +12,11 @@ export default function DocumentOverview({doc, index, openModal, setOpenModal}:{
     return <Card key={index}
                  className="bg-gray-50 w-[200px] h-[250px] max-h-[250px] flex flex-col justify-between hover:shadow-none shadow-none border-none rounded">
         <CardHeader>
-            <CardTitle
-                className="text-lg text-center text-gray-700 w-full">{doc.title}</CardTitle>
             <p className="text-xs text-center relative bottom-2 text-gray-400">temps estimé
                 : {doc.estimatedTime}</p>
+            <CardTitle
+                className="text-lg text-center text-gray-700 w-full leading-6">{doc.title}</CardTitle>
+
 
         </CardHeader>
         <CardContent className="flex flex-col items-center">

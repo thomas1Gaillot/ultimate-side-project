@@ -96,12 +96,12 @@ export default function Component() {
 
 
     return (
-        <div className="min-h-screen bg-white text-gray-900 space-y-16 p-8 2xl:px-32">
+        <div className="min-h-screen bg-white text-gray-900 p-8 2xl:px-32">
             <h1 className="text-3xl font-bold mb-4">{"Comment créer mon opération d'ACC ?"}</h1>
+            <h2 className="text-lg font-semibold mt-12 mb-4">{"1. J'intégre mes participants"}</h2>
 
             <div className="grid grid-cols-2 gap-16 2xl:gap-32">
                 <div className="w-full">
-                    <h2 className="text-lg font-semibold mb-4">{"1. J'intégre mes participants"}</h2>
                     <div className="space-y-2">
                         <div className=" flex flex-col w-max">
                             <span className={"text-gray-500 uppercase text-xs"}>
@@ -120,12 +120,12 @@ export default function Component() {
                     </div>
                 </div>
                 <div className="w-full">
-                    <h2 className="text-lg font-semibold mb-4">Quels documents pour intégrer un participant
+                    <h2 className="font-semibold mb-4">Quels documents pour intégrer un participant
                         ?</h2>
-                    <p className="mb-4  text-sm  text-sm text-gray-600">Anticipez la création des documents, pouvant
+                    <p className="mb-4  text-sm  text-gray-600">Anticipez la création des documents, pouvant
                         demander des
                         démarches longues.</p>
-                    <p className="mb-4 text-sm  text-sm text-gray-600">Les documents nécessaires pour intégrer un
+                    <p className="mb-4 text-sm  text-gray-600">Les documents nécessaires pour intégrer un
                         participant
                         :</p>
                     <div className="flex flex-wrap w-full gap-4 mb-8">
@@ -136,10 +136,9 @@ export default function Component() {
                     </div>
                 </div>
             </div>
-
+            <h2 className="text-lg font-semibold mt-12 mb-4">{"2. Je passe en exploitation"}</h2>
             <div className="grid grid-cols-2 gap-16 2xl:gap-32">
                 <div className="w-full">
-                    <h2 className="text-lg font-semibold mb-4">{"2. Je passe en exploitation"}</h2>
                     <div className="space-y-2">
                         <div className=" flex flex-col w-max">
                             <span className={"text-gray-500 uppercase text-xs"}>
@@ -159,7 +158,7 @@ export default function Component() {
                     </div>
                 </div>
                 <div className="w-full">
-                    <h2 className="text-lg font-semibold mb-4">Quels documents pour passer en exploitation
+                    <h2 className="font-semibold mb-4">Quels documents pour passer en exploitation
                         ?</h2>
                     <p className="mb-4  text-sm text-gray-600">Les documents nécéssaire pour passer en exploitation
                         : </p>
