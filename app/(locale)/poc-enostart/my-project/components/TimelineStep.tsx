@@ -11,9 +11,10 @@ interface TimelineStep {
 }
 
 
-export default function TimelineStep({step, index}: {
+export default function TimelineStep({step, index, key}: {
     step: TimelineStep;
-    index: number
+    index: number;
+    key:number
 }) {
     return <div key={index} className={cn("flex", !step.ping && 'opacity-60')}>
         <div className={"flex flex-col mt-1 items-center mr-4"}>

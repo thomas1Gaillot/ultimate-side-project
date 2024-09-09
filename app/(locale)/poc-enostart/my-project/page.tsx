@@ -339,7 +339,7 @@ export default function Component() {
                             <div className="h-8 w-0.5 bg-gray-200 ml-1  mt-2"></div>
                         </div>
                         {timelineIntegration.map((step, index) => (
-                            <TimelineStep step={step} index={index}/>
+                            <TimelineStep key={index} step={step} index={index}/>
                         ))}
                         <div className=" flex flex-col w-max">
                             <span className={"text-gray-500 uppercase text-xs"}>

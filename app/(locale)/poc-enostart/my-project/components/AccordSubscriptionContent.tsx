@@ -24,13 +24,13 @@ const AccordSubscriptionContent = ({ignored}:{ignored : boolean}) => {
                 onOpenChange={() => setOpenModal(!openModal)}>
             <DialogTrigger asChild>
                 {ignored ?
-                    <Button className={'w-full font-normal text-sm'} variant={'ghost'} size={'sm'}>Ignoré. Changer d'avis ?</Button> :
+                    <Button className={'w-full font-normal text-sm'} variant={'ghost'} size={'sm'}>{"Ignoré.Changer d'avis ?"}</Button> :
                     <Button  size='sm' className=" w-full text-right">{"Commencer ->"}</Button>
                 }
             </DialogTrigger>
             <DialogContent className="bg-white">
                 <DialogHeader>
-                    <DialogTitle>Souscription à la prestation : Accords, Déclaration et Convention</DialogTitle>
+                    <DialogTitle>{"Souscription à la prestation : Accords, Déclaration et Convention"}</DialogTitle>
                 </DialogHeader>
                 <div
                     className="  h-full flex flex-col justify-between md:max-h-[80vh] text-gray-900 dark:text-neutral-400">

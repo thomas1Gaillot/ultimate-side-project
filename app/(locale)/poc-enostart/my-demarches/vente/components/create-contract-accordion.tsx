@@ -1,28 +1,28 @@
 'use client'
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {Button} from "@/components/ui/button";
-import {Dispatch, SetStateAction, useState} from "react";
+import {Dispatch, SetStateAction} from "react";
 import {Badge} from "@/components/ui/badge";
 import {ReceiptIcon, XIcon} from "lucide-react";
 import {ContractDocument, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
-import { cn } from "@/lib/utils";
-import {useRouter, useSearchParams} from "next/navigation";
+import {cn} from "@/lib/utils";
+import {useRouter} from "next/navigation";
 
 
-const contracts:ContractDocument[] = [
+const contracts: ContractDocument[] = [
     {
-        name : 'Contrat consommateur type particulier',
-        duration : 'indéterminée',
-        price : '0.12€/kWh',
-        indexation : '% variable INSEE',
-        moreInfo : false
+        name: 'Contrat consommateur type particulier',
+        duration: 'indéterminée',
+        price: '0.12€/kWh',
+        indexation: '% variable INSEE',
+        moreInfo: false
     },
     {
-        name : 'Contrat consommateur type professionnel, avec penalité',
-        duration : '5 ans',
-        price : '0.11 €/kWh',
-        indexation : '% variable INSEE',
-        moreInfo : true
+        name: 'Contrat consommateur type professionnel, avec penalité',
+        duration: '5 ans',
+        price: '0.11 €/kWh',
+        indexation: '% variable INSEE',
+        moreInfo: true
     },
 ]
 export default function CreateContractAccordion() {
@@ -39,7 +39,7 @@ export default function CreateContractAccordion() {
     return (
         <AccordionItem value="create-contracts">
             <AccordionTrigger
-                onClick={()=> setTab('create-contracts')}
+                onClick={() => setTab('create-contracts')}
                 className="text-lg font-semibold">
                 <div className={"flex"}>
                     {"Je crée mes contrats de vente"}
@@ -57,9 +57,9 @@ export default function CreateContractAccordion() {
     )
 }
 
-export function MyContracts({storedContracts, onContractSelect, selectedContract}:{
+export function MyContracts({storedContracts, onContractSelect, selectedContract}: {
     storedContracts: ContractDocument[];
-    onContractSelect?:  Dispatch<SetStateAction<ContractDocument | null>>;
+    onContractSelect?: Dispatch<SetStateAction<ContractDocument | null>>;
     selectedContract?: ContractDocument | null;
 }) {
     const {setSalesContract} = useStoredDocuments()
@@ -74,13 +74,15 @@ export function MyContracts({storedContracts, onContractSelect, selectedContract
             return (
                 <div
                     onClick={() => onContractSelect && onContractSelect(contract)}
-                    key={index} className={cn("flex cursor-pointer flex-wrap gap-2 rounded bg-gray-50 hover:bg-gray-100 p-4 border border-gray-50",
-                    isSelectedContract && 'border-primary bg-primary/10')}>
+                    key={index}
+                    className={cn("flex cursor-pointer flex-wrap gap-2 rounded bg-gray-50 hover:bg-gray-100 p-4 border border-gray-50",
+                        isSelectedContract && 'border-primary bg-primary/10')}>
                     <div className={"w-full flex justify-between"}>
                         <div className={" w-full flex items-center truncate"}>
                             <ReceiptIcon className={"size-4 mr-2"}/>
                             {contract.name}</div>
-                        <XIcon className={"size-4 cursor-pointer relative bottom-2 left-2"} onClick={() => setSalesContract(storedContracts.filter((_, i) => i !== index))}/>
+                        <XIcon className={"size-4 cursor-pointer relative bottom-2 left-2"}
+                               onClick={() => setSalesContract(storedContracts.filter((_, i) => i !== index))}/>
                     </div>
                     <Badge variant={'secondary'}>{contract.duration}</Badge>
                     <Badge variant={'secondary'}>{contract.price}</Badge>
