@@ -1,6 +1,7 @@
 import {CheckIcon, HourglassIcon} from "lucide-react";
 
 export enum PmoStatus {
+    ChoisirUnPlan='ChoisirUnPlan',
     IdentifierLaPmo = 'IdentifierLaPmo',
     EditerLeBulletin = 'EditerLeBulletin',
     EnvoyerLeBulletin = 'EnvoyerLeBulletin',
@@ -12,6 +13,7 @@ export enum PmoStatus {
 const pmoStatus : {
     [key in PmoStatus]: {name: string, icon?: any}
 } = {
+    [PmoStatus.ChoisirUnPlan]: {name : 'Choisir un plan'},
     [PmoStatus.IdentifierLaPmo]: {name: 'Association à créer (1/5)'},
     [PmoStatus.EditerLeBulletin]: {name: 'Bulletin à éditer (2/5)'},
     [PmoStatus.EnvoyerLeBulletin]: {name: 'Bulletin à envoyer (3/5)'},

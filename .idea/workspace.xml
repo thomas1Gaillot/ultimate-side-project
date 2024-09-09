@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="step 1 : subscribe in projet page">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ping when new task">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/DocumentOverview.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/enedis-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/enedis-status.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/pmo-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/pmo-status.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/sales-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/sales-status.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/Document.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -236,15 +239,7 @@
       <workItem from="1725518706409" duration="16974000" />
       <workItem from="1725567584066" duration="6890000" />
       <workItem from="1725628046133" duration="8576000" />
-      <workItem from="1725866121127" duration="13325000" />
-    </task>
-    <task id="LOCAL-00173" summary="as page">
-      <option name="closed" value="true" />
-      <created>1724830737677</created>
-      <option name="number" value="00173" />
-      <option name="presentableId" value="LOCAL-00173" />
-      <option name="project" value="LOCAL" />
-      <updated>1724830737677</updated>
+      <workItem from="1725866121127" duration="16377000" />
     </task>
     <task id="LOCAL-00174" summary="table for consumers">
       <option name="closed" value="true" />
@@ -630,7 +625,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725877181196</updated>
     </task>
-    <option name="localTasksCounter" value="222" />
+    <task id="LOCAL-00222" summary="ping when new task">
+      <option name="closed" value="true" />
+      <created>1725887600963</created>
+      <option name="number" value="00222" />
+      <option name="presentableId" value="LOCAL-00222" />
+      <option name="project" value="LOCAL" />
+      <updated>1725887600963</updated>
+    </task>
+    <option name="localTasksCounter" value="223" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -649,7 +652,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="accords participation check" />
     <MESSAGE value="little badge" />
     <MESSAGE value="little ui fix" />
     <MESSAGE value="small ux updates" />
@@ -674,6 +676,7 @@
     <MESSAGE value="ui, ux" />
     <MESSAGE value="ui done" />
     <MESSAGE value="step 1 : subscribe in projet page" />
-    <option name="LAST_COMMIT_MESSAGE" value="step 1 : subscribe in projet page" />
+    <MESSAGE value="ping when new task" />
+    <option name="LAST_COMMIT_MESSAGE" value="ping when new task" />
   </component>
 </project>

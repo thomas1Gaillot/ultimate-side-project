@@ -2,6 +2,7 @@ import {CheckIcon, HourglassIcon} from "lucide-react";
 
 
 export enum EnedisStatus {
+    ChoisirUnPlan='ChoisirUnPlan',
     IdentifierLaPmo = 'IdentifierLaPmo',
     EditerLAccord = 'EditerLAccord',
     EnvoyerLAccord = 'EnvoyerLAccord',
@@ -14,6 +15,7 @@ const enedisStatus : {
     [key in EnedisStatus]: {name: string, icon?: any}
 
 } = {
+    [EnedisStatus.ChoisirUnPlan]:{name : 'Choisir un plan'},
     [EnedisStatus.IdentifierLaPmo]: {name: 'Association à créer (1/5)'},
     [EnedisStatus.EditerLAccord]: {name: "Accord à éditer (2/5)"},
     [EnedisStatus.EnvoyerLAccord]: {name: "Accord à envoyer (3/5)"},

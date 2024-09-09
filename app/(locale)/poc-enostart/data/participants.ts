@@ -25,7 +25,7 @@ const initialParticipants: Participant[] = [
         perimeter: "1.67 km",
         consumption: 4500,
         exportDate: null,
-        status: 'exploitation',
+        status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.ProposerUnPrix
