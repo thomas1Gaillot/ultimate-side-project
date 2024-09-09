@@ -1,21 +1,18 @@
 import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
-import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from "@/components/ui/dialog";
-import {Button} from "@/components/ui/button";
 import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
-import {EnedisStatus} from "@/app/(locale)/poc-enostart/data/enedis-status";
-import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
 import {cn} from "@/lib/utils";
+import {DocumentOverview} from "@/app/(locale)/poc-enostart/my-project/page";
 
-export default function DocumentOverview({doc, index, openModal, setOpenModal, documentStatus}:{
-    doc: {icon: any, title: string, estimatedTime: string, dialogContent : any},
-    documentStatus : PmoStatus | EnedisStatus | SalesStatus;
+export default function Component({doc, index}: {
+    doc: DocumentOverview,
     index: number,
-    openModal: string,
-    setOpenModal: (value: string) => void
 }) {
     return <Card key={index}
-                 className={cn("bg-gray-50 w-[200px] h-[250px] max-h-[250px] flex flex-col justify-between hover:shadow-none shadow-none border-none rounded",
-                     documentStatus === PmoStatus.Ignore && 'opacity-60')}>
+                 className={cn(" w-[200px] h-[250px] max-h-[250px] flex flex-col justify-between hover:shadow-none shadow-none  rounded",
+                     doc.status === PmoStatus.Ignore && 'opacity-60',
+                     (doc.status !== PmoStatus.ChoisirUnPlan && doc.status !== PmoStatus.Ignore ) ?
+                         'bg-primary/5 border ' : 'border-none bg-gray-50 '
+                     )}>
         <CardHeader>
             <p className="text-xs text-center relative bottom-2 text-gray-400">temps estimé
                 : {doc.estimatedTime}</p>
@@ -28,49 +25,8 @@ export default function DocumentOverview({doc, index, openModal, setOpenModal, d
             {doc.icon}
         </CardContent>
         <CardFooter>
-            {documentStatus === PmoStatus.ChoisirUnPlan && <ChoosePlanButton doc={doc} openModal={openModal} setOpenModal={setOpenModal}/>}
-            {documentStatus === PmoStatus.Ignore && <Ignored doc={doc} openModal={openModal} setOpenModal={setOpenModal}/>}
+            <doc.Button/>
         </CardFooter>
     </Card>
 }
 
-const ChoosePlanButton = ({doc, openModal, setOpenModal}: {
-    doc: {icon: any, title: string, estimatedTime: string, dialogContent : any},
-    openModal: string,
-    setOpenModal: (value: string) => void
-}) => {
-    return (<Dialog open={openModal === doc.title}
-                    onOpenChange={() => setOpenModal(openModal === doc.title ? '' : doc.title)}>
-        <DialogTrigger asChild>
-            <Button  size='sm'
-                     className=" w-full text-right">
-                {"Commencer ->"}
-            </Button>
-        </DialogTrigger>
-        <DialogContent className="bg-white">
-            <DialogHeader>
-                <DialogTitle>Souscription à la prestation : {doc.title}</DialogTitle>
-            </DialogHeader>
-            <doc.dialogContent close={() => setOpenModal('')}/>
-        </DialogContent>
-    </Dialog>)
-}
-
-const Ignored =  ({doc, openModal, setOpenModal}: {
-    doc: {icon: any, title: string, estimatedTime: string, dialogContent : any},
-    openModal: string,
-    setOpenModal: (value: string) => void
-}) => {
-    return (<Dialog open={openModal === doc.title}
-                    onOpenChange={() => setOpenModal(openModal === doc.title ? '' : doc.title)}>
-        <DialogTrigger asChild>
-            <Button className={'w-full'} variant={'ghost'} size={'sm'}>Prestation ignorée</Button>
-        </DialogTrigger>
-        <DialogContent className="bg-white">
-            <DialogHeader>
-                <DialogTitle>Souscription à la prestation : {doc.title}</DialogTitle>
-            </DialogHeader>
-            <doc.dialogContent close={() => setOpenModal('')}/>
-        </DialogContent>
-    </Dialog>)
-}

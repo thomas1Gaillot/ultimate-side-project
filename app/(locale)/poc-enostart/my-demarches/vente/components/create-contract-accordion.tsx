@@ -6,6 +6,7 @@ import {Badge} from "@/components/ui/badge";
 import {ReceiptIcon, XIcon} from "lucide-react";
 import {ContractDocument, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
 import { cn } from "@/lib/utils";
+import {useRouter, useSearchParams} from "next/navigation";
 
 
 const contracts:ContractDocument[] = [
@@ -25,12 +26,20 @@ const contracts:ContractDocument[] = [
     },
 ]
 export default function CreateContractAccordion() {
+    const router = useRouter()
+
+    const setTab = (newTab: string) => {
+        // Set the new query parameter
+        router.push(`?tab=${newTab}`); // This will update the URL with ?tab=newTab
+    };
+
     const {salesContract} = useStoredDocuments()
 
 
     return (
-        <AccordionItem value="bulletin">
+        <AccordionItem value="create-contracts">
             <AccordionTrigger
+                onClick={()=> setTab('create-contracts')}
                 className="text-lg font-semibold">
                 <div className={"flex"}>
                     {"Je crée mes contrats de vente"}

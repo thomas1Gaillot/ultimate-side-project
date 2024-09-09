@@ -44,7 +44,7 @@ export const useStoredDocuments = create<Documents>((set) => ({
     },
     setDeclaration: (document: Document) => set(state => ({declaration: document})),
     statutPmo: {
-        name: "Statut PMO",
+        name: "Statuts PMO signés",
         status: "à téléverser",
         document: "",
         actions: ["Téléverser en pdf", "Visualiser"]

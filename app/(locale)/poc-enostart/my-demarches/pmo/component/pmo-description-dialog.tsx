@@ -1,5 +1,5 @@
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
-import {Building, FileText, PencilLine, Users} from "lucide-react";
+import {Building, DownloadIcon, FileText, PencilLine, Users} from "lucide-react";
 import {Dialog, DialogContent, DialogHeader, DialogTitle} from "@/components/ui/dialog";
 import PrestationCard from "@/app/(locale)/poc-enostart/my-demarches/overview/components/PrestationCard";
 import {useStoredPrestations} from "@/app/(locale)/poc-enostart/data/use-prestations";
@@ -45,7 +45,7 @@ export default function PmoDescriptionDialog({ open, onOpenChange }: { open: boo
 
 
 export function PmoSteps(){
-    const [associationCreated, setAssociationCreated] = useState(false); // Toggle state
+    const [associationCreated, setAssociationCreated] = useState(true); // Toggle state
 
     // Define all steps
     const allSteps = [
@@ -62,9 +62,9 @@ export function PmoSteps(){
             selected : false
         },
         {
-            icon: <PencilLine className="h-5 w-5 text-primary" />,
+            icon: <DownloadIcon className="h-5 w-5 text-primary" />,
             title: "Étape 3",
-            description: "Signer les statuts PMO",
+            description: "Téléverser les statuts PMO signés",
             selected : false
         },
         {

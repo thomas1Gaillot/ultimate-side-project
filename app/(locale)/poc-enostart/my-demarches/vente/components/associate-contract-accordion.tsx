@@ -21,12 +21,18 @@ export default function AssociateContractAccordion() {
     const [isReconduction, setIsReconduction] = useState(false)
     const [hasSubscription, setHasSubscription] = useState(false)
 
+
     const router = useRouter()
-    return (
+
+    const setTab = (newTab: string) => {
+        // Set the new query parameter
+        router.push(`?tab=${newTab}`); // This will update the URL with ?tab=newTab
+    };    return (
         <AccordionItem value="associate-contract">
             <AccordionTrigger
+                onClick={() => setTab("associate-contract")}
                 className="text-lg font-semibold">
-                <div className={"flex"}>
+                <div  className={"flex"}>
                     {"2. Je complète le contrat de vente pour chaque consommateur"}
                 </div>
             </AccordionTrigger>

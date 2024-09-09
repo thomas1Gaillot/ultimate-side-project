@@ -28,11 +28,18 @@ export default function SendPriceAccordion() {
 
     const router = useRouter()
 
+    const setTab = (newTab: string) => {
+        // Set the new query parameter
+        router.push(`?tab=${newTab}`); // This will update the URL with ?tab=newTab
+    };
+
+
     return (
         <AccordionItem value="send-price">
             <AccordionTrigger
+                onClick={() => setTab('send-price')}
                 className="text-lg font-semibold">
-                <div className={"flex"}>
+                <div  className={"flex"}>
                     {"1. Je propose un prix de vente"}
                 </div>
             </AccordionTrigger>

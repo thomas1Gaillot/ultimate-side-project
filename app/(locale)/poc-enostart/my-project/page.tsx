@@ -1,9 +1,15 @@
 'use client'
 import {useEffect, useState} from 'react'
 import {Button} from "@/components/ui/button"
-import {FileCheck2Icon, FileTextIcon, FolderArchiveIcon, ScrollTextIcon} from 'lucide-react'
+import {
+    FileCheck2Icon,
+    FileTextIcon,
+    FolderArchiveIcon,
+    ScrollTextIcon,
+    SquareUserIcon,
+    UserSquareIcon
+} from 'lucide-react'
 import {IconFileEuro} from "@tabler/icons-react";
-import {Badge} from "@/components/ui/badge";
 import DocumentOverview from "@/app/(locale)/poc-enostart/my-project/components/DocumentOverview";
 import AccordSubscriptionContent from "@/app/(locale)/poc-enostart/my-project/components/AccordSubscriptionContent";
 import BulletinSubscriptionDialogContent
@@ -14,111 +20,129 @@ import {parse, useStoredParticipants} from "@/app/(locale)/poc-enostart/data/par
 import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
 import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
 import {EnedisStatus} from "@/app/(locale)/poc-enostart/data/enedis-status";
-import {cn} from "@/lib/utils";
 import {usePrestations} from "@/app/(locale)/poc-enostart/data/use-prestations";
+import {useRouter} from "next/navigation";
+import PreRequisitePmo from "@/app/(locale)/poc-enostart/my-project/components/PreRequisitePmo";
+import TimelineStep from "@/app/(locale)/poc-enostart/my-project/components/TimelineStep";
 
-interface TimelineStep {
-    title: string;
-    description: string;
-    button: string;
-    prerequisites?: { text: string, icon: any }[];
-    ping: boolean;
-}
 
-const initialTimelineIntegration = [
-    {
-        title: "J'accepte les candidatures",
-        description: "Vérifiez que le candidat est dans le périmètre de votre opération. Pré-intégrez le consommateur.",
-        button: 'Candidatures',
-        ping: false
-    },
-    {
-        title: "Je récupère les données pour étude (optionnel)",
-        description: "Récupérez les courbes de charges de vos consommateurs et étudiez la viabilité de votre projet.",
-        button: 'Pre-intégrations',
-        ping: false
-    },
-    {
-        title: "Je propose un prix de vente",
-        description: "Envoyez aux consommateurs pré-intégrés un prix de vente fixe. Attendez leur réponse pour valider rapidement votre projet.",
-        prerequisites: [{text: "Contrat de vente", icon: IconFileEuro}],
-        button: 'Pre-intégrations',
-        ping: false
-    },
-    {
-        title: "Je fais signer mes documents aux consommateurs",
-        description: "Envoyez aux consommateurs pré-intégrés un prix de vente fixe. Attendez leur réponse pour valider rapidement votre projet.",
-        prerequisites: [
-            {text: "Accords de participation", icon: FileCheck2Icon},
-            {text: "Bulletin d'adhésion", icon: ScrollTextIcon}],
-        button: 'Pre-intégrations',
-        ping: false
-    },
-]
-const initialTimelineExploitation = [
-    {
-        title: "Je fais signer les documents aux producteurs",
-        description: "Les producteurs signent les documents.",
-        button: 'Passage en exploitation',
-        ping: false
-    },
-    {
-        title: "J'édite la convention d'autoconsommation collective",
-        description: "Je crée et envoie la convention d'autoconsommation collective.",
-        button: 'Passage en exploitation',
-        prerequisites: [{text: "Déclaration de mise en oeuvre", icon: FileTextIcon}],
-        ping: false
-    },
-    {
-        title: "J'envoi la convention à Enedis",
-        description: "J'envoi la convention à Enedis pour validation.",
-        button: 'Passage en exploitation',
-        ping: false
-    },
-]
-
-type DocumentOverview = {
+export type DocumentOverview = {
     title: string;
     icon: JSX.Element;
     estimatedTime: string;
-    dialogContent: any;
-    status: SalesStatus | EnedisStatus | PmoStatus
+    Button: () => JSX.Element;
+    asterix?: string;
+    status: PmoStatus | EnedisStatus | SalesStatus
 }
 
-const salesDocument = {
+const initialSalesDocument: DocumentOverview = {
     title: "Contrat de vente",
     icon: <IconFileEuro className="w-12 h-12"/>,
     estimatedTime: '1 heure',
-    dialogContent: SalesSubscriptionDialogContent,
+    Button: () => <SalesSubscriptionDialogContent ignored={false}/>,
+    status: SalesStatus.ChoisirUnPlan
 }
-const accordsDocument = {
+const initialAccordsDocument: DocumentOverview = {
     title: "Accord de participation",
     icon: <FileCheck2Icon className="w-12 h-12"/>,
-    estimatedTime: '3 mois',
-    dialogContent: AccordSubscriptionContent,
-}
-const bulletinDocument = {
-    title: "Bulletin d'adhésion",
-    icon: <ScrollTextIcon className="w-12 h-12"/>,
-    estimatedTime: '1 semaine',
-    dialogContent: BulletinSubscriptionDialogContent,
+    estimatedTime: '1 heure',
+    Button: () => <AccordSubscriptionContent ignored={false}/>,
+    status: EnedisStatus.ChoisirUnPlan
 }
 
-const conventionDocument = {
+const initialStatutPmoDocument: DocumentOverview = {
+    title: "Statuts PMO Associative",
+    icon: <SquareUserIcon className="w-12 h-12"/>,
+    estimatedTime: '1h - 2 mois (selon état de la PMO)',
+    Button: () => <BulletinSubscriptionDialogContent ignored={false}/>,
+    status: PmoStatus.ChoisirUnPlan
+}
+
+const initialBulletinDocument: DocumentOverview = {
+    title: "Bulletin d'adhésion",
+    icon: <ScrollTextIcon className="w-12 h-12"/>,
+    estimatedTime: '1 heure',
+    Button: () => <BulletinSubscriptionDialogContent ignored={false}/>,
+    status: PmoStatus.ChoisirUnPlan
+
+}
+
+const initialConventionDocument: DocumentOverview = {
     title: "Convention d'ACC",
     asterix: "si votre opération n'est pas en exploitation",
     icon: <FolderArchiveIcon className="w-12 h-12"/>,
     estimatedTime: '2 semaines',
-    dialogContent: AccordSubscriptionContent,
+    Button: () => <AccordSubscriptionContent ignored={false}/>,
+    status: EnedisStatus.ChoisirUnPlan
 }
-const declarationDocument = {
+
+const initialDeclarationDocument: DocumentOverview = {
     title: "Déclaration de mise en oeuvre",
     icon: <FileTextIcon className="w-12 h-12"/>,
     estimatedTime: '1 mois',
-    dialogContent: AccordSubscriptionContent,
+    Button: () => <AccordSubscriptionContent ignored={false}/>,
+    status: EnedisStatus.ChoisirUnPlan
 }
 export default function Component() {
-    const [openModal, setOpenModal] = useState('')
+    const initialTimelineIntegration = [
+        {
+            title: "J'accepte les candidatures",
+            description: "Vérifiez que le candidat est dans le périmètre de votre opération. Pré-intégrez le consommateur.",
+            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/candidatures')}
+                                  variant="outline" className="mt-2 mb-6" size={'sm'}>Candidatures</Button>,
+            ping: false
+        },
+        {
+            title: "Je récupère les données pour étude (optionnel)",
+            description: "Récupérez les courbes de charges de vos consommateurs et étudiez la viabilité de votre projet.",
+            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
+                                  variant="outline" className="mt-2 mb-6" size={'sm'}>Pré-intégrations</Button>,
+            ping: false
+        },
+        {
+            title: "Je propose un prix de vente",
+            description: "Envoyez aux consommateurs pré-intégrés un prix de vente fixe. Attendez leur réponse pour valider rapidement votre projet.",
+            prerequisites: [{text: "Contrat de vente", icon: IconFileEuro}],
+            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
+                                  variant="outline" className="mt-2 mb-6" size={'sm'}>Pré-intégrations</Button>,
+            ping: false
+        },
+        {
+            title: "Je fais signer mes documents aux consommateurs",
+            description: "Envoyez aux consommateurs pré-intégrés un prix de vente fixe. Attendez leur réponse pour valider rapidement votre projet.",
+            prerequisites: [
+                {text: "Statuts PMO", icon: UserSquareIcon},
+                {text: "Accords de participation", icon: FileCheck2Icon},
+                {text: "Bulletin d'adhésion", icon: ScrollTextIcon}],
+            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
+                                  variant="outline" className="mt-2 mb-6" size={'sm'}>Pré-intégrations</Button>,
+            ping: false
+        },
+    ]
+    const initialTimelineExploitation = [
+        {
+            title: "Je fais signer les documents aux producteurs",
+            description: "Les producteurs signent les documents.",
+            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
+                                  variant={'secondary'} size={'sm'}>Passage en exploitation</Button>,
+            ping: false
+        },
+        {
+            title: "J'édite la convention d'autoconsommation collective",
+            description: "Je crée et envoie la convention d'autoconsommation collective.",
+            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
+                                  variant={'secondary'} size={'sm'}>Passage en exploitation</Button>,
+            prerequisites: [{text: "Déclaration de mise en oeuvre", icon: FileTextIcon}],
+            ping: false
+        },
+        {
+            title: "J'envoi la convention à Enedis",
+            description: "J'envoi la convention à Enedis pour validation.",
+            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
+                                  variant={'secondary'} size={'sm'}>Passage en exploitation</Button>,
+            ping: false
+        },
+    ]
     const [timelineIntegration, setTimelineIntegration] = useState(initialTimelineIntegration)
     const [timelineExploitation, setTimelineExploitation] = useState(initialTimelineExploitation)
     const {participants} = useStoredParticipants()
@@ -126,34 +150,150 @@ export default function Component() {
 
     const {pmoDemarches, salesDemarches, enedisDemarches} = usePrestations()
 
-    const [accordsStatus, setAccordsStatus] = useState(EnedisStatus.ChoisirUnPlan)
-    const [bulletinStatus, setBulletinStatus] = useState(PmoStatus.ChoisirUnPlan)
-    const [salesStatus, setSalesStatus] = useState(SalesStatus.ChoisirUnPlan)
+    const [accords, setAccords] = useState(initialAccordsDocument)
+    const [bulletin, setBulletin] = useState(initialBulletinDocument)
+    const [statutPmo, setStatutPmo] = useState(initialStatutPmoDocument)
 
+    const [sales, setSales] = useState(initialSalesDocument)
 
+    const [declaration, setDeclaration] = useState(initialDeclarationDocument)
+    const [convention, setConvention] = useState(initialConventionDocument)
+
+    const router = useRouter()
     // update status for Documents when prestation changes
     useEffect(() => {
-       switch(salesDemarches){
-           case 'active' :  setSalesStatus(SalesStatus.ProposerUnPrix);break;
-           case 'disabled' : setSalesStatus(SalesStatus.Ignore);break;
-           case null : setSalesStatus(SalesStatus.ChoisirUnPlan);break;
-           default : break;
-       }
 
-       switch (enedisDemarches){
-           case 'active' :  setAccordsStatus(EnedisStatus.IdentifierLaPmo);break;
-           case 'disabled' : setAccordsStatus(EnedisStatus.Ignore);break;
-           case null : setAccordsStatus(EnedisStatus.ChoisirUnPlan);break;
-           default : break;
-       }
-
-        switch (pmoDemarches){
-            case 'active' :  setBulletinStatus(PmoStatus.IdentifierLaPmo);break;
-            case 'disabled' : setBulletinStatus(PmoStatus.Ignore);break;
-            case null : setBulletinStatus(PmoStatus.ChoisirUnPlan);break;
-            default : break;
+        if (salesDemarches === 'disabled') {
+            setSales({
+                ...sales,
+                status: SalesStatus.Ignore,
+                Button: () => <SalesSubscriptionDialogContent ignored={true}/>
+            });
         }
-    }, [pmoDemarches, salesDemarches, enedisDemarches]);
+        if (salesDemarches === 'active') {
+            setSales({...sales, status: SalesStatus.ProposerUnPrix})
+        }
+
+    }, [salesDemarches]);
+    useEffect(() => {
+        switch (sales.status) {
+            case SalesStatus.Ignore :
+                break;
+            case SalesStatus.ChoisirUnPlan :
+                setSales(initialSalesDocument);
+                break;
+            case SalesStatus.ProposerUnPrix :
+                setSales({
+                    ...sales,
+                    Button: () => <Button
+                        onClick={() => router.push('/poc-enostart/my-demarches/vente?tab=create-contracts')}> {"Créer un contrat ->"} </Button>
+                });
+                break;
+            default:
+                setSales({...sales, Button: () => <>Default Next step : {sales.status}</>});
+                break;
+        }
+    }, [sales.status]);
+
+    useEffect(() => {
+
+        if (pmoDemarches === 'disabled') {
+            setBulletin({
+                ...bulletin,
+                status: PmoStatus.Ignore,
+                Button: () => <BulletinSubscriptionDialogContent ignored={true}/>
+            });
+            setStatutPmo({
+                ...statutPmo,
+                status: PmoStatus.Ignore,
+                Button: () => <BulletinSubscriptionDialogContent ignored={true}/>
+            });
+        }
+        if (pmoDemarches === 'active') {
+            setBulletin({...bulletin, status: PmoStatus.IdentifierLaPmo})
+            setStatutPmo({...statutPmo, status: PmoStatus.IdentifierLaPmo})
+        }
+
+    }, [pmoDemarches]);
+    useEffect(() => {
+        switch (bulletin.status) {
+            case PmoStatus.Ignore :
+                break;
+            case PmoStatus.ChoisirUnPlan :
+                setBulletin(initialBulletinDocument);
+                setStatutPmo(initialStatutPmoDocument)
+                break;
+            case PmoStatus.IdentifierLaPmo :
+                setBulletin({...bulletin, Button: () => <PreRequisitePmo/>});
+                setStatutPmo({
+                    ...statutPmo,
+                    Button: () => <Button size={'sm'}
+                                          onClick={() => router.push('/poc-enostart/my-demarches/pmo')}> {"Créer la PMO ->"} </Button>
+                });
+                break;
+            default:
+                setBulletin({...bulletin, Button: () => <>Default Next step : {bulletin.status}</>});
+                setStatutPmo({...statutPmo, Button: () => <>Default Next step : {statutPmo.status}</>});
+                break;
+        }
+    }, [bulletin.status]);
+
+    useEffect(() => {
+
+        if (enedisDemarches === 'disabled') {
+            setAccords({
+                ...accords,
+                status: EnedisStatus.Ignore,
+                Button: () => <AccordSubscriptionContent ignored={true}/>
+            });
+            setDeclaration({
+                ...declaration,
+                status: EnedisStatus.Ignore,
+                Button: () => <AccordSubscriptionContent ignored={true}/>
+            });
+            setConvention({
+                ...convention,
+                status: EnedisStatus.Ignore,
+                Button: () => <AccordSubscriptionContent ignored={true}/>
+            });
+        }
+        if (enedisDemarches === 'active') {
+            setAccords({
+                ...accords,
+                status: EnedisStatus.IdentifierLaPmo,
+            });
+            setDeclaration({
+                ...declaration,
+                status: EnedisStatus.IdentifierLaPmo,
+            });
+            setConvention({
+                ...convention,
+                status: EnedisStatus.IdentifierLaPmo,
+            });
+        }
+
+    }, [enedisDemarches]);
+    useEffect(() => {
+        switch (accords.status) {
+            case EnedisStatus.Ignore :
+                break;
+            case EnedisStatus.ChoisirUnPlan :
+                setAccords(initialAccordsDocument);
+                setDeclaration(initialDeclarationDocument)
+                setConvention(initialConventionDocument)
+                break;
+            case EnedisStatus.IdentifierLaPmo :
+                setAccords({...accords, Button: () => <PreRequisitePmo/>});
+                setDeclaration({...declaration, Button: () => <PreRequisitePmo/>});
+                setConvention({...convention, Button: () => <PreRequisitePmo/>});
+                break;
+            default:
+                setAccords({...accords, Button: () => <>Default Next step : {accords.status}</>});
+                setDeclaration({...declaration, Button: () => <>Default Next step : {declaration.status}</>});
+                setConvention({...convention, Button: () => <>Default Next step : {convention.status}</>});
+                break;
+        }
+    }, [accords.status]);
 
 
     // update ping status for Timelines
@@ -199,7 +339,7 @@ export default function Component() {
                             <div className="h-8 w-0.5 bg-gray-200 ml-1  mt-2"></div>
                         </div>
                         {timelineIntegration.map((step, index) => (
-                            <Timeline step={step} index={index}/>
+                            <TimelineStep step={step} index={index}/>
                         ))}
                         <div className=" flex flex-col w-max">
                             <span className={"text-gray-500 uppercase text-xs"}>
@@ -219,17 +359,17 @@ export default function Component() {
                         :</p>
                     <div className="flex flex-wrap w-full gap-4 mb-8">
                         <DocumentOverview key={1}
-                                          doc={salesDocument}
-                                          documentStatus={salesStatus}
-                                          index={0} openModal={openModal} setOpenModal={setOpenModal}/>
+                                          doc={sales}
+                                          index={0}/>
                         <DocumentOverview key={2}
-                                          doc={accordsDocument}
-                                          documentStatus={accordsStatus}
-                                          index={0} openModal={openModal} setOpenModal={setOpenModal}/>
-                        <DocumentOverview key={2}
-                                          doc={bulletinDocument}
-                                          documentStatus={bulletinStatus}
-                                          index={0} openModal={openModal} setOpenModal={setOpenModal}/>
+                                          doc={statutPmo}
+                                          index={1}/>
+                        <DocumentOverview key={3}
+                                          doc={accords}
+                                          index={2}/>
+                        <DocumentOverview key={4}
+                                          doc={bulletin}
+                                          index={3}/>
 
                     </div>
                 </div>
@@ -245,7 +385,7 @@ export default function Component() {
                             <div className="h-8 w-0.5 bg-gray-200 ml-1  mt-2"></div>
                         </div>
                         {timelineExploitation.map((step, index) => (
-                            <Timeline key={index} step={step} index={index}/>
+                            <TimelineStep key={index} step={step} index={index}/>
                         ))}
 
                         <div className=" flex flex-col w-max">
@@ -262,13 +402,11 @@ export default function Component() {
                         : </p>
                     <div className="flex flex-wrap w-full gap-4 mb-8">
                         <DocumentOverview key={1}
-                                          doc={declarationDocument}
-                                          documentStatus={accordsStatus}
-                                          index={0} openModal={openModal} setOpenModal={setOpenModal}/>
+                                          doc={declaration}
+                                          index={0}/>
                         <DocumentOverview key={2}
-                                          doc={conventionDocument}
-                                          documentStatus={accordsStatus}
-                                          index={0} openModal={openModal} setOpenModal={setOpenModal}/>
+                                          doc={convention}
+                                          index={0}/>
 
                     </div>
                 </div>
@@ -277,38 +415,5 @@ export default function Component() {
     )
 }
 
-function Timeline({step, index}: {
-    step: TimelineStep;
-    index: number
-}) {
-    return <div key={index} className={cn("flex", !step.ping && 'opacity-60')}>
-        <div className={"flex flex-col mt-1 items-center mr-4"}>
-            {step.ping ?
-                <div className="w-4 h-4 min-h-4 bg-primary rounded-full mb-2">
-                    <div className="w-4 h-4 min-h-4 animate-ping bg-primary rounded-full mb-2">
-                    </div>
-                </div> :
-                <div className="w-3 h-3 min-w-3 min-h-3 bg-gray-500 rounded-full"></div>}
-            <div className="h-full w-0.5 bg-gray-200  mt-2"></div>
-        </div>
-        <div>
-            {step.prerequisites && (
-                <Badge variant={'secondary'}
-                       className={'grid text-gray-700 gap-1 bg-yellow-50 hover:bg-yellow-50 text-[10px]'}>
-                    <p className=" uppercase min-w-max">{"Pré-requis"} </p>
-                    {step.prerequisites.map((prerequisite, index) => <div
-                        key={'prerequisite-' + index}
-                        className={"flex items-start font-normal relative right-1"}>
-                        <prerequisite.icon className="min-w-4 h-4"/>
-                        <p>{prerequisite.text} </p>
-                    </div>)}
 
-                </Badge>
-            )}
-            <h3 className="">{step.title}</h3>
-            <p className="text-xs text-gray-500">{step.description}</p>
 
-            <Button size={'sm'} variant="outline" className="mt-2 mb-6">{step.button}</Button>
-        </div>
-    </div>
-}

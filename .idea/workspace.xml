@@ -4,13 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ping when new task">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/DocumentOverview.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="choose prestation on overview OK">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/PreRequisitePmo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/TimelineStep.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/enedis-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/enedis-status.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/pmo-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/pmo-status.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/sales-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/sales-status.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/Document.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/MonECTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/MonECTabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/use-documents.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/use-documents.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-description-dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-description-dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/associate-contract-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/associate-contract-accordion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/send-price-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/send-price-accordion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/AccordSubscriptionContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/AccordSubscriptionContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/BulletinSubscriptionDialogContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/BulletinSubscriptionDialogContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/DocumentOverview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/DocumentOverview.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/SalesSubscriptionDialogContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/SalesSubscriptionDialogContent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -239,15 +248,7 @@
       <workItem from="1725518706409" duration="16974000" />
       <workItem from="1725567584066" duration="6890000" />
       <workItem from="1725628046133" duration="8576000" />
-      <workItem from="1725866121127" duration="16377000" />
-    </task>
-    <task id="LOCAL-00174" summary="table for consumers">
-      <option name="closed" value="true" />
-      <created>1724835001359</created>
-      <option name="number" value="00174" />
-      <option name="presentableId" value="LOCAL-00174" />
-      <option name="project" value="LOCAL" />
-      <updated>1724835001359</updated>
+      <workItem from="1725866121127" duration="25578000" />
     </task>
     <task id="LOCAL-00175" summary="fix tabs">
       <option name="closed" value="true" />
@@ -633,7 +634,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725887600963</updated>
     </task>
-    <option name="localTasksCounter" value="223" />
+    <task id="LOCAL-00223" summary="choose prestation on overview OK">
+      <option name="closed" value="true" />
+      <created>1725890721701</created>
+      <option name="number" value="00223" />
+      <option name="presentableId" value="LOCAL-00223" />
+      <option name="project" value="LOCAL" />
+      <updated>1725890721701</updated>
+    </task>
+    <option name="localTasksCounter" value="224" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -652,7 +661,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="little badge" />
     <MESSAGE value="little ui fix" />
     <MESSAGE value="small ux updates" />
     <MESSAGE value="small ux changes" />
@@ -677,6 +685,7 @@
     <MESSAGE value="ui done" />
     <MESSAGE value="step 1 : subscribe in projet page" />
     <MESSAGE value="ping when new task" />
-    <option name="LAST_COMMIT_MESSAGE" value="ping when new task" />
+    <MESSAGE value="choose prestation on overview OK" />
+    <option name="LAST_COMMIT_MESSAGE" value="choose prestation on overview OK" />
   </component>
 </project>

@@ -77,11 +77,12 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
                                     tab.hide && 'line-through')}
                             >
                                 <div className={"flex items-center"}>
-                                    {tab.disabled && <LockIcon className={"size-4 text-gray-500 mr-2"}/>}
+
                                     <span className={cn("text-left font-normal truncate mr-2",
                                         tab.ping && 'text-primary font-bold')}>
                                             {tab.label}
                                         </span>
+                                    {tab.disabled && <LockIcon className={"size-4 text-primary mr-2"}/>}
                                 </div>
                                 {tab.ping ? <span
                                         className="flex  text-primary gap-1 items-center ms-1 py-0.5 px-1.5 rounded-full text-xs font-medium bg-primary/10 text-gray-800 dark:bg-neutral-700 dark:text-neutral-300">
