@@ -12,11 +12,10 @@ export type Step = {
     disabled?: boolean,
 }
 
-const participantsTab = (participants: Participant[], isBulletinEdited : boolean, isAccordsEdited : boolean) => {
-    const {candidatures, preIntegres, exploitation} = parse(participants)
-    const hasSalesThingsToDo = participants.some(p => p.status === 'pre-integre' &&
+const participantsTab = (p: Participant[]) => {
+    const {candidatures, preIntegres, exploitation} = parse(p)
+    const hasSalesThingsToDo = p.some(p => p.status === 'pre-integre' &&
         (p.sales === SalesStatus.ProposerUnPrix  || p.sales === SalesStatus.AssocierLeContrat))
-
     const canSignDocuments = preIntegres.some(p => p.sales === SalesStatus.EnvoyerLeContrat)
 
     return [

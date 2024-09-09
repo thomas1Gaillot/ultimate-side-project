@@ -3,7 +3,6 @@ import SmallStep from "@/app/(locale)/poc-enostart/components/SmallStep";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {BellIcon, FootprintsIcon, InfoIcon} from "lucide-react";
 import Timeline from "@/app/(locale)/poc-enostart/components/Timeline";
-import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {
     candidatures_flow,
     declaration_flow,
@@ -211,7 +210,7 @@ export default function Overview() {
                             <span
                                 className={"uppercase text-xs w-full text-left ml-2 mt-4"}>Parcours des Participants</span>
 
-                            {participantsTab(participants, isBulletinEdited, isAccordsParticipationEdited).map((tab, index) => (
+                            {participantsTab(participants).map((tab, index) => (
                                 <TabsTrigger
                                     key={tab.id}
                                     value={tab.id}
@@ -219,7 +218,7 @@ export default function Overview() {
                                 >
                                     <div className={"flex items-center "}>
                                         <Timeline index={index}
-                                                  length={participantsTab(participants, isBulletinEdited, isAccordsParticipationEdited).length}/>
+                                                  length={participantsTab(participants).length}/>
                                         <span className={cn("text-left font-normal truncate ml-2",
                                             tab.ping && 'text-primary  font-bold')}>
                                             {tab.label}</span>
@@ -235,7 +234,7 @@ export default function Overview() {
                         </TabsList>
                         <div className="flex-grow w-full px-4 h-full  rounded-r-lg overflow-y-auto">
 
-                            {participantsTab(participants, isBulletinEdited, isAccordsParticipationEdited).map((tab) => (
+                            {participantsTab(participants).map((tab) => (
                                 <TabsContent key={tab.id} value={tab.id} className="mt-0 h-full">
                                     {tabContents[tab.id]}
                                 </TabsContent>
