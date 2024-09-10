@@ -51,6 +51,7 @@ export default function useDocumentsOverview() {
         }
 
     }, [salesDemarches]);
+
     useEffect(() => {
         switch (sales.status) {
             case SalesStatus.Ignore :
@@ -59,11 +60,11 @@ export default function useDocumentsOverview() {
                 setSales(initialSalesDocument);
                 break;
             case SalesStatus.ProposerUnPrix :
-                if(hasSalesContract){
+                if (hasSalesContract) {
                     setSales({
                         ...sales,
                         Button: () => <Button variant={"outline"} size={'sm'}
-                            onClick={() => router.push('/poc-enostart/my-demarches/vente?tab=create-contracts')}> {"Créer un autre contrat"} </Button>
+                                              onClick={() => router.push('/poc-enostart/my-demarches/vente?tab=create-contracts')}> {"Créer un autre contrat"} </Button>
                     });
                     break;
                 }
@@ -94,14 +95,15 @@ export default function useDocumentsOverview() {
                 Button: () => <BulletinSubscriptionDialogContent ignored={true}/>
             });
         }
-        if (pmoDemarches === 'active') {
+        if (pmoDemarches === 'active' && (statutPmo.status === PmoStatus.Ignore || statutPmo.status === PmoStatus.ChoisirUnPlan)) {
             setBulletin({...bulletin, status: PmoStatus.IdentifierLaPmo})
             setStatutPmo({...statutPmo, status: PmoStatus.IdentifierLaPmo})
         }
 
     }, [pmoDemarches]);
+
     useEffect(() => {
-        switch (bulletin.status) {
+        switch (statutPmo.status) {
             case PmoStatus.Ignore :
                 break;
             case PmoStatus.ChoisirUnPlan :
@@ -112,8 +114,30 @@ export default function useDocumentsOverview() {
                 setBulletin({...bulletin, Button: () => <PreRequisitePmo/>});
                 setStatutPmo({
                     ...statutPmo,
-                    Button: () => <Button size={'sm'}
+                    Button: () => <Button className={"w-full"} size={'sm'}
                                           onClick={() => router.push('/poc-enostart/my-demarches/pmo?tab=create-pmo')}> {"Créer la PMO ->"} </Button>
+                });
+                break;
+            case PmoStatus.EditerLeBulletin:
+                setStatutPmo({
+                    ...statutPmo,
+                    Button: () => <Button variant={'ghost'} className={"w-full"} size={'sm'}
+                                          onClick={() => router.push('/poc-enostart/my-demarches/pmo?tab=create-pmo')}> {"Document créé (voir)"} </Button>
+                });
+                setBulletin({
+                    ...bulletin, Button: () => <Button className={"w-full"} size={'sm'}
+                                                       onClick={() => router.push('/poc-enostart/my-demarches/pmo?tab=create-bulletin')}> {"Editer le bulletin ->"} </Button>
+                });
+                break;
+            case PmoStatus.EnvoyerLeBulletin:
+                setBulletin({
+                    ...bulletin, Button: () => <Button variant={'ghost'} className={"w-full"} size={'sm'}
+                                                       onClick={() => router.push('/poc-enostart/my-demarches/pmo?tab=create-bulletin')}> {"Document créé (voir)"} </Button>
+                });
+                setStatutPmo({
+                    ...statutPmo,
+                    Button: () => <Button variant={'ghost'} className={"w-full"} size={'sm'}
+                                          onClick={() => router.push('/poc-enostart/my-demarches/pmo?tab=create-pmo')}> {"Document créé (voir)"} </Button>
                 });
                 break;
             default:
@@ -121,8 +145,7 @@ export default function useDocumentsOverview() {
                 setStatutPmo({...statutPmo, Button: () => <>Default Next step : {statutPmo.status}</>});
                 break;
         }
-    }, [bulletin.status]);
-
+    }, [statutPmo.status]);
     useEffect(() => {
 
         if (enedisDemarches === 'disabled') {
@@ -169,8 +192,28 @@ export default function useDocumentsOverview() {
                 break;
             case EnedisStatus.IdentifierLaPmo :
                 setAccords({...accords, Button: () => <PreRequisitePmo/>});
-                setDeclaration({...declaration, Button: () => <PreRequisitePmo/>});
-                setConvention({...convention, Button: () => <PreRequisitePmo/>});
+                setDeclaration({
+                    ...declaration, Button: () => <Button className={"w-full"} size={'sm'}
+                                                          onClick={() => router.push('/poc-enostart/my-demarches/enedis/enedis')}> {"Editer la déclaration ->"} </Button>
+                });
+                setConvention({
+                    ...convention, Button: () => <span className={"text-xs"}>{"Pré-requis : avoir réalisé toute les étapes"}</span>
+                });
+                break;
+            case EnedisStatus.EditerLAccord:
+                const RedirectToCreateAccordButton = () => <Button className={"w-full"} size={'sm'}
+                                                                   onClick={() => router.push('/poc-enostart/my-demarches/enedis/accords')}> {"Editer l'accord ->"} </Button>
+                setAccords({
+                    ...accords, Button: () => <RedirectToCreateAccordButton/>
+                });
+
+                break;
+            case EnedisStatus.EnvoyerLAccord:
+                const RedirectToAccordsFinished = () => <Button variant={'ghost'} className={"w-full"} size={'sm'}
+                                                                onClick={() => router.push('/poc-enostart/my-demarches/enedis/accords')}> {"Document créé (voir)"} </Button>
+                setAccords({
+                    ...accords, Button: () => <RedirectToAccordsFinished/>
+                });
                 break;
             default:
                 setAccords({...accords, Button: () => <>Default Next step : {accords.status}</>});
@@ -180,7 +223,19 @@ export default function useDocumentsOverview() {
         }
     }, [accords.status]);
 
-    console.log('sales', sales)
+    useEffect(() => {
+        switch(declaration.status){
+            case EnedisStatus.DeclarationEditee :
+                setDeclaration({
+                    ...declaration, Button: () => <Button variant={'ghost'} className={"w-full"} size={'sm'}
+                                                        onClick={() => router.push('/poc-enostart/my-demarches/enedis/enedis')}> {"Document créé (voir)"} </Button>
+                });
+                break;
+        default : break;
+        }
+
+    },[declaration.status])
+
 
     return {sales, accords, bulletin, convention, declaration, statutPmo}
 };

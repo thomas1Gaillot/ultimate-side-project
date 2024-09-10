@@ -1,7 +1,5 @@
-import AccordsPlan from "@/app/(locale)/poc-enostart/my-demarches/enedis/accords/components/accords-plan";
-import PmoCreationAccordionItem
-    from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation-accordion-item";
-import AccordsParticipation from "@/app/(locale)/poc-enostart/my-demarches/enedis/accords/components/accords-participation";
+import AccordsParticipation
+    from "@/app/(locale)/poc-enostart/my-demarches/enedis/accords/components/accords-participation";
 import {Accordion} from "@/components/ui/accordion";
 
 export default function AccordsPage() {

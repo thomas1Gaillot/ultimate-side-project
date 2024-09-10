@@ -8,6 +8,7 @@ export default function ConventionPage() {
             </div>
             <div className="mb-4">
                 <Button>Editer la convention</Button>
+                <Button>Envoyer la convention à Enedis</Button>
             </div>
         </div>
     );

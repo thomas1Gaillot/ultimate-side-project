@@ -3,13 +3,16 @@ import {Button} from "@/components/ui/button"
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table"
 import {Check, CheckIcon, Edit, Eye, UploadIcon} from "lucide-react"
 import {useDocuments, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
+import {useStoredDocumentsOverview} from "@/app/(locale)/poc-enostart/data/documents/use-stored-documents-overview";
+import {EnedisStatus} from "@/app/(locale)/poc-enostart/data/enedis-status";
 
 export default function AccordsParticipation() {
     const {isPmoCreated, isAccordsParticipationEdited} = useDocuments()
     const {setAccordsParticipation, accordsParticipation} = useStoredDocuments()
-
+    const documentsOverview = useStoredDocumentsOverview()
     function actionFor(action: string) {
         if (action === "Éditer le fichier") {
+            documentsOverview.setAccords({...documentsOverview.accords, status : EnedisStatus.EnvoyerLAccord})
             setAccordsParticipation({
                 name: "Accords de participation",
                 status: "check",

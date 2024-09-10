@@ -9,6 +9,7 @@ export enum EnedisStatus {
     AccordEnvoye = 'AccordEnvoye',
     AccordSigne = 'AccordSigne',
     Ignore = 'Ignore',
+    DeclarationEditee = 'DeclarationEditee',
 }
 
 const enedisStatus : {
@@ -22,6 +23,7 @@ const enedisStatus : {
     [EnedisStatus.AccordEnvoye]: {name: "Accord envoyé", icon: HourglassIcon},
     [EnedisStatus.AccordSigne]: {name: "Accord signé", icon: CheckIcon},
     [EnedisStatus.Ignore]: {name: 'Ignoré', icon: CheckIcon},
+    [EnedisStatus.DeclarationEditee]: {name: 'Déclaration éditée'},
 };
 
 const enedisMapper = (status: EnedisStatus) : {

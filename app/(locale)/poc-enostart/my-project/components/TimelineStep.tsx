@@ -6,7 +6,7 @@ interface TimelineStep {
     title: string;
     description: string;
     Button: ({disabled}:{disabled:boolean}) => JSX.Element;
-    prerequisites?: { text: string, icon: any, done:boolean }[];
+    prerequisites: { text: string, icon: any, done:boolean }[];
     ping: boolean;
     active?: boolean;
 }
@@ -17,24 +17,25 @@ export default function TimelineStep({step, index, key}: {
     index: number;
     key: number
 }) {
-    const prerequisTodo = step.prerequisites && step.prerequisites.some(prerequisite => !prerequisite.done)
-    const allPrerequisDone = step.prerequisites && step.prerequisites.every(prerequisite => prerequisite.done)
+    const prerequisTodo = step.prerequisites.length >  0 && step.prerequisites.some(prerequisite => !prerequisite.done)
+    const allPrerequisDone = step.prerequisites.length >  0 && step.prerequisites.every(prerequisite => prerequisite.done)
     return <div key={index} className={cn("flex my-6")}>
         <div className={"flex flex-col mt-1 items-center mr-4"}>
             {(step.ping || prerequisTodo) ?
                 <div className={cn("w-4 h-4 min-h-4 bg-primary rounded-full mb-2",
-                    prerequisTodo && 'bg-amber-400 w-3 h-3 min-h-3')}>
+                    prerequisTodo && 'bg-amber-400 w-4 h-4 min-h-4')}>
                     <div className={cn("animate-ping  rounded-full mb-2",
                         step.ping && 'visible bg-primary w-4 h-4 min-h-4 ',
-                        prerequisTodo && 'bg-amber-400 w-3 h-3 min-h-3',
+                        prerequisTodo && 'bg-amber-400  w-4 h-4 min-h-4',
                         !step.ping && 'hidden' )}>
                     </div>
                 </div> :
-                <div className=" opacity-60 w-3 h-3 min-w-3 min-h-3 bg-gray-500 rounded-full"></div>}
+                <div className={cn(" opacity-60 w-3 h-3 min-w-3 min-h-3 bg-gray-500 rounded-full",
+                step.active && 'bg-primary')}></div>}
             <div className="h-full w-0.5 bg-gray-200  mt-2"></div>
         </div>
         <div>
-            {step.prerequisites && (
+            {step.prerequisites.length >  0 && (
                 <Badge variant={'secondary'}
                        className={cn('grid my-2 text-gray-700 gap-1 bg-yellow-50 hover:bg-yellow-50 text-[10px]', allPrerequisDone && 'bg-gray-50 hover:bg-gray-50')}>
                     {prerequisTodo && <p className=" uppercase min-w-max">{"Pré-requis"} </p>}

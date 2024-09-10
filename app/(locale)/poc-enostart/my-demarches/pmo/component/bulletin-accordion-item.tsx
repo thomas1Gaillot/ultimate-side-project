@@ -5,11 +5,13 @@ import {Check, CheckIcon, Edit, Eye, UploadIcon} from "lucide-react"
 import {useDocuments, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {useRouter} from "next/navigation";
+import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
+import {useStoredDocumentsOverview} from "@/app/(locale)/poc-enostart/data/documents/use-stored-documents-overview";
 
 export default function BulletinAccordionItem() {
     const {bulletin, isPmoCreated, isBulletinEdited} = useDocuments()
     const {setBulletinDocument} = useStoredDocuments()
-
+    const documentsOverview = useStoredDocumentsOverview()
 
     const router = useRouter()
 
@@ -20,6 +22,9 @@ export default function BulletinAccordionItem() {
 
     function actionFor(action: string) {
         if (action === "Éditer le fichier") {
+            documentsOverview.setStatutPmo({...documentsOverview.statutPmo, status : PmoStatus.EnvoyerLeBulletin})
+            documentsOverview.setBulletin({...documentsOverview.bulletin, status : PmoStatus.EnvoyerLeBulletin})
+
             setBulletinDocument({
                 name: "Bulletin d'adhésion",
                 status: "check",

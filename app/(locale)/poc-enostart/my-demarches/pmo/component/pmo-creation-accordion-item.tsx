@@ -2,14 +2,17 @@
 import {Button} from "@/components/ui/button"
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table"
 import {Check, CheckIcon, Edit, Eye, UploadIcon} from "lucide-react"
-import PmoCreationBanner from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation-banner";
 import {useDocuments, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {useRouter} from "next/navigation";
+import {useStoredDocumentsOverview} from "@/app/(locale)/poc-enostart/data/documents/use-stored-documents-overview";
+import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
+import {EnedisStatus} from "@/app/(locale)/poc-enostart/data/enedis-status";
 
 export default function PmoCreationAccordionItem() {
     const {statutPmo, reglementInterieur, isPmoCreated} = useDocuments()
     const {setStatutPmo, setReglementInterieur} = useStoredDocuments()
+    const documentsOverview = useStoredDocumentsOverview()
     const router = useRouter()
 
     const setTab = (newTab: string) => {
@@ -19,6 +22,9 @@ export default function PmoCreationAccordionItem() {
     function actionFor(name: string, action: string) {
         if (action === "Téléverser en pdf") {
             if (name === "Statuts PMO signés") {
+                documentsOverview.setStatutPmo({...documentsOverview.statutPmo, status : PmoStatus.EditerLeBulletin})
+                documentsOverview.setBulletin({...documentsOverview.bulletin, status : PmoStatus.EditerLeBulletin})
+                documentsOverview.setAccords({...documentsOverview.accords, status : EnedisStatus.EditerLAccord})
                 setStatutPmo({
                     name: "Statuts PMO signés",
                     status: "check",
