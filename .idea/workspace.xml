@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="Banner Help">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/candidatures/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/candidatures/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/TimelineStep.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/TimelineStep.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/checkbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/checkbox.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="better view for pre-requisites">
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/DocumentOverview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/DocumentOverview.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,15 +234,7 @@
       <workItem from="1725567584066" duration="6890000" />
       <workItem from="1725628046133" duration="8576000" />
       <workItem from="1725866121127" duration="26559000" />
-      <workItem from="1725952212118" duration="9882000" />
-    </task>
-    <task id="LOCAL-00183" summary="flow accept candidats OK">
-      <option name="closed" value="true" />
-      <created>1724855914619</created>
-      <option name="number" value="00183" />
-      <option name="presentableId" value="LOCAL-00183" />
-      <option name="project" value="LOCAL" />
-      <updated>1724855914619</updated>
+      <workItem from="1725952212118" duration="10159000" />
     </task>
     <task id="LOCAL-00184" summary="demarches pmo ok">
       <option name="closed" value="true" />
@@ -632,7 +620,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725961805140</updated>
     </task>
-    <option name="localTasksCounter" value="232" />
+    <task id="LOCAL-00232" summary="better view for pre-requisites">
+      <option name="closed" value="true" />
+      <created>1725962910761</created>
+      <option name="number" value="00232" />
+      <option name="presentableId" value="LOCAL-00232" />
+      <option name="project" value="LOCAL" />
+      <updated>1725962910761</updated>
+    </task>
+    <option name="localTasksCounter" value="233" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,7 +647,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix numbers 1 in task" />
     <MESSAGE value="wording" />
     <MESSAGE value="add vente accordions" />
     <MESSAGE value="SignDocuments start, end of sales contract" />
@@ -676,6 +671,7 @@
     <MESSAGE value="prestations refactoring" />
     <MESSAGE value="refactoring documents" />
     <MESSAGE value="Banner Help" />
-    <option name="LAST_COMMIT_MESSAGE" value="Banner Help" />
+    <MESSAGE value="better view for pre-requisites" />
+    <option name="LAST_COMMIT_MESSAGE" value="better view for pre-requisites" />
   </component>
 </project>
