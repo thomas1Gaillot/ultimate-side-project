@@ -1,24 +1,25 @@
 'use client'
 import MonECTabs from "@/app/(locale)/poc-enostart/components/MonECTabs";
-import Overview from "@/app/(locale)/poc-enostart/components/overview/overview";
 import {Button} from "@/components/ui/button";
 import {QuestionMarkCircledIcon} from "@radix-ui/react-icons";
-import {CodepenIcon, FileWarningIcon, XIcon} from "lucide-react";
+import {CodepenIcon} from "lucide-react";
 import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
-import {Separator} from "@/components/ui/separator";
-import WarningDemarchesBanner from "@/app/(locale)/poc-enostart/components/overview/warningDemarchesBanner";
+import {usePathname, useRouter} from "next/navigation";
 
 export default function Layout({
                                    children,
                                }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const pathName = usePathname()
+    const isNotOverview = pathName !== '/poc-enostart/my-project'
     useParticipants()
     return (
         <>
             <Header/>
             <MonECTabs/>
             <div className={" 2xl:px-32 px-4   md:px-8"}>
+                {isNotOverview && <BannerToMyProject/>}
                 {children}
             </div>
         </>
@@ -46,5 +47,22 @@ function Header() {
                 </Button>
             </div>
         </header>
+    )
+}
+
+function BannerToMyProject() {
+    const router = useRouter()
+    return (
+        <div className={"border mt-4 mx-16 mb-4 rounded-lg border-gray-300 p-4 flex items-center justify-between"}>
+            <div className={"flex text-sm text-gray-500"}>
+                <span className={"font-semibold text-primary mr-2"}>{"Besoin d'aide ?"}</span>
+                <span> {"Toutes les étapes pour créer votre opération et intégrer des participants sont décrites dans l'onglet Mon Projet."}</span>
+            </div>
+
+
+            <Button size={'sm'} variant={'outline'}
+            onClick={() => router.push('/poc-enostart/my-project')}
+            >Mon projet</Button>
+        </div>
     )
 }

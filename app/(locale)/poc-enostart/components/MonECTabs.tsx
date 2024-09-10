@@ -21,6 +21,12 @@ export default function MonECTabs() {
                     Mon projet
                 </TabsTrigger>
                 <TabsTrigger
+                    onClick={() => router.push("/poc-enostart/my-informations")}
+                    className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary rounded-md py-2"
+                    value={"/poc-enostart/my-informations"}>
+                    Mes informations
+                </TabsTrigger>
+                <TabsTrigger
                     onClick={() => router.push('/poc-enostart/my-perimeter')}
                     className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary rounded-md py-2"
                     value={perimeterHref}>
