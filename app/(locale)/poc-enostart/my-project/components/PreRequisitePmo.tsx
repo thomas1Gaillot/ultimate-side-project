@@ -3,7 +3,7 @@ import {SquareUserIcon} from "lucide-react";
 
 export default function PreRequisitePmo(){
     return <Badge variant={'secondary'}
-                  className={'grid text-gray-700 gap-1 bg-yellow-50 hover:bg-yellow-50 text-[10px]'}>
+                  className={'grid w-full p-1  m-0 text-gray-700 gap-1 bg-yellow-50 hover:bg-yellow-50 text-[10px]'}>
         <p className=" uppercase min-w-max">{"Pré-requis"} </p>
         <div
             key={'prerequisite-'}

@@ -37,7 +37,7 @@ export default function MonECTabs() {
                     onClick={() => router.push('/poc-enostart/my-demarches/overview')}
                     className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary rounded-md py-2"
                     value={demarchesHref}>
-                    Mes démarches
+                    Mes documents
                 </TabsTrigger>
             </TabsList>
             <Separator orientation={'horizontal'}/>

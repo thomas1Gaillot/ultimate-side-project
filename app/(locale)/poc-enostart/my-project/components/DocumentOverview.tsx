@@ -1,14 +1,14 @@
 import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
 import {cn} from "@/lib/utils";
-import {DocumentOverview} from "@/app/(locale)/poc-enostart/my-project/page";
+import {DocumentOverviewType} from "@/app/(locale)/poc-enostart/my-project/useDocumentsOverview";
 
 export default function Component({doc, index}: {
-    doc: DocumentOverview,
+    doc: DocumentOverviewType,
     index: number,
 }) {
     return <Card key={index}
-                 className={cn(" w-[200px] h-[250px] max-h-[250px] flex flex-col justify-between hover:shadow-none shadow-none  rounded",
+                 className={cn(" w-[200px] h-[270px] max-h-[270px] flex flex-col justify-between hover:shadow-none shadow-none  rounded",
                      doc.status === PmoStatus.Ignore && 'opacity-60',
                      (doc.status !== PmoStatus.ChoisirUnPlan && doc.status !== PmoStatus.Ignore ) ?
                          'bg-primary/5 border ' : 'border-none bg-gray-50 '

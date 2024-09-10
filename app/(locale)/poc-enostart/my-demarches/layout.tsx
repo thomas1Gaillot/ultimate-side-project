@@ -17,7 +17,23 @@ const demarchesTabs = (isPmoCreated: boolean, isBulletinEdited: boolean, isAccor
     const overviewHref = '/poc-enostart/my-demarches/overview'
 
     return [
-        {id: "overview", label: "Mes prestations", href: overviewHref, ping: false, hide: false},
+        {id: "overview", label: "Documents et prestations", href: overviewHref, ping: false, hide: false},
+        {
+            id: "vente",
+            label: "Contrat de vente",
+            href: venteHref,
+            ping: !isContratCreated && salesPlan !== 'disabled',
+            disabled: salesPlan !== 'active'
+        },
+        {
+            id: "pmo",
+            label: "Bulletin d'adhésion et PMO",
+            href: pmoHref,
+            done: isPmoCreated && isBulletinEdited,
+            disabled: pmoPlan !== 'active',
+            ping: !isBulletinEdited && pmoPlan !== 'disabled',
+            hide: isBulletinEdited
+        },
         {
             id: "enedis",
             label: "Accords, Déclaration, Convention",
@@ -26,22 +42,7 @@ const demarchesTabs = (isPmoCreated: boolean, isBulletinEdited: boolean, isAccor
             disabled: enedisPlan !== 'active',
             hide: false
         },
-        {
-            id: "pmo",
-            label: "Bulletin d'adhésion",
-            href: pmoHref,
-            done: isPmoCreated && isBulletinEdited,
-            disabled: pmoPlan !== 'active',
-            ping: !isBulletinEdited && pmoPlan !== 'disabled',
-            hide: isBulletinEdited
-        },
-        {
-            id: "vente",
-            label: "Contrat de vente",
-            href: venteHref,
-            ping: !isContratCreated && salesPlan !== 'disabled',
-            disabled: salesPlan !== 'active'
-        },
+
     ]
 }
 
@@ -49,8 +50,6 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
     const pathname = usePathname();
     const router = useRouter();
     const [openPmoDialog, setOpenPmoDialog] = useState(false)
-    const [openEnedisDialog, setOpenEnedisDialog] = useState(false)
-    const [openSalesDialog, setOpenSalesDialog] = useState(false)
 
     const {
         isPmoCreated,
@@ -66,7 +65,7 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
             {openPmoDialog && <PmoDescriptionDialog open={openPmoDialog} onOpenChange={setOpenPmoDialog}/>}
             <div className="flex flex-col w-full gap-8 mt-4">
                 <Tabs value={pathname || ''} className="w-full flex">
-                    <TabsList className="w-80 h-max flex flex-col gap-1 items-stretch bg-background">
+                    <TabsList className="w-[400px] h-max flex flex-col gap-1 items-stretch bg-background">
                         {demarchesTabs(isPmoCreated, isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent, hasSalesContract, pathname, enedisDemarches, pmoDemarches, salesDemarches).map((tab, index) => (
                             <TabsTrigger
                                 key={tab.id}

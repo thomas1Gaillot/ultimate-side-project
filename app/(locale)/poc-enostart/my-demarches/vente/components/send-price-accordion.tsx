@@ -19,6 +19,7 @@ import {MyContracts} from "@/app/(locale)/poc-enostart/my-demarches/vente/compon
 import {ContractDocument, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
 import {useRouter} from "next/navigation";
 import {useState} from "react";
+import RedirectToMyProject from "@/app/(locale)/poc-enostart/components/RedirectToMyProject";
 
 export default function SendPriceAccordion() {
     const {preIntegres, reject, proposePrice} = useParticipants()
@@ -107,13 +108,10 @@ export default function SendPriceAccordion() {
                             })}
                         </TableBody>
                     </Table> :
-                    <div>
-                        Pas de nouveaux participants à proposer un prix.
-                        <Button
-                            onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
-                            variant={'link'}>Voir la liste de participants pré-intégrés</Button>
-                    </div>}
+                    <RedirectToMyProject/>
+                }
             </AccordionContent>
         </AccordionItem>
     )
 }
+

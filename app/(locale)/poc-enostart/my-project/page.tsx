@@ -1,89 +1,19 @@
 'use client'
 import {useEffect, useState} from 'react'
 import {Button} from "@/components/ui/button"
-import {
-    FileCheck2Icon,
-    FileTextIcon,
-    FolderArchiveIcon,
-    ScrollTextIcon,
-    SquareUserIcon,
-    UserSquareIcon
-} from 'lucide-react'
+import {FileCheck2Icon, FileTextIcon, ScrollTextIcon, UserSquareIcon} from 'lucide-react'
 import {IconFileEuro} from "@tabler/icons-react";
 import DocumentOverview from "@/app/(locale)/poc-enostart/my-project/components/DocumentOverview";
-import AccordSubscriptionContent from "@/app/(locale)/poc-enostart/my-project/components/AccordSubscriptionContent";
-import BulletinSubscriptionDialogContent
-    from "@/app/(locale)/poc-enostart/my-project/components/BulletinSubscriptionDialogContent";
-import SalesSubscriptionDialogContent
-    from "@/app/(locale)/poc-enostart/my-project/components/SalesSubscriptionDialogContent";
 import {parse, useStoredParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
-import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
-import {EnedisStatus} from "@/app/(locale)/poc-enostart/data/enedis-status";
-import {usePrestations} from "@/app/(locale)/poc-enostart/data/use-prestations";
-import {useRouter} from "next/navigation";
-import PreRequisitePmo from "@/app/(locale)/poc-enostart/my-project/components/PreRequisitePmo";
 import TimelineStep from "@/app/(locale)/poc-enostart/my-project/components/TimelineStep";
+import {useRouter} from "next/navigation";
+import useDocumentsOverview from "@/app/(locale)/poc-enostart/my-project/useDocumentsOverview";
 
 
-export type DocumentOverview = {
-    title: string;
-    icon: JSX.Element;
-    estimatedTime: string;
-    Button: () => JSX.Element;
-    asterix?: string;
-    status: PmoStatus | EnedisStatus | SalesStatus
-}
-
-const initialSalesDocument: DocumentOverview = {
-    title: "Contrat de vente",
-    icon: <IconFileEuro className="w-12 h-12"/>,
-    estimatedTime: '1 heure',
-    Button: () => <SalesSubscriptionDialogContent ignored={false}/>,
-    status: SalesStatus.ChoisirUnPlan
-}
-const initialAccordsDocument: DocumentOverview = {
-    title: "Accord de participation",
-    icon: <FileCheck2Icon className="w-12 h-12"/>,
-    estimatedTime: '1 heure',
-    Button: () => <AccordSubscriptionContent ignored={false}/>,
-    status: EnedisStatus.ChoisirUnPlan
-}
-
-const initialStatutPmoDocument: DocumentOverview = {
-    title: "Statuts PMO Associative",
-    icon: <SquareUserIcon className="w-12 h-12"/>,
-    estimatedTime: '1h - 2 mois (selon état de la PMO)',
-    Button: () => <BulletinSubscriptionDialogContent ignored={false}/>,
-    status: PmoStatus.ChoisirUnPlan
-}
-
-const initialBulletinDocument: DocumentOverview = {
-    title: "Bulletin d'adhésion",
-    icon: <ScrollTextIcon className="w-12 h-12"/>,
-    estimatedTime: '1 heure',
-    Button: () => <BulletinSubscriptionDialogContent ignored={false}/>,
-    status: PmoStatus.ChoisirUnPlan
-
-}
-
-const initialConventionDocument: DocumentOverview = {
-    title: "Convention d'ACC",
-    asterix: "si votre opération n'est pas en exploitation",
-    icon: <FolderArchiveIcon className="w-12 h-12"/>,
-    estimatedTime: '1 mois',
-    Button: () => <AccordSubscriptionContent ignored={false}/>,
-    status: EnedisStatus.ChoisirUnPlan
-}
-
-const initialDeclarationDocument: DocumentOverview = {
-    title: "Déclaration de mise en oeuvre",
-    icon: <FileTextIcon className="w-12 h-12"/>,
-    estimatedTime: '1 mois',
-    Button: () => <AccordSubscriptionContent ignored={false}/>,
-    status: EnedisStatus.ChoisirUnPlan
-}
 export default function Component() {
+    const router = useRouter()
+    const {sales, convention, statutPmo, declaration, bulletin, accords} = useDocumentsOverview()
     const initialTimelineIntegration = [
         {
             title: "J'accepte les candidatures",
@@ -146,154 +76,6 @@ export default function Component() {
     const [timelineIntegration, setTimelineIntegration] = useState(initialTimelineIntegration)
     const [timelineExploitation, setTimelineExploitation] = useState(initialTimelineExploitation)
     const {participants} = useStoredParticipants()
-
-
-    const {pmoDemarches, salesDemarches, enedisDemarches} = usePrestations()
-
-    const [accords, setAccords] = useState(initialAccordsDocument)
-    const [bulletin, setBulletin] = useState(initialBulletinDocument)
-    const [statutPmo, setStatutPmo] = useState(initialStatutPmoDocument)
-
-    const [sales, setSales] = useState(initialSalesDocument)
-
-    const [declaration, setDeclaration] = useState(initialDeclarationDocument)
-    const [convention, setConvention] = useState(initialConventionDocument)
-
-    const router = useRouter()
-    // update status for Documents when prestation changes
-    useEffect(() => {
-
-        if (salesDemarches === 'disabled') {
-            setSales({
-                ...sales,
-                status: SalesStatus.Ignore,
-                Button: () => <SalesSubscriptionDialogContent ignored={true}/>
-            });
-        }
-        if (salesDemarches === 'active') {
-            setSales({...sales, status: SalesStatus.ProposerUnPrix})
-        }
-
-    }, [salesDemarches]);
-    useEffect(() => {
-        switch (sales.status) {
-            case SalesStatus.Ignore :
-                break;
-            case SalesStatus.ChoisirUnPlan :
-                setSales(initialSalesDocument);
-                break;
-            case SalesStatus.ProposerUnPrix :
-                setSales({
-                    ...sales,
-                    Button: () => <Button
-                        onClick={() => router.push('/poc-enostart/my-demarches/vente?tab=create-contracts')}> {"Créer un contrat ->"} </Button>
-                });
-                break;
-            default:
-                setSales({...sales, Button: () => <>Default Next step : {sales.status}</>});
-                break;
-        }
-    }, [sales.status]);
-
-    useEffect(() => {
-
-        if (pmoDemarches === 'disabled') {
-            setBulletin({
-                ...bulletin,
-                status: PmoStatus.Ignore,
-                Button: () => <BulletinSubscriptionDialogContent ignored={true}/>
-            });
-            setStatutPmo({
-                ...statutPmo,
-                status: PmoStatus.Ignore,
-                Button: () => <BulletinSubscriptionDialogContent ignored={true}/>
-            });
-        }
-        if (pmoDemarches === 'active') {
-            setBulletin({...bulletin, status: PmoStatus.IdentifierLaPmo})
-            setStatutPmo({...statutPmo, status: PmoStatus.IdentifierLaPmo})
-        }
-
-    }, [pmoDemarches]);
-    useEffect(() => {
-        switch (bulletin.status) {
-            case PmoStatus.Ignore :
-                break;
-            case PmoStatus.ChoisirUnPlan :
-                setBulletin(initialBulletinDocument);
-                setStatutPmo(initialStatutPmoDocument)
-                break;
-            case PmoStatus.IdentifierLaPmo :
-                setBulletin({...bulletin, Button: () => <PreRequisitePmo/>});
-                setStatutPmo({
-                    ...statutPmo,
-                    Button: () => <Button size={'sm'}
-                                          onClick={() => router.push('/poc-enostart/my-demarches/pmo')}> {"Créer la PMO ->"} </Button>
-                });
-                break;
-            default:
-                setBulletin({...bulletin, Button: () => <>Default Next step : {bulletin.status}</>});
-                setStatutPmo({...statutPmo, Button: () => <>Default Next step : {statutPmo.status}</>});
-                break;
-        }
-    }, [bulletin.status]);
-
-    useEffect(() => {
-
-        if (enedisDemarches === 'disabled') {
-            setAccords({
-                ...accords,
-                status: EnedisStatus.Ignore,
-                Button: () => <AccordSubscriptionContent ignored={true}/>
-            });
-            setDeclaration({
-                ...declaration,
-                status: EnedisStatus.Ignore,
-                Button: () => <AccordSubscriptionContent ignored={true}/>
-            });
-            setConvention({
-                ...convention,
-                status: EnedisStatus.Ignore,
-                Button: () => <AccordSubscriptionContent ignored={true}/>
-            });
-        }
-        if (enedisDemarches === 'active') {
-            setAccords({
-                ...accords,
-                status: EnedisStatus.IdentifierLaPmo,
-            });
-            setDeclaration({
-                ...declaration,
-                status: EnedisStatus.IdentifierLaPmo,
-            });
-            setConvention({
-                ...convention,
-                status: EnedisStatus.IdentifierLaPmo,
-            });
-        }
-
-    }, [enedisDemarches]);
-    useEffect(() => {
-        switch (accords.status) {
-            case EnedisStatus.Ignore :
-                break;
-            case EnedisStatus.ChoisirUnPlan :
-                setAccords(initialAccordsDocument);
-                setDeclaration(initialDeclarationDocument)
-                setConvention(initialConventionDocument)
-                break;
-            case EnedisStatus.IdentifierLaPmo :
-                setAccords({...accords, Button: () => <PreRequisitePmo/>});
-                setDeclaration({...declaration, Button: () => <PreRequisitePmo/>});
-                setConvention({...convention, Button: () => <PreRequisitePmo/>});
-                break;
-            default:
-                setAccords({...accords, Button: () => <>Default Next step : {accords.status}</>});
-                setDeclaration({...declaration, Button: () => <>Default Next step : {declaration.status}</>});
-                setConvention({...convention, Button: () => <>Default Next step : {convention.status}</>});
-                break;
-        }
-    }, [accords.status]);
 
 
     // update ping status for Timelines

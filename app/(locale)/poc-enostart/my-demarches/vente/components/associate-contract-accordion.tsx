@@ -14,6 +14,7 @@ import {Label} from "@/components/ui/label";
 import {Switch} from "@/components/ui/switch";
 import {Input} from "@/components/ui/input";
 import {useState} from "react";
+import RedirectToMyProject from "@/app/(locale)/poc-enostart/components/RedirectToMyProject";
 
 export default function AssociateContractAccordion() {
     const {preIntegres, reject, completeContract, completeContractForAll} = useParticipants()
@@ -243,12 +244,7 @@ export default function AssociateContractAccordion() {
                             })}
                         </TableBody>
                     </Table> :
-                    <div>
-                        Pas de nouveaux participants à associer un contrat.
-                        <Button
-                            onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
-                            variant={'link'}>Voir la liste de participants pré-intégrés</Button>
-                    </div>}
+                    <RedirectToMyProject/>}
             </AccordionContent>
         </AccordionItem>
     )
