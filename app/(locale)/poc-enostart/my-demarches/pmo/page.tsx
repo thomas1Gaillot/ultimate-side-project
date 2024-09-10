@@ -4,6 +4,7 @@ import PmoCreationAccordionItem
 import BulletinAccordionItem from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin-accordion-item";
 import {Accordion} from "@/components/ui/accordion";
 import {PmoSteps} from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-description-dialog";
+import {useSearchParams} from "next/navigation";
 
 export default function PmoPage() {
     return (
@@ -21,12 +22,19 @@ export default function PmoPage() {
                     {"Pour pouvoir rejoindre l'opération d'autoconsommation collective, les participants (consommateurs et producteurs) doivent adhérer à l'association PMO."}
                 </p>
             </div>
-            <Accordion type="single" collapsible className="w-full">
-                {/*<PmoPrestationAccordionItem/>*/}
-                <PmoSteps/>
-                <PmoCreationAccordionItem/>
-                <BulletinAccordionItem/>
-            </Accordion>
+           <AccordionPMO/>
         </div>
     );
+}
+
+function AccordionPMO(){
+    const searchParams = useSearchParams()
+    const tab = searchParams?.get('tab') || 'create-pmo'
+    return  <Accordion type="single" value={tab} collapsible className="w-full">
+        {/*<PmoPrestationAccordionItem/>*/}
+        <PmoSteps/>
+        <PmoCreationAccordionItem/>
+        <BulletinAccordionItem/>
+    </Accordion>
+
 }

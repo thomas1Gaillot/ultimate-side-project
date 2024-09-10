@@ -62,8 +62,8 @@ export default function useDocumentsOverview() {
                 if(hasSalesContract){
                     setSales({
                         ...sales,
-                        Button: () => <Button variant={"secondary"} size={'sm'}
-                            onClick={() => router.push('/poc-enostart/my-demarches/vente?tab=create-contracts')}> {"Ajouter un autre contrat"} </Button>
+                        Button: () => <Button variant={"outline"} size={'sm'}
+                            onClick={() => router.push('/poc-enostart/my-demarches/vente?tab=create-contracts')}> {"Créer un autre contrat"} </Button>
                     });
                     break;
                 }
@@ -113,7 +113,7 @@ export default function useDocumentsOverview() {
                 setStatutPmo({
                     ...statutPmo,
                     Button: () => <Button size={'sm'}
-                                          onClick={() => router.push('/poc-enostart/my-demarches/pmo')}> {"Créer la PMO ->"} </Button>
+                                          onClick={() => router.push('/poc-enostart/my-demarches/pmo?tab=create-pmo')}> {"Créer la PMO ->"} </Button>
                 });
                 break;
             default:

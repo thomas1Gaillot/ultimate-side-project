@@ -2,7 +2,7 @@
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
-import {Settings2Icon, TrashIcon, XIcon} from "lucide-react";
+import {Settings2Icon, XIcon} from "lucide-react";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import {Button} from "@/components/ui/button";
 import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
@@ -40,11 +40,17 @@ export default function SendPriceAccordion() {
             <AccordionTrigger
                 onClick={() => setTab('send-price')}
                 className="text-lg font-semibold">
-                <div  className={"flex"}>
-                    {"1. Je propose un prix de vente"}
+                <div className={"flex"}>
+                    {"2. Je propose un prix de vente"}
                 </div>
             </AccordionTrigger>
-            <AccordionContent className={"p-8 gap-4 grid"}>
+            <AccordionContent className={"p-8 gap-4 flex flex-col w-full items-end"}>
+                <Button
+                    size={'sm'} className={'text-xs w-max'} >
+                    Proposer un prix à tous
+                    <Settings2Icon
+                        className={'size-4 ml-2'}/>
+                </Button>
                 {preIntegresToSendPrice.length > 0 ? <Table>
                         <TableHeader>
                             <TableRow>
@@ -61,7 +67,7 @@ export default function SendPriceAccordion() {
                                             <Dialog>
                                                 <DialogTrigger asChild>
                                                     <Button
-                                                        size={'sm'} className={'text-xs text-gray-700'} variant={'link'}>
+                                                        size={'sm'} className={'text-xs'} >
                                                         Proposer un prix
                                                         <Settings2Icon
                                                             className={'size-4 ml-2'}/> </Button>
@@ -93,7 +99,9 @@ export default function SendPriceAccordion() {
                                             <TooltipProvider>
                                                 <Tooltip>
                                                     <TooltipTrigger>
-                                                        <Button onClick={() => reject(p.id)} size={'sm'} className={'text-red-500 text-xs'} variant={'link'}>Refuser<XIcon
+                                                        <Button onClick={() => reject(p.id)} size={'sm'}
+                                                                className={'text-red-500 text-xs'}
+                                                                variant={'link'}>Refuser<XIcon
                                                             className={'size-4 ml-1'}/> </Button>
                                                     </TooltipTrigger>
                                                     <TooltipContent>

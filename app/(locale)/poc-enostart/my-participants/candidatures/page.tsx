@@ -40,19 +40,18 @@ export default function Page() {
 
     return (
         <div className={"px-4"}>
+            <BannerToMyPerimeter/>
             <div className="flex justify-between items-center mb-4">
                 <TypographyH4>Candidatures</TypographyH4>
                 <Button
                     onClick={preIntegrateAll}
                     size={'sm'}
-                    variant={'secondary'}
                     disabled={selectedIds.length === 0}
                 >
                     Pré-intégrer les sélectionnés
                     <CheckIcon className={'size-4 ml-1'} />
                 </Button>
             </div>
-            <BannerToMyPerimeter/>
 
             <Table>
                 <TableHeader>
@@ -115,9 +114,11 @@ function BannerToMyPerimeter() {
     const router = useRouter()
     return (
         <div className={" mt-4 mb-4 rounded-lg bg-gray-50 p-4 flex items-center justify-between"}>
-            <div className={"flex text-sm  flex-wrap text-gray-500"}>
-                <span className={"font-semibold mr-2"}>{"Vérifiez le périmètre ! "}</span>
-                <span className={"text-wrap"}> {"Vérifiez que tous vos candidats sont à l'intérieur de votre périmètre."}</span>
+            <div className={"flex flex-col text-sm  text-gray-500"}>
+                <span className={"font-semibold mr-2 text-primary"}>{"Vérifiez le périmètre ! "}</span>
+                <span className={"text-wrap text-xs"}>
+                    {"Pensez à vérifier que tous vos candidats sont à l'intérieur de votre périmètre."}
+                </span>
             </div>
 
 

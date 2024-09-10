@@ -9,11 +9,15 @@ import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
 import TimelineStep from "@/app/(locale)/poc-enostart/my-project/components/TimelineStep";
 import {useRouter} from "next/navigation";
 import useDocumentsOverview from "@/app/(locale)/poc-enostart/data/documents/use-documents-overview";
+import {useDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 
 
 export default function Component() {
     const router = useRouter()
-    const {sales, convention, statutPmo, declaration, bulletin, accords} = useDocumentsOverview()
+    const {sales, convention,
+        statutPmo, declaration,
+        bulletin, accords} = useDocumentsOverview()
+    const {hasSalesContract} = useDocuments()
     const initialTimelineIntegration = [
         {
             title: "J'accepte les candidatures",
@@ -27,17 +31,28 @@ export default function Component() {
             description: "Récupérez les courbes de charges de vos consommateurs et étudiez la viabilité de votre projet.",
             Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
                                   variant="outline" className="mt-2 mb-6" size={'sm'}>Pré-intégrations</Button>,
-            ping: false
+            ping: false,
+            active : false,
         },
         {
             title: "Je propose un prix de vente",
-            description: "Envoyez aux consommateurs pré-intégrés un prix de vente fixe. Attendez leur réponse pour valider rapidement votre projet.",
+            description: "Envoyez aux consommateurs pré-intégrés un prix de vente fixe.",
             prerequisites: [
                 {text: "Contrat de vente", icon: IconFileEuro, done : false},
             ],
-            Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
-                                  variant="outline" className="mt-2 mb-6" size={'sm'}>Pré-intégrations</Button>,
-            ping: false
+            Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-demarches/vente?tab=send-price')}
+                                                               variant="outline" className="mt-2 mb-6" size={'sm'}>Proposer un prix de vente</Button>,
+            ping: false,
+            active : false,
+        },
+        {
+            title: "Les consommateurs acceptent mon offre",
+            description: "Attendez leur réponse pour valider rapidement votre projet.",
+            Button: ({disabled}:{disabled:boolean}) =>
+                <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
+                                                               variant="outline" className="mt-2 mb-6" size={'sm'}>Pré-intégrations</Button>,
+            ping: false,
+            active : false,
         },
         {
             title: "Je fais signer mes documents aux consommateurs",
@@ -48,7 +63,8 @@ export default function Component() {
                 {text: "Bulletin d'adhésion", icon: ScrollTextIcon, done : false}],
             Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
                                   variant="outline" className="mt-2 mb-6" size={'sm'}>Pré-intégrations</Button>,
-            ping: false
+            ping: false,
+            active : false,
         },
     ]
     const initialTimelineExploitation = [
@@ -57,7 +73,8 @@ export default function Component() {
             description: "Les producteurs signent les documents.",
             Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
                                   variant={'secondary'} size={'sm'}>Passage en exploitation</Button>,
-            ping: false
+            ping: false,
+            active : false,
         },
         {
             title: "J'édite la convention d'autoconsommation collective",
@@ -65,14 +82,16 @@ export default function Component() {
             Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
                                   variant={'secondary'} size={'sm'}>Passage en exploitation</Button>,
             prerequisites: [{text: "Déclaration de mise en oeuvre", icon: FileTextIcon, done : false}],
-            ping: false
+            ping: false,
+            active : false,
         },
         {
             title: "J'envoi la convention à Enedis",
             description: "J'envoi la convention à Enedis pour validation.",
             Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
                                   variant={'secondary'} size={'sm'}>Passage en exploitation</Button>,
-            ping: false
+            ping: false,
+            active : false,
         },
     ]
     const [timelineIntegration, setTimelineIntegration] = useState(initialTimelineIntegration)
@@ -86,15 +105,19 @@ export default function Component() {
         const hasSalesThingsToDo = participants.some(p => p.status === 'pre-integre' &&
             (p.sales === SalesStatus.ProposerUnPrix || p.sales === SalesStatus.AssocierLeContrat))
         const canSignDocuments = preIntegres.some(p => p.sales === SalesStatus.EnvoyerLeContrat)
+        const atLeastOneProposalStatus = preIntegres.some(p => p.sales === SalesStatus.PrixPropose)
         const newTimelineIntegration = initialTimelineIntegration.map((step) => {
             if (step.title === "J'accepte les candidatures") {
                 return {...step, ping: candidatures.length > 0}
             }
             if (step.title === "Je propose un prix de vente") {
-                return {...step, ping: hasSalesThingsToDo}
+                return {...step, ping: hasSalesThingsToDo, prerequisites: [{text: "Contrat de vente", icon: IconFileEuro, done : hasSalesContract}]}
             }
             if (step.title === "Je fais signer mes documents aux consommateurs") {
                 return {...step, ping: canSignDocuments}
+            }
+            if (step.title === "Les consommateurs acceptent mon offre") {
+                return {...step, active : atLeastOneProposalStatus}
             }
             return step
         })
@@ -106,7 +129,7 @@ export default function Component() {
             return step
         }))
 
-    }, [participants]);
+    }, [participants, hasSalesContract]);
 
     return (
         <div className="min-h-screen bg-white text-gray-900 p-8 2xl:px-32">

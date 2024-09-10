@@ -4,10 +4,19 @@ import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/c
 import {Check, CheckIcon, Edit, Eye, UploadIcon} from "lucide-react"
 import {useDocuments, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
+import {useRouter} from "next/navigation";
 
 export default function BulletinAccordionItem() {
     const {bulletin, isPmoCreated, isBulletinEdited} = useDocuments()
     const {setBulletinDocument} = useStoredDocuments()
+
+
+    const router = useRouter()
+
+    const setTab = (newTab: string) => {
+        // Set the new query parameter
+        router.push(`?tab=${newTab}`); // This will update the URL with ?tab=newTab
+    };
 
     function actionFor(action: string) {
         if (action === "Éditer le fichier") {
@@ -21,8 +30,10 @@ export default function BulletinAccordionItem() {
     }
 
     return (
-        <AccordionItem value="bulletin">
+        <AccordionItem value="create-bulletin">
             <AccordionTrigger
+                onClick={() => setTab('create-bulletin')}
+
                 className="text-lg font-semibold">
                 <div className={"flex"}>
                     {"2. J'édite les bulletins d'adhésion"}

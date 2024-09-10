@@ -14,11 +14,11 @@ const pmoStatus : {
     [key in PmoStatus]: {name: string, icon?: any}
 } = {
     [PmoStatus.ChoisirUnPlan]: {name : 'Choisir un plan'},
-    [PmoStatus.IdentifierLaPmo]: {name: 'Association à créer (1/5)'},
-    [PmoStatus.EditerLeBulletin]: {name: 'Bulletin à éditer (2/5)'},
-    [PmoStatus.EnvoyerLeBulletin]: {name: 'Bulletin à envoyer (3/5)'},
-    [PmoStatus.BulletinEnvoye]: {name: 'Bulletin envoyé (4/5)', icon: HourglassIcon},
-    [PmoStatus.BulletinSigne]: {name: 'Bulletin signé (5/5)', icon: CheckIcon},
+    [PmoStatus.IdentifierLaPmo]: {name: 'Association à créer'},
+    [PmoStatus.EditerLeBulletin]: {name: 'Bulletin à éditer'},
+    [PmoStatus.EnvoyerLeBulletin]: {name: 'Bulletin à envoyer'},
+    [PmoStatus.BulletinEnvoye]: {name: 'Bulletin envoyé', icon: HourglassIcon},
+    [PmoStatus.BulletinSigne]: {name: 'Bulletin signé', icon: CheckIcon},
     [PmoStatus.Ignore]: {name: 'Ignoré', icon: CheckIcon},
 };
 

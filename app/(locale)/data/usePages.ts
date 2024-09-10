@@ -2,7 +2,7 @@ import {
     BlocksIcon,
     BookOpenTextIcon,
     CarrotIcon,
-    ChefHatIcon,
+    ChefHatIcon, CircleDotDashed,
     ConstructionIcon,
     HomeIcon,
     LoaderCircle,
@@ -71,6 +71,12 @@ const defaultPages = [
                 href: '/churro-ciao',
                 label: 'Churro Ciao',
                 icon: ChefHatIcon,
+                newTab: false
+            },
+            {
+                href: '/poc-enostart/my-project',
+                label: 'PoC',
+                icon: CircleDotDashed,
                 newTab: false
             }
         ]

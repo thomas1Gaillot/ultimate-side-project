@@ -26,36 +26,44 @@ function Plans() {
                     </p>
                 </div>
             )}
-            <h2 className="text-lg text-gray-700 mt-6 mb-2">{"Prestation : Contrat de vente"}</h2>
-            <div className="flex flex-wrap w-full gap-4 mb-8">
-                <DocumentOverview key={1}
-                                  doc={sales}
-                                  index={0}/>
+            <div className="grid grid-cols-3">
+                <div>
+                    <h2 className=" font-semibold text-gray-700 mt-6 mb-2">{"Prestation : Contrat de vente"}</h2>
+                    <div className="flex flex-wrap w-full gap-4 mb-8">
+                        <DocumentOverview key={1}
+                                          doc={sales}
+                                          index={0}/>
+                    </div>
+                </div>
+                <div>
+                    <h2 className=" font-semibold text-gray-700 mt-6 mb-2">{"Prestation : Bulletin d'adhésion et PMO"}</h2>
 
-            </div>
-            <h2 className="text-lg text-gray-700 mt-6 mb-2">{"Prestation : Bulletin d'adhésion et PMO"}</h2>
+                    <div className="flex flex-wrap w-full gap-4 mb-8">
+                        <DocumentOverview key={1}
+                                          doc={statutPmo}
+                                          index={0}/>
+                        <DocumentOverview key={2}
+                                          doc={bulletin}
+                                          index={1}/>
+                    </div>
+                </div>
+                <div className={""}>
+                    <h2 className=" font-semibold text-gray-700 mt-6 mb-2">
+                        {"Prestation : Accords de participation, Déclaration de mise en oeuvre et Convention d'ACC"}
+                    </h2>
 
-            <div className="flex flex-wrap w-full gap-4 mb-8">
-                <DocumentOverview key={1}
-                                  doc={statutPmo}
-                                  index={0}/>
-                <DocumentOverview key={2}
-                                  doc={bulletin}
-                                  index={1}/>
-            </div>
-            <h2 className="text-lg text-gray-700 mt-6 mb-2">{"Prestation : Accords de participation, Déclaration de mise en oeuvre et Convention d'ACC"}</h2>
-
-            <div className="flex flex-wrap w-full gap-4 mb-8">
-                <DocumentOverview key={1}
-                                  doc={accords}
-                                  index={0}/>
-                <DocumentOverview key={2}
-                                  doc={declaration}
-                                  index={1}/>
-                <DocumentOverview key={3}
-                                  doc={convention}
-                                  index={2}/>
-
+                    <div className="flex flex-wrap w-full gap-4 mb-8">
+                        <DocumentOverview key={1}
+                                          doc={accords}
+                                          index={0}/>
+                        <DocumentOverview key={2}
+                                          doc={declaration}
+                                          index={1}/>
+                        <DocumentOverview key={3}
+                                          doc={convention}
+                                          index={2}/>
+                    </div>
+                </div>
             </div>
         </div>
     )

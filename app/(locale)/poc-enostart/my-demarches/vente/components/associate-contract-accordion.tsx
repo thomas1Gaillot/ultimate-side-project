@@ -34,7 +34,7 @@ export default function AssociateContractAccordion() {
                 onClick={() => setTab("associate-contract")}
                 className="text-lg font-semibold">
                 <div  className={"flex"}>
-                    {"2. Je complète le contrat de vente pour chaque consommateur"}
+                    {"3. Je complète le contrat de vente pour chaque consommateur"}
                 </div>
             </AccordionTrigger>
             <AccordionContent className={"p-8 gap-4 grid"}>

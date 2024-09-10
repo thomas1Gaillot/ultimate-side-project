@@ -2,11 +2,12 @@
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {Button} from "@/components/ui/button";
 import {Dispatch, SetStateAction} from "react";
-import {Badge} from "@/components/ui/badge";
-import {ReceiptIcon, XIcon} from "lucide-react";
+import {XIcon} from "lucide-react";
 import {ContractDocument, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {cn} from "@/lib/utils";
 import {useRouter} from "next/navigation";
+import {IconFileEuro} from "@tabler/icons-react";
+import {Separator} from "@/components/ui/separator";
 
 
 const contracts: ContractDocument[] = [
@@ -32,9 +33,7 @@ export default function CreateContractAccordion() {
         // Set the new query parameter
         router.push(`?tab=${newTab}`); // This will update the URL with ?tab=newTab
     };
-
     const {salesContract} = useStoredDocuments()
-
 
     return (
         <AccordionItem value="create-contracts">
@@ -42,16 +41,11 @@ export default function CreateContractAccordion() {
                 onClick={() => setTab('create-contracts')}
                 className="text-lg font-semibold">
                 <div className={"flex"}>
-                    {"Je crée mes contrats de vente"}
+                    {"1. Je crée mes contrats de vente"}
                 </div>
             </AccordionTrigger>
-            <AccordionContent className={"p-8 gap-4 grid"}>
-                <div className={"flex justify-between w-full text-lg"}>
-                    Liste des contrats
-                </div>
+            <AccordionContent className={""}>
                 <MyContracts storedContracts={salesContract}/>
-
-
             </AccordionContent>
         </AccordionItem>
     )
@@ -63,35 +57,52 @@ export function MyContracts({storedContracts, onContractSelect, selectedContract
     selectedContract?: ContractDocument | null;
 }) {
     const {setSalesContract} = useStoredDocuments()
+
     const createInMemoryContracts = () => {
         setSalesContract(contracts)
     }
-    return <div className={"grid max-w-md gap-4"}>
 
-        <Button onClick={() => createInMemoryContracts()} variant={'secondary'}>Ajouter un contrat de vente</Button>
+    return <div className={"grid gap-4"}>
+
         {storedContracts.map((contract, index) => {
             const isSelectedContract = selectedContract?.name === contract.name
             return (
                 <div
                     onClick={() => onContractSelect && onContractSelect(contract)}
                     key={index}
-                    className={cn("flex cursor-pointer flex-wrap gap-2 rounded bg-gray-50 hover:bg-gray-100 p-4 border border-gray-50",
+                    className={cn("flex cursor-pointer gap-4 rounded-lg  p-4 border border-gray-200",
                         isSelectedContract && 'border-primary bg-primary/10')}>
-                    <div className={"w-full flex justify-between"}>
-                        <div className={" w-full flex items-center truncate"}>
-                            <ReceiptIcon className={"size-4 mr-2"}/>
-                            {contract.name}</div>
-                        <XIcon className={"size-4 cursor-pointer relative bottom-2 left-2"}
-                               onClick={() => setSalesContract(storedContracts.filter((_, i) => i !== index))}/>
+                    <div className={"rounded-xl bg-primary/10 p-2 flex items-center justify-center"}>
+                        <IconFileEuro className={"size-6 text-primary min-w-6 min-h-6"}/>
                     </div>
-                    <Badge variant={'secondary'}>{contract.duration}</Badge>
-                    <Badge variant={'secondary'}>{contract.price}</Badge>
-                    <Badge variant={'secondary'}>{contract.indexation}</Badge>
-                    {!contract.moreInfo && <Badge variant={'destructive'}>Incomplet</Badge>}
+                    <div className={"w-full grid justify-between"}>
+                        <div className={" w-full truncate font-medium text-lg"}>
+                            {contract.name}
+                        </div>
+                        <div className={" flex text-sm flex-wrap gap-2 items-center text-gray-500"}>
+                            {contract.duration}
+                            <Separator orientation={'vertical'}/>
+                            {contract.price}
+                            <Separator orientation={'vertical'}/>
+                            {contract.indexation}
+                            <Separator orientation={'vertical'}/>
+                            {!contract.moreInfo && <span className={"text-red-600"}>Incomplet</span>}
+                        </div>
+                    </div>
+                    <XIcon className={"size-4 cursor-pointer relative bottom-2 left-2"}
+                           onClick={() => setSalesContract(storedContracts.filter((_, i) => i !== index))}/>
+
                 </div>
             )
         })}
-        {storedContracts.length === 0 && <div className={"text-left"}>Aucun contrat de vente créé.</div>}
+        {storedContracts.length === 0 &&
+            <div className={"flex flex-col items-center gap-4 justify-center w-full text-lg p-8"}>
+                <span className={"font-semibold"}>Liste des contrats</span>
+                <span className={"text-gray-500 text-center"}>Créer vos contrats de vente, puis proposerez-les aux participants pré-intégrés.</span>
+                <Button className={"w-max"} onClick={() => createInMemoryContracts()}>Créer un contrat de
+                    vente</Button>
+            </div>
+        }
 
     </div>
 }

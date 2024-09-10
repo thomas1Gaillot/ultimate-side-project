@@ -16,11 +16,11 @@ const enedisStatus : {
 
 } = {
     [EnedisStatus.ChoisirUnPlan]:{name : 'Choisir un plan'},
-    [EnedisStatus.IdentifierLaPmo]: {name: 'Association à créer (1/5)'},
-    [EnedisStatus.EditerLAccord]: {name: "Accord à éditer (2/5)"},
-    [EnedisStatus.EnvoyerLAccord]: {name: "Accord à envoyer (3/5)"},
-    [EnedisStatus.AccordEnvoye]: {name: "Accord envoyé (4/5)", icon: HourglassIcon},
-    [EnedisStatus.AccordSigne]: {name: "Accord signé (5/5)", icon: CheckIcon},
+    [EnedisStatus.IdentifierLaPmo]: {name: 'Association à créer'},
+    [EnedisStatus.EditerLAccord]: {name: "Accord à éditer"},
+    [EnedisStatus.EnvoyerLAccord]: {name: "Accord à envoyer"},
+    [EnedisStatus.AccordEnvoye]: {name: "Accord envoyé", icon: HourglassIcon},
+    [EnedisStatus.AccordSigne]: {name: "Accord signé", icon: CheckIcon},
     [EnedisStatus.Ignore]: {name: 'Ignoré', icon: CheckIcon},
 };
 

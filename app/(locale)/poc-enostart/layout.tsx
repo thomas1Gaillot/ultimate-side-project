@@ -54,9 +54,9 @@ function BannerToMyProject() {
     const router = useRouter()
     return (
         <div className={"border mt-4 mx-16 mb-4 rounded-lg border-gray-300 p-4 flex items-center justify-between"}>
-            <div className={"flex text-sm text-gray-500"}>
+            <div className={"flex flex-col text-sm text-gray-500"}>
                 <span className={"font-semibold text-primary mr-2"}>{"Besoin d'aide ?"}</span>
-                <span> {"Toutes les étapes pour créer votre opération et intégrer des participants sont décrites dans l'onglet Mon Projet."}</span>
+                <span className={"text-xs"}> {"Toutes les étapes pour créer votre opération et intégrer des participants sont décrites dans l'onglet Mon Projet."}</span>
             </div>
 
 
