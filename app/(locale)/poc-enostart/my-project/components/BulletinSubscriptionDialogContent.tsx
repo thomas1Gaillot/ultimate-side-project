@@ -1,6 +1,6 @@
 import {FileCheck2Icon, FileTextIcon, FolderArchiveIcon, ScrollTextIcon, SquareUserIcon} from "lucide-react";
 import {Button} from "@/components/ui/button";
-import {useStoredPrestations} from "@/app/(locale)/poc-enostart/data/use-prestations";
+import {useStoredPrestations} from "@/app/(locale)/poc-enostart/data/documents/use-prestations";
 import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from "@/components/ui/dialog";
 import {useState} from "react";
 

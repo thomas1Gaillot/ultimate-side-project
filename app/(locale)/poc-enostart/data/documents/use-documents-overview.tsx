@@ -9,7 +9,7 @@ import BulletinSubscriptionDialogContent
     from "@/app/(locale)/poc-enostart/my-project/components/BulletinSubscriptionDialogContent";
 import {Button} from "@/components/ui/button";
 import PreRequisitePmo from "@/app/(locale)/poc-enostart/my-project/components/PreRequisitePmo";
-import {usePrestations} from "@/app/(locale)/poc-enostart/data/use-prestations";
+import {usePrestations} from "@/app/(locale)/poc-enostart/data/documents/use-prestations";
 import {useRouter} from "next/navigation";
 import {
     initialAccordsDocument,
@@ -19,12 +19,14 @@ import {
     initialSalesDocument,
     initialStatutPmoDocument,
     useStoredDocumentsOverview
-} from "@/app/(locale)/poc-enostart/my-project/useStoredDocuments";
+} from "@/app/(locale)/poc-enostart/data/documents/use-stored-documents-overview";
+import {useDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 
 
 export default function useDocumentsOverview() {
     const {pmoDemarches, salesDemarches, enedisDemarches} = usePrestations()
     const router = useRouter()
+    const {hasSalesContract} = useDocuments()
     const {
         sales, setSales,
         accords, setAccords,
@@ -57,6 +59,15 @@ export default function useDocumentsOverview() {
                 setSales(initialSalesDocument);
                 break;
             case SalesStatus.ProposerUnPrix :
+                if(hasSalesContract){
+                    setSales({
+                        ...sales,
+                        Button: () => <Button variant={"secondary"} size={'sm'}
+                            onClick={() => router.push('/poc-enostart/my-demarches/vente?tab=create-contracts')}> {"Ajouter un autre contrat"} </Button>
+                    });
+                    break;
+                }
+
                 setSales({
                     ...sales,
                     Button: () => <Button
@@ -67,7 +78,7 @@ export default function useDocumentsOverview() {
                 setSales({...sales, Button: () => <>Default Next step : {sales.status}</>});
                 break;
         }
-    }, [sales.status]);
+    }, [sales.status, hasSalesContract]);
 
     useEffect(() => {
 
@@ -168,6 +179,8 @@ export default function useDocumentsOverview() {
                 break;
         }
     }, [accords.status]);
+
+    console.log('sales', sales)
 
     return {sales, accords, bulletin, convention, declaration, statutPmo}
 };

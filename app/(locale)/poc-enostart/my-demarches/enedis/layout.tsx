@@ -2,7 +2,7 @@
 
 import {usePathname, useRouter} from "next/navigation";
 import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import {useDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
+import {useDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {CheckCircledIcon} from "@radix-ui/react-icons";
 import {cn} from "@/lib/utils";
 import AccordsPlan from "@/app/(locale)/poc-enostart/my-demarches/enedis/accords/components/accords-plan";

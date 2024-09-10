@@ -1,6 +1,6 @@
 'use client'
 import {Button} from "@/components/ui/button";
-import {useDocuments, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
+import {useDocuments, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 
 export default function EnedisPage() {
     const {setDeclaration} = useStoredDocuments()

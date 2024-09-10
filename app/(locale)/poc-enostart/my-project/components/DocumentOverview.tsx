@@ -1,7 +1,7 @@
 import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
 import {cn} from "@/lib/utils";
-import {DocumentOverviewType} from "@/app/(locale)/poc-enostart/my-project/useDocumentsOverview";
+import {DocumentOverviewType} from "@/app/(locale)/poc-enostart/data/documents/use-documents-overview";
 
 export default function Component({doc, index}: {
     doc: DocumentOverviewType,

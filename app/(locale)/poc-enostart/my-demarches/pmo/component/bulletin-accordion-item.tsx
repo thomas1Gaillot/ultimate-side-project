@@ -2,7 +2,7 @@
 import {Button} from "@/components/ui/button"
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table"
 import {Check, CheckIcon, Edit, Eye, UploadIcon} from "lucide-react"
-import {useDocuments, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
+import {useDocuments, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 
 export default function BulletinAccordionItem() {

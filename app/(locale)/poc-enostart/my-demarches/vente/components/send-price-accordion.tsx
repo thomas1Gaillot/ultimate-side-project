@@ -16,7 +16,7 @@ import {
     DialogTrigger
 } from "@/components/ui/dialog";
 import {MyContracts} from "@/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion";
-import {ContractDocument, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
+import {ContractDocument, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {useRouter} from "next/navigation";
 import {useState} from "react";
 import RedirectToMyProject from "@/app/(locale)/poc-enostart/components/RedirectToMyProject";

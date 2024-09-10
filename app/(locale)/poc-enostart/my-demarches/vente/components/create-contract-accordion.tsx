@@ -4,7 +4,7 @@ import {Button} from "@/components/ui/button";
 import {Dispatch, SetStateAction} from "react";
 import {Badge} from "@/components/ui/badge";
 import {ReceiptIcon, XIcon} from "lucide-react";
-import {ContractDocument, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
+import {ContractDocument, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {cn} from "@/lib/utils";
 import {useRouter} from "next/navigation";
 

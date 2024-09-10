@@ -2,7 +2,7 @@ import {EnedisStatus} from "./enedis-status"
 import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
 import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
 import {create} from "zustand";
-import {ContractDocument, useDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
+import {ContractDocument, useDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {useEffect} from "react";
 
 export type Participant = {

@@ -14,7 +14,7 @@ import {
     signatures_flow
 } from "@/app/(locale)/poc-enostart/data/flow";
 import {useStoredParticipants} from "@/app/(locale)/poc-enostart/data/participants";
-import {useDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
+import {useDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {cn} from "@/lib/utils";
 
 export default function Overview() {

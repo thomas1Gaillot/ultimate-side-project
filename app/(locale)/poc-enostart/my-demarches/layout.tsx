@@ -2,10 +2,10 @@
 
 import {usePathname, useRouter} from "next/navigation";
 import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import {useDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
+import {useDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {cn} from "@/lib/utils";
 import {BellIcon, LockIcon, RocketIcon} from "lucide-react";
-import {usePrestations} from "@/app/(locale)/poc-enostart/data/use-prestations";
+import {usePrestations} from "@/app/(locale)/poc-enostart/data/documents/use-prestations";
 import PmoDescriptionDialog from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-description-dialog";
 import {useState} from "react";
 

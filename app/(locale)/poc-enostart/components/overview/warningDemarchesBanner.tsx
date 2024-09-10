@@ -2,7 +2,7 @@ import {Button} from "@/components/ui/button";
 import {FileWarningIcon, XIcon} from "lucide-react";
 import {useState} from "react";
 import {usePathname, useRouter} from "next/navigation";
-import {useDocuments} from "@/app/(locale)/poc-enostart/data/use-documents";
+import {useDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 
 export default function WarningDemarchesBanner() {
     const {

@@ -1,8 +1,8 @@
 'use client'
 import {AlertCircle} from "lucide-react";
-import {usePrestations} from "@/app/(locale)/poc-enostart/data/use-prestations";
+import {usePrestations} from "@/app/(locale)/poc-enostart/data/documents/use-prestations";
 import DocumentOverview from "../../my-project/components/DocumentOverview";
-import useDocumentsOverview from "@/app/(locale)/poc-enostart/my-project/useDocumentsOverview";
+import useDocumentsOverview from "@/app/(locale)/poc-enostart/data/documents/use-documents-overview";
 
 
 export default function OverviewDemarches() {

@@ -8,7 +8,7 @@ import {parse, useStoredParticipants} from "@/app/(locale)/poc-enostart/data/par
 import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
 import TimelineStep from "@/app/(locale)/poc-enostart/my-project/components/TimelineStep";
 import {useRouter} from "next/navigation";
-import useDocumentsOverview from "@/app/(locale)/poc-enostart/my-project/useDocumentsOverview";
+import useDocumentsOverview from "@/app/(locale)/poc-enostart/data/documents/use-documents-overview";
 
 
 export default function Component() {
