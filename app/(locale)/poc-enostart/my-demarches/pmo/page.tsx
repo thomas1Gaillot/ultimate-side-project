@@ -5,6 +5,7 @@ import BulletinAccordionItem from "@/app/(locale)/poc-enostart/my-demarches/pmo/
 import {Accordion} from "@/components/ui/accordion";
 import {PmoSteps} from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-description-dialog";
 import {useSearchParams} from "next/navigation";
+import {Suspense} from "react";
 
 export default function PmoPage() {
     return (
@@ -22,15 +23,17 @@ export default function PmoPage() {
                     {"Pour pouvoir rejoindre l'opération d'autoconsommation collective, les participants (consommateurs et producteurs) doivent adhérer à l'association PMO."}
                 </p>
             </div>
-           <AccordionPMO/>
+            <Suspense>
+                <AccordionPMO/>
+            </Suspense>
         </div>
     );
 }
 
-function AccordionPMO(){
+function AccordionPMO() {
     const searchParams = useSearchParams()
     const tab = searchParams?.get('tab') || 'create-pmo'
-    return  <Accordion type="single" value={tab} collapsible className="w-full">
+    return <Accordion type="single" value={tab} collapsible className="w-full">
         {/*<PmoPrestationAccordionItem/>*/}
         <PmoSteps/>
         <PmoCreationAccordionItem/>
