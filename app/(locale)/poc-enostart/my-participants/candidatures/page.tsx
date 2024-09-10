@@ -5,7 +5,8 @@ import {Button} from "@/components/ui/button";
 import {CheckIcon, XIcon} from "lucide-react";
 import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 import {useState} from "react";
-import {Checkbox} from "@/components/ui/checkbox"; // Assuming Checkbox is available in shadcn
+import {Checkbox} from "@/components/ui/checkbox";
+import {useRouter} from "next/navigation"; // Assuming Checkbox is available in shadcn
 
 export default function Page() {
     const {candidatures, accept, reject} = useParticipants();
@@ -51,6 +52,7 @@ export default function Page() {
                     <CheckIcon className={'size-4 ml-1'} />
                 </Button>
             </div>
+            <BannerToMyPerimeter/>
 
             <Table>
                 <TableHeader>
@@ -107,4 +109,21 @@ export default function Page() {
             </Table>
         </div>
     );
+}
+
+function BannerToMyPerimeter() {
+    const router = useRouter()
+    return (
+        <div className={" mt-4 mb-4 rounded-lg bg-gray-50 p-4 flex items-center justify-between"}>
+            <div className={"flex text-sm  flex-wrap text-gray-500"}>
+                <span className={"font-semibold mr-2"}>{"Vérifiez le périmètre ! "}</span>
+                <span className={"text-wrap"}> {"Vérifiez que tous vos candidats sont à l'intérieur de votre périmètre."}</span>
+            </div>
+
+
+            <Button size={'sm'} variant={'outline'}
+                    onClick={() => router.push('/poc-enostart/my-perimeter')}
+            >Vérifier le périmètre</Button>
+        </div>
+    )
 }

@@ -18,22 +18,24 @@ export default function Component() {
         {
             title: "J'accepte les candidatures",
             description: "Vérifiez que le candidat est dans le périmètre de votre opération. Pré-intégrez le consommateur.",
-            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/candidatures')}
+            Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/candidatures')}
                                   variant="outline" className="mt-2 mb-6" size={'sm'}>Candidatures</Button>,
             ping: false
         },
         {
             title: "Je récupère les données pour étude (optionnel)",
             description: "Récupérez les courbes de charges de vos consommateurs et étudiez la viabilité de votre projet.",
-            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
+            Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
                                   variant="outline" className="mt-2 mb-6" size={'sm'}>Pré-intégrations</Button>,
             ping: false
         },
         {
             title: "Je propose un prix de vente",
             description: "Envoyez aux consommateurs pré-intégrés un prix de vente fixe. Attendez leur réponse pour valider rapidement votre projet.",
-            prerequisites: [{text: "Contrat de vente", icon: IconFileEuro}],
-            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
+            prerequisites: [
+                {text: "Contrat de vente", icon: IconFileEuro, done : false},
+            ],
+            Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
                                   variant="outline" className="mt-2 mb-6" size={'sm'}>Pré-intégrations</Button>,
             ping: false
         },
@@ -41,10 +43,10 @@ export default function Component() {
             title: "Je fais signer mes documents aux consommateurs",
             description: "Envoyez aux consommateurs pré-intégrés un prix de vente fixe. Attendez leur réponse pour valider rapidement votre projet.",
             prerequisites: [
-                {text: "Statuts PMO", icon: UserSquareIcon},
-                {text: "Accords de participation", icon: FileCheck2Icon},
-                {text: "Bulletin d'adhésion", icon: ScrollTextIcon}],
-            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
+                {text: "Statuts PMO", icon: UserSquareIcon, done : false},
+                {text: "Accords de participation", icon: FileCheck2Icon, done : false},
+                {text: "Bulletin d'adhésion", icon: ScrollTextIcon, done : false}],
+            Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
                                   variant="outline" className="mt-2 mb-6" size={'sm'}>Pré-intégrations</Button>,
             ping: false
         },
@@ -53,22 +55,22 @@ export default function Component() {
         {
             title: "Je fais signer les documents aux producteurs",
             description: "Les producteurs signent les documents.",
-            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
+            Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
                                   variant={'secondary'} size={'sm'}>Passage en exploitation</Button>,
             ping: false
         },
         {
             title: "J'édite la convention d'autoconsommation collective",
             description: "Je crée et envoie la convention d'autoconsommation collective.",
-            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
+            Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
                                   variant={'secondary'} size={'sm'}>Passage en exploitation</Button>,
-            prerequisites: [{text: "Déclaration de mise en oeuvre", icon: FileTextIcon}],
+            prerequisites: [{text: "Déclaration de mise en oeuvre", icon: FileTextIcon, done : false}],
             ping: false
         },
         {
             title: "J'envoi la convention à Enedis",
             description: "J'envoi la convention à Enedis pour validation.",
-            Button: () => <Button onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
+            Button: ({disabled}:{disabled:boolean}) => <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
                                   variant={'secondary'} size={'sm'}>Passage en exploitation</Button>,
             ping: false
         },
