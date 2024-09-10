@@ -1,11 +1,10 @@
 import {cn} from "@/lib/utils";
 import {Badge} from "@/components/ui/badge";
-import {Button} from "@/components/ui/button";
 
 interface TimelineStep {
     title: string;
     description: string;
-    Button: ()=>JSX.Element;
+    Button: () => JSX.Element;
     prerequisites?: { text: string, icon: any }[];
     ping: boolean;
 }
@@ -14,16 +13,16 @@ interface TimelineStep {
 export default function TimelineStep({step, index, key}: {
     step: TimelineStep;
     index: number;
-    key:number
+    key: number
 }) {
-    return <div key={index} className={cn("flex", !step.ping && 'opacity-60')}>
+    return <div key={index} className={cn("flex")}>
         <div className={"flex flex-col mt-1 items-center mr-4"}>
             {step.ping ?
                 <div className="w-4 h-4 min-h-4 bg-primary rounded-full mb-2">
                     <div className="w-4 h-4 min-h-4 animate-ping bg-primary rounded-full mb-2">
                     </div>
                 </div> :
-                <div className="w-3 h-3 min-w-3 min-h-3 bg-gray-500 rounded-full"></div>}
+                <div className=" opacity-60 w-3 h-3 min-w-3 min-h-3 bg-gray-500 rounded-full"></div>}
             <div className="h-full w-0.5 bg-gray-200  mt-2"></div>
         </div>
         <div>
@@ -40,9 +39,11 @@ export default function TimelineStep({step, index, key}: {
 
                 </Badge>
             )}
-            <h3 className="">{step.title}</h3>
-            <p className="text-xs text-gray-500">{step.description}</p>
-            <step.Button  />
+            <h3 className={cn(!step.ping && 'opacity-60')}>{step.title}</h3>
+            <p className={cn("text-xs text-gray-500", !step.ping && 'opacity-60')}>{step.description}</p>
+            <div className={!step.ping ? 'opacity-60' : ''}>
+                <step.Button/>
+            </div>
         </div>
     </div>
 }

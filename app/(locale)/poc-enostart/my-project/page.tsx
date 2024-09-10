@@ -71,7 +71,7 @@ const initialConventionDocument: DocumentOverview = {
     title: "Convention d'ACC",
     asterix: "si votre opération n'est pas en exploitation",
     icon: <FolderArchiveIcon className="w-12 h-12"/>,
-    estimatedTime: '2 semaines',
+    estimatedTime: '1 mois',
     Button: () => <AccordSubscriptionContent ignored={false}/>,
     status: EnedisStatus.ChoisirUnPlan
 }
