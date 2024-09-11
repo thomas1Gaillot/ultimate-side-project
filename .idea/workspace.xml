@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add suspense to use searchParams">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="flow exploitation wip">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/enedis-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/enedis-status.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/pmo-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/pmo-status.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/sales-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/sales-status.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/enedis/convention/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/enedis/convention/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -242,15 +239,7 @@
       <workItem from="1725628046133" duration="8576000" />
       <workItem from="1725866121127" duration="26559000" />
       <workItem from="1725952212118" duration="25042000" />
-      <workItem from="1726038577175" duration="6549000" />
-    </task>
-    <task id="LOCAL-00188" summary="show more steps">
-      <option name="closed" value="true" />
-      <created>1724922305249</created>
-      <option name="number" value="00188" />
-      <option name="presentableId" value="LOCAL-00188" />
-      <option name="project" value="LOCAL" />
-      <updated>1724922305249</updated>
+      <workItem from="1726038577175" duration="9148000" />
     </task>
     <task id="LOCAL-00189" summary="accordion everywhere">
       <option name="closed" value="true" />
@@ -636,7 +625,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725987460145</updated>
     </task>
-    <option name="localTasksCounter" value="237" />
+    <task id="LOCAL-00237" summary="flow exploitation wip">
+      <option name="closed" value="true" />
+      <created>1726045357084</created>
+      <option name="number" value="00237" />
+      <option name="presentableId" value="LOCAL-00237" />
+      <option name="project" value="LOCAL" />
+      <updated>1726045357084</updated>
+    </task>
+    <option name="localTasksCounter" value="238" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -655,7 +652,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix build" />
     <MESSAGE value="end flow for sales contract,&#10;pass participants to exploittaion" />
     <MESSAGE value="rename sales contrats tabs" />
     <MESSAGE value="export date grouped" />
@@ -680,6 +676,7 @@
     <MESSAGE value="changes until pmo created" />
     <MESSAGE value="Flow almost done till last step" />
     <MESSAGE value="add suspense to use searchParams" />
-    <option name="LAST_COMMIT_MESSAGE" value="add suspense to use searchParams" />
+    <MESSAGE value="flow exploitation wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="flow exploitation wip" />
   </component>
 </project>

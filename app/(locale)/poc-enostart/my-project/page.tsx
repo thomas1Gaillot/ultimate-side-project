@@ -11,6 +11,7 @@ import {useRouter} from "next/navigation";
 import useDocumentsOverview from "@/app/(locale)/poc-enostart/data/documents/use-documents-overview";
 import {useDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
+import {Switch} from "@/components/ui/switch";
 
 
 export default function Component() {
@@ -243,7 +244,19 @@ export default function Component() {
                     </div>
                 </div>
             </div>
-            <h2 className="text-lg font-semibold mt-12 mb-4">{"2. Je passe en exploitation"}</h2>
+            <div className={"flex gap-2 mt-12 mb-4 items-center"}>
+                <h2 className="text-lg font-semibold ">{"2. Je passe en exploitation"}</h2>
+                <div className={" text-sm mb-2 bg-gray-50 rounded-lg p-2 w-max"}>
+                    <span className={"mr-2 text-gray-600 font-medium"}>{"J'ai déjà envoyé la convention d'ACC"}</span>
+                    <Switch
+                        id="abonnement"
+                        checked={false}
+                        onCheckedChange={() => {
+                        }}
+                    />
+                </div>
+            </div>
+
             <div className="grid grid-cols-2 gap-16 2xl:gap-32">
                 <div className="w-full">
                     <div className="space-y-2">

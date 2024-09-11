@@ -36,7 +36,7 @@ const initialParticipants: Participant[] = [
         perimeter: "0.45 km",
         consumption: 4500,
         exportDate: null,
-        status: 'exploitation',
+        status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.ProposerUnPrix
@@ -47,7 +47,7 @@ const initialParticipants: Participant[] = [
         perimeter: "2.1 km",
         consumption: 4500,
         exportDate: null,
-        status: 'exploitation',
+        status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.ProposerUnPrix
@@ -58,7 +58,7 @@ const initialParticipants: Participant[] = [
         perimeter: "1.2 km",
         consumption: 4500,
         exportDate: null,
-        status: 'exploitation',
+        status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.ProposerUnPrix
@@ -69,7 +69,7 @@ const initialParticipants: Participant[] = [
         perimeter: "0.45 km",
         consumption: 4500,
         exportDate: null,
-        status: 'exploitation',
+        status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.ProposerUnPrix
