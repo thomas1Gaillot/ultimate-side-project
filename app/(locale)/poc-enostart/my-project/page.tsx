@@ -12,6 +12,7 @@ import useDocumentsOverview from "@/app/(locale)/poc-enostart/data/documents/use
 import {useDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
 import {Switch} from "@/components/ui/switch";
+import {useToggleV1} from "@/app/(locale)/poc-enostart/useToggleV1";
 
 
 export default function Component() {
@@ -75,7 +76,7 @@ export default function Component() {
             prerequisites: []
         },
         {
-            title: "Je fais signer mes documents aux consommateurs",
+            title: "J'envoi les documents à signer aux consommateurs",
             description: "Envoyez aux consommateurs pré-intégrés un prix de vente fixe. Attendez leur réponse pour valider rapidement votre projet.",
             prerequisites: [
                 {text: "Statuts PMO", icon: UserSquareIcon, done: false},
@@ -100,7 +101,7 @@ export default function Component() {
     ]
     const initialTimelineExploitation = [
         {
-            title: "Je fais signer les contrats de vente aux producteurs",
+            title: "Je fais signer les documents aux producteurs",
             description: "Les producteurs signent les documents.",
             Button: ({disabled}: { disabled: boolean }) => <Button disabled={disabled}
                                                                    onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
@@ -146,7 +147,24 @@ export default function Component() {
     const [timelineIntegration, setTimelineIntegration] = useState(initialTimelineIntegration)
     const [timelineExploitation, setTimelineExploitation] = useState(initialTimelineExploitation)
     const {participants} = useStoredParticipants()
+    const {showV1} = useToggleV1()
 
+    useEffect(() => {
+        // remove full POC steps if V1 is shown
+        if(!!showV1){
+            const timelineIntegrationWithoutFullPoc = initialTimelineIntegration.filter(step =>
+                step.title !== "Je propose un prix de vente"
+                && step.title !== "Les consommateurs acceptent mon offre"
+            )
+            setTimelineIntegration(timelineIntegrationWithoutFullPoc)
+
+            const timelineExploitationWithoutConvention = initialTimelineExploitation.filter(step =>
+                step.title !== "J'édite la convention d'autoconsommation collective"
+                && step.title !== "J'envoi la convention à Enedis"
+            )
+            setTimelineExploitation(timelineExploitationWithoutConvention)
+        }
+    }, [showV1]);
 
     // update ping status for Timelines
     useEffect(() => {
@@ -167,7 +185,7 @@ export default function Component() {
                     prerequisites: [{text: "Contrat de vente", icon: IconFileEuro, done: hasSalesContract}]
                 }
             }
-            if (step.title === "Je fais signer mes documents aux consommateurs") {
+            if (step.title === "J'envoi les documents à signer aux consommateurs") {
                 return {
                     ...step, ping: canSignDocuments, prerequisites: [
                         {text: "Statuts PMO", icon: UserSquareIcon, done: isPmoCreated},
@@ -186,7 +204,7 @@ export default function Component() {
         })
         setTimelineIntegration(newTimelineIntegration)
         setTimelineExploitation(initialTimelineExploitation.map((step) => {
-            if (step.title === "Je fais signer les contrats de vente aux producteurs") {
+            if (step.title === "Je fais signer les documents aux producteurs") {
                 return {...step, ping: exploitation.length > 0}
             }
             return step
@@ -228,15 +246,15 @@ export default function Component() {
                         participant
                         :</p>
                     <div className="flex flex-wrap w-full gap-4 mb-8">
-                        <DocumentOverview key={1}
-                                          doc={sales}
-                                          index={0}/>
+                        {!showV1 && <DocumentOverview key={1}
+                                           doc={sales}
+                                           index={0}/>}
                         <DocumentOverview key={2}
                                           doc={statutPmo}
                                           index={1}/>
-                        <DocumentOverview key={3}
+                        {!showV1 && <DocumentOverview key={3}
                                           doc={accords}
-                                          index={2}/>
+                                          index={2}/>}
                         <DocumentOverview key={4}
                                           doc={bulletin}
                                           index={3}/>
@@ -277,7 +295,7 @@ export default function Component() {
                         </div>
                     </div>
                 </div>
-                <div className="w-full">
+                {!showV1 && <div className="w-full">
                     <h2 className="font-semibold mb-4">Quels documents pour passer en exploitation
                         ?</h2>
                     <p className="mb-4  text-sm text-gray-600">Les documents nécéssaire pour passer en exploitation
@@ -291,7 +309,7 @@ export default function Component() {
                                           index={0}/>
 
                     </div>
-                </div>
+                </div>}
             </div>
         </div>
     )

@@ -5,6 +5,10 @@ import {QuestionMarkCircledIcon} from "@radix-ui/react-icons";
 import {CodepenIcon} from "lucide-react";
 import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 import {usePathname, useRouter} from "next/navigation";
+import {useState} from "react";
+import {Switch} from "@/components/ui/switch";
+import {Label} from "@/components/ui/label";
+import {useToggleV1} from "@/app/(locale)/poc-enostart/useToggleV1";
 
 export default function Layout({
                                    children,
@@ -27,6 +31,7 @@ export default function Layout({
 }
 
 function Header() {
+    const {showV1, toggleShowV1} = useToggleV1()
     return (
         <header className="h-[60px] border-b border-gray-200 bg-white px-8 flex items-center justify-between">
             <div className="flex items-center">
@@ -34,6 +39,14 @@ function Header() {
                 <span className="text-gray-800 font-semibold text-sm">{"Mon énergie collective"}</span>
             </div>
             <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-2">
+                    <Switch
+                        id="reconduction"
+                        checked={showV1}
+                        onCheckedChange={toggleShowV1}
+                    />
+                    <Label htmlFor="reconduction" className={"text-xs text-gray-500"}>v1</Label>
+                </div>
                 <Button variant="ghost" className="text-gray-600 flex items-center">
                     <QuestionMarkCircledIcon className="mr-2 h-4 w-4"/>
                     {"Centre d'aide"}

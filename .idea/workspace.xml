@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="flow exploitation wip">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="flow e2e FINISHED">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/useToggleV1.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/enedis/convention/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/enedis/convention/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin-accordion-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin-accordion-item.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -239,15 +241,7 @@
       <workItem from="1725628046133" duration="8576000" />
       <workItem from="1725866121127" duration="26559000" />
       <workItem from="1725952212118" duration="25042000" />
-      <workItem from="1726038577175" duration="9148000" />
-    </task>
-    <task id="LOCAL-00189" summary="accordion everywhere">
-      <option name="closed" value="true" />
-      <created>1724924204217</created>
-      <option name="number" value="00189" />
-      <option name="presentableId" value="LOCAL-00189" />
-      <option name="project" value="LOCAL" />
-      <updated>1724924204217</updated>
+      <workItem from="1726038577175" duration="13770000" />
     </task>
     <task id="LOCAL-00190" summary="accords participation check">
       <option name="closed" value="true" />
@@ -633,7 +627,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726045357084</updated>
     </task>
-    <option name="localTasksCounter" value="238" />
+    <task id="LOCAL-00238" summary="flow e2e FINISHED">
+      <option name="closed" value="true" />
+      <created>1726058669097</created>
+      <option name="number" value="00238" />
+      <option name="presentableId" value="LOCAL-00238" />
+      <option name="project" value="LOCAL" />
+      <updated>1726058669097</updated>
+    </task>
+    <option name="localTasksCounter" value="239" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -652,7 +654,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="end flow for sales contract,&#10;pass participants to exploittaion" />
     <MESSAGE value="rename sales contrats tabs" />
     <MESSAGE value="export date grouped" />
     <MESSAGE value="flow contrat de vente" />
@@ -677,6 +678,7 @@
     <MESSAGE value="Flow almost done till last step" />
     <MESSAGE value="add suspense to use searchParams" />
     <MESSAGE value="flow exploitation wip" />
-    <option name="LAST_COMMIT_MESSAGE" value="flow exploitation wip" />
+    <MESSAGE value="flow e2e FINISHED" />
+    <option name="LAST_COMMIT_MESSAGE" value="flow e2e FINISHED" />
   </component>
 </project>

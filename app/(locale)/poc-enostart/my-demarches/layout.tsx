@@ -4,10 +4,11 @@ import {usePathname, useRouter} from "next/navigation";
 import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {useDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {cn} from "@/lib/utils";
-import {BellIcon, LockIcon, RocketIcon} from "lucide-react";
+import {BellIcon, LockIcon} from "lucide-react";
 import {usePrestations} from "@/app/(locale)/poc-enostart/data/documents/use-prestations";
 import PmoDescriptionDialog from "@/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-description-dialog";
 import {useState} from "react";
+import {useToggleV1} from "@/app/(locale)/poc-enostart/useToggleV1";
 
 const demarchesTabs = (isPmoCreated: boolean, isBulletinEdited: boolean, isAccordsEdited: boolean, isDeclarationSent: boolean, isContratCreated: boolean, pathname: string | null,
                        enedisPlan: 'active' | 'disabled' | null, pmoPlan: 'active' | 'disabled' | null, salesPlan: 'active' | 'disabled' | null) => {
@@ -50,7 +51,7 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
     const pathname = usePathname();
     const router = useRouter();
     const [openPmoDialog, setOpenPmoDialog] = useState(false)
-
+    const {showV1} = useToggleV1()
     const {
         isPmoCreated,
         isBulletinEdited,
@@ -67,7 +68,7 @@ export default function TabsLayout({children}: { children: React.ReactNode }) {
                 <Tabs value={pathname || ''} className="w-full flex">
                     <TabsList className="w-[400px] h-max flex flex-col gap-1 items-stretch bg-background">
                         {demarchesTabs(isPmoCreated, isBulletinEdited, isAccordsParticipationEdited, isDeclarationSent, hasSalesContract, pathname, enedisDemarches, pmoDemarches, salesDemarches).map((tab, index) => (
-                            <TabsTrigger
+                            (!showV1 || tab.id === "pmo") && <TabsTrigger
                                 key={tab.id}
                                 onClick={() => tab.disabled ? setOpenPmoDialog(true) : router.push(tab.href)}
                                 value={tab.id}
