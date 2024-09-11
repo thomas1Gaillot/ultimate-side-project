@@ -25,7 +25,7 @@ const initialParticipants: Participant[] = [
         perimeter: "1.67 km",
         consumption: 4500,
         exportDate: null,
-        status: 'candidature',
+        status: 'exploitation',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.ProposerUnPrix
@@ -36,7 +36,7 @@ const initialParticipants: Participant[] = [
         perimeter: "0.45 km",
         consumption: 4500,
         exportDate: null,
-        status: 'candidature',
+        status: 'exploitation',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.ProposerUnPrix
@@ -47,7 +47,7 @@ const initialParticipants: Participant[] = [
         perimeter: "2.1 km",
         consumption: 4500,
         exportDate: null,
-        status: 'candidature',
+        status: 'exploitation',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.ProposerUnPrix
@@ -58,7 +58,7 @@ const initialParticipants: Participant[] = [
         perimeter: "1.2 km",
         consumption: 4500,
         exportDate: null,
-        status: 'candidature',
+        status: 'exploitation',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.ProposerUnPrix
@@ -69,7 +69,7 @@ const initialParticipants: Participant[] = [
         perimeter: "0.45 km",
         consumption: 4500,
         exportDate: null,
-        status: 'candidature',
+        status: 'exploitation',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
         sales: SalesStatus.ProposerUnPrix
@@ -278,6 +278,15 @@ const useParticipants = () => {
 
     }
 
+    function sendAllExploitationDocumentsToProducer() {
+        exploitation.forEach((p) => {
+            p.pmo = PmoStatus.BulletinEnvoyeProducteur
+            p.enedis = EnedisStatus.AccordEnvoyeProducteur
+            p.sales = SalesStatus.ContratEnvoyeProducteur
+            useStoredParticipants.getState().setParticipants([...preIntegres, ...refuses, ...exploitation, ...candidatures])
+
+        })
+    }
     function integrate(id: number) {
         const participant = participants.find(p => p.id === id)
         if (participant) {
@@ -285,6 +294,17 @@ const useParticipants = () => {
             useStoredParticipants.getState().setParticipants([...participants])
         }
     }
+
+    function allDocumentSigned() {
+        exploitation.forEach((p) => {
+            p.pmo = PmoStatus.BulletinSigneParTous
+            p.enedis = EnedisStatus.AccordSigneParTous
+            p.sales = SalesStatus.ContratSigneParTous
+            useStoredParticipants.getState().setParticipants([...preIntegres, ...refuses, ...exploitation, ...candidatures])
+
+        })    }
+
+
 
     return {
         preIntegres,
@@ -300,7 +320,9 @@ const useParticipants = () => {
         completeContract,
         completeContractForAll,
         consumersSignAllDocuments,
-        integrate
+        integrate,
+        sendAllExploitationDocumentsToProducer,
+        allDocumentSigned
     }
 }
 export {parse, useParticipants}

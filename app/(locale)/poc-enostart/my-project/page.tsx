@@ -91,8 +91,8 @@ export default function Component() {
             title: "Les consommateurs signent les documents",
             description: "Votre consommateur est presque intégrés ! Attendez qu'il vous renvoi les documents signés.",
             Button: ({disabled}: { disabled: boolean }) =>
-                <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
-                        variant="outline" className="mt-2 mb-6" size={'sm'}>Passage en exploitation</Button>,
+                <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
+                        variant="outline" className="mt-2 mb-6" size={'sm'}>Pré-intégrations</Button>,
             ping: false,
             active: false, prerequisites: []
         },

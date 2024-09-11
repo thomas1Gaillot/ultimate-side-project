@@ -8,6 +8,8 @@ export enum EnedisStatus {
     EnvoyerLAccord = 'EnvoyerLAccord',
     AccordEnvoye = 'AccordEnvoye',
     AccordSigne = 'AccordSigne',
+    AccordEnvoyeProducteur = 'AccordEnvoyeProducteur',
+    AccordSigneParTous = 'AccordSigneParTous',
     Ignore = 'Ignore',
     DeclarationEditee = 'DeclarationEditee',
 }
@@ -22,6 +24,8 @@ const enedisStatus : {
     [EnedisStatus.EnvoyerLAccord]: {name: "Accord à envoyer"},
     [EnedisStatus.AccordEnvoye]: {name: "Accord envoyé", icon: HourglassIcon},
     [EnedisStatus.AccordSigne]: {name: "Accord signé", icon: CheckIcon},
+    [EnedisStatus.AccordEnvoyeProducteur]: {name: "Accord envoyé au producteur", icon: HourglassIcon},
+    [EnedisStatus.AccordSigneParTous]: {name: "Accord signé par tous", icon: CheckIcon},
     [EnedisStatus.Ignore]: {name: 'Ignoré', icon: CheckIcon},
     [EnedisStatus.DeclarationEditee]: {name: 'Déclaration éditée'},
 };

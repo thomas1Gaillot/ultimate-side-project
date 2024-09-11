@@ -7,6 +7,8 @@ export enum PmoStatus {
     EnvoyerLeBulletin = 'EnvoyerLeBulletin',
     BulletinEnvoye = 'BulletinEnvoye',
     BulletinSigne = 'BulletinSigne',
+    BulletinEnvoyeProducteur = 'BulletinEnvoyeProducteur',
+    BulletinSigneParTous = 'BulletinSigneParTous',
     Ignore = 'Ignore',
 }
 
@@ -19,6 +21,8 @@ const pmoStatus : {
     [PmoStatus.EnvoyerLeBulletin]: {name: 'Bulletin à envoyer'},
     [PmoStatus.BulletinEnvoye]: {name: 'Bulletin envoyé', icon: HourglassIcon},
     [PmoStatus.BulletinSigne]: {name: 'Bulletin signé', icon: CheckIcon},
+    [PmoStatus.BulletinEnvoyeProducteur]: {name: 'Bulletin envoyé au producteur', icon: HourglassIcon},
+    [PmoStatus.BulletinSigneParTous]: {name: 'Bulletin signé par tous', icon: CheckIcon},
     [PmoStatus.Ignore]: {name: 'Ignoré', icon: CheckIcon},
 };
 

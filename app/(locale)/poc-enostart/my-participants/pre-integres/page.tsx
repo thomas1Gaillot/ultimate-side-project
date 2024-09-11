@@ -54,6 +54,7 @@ export default function Page() {
                         {atLeastOneReadyToSign && <Clock onClick={consumersSignAllDocuments} className={"size-3"}/>}
                     </>
                 </TypographyH4>
+                <div className={"flex gap-2"}>
                 <Button
                     onClick={exportSelected}
                     size={'sm'}
@@ -63,6 +64,14 @@ export default function Page() {
                     Exporter les sélectionnés
                     <DownloadIcon className={'size-4 ml-2'} />
                 </Button>
+                <Button
+                    size={'sm'}
+                    variant={'secondary'}
+                >
+                    Faire signer les documents
+                    <SendIcon className={'size-4 ml-2'} />
+                </Button>
+                </div>
             </div>
 
             <Table>

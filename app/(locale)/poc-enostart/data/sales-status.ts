@@ -9,6 +9,8 @@ export enum SalesStatus {
     EnvoyerLeContrat = 'EnvoyerLeContrat',
     ContratEnvoye = 'ContratEnvoye',
     ContratSigne = 'ContratSigne',
+    ContratEnvoyeProducteur = 'ContratEnvoyeProducteur',
+    ContratSigneParTous = 'ContratSigneParTous',
     Ignore = 'Ignore',
 }
 
@@ -25,6 +27,8 @@ const salesStatus: {
     [SalesStatus.EnvoyerLeContrat]: {name: 'Contrat à envoyer'},
     [SalesStatus.ContratEnvoye]: {name: 'Contrat envoyé', icon: HourglassIcon},
     [SalesStatus.ContratSigne]: {name: 'Contrat signé', icon: CheckIcon},
+    [SalesStatus.ContratEnvoyeProducteur]: {name: 'Contrat envoyé au producteur', icon: HourglassIcon},
+    [SalesStatus.ContratSigneParTous]: {name: 'Contrat signé par tous', icon: CheckIcon},
     [SalesStatus.Ignore]: {name: 'Ignoré', icon: CheckIcon},
 };
 const salesMapper = (status: SalesStatus): {
