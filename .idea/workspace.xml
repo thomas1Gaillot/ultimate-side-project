@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="flow e2e FINISHED">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/useToggleV1.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="v1 toggle, bulletin edition showed">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/user-form-dialog.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin-accordion-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin-accordion-item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +78,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\data\documents" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\data" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\my-project" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\my-informations" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public\poc-enostart" />
     </key>
   </component>
   <component name="RunManager" selected="npm.supabase:create">
@@ -241,15 +239,8 @@
       <workItem from="1725628046133" duration="8576000" />
       <workItem from="1725866121127" duration="26559000" />
       <workItem from="1725952212118" duration="25042000" />
-      <workItem from="1726038577175" duration="13770000" />
-    </task>
-    <task id="LOCAL-00190" summary="accords participation check">
-      <option name="closed" value="true" />
-      <created>1724925069025</created>
-      <option name="number" value="00190" />
-      <option name="presentableId" value="LOCAL-00190" />
-      <option name="project" value="LOCAL" />
-      <updated>1724925069025</updated>
+      <workItem from="1726038577175" duration="14612000" />
+      <workItem from="1726125351863" duration="3933000" />
     </task>
     <task id="LOCAL-00191" summary="ux">
       <option name="closed" value="true" />
@@ -635,7 +626,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726058669097</updated>
     </task>
-    <option name="localTasksCounter" value="239" />
+    <task id="LOCAL-00239" summary="v1 toggle, bulletin edition showed">
+      <option name="closed" value="true" />
+      <created>1726068339974</created>
+      <option name="number" value="00239" />
+      <option name="presentableId" value="LOCAL-00239" />
+      <option name="project" value="LOCAL" />
+      <updated>1726068339974</updated>
+    </task>
+    <option name="localTasksCounter" value="240" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -654,7 +653,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="rename sales contrats tabs" />
     <MESSAGE value="export date grouped" />
     <MESSAGE value="flow contrat de vente" />
     <MESSAGE value="- editing demarches status on participant table," />
@@ -679,6 +677,7 @@
     <MESSAGE value="add suspense to use searchParams" />
     <MESSAGE value="flow exploitation wip" />
     <MESSAGE value="flow e2e FINISHED" />
-    <option name="LAST_COMMIT_MESSAGE" value="flow e2e FINISHED" />
+    <MESSAGE value="v1 toggle, bulletin edition showed" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1 toggle, bulletin edition showed" />
   </component>
 </project>

@@ -5,11 +5,10 @@ import {QuestionMarkCircledIcon} from "@radix-ui/react-icons";
 import {CodepenIcon} from "lucide-react";
 import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 import {usePathname, useRouter} from "next/navigation";
-import {useState} from "react";
 import {Switch} from "@/components/ui/switch";
 import {Label} from "@/components/ui/label";
 import {useToggleV1} from "@/app/(locale)/poc-enostart/useToggleV1";
-
+import UserFormDialog from './user-form-dialog'
 export default function Layout({
                                    children,
                                }: Readonly<{
@@ -39,6 +38,7 @@ function Header() {
                 <span className="text-gray-800 font-semibold text-sm">{"Mon énergie collective"}</span>
             </div>
             <div className="flex items-center space-x-4">
+                <UserFormDialog/>
                 <div className="flex items-center space-x-2">
                     <Switch
                         id="reconduction"
@@ -69,12 +69,13 @@ function BannerToMyProject() {
         <div className={"border mt-4 mx-16 mb-4 rounded-lg border-gray-300 p-4 flex items-center justify-between"}>
             <div className={"flex flex-col text-sm text-gray-500"}>
                 <span className={"font-semibold text-primary mr-2"}>{"Besoin d'aide ?"}</span>
-                <span className={"text-xs"}> {"Toutes les étapes pour créer votre opération et intégrer des participants sont décrites dans l'onglet Mon Projet."}</span>
+                <span
+                    className={"text-xs"}> {"Toutes les étapes pour créer votre opération et intégrer des participants sont décrites dans l'onglet Mon Projet."}</span>
             </div>
 
 
             <Button size={'sm'} variant={'outline'}
-            onClick={() => router.push('/poc-enostart/my-project')}
+                    onClick={() => router.push('/poc-enostart/my-project')}
             >Mon projet</Button>
         </div>
     )
