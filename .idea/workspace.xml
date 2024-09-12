@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add v0 form to update">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/MyECConsumerTabs.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-info/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-participation/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/share/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/useConsumerView.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="switch for consumer view">
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,15 +236,7 @@
       <workItem from="1725866121127" duration="26559000" />
       <workItem from="1725952212118" duration="25042000" />
       <workItem from="1726038577175" duration="14612000" />
-      <workItem from="1726125351863" duration="7450000" />
-    </task>
-    <task id="LOCAL-00192" summary="little badge">
-      <option name="closed" value="true" />
-      <created>1724926323958</created>
-      <option name="number" value="00192" />
-      <option name="presentableId" value="LOCAL-00192" />
-      <option name="project" value="LOCAL" />
-      <updated>1724926323958</updated>
+      <workItem from="1726125351863" duration="7754000" />
     </task>
     <task id="LOCAL-00193" summary="little ui fix">
       <option name="closed" value="true" />
@@ -638,7 +622,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726131828066</updated>
     </task>
-    <option name="localTasksCounter" value="241" />
+    <task id="LOCAL-00241" summary="switch for consumer view">
+      <option name="closed" value="true" />
+      <created>1726142578618</created>
+      <option name="number" value="00241" />
+      <option name="presentableId" value="LOCAL-00241" />
+      <option name="project" value="LOCAL" />
+      <updated>1726142578618</updated>
+    </task>
+    <option name="localTasksCounter" value="242" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -657,7 +649,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="flow contrat de vente" />
     <MESSAGE value="- editing demarches status on participant table," />
     <MESSAGE value="- button complete contrat for all fix ?" />
     <MESSAGE value="update ux" />
@@ -682,6 +673,7 @@
     <MESSAGE value="flow e2e FINISHED" />
     <MESSAGE value="v1 toggle, bulletin edition showed" />
     <MESSAGE value="add v0 form to update" />
-    <option name="LAST_COMMIT_MESSAGE" value="add v0 form to update" />
+    <MESSAGE value="switch for consumer view" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch for consumer view" />
   </component>
 </project>
