@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="v1 toggle, bulletin edition showed">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/user-form-dialog.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="add v0 form to update">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/MyECConsumerTabs.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-info/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-participation/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/share/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/useConsumerView.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -78,11 +82,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart-consumer" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart-consumer\my-participation" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\data\documents" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\data" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\my-project" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\my-informations" />
     </key>
   </component>
   <component name="RunManager" selected="npm.supabase:create">
@@ -240,15 +244,7 @@
       <workItem from="1725866121127" duration="26559000" />
       <workItem from="1725952212118" duration="25042000" />
       <workItem from="1726038577175" duration="14612000" />
-      <workItem from="1726125351863" duration="3933000" />
-    </task>
-    <task id="LOCAL-00191" summary="ux">
-      <option name="closed" value="true" />
-      <created>1724925798670</created>
-      <option name="number" value="00191" />
-      <option name="presentableId" value="LOCAL-00191" />
-      <option name="project" value="LOCAL" />
-      <updated>1724925798670</updated>
+      <workItem from="1726125351863" duration="7450000" />
     </task>
     <task id="LOCAL-00192" summary="little badge">
       <option name="closed" value="true" />
@@ -634,7 +630,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726068339974</updated>
     </task>
-    <option name="localTasksCounter" value="240" />
+    <task id="LOCAL-00240" summary="add v0 form to update">
+      <option name="closed" value="true" />
+      <created>1726131828066</created>
+      <option name="number" value="00240" />
+      <option name="presentableId" value="LOCAL-00240" />
+      <option name="project" value="LOCAL" />
+      <updated>1726131828066</updated>
+    </task>
+    <option name="localTasksCounter" value="241" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -653,7 +657,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="export date grouped" />
     <MESSAGE value="flow contrat de vente" />
     <MESSAGE value="- editing demarches status on participant table," />
     <MESSAGE value="- button complete contrat for all fix ?" />
@@ -678,6 +681,7 @@
     <MESSAGE value="flow exploitation wip" />
     <MESSAGE value="flow e2e FINISHED" />
     <MESSAGE value="v1 toggle, bulletin edition showed" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1 toggle, bulletin edition showed" />
+    <MESSAGE value="add v0 form to update" />
+    <option name="LAST_COMMIT_MESSAGE" value="add v0 form to update" />
   </component>
 </project>
