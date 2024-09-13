@@ -49,7 +49,7 @@ function Header() {
                 <span className="text-gray-800 font-semibold text-sm">{"Mon énergie collective"}</span>
             </div>
             <div className="flex items-center space-x-4">
-                <UserFormDialog/>
+                <UserFormDialog onSubmit={() => {}} buttonText={'v0 Formulaire à update'} variant={'secondary'}/>
                 <div className="flex items-center space-x-2">
                     <Switch
                         id="reconduction"

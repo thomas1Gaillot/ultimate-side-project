@@ -9,6 +9,7 @@ interface TimelineStep {
     prerequisites: { text: string, icon: any, done:boolean }[];
     ping: boolean;
     active?: boolean;
+    estimatedTime?:string;
 }
 
 
@@ -19,8 +20,8 @@ export default function TimelineStep({step, index, key}: {
 }) {
     const prerequisTodo = step.prerequisites.length >  0 && step.prerequisites.some(prerequisite => !prerequisite.done)
     const allPrerequisDone = step.prerequisites.length >  0 && step.prerequisites.every(prerequisite => prerequisite.done)
-    return <div key={index} className={cn("flex my-6")}>
-        <div className={"flex flex-col mt-1 items-center mr-4"}>
+    return <div key={index} className={cn("flex h-max")}>
+        <div className={"flex flex-col  mt-1 items-center mr-4"}>
             {(step.ping || prerequisTodo) ?
                 <div className={cn("w-4 h-4 min-h-4 bg-primary rounded-full mb-2",
                     prerequisTodo && 'bg-amber-400 w-4 h-4 min-h-4')}>
@@ -34,7 +35,7 @@ export default function TimelineStep({step, index, key}: {
                 step.active && 'bg-primary')}></div>}
             <div className="h-full w-0.5 bg-gray-200  mt-2"></div>
         </div>
-        <div>
+        <div className={" pb-6"}>
             {step.prerequisites.length >  0 && (
                 <Badge variant={'secondary'}
                        className={cn('grid my-2 text-gray-700 gap-1 bg-yellow-50 hover:bg-yellow-50 text-[10px]', allPrerequisDone && 'bg-gray-50 hover:bg-gray-50')}>
@@ -48,6 +49,7 @@ export default function TimelineStep({step, index, key}: {
                     </div>)}
                 </Badge>
             )}
+            {step.estimatedTime && <p className="text-xs text-gray-500">durée estimé : {step.estimatedTime}</p>}
             <h3 className={cn(!step.ping && !step.active &&  'opacity-60')}>{step.title}</h3>
             <p className={cn("text-xs text-gray-500", !step.ping && !step.active  && 'opacity-60')}>{step.description}</p>
             <div className={!step.ping && !step.active  ? 'opacity-60' : ''}>

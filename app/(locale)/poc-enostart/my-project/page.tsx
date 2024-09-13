@@ -219,7 +219,6 @@ export default function Component() {
 
             <div className="grid grid-cols-2 gap-16 2xl:gap-32">
                 <div className="w-full">
-                    <div className="space-y-2">
                         <div className=" flex flex-col w-max">
                             <span className={"text-gray-500 uppercase text-xs"}>
                                 Nouvelle candidature
@@ -234,7 +233,6 @@ export default function Component() {
                                 Passage en exploitation
                             </span>
                         </div>
-                    </div>
                 </div>
                 <div className="w-full">
                     <h2 className="font-semibold mb-4">Quels documents pour intégrer un participant
@@ -277,7 +275,6 @@ export default function Component() {
 
             <div className="grid grid-cols-2 gap-16 2xl:gap-32">
                 <div className="w-full">
-                    <div className="space-y-2">
                         <div className=" flex flex-col w-max">
                             <span className={"text-gray-500 uppercase text-xs"}>
                                 Passage en exploitation
@@ -293,7 +290,6 @@ export default function Component() {
                                 Opération créée, consommateurs intégrés
                             </span>
                         </div>
-                    </div>
                 </div>
                 {!showV1 && <div className="w-full">
                     <h2 className="font-semibold mb-4">Quels documents pour passer en exploitation
