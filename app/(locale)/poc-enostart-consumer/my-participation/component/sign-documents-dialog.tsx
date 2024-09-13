@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {Button} from "@/components/ui/button"
 import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger,} from "@/components/ui/dialog"
-import {FileIcon} from 'lucide-react'
+import {DownloadIcon, FileIcon, SquareArrowUpRightIcon} from 'lucide-react'
 
 export default function SignDocumentsDialog({onSubmit}: {
     onSubmit: () => void
@@ -20,9 +20,34 @@ export default function SignDocumentsDialog({onSubmit}: {
                 <Button variant="outline">Voir la proposition</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
-                <DialogHeader>
-                    <DialogTitle>Documents à signer (3)</DialogTitle>
-                </DialogHeader>
+                <div>
+                    <div>Documents à lire (2)</div>
+                </div>
+                <div className="space-y-4">
+                        <div className="flex hover:bg-gray-50 rounded cursor-pointer items-center space-x-4">
+                            <div className="bg-gray-100 p-2 rounded">
+                                <FileIcon className="h-6 w-6 text-gray-500"/>
+                            </div>
+                            <div className={"w-full"}>
+                                <p className="text-sm font-medium">Statut PMO</p>
+                                <p className="text-xs text-gray-500">Format: PDF</p>
+                            </div>
+                            <DownloadIcon className="h-6 w-6 text-gray-500"/>
+                        </div>
+                    <div className="flex hover:bg-gray-50 rounded cursor-pointer items-center space-x-4">
+                        <div className="bg-gray-100 p-2 rounded">
+                            <FileIcon className="h-6 w-6 text-gray-500"/>
+                        </div>
+                        <div className={"w-full"}>
+                            <p className="text-sm font-medium">Règlement intérieur</p>
+                            <p className="text-xs text-gray-500">Format: PDF</p>
+                        </div>
+                        <DownloadIcon className="h-6 w-6 text-gray-500"/>
+                    </div>
+                </div>
+                <div>
+                    <div>Documents à signer par mail (3)</div>
+                </div>
                 <div className="space-y-4">
                     {documents.map((doc, index) => (
                         <div key={index} className="flex items-center space-x-4">
@@ -45,6 +70,7 @@ export default function SignDocumentsDialog({onSubmit}: {
                     </Button>
                 </div>
             </DialogContent>
+
         </Dialog>
 
     )

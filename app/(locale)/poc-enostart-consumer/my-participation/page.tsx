@@ -6,9 +6,11 @@ import TimelineStep from "@/app/(locale)/poc-enostart/my-project/components/Time
 import UserFormDialog from "@/app/(locale)/poc-enostart/user-form-dialog";
 import GreenEnergyOffer from "@/app/(locale)/poc-enostart-consumer/my-participation/component/green-energy-offer";
 import SignDocumentsDialog from "@/app/(locale)/poc-enostart-consumer/my-participation/component/sign-documents-dialog";
+import {useRouter} from "next/navigation";
 
 
 export default function Component() {
+    const router = useRouter()
     const initialTimelineIntegration = [
         {
             title: "Je finalise ma demande de participation",
@@ -29,7 +31,7 @@ export default function Component() {
             Button: ({disabled}: { disabled: boolean }) => <Button disabled={disabled}
                                                                    onClick={submissionStudied}
                                                                    variant="outline" className="mt-2 mb-6"
-                                                                   size={'sm'}>Voir le projet</Button>,
+                                                                   size={'sm'}>{"->"}</Button>,
             ping: false,
             active: false,
             prerequisites: [],
@@ -41,7 +43,7 @@ export default function Component() {
             Button: ({disabled}: { disabled: boolean }) => <Button disabled={disabled}
                                                                    onClick={salesContractPrepared}
                                                                    variant="outline" className="mt-2 mb-6"
-                                                                   size={'sm'}>Voir le projet</Button>,
+                                                                   size={'sm'}>{"->"}</Button>,
             ping: false,
             active: false,
             prerequisites: [],
@@ -62,7 +64,7 @@ export default function Component() {
             Button: ({disabled}: { disabled: boolean }) => <Button disabled={disabled}
                                                                    onClick={documentsReady}
                                                                    variant="outline" className="mt-2 mb-6"
-                                                                   size={'sm'}>Voir le projet</Button>,
+                                                                   size={'sm'}>{"->"}</Button>,
             ping: false,
             active: false,
             prerequisites: [],
@@ -79,12 +81,12 @@ export default function Component() {
             estimatedTime: '25 minutes'
         },
         {
-            title: "Je consomme local et vert",
+            title: "Mes documents sont signés, je vais rejoindre l'opération",
             description: "Vous avez terminé les démarches administratives. Vous serez bientôt notifié par mail et pourrez  consommer de l'énergie verte et locale.",
             Button: ({disabled}: { disabled: boolean }) => <Button disabled={disabled}
-                                                                   onClick={documentsReady}
+                                                                   onClick={() => router.push('/poc-enostart-consumer/my-info')}
                                                                    variant="outline" className="mt-2 mb-6"
-                                                                   size={'sm'}>Voir le projet</Button>,
+                                                                   size={'sm'}>{"Mes documents ->"}</Button>,
             ping: false,
             active: false,
             prerequisites: [],

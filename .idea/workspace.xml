@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="fix build">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-participation/component/green-energy-offer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-participation/component/sign-documents-dialog.tsx" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ui moche">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-info/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-info/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-participation/component/sign-documents-dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-participation/component/sign-documents-dialog.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-participation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-participation/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/TimelineStep.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/TimelineStep.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/user-form-dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/user-form-dialog.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -244,23 +240,7 @@
       <workItem from="1725866121127" duration="26559000" />
       <workItem from="1725952212118" duration="25042000" />
       <workItem from="1726038577175" duration="14612000" />
-      <workItem from="1726125351863" duration="19970000" />
-    </task>
-    <task id="LOCAL-00194" summary="little ui fix">
-      <option name="closed" value="true" />
-      <created>1724932754935</created>
-      <option name="number" value="00194" />
-      <option name="presentableId" value="LOCAL-00194" />
-      <option name="project" value="LOCAL" />
-      <updated>1724932754936</updated>
-    </task>
-    <task id="LOCAL-00195" summary="small ux updates">
-      <option name="closed" value="true" />
-      <created>1724942088554</created>
-      <option name="number" value="00195" />
-      <option name="presentableId" value="LOCAL-00195" />
-      <option name="project" value="LOCAL" />
-      <updated>1724942088554</updated>
+      <workItem from="1726125351863" duration="25327000" />
     </task>
     <task id="LOCAL-00196" summary="wording">
       <option name="closed" value="true" />
@@ -638,7 +618,23 @@
       <option name="project" value="LOCAL" />
       <updated>1726142669708</updated>
     </task>
-    <option name="localTasksCounter" value="243" />
+    <task id="LOCAL-00243" summary="flow consumer">
+      <option name="closed" value="true" />
+      <created>1726219773042</created>
+      <option name="number" value="00243" />
+      <option name="presentableId" value="LOCAL-00243" />
+      <option name="project" value="LOCAL" />
+      <updated>1726219773042</updated>
+    </task>
+    <task id="LOCAL-00244" summary="ui moche">
+      <option name="closed" value="true" />
+      <created>1726221906369</created>
+      <option name="number" value="00244" />
+      <option name="presentableId" value="LOCAL-00244" />
+      <option name="project" value="LOCAL" />
+      <updated>1726221906369</updated>
+    </task>
+    <option name="localTasksCounter" value="245" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -657,8 +653,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="- button complete contrat for all fix ?" />
-    <MESSAGE value="update ux" />
     <MESSAGE value="prestation" />
     <MESSAGE value="weeekdn" />
     <MESSAGE value="ui, ux" />
@@ -682,6 +676,8 @@
     <MESSAGE value="add v0 form to update" />
     <MESSAGE value="switch for consumer view" />
     <MESSAGE value="fix build" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix build" />
+    <MESSAGE value="flow consumer" />
+    <MESSAGE value="ui moche" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui moche" />
   </component>
 </project>

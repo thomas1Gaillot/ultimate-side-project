@@ -59,6 +59,15 @@ export default function Component({variant, buttonText, onSubmit}: {
                             <Input id="denomination" placeholder="Entrez la dénomination sociale"/>
                         </div>
                         <div>
+                            <Label htmlFor="denomination">
+                                {"Nom du titulaire du contrat de fourniture d'électricité"}
+                                <span className={"text-xs text-gray-500 hover:underline ml-2"}>
+                                    (Le nom est différent)
+                                </span>
+                            </Label>
+                            <Input disabled={true} id="denomination" placeholder="par défaut, même nom que dénomination"/>
+                        </div>
+                        <div>
                             <Label htmlFor="forme-juridique">Forme juridique</Label>
                             <Select
                                 onValueChange={(value) => setFormeJuridique(value as 'SA-SAS-SARL' | 'Association' | 'Copropriété')}>
@@ -102,7 +111,7 @@ export default function Component({variant, buttonText, onSubmit}: {
                 <CardContent className="space-y-4 pt-4">
                     <div className="grid grid-cols-2 gap-4">
                         <div>
-                            <Label htmlFor="civilite">Civilité</Label>
+                        <Label htmlFor="civilite">Civilité</Label>
                             <Select>
                                 <SelectTrigger id="civilite">
                                     <SelectValue placeholder="Sélectionnez"/>
