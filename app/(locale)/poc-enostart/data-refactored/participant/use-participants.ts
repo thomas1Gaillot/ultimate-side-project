@@ -39,7 +39,7 @@ export default function useParticipants(){
     function proposePrice(id : number, accord : DemoDocument){
         const participant = participants.find(p => p.id === id)
         if(!participant) return
-        participant.documents.accord.state = SignedSaleDocumentStatus.PropositionEnvoye
+        participant.documents.contract.state = SignedSaleDocumentStatus.PropositionEnvoye
         setParticipants([...participants])
     }
 
@@ -47,8 +47,8 @@ export default function useParticipants(){
         const participant = participants.find(p => p.id === id)
         if(!participant) return
         participant.documents.bulletin.state = SignedDocumentStatus.DocumentEnvoye
-        participant.documents.accord.state = SignedSaleDocumentStatus.DocumentEnvoye
-        participant.documents.contract.state = SignedDocumentStatus.DocumentEnvoye
+        participant.documents.accord.state = SignedDocumentStatus.DocumentEnvoye
+        participant.documents.contract.state = SignedSaleDocumentStatus.DocumentEnvoye
         setParticipants([...participants])
     }
 

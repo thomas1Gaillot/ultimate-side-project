@@ -1,5 +1,8 @@
 import {Participant} from "@/app/(locale)/poc-enostart/data-refactored/participant/participant";
-import {SignedDocumentStatus} from "@/app/(locale)/poc-enostart/data-refactored/participant/signed-document-status";
+import {
+    SignedDocumentStatus,
+    SignedSaleDocumentStatus
+} from "@/app/(locale)/poc-enostart/data-refactored/participant/signed-document-status";
 
 
 const initialDocuments = {
@@ -20,7 +23,8 @@ const initialDocuments = {
         signedDocument: null
     },
     contract: {
-        state: SignedDocumentStatus.EnvoyerLeDocument,
+        state: SignedSaleDocumentStatus.EnvoyerLaProposition,
+        proposition : null,
         signedDocument: null
     }
 }

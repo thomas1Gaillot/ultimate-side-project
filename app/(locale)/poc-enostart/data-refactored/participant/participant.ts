@@ -18,12 +18,12 @@ export type Participant = {
             signedDocument: Document | null
         },
         accord: {
-            state: SignedSaleDocumentStatus,
-            proposition :{price : number, inflation : number, duration : number} | Document | null,
+            state: SignedDocumentStatus,
             signedDocument: Document | null
         },
         contract: {
-            state: SignedDocumentStatus,
+            state: SignedSaleDocumentStatus,
+            proposition :{price : number, inflation : number, duration : number} | Document | null,
             signedDocument: Document | null
         }
     }

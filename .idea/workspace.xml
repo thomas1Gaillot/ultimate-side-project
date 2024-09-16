@@ -4,27 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ui moche">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/document.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-accords-document.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-bulletin-document.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-declaration-document.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-pmo-document.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-reglement-document.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-sales-contract-document.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/data.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/participant.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/signed-document-status.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/use-participants.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/prestations/data.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/prestations/plan-status.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/prestations/use-prestations.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="refactoring started, &#10;ui update for table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/candidatures/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/candidatures/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/checkbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/checkbox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/participant.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/participant.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,15 +239,7 @@
       <workItem from="1725952212118" duration="25042000" />
       <workItem from="1726038577175" duration="14612000" />
       <workItem from="1726125351863" duration="26073000" />
-      <workItem from="1726473269153" duration="20054000" />
-    </task>
-    <task id="LOCAL-00197" summary="wording">
-      <option name="closed" value="true" />
-      <created>1724944482925</created>
-      <option name="number" value="00197" />
-      <option name="presentableId" value="LOCAL-00197" />
-      <option name="project" value="LOCAL" />
-      <updated>1724944482926</updated>
+      <workItem from="1726473269153" duration="20810000" />
     </task>
     <task id="LOCAL-00198" summary="wording">
       <option name="closed" value="true" />
@@ -650,7 +625,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726234375269</updated>
     </task>
-    <option name="localTasksCounter" value="246" />
+    <task id="LOCAL-00246" summary="refactoring started, &#10;ui update for table">
+      <option name="closed" value="true" />
+      <created>1726500929917</created>
+      <option name="number" value="00246" />
+      <option name="presentableId" value="LOCAL-00246" />
+      <option name="project" value="LOCAL" />
+      <updated>1726500929917</updated>
+    </task>
+    <option name="localTasksCounter" value="247" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,7 +652,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="prestation" />
     <MESSAGE value="weeekdn" />
     <MESSAGE value="ui, ux" />
     <MESSAGE value="ui done" />
@@ -694,6 +676,7 @@
     <MESSAGE value="fix build" />
     <MESSAGE value="flow consumer" />
     <MESSAGE value="ui moche" />
-    <option name="LAST_COMMIT_MESSAGE" value="ui moche" />
+    <MESSAGE value="refactoring started, &#10;ui update for table" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring started, &#10;ui update for table" />
   </component>
 </project>
