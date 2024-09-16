@@ -15,7 +15,9 @@ export type Participant = {
     pmo: PmoStatus,
     enedis: EnedisStatus,
     sales: SalesStatus,
-    contractDocument?: ContractDocument
+    contractDocument?: ContractDocument,
+    segment : string,
+    address : string
 }
 
 const initialParticipants: Participant[] = [
@@ -28,7 +30,9 @@ const initialParticipants: Participant[] = [
         status: 'exploitation',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
-        sales: SalesStatus.ProposerUnPrix
+        sales: SalesStatus.ProposerUnPrix,
+        segment: 'C5',
+        address: '1 rue de la paix'
     },
     {
         id: 2,
@@ -39,7 +43,9 @@ const initialParticipants: Participant[] = [
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
-        sales: SalesStatus.ProposerUnPrix
+        sales: SalesStatus.ProposerUnPrix,
+        segment: 'C5',
+        address: '1 rue de la paix'
     },
     {
         id: 3,
@@ -50,7 +56,9 @@ const initialParticipants: Participant[] = [
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
-        sales: SalesStatus.ProposerUnPrix
+        sales: SalesStatus.ProposerUnPrix,
+        segment: 'C5',
+        address: '1 rue de la paix'
     },
     {
         id: 4,
@@ -61,7 +69,9 @@ const initialParticipants: Participant[] = [
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
-        sales: SalesStatus.ProposerUnPrix
+        sales: SalesStatus.ProposerUnPrix,
+        segment: 'C5',
+        address: '1 rue de la paix'
     },
     {
         id: 5,
@@ -72,7 +82,9 @@ const initialParticipants: Participant[] = [
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
-        sales: SalesStatus.ProposerUnPrix
+        sales: SalesStatus.ProposerUnPrix,
+        segment: 'C5',
+        address: '1 rue de la paix'
     },
     {
         id: 6,
@@ -83,7 +95,9 @@ const initialParticipants: Participant[] = [
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
-        sales: SalesStatus.ProposerUnPrix
+        sales: SalesStatus.ProposerUnPrix,
+        segment: 'C5',
+        address: '1 rue de la paix'
     },
     {
         id: 7,
@@ -94,7 +108,9 @@ const initialParticipants: Participant[] = [
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
-        sales: SalesStatus.ProposerUnPrix
+        sales: SalesStatus.ProposerUnPrix,
+        segment: 'C5',
+        address: '1 rue de la paix'
     },
     {
         id: 8,
@@ -105,7 +121,9 @@ const initialParticipants: Participant[] = [
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
-        sales: SalesStatus.ProposerUnPrix
+        sales: SalesStatus.ProposerUnPrix,
+        segment: 'C5',
+        address: '1 rue de la paix'
     },
     {
         id: 9,
@@ -116,7 +134,9 @@ const initialParticipants: Participant[] = [
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
-        sales: SalesStatus.ProposerUnPrix
+        sales: SalesStatus.ProposerUnPrix,
+        segment: 'C5',
+        address: '1 rue de la paix'
     },
     {
         id: 10,
@@ -127,7 +147,9 @@ const initialParticipants: Participant[] = [
         status: 'candidature',
         pmo: PmoStatus.IdentifierLaPmo,
         enedis: EnedisStatus.IdentifierLaPmo,
-        sales: SalesStatus.ProposerUnPrix
+        sales: SalesStatus.ProposerUnPrix,
+        segment: 'C5',
+        address: '1 rue de la paix'
     }
 ]
 

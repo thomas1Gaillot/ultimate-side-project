@@ -5,11 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="ui moche">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/document.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-accords-document.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-bulletin-document.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-declaration-document.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-pmo-document.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-reglement-document.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-sales-contract-document.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/data.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/participant.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/signed-document-status.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/use-participants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/prestations/data.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/prestations/plan-status.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/prestations/use-prestations.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-info/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-info/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-participation/component/sign-documents-dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-participation/component/sign-documents-dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-participation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart-consumer/my-participation/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/user-form-dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/user-form-dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/candidatures/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/candidatures/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/checkbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/checkbox.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -78,11 +93,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\data-refactored\participant" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\data-refactored\prestations" />
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\data-refactored\document" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart-consumer\my-participation\component" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart-consumer" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart-consumer\my-participation" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\data\documents" />
     </key>
   </component>
   <component name="RunManager" selected="npm.supabase:create">
@@ -240,15 +255,8 @@
       <workItem from="1725866121127" duration="26559000" />
       <workItem from="1725952212118" duration="25042000" />
       <workItem from="1726038577175" duration="14612000" />
-      <workItem from="1726125351863" duration="25327000" />
-    </task>
-    <task id="LOCAL-00196" summary="wording">
-      <option name="closed" value="true" />
-      <created>1724944466566</created>
-      <option name="number" value="00196" />
-      <option name="presentableId" value="LOCAL-00196" />
-      <option name="project" value="LOCAL" />
-      <updated>1724944466566</updated>
+      <workItem from="1726125351863" duration="26073000" />
+      <workItem from="1726473269153" duration="20054000" />
     </task>
     <task id="LOCAL-00197" summary="wording">
       <option name="closed" value="true" />
@@ -634,7 +642,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726221906369</updated>
     </task>
-    <option name="localTasksCounter" value="245" />
+    <task id="LOCAL-00245" summary="ui moche">
+      <option name="closed" value="true" />
+      <created>1726234375269</created>
+      <option name="number" value="00245" />
+      <option name="presentableId" value="LOCAL-00245" />
+      <option name="project" value="LOCAL" />
+      <updated>1726234375269</updated>
+    </task>
+    <option name="localTasksCounter" value="246" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
