@@ -43,7 +43,7 @@ export default function AccordsParticipation() {
                                         <span className="text-gray-500">-</span>
                                     )}
                                 </TableCell>
-                                <TableCell>{accords.accords?.name}</TableCell>
+                                <TableCell>{accords.document?.name}</TableCell>
                                 <TableCell>
                                     <div className="flex space-x-2">
                                         <Button

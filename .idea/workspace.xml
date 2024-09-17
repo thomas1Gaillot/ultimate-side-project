@@ -4,38 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="build">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/stored-participants.ts" afterDir="false" />
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="TODO : show dialog recap on Envoyer les documents (0)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/overview.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/components/overview/warningDemarchesBanner.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-accords-document.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-accords-document.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-bulletin-document.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-bulletin-document.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-declaration-document.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-declaration-document.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-pmo-document.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-pmo-document.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-reglement-document.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-reglement-document.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-sales-contract-document.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/document/use-sales-contract-document.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/participant.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/participant.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/signed-document-status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/signed-document-status.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/use-participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/use-participants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/documents/use-documents-overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/documents/use-documents-overview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/flow.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data/participants.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/enedis/accords/components/accords-participation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/enedis/accords/components/accords-participation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin-accordion-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/bulletin-accordion-item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation-accordion-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation-accordion-item.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/associate-contract-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/associate-contract-accordion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/send-price-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/send-price-accordion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/candidatures/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/candidatures/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/refuses/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/refuses/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/BulletinSubscriptionDialogContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/components/BulletinSubscriptionDialogContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,15 +240,7 @@
       <workItem from="1726038577175" duration="14612000" />
       <workItem from="1726125351863" duration="26073000" />
       <workItem from="1726473269153" duration="21280000" />
-      <workItem from="1726556044265" duration="20611000" />
-    </task>
-    <task id="LOCAL-00199" summary="small ux changes">
-      <option name="closed" value="true" />
-      <created>1724948424591</created>
-      <option name="number" value="00199" />
-      <option name="presentableId" value="LOCAL-00199" />
-      <option name="project" value="LOCAL" />
-      <updated>1724948424591</updated>
+      <workItem from="1726556044265" duration="20978000" />
     </task>
     <task id="LOCAL-00200" summary="fix numbers 1 in task">
       <option name="closed" value="true" />
@@ -662,7 +626,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726502615566</updated>
     </task>
-    <option name="localTasksCounter" value="248" />
+    <task id="LOCAL-00248" summary="TODO : show dialog recap on Envoyer les documents (0)">
+      <option name="closed" value="true" />
+      <created>1726586682265</created>
+      <option name="number" value="00248" />
+      <option name="presentableId" value="LOCAL-00248" />
+      <option name="project" value="LOCAL" />
+      <updated>1726586682265</updated>
+    </task>
+    <option name="localTasksCounter" value="249" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +653,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="weeekdn" />
     <MESSAGE value="ui, ux" />
     <MESSAGE value="ui done" />
     <MESSAGE value="step 1 : subscribe in projet page" />
@@ -706,6 +677,7 @@
     <MESSAGE value="ui moche" />
     <MESSAGE value="refactoring started, &#10;ui update for table" />
     <MESSAGE value="build" />
-    <option name="LAST_COMMIT_MESSAGE" value="build" />
+    <MESSAGE value="TODO : show dialog recap on Envoyer les documents (0)" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO : show dialog recap on Envoyer les documents (0)" />
   </component>
 </project>

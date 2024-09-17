@@ -15,11 +15,9 @@ import {useState} from "react";
 import RedirectToMyProject from "@/app/(locale)/poc-enostart/components/RedirectToMyProject";
 import useParticipants from "@/app/(locale)/poc-enostart/data-refactored/participant/use-participants";
 import {SignedSaleDocumentStatus} from "@/app/(locale)/poc-enostart/data-refactored/participant/signed-document-status";
-import useSalesContractDocument from "@/app/(locale)/poc-enostart/data-refactored/document/use-sales-contract-document";
 
 export default function AssociateContractAccordion() {
     const {preIntegres, reject, completeContract, completeContractForAll} = useParticipants()
-    const {salesContract, hasOneContract, create} = useSalesContractDocument()
     const preIntegresToAssociatePrice = preIntegres
         .filter(p => p.documents.contract.state === SignedSaleDocumentStatus.EnAttenteDeLaProposition
             && p.documents.contract.proposition === null)
@@ -62,9 +60,12 @@ export default function AssociateContractAccordion() {
                                                 {JSON.stringify(p?.documents.contract.proposition)}
                                             </span>
                                                 <div className={'flex gap-2'}>
-                                                    <Badge variant={'outline'}>{p?.documents.contract.proposition?.duration}</Badge>
-                                                    <Badge variant={'outline'}>{p?.documents.contract.proposition?.price}</Badge>
-                                                    <Badge variant={'outline'}>{p?.documents.contract.proposition?.inflation}</Badge>
+                                                    <Badge
+                                                        variant={'outline'}>{p?.documents.contract.proposition?.duration}</Badge>
+                                                    <Badge
+                                                        variant={'outline'}>{p?.documents.contract.proposition?.price}</Badge>
+                                                    <Badge
+                                                        variant={'outline'}>{p?.documents.contract.proposition?.indexation}</Badge>
                                                 </div>
                                             </div>
                                         </TableCell>
@@ -98,7 +99,7 @@ export default function AssociateContractAccordion() {
                                                             </div>
                                                             <div className={"grid grid-cols-2  w-full text-sm"}>
                                                                 <span className={"text-gray-700"}> Indexation</span>
-                                                                <span>{p?.documents.contract.proposition?.inflation}</span>
+                                                                <span>{p?.documents.contract.proposition?.indexation}</span>
                                                             </div>
                                                         </div>
                                                         <span className={"pt-8"}>
