@@ -1,15 +1,15 @@
 export enum SignedDocumentStatus {
-    EnvoyerLeDocument = 'EnvoyerLeDocument',
-    DocumentEnvoye = 'DocumentEnvoye',
-    DocumentSigne = 'DocumentSigne',
+    EnAttente = 'EnAttente',
+    ASigner = 'ASigner',
+    Signe = 'Signe',
 }
 
 export enum SignedSaleDocumentStatus {
-    EnvoyerLaProposition = 'EnvoyerLaProposition',
-    PropositionEnvoye = 'PropositionEnvoye',
+    EnAttenteDeLaProposition = 'EnAttenteDeLaProposition',
+    PropositionAAccepter = 'PropositionAAccepter',
     PropositionAcceptee = 'PropositionAcceptee',
-    EnvoyerLeDocument = 'EnvoyerLeDocument',
-    DocumentEnvoye = 'DocumentEnvoye',
+    EnAttenteDuDocument = 'EnAttenteDuDocument',
+    DocumentASigner = 'DocumentASigner',
     DocumentSigne = 'DocumentSigne',
     PropositionRefusee = 'PropositionRefusee',
 }

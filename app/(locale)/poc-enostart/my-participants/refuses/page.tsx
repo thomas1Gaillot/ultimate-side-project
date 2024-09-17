@@ -1,7 +1,7 @@
 'use client'
 import {TypographyH4} from "@/components/ui/typography";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
-import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
+import useParticipants from "@/app/(locale)/poc-enostart/data-refactored/participant/use-participants";
 
 
 export default function Page() {

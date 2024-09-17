@@ -2,6 +2,7 @@ import {
     SignedDocumentStatus,
     SignedSaleDocumentStatus
 } from "@/app/(locale)/poc-enostart/data-refactored/participant/signed-document-status";
+import {DemoDocument, SalesDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/document";
 
 export type Participant = {
     id: number,
@@ -15,16 +16,16 @@ export type Participant = {
     documents: {
         bulletin: {
             state: SignedDocumentStatus,
-            signedDocument: Document | null
+            signedDocument: DemoDocument | null
         },
         accord: {
             state: SignedDocumentStatus,
-            signedDocument: Document | null
+            signedDocument: DemoDocument | null
         },
         contract: {
             state: SignedSaleDocumentStatus,
-            proposition :{price : number, inflation : number, duration : number} | Document | null,
-            signedDocument: Document | null
+            proposition :SalesDocument | null,
+            signedDocument: DemoDocument | null
         }
     }
 }

@@ -3,7 +3,7 @@ import {TypographyH4} from "@/components/ui/typography";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {Button} from "@/components/ui/button";
 import {CheckIcon, MoreHorizontalIcon, MoreVerticalIcon, UserIcon, XIcon} from "lucide-react";
-import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
+import useParticipants from "@/app/(locale)/poc-enostart/data-refactored/participant/use-participants";
 import {useState} from "react";
 import {Checkbox} from "@/components/ui/checkbox";
 import {useRouter} from "next/navigation";
@@ -11,7 +11,7 @@ import {Separator} from "@/components/ui/separator";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu"; // Assuming Checkbox is available in shadcn
 
 export default function Page() {
-    const {candidatures, accept, reject} = useParticipants();
+    const {candidatures, accept, acceptAll, reject} = useParticipants();
     const [selectedIds, setSelectedIds] = useState<string[]>([]);
     const [selectAll, setSelectAll] = useState<boolean>(false);
 
@@ -37,7 +37,7 @@ export default function Page() {
 
     // Pre-integrate all selected participants
     const preIntegrateAll = () => {
-        selectedIds.forEach((id) => accept(Number(id)));
+        acceptAll(selectedIds.map((id) => Number(id)));
     };
 
     return (

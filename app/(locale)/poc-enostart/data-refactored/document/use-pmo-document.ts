@@ -1,8 +1,18 @@
-import {useState} from "react";
 import {DemoDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/document";
+import {create} from "zustand";
+
+interface DocumentState {
+    statutPmo: DemoDocument | null;
+    setStatutPmo: (contract: DemoDocument) => void;
+}
+
+const useStoredStatutPmo = create<DocumentState>((set) => ({
+    statutPmo:null,
+    setStatutPmo: (contract: DemoDocument) => set(state => ({statutPmo: contract}))
+}))
 
 function usePmoDocument() {
-    const [pmo, setPmo] = useState<DemoDocument | null>(null)
+    const {statutPmo, setStatutPmo} = useStoredStatutPmo()
     const dumbPmoDocument: DemoDocument = {
         id: '1',
         name: 'ma_pmo.pdf',
@@ -12,12 +22,12 @@ function usePmoDocument() {
     }
 
     function upload() {
-        setPmo(dumbPmoDocument)
+        setStatutPmo(dumbPmoDocument)
     }
 
     return {
-        pmo,
-        isCreated : pmo !== null,
+        document : statutPmo,
+        isCreated : statutPmo !== null,
         upload
     }
 }

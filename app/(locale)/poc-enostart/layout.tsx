@@ -3,7 +3,6 @@ import MonECTabs from "@/app/(locale)/poc-enostart/components/MonECTabs";
 import {Button} from "@/components/ui/button";
 import {QuestionMarkCircledIcon} from "@radix-ui/react-icons";
 import {CodepenIcon} from "lucide-react";
-import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 import {usePathname, useRouter} from "next/navigation";
 import {Switch} from "@/components/ui/switch";
 import {Label} from "@/components/ui/label";
@@ -11,6 +10,7 @@ import {useToggleV1} from "@/app/(locale)/poc-enostart/useToggleV1";
 import UserFormDialog from './user-form-dialog'
 import {useConsumerView} from "@/app/(locale)/poc-enostart/useConsumerView";
 import {useEffect} from "react";
+import useParticipants from "@/app/(locale)/poc-enostart/data-refactored/participant/use-participants";
 export default function Layout({
                                    children,
                                }: Readonly<{

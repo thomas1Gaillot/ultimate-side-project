@@ -1,8 +1,6 @@
-import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
-import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
-import {TrashIcon, XIcon} from "lucide-react";
+import {XIcon} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import {Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger} from "@/components/ui/dialog";
@@ -15,10 +13,16 @@ import {Switch} from "@/components/ui/switch";
 import {Input} from "@/components/ui/input";
 import {useState} from "react";
 import RedirectToMyProject from "@/app/(locale)/poc-enostart/components/RedirectToMyProject";
+import useParticipants from "@/app/(locale)/poc-enostart/data-refactored/participant/use-participants";
+import {SignedSaleDocumentStatus} from "@/app/(locale)/poc-enostart/data-refactored/participant/signed-document-status";
+import useSalesContractDocument from "@/app/(locale)/poc-enostart/data-refactored/document/use-sales-contract-document";
 
 export default function AssociateContractAccordion() {
     const {preIntegres, reject, completeContract, completeContractForAll} = useParticipants()
-    const preIntegresToAssociatePrice = preIntegres.filter(p => p.sales === SalesStatus.AssocierLeContrat)
+    const {salesContract, hasOneContract, create} = useSalesContractDocument()
+    const preIntegresToAssociatePrice = preIntegres
+        .filter(p => p.documents.contract.state === SignedSaleDocumentStatus.EnAttenteDeLaProposition
+            && p.documents.contract.proposition === null)
     const [isReconduction, setIsReconduction] = useState(false)
     const [hasSubscription, setHasSubscription] = useState(false)
 
@@ -28,12 +32,13 @@ export default function AssociateContractAccordion() {
     const setTab = (newTab: string) => {
         // Set the new query parameter
         router.push(`?tab=${newTab}`); // This will update the URL with ?tab=newTab
-    };    return (
+    };
+    return (
         <AccordionItem value="associate-contract">
             <AccordionTrigger
                 onClick={() => setTab("associate-contract")}
                 className="text-lg font-semibold">
-                <div  className={"flex"}>
+                <div className={"flex"}>
                     {"3. Je complète le contrat de vente pour chaque consommateur"}
                 </div>
             </AccordionTrigger>
@@ -54,12 +59,12 @@ export default function AssociateContractAccordion() {
                                         <TableCell>
                                             <div className={"flex flex-col gap-1"}>
                                             <span className={"text-xs"}>
-                                                {p?.contractDocument?.name}
+                                                {JSON.stringify(p?.documents.contract.proposition)}
                                             </span>
                                                 <div className={'flex gap-2'}>
-                                                    <Badge variant={'outline'}>{p?.contractDocument?.duration}</Badge>
-                                                    <Badge variant={'outline'}>{p?.contractDocument?.price}</Badge>
-                                                    <Badge variant={'outline'}>{p?.contractDocument?.indexation}</Badge>
+                                                    <Badge variant={'outline'}>{p?.documents.contract.proposition?.duration}</Badge>
+                                                    <Badge variant={'outline'}>{p?.documents.contract.proposition?.price}</Badge>
+                                                    <Badge variant={'outline'}>{p?.documents.contract.proposition?.inflation}</Badge>
                                                 </div>
                                             </div>
                                         </TableCell>
@@ -85,15 +90,15 @@ export default function AssociateContractAccordion() {
                                                         <div className={"grid gap-2 "}>
                                                             <div className={"grid grid-cols-2  w-full text-sm"}>
                                                                 <span className={" text-gray-700"}> Prix de vente</span>
-                                                                <span>{p?.contractDocument?.price}</span>
+                                                                <span>{p?.documents.contract.proposition?.price}</span>
                                                             </div>
                                                             <div className={"grid grid-cols-2  w-full text-sm"}>
                                                                 <span className={"text-gray-700"}> Durée</span>
-                                                                <span>{p?.contractDocument?.duration}</span>
+                                                                <span>{p?.documents.contract.proposition?.duration}</span>
                                                             </div>
                                                             <div className={"grid grid-cols-2  w-full text-sm"}>
                                                                 <span className={"text-gray-700"}> Indexation</span>
-                                                                <span>{p?.contractDocument?.indexation}</span>
+                                                                <span>{p?.documents.contract.proposition?.inflation}</span>
                                                             </div>
                                                         </div>
                                                         <span className={"pt-8"}>
@@ -215,7 +220,7 @@ export default function AssociateContractAccordion() {
                                                     <DialogFooter>
                                                         <Button
                                                             variant={'default'}
-                                                            onClick={() => completeContractForAll(p.id)}
+                                                            onClick={() => completeContractForAll()}
                                                             type="submit">Compléter ce contrat pour tous</Button>
                                                         <Button
                                                             variant={'secondary'}
@@ -229,7 +234,9 @@ export default function AssociateContractAccordion() {
                                             <TooltipProvider>
                                                 <Tooltip>
                                                     <TooltipTrigger>
-                                                        <Button onClick={() => reject(p.id)} size={'sm'} className={'text-red-500 text-xs'} variant={'link'}>Refuser<XIcon
+                                                        <Button onClick={() => reject(p.id)} size={'sm'}
+                                                                className={'text-red-500 text-xs'}
+                                                                variant={'link'}>Refuser<XIcon
                                                             className={'size-4 ml-1'}/> </Button>
                                                     </TooltipTrigger>
                                                     <TooltipContent>

@@ -4,7 +4,6 @@ import {Button} from "@/components/ui/button"
 import {FileCheck2Icon, FileTextIcon, ScrollTextIcon, UserSquareIcon} from 'lucide-react'
 import {IconFileEuro} from "@tabler/icons-react";
 import DocumentOverview from "@/app/(locale)/poc-enostart/my-project/components/DocumentOverview";
-import {parse, useStoredParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
 import TimelineStep from "@/app/(locale)/poc-enostart/my-project/components/TimelineStep";
 import {useRouter} from "next/navigation";
@@ -13,6 +12,17 @@ import {useDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-docum
 import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
 import {Switch} from "@/components/ui/switch";
 import {useToggleV1} from "@/app/(locale)/poc-enostart/useToggleV1";
+import {useStoredParticipants} from "@/app/(locale)/poc-enostart/data-refactored/participant/stored-participants";
+import {parseP} from "@/app/(locale)/poc-enostart/data-refactored/participant/use-participants";
+import {
+    SignedDocumentStatus,
+    SignedSaleDocumentStatus
+} from "@/app/(locale)/poc-enostart/data-refactored/participant/signed-document-status";
+import {useDeclarationDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/use-declaration-document";
+import useSalesContractDocument from "@/app/(locale)/poc-enostart/data-refactored/document/use-sales-contract-document";
+import {usePmoDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/use-pmo-document";
+import {useBulletinDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/use-bulletin-document";
+import {useAccordsDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/use-accords-document";
 
 
 export default function Component() {
@@ -22,13 +32,11 @@ export default function Component() {
         statutPmo, declaration,
         bulletin, accords
     } = useDocumentsOverview()
-    const {
-        hasSalesContract,
-        isPmoCreated,
-        isAccordsParticipationEdited,
-        isBulletinEdited,
-        isDeclarationSent
-    } = useDocuments()
+    const declarationDocument = useDeclarationDocument()
+    const contractDocument = useSalesContractDocument()
+    const statutPmoDocument = usePmoDocument()
+    const accordDocument = useAccordsDocument()
+    const bulletinDocument = useBulletinDocument()
     const initialTimelineIntegration = [
         {
             title: "J'accepte les candidatures",
@@ -76,7 +84,7 @@ export default function Component() {
             prerequisites: []
         },
         {
-            title: "J'envoi les documents à signer aux consommateurs",
+            title: "J'envoi les documents à signer",
             description: "Envoyez aux consommateurs pré-intégrés un prix de vente fixe. Attendez leur réponse pour valider rapidement votre projet.",
             prerequisites: [
                 {text: "Statuts PMO", icon: UserSquareIcon, done: false},
@@ -90,7 +98,7 @@ export default function Component() {
             active: false
         },
         {
-            title: "Les consommateurs signent les documents",
+            title: "Les consommateurs et producteurs signent les documents",
             description: "Votre consommateur est presque intégrés ! Attendez qu'il vous renvoi les documents signés.",
             Button: ({disabled}: { disabled: boolean }) =>
                 <Button disabled={disabled} onClick={() => router.push('/poc-enostart/my-participants/pre-integres')}
@@ -101,26 +109,6 @@ export default function Component() {
     ]
     const initialTimelineExploitation = [
         {
-            title: "Je fais signer les documents aux producteurs",
-            description: "Les producteurs signent les documents.",
-            Button: ({disabled}: { disabled: boolean }) => <Button disabled={disabled}
-                                                                   onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
-                                                                   variant={'outline'} size={'sm'}>Passage en
-                exploitation</Button>,
-            ping: false,
-            active: false, prerequisites: []
-        },
-        {
-            title: "Les producteurs signent les documents",
-            description: "Les producteurs signent les documents.",
-            Button: ({disabled}: { disabled: boolean }) => <Button disabled={disabled}
-                                                                   onClick={() => router.push('/poc-enostart/my-participants/exploitation')}
-                                                                   variant={'outline'} size={'sm'}>Passage en
-                exploitation</Button>,
-            ping: false,
-            active: false, prerequisites: []
-        },
-        {
             title: "J'édite la convention d'autoconsommation collective",
             description: "Je crée et envoie la convention d'autoconsommation collective.",
             Button: ({disabled}: { disabled: boolean }) => <Button disabled={disabled}
@@ -128,7 +116,7 @@ export default function Component() {
                                                                    variant={'outline'} size={'sm'}>
                 {"J'édite la convention"}
             </Button>,
-            prerequisites: [{text: "Déclaration de mise en oeuvre", icon: FileTextIcon, done: isDeclarationSent}],
+            prerequisites: [{text: "Déclaration de mise en oeuvre", icon: FileTextIcon, done: declarationDocument.isEdited}],
             ping: false,
             active: false,
         },
@@ -168,12 +156,14 @@ export default function Component() {
 
     // update ping status for Timelines
     useEffect(() => {
-        const {candidatures, preIntegres, exploitation} = parse(participants)
+        const {candidatures, preIntegres, exploitation} = parseP(participants)
         const hasSalesThingsToDo = participants.some(p => p.status === 'pre-integre' &&
-            (p.sales === SalesStatus.ProposerUnPrix || p.sales === SalesStatus.AssocierLeContrat))
-        const canSignDocuments = preIntegres.some(p => p.sales === SalesStatus.EnvoyerLeContrat)
-        const atLeastOneProposalStatus = preIntegres.some(p => p.sales === SalesStatus.PrixPropose)
-        const atLeastOneDocumentsProposal = preIntegres.some(p => p.pmo === PmoStatus.BulletinEnvoye)
+            (p.documents.contract.state === SignedSaleDocumentStatus.EnAttenteDeLaProposition ||
+                p.documents.contract.state === SignedSaleDocumentStatus.EnAttenteDuDocument))
+        const canSignDocuments = preIntegres
+            .some(p =>  p.documents.contract.state === SignedSaleDocumentStatus.PropositionAcceptee)
+        const atLeastOneProposalStatus = preIntegres.some(p =>  p.documents.contract.state === SignedSaleDocumentStatus.PropositionAAccepter)
+        const atLeastOneDocumentsProposal = preIntegres.some(p => p.documents.bulletin.state === SignedDocumentStatus.ASigner)
         const newTimelineIntegration = initialTimelineIntegration.map((step) => {
             if (step.title === "J'accepte les candidatures") {
                 return {...step, ping: candidatures.length > 0}
@@ -182,35 +172,35 @@ export default function Component() {
                 return {
                     ...step,
                     ping: hasSalesThingsToDo,
-                    prerequisites: [{text: "Contrat de vente", icon: IconFileEuro, done: hasSalesContract}]
+                    prerequisites: [{text: "Contrat de vente", icon: IconFileEuro, done: contractDocument.hasOneContract}]
                 }
             }
-            if (step.title === "J'envoi les documents à signer aux consommateurs") {
+            if (step.title === "J'envoi les documents à signer") {
                 return {
                     ...step, ping: canSignDocuments, prerequisites: [
-                        {text: "Statuts PMO", icon: UserSquareIcon, done: isPmoCreated},
-                        {text: "Accords de participation", icon: FileCheck2Icon, done: isAccordsParticipationEdited},
-                        {text: "Bulletin d'adhésion", icon: ScrollTextIcon, done: isBulletinEdited}
+                        {text: "Statuts PMO", icon: UserSquareIcon, done: statutPmoDocument.isCreated},
+                        {text: "Accords de participation", icon: FileCheck2Icon, done: accordDocument.isCreated},
+                        {text: "Bulletin d'adhésion", icon: ScrollTextIcon, done: bulletinDocument.isEdited}
                     ]
                 }
             }
             if (step.title === "Les consommateurs acceptent mon offre") {
                 return {...step, active: atLeastOneProposalStatus}
             }
-            if (step.title === "Les consommateurs signent les documents") {
+            if (step.title === "Les consommateurs et producteurs signent les documents") {
                 return {...step, active: atLeastOneDocumentsProposal}
             }
             return step
         })
         setTimelineIntegration(newTimelineIntegration)
         setTimelineExploitation(initialTimelineExploitation.map((step) => {
-            if (step.title === "Je fais signer les documents aux producteurs") {
+            if (step.title === "J'édite la convention d'autoconsommation collective") {
                 return {...step, ping: exploitation.length > 0}
             }
             return step
         }))
 
-    }, [participants, hasSalesContract]);
+    }, [participants, contractDocument.hasOneContract, statutPmoDocument.isCreated, accordDocument.isCreated, bulletinDocument.isEdited]);
 
     return (
         <div className="min-h-screen bg-white text-gray-900 p-8 2xl:px-32">

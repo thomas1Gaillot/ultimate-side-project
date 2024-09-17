@@ -1,8 +1,17 @@
 import {useState} from "react";
 import {DemoDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/document";
+import {create} from "zustand";
+interface DocumentState {
+    declaration: DemoDocument | null;
+    setDeclaration: (contract: DemoDocument) => void;
+}
+const useStoredDeclaration = create<DocumentState>((set) => ({
+    declaration:null,
+    setDeclaration: (contract: DemoDocument) => set(state => ({declaration: contract}))
+}))
 
 function useDeclarationDocument() {
-    const [declaration, setDeclaration] = useState<DemoDocument | null>(null)
+    const {declaration, setDeclaration} = useStoredDeclaration()
     const dumbDeclarationDocument: DemoDocument = {
         id: '1',
         name: 'declaration.pdf',
@@ -14,7 +23,7 @@ function useDeclarationDocument() {
         setDeclaration(dumbDeclarationDocument)
     }
     return {
-        declaration,
+        document : declaration,
         isEdited : declaration !== null,
         upload
     }

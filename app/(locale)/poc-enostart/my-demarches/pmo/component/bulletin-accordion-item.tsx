@@ -2,7 +2,6 @@
 import {Button} from "@/components/ui/button"
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table"
 import {Check, CheckIcon, Edit, Eye} from "lucide-react"
-import {useDocuments, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {useRouter} from "next/navigation";
 import {PmoStatus} from "@/app/(locale)/poc-enostart/data/pmo-status";
@@ -13,10 +12,12 @@ import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/c
 import {Input} from "@/components/ui/input";
 import {InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot} from "@/components/ui/input-otp";
 import {Switch} from "@/components/ui/switch";
+import {useBulletinDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/use-bulletin-document";
+import {usePmoDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/use-pmo-document";
 
 export default function BulletinAccordionItem() {
-    const {bulletin, isPmoCreated, isBulletinEdited} = useDocuments()
-    const {setBulletinDocument} = useStoredDocuments()
+    const pmoStatut = usePmoDocument()
+    const bulletin = useBulletinDocument()
     const documentsOverview = useStoredDocumentsOverview()
     const router = useRouter()
 
@@ -26,15 +27,9 @@ export default function BulletinAccordionItem() {
     };
 
     function sendForm() {
+        bulletin.postBulletin()
         documentsOverview.setStatutPmo({...documentsOverview.statutPmo, status: PmoStatus.EnvoyerLeBulletin})
         documentsOverview.setBulletin({...documentsOverview.bulletin, status: PmoStatus.EnvoyerLeBulletin})
-
-        setBulletinDocument({
-            name: "Bulletin d'adhésion",
-            status: "check",
-            document: "bulletin_adhesion.pdf",
-            actions: ["Éditer le fichier", "Pré-Visualiser"]
-        })
     }
 
     return (
@@ -45,11 +40,11 @@ export default function BulletinAccordionItem() {
                 className="text-lg font-semibold">
                 <div className={"flex"}>
                     {"2. J'édite les bulletins d'adhésion"}
-                    {isBulletinEdited && <CheckIcon className="h-6 w-6 text-green-500 ml-2"/>}
+                    {bulletin.isEdited && <CheckIcon className="h-6 w-6 text-green-500 ml-2"/>}
                 </div>
             </AccordionTrigger>
             <AccordionContent className={"p-8 gap-4 grid"}>
-                {isPmoCreated ? <Table>
+                {pmoStatut.isCreated ? <Table>
                         <TableHeader>
                             <TableRow className="bg-gray-100">
                                 <TableHead className="w-1/4">NOM</TableHead>
@@ -60,15 +55,15 @@ export default function BulletinAccordionItem() {
                         </TableHeader>
                         <TableBody>
                             <TableRow>
-                                <TableCell>{bulletin.name}</TableCell>
+                                <TableCell>{"Bulletin d'édition"}</TableCell>
                                 <TableCell>
-                                    {bulletin.status === "check" ? (
+                                    {bulletin.isEdited ? (
                                         <Check className="text-green-500"/>
                                     ) : (
-                                        <span className="text-gray-500">{bulletin.status}</span>
+                                        <span className="text-gray-500"> - </span>
                                     )}
                                 </TableCell>
-                                <TableCell>{bulletin.document}</TableCell>
+                                <TableCell>{bulletin?.document?.name || 'N/A'}</TableCell>
                                 <TableCell>
                                     <div className="flex space-x-2">
                                         <EditBulletinDialog sendForm={sendForm}/>

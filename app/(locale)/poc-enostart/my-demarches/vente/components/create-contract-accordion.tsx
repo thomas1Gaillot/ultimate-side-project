@@ -3,29 +3,14 @@ import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui
 import {Button} from "@/components/ui/button";
 import {Dispatch, SetStateAction} from "react";
 import {XIcon} from "lucide-react";
-import {ContractDocument, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {cn} from "@/lib/utils";
 import {useRouter} from "next/navigation";
 import {IconFileEuro} from "@tabler/icons-react";
 import {Separator} from "@/components/ui/separator";
+import useSalesContractDocument from "@/app/(locale)/poc-enostart/data-refactored/document/use-sales-contract-document";
+import {SalesDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/document";
 
 
-const contracts: ContractDocument[] = [
-    {
-        name: 'Contrat consommateur type particulier',
-        duration: 'indéterminée',
-        price: '0.12€/kWh',
-        indexation: '% variable INSEE',
-        moreInfo: false
-    },
-    {
-        name: 'Contrat consommateur type professionnel, avec penalité',
-        duration: '5 ans',
-        price: '0.11 €/kWh',
-        indexation: '% variable INSEE',
-        moreInfo: true
-    },
-]
 export default function CreateContractAccordion() {
     const router = useRouter()
 
@@ -33,7 +18,7 @@ export default function CreateContractAccordion() {
         // Set the new query parameter
         router.push(`?tab=${newTab}`); // This will update the URL with ?tab=newTab
     };
-    const {salesContract} = useStoredDocuments()
+    const sales = useSalesContractDocument()
 
     return (
         <AccordionItem value="create-contracts">
@@ -45,21 +30,22 @@ export default function CreateContractAccordion() {
                 </div>
             </AccordionTrigger>
             <AccordionContent className={""}>
-                <MyContracts storedContracts={salesContract}/>
+                <MyContracts storedContracts={sales.documents}/>
             </AccordionContent>
         </AccordionItem>
     )
 }
 
 export function MyContracts({storedContracts, onContractSelect, selectedContract}: {
-    storedContracts: ContractDocument[];
-    onContractSelect?: Dispatch<SetStateAction<ContractDocument | null>>;
-    selectedContract?: ContractDocument | null;
+    storedContracts: SalesDocument[];
+    onContractSelect?: Dispatch<SetStateAction<SalesDocument | null>>;
+    selectedContract?: SalesDocument | null;
 }) {
-    const {setSalesContract} = useStoredDocuments()
+
+    const salesContract = useSalesContractDocument()
 
     const createInMemoryContracts = () => {
-        setSalesContract(contracts)
+        salesContract.create()
     }
 
     return <div className={"grid gap-4"}>
@@ -89,8 +75,7 @@ export function MyContracts({storedContracts, onContractSelect, selectedContract
                             {!contract.moreInfo && <span className={"text-red-600"}>Incomplet</span>}
                         </div>
                     </div>
-                    <XIcon className={"size-4 cursor-pointer relative bottom-2 left-2"}
-                           onClick={() => setSalesContract(storedContracts.filter((_, i) => i !== index))}/>
+                    <XIcon className={"size-4 cursor-pointer relative bottom-2 left-2"}/>
 
                 </div>
             )

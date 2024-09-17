@@ -21,12 +21,12 @@ import {
     useStoredDocumentsOverview
 } from "@/app/(locale)/poc-enostart/data/documents/use-stored-documents-overview";
 import {useDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
+import useSalesContractDocument from "@/app/(locale)/poc-enostart/data-refactored/document/use-sales-contract-document";
 
 
 export default function useDocumentsOverview() {
     const {pmoDemarches, salesDemarches, enedisDemarches} = usePrestations()
     const router = useRouter()
-    const {hasSalesContract} = useDocuments()
     const {
         sales, setSales,
         accords, setAccords,
@@ -35,6 +35,9 @@ export default function useDocumentsOverview() {
         statutPmo, setStatutPmo,
         convention, setConvention
     } = useStoredDocumentsOverview()
+
+    const salesDocument = useSalesContractDocument()
+
 
     // update status for Documents when prestation changes
     useEffect(() => {
@@ -60,7 +63,7 @@ export default function useDocumentsOverview() {
                 setSales(initialSalesDocument);
                 break;
             case SalesStatus.ProposerUnPrix :
-                if (hasSalesContract) {
+                if (salesDocument.hasOneContract) {
                     setSales({
                         ...sales,
                         Button: () => <Button variant={"outline"} size={'sm'}
@@ -79,7 +82,7 @@ export default function useDocumentsOverview() {
                 setSales({...sales, Button: () => <>Default Next step : {sales.status}</>});
                 break;
         }
-    }, [sales.status, hasSalesContract]);
+    }, [sales.status, salesDocument.hasOneContract]);
 
     useEffect(() => {
 

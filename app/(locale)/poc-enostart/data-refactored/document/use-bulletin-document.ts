@@ -1,7 +1,17 @@
-import {useState} from "react";
+import {create} from "zustand";
+
+interface DocumentState {
+    bulletin: any | null;
+    setBulletin: (contract: any) => void;
+}
+
+const useStoredBulletin = create<DocumentState>((set) => ({
+    bulletin: null,
+    setBulletin: (contract: any) => set(state => ({bulletin: contract}))
+}))
 
 function useBulletinDocument() {
-    const [bulletin, setBulletin] = useState<any | null>(null)
+    const {bulletin, setBulletin} = useStoredBulletin()
     const dumbBulletin = {
         associationName: "Association des parents d'élèves",
         email: "asso@enogrid.com",
@@ -20,10 +30,11 @@ function useBulletinDocument() {
         setBulletin(dumbBulletin)
     }
 
-    return{
-        bulletin,
-        isEdited : bulletin !== null,
+    return {
+        document :  bulletin,
+        isEdited: bulletin !== null,
         postBulletin
     }
 }
+
 export {useBulletinDocument}

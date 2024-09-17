@@ -1,13 +1,12 @@
-import {useState} from "react";
 import {Participant} from "@/app/(locale)/poc-enostart/data-refactored/participant/participant";
-import {initialParticipants} from "@/app/(locale)/poc-enostart/data-refactored/participant/data";
 import {
     SignedDocumentStatus,
     SignedSaleDocumentStatus
 } from "@/app/(locale)/poc-enostart/data-refactored/participant/signed-document-status";
-import {DemoDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/document";
+import {DemoDocument, SalesDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/document";
+import {useStoredParticipants} from "@/app/(locale)/poc-enostart/data-refactored/participant/stored-participants";
 
-const parse = (participants: Participant[]) => {
+export const parseP = (participants: Participant[]) => {
     if (participants.length === 0) return {
         candidatures: [],
         preIntegres: [],
@@ -17,67 +16,225 @@ const parse = (participants: Participant[]) => {
 
     return {
         candidatures: participants.filter(p => p.status === 'candidature'),
-        preIntegres: participants.filter(p => p.status === 'pre-integre' && (p.documents.bulletin.signedDocument === null || p.documents.accord.signedDocument === null || p.documents.contract.signedDocument === null)),
-        exploitation: participants.filter(p =>  p.status === 'pre-integre' && p.documents.bulletin.signedDocument !== null && p.documents.accord.signedDocument !== null && p.documents.contract.signedDocument !== null),
+        preIntegres: participants.filter(p => p.status === 'pre-integre' &&
+            (p.documents.bulletin.state !== SignedDocumentStatus.Signe
+                || p.documents.accord.state !== SignedDocumentStatus.Signe
+                || p.documents.contract.state !== SignedSaleDocumentStatus.DocumentSigne)),
+        exploitation: participants.filter(p => p.status === 'pre-integre'
+            && p.documents.bulletin.state === SignedDocumentStatus.Signe
+            && p.documents.accord.state === SignedDocumentStatus.Signe
+            && p.documents.contract.state === SignedSaleDocumentStatus.DocumentSigne),
         refuses: participants.filter(p => p.status === 'refuse'),
     }
 }
 
-export default function useParticipants(){
-    const [participants, setParticipants] = useState<Participant[]>(initialParticipants);
+export default function useParticipants() {
+    const {participants, setParticipants} = useStoredParticipants()
 
-    function accept(id: number){
+    function accept(id: number) {
         setParticipants(participants.map(p => p.id === id ? {...p, status: 'pre-integre'} : p))
     }
+
+    function acceptAll(ids: number[]) {
+        setParticipants(participants.map(p => ids.includes(p.id) ? {...p, status: 'pre-integre'} : p))
+    }
+
     function reject(id: number) {
         setParticipants(participants.map(p => p.id === id ? {...p, status: 'refuse'} : p))
     }
-    function exportData(id : number)  {
+
+    function exportData(id: number) {
         setParticipants(participants.map(p => p.id === id ? {...p, exportDate: new Date().toISOString()} : p))
     }
 
-    function proposePrice(id : number, accord : DemoDocument){
-        const participant = participants.find(p => p.id === id)
-        if(!participant) return
-        participant.documents.contract.state = SignedSaleDocumentStatus.PropositionEnvoye
-        setParticipants([...participants])
+    function exportMultipleData(ids: number[]) {
+        setParticipants(participants.map(p => ids.includes(p.id) ? {...p, exportDate: new Date().toISOString()} : p))
     }
 
-    function sendAllDocuments(id : number, bulletin : DemoDocument, accords : DemoDocument, sales : DemoDocument){
-        const participant = participants.find(p => p.id === id)
-        if(!participant) return
-        participant.documents.bulletin.state = SignedDocumentStatus.DocumentEnvoye
-        participant.documents.accord.state = SignedDocumentStatus.DocumentEnvoye
-        participant.documents.contract.state = SignedSaleDocumentStatus.DocumentEnvoye
-        setParticipants([...participants])
+    function proposePrice(id: number, proposal: SalesDocument | null) {
+        if (!proposal) return
+        setParticipants(participants.map(p => p.id === id ?
+            {
+                ...p, documents: {
+                    ...p.documents,
+                    contract: {
+                        ...p.documents.contract,
+                        proposition: proposal,
+                        state: SignedSaleDocumentStatus.PropositionAAccepter
+                    }
+                }
+            }
+            : p))
+    }
+    function proposePriceToMultipleParticipants(proposal: SalesDocument | null) {
+        if (!proposal) return
+        setParticipants(participants.map(p => {
+            if(p.status === 'pre-integre'){
+                return {
+                    ...p, documents: {
+                        ...p.documents,
+                        contract: {
+                            ...p.documents.contract,
+                            proposition: proposal,
+                            state: SignedSaleDocumentStatus.PropositionAAccepter
+                        }
+                    }
+                }
+            }
+            return p
+        }))
     }
 
-    function getSignedBulletin(id : number){
+    function sendAllDocuments(id: number, bulletin: DemoDocument, accords: DemoDocument, sales: DemoDocument) {
+        setParticipants(participants.map(p => {
+                if (p.id === id) {
+                    const newParticipant: Participant = {
+                        ...p,
+                        documents: {
+                            bulletin: {
+                                state: SignedDocumentStatus.ASigner,
+                                signedDocument: bulletin
+                            },
+                            accord: {
+                                state: SignedDocumentStatus.ASigner,
+                                signedDocument: accords
+                            },
+                            contract: {
+                                ...p.documents.contract,
+                                state: SignedSaleDocumentStatus.DocumentASigner,
+                                signedDocument: sales
+                            }
+                        }
+                    }
+                    return newParticipant
+                }
+                return p
+            })
+        )
+    }
+
+    function sendAllDocumentsToMultiple(ids: number[], bulletin: DemoDocument, accords: DemoDocument, sales: DemoDocument) {
+        setParticipants(participants.map(p => {
+                if (ids.includes(p.id)) {
+                    const newParticipant: Participant = {
+                        ...p,
+                        documents: {
+                            bulletin: {
+                                state: SignedDocumentStatus.ASigner,
+                                signedDocument: bulletin
+                            },
+                            accord: {
+                                state: SignedDocumentStatus.ASigner,
+                                signedDocument: accords
+                            },
+                            contract: {
+                                ...p.documents.contract,
+                                state: SignedSaleDocumentStatus.DocumentASigner,
+                                signedDocument: sales
+                            }
+                        }
+                    }
+                    return newParticipant
+                }
+                return p
+            })
+        )
+    }
+
+    function getSignedBulletin(id: number) {
         const participant = participants.find(p => p.id === id)
-        if(!participant) return
+        if (!participant) return
         return participant.documents.bulletin.signedDocument
     }
-    function getSignedAccord(id : number){
+
+    function getSignedAccord(id: number) {
         const participant = participants.find(p => p.id === id)
-        if(!participant) return
+        if (!participant) return
         return participant.documents.accord.signedDocument
     }
-    function getSignedContract(id : number){
+
+    function getSignedContract(id: number) {
         const participant = participants.find(p => p.id === id)
-        if(!participant) return
+        if (!participant) return
         return participant.documents.contract.signedDocument
     }
 
+    const {candidatures, refuses, exploitation, preIntegres} = parseP(participants)
+
+
+    // inMemory
+    function consumerAcceptPrice(id: number) {
+        const participant = participants.find(p => p.id === id)
+        if (!participant) return
+        participant.documents.contract.state = SignedSaleDocumentStatus.PropositionAcceptee
+        setParticipants([...participants])
+
+    }
+
+    function consumersSignAllDocuments() {
+        setParticipants(participants.map(p => {
+            if(p.status === 'pre-integre'){
+                p.documents.bulletin.state = SignedDocumentStatus.Signe
+                p.documents.accord.state = SignedDocumentStatus.Signe
+                p.documents.contract.state = SignedSaleDocumentStatus.DocumentSigne
+                return p
+            }
+            return p
+        }))
+
+    }
+
+    function completeContract(id: number) {
+        const participant = participants.find(p => p.id === id)
+        if (!participant) return
+        participant.documents.contract.state = SignedSaleDocumentStatus.EnAttenteDuDocument
+        setParticipants([...participants])
+    }
+
+    function completeContractForAll() {
+        participants.forEach(p => {
+            p.documents.contract.state = SignedSaleDocumentStatus.EnAttenteDuDocument
+        })
+    }
+
+    function InMemConsumersSignAllDocuments() {
+        participants.forEach(p => {
+            p.documents.bulletin.state = SignedDocumentStatus.ASigner
+            p.documents.accord.state = SignedDocumentStatus.ASigner
+            p.documents.contract.state = SignedSaleDocumentStatus.DocumentASigner
+        })
+    }
+
+    function sendAllExploitationDocumentsToProducer() {
+        participants.forEach(p => {
+            p.documents.bulletin.state = SignedDocumentStatus.ASigner
+            p.documents.accord.state = SignedDocumentStatus.ASigner
+            p.documents.contract.state = SignedSaleDocumentStatus.DocumentASigner
+        })
+    }
+
+
     return {
-        participants: parse(participants),
-        accept,
+        candidatures,
+        refuses,
+        exploitation,
+        preIntegres,
+
+        accept, acceptAll,
         reject,
-        exportData,
-        proposePrice,
-        sendAllDocuments,
+        exportData, exportMultipleData,
+        proposePrice,proposePriceToMultipleParticipants,
+        sendAllDocuments, sendAllDocumentsToMultiple,
         getSignedBulletin,
         getSignedAccord,
-        getSignedContract
+        getSignedContract,
+
+        consumerAcceptPrice,
+        consumersSignAllDocuments,
+        completeContract,
+        completeContractForAll,
+        InMemConsumersSignAllDocuments,
+        sendAllExploitationDocumentsToProducer
     }
 
 }

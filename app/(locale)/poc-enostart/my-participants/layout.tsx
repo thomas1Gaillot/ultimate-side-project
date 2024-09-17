@@ -2,8 +2,7 @@
 
 import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {usePathname, useRouter} from "next/navigation";
-import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
-import Overview from "@/app/(locale)/poc-enostart/components/overview/overview";
+import useParticipants from "@/app/(locale)/poc-enostart/data-refactored/participant/use-participants";
 
 // Dummy data for participants
 

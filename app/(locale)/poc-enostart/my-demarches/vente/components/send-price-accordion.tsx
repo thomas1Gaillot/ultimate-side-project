@@ -1,11 +1,9 @@
 'use client'
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
-import {SalesStatus} from "@/app/(locale)/poc-enostart/data/sales-status";
 import {Settings2Icon, XIcon} from "lucide-react";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import {Button} from "@/components/ui/button";
-import {useParticipants} from "@/app/(locale)/poc-enostart/data/participants";
 import {
     Dialog,
     DialogContent,
@@ -16,16 +14,20 @@ import {
     DialogTrigger
 } from "@/components/ui/dialog";
 import {MyContracts} from "@/app/(locale)/poc-enostart/my-demarches/vente/components/create-contract-accordion";
-import {ContractDocument, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
 import {useRouter} from "next/navigation";
 import {useState} from "react";
 import RedirectToMyProject from "@/app/(locale)/poc-enostart/components/RedirectToMyProject";
+import useParticipants from "@/app/(locale)/poc-enostart/data-refactored/participant/use-participants";
+import {SignedSaleDocumentStatus} from "@/app/(locale)/poc-enostart/data-refactored/participant/signed-document-status";
+import useSalesContractDocument from "@/app/(locale)/poc-enostart/data-refactored/document/use-sales-contract-document";
+import {SalesDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/document";
 
 export default function SendPriceAccordion() {
-    const {preIntegres, reject, proposePrice} = useParticipants()
-    const preIntegresToSendPrice = preIntegres.filter(p => p.sales === SalesStatus.ProposerUnPrix)
-    const {salesContract} = useStoredDocuments()
-    const [selectedContract, setSelectedContract] = useState<ContractDocument | null>(null);
+    const {preIntegres, reject, proposePrice, proposePriceToMultipleParticipants} = useParticipants()
+    const preIntegresToSendPrice = preIntegres
+        .filter(p => p.documents.contract.state === SignedSaleDocumentStatus.EnAttenteDeLaProposition)
+    const salesContract = useSalesContractDocument()
+    const [selectedContract, setSelectedContract] = useState<SalesDocument | null>(null);
 
     const router = useRouter()
 
@@ -33,7 +35,9 @@ export default function SendPriceAccordion() {
         // Set the new query parameter
         router.push(`?tab=${newTab}`); // This will update the URL with ?tab=newTab
     };
-
+    const proposePriceToAll = () => {
+        proposePriceToMultipleParticipants(selectedContract)
+    }
 
     return (
         <AccordionItem value="send-price">
@@ -46,7 +50,9 @@ export default function SendPriceAccordion() {
             </AccordionTrigger>
             <AccordionContent className={"p-8 gap-4 flex flex-col w-full items-end"}>
                 <Button
-                    size={'sm'} className={'text-xs w-max'} >
+                    variant={'outline'}
+                    onClick={proposePriceToAll}
+                    size={'sm'} className={'text-xs w-max'}>
                     Proposer un prix à tous
                     <Settings2Icon
                         className={'size-4 ml-2'}/>
@@ -67,7 +73,8 @@ export default function SendPriceAccordion() {
                                             <Dialog>
                                                 <DialogTrigger asChild>
                                                     <Button
-                                                        size={'sm'} className={'text-xs'} >
+                                                        variant={'outline'}
+                                                        size={'sm'} className={'text-xs'}>
                                                         Proposer un prix
                                                         <Settings2Icon
                                                             className={'size-4 ml-2'}/> </Button>
@@ -80,7 +87,7 @@ export default function SendPriceAccordion() {
                                                         </DialogDescription>
                                                     </DialogHeader>
                                                     <MyContracts
-                                                        storedContracts={salesContract}
+                                                        storedContracts={salesContract.documents}
                                                         onContractSelect={setSelectedContract}
                                                         selectedContract={selectedContract}
                                                     />

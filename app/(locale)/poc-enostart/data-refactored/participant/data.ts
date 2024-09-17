@@ -7,23 +7,23 @@ import {
 
 const initialDocuments = {
     bulletin: {
-        state: SignedDocumentStatus.EnvoyerLeDocument,
+        state: SignedDocumentStatus.EnAttente,
         signedDocument: null
     },
     accord: {
-        state: SignedDocumentStatus.EnvoyerLeDocument,
+        state: SignedDocumentStatus.EnAttente,
         signedDocument: null
     },
     convention: {
-        state: SignedDocumentStatus.EnvoyerLeDocument,
+        state: SignedDocumentStatus.EnAttente,
         signedDocument: null
     },
     declaration: {
-        state: SignedDocumentStatus.EnvoyerLeDocument,
+        state: SignedDocumentStatus.EnAttente,
         signedDocument: null
     },
     contract: {
-        state: SignedSaleDocumentStatus.EnvoyerLaProposition,
+        state: SignedSaleDocumentStatus.EnAttenteDeLaProposition,
         proposition : null,
         signedDocument: null
     }

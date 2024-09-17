@@ -1,35 +1,30 @@
 'use client'
 import {Button} from "@/components/ui/button"
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table"
-import {Check, CheckIcon, Edit, Eye, UploadIcon} from "lucide-react"
-import {useDocuments, useStoredDocuments} from "@/app/(locale)/poc-enostart/data/documents/use-documents";
+import {Check, CheckIcon, Edit} from "lucide-react"
 import {useStoredDocumentsOverview} from "@/app/(locale)/poc-enostart/data/documents/use-stored-documents-overview";
 import {EnedisStatus} from "@/app/(locale)/poc-enostart/data/enedis-status";
+import {usePmoDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/use-pmo-document";
+import {useAccordsDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/use-accords-document";
 
 export default function AccordsParticipation() {
-    const {isPmoCreated, isAccordsParticipationEdited} = useDocuments()
-    const {setAccordsParticipation, accordsParticipation} = useStoredDocuments()
+    const pmoStatut = usePmoDocument()
+    const accords = useAccordsDocument()
     const documentsOverview = useStoredDocumentsOverview()
-    function actionFor(action: string) {
-        if (action === "Éditer le fichier") {
-            documentsOverview.setAccords({...documentsOverview.accords, status : EnedisStatus.EnvoyerLAccord})
-            setAccordsParticipation({
-                name: "Accords de participation",
-                status: "check",
-                document: "accords_participation.pdf",
-                actions: ["Éditer le fichier", "Visualiser"]
-            })
-        }
+
+    function editAccords() {
+        accords.upload()
+        documentsOverview.setAccords({...documentsOverview.accords, status: EnedisStatus.EnvoyerLAccord})
     }
 
     return (
         <>
             <div className={"flex text-lg font-semibold mt-8"}>
                 {"J'édite les accords de participation"}
-                {isAccordsParticipationEdited && <CheckIcon className="h-6 w-6 text-green-500 ml-2"/>}
+                {accords.isCreated && <CheckIcon className="h-6 w-6 text-green-500 ml-2"/>}
             </div>
             <div className={"p-4 gap-4 grid"}>
-                {isPmoCreated ? <Table>
+                {pmoStatut.isCreated ? <Table>
                         <TableHeader>
                             <TableRow className="bg-gray-100">
                                 <TableHead className="w-1/4">NOM</TableHead>
@@ -40,34 +35,23 @@ export default function AccordsParticipation() {
                         </TableHeader>
                         <TableBody>
                             <TableRow>
-                                <TableCell>{accordsParticipation.name}</TableCell>
+                                <TableCell>Accords de participation</TableCell>
                                 <TableCell>
-                                    {accordsParticipation.status === "check" ? (
+                                    {accords.isCreated ? (
                                         <Check className="text-green-500"/>
                                     ) : (
-                                        <span className="text-gray-500">{accordsParticipation.status}</span>
+                                        <span className="text-gray-500">-</span>
                                     )}
                                 </TableCell>
-                                <TableCell>{accordsParticipation.document}</TableCell>
+                                <TableCell>{accords.accords?.name}</TableCell>
                                 <TableCell>
                                     <div className="flex space-x-2">
-                                        {accordsParticipation.actions.map((action, actionIndex) => (
-                                            <Button
-                                                onClick={() => actionFor(action)}
-                                                key={actionIndex} variant="ghost"
-                                                className="text-gray-500 hover:text-gray-600 p-1">
-                                                {action === "Éditer le fichier" ?
-                                                    <span className={"text-xs flex items-center"}>Editer<Edit
-                                                        className="h-4 w-4 ml-2"/></span> :
-                                                    action === "Téléverser en pdf" ?
-                                                        <span
-                                                            className={"text-xs flex items-center"}>Téléverser en .pdf <UploadIcon
-                                                            className="h-4 w-4 ml-2"/></span> :
-                                                        <span className={"text-xs flex items-center"}><Eye
-                                                            className="h-4 w-4"/></span>}
-                                                <span className="sr-only">{action}</span>
-                                            </Button>
-                                        ))}
+                                        <Button
+                                            onClick={editAccords} variant="ghost"
+                                            className="text-gray-500 hover:text-gray-600 p-1">
+                                               <span className={"text-xs flex items-center"}>Editer<Edit
+                                                   className="h-4 w-4 ml-2"/></span>
+                                        </Button>
                                     </div>
                                 </TableCell>
                             </TableRow>
