@@ -34,7 +34,7 @@ export default function PmoCreationAccordionItem() {
                 onClick={() => setTab('create-pmo')}
                 className="text-lg font-semibold">
                 <div className={"flex"}>
-                    1. Je crée mon association PMO
+                    1. Téléverser les statuts PMO signés
                     {pmoStatut.isCreated && <CheckIcon className="h-6 w-6 text-green-500 ml-2"/>}
                 </div>
 

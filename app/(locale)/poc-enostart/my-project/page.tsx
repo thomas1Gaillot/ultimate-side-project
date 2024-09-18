@@ -189,6 +189,9 @@ export default function Component() {
             if (step.title === "Les consommateurs et producteurs signent les documents") {
                 return {...step, active: atLeastOneDocumentsProposal}
             }
+            if(step.title === "Je récupère les données pour étude (optionnel)"){
+                return {...step, active: preIntegres.length > 0}
+            }
             return step
         })
         setTimelineIntegration(newTimelineIntegration)

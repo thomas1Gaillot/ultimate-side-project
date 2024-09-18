@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="show modale to send documents">
-      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/ProducerCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/enedis/accords/components/accords-stepper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/ExplanationStep.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-stepper.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/use-participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/use-participants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/enedis/accords/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/enedis/accords/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation-accordion-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/component/pmo-creation-accordion-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/pmo/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" afterDir="false" />
     </list>
@@ -79,11 +82,11 @@
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\my-demarches\enedis\accords\components" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\data-refactored\participant" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\data-refactored\prestations" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart\data-refactored\document" />
       <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart-consumer\my-participation\component" />
-      <recent name="C:\Users\ThomasGaillot\Desktop\ultimate-side-project\app\(locale)\poc-enostart-consumer" />
     </key>
   </component>
   <component name="RunManager" selected="npm.supabase:create">
@@ -245,15 +248,7 @@
       <workItem from="1726473269153" duration="21280000" />
       <workItem from="1726556044265" duration="22141000" />
       <workItem from="1726643200942" duration="7828000" />
-      <workItem from="1726652263814" duration="3977000" />
-    </task>
-    <task id="LOCAL-00201" summary="wording">
-      <option name="closed" value="true" />
-      <created>1725021205141</created>
-      <option name="number" value="00201" />
-      <option name="presentableId" value="LOCAL-00201" />
-      <option name="project" value="LOCAL" />
-      <updated>1725021205141</updated>
+      <workItem from="1726652263814" duration="7478000" />
     </task>
     <task id="LOCAL-00202" summary="add vente accordions">
       <option name="closed" value="true" />
@@ -639,7 +634,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726587009523</updated>
     </task>
-    <option name="localTasksCounter" value="250" />
+    <task id="LOCAL-00250" summary="show modale to send documents">
+      <option name="closed" value="true" />
+      <created>1726661003866</created>
+      <option name="number" value="00250" />
+      <option name="presentableId" value="LOCAL-00250" />
+      <option name="project" value="LOCAL" />
+      <updated>1726661003874</updated>
+    </task>
+    <option name="localTasksCounter" value="251" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

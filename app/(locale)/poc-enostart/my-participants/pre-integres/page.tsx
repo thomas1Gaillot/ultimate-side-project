@@ -139,7 +139,7 @@ export default function Page() {
                 case SignedSaleDocumentStatus.PropositionAAccepter:
                     return 'Proposition à accepter';
                 case SignedSaleDocumentStatus.PropositionAcceptee:
-                    return 'Proposition acceptée';
+                    return '';
                 case SignedSaleDocumentStatus.EnAttenteDuDocument:
                     return 'En attente du document';
                 case SignedSaleDocumentStatus.DocumentASigner:
@@ -399,7 +399,7 @@ function SendDocumentsDialog({ selectedIds }: { selectedIds: number[] }) {
                 ))}
             </div>
             {atLeastOneUnreadyDocument && selectedDocumentsCount > 0 &&
-                <div className="flex items-center gap-4 p-3 w-full bg-white border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+                <div className="flex items-center gap-4 p-3 w-full bg-white border text-amber-500 border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
                     <Checkbox
                         id={'submit-with-warning'}
                         checked={submitWithWarning}
@@ -408,9 +408,9 @@ function SendDocumentsDialog({ selectedIds }: { selectedIds: number[] }) {
                     />
                     <label
                         htmlFor="submit-with-warning"
-                        className="text-sm text-gray-700 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        className="text-sm text-amber-500 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
-                        {"Vous avez des documents à finaliser. \n"}
+                        {"Attention, Vous avez des documents à finaliser. \n"}
                         {"Ignorer et  envoyer la liasse documentaire incomplète."}
                     </label>
                     <FileWarningIcon className={'size-4 min-w-4'} />
