@@ -158,8 +158,7 @@ export default function Component() {
     useEffect(() => {
         const {candidatures, preIntegres, exploitation} = parseP(participants)
         const hasSalesThingsToDo = participants.some(p => p.status === 'pre-integre' &&
-            (p.documents.contract.state === SignedSaleDocumentStatus.EnAttenteDeLaProposition ||
-                p.documents.contract.state === SignedSaleDocumentStatus.EnAttenteDuDocument))
+            (p.documents.contract.state === SignedSaleDocumentStatus.EnAttenteDeLaProposition))
         const canSignDocuments = preIntegres
             .some(p =>  p.documents.contract.state === SignedSaleDocumentStatus.PropositionAcceptee)
         const atLeastOneProposalStatus = preIntegres.some(p =>  p.documents.contract.state === SignedSaleDocumentStatus.PropositionAAccepter)

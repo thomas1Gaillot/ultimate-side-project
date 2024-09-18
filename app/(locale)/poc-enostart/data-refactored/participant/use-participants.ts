@@ -187,13 +187,13 @@ export default function useParticipants() {
     function completeContract(id: number) {
         const participant = participants.find(p => p.id === id)
         if (!participant) return
-        participant.documents.contract.state = SignedSaleDocumentStatus.EnAttenteDuDocument
+        participant.documents.contract.state = SignedSaleDocumentStatus.PropositionAcceptee
         setParticipants([...participants])
     }
 
     function completeContractForAll() {
         participants.forEach(p => {
-            p.documents.contract.state = SignedSaleDocumentStatus.EnAttenteDuDocument
+            p.documents.contract.state = SignedSaleDocumentStatus.PropositionAcceptee
         })
     }
 

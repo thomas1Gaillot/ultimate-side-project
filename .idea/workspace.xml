@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="TODO : show dialog recap on Envoyer les documents (0)">
+    <list default="true" id="6536c529-ffaa-40d8-bd9b-c7b02def506b" name="Changes" comment="show modale to send documents">
+      <change afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/ProducerCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/enedis/accords/components/accords-participation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/enedis/accords/components/accords-participation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/associate-contract-accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-demarches/vente/components/associate-contract-accordion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/use-participants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/data-refactored/participant/use-participants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/exploitation/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-participants/pre-integres/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(locale)/poc-enostart/my-project/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -240,15 +243,9 @@
       <workItem from="1726038577175" duration="14612000" />
       <workItem from="1726125351863" duration="26073000" />
       <workItem from="1726473269153" duration="21280000" />
-      <workItem from="1726556044265" duration="20978000" />
-    </task>
-    <task id="LOCAL-00200" summary="fix numbers 1 in task">
-      <option name="closed" value="true" />
-      <created>1725004464711</created>
-      <option name="number" value="00200" />
-      <option name="presentableId" value="LOCAL-00200" />
-      <option name="project" value="LOCAL" />
-      <updated>1725004464711</updated>
+      <workItem from="1726556044265" duration="22141000" />
+      <workItem from="1726643200942" duration="7828000" />
+      <workItem from="1726652263814" duration="3977000" />
     </task>
     <task id="LOCAL-00201" summary="wording">
       <option name="closed" value="true" />
@@ -634,7 +631,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726586682265</updated>
     </task>
-    <option name="localTasksCounter" value="249" />
+    <task id="LOCAL-00249" summary="fix build">
+      <option name="closed" value="true" />
+      <created>1726587009523</created>
+      <option name="number" value="00249" />
+      <option name="presentableId" value="LOCAL-00249" />
+      <option name="project" value="LOCAL" />
+      <updated>1726587009523</updated>
+    </task>
+    <option name="localTasksCounter" value="250" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -653,7 +658,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ui, ux" />
     <MESSAGE value="ui done" />
     <MESSAGE value="step 1 : subscribe in projet page" />
     <MESSAGE value="ping when new task" />
@@ -672,12 +676,13 @@
     <MESSAGE value="v1 toggle, bulletin edition showed" />
     <MESSAGE value="add v0 form to update" />
     <MESSAGE value="switch for consumer view" />
-    <MESSAGE value="fix build" />
     <MESSAGE value="flow consumer" />
     <MESSAGE value="ui moche" />
     <MESSAGE value="refactoring started, &#10;ui update for table" />
     <MESSAGE value="build" />
     <MESSAGE value="TODO : show dialog recap on Envoyer les documents (0)" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO : show dialog recap on Envoyer les documents (0)" />
+    <MESSAGE value="fix build" />
+    <MESSAGE value="show modale to send documents" />
+    <option name="LAST_COMMIT_MESSAGE" value="show modale to send documents" />
   </component>
 </project>

@@ -6,8 +6,10 @@ import {
     Clock,
     DownloadIcon,
     FileCheck2Icon,
-    FileText, HourglassIcon,
-    MoreHorizontalIcon, ScrollTextIcon,
+    FileText,
+    FileWarningIcon,
+    MoreHorizontalIcon,
+    ScrollTextIcon,
     SendIcon,
     TimerIcon,
     UserIcon,
@@ -16,7 +18,7 @@ import {
 import {cn} from "@/lib/utils";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import {Checkbox} from "@/components/ui/checkbox"; // Assuming you have a Checkbox component
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Separator} from "@/components/ui/separator";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
 import useParticipants from "@/app/(locale)/poc-enostart/data-refactored/participant/use-participants";
@@ -30,8 +32,13 @@ import useSalesContractDocument from "@/app/(locale)/poc-enostart/data-refactore
 import {useAccordsDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/use-accords-document";
 import {useBulletinDocument} from "@/app/(locale)/poc-enostart/data-refactored/document/use-bulletin-document";
 import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from "@/components/ui/dialog";
+import ProducerCard from "@/app/(locale)/poc-enostart/my-participants/ProducerCard";
+import {Input} from "@/components/ui/input";
 
 export default function Page() {
+    const [openMultiple, setOpenMultiple] = useState(false);
+    const [openId, setOpenId] = useState<null | number>(null);
+
     const {
         preIntegres,
         reject,
@@ -40,8 +47,6 @@ export default function Page() {
         consumerAcceptPrice,
         consumersSignAllDocuments,
     } = useParticipants();
-    const [openModal, setOpenModal] = useState(false)
-
     const [selectedIds, setSelectedIds] = useState<number[]>([]);
     const [selectAll, setSelectAll] = useState<boolean>(false);
     const statutPmo = usePmoDocument();
@@ -70,11 +75,8 @@ export default function Page() {
     const exportSelected = () => {
         exportMultipleData(selectedIds.map(id => Number(id)));
     };
-    const sendDocumentsToSelected = () => {
-        if (!accord.document || !bulletin.document || !contract.documents) return;
-        sendAllDocumentsToMultiple(selectedIds.map(id => Number(id)), bulletin.document, accord.document, contract.propositionDocuments[0]);
-    }
-    const sendDocumentsTo = (id:number)=> {
+
+    const sendDocumentsTo = (id: number) => {
         if (!accord.document || !bulletin.document || !contract.documents) return;
         sendAllDocuments(id, bulletin.document, accord.document, contract.propositionDocuments[0]);
     }
@@ -84,7 +86,7 @@ export default function Page() {
             if (!statutPmo.isCreated) return 'Document non créé'
             switch (state) {
                 case SignedDocumentStatus.EnAttente:
-                    return 'Bulletin prêt';
+                    return '';
                 case SignedDocumentStatus.ASigner:
                     return 'En cours de signature';
                 case SignedDocumentStatus.Signe:
@@ -108,7 +110,7 @@ export default function Page() {
             if (!accord.isCreated) return 'Document non créé'
             switch (state) {
                 case SignedDocumentStatus.EnAttente:
-                    return 'Accords prêt';
+                    return '';
                 case SignedDocumentStatus.ASigner:
                     return 'En cours de signature';
                 case SignedDocumentStatus.Signe:
@@ -162,35 +164,9 @@ export default function Page() {
     }
 
 
-
     return (
         <div className={"px-4 space-y-8"}>
-            <div className={"rounded-xl border border-gray-200 flex flex-col gap-3 py-3 w-max"}>
-                <div className={"flex items-center gap-2 w-full  px-4"}>
-                    <div className={"flex justify-center rounded-md items-center bg-primary/5 p-2"}>
-                        <UserIcon className={'size-6 text-primary'}/>
-                    </div>
-                    <div className={'grid'}>
-                        <div className={"font-semibold"}>Remy Bastien</div>
-                        <div className={"text-xs"}>Producteur</div>
-                        <div className={"text-xs"}>175 kW</div>
-                        <div className={"text-xs text-gray-600"}>Le producteur recevra automatiquement les documents à signer lorsque vous les enverrez au consomamteur. </div>
-                    </div>
-                </div>
-                <Separator orientation={"horizontal"}/>
-                <div className={"grid grid-cols-[200px_1fr]  px-4"}>
-                    <div className={"text-sm text-gray-500"}>{"Bulletin d'adhésion"}</div>
-                    {preIntegres[0]&&<div className={"text-sm text-gray-700"}>{displayBulletinDocumentState(preIntegres[0].documents.bulletin.state)}</div>}
-                </div>
-                <div className={"grid grid-cols-[200px_1fr]  px-4"}>
-                    <div className={"text-sm text-gray-500"}>{"Accords de participation"}</div>
-                    {preIntegres[0]&&<div className={"text-sm text-gray-700"}>{displayAccordsDocumentState(preIntegres[0].documents.accord.state)}</div>}
-                </div>
-                <div className={"grid grid-cols-[200px_1fr]  px-4"}>
-                    <div className={"text-sm text-gray-500"}>{"Contrats de vente"}</div>
-                    {preIntegres[0]&&<div className={"text-sm text-gray-700"}>{displayContractDocumentState(preIntegres[0].documents.contract.state)}</div>}
-                </div>
-            </div>
+            <ProducerCard/>
             <div className={" rounded-lg border"}>
                 <div className="flex justify-between items-center p-4">
                     <TypographyH4>
@@ -208,14 +184,18 @@ export default function Page() {
                             Exporter les données ({selectedIds.length})
                             <DownloadIcon className={'size-4 ml-2'}/>
                         </Button>
-                        <Button
-                            onClick={sendDocumentsToSelected}
-                            disabled={selectedIds.length === 0}
-                            variant={'outline'}
-                        >
-                            Envoyer les documents ({selectedIds.length})
-                            <SendIcon className={'size-4 ml-2'}/>
-                        </Button>
+                        <Dialog key={'multiple-dialog'} open={openMultiple}
+                                onOpenChange={() => setOpenMultiple(!openMultiple)}>
+                            <DialogTrigger disabled={selectedIds.length === 0} asChild>
+                                <Button
+                                    variant={'outline'}
+                                >
+                                    Envoyer les documents ({selectedIds.length})
+                                    <SendIcon className={'size-4 ml-2'}/>
+                                </Button>
+                            </DialogTrigger>
+                            <SendDocumentsDialog selectedIds={selectedIds}/>
+                        </Dialog>
                     </div>
                 </div>
                 <Separator/>
@@ -241,87 +221,92 @@ export default function Page() {
                             <TableHead></TableHead>
                         </TableRow>
                     </TableHeader>
-
                     <TableBody>
                         {preIntegres.map(p => {
                             return (
-                                <TableRow key={p.id}>
-                                    <TableCell>
-                                        <Checkbox
-                                            className={"ml-2"}
-                                            checked={selectedIds.includes(p.id)}
-                                            onCheckedChange={() => toggleSelect(p.id)}
-                                            aria-label={`Select ${p.name}`}
-                                        />
-                                    </TableCell>
-                                    <TableCell>{p.name}</TableCell>
-                                    <TableCell className="text-xs text-gray-600 max-w-[200px]">{p.address}</TableCell>
-                                    <TableCell>{p.segment}</TableCell>
-                                    <TableCell>{p.perimeter}</TableCell>
-                                    <TableCell className={"w-[100px]"}>
-                                        {displayBulletinDocumentState(p.documents.bulletin.state)}
-                                    </TableCell>
-                                    <TableCell className={"w-[100px]"}>
-                                        {displayAccordsDocumentState(p.documents.accord.state)}
-                                    </TableCell>
-                                    <TableCell className={"w-[100px]"}>
-                                        {displayContractDocumentState(p.documents.contract.state)}
-                                        {p.documents.contract.state === SignedSaleDocumentStatus.PropositionAAccepter && (
-                                            <TooltipProvider>
-                                                <Tooltip>
-                                                    <TooltipTrigger>
-                                                        <Button
-                                                            onClick={() => consumerAcceptPrice(p.id)}
-                                                            size={'sm'}
-                                                            className={'text-xs text-gray-700'}
-                                                            variant={'link'}
-                                                        >
-                                                            <TimerIcon className={'size-3 ml-2'}/>
-                                                        </Button>
-                                                    </TooltipTrigger>
-                                                    <TooltipContent>
-                                                        <p>Le consommateur accepte le prix</p>
-                                                    </TooltipContent>
-                                                </Tooltip>
-                                            </TooltipProvider>
-                                        )}
+                                <>
+                                    <TableRow key={p.id}>
+                                        <TableCell>
+                                            <Checkbox
+                                                className={"ml-2"}
+                                                checked={selectedIds.includes(p.id)}
+                                                onCheckedChange={() => toggleSelect(p.id)}
+                                                aria-label={`Select ${p.name}`}
+                                            />
+                                        </TableCell>
+                                        <TableCell>{p.name}</TableCell>
+                                        <TableCell
+                                            className="text-xs text-gray-600 max-w-[200px]">{p.address}</TableCell>
+                                        <TableCell>{p.segment}</TableCell>
+                                        <TableCell>{p.perimeter}</TableCell>
+                                        <TableCell className={"w-[100px]"}>
+                                            {displayBulletinDocumentState(p.documents.bulletin.state)}
+                                        </TableCell>
+                                        <TableCell className={"w-[100px]"}>
+                                            {displayAccordsDocumentState(p.documents.accord.state)}
+                                        </TableCell>
+                                        <TableCell className={"w-[100px]"}>
+                                            {displayContractDocumentState(p.documents.contract.state)}
+                                            {p.documents.contract.state === SignedSaleDocumentStatus.PropositionAAccepter && (
+                                                <TooltipProvider>
+                                                    <Tooltip>
+                                                        <TooltipTrigger>
+                                                            <Button
+                                                                onClick={() => consumerAcceptPrice(p.id)}
+                                                                size={'sm'}
+                                                                className={'text-xs text-gray-700'}
+                                                                variant={'link'}
+                                                            >
+                                                                <TimerIcon className={'size-3 ml-2'}/>
+                                                            </Button>
+                                                        </TooltipTrigger>
+                                                        <TooltipContent>
+                                                            <p>Le consommateur accepte le prix</p>
+                                                        </TooltipContent>
+                                                    </Tooltip>
+                                                </TooltipProvider>
+                                            )}
 
-                                    </TableCell>
-                                    <TableCell className={"text-xs"}>
-                                        {p.exportDate}
-                                    </TableCell>
-                                    <TableCell>
-
-                                        <DropdownMenu>
-                                            <DropdownMenuTrigger asChild>
-                                                <Button variant="outline" className={"rounded-l-none text-gray-500"}
-                                                        size="sm">
-                                                    <MoreHorizontalIcon className="size-4"/>
-                                                </Button>
-                                            </DropdownMenuTrigger>
-                                            <DropdownMenuContent className={"text-gray-700 text-xs space-y-2"}>
-                                                <DropdownMenuItem onClick={() => exportData(p.id)}>
-                                                    <DownloadIcon className={'size-4 mr-2'}/>
-                                                    <span>{'Exporter les données'}</span>
-                                                </DropdownMenuItem>
-                                                <DropdownMenuItem onClick={() => sendDocumentsTo(p.id)}>
-                                                    <SendIcon className={'size-4 mr-2'}/>
-                                                    <span>{'Envoyer les documents pour signature'}</span>
-                                                </DropdownMenuItem>
-                                                <Separator/>
-                                                <DropdownMenuItem className={"text-red-600"}
-                                                                  onClick={() => reject(p.id)}>
-                                                    <XIcon className="mr-2 h-4 w-4"/>
-                                                    <span>Refuser</span>
-                                                </DropdownMenuItem>
-                                            </DropdownMenuContent>
-                                        </DropdownMenu>
-                                    </TableCell>
-                                </TableRow>
+                                        </TableCell>
+                                        <TableCell className={"text-xs"}>
+                                            {p.exportDate}
+                                        </TableCell>
+                                        <TableCell>
+                                            <DropdownMenu>
+                                                <DropdownMenuTrigger asChild>
+                                                    <Button variant="outline" className={"rounded-l-none text-gray-500"}
+                                                            size="sm">
+                                                        <MoreHorizontalIcon className="size-4"/>
+                                                    </Button>
+                                                </DropdownMenuTrigger>
+                                                <DropdownMenuContent className={"text-gray-700 text-xs space-y-2"}>
+                                                    <DropdownMenuItem onClick={() => exportData(p.id)}>
+                                                        <DownloadIcon className={'size-4 mr-2'}/>
+                                                        <span>{'Exporter les données'}</span>
+                                                    </DropdownMenuItem>
+                                                    <DropdownMenuItem onClick={() => setOpenId(Number(p.id))}>
+                                                        <SendIcon className={'size-4 mr-2'}/>
+                                                        Envoyer les documents pour signature
+                                                    </DropdownMenuItem>
+                                                    <Separator/>
+                                                    <DropdownMenuItem className={"text-red-600"}
+                                                                      onClick={() => reject(p.id)}>
+                                                        <XIcon className="mr-2 h-4 w-4"/>
+                                                        <span>Refuser</span>
+                                                    </DropdownMenuItem>
+                                                </DropdownMenuContent>
+                                            </DropdownMenu>
+                                        </TableCell>
+                                    </TableRow>
+                                </>
                             );
                         })}
                     </TableBody>
                 </Table>
+                <Dialog key={'unique-dialog'} open={openId !== null}
+                        onOpenChange={() => setOpenId(null)}>
+                    {openId && <SendDocumentsDialog selectedIds={[openId]}/>}
+                </Dialog>
                 {preIntegres.length === 0 && <EmptyUserTable/>}
             </div>
         </div>
@@ -341,4 +326,152 @@ function EmptyUserTable() {
             {"Les candidatures acceptées seront affichés ici."}
         </p>
     </div>
+}
+
+function SendDocumentsDialog({ selectedIds }: { selectedIds: number[] }) {
+    const { sendAllDocumentsToMultiple, preIntegres } = useParticipants();
+    const [submitWithWarning, setSubmitWithWarning] = useState(false);
+    const [selectedDocumentsCount, setSelectedDocumentsCount] = useState(0); // Track selected documents count
+    const bulletin = useBulletinDocument();
+    const contract = useSalesContractDocument();
+    const accord = useAccordsDocument();
+    const selectedConsumers = preIntegres.filter(p => selectedIds.includes(p.id));
+
+    const sendDocuments = () => {
+        if (!accord.document || !bulletin.document || !contract.documents) return;
+        sendAllDocumentsToMultiple(selectedIds.map(id => Number(id)), bulletin.document, accord.document, contract.propositionDocuments[0]);
+    };
+
+    const atLeastOneUnreadyDocument = selectedConsumers.some(p => {
+        return !bulletin.isEdited || !accord.isCreated || !contract.hasOneContract || p.documents.contract.state !== SignedSaleDocumentStatus.PropositionAcceptee;
+    });
+
+
+
+    useEffect(() => {
+        // set initial count value based on selected documents
+        let totalDocumentsCount = 0;
+        selectedConsumers.forEach(p => {
+            if (bulletin.isEdited) totalDocumentsCount++;
+            if (accord.isCreated) totalDocumentsCount++;
+            if (contract.hasOneContract && p.documents.contract.state === SignedSaleDocumentStatus.PropositionAcceptee) totalDocumentsCount++;
+        });
+        setSelectedDocumentsCount(totalDocumentsCount);
+    }, [selectedConsumers]);
+
+    const handleDocumentToggle = (isChecked: boolean) => {
+        setSelectedDocumentsCount(prevCount => isChecked ? prevCount + 1 : prevCount - 1);
+    };
+
+    return (
+        <DialogContent className="bg-white">
+            <DialogHeader>
+                <DialogTitle>{`Envoyer les documents pour signature (${selectedIds.length})`}</DialogTitle>
+            </DialogHeader>
+            <div className="h-full flex flex-col justify-between max-h-[70vh] overflow-y-auto text-gray-900 dark:text-neutral-400">
+                {selectedConsumers.map(participant => (
+                    <>
+                        <div className="my-4 text-sm text-gray-500">Documents à signer pour {participant.name}</div>
+                        <div className="space-y-1">
+                            <DocumentRow
+                                title={"Bulletin d'adhésion"}
+                                icon={<ScrollTextIcon className="w-6 h-6" />}
+                                format={"PDF"}
+                                ready={bulletin.isEdited}
+                                onToggle={handleDocumentToggle} // Pass the toggle handler
+                            />
+                            <DocumentRow
+                                title={"Accords de participation"}
+                                icon={<FileCheck2Icon className="w-6 h-6" />}
+                                format={"PDF"}
+                                ready={accord.isCreated}
+                                onToggle={handleDocumentToggle} // Pass the toggle handler
+                            />
+                            <DocumentRow
+                                title={"Contrat de vente"}
+                                icon={<IconFileEuro className="w-6 h-6" />}
+                                format={"PDF"}
+                                ready={contract.hasOneContract && participant.documents.contract.state === SignedSaleDocumentStatus.PropositionAcceptee}
+                                onToggle={handleDocumentToggle} // Pass the toggle handler
+                            />
+                        </div>
+                    </>
+                ))}
+            </div>
+            {atLeastOneUnreadyDocument && selectedDocumentsCount > 0 &&
+                <div className="flex items-center gap-4 p-3 w-full bg-white border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+                    <Checkbox
+                        id={'submit-with-warning'}
+                        checked={submitWithWarning}
+                        onCheckedChange={() => setSubmitWithWarning(!submitWithWarning)}
+                        aria-label={"Certains documents ne sont pas prêts"}
+                    />
+                    <label
+                        htmlFor="submit-with-warning"
+                        className="text-sm text-gray-700 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                        {"Vous avez des documents à finaliser. \n"}
+                        {"Ignorer et  envoyer la liasse documentaire incomplète."}
+                    </label>
+                    <FileWarningIcon className={'size-4 min-w-4'} />
+                </div>
+            }
+            {selectedDocumentsCount > 0 ? (
+                <Button onClick={sendDocuments} disabled={atLeastOneUnreadyDocument && !submitWithWarning} size={'lg'}>
+                    {`Envoyer les documents (${selectedDocumentsCount})`}
+                </Button>
+            ) : (
+                <Button disabled={true} size={'lg'}>
+                    {"Aucun documents à envoyer"}
+                </Button>
+            )}
+        </DialogContent>
+    );
+}
+
+function DocumentRow({ title, icon, format, ready, onToggle }: {
+    title: string;
+    icon: JSX.Element;
+    format: string;
+    ready: boolean;
+    onToggle: (isChecked: boolean) => void; // Pass a callback to parent
+}) {
+    const [toggle, setToggle] = useState(true);
+
+    const handleToggleChange = () => {
+        const newToggleState = !toggle;
+        setToggle(newToggleState);
+        onToggle(newToggleState); // Inform parent of change
+    };
+
+    return (
+        <div className="relative">
+            {/* Main row content */}
+            <div className="flex items-center space-x-4 mr-4">
+                <div className="bg-gray-100 text-gray-700 p-2 rounded">
+                    {icon}
+                </div>
+                <div className="w-full">
+                    <p className="text-sm font-medium">{title}</p>
+                    <p className="text-xs text-gray-500">Format: {format}</p>
+                </div>
+                <Input
+                    className="size-4"
+                    type="checkbox"
+                    id="reconduction"
+                    checked={toggle}
+                    onChange={handleToggleChange}
+                    disabled={!ready}  // Disable checkbox if not ready
+                />
+            </div>
+
+            {/* Blur overlay if not ready */}
+            {!ready && (
+                <div className="absolute inset-0 flex items-center justify-end bg-white/60 backdrop-blur-[0.5px] rounded">
+                    <FileWarningIcon className={"size-4 mr-2"} />
+                    <span className="text-gray-800 text-xs uppercase">{"document non terminé"}</span>
+                </div>
+            )}
+        </div>
+    );
 }
