@@ -1,71 +1,75 @@
 'use client'
-import {AlertCircle} from "lucide-react";
-import {usePrestations} from "@/app/(locale)/poc-enostart/data/documents/use-prestations";
-import DocumentOverview from "../../my-project/components/DocumentOverview";
-import useDocumentsOverview from "@/app/(locale)/poc-enostart/data/documents/use-documents-overview";
 
+import {ServiceCard} from "./components/ServiceCard"
 
 export default function OverviewDemarches() {
     return <>
-        <Plans/>
+        <div className="container mx-auto py-12 px-4">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+                <h1 className="text-3xl font-bold tracking-tight mb-4">
+                    Mes démarches et prestations
+                </h1>
+                <p className="text-muted-foreground">
+                    Découvrez nos services pour vous accompagner dans vos projets énergétiques
+                </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <ServiceCard
+                    title="Mon participant intègre ma PMO"
+                    description="Intégrez vos participants à votre PMO en toute simplicité"
+                    steps={[
+                        "Publication de votre projet",
+                        "Aide à la création de votre association PMO",
+                        "Edition des bulletins d'adhésion",
+                        "Signature des bulletins d'adhésion",
+                        "Intégration à votre association PMO"
+                    ]}
+                    basePrice={15}
+                    bulkPrice={240}
+                    bulkQuantity={20}
+                    modalId="pmo-modal"
+                    pricingDescription=" / participant intégré à la PMO"
+                />
+
+                <ServiceCard
+                    title="Mon participant signe un contrat de vente"
+                    description="Facilitez la signature des contrats de vente avec vos participants"
+                    steps={[
+                        "Publication de votre projet",
+                        "Aide à la création d'un prix de vente",
+                        "Négociation avec le participant",
+                        "Aide à l'édition du contrat de vente",
+                        "Signature du contrat de vente",
+                        "Finalisation du contrat"
+                    ]}
+                    basePrice={15}
+                    bulkPrice={240}
+                    bulkQuantity={20}
+                    modalId="vente-modal"
+                    pricingDescription=" / contrat signé avec le participant"
+                />
+
+                <ServiceCard
+                    title="Je signe la convention d'ACC d'Enedis"
+                    description="Simplifiez la signature de votre convention ACC avec Enedis"
+                    steps={[
+                        "Publication de votre projet",
+                        "Aide à l'édition des accords de participation",
+                        "Signature des accords de participation",
+                        "Edition de la déclaration de mise en œuvre",
+                        "Edition de la convention d'ACC",
+                        "Signature de la convention d'ACC"
+                    ]}
+                    basePrice={15}
+                    bulkPrice={240}
+                    bulkQuantity={20}
+                    modalId="acc-modal"
+                    pricingDescription=" / consommateur intégré à la convention d'ACC"
+                />
+            </div>
+        </div>
     </>
 }
 
-
-function Plans() {
-    const {hasDisabled} = usePrestations();
-    const {sales, convention, statutPmo, declaration, bulletin, accords} = useDocumentsOverview()
-    return (
-        <div>
-            <h1 id="choose-prestation" className="text-lg font-bold mt-6 mb-2">{"Mes documents et prestations"}</h1>
-            {hasDisabled && (
-                <div className="mb-6 p-4 bg-yellow-100 rounded-lg flex items-center space-x-2 shadow">
-                    <AlertCircle className="text-yellow-700 size-4 mt-0.5"/>
-                    <p className="text-yellow-700 text-xs">
-                        {"Attention : Vous avez décliné certaines prestations. Veuillez vous assurer de les réaliser en dehors de l'application."}
-                    </p>
-                </div>
-            )}
-            <div className="grid grid-cols-3">
-                <div>
-                    <h2 className=" font-semibold text-gray-700 mt-6 mb-2">{"Prestation : Contrat de vente"}</h2>
-                    <div className="flex flex-wrap w-full gap-4 mb-8">
-                        <DocumentOverview key={1}
-                                          doc={sales}
-                                          index={0}/>
-                    </div>
-                </div>
-                <div>
-                    <h2 className=" font-semibold text-gray-700 mt-6 mb-2">{"Prestation : Bulletin d'adhésion et PMO"}</h2>
-
-                    <div className="flex flex-wrap w-full gap-4 mb-8">
-                        <DocumentOverview key={1}
-                                          doc={statutPmo}
-                                          index={0}/>
-                        <DocumentOverview key={2}
-                                          doc={bulletin}
-                                          index={1}/>
-                    </div>
-                </div>
-                <div className={""}>
-                    <h2 className=" font-semibold text-gray-700 mt-6 mb-2">
-                        {"Prestation : Accords de participation, Déclaration de mise en oeuvre et Convention d'ACC"}
-                    </h2>
-
-                    <div className="flex flex-wrap w-full gap-4 mb-8">
-                        <DocumentOverview key={1}
-                                          doc={accords}
-                                          index={0}/>
-                        <DocumentOverview key={2}
-                                          doc={declaration}
-                                          index={1}/>
-                        <DocumentOverview key={3}
-                                          doc={convention}
-                                          index={2}/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
 
